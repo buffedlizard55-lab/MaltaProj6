@@ -25,16 +25,16 @@ rec-japanese-tea-garden-free-hour,Japanese Tea Garden free admission hour,Recurr
 rec-sfbotanical-free,San Francisco Botanical Garden free admission hours,Recurring - Weekly,unverified,gggp.org,https://gggp.org/tickets/,dates;cost,,
 rec-ferry-plaza-farmers-market,Foodwise Ferry Plaza Farmers Market,Recurring - Weekly,verified,ferrybuildingmarketplace.com,https://www.ferrybuildingmarketplace.com/shops/the-ferry-plaza-farmers-market/,dates,,VERIFIED_BUT_BLANK:dates
 rec-ferry-building-marketplace,Ferry Building Marketplace (shops & food hall),Recurring - Regular schedule,verified,ferrybuildingmarketplace.com,https://www.ferrybuildingmarketplace.com/,dates,,VERIFIED_BUT_BLANK:dates
-rec-sunday-streets,SFMTA Sunday Streets,Recurring - Monthly,verified,sfmta.com,https://www.sfmta.com/getting-around/walk/sunday-streets,dates,,VERIFIED_BUT_BLANK:dates
+rec-sunday-streets,SFMTA Sunday Streets,Recurring - Monthly,unverified,sfmta.com,https://www.sfmta.com/getting-around/walk/sunday-streets,dates;cost,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 rec-off-the-grid-treasure-island,Off The Grid Treasure Island (fall edition),Recurring - Weekly,verified,tisf.com,https://www.tisf.com/off-the-grid,,,BORDERLINE_GEO:treasure island
 rec-sfsymphony,San Francisco Symphony concert season,Recurring - Weekly,unverified,sfsymphony.org,https://www.sfsymphony.org/calendar/,dates;cost,,
 rec-sfjazz-season,SFJAZZ concert season,Recurring - Weekly,unverified,sfjazz.org,https://www.sfjazz.org/tickets/productions/26-27/season-overview/,cost,,
 rec-sfpl-library-hours,SF Public Library branch hours,Recurring - Regular schedule,verified,sfpl.org,https://sfpl.org/locations,dates,,VERIFIED_BUT_BLANK:dates
 civ-bos,Board of Supervisors (full board),Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
-civ-bos-lut,Board of Supervisors — Land Use and Transportation Committee,Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
+civ-bos-lut,Board of Supervisors — Land Use and Transportation Committee,Civic meeting,unverified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 civ-bos-budget-finance,Board of Supervisors — Budget and Finance Committee,Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
 civ-bos-psns,Board of Supervisors — Public Safety and Neighborhood Services Committee,Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
-civ-bos-rules,Board of Supervisors — Rules Committee,Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
+civ-bos-rules,Board of Supervisors — Rules Committee,Civic meeting,unverified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 civ-board-of-appeals,Board of Appeals,Civic meeting,verified,sf.gov,https://www.sf.gov/departments--board-appeals,dates;cost,,"VERIFIED_BUT_BLANK:dates,cost"
 civ-assessment-appeals,Assessment Appeals Boards 1–3,Civic meeting,verified,sf.gov,https://www.sf.gov/departments--assessment-appeals-board,dates;cost,,"VERIFIED_BUT_BLANK:dates,cost"
 civ-planning,Planning Commission,Civic meeting,verified,sfplanning.org,https://sfplanning.org/public-hearings,dates,,VERIFIED_BUT_BLANK:dates
@@ -189,6 +189,19 @@ spc-informs-2026,INFORMS Annual Meeting 2026,Special - Dated,unverified,moscone.
 spc-semicon-west-2026,SEMICON West 2026,Special - Dated,unverified,moscone.com,https://www.moscone.com/events/semicon-west-2026,schedule;cost,,
 ann-humanx-2026,HumanX 2026 (AI conference),Annual,unverified,moscone.com,https://moscone.com/events/humanx-2026,schedule;cost,,
 rec-sfpl-ai-workshops,"SF Public Library AI workshops, talks & panels",Recurring - Regular schedule,verified,sfpl.org,https://sfpl.org/events,dates,,VERIFIED_BUT_BLANK:dates
+spc-illuminate-reggae-2026-10-18,Crucial Reggae Sundays (Illuminate LIVE),Special - Dated,verified,illuminate.org,https://illuminate.org/event/crucial-reggae-sundays-october-18/,,2026-10-18,
+spc-illuminate-ccs-2026-10-20,Civic Center Soundtrack (Illuminate LIVE),Special - Dated,verified,illuminate.org,https://illuminate.org/event/civic-center-soundtrack-october-20/,,2026-10-20,
+spc-illuminate-midweek-2026-10-21,Midweek Melodies (Illuminate LIVE),Special - Dated,verified,illuminate.org,https://illuminate.org/event/midweek-melodies-october-21/,,2026-10-21,
+spc-illuminate-happyhour-2026-10-23,Friday Happy Hour (Illuminate LIVE),Special - Dated,verified,illuminate.org,https://illuminate.org/event/friday-happy-hour-october-23/,,2026-10-23,
+spc-illuminate-baybeats-2026-10-24,Bay Beats Launch Party at the Bandshell,Special - Dated,verified,illuminate.org,https://illuminate.org/event/bay-beats-at-the-bandshell-october-24/,,2026-10-24,
+spc-illuminate-reggae-2026-10-25,"Crucial Reggae Sundays, October 25 (Illuminate LIVE)",Special - Dated,verified,illuminate.org,https://illuminate.org/event/crucial-reggae-sundays-october-25/,,2026-10-25,
+spc-illuminate-halloween-2026-10-31,Halloween at the Bandshell (Illuminate LIVE),Special - Dated,verified,illuminate.org,https://illuminate.org/event/halloween-at-the-bandshell-october-31/,,2026-10-31,
+spc-family-summit-d1-2026-10-22,District 1 Richmond Family Summit,Special - Dated,verified,sf.gov,https://www.sf.gov/event-20261022-district-1-family-summit,,2026-10-22,
+spc-family-summit-d11-2026-10-29,District 11 Excelsior Family Summit,Special - Dated,verified,sf.gov,https://www.sf.gov/event-20261029-district-11-family-summit-excelsior,,2026-10-29,
+spc-family-summit-d2-2026-11-07,District 2 Marina Family Summit,Special - Dated,verified,sf.gov,https://www.sf.gov/event-20261107-district-2-family-summit,,2026-11-07,
+spc-family-summit-d4-2026-11-14,District 4 Family Summit,Special - Dated,verified,sf.gov,https://www.sf.gov/event-20261114-district-4-family-summit,,2026-11-14,
+spc-family-summit-d3-2026-12-12,District 3 Chinatown Family Summit,Special - Dated,verified,sf.gov,https://www.sf.gov/event-20261212-district-3-family-summit,,2026-12-12,
+spc-sunday-streets-excelsior-2026,Sunday Streets Excelsior 2026,Special - Dated,unverified,sundaystreetssf.com,https://sundaystreetssf.com/sunday-streets-excelsior-2026/,cost,2026-10-18,
 x-w-003,Heart of the City Farmers Market,Recurring - Weekly,verified,hotcfarmersmarket.org,https://hotcfarmersmarket.org/,dates,,VERIFIED_BUT_BLANK:dates
 x-w-005,Fillmore Farmers' Market,Recurring - Weekly,verified,pcfma.org,https://www.pcfma.org/market/fillmore-farmers-market,dates,,VERIFIED_BUT_BLANK:dates
 x-w-006,Noe Valley Farmers Market,Recurring - Weekly,verified,noevalleyfarmersmarket.com,https://www.noevalleyfarmersmarket.com/,dates,,VERIFIED_BUT_BLANK:dates

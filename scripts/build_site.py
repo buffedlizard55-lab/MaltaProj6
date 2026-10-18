@@ -79,6 +79,7 @@ PAGES = [
     ("index.html", "Home", "Dashboard", "home"),
     ("all-events.html", "Full list", "Every entry in one searchable table", "full"),
     ("free-events.html", "Free events", "Entries whose official source explicitly lists free access", "free"),
+    ("paid-events.html", "Paid & unconfirmed", "Paid, mixed, and rows whose official page does not state a price", "paid"),
     ("recurring.html", "Regularly recurring", "Events that happen on a fixed weekly or monthly schedule", "group"),
     ("annual.html", "Annual", "Events that repeat year after year", "group"),
     ("special.html", "Special", "Dated events for 2026–2027", "special"),
@@ -369,6 +370,15 @@ def _has_free_access(event):
     return _is_free_cost(event.get("cost")) or bool(event.get("_free_access_confirmed"))
 
 
+def _is_explicitly_free(event):
+    """True only when the published cost wording is free and not also paid.
+
+    Mixed wording and a blank cost are not treated as free. ``cost_class`` is
+    derived from the row's own cost string; it is never guessed.
+    """
+    return event.get("cost_class") == "free"
+
+
 def _event_date_sort_key(event, today=None):
     next_date = _next_confirmed_date(event, today=today)
     if next_date:
@@ -382,6 +392,8 @@ def by_page(page: str):
     """Rows for a page, filtered by the page's kind."""
     if page == "free-events":
         sel = [e for e in EVENTS if _has_free_access(e)]
+    elif page == "paid-events":
+        sel = [e for e in EVENTS if not _is_explicitly_free(e)]
     elif page == "technology":
         # AI & gaming: rows the dataset tags AI or gaming, wherever they also
         # sit in the subject categories (a library gaming club is a gaming
@@ -398,12 +410,12 @@ def by_page(page: str):
         sel = [e for e in EVENTS if e.get("group") == "special"]
     else:
         sel = [e for e in EVENTS if e.get("category") == page]
-    if page in ("special", "technology", "music", "free-events"):
+    if page in ("special", "technology", "music", "free-events", "paid-events"):
         return sorted(sel, key=_event_date_sort_key)
     return sorted(sel, key=lambda e: (e.get("area", ""), e.get("title", "")))
 
 
-def _summary_row(e, today: date) -> str:
+def _summary_row(e, today: date, id_prefix: str = "summary") -> str:
     """One executive-summary row: event, dates, countdown, cost, where, source."""
     when = _next_confirmed_date(e, today=today)
     span_start, span_end = e.get("date_start", ""), e.get("date_end", "")
@@ -437,7 +449,7 @@ def _summary_row(e, today: date) -> str:
         cost_html = '<span class="na">not confirmed</span>'
     location_html = esc(e["location"]) if e.get("location") else '<span class="na">not confirmed</span>'
     return (
-        f"<tr id='summary-{esc(e['id'])}' class='upcoming-row' data-focus='{esc(focus_key)}'>"
+        f"<tr id='{esc(id_prefix)}-{esc(e['id'])}' class='upcoming-row' data-focus='{esc(focus_key)}'>"
         f"<td data-label='Event'><span class='ev-title'>{esc(e['title'])}</span>{badges}</td>"
         f"<td data-label='Confirmed dates'>{esc(e['dates'])}</td>"
         f"<td data-label='Countdown'>{when_html}</td>"
@@ -448,18 +460,28 @@ def _summary_row(e, today: date) -> str:
     )
 
 
-def executive_summary_rows(events, today: date, limit: int = 14):
-    """The dated rows closest to ``today``, grouped into "when it happens" bands.
+def executive_summary_rows(events, today: date, horizon_days: int = 21):
+    """Free dated rows close to ``today``, grouped into "when it happens" bands.
 
-    Rows whose officially published run already covers today are put in the
-    "today" band even though their published end date is later, so an
-    exhibition that is open right now is not reported as "in 7 days".
+    Only rows whose published cost wording is free are included. Paid rows and
+    rows with no published price are left out; they belong on the paid page.
+    A row already under way stays in the today band. Rows whose next confirmed
+    date is further than ``horizon_days`` away are omitted.
     """
-    candidates = [e for e in events
-                  if e.get("dates") and e.get("timing") != "concluded"
-                  and _next_confirmed_date(e, today=today)]
+    horizon_end = today + timedelta(days=horizon_days)
+    candidates = []
+    for e in events:
+        if not _is_explicitly_free(e) or e.get("timing") == "concluded" or not e.get("dates"):
+            continue
+        when = _next_confirmed_date(e, today=today)
+        if not when:
+            continue
+        span_start, span_end = e.get("date_start", ""), e.get("date_end", "")
+        running = bool(span_start and span_end and span_start <= today.isoformat() <= span_end)
+        if not running and when > horizon_end:
+            continue
+        candidates.append(e)
     candidates.sort(key=lambda e: _event_date_sort_key(e, today=today))
-    candidates = candidates[:limit]
 
     def band(e) -> int:
         span_start, span_end = e.get("date_start", ""), e.get("date_end", "")
@@ -482,6 +504,37 @@ def executive_summary_rows(events, today: date, limit: int = 14):
     for key in sorted(grouped):
         ordered.extend(grouped[key])
     return ordered
+
+
+def _running_or_upcoming(event, today: date) -> bool:
+    if event.get("timing") == "concluded":
+        return False
+    span_start, span_end = event.get("date_start", ""), event.get("date_end", "")
+    if span_start and span_end and span_start <= today.isoformat() <= span_end:
+        return True
+    when = _next_confirmed_date(event, today=today)
+    return bool(when and when >= today)
+
+
+def _focus_grouped_rows(events, today: date, id_prefix: str) -> str:
+    """Free upcoming rows, gaming then music then AI then everything else."""
+    parts = []
+    labels = {"gaming": "Gaming", "music": "Music", "ai": "AI", "other": "Everything else"}
+    for key, _label in FOCUS_LABELS:
+        group = [e for e in events if e.get("focus", "other") == key]
+        group.sort(key=lambda e: _event_date_sort_key(e, today=today))
+        if not group:
+            parts.append(
+                f"<tr class='horizon-row'><td colspan='6'><strong>{esc(labels[key])}</strong>"
+                f"<span class='horizon-blurb'> &mdash; no dated free upcoming entry in this focus</span></td></tr>"
+            )
+            continue
+        parts.append(
+            f"<tr class='horizon-row'><td colspan='6'><strong>{esc(labels[key])}</strong>"
+            f"<span class='horizon-blurb'> &mdash; {len(group)} free upcoming</span></td></tr>"
+        )
+        parts.extend(_summary_row(e, today, id_prefix=id_prefix) for e in group)
+    return "".join(parts)
 
 
 def build_index() -> str:
@@ -556,6 +609,15 @@ def build_index() -> str:
             latest_row_parts.append(_summary_row(e, today))
         free_upcoming += sum(1 for e in grouped[bucket] if _is_free_cost(e.get("cost")))
     latest_rows = "".join(latest_row_parts)
+    free_dated = [e for e in EVENTS if _is_explicitly_free(e) and _running_or_upcoming(e, today)]
+    free_main_rows = _focus_grouped_rows(free_dated, today, "free-main")
+    not_free_today = [e for e in EVENTS
+                      if not _is_explicitly_free(e) and e.get("timing") != "concluded"
+                      and _next_confirmed_date(e, today=today) == today]
+    not_free_today.sort(key=lambda e: e.get("title", "").casefold())
+    not_free_today_rows = "".join(_summary_row(e, today, id_prefix="today-other") for e in not_free_today)
+    paid_preview = [e for e in by_page("paid-events") if _running_or_upcoming(e, today)][:8]
+    paid_preview_rows = "".join(_summary_row(e, today, id_prefix="paid-preview") for e in paid_preview)
 
     focus_blurbs = {
         "gaming": "Video and tabletop gaming, from free library clubs to GDC at Moscone",
@@ -580,18 +642,21 @@ def build_index() -> str:
 
     body = f"""
 <section class="hero">
-  <h1>San Francisco events, sourced and organized</h1>
-  <p class="lede">A curated snapshot of public events inside the City of San Francisco, organized by schedule
-     and category. Browse events that happen <strong>every week or every year</strong>, plus
-     <strong>special and dated</strong> listings, AI and gaming, civic meetings, arts, sports and markets.
-     Entries link to official organizer or government sources; unconfirmed values are left blank.</p>
+  <h1>Free San Francisco events, soonest first</h1>
+  <p class="lede">The main list is <strong>free upcoming events inside the City of San Francisco</strong>,
+     with <strong>gaming, then music, then AI, then everything else</strong>. Paid events, and events whose
+     official page does not state a price, are in a separate section. Weekly and annual programmes stay on
+     their own pages. Every row links to an official source; a price that is not on that page is left blank.</p>
   <p class="coverage-note"><strong>Coverage note:</strong> This is not an exhaustive or live events calendar.
      San Francisco has many venue-level, private and short-notice events that are not captured here. Check the
      <a href="https://www.sf.gov/events/upcoming" target="_blank" rel="noopener">City&#x27;s official events calendar</a>
      and each organizer for current listings and details.</p>
   <div class="hero-actions">
-    <a class="btn" href="all-events.html">Open the full list ({len(EVENTS)})</a>
-    <a class="btn ghost" href="free-events.html">Free events ({free_count})</a>
+    <a class="btn" href="#executive-summary">Free events near today</a>
+    <a class="btn ghost" href="#free-upcoming">Free upcoming list</a>
+    <a class="btn ghost" href="paid-events.html">Paid and unconfirmed</a>
+    <a class="btn ghost" href="all-events.html">Full list ({len(EVENTS)})</a>
+    <a class="btn ghost" href="free-events.html">All free wording ({free_count})</a>
     <a class="btn ghost" href="recurring.html">Recurring</a>
     <a class="btn ghost" href="annual.html">Annual</a>
     <a class="btn ghost" href="special.html">Special</a>
@@ -607,6 +672,55 @@ def build_index() -> str:
   <div class="stat"><span class="stat-n">{sum(1 for e in EVENTS if e.get("timing") == "concluded")}</span><span class="stat-l">concluded editions</span></div>
   <div class="stat"><span class="stat-n">{len(FLAGGED)}</span><span class="stat-l">review items published</span></div>
   <div class="stat"><span class="stat-n">{len({e['source_url'].split('/')[2] for e in EVENTS})}</span><span class="stat-l">distinct official domains</span></div>
+</section>
+
+<section>
+  <h2 id="executive-summary">Executive summary &mdash; free events near today</h2>
+  <p class="count-note">Free events only, earliest first, as of <strong>{today.isoformat()}</strong>.
+     A row is here only when its official source states that admission is free and states a date within
+     21 days, or the published run already covers today. Cost is copied from that page, not guessed.
+     {len(upcoming)} free entries are in this window. Paid events and rows with no published price are
+     not in this summary.</p>
+  <div class="table-scroll">
+  <table class="data-table summary-table">
+    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Countdown</th><th scope="col">Cost</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
+    <tbody>{latest_rows}</tbody>
+  </table>
+  </div>
+  <p class="note"><a href="#free-upcoming">Full free upcoming list &rarr;</a> &middot;
+     <a href="paid-events.html">Paid and unconfirmed &rarr;</a> &middot;
+     <a href="music.html">Music &rarr;</a> &middot;
+     <a href="technology.html">AI &amp; gaming &rarr;</a></p>
+</section>
+
+<section>
+  <h2 id="free-upcoming">Free upcoming events</h2>
+  <p class="count-note">This is the main section: {len(free_dated)} free events with a confirmed current or future date,
+     grouped gaming, music, AI, then everything else. Within each group the soonest date is first.
+     Recurring free programmes that have no single published date, including library gaming and AI workshops,
+     stay on the <a href="recurring.html">regularly recurring</a>,
+     <a href="technology.html">AI and gaming</a> and <a href="music.html">music</a> pages.</p>
+  <div class="table-scroll">
+  <table class="data-table summary-table">
+    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Countdown</th><th scope="col">Cost</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
+    <tbody>{free_main_rows}</tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2 id="paid-section">Paid and cost not confirmed</h2>
+  <p class="count-note">Separate from the free list. A blank cost means the official page did not state a price;
+     it does not mean the event is free. {len(not_free_today)} of these have a confirmed date of today.</p>
+  {"<div class='table-scroll'><table class='data-table summary-table'><thead><tr><th scope='col'>Event</th><th scope='col'>Confirmed dates</th><th scope='col'>Countdown</th><th scope='col'>Cost</th><th scope='col'>Where</th><th scope='col'>Official source</th></tr></thead><tbody>" + not_free_today_rows + "</tbody></table></div>" if not_free_today_rows else "<p class='count-note'>No dated non-free event is confirmed for today.</p>"}
+  <h3>Next dated rows that are not free</h3>
+  <div class="table-scroll">
+  <table class="data-table summary-table">
+    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Countdown</th><th scope="col">Cost</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
+    <tbody>{paid_preview_rows or "<tr><td colspan='6'>No dated non-free rows.</td></tr>"}</tbody>
+  </table>
+  </div>
+  <p class="note"><a href="paid-events.html">Open the full paid and unconfirmed list &rarr;</a></p>
 </section>
 
 <section>
@@ -631,26 +745,6 @@ def build_index() -> str:
       <tbody>{area_rows}</tbody>
     </table>
   </div>
-</section>
-
-<section>
-  <h2 id="executive-summary">Executive summary &mdash; what is coming up</h2>
-  <p class="count-note">The dated entries closest to today, earliest first, as of <strong>{today.isoformat()}</strong>.
-     Grouped by how soon they happen. Cost is shown exactly as the official source words it; free access is
-     highlighted and an unconfirmed price is labelled rather than guessed. {free_upcoming} of the
-     {len(upcoming)} entries below are free. Only rows whose official source publishes a confirmed date appear
-     here &mdash; recurring programmes without a stated date are on the
-     <a href="recurring.html">regularly recurring</a> page.</p>
-  <div class="table-scroll">
-  <table class="data-table summary-table">
-    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Countdown</th><th scope="col">Cost</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
-    <tbody>{latest_rows}</tbody>
-  </table>
-  </div>
-  <p class="note"><a href="special.html">See all special events &rarr;</a> &middot;
-     <a href="free-events.html">Free events &rarr;</a> &middot;
-     <a href="music.html">Music &rarr;</a> &middot;
-     <a href="technology.html">AI &amp; gaming &rarr;</a></p>
 </section>
 
 <section>
