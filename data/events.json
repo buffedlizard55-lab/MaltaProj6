@@ -5,7 +5,7 @@
   "verified_on": "2026-10-18",
   "scope": "City and County of San Francisco only",
   "event_count": 205,
-  "flagged_count": 53,
+  "flagged_count": 72,
   "events": [
     {
       "id": "rec-zumba-in-the-parks",
@@ -4298,6 +4298,158 @@
       "source_name": "Parallel session arena-8fb52462 · date inconsistency",
       "source_url": "https://www.baytobreakers.com/",
       "action": "Organiser copy check; no data change needed."
+    },
+    {
+      "id": "xflag-f-035",
+      "title": "Board of Supervisors Land Use & Transportation Committee — start time conflict",
+      "detail": "The Legistar meeting calendar lists the 10/19/2026 committee meeting at 4:30 p.m., while the SFGovTV permanent schedule lists 'Mondays at 1:30PM'. The start time has been left blank on the event row.",
+      "source_name": "Parallel session arena-8fb52462 · start time conflict",
+      "source_url": "https://sfgov.legistar.com/Calendar.aspx",
+      "action": "Confirm the current committee start time with the Clerk of the Board before publishing a time."
+    },
+    {
+      "id": "xflag-f-036",
+      "title": "Board of Supervisors Rules Committee — start time conflict",
+      "detail": "Legistar lists the 10/19/2026 Rules Committee meeting at 1:00 p.m.; the SFGovTV permanent schedule lists 'Mondays at 10:00AM'. Time left blank.",
+      "source_name": "Parallel session arena-8fb52462 · start time conflict",
+      "source_url": "https://sfgov.legistar.com/Calendar.aspx",
+      "action": "Confirm the current Rules Committee start time with the Clerk of the Board."
+    },
+    {
+      "id": "xflag-f-037",
+      "title": "Board of Supervisors Budget and Finance Committee — impossible broadcast time",
+      "detail": "The SFGovTV permanent schedule lists this committee as 'Wednesdays at 12:30AM'. A 12:30 a.m. committee meeting is not credible and looks like a publishing error on the SFGovTV page. The Legistar record shows 10:00 a.m. on 10/21/2026, which is what the event row uses.",
+      "source_name": "Parallel session arena-8fb52462 · impossible broadcast time",
+      "source_url": "https://www.sf.gov/information--sfgovtv-permanent-schedule",
+      "action": "SF.gov should correct the SFGovTV page; event row uses the Legistar time with a note."
+    },
+    {
+      "id": "xflag-f-038",
+      "title": "Assessment Appeals Boards — conflicting start times on two official City pages",
+      "detail": "The sf.gov citywide events calendar lists Assessment Appeals Board 1 on 10/19/2026 at 12:30 p.m. and at 9:30 a.m. on the same date on the Board of Supervisors landing page. Times left blank on the event row.",
+      "source_name": "Parallel session arena-8fb52462 · conflicting start times on two official City pages",
+      "source_url": "https://www.sf.gov/events/upcoming",
+      "action": "Ask the Clerk of the Board which time is current for each Assessment Appeals Board."
+    },
+    {
+      "id": "xflag-f-039",
+      "title": "Recreation and Park Commission — third vs second/fourth Thursday",
+      "detail": "The department's own Meeting Info & Calendar page says the full Commission meets on the third Thursday of every month, and the published 2026 meeting dates (Jun 18, Aug 20, Sep 17, Oct 15) are all third Thursdays. The SFGovTV permanent schedule says '2nd & 4th Thursdays at 10:00AM'. The event row follows the department page.",
+      "source_name": "Parallel session arena-8fb52462 · third vs second/fourth Thursday",
+      "source_url": "https://sfrecpark.org/1744/Meeting-Info-Calendar",
+      "action": "SF.gov should correct the SFGovTV page to match the department's published schedule."
+    },
+    {
+      "id": "xflag-f-040",
+      "title": "Library Commission — two conflicting descriptions of regular meetings",
+      "detail": "The Library Commission Bylaws (Section 4) state regular meetings are held on the third Thursday of each month at 4:30 p.m. A separate SFPL policies page (Article VII) says 'the first Tuesday of each month and on the third Thursday of each month ... at 4:00 p.m.'",
+      "source_name": "Parallel session arena-8fb52462 · two conflicting descriptions of regular meetings",
+      "source_url": "https://sfpl.org/about-us/library-commission/policies/library-commission-bylaws",
+      "action": "SFPL should reconcile Article VII with the Bylaws, or confirm which applies."
+    },
+    {
+      "id": "xflag-f-041",
+      "title": "Bay to Breakers — date conflict on the organiser's own page",
+      "detail": "The official site page title reads 'May 16, 2027' while body copy on the same page still refers to 'May 18'. The date recorded is May 16, 2027, taken from the page title.",
+      "source_name": "Parallel session arena-8fb52462 · date conflict on the organiser's own page",
+      "source_url": "https://www.baytobreakers.com/",
+      "action": "Re-check the date on the organiser's site closer to the event; the body copy appears to be out of date."
+    },
+    {
+      "id": "xflag-f-042",
+      "title": "SFFILM Festival — two different 2026 date ranges on the organiser's site",
+      "detail": "The festival event page and homepage give April 24-May 4, 2026, while the submission pages give April 23-May 3, 2026. The row uses April 24-May 4, 2026 from the festival's own event page.",
+      "source_name": "Parallel session arena-8fb52462 · two different 2026 date ranges on the organiser's site",
+      "source_url": "https://sffilm.org/event/69th-san-francisco-international-film-festival/",
+      "action": "SFFILM should align the submission pages with the festival page."
+    },
+    {
+      "id": "xflag-f-043",
+      "title": "San Francisco Dragon Boat Festival — venue changed from Treasure Island to Lake Merced",
+      "detail": "The long-running San Francisco International Dragon Boat Festival was held on Treasure Island until 2015 and went on indefinite hiatus. The 2026 revival was staged at Lake Merced. The row reflects the 2026 Lake Merced location.",
+      "source_name": "Parallel session arena-8fb52462 · venue changed from Treasure Island to Lake Merced",
+      "source_url": "https://www.dragonboatsf.com/",
+      "action": "Confirm the 2027 venue before the next annual update."
+    },
+    {
+      "id": "xflag-f-044",
+      "title": "TreasureFest — no confirmed San Francisco date",
+      "detail": "TreasureFest was not invited back to Treasure Island and its official site now says it is 'scouting our next location in the Bay Area'. No San Francisco date is confirmed, so every value on the row is blank.",
+      "source_name": "Parallel session arena-8fb52462 · no confirmed San Francisco date",
+      "source_url": "https://www.treasurefest.com/",
+      "action": "Re-check the organiser's site; re-add the event if a San Francisco date is announced."
+    },
+    {
+      "id": "xflag-f-045",
+      "title": "How Weird Street Faire — event ended after 25 years (excluded from the list)",
+      "detail": "The official site states 'Twenty-five years of costumes, sound systems and dancing in the middle of Howard Street. The Faire is done.' The event ran 2000-2024 and is therefore excluded from the recurring and annual listings, and recorded here for transparency.",
+      "source_name": "Parallel session arena-8fb52462 · event ended after 25 years (excluded from the list)",
+      "source_url": "https://howweird.org/",
+      "action": "None — permanently discontinued by the organiser. Listed here so the omission is visible."
+    },
+    {
+      "id": "xflag-f-046",
+      "title": "San Francisco 49ers — home games are outside the City (excluded from the list)",
+      "detail": "The 49ers play every home game at Levi's Stadium, 4900 Marie P. DeBartolo Way, Santa Clara, which is not within the City of San Francisco. The team is therefore excluded from the San Francisco-only listings.",
+      "source_name": "Parallel session arena-8fb52462 · home games are outside the City (excluded from the list)",
+      "source_url": "https://levisstadium.com/",
+      "action": "None — out of scope for a city-limits-only list. Recorded for transparency."
+    },
+    {
+      "id": "xflag-f-047",
+      "title": "Alcatraz Island — closed for dock repairs from October 26, 2026",
+      "detail": "The National Park Service has scheduled Alcatraz Island to close temporarily from October 26, 2026 to approximately November 18, 2026 while crews replace dock pilings. The island is otherwise open with daily tours.",
+      "source_name": "Parallel session arena-8fb52462 · closed for dock repairs from October 26, 2026",
+      "source_url": "https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm",
+      "action": "Re-check the reopening date when publishing the next update."
+    },
+    {
+      "id": "xflag-f-048",
+      "title": "Castro Menorah Lighting — date conflict on the organiser's own site",
+      "detail": "The Castro Merchants Association events calendar lists the Castro Menorah Lighting on Monday, December 7, 2026, but the event description text says 'on Monday, December 15 at 6 PM'. The row uses the calendar date, December 7, 2026.",
+      "source_name": "Parallel session arena-8fb52462 · date conflict on the organiser's own site",
+      "source_url": "https://castromerchants.com/events",
+      "action": "Confirm the date with the Castro Merchants Association."
+    },
+    {
+      "id": "xflag-f-049",
+      "title": "Mission Community Market — seasonal, and only two of three Foodwise markets are year-round",
+      "detail": "Foodwise operates three markets: Ferry Plaza (year round), Alemany (year round) and Mission Community Market (March-November only). The Mission market is flagged because its season differs from the other two.",
+      "source_name": "Parallel session arena-8fb52462 · seasonal, and only two of three Foodwise markets are year-round",
+      "source_url": "https://foodwise.org/markets/",
+      "action": "None — the season is stated by the operator. Listed for review because it is easy to misread as year-round."
+    },
+    {
+      "id": "xflag-f-050",
+      "title": "Human Rights Commission — meeting cadence not published",
+      "detail": "The official Human Rights Commission page lists individual meetings (the next listed is October 8, 2026 at 5:00 p.m.) but does not state a regular meeting cadence, so the frequency field is blank.",
+      "source_name": "Parallel session arena-8fb52462 · meeting cadence not published",
+      "source_url": "https://www.sf.gov/departments--human-rights-commission",
+      "action": "Ask the Commission for its regular meeting schedule and add it to the row."
+    },
+    {
+      "id": "xflag-f-051",
+      "title": "Larsen Pickleball Complex — street address not published",
+      "detail": "The official Rec & Park news release announcing the complex does not publish a street address, so the address field on the event row is blank.",
+      "source_name": "Parallel session arena-8fb52462 · street address not published",
+      "source_url": "https://sfrecpark.org/m/newsflash/home/detail/1544",
+      "action": "Look up the address on the Rec & Park facilities page and complete the row."
+    },
+    {
+      "id": "xflag-f-052",
+      "title": "SF Music Week — no dedicated official programme page located",
+      "detail": "SF Music Week is referenced on an official sf.gov news release as 'the City's second annual SF Music Week', but no dedicated official programme page with dates, venues or organisers was found. The row is left with dates and cost blank.",
+      "source_name": "Parallel session arena-8fb52462 · no dedicated official programme page located",
+      "source_url": "https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park",
+      "action": "Locate the official SF Music Week programme page before the next update."
+    },
+    {
+      "id": "xflag-f-053",
+      "title": "Golden State Valkyries — 2026-27 home fixtures not verified",
+      "detail": "The Valkyries play at Chase Center in San Francisco, but the 2026-27 home fixture list was not confirmed against an official schedule page during this pass, so the dates field is blank.",
+      "source_name": "Parallel session arena-8fb52462 · 2026-27 home fixtures not verified",
+      "source_url": "https://www.wnba.com/valkyries/schedule",
+      "action": "Verify the 2026-27 home schedule against the WNBA site and complete the row."
     }
   ]
 }
