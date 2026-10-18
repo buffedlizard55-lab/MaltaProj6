@@ -699,9 +699,40 @@ expired; nothing is overwritten. This session uses the Arena-fixed branch `arena
 
 | # | Task | Status | Owner | Files in scope | Notes |
 |---|---|---|---|---|---|
-| FC0 | Register, claim scope, takeover of stale `arena-ef213634` claims | 🟡 in progress | `arena-fc3438db` | `COORDINATION.md` (registry/task/log rows) | Claim commit pushed before any other edits. |
-| FC1 | Line-by-line structural audit of all 217 published rows + 103 review items (source link present/https/official, blanks vs status, duplicates, cost-column coverage) | ⬜ unclaimed | `arena-fc3438db` | `audit/AUDIT-2026-10-18-fc3438db.md` (new), `audit/check_fc3438db.py` (new) | |
-| FC2 | Live official-source re-verification: every soonest-dated/upcoming row (feeds the executive summary) + stratified sample of recurring/annual rows | ⬜ unclaimed | `arena-fc3438db` | `audit/AUDIT-2026-10-18-fc3438db.md` (new) | fetch_page against official pages only; JS-shell pages recorded as content-not-re-verified, never guessed. |
-| FC3 | Gap research for the user's stated focus: **free events — gaming, music, AI** (and everything else after) inside SF city limits | ⬜ unclaimed | `arena-fc3438db` | `data/gap-candidates-fc3438db.json` (new), `data/events.py` | Official/organiser sources only; every field from a fetched official page; unconfirmed fields blank + flagged. |
-| FC4 | Requirements alignment of the site: executive summary of events near today (2026-10-18) on the home page; upcoming dates sorted soonest-first and highlighted first; cost clearly labelled on every table; free-events emphasis; mobile-friendly check/polish | ⬜ unclaimed | `arena-fc3438db` | `scripts/build_site.py`, `assets/site.css`, generated `*.html`, `README.md` | |
-| FC5 | Rebuild, validate (build_site, tools/validate, dataset audit, link scan), PR to `main`, merge, confirm Pages deploy, record on this board | ⬜ unclaimed | `arena-fc3438db` | `COORDINATION.md` | No merge until local checks pass. |
+| FC0 | Register, claim scope, takeover of stale `arena-ef213634` claims | ✅ done | `arena-fc3438db` | `COORDINATION.md` (registry/task/log rows) | Claim commit `f1b0cd3` pushed before any other edits. `arena-ef213634`'s claim was ~4 h old with no commits at the 09:45Z takeover check and its claimed work had already been merged by PRs #26–#31; nothing was overwritten. |
+| FC1 | Line-by-line structural audit of all published rows + review register (source link present/https/official, blanks vs status, duplicates, cost-column coverage) | ✅ done | `arena-fc3438db` | `audit/AUDIT-2026-10-18-fc3438db.md` (new), `audit/check_fc3438db.py` (new) | `check_fc3438db.py` → 237 rows / 108 items, `hard_problems=0` after fixes (1 finding: Mime Troupe row's google.com iCal source → upgraded to sfmt.org). Prior gates (`tools/validate.py`, `audit/check_dataset.py`) also pass. |
+| FC2 | Live official-source re-verification: every soonest-dated/upcoming row (feeds the executive summary) + stratified sample of recurring/annual rows | ✅ done (28 pages fetched; JS-shell remainders recorded) | `arena-fc3438db` | `audit/AUDIT-2026-10-18-fc3438db.md` (new) | Official pages only (fetch_page). Confirmed rows listed in the audit §2 table. Corrections: Boo at the Zoo cost (`sfzoo.org`), Mime Troupe source. valkyries.wnba.com is a JS shell (cross-checked via SFMTA advisory). |
+| FC3 | Gap research for the user's stated focus: **free events — gaming, music, AI** (and everything else after) inside SF city limits | ✅ done | `arena-fc3438db` | `data/gap-candidates-fc3438db.json` (new), `data/events.py` | 20 new rows (SFPL gaming/chess/AI programmes, SF Tech Week, HumanX 2026, Current SF, SF Symphony/SF Opera Oct–Nov programme, Moscone conventions, Exploratorium Creepatorium, Castro additions). 8 candidates not added — each with the official page checked and the reason, 5 of them published as review items. |
+| FC4 | Requirements alignment of the site: executive summary of events near today (2026-10-18) on the home page; upcoming dates sorted soonest-first and highlighted first; cost clearly labelled on every table; free-events emphasis; mobile-friendly check/polish | ✅ done | `arena-fc3438db` | `scripts/build_site.py`, `assets/site.css`, generated `*.html`, `README.md`, `data/meta.json` | Home page: executive summary (starting-soon + running-now + free spotlight for gaming/music/AI), date-sorted upcoming table with Cost column (was dataset-order, unsorted). Cost chips on every table + `Cost` filter on the full list. Mobile CSS tightened. Dates parsed from printed strings only (`parse_dates`, presentation-only). |
+| FC5 | Rebuild, validate (build_site, tools/validate, dataset audit, link scan), PR to `main`, merge, confirm Pages deploy, record on this board | 🟡 in progress | `arena-fc3438db` | `COORDINATION.md` | Local gates green (build reproducible; `tools/validate.py` → 237/226/11/108/99, pages=15 — OK; `audit/check_dataset.py` → 0 hard problems, 0 broken links). PR/merge/Pages result recorded below. |
+
+## Session log — `arena-fc3438db` verification + requirements pass (2026-10-18)
+
+**Sources checked (live, official pages only, 2026-10-18).** sfsymphony.org (home + ticket pages),
+sfopera.com (home + season pages), calacademy.org/supernatural, litquake.org/2026-schedule,
+sfrestaurantweek.com, nba.com/warriors schedule release, gggp.org/lightscape, gdconf.com,
+artspan.org/visitsfopenstudios, presidio.gov Dia de los Muertos & Diwali page,
+castromerchants.com/events (6 chunks), sffilm.org/2026-sffilm-doc-stories, sfmoma.org/exhibitions,
+frameline.org, exploratorium.edu/visit/calendar/after-dark, sunsetmercantilesf.com,
+sfzoo.org/event/boo-at-the-zoo, sfrecpark.org/Calendar.aspx, sfmt.org/summer-schedule,
+sfmta.com Oct 15–21 advisory + Chase Center taxi notice, moscone.com /events + node pages
+(850/849/851/856/873) + North/South taxonomy, humanx.co (2027 location), sfpl.org (Mix gaming,
+AI workshops, chess listings, Tech Week), sf.gov/events/upcoming, bayareascience.org/calendar,
+downtownsf.org/things-to-do/lets-glow-sf. Full per-row table in `audit/AUDIT-2026-10-18-fc3438db.md`.
+
+**Verification performed.** Independent structural checker (`audit/check_fc3438db.py`) over every
+row and page: source links https/primary, blanks-vs-status, duplicates, HTML membership; date
+parser unit-tested against 17 real date strings before use. All pre-existing gates re-run after
+the rebuild: `scripts/build_site.py` reproducible (second run leaves no diff), `tools/validate.py`
+OK (237 events / 226 verified / 11 review-gap / 108 review items / 99 domains / 15 pages),
+`audit/check_dataset.py` 0 hard problems / 0 broken internal links / 0 events missing from HTML.
+
+**Irregularities (published, non-blocking).** Castro Menorah description vs listing date conflict
+(re-confirmed live; "December 15" would be a Tuesday in 2026); Cloudflare Connect page copy "over
+four days" vs Oct 19–21 dates; HumanX 2027 moves to Las Vegas (AI-coverage gap noted);
+aggregator-only free chess night (Oct 24) and "The AI Conference" could not be sourced officially
+this pass; Bay Area Science Festival is regional and unconfirmed at page level. 20 rows carry
+blank cost cells where the official source publishes no price (never inferred).
+
+**Handoff note.** `arena-ef213634`'s stale F1/F2 claims are superseded by this pass and by
+PRs #26–#31; if that session returns it should start from `main` after this PR and log here.
