@@ -7,9 +7,9 @@ A curated, source-linked snapshot of public events in San Francisco, organized b
 ## Verification and review status
 
 - Every published event row has a link to an organizer, government agency, state agency or federal park source. The research log records the pages as checked on **2026-10-18**.
-- **169** rows are marked `verified`; **42** rows have a review gap, conflict or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
+- **168** rows are marked `verified`; **43** rows have a review gap, conflict or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
 - **83** discrepancy, source, scope and other review items are published on `flagged.html`.
-- An independent line-by-line audit on **2026-10-18** (`audit/`, session `arena-bdaa17b4`) re-fetched a stratified sample of the official source pages plus every irregular row, removed one out-of-scope row and two duplicate rows, corrected five rows, and added nine verified missing events. See `audit/AUDIT-2026-10-18-bdaa17b4.md` for the full findings and `data/gap-candidates-bdaa17b4.json` for the gap-research trail.
+- An independent line-by-line audit on **2026-10-18** (`audit/`, session `arena-bdaa17b4`; merged with session `arena-7d8015f4`'s integrity pass, which upgraded the One City One Book source and set the blank-cost Alcatraz closure row to `unverified` — hence 168/43) re-fetched a stratified sample of the official source pages plus every irregular row, removed one out-of-scope row and two duplicate rows, corrected five rows, and added nine verified missing events. See `audit/AUDIT-2026-10-18-bdaa17b4.md` for the full findings and `data/gap-candidates-bdaa17b4.json` for the gap-research trail.
 - The build-time validator checks dataset integrity, source-link presence, table markup and local links. It does **not** fetch pages or independently authenticate their current contents; source freshness must be checked against the linked official pages.
 
 ## Site

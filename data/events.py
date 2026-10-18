@@ -141,9 +141,9 @@ EVENTS = [
         schedule="Annual citywide reading programme with branch programming",
         dates="", location="All SF Public Library branches + Main Library", area="Citywide",
         cost="Free", organiser="San Francisco Public Library",
-        source_name="SF Public Library — One City One Book",
-        source_url="https://sfpl.org/onecityonebook", status="verified",
-        notes="Selection for the current cycle is not stated on the landing page — left blank rather than inferred."),
+        source_name="SF Public Library — One City One Book: Awake in the Floating City",
+        source_url="https://sfpl.org/books-and-media/read/awake-floating-city", status="verified",
+        notes="The official page promotes the 2026 selection, Awake in the Floating City; this recurring-program row does not infer cycle-specific dates."),
     dict(
         id="rec-presidio-habitat-stewards", title="Presidio Habitat Stewards (volunteer work party)",
         page="recurring", type="Recurring - Weekly",
@@ -1113,8 +1113,8 @@ EVENTS += [
         location="Alcatraz Island, Golden Gate National Recreation Area", area="Bay (Alcatraz)",
         cost="", organiser="National Park Service",
         source_name="NPS — Alcatraz Island to Temporarily Close for Dock Repairs This Fall",
-        source_url="https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm", status="verified",
-        notes="Flagged: a regularly visitable San Francisco landmark is closed for part of the period. Cost field left blank (not stated)."),
+        source_url="https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm", status="unverified",
+        notes="The NPS confirms the closure dates; admission cost is not stated on the source and remains blank. The closure is also listed in Flagged for review."),
 ]
 
 EVENTS += [

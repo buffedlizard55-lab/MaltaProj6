@@ -10,7 +10,7 @@ rec-sf-shakes-free-shakespeare,Free Shakespeare in the Park — Antony & Cleopat
 rec-sfpl-storytime,SF Public Library Storytime (branch programmes),Recurring - Weekly,verified,sfpl.org,https://sfpl.org/kids/kids/events/storytime-sfpl,dates,,VERIFIED_BUT_BLANK:dates
 rec-sfpl-author-readings,"SF Public Library author readings, talks & lectures",Recurring - Monthly,verified,sfpl.org,https://sfpl.org/events/calendar,dates,,VERIFIED_BUT_BLANK:dates
 rec-sfpl-summer-stride,SFPL Summer Stride (all-ages summer reading challenge),Recurring - Annual,verified,sfpl.org,https://sfpl.org/releases/2026/05/26/san-francisco-public-librarys-all-ages-summer-challenge-returns,,2026-08-31,
-rec-sfpl-one-city-one-book,One City One Book,Recurring - Annual,verified,sfpl.org,https://sfpl.org/onecityonebook,dates,,VERIFIED_BUT_BLANK:dates
+rec-sfpl-one-city-one-book,One City One Book,Recurring - Annual,verified,sfpl.org,https://sfpl.org/books-and-media/read/awake-floating-city,dates,,VERIFIED_BUT_BLANK:dates
 rec-presidio-habitat-stewards,Presidio Habitat Stewards (volunteer work party),Recurring - Weekly,verified,presidio.gov,https://presidio.gov/explore/events,dates,,VERIFIED_BUT_BLANK:dates
 rec-presidio-yoga,Free Yoga in the Park (Presidio),Recurring - Weekly,verified,presidio.gov,https://presidio.gov/explore/events,dates,,VERIFIED_BUT_BLANK:dates
 rec-presidio-ranger-programs,"Presidio ranger talks, campfire talks and guided walks",Recurring - Regular schedule,verified,presidio.gov,https://presidio.gov/explore/events,dates,,VERIFIED_BUT_BLANK:dates
@@ -110,7 +110,7 @@ spc-castro-halloween,Halloween in The Castro,Special - Dated,verified,castromerc
 spc-castro-holiday-tree,Castro Holiday Tree Lighting Ceremony,Special - Dated,verified,castromerchants.com,https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023,,2026-11-30,
 spc-castro-menorah,Castro Menorah Lighting,Special - Dated,verified,castromerchants.com,https://castromerchants.com/events/castro-menorah-lighting,,2026-12-07,
 spc-castro-art-walk,Castro Art Walk (first Friday of the month),Special - Dated,verified,castromerchants.com,https://castromerchants.com/events,,2026-12-04,
-spc-alcatraz-closure,Alcatraz Island temporary closure (dock repairs),Special - Dated,verified,nps.gov,https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm,schedule;cost,2026-11-18,"VERIFIED_BUT_BLANK:schedule,cost"
+spc-alcatraz-closure,Alcatraz Island temporary closure (dock repairs),Special - Dated,unverified,nps.gov,https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm,schedule;cost,2026-11-18,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 art-deyoung,de Young Museum,Attraction - Open regularly,verified,famsf.org,https://www.famsf.org/visit/de-young,dates,,VERIFIED_BUT_BLANK:dates
 art-legion-honor,Legion of Honor,Attraction - Open regularly,verified,famsf.org,https://www.famsf.org/visit/legion-of-honor,dates,,VERIFIED_BUT_BLANK:dates
 art-asian-art-museum,Asian Art Museum,Attraction - Open regularly,verified,asianart.org,https://asianart.org/,dates,,VERIFIED_BUT_BLANK:dates
