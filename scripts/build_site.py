@@ -228,7 +228,8 @@ def build_index() -> str:
     for filename, label, blurb, kind in PAGES[1:]:
         if kind == "static":
             continue
-        n = counts.get(filename.replace(".html", ""), 0)
+        key = filename.replace(".html", "")
+        n = len(EVENTS) if key == "all-events" else counts.get(key, 0)
         tiles.append(
             f"""<a class="tile" href="{filename}">
   <span class="tile-n">{n}</span>
