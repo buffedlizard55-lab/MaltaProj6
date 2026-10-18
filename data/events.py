@@ -1695,6 +1695,8 @@ EVENTS += [
         organiser="San Francisco Public Library (The Mix)",
         source_name="San Francisco Public Library — Gaming at The Mix",
         source_url="https://sfpl.org/teens/the-mix/gaming", status="verified",
+        additional_sources=[{"name": "SFPL — The Mix (open hours, spaces and address)", "url": "https://sfpl.org/teens/the-mix"}, {"name": "SFPL LibAnswers — 'All activities and services at The Mix are free'", "url": "https://sfpl.libanswers.com/faq/212997"}],
+
         notes="Added 2026-10-18 by session arena-61a46409 from the library's own page, which states: 'Come in and play video games or tabletop gaming with friends! Teens can check out controllers with their library card, and our staff will set them up with a console. If tabletop gaming is more your style, we offer sessions of D&D led by teen interns or professional DMs, along with a wide selection of traditional board games and new RPGs. The Mix also hosts monthly gaming tournaments, giving you the chance to compete against your friends and the librarians.' The Mix is for ages 12-18; open hours are taken from https://sfpl.org/teens/the-mix, which also lists Gaming (PS5, Nintendo Switch or Meta Quest 2) among its spaces."),
     dict(
         id="rec-sfpl-gaming-citywide", title="San Francisco Public Library gaming programmes (board games, chess, D&D, mahjong, bocce)",
@@ -1706,6 +1708,8 @@ EVENTS += [
         organiser="San Francisco Public Library",
         source_name="San Francisco Public Library — Upcoming Events, Gaming topic filter",
         source_url="https://sfpl.org/events?field_event_topic_target_id=553", status="verified",
+        additional_sources=[{"name": "SFPL — Upcoming Events index ('All programs and events are free and open to the public.')", "url": "https://sfpl.org/events"}],
+
         notes="Added 2026-10-18 by session arena-61a46409. The library's own filtered Gaming calendar returned 84 upcoming results on that date. Named recurring strands visible on the official listing include Activity: Chess Club (Ingleside, Excelsior, Richmond, Bernal Heights), Activity: Horrified: Dungeons & Dragons (Presidio), Activity: Bocce Ball for adults and older adults (North Beach), Activity: LEGO Robotics (Richmond), Social: Afternoon Board Games (Sunset), Workshop: Mahjong for Beginners (Sunset), Social: Puzzle Swap (Noe Valley), Social: Gaming Hour (Bayview) and Social: Family Game Night. The library states on its events index that 'All programs and events are free and open to the public.' Individual session dates and times are only published on the rolling calendar, so no session-level date is asserted here."),
     dict(
         id="rec-sfpl-mix-music-studios", title="The Mix at SFPL — free music and media production studios for teens",
@@ -1717,6 +1721,8 @@ EVENTS += [
         organiser="San Francisco Public Library (The Mix)",
         source_name="San Francisco Public Library — The Mix",
         source_url="https://sfpl.org/teens/the-mix", status="verified",
+        additional_sources=[{"name": "SFPL LibAnswers — 'All activities and services at The Mix are free'", "url": "https://sfpl.libanswers.com/faq/212997"}],
+
         notes="Added 2026-10-18 by session arena-61a46409 from the library's own page, which describes 'Two media production studios where teens can play musical instruments and produce, record, edit, and save music, videos, and podcasts.' The Mix is a 4,770 sq ft teen-designed media space for ages 12-18 at 100 Larkin Street, 2nd Floor; contact 415-557-4404 / themix@sfpl.org. The library states all programmes and events are free and open to the public."),
     dict(
         id="rec-sfpl-dance-music", title="San Francisco Public Library dance and music programmes",
@@ -1728,6 +1734,8 @@ EVENTS += [
         organiser="San Francisco Public Library",
         source_name="San Francisco Public Library — Upcoming Events, Dance & Music topic filter",
         source_url="https://sfpl.org/events?field_event_topic_target_id=452", status="verified",
+        additional_sources=[{"name": "SFPL — Upcoming Events index ('All programs and events are free and open to the public.')", "url": "https://sfpl.org/events"}],
+
         notes="Added 2026-10-18 by session arena-61a46409. The library's own filtered Dance & Music calendar returned 104 upcoming results on that date. Named programmes visible on the official listing include Performance: Mariela's Music Time (Presidio), Social: Monday Fun Day Family Dance Party (Glen Park) and teen Audio & Video Production sessions (Main). The library states on its events index that 'All programs and events are free and open to the public.' Individual session dates and times are only published on the rolling calendar, so no session-level date is asserted here."),
 
     # --- AI ------------------------------------------------------------
@@ -2226,6 +2234,13 @@ FLAGGED = [
             {"name": "SFPL — Upcoming Events, Dance & Music topic filter", "url": "https://sfpl.org/events?field_event_topic_target_id=452"},
         ],
         action="Read the specific session date and time off the library's calendar before travelling; do not back-fill a date into the catalogue."),
+    dict(
+        id="flag-verified-rows-with-blank-core-cell",
+        title="42 rows are marked verified but still carry a blank schedule, location or cost cell",
+        detail="The catalogue has two separate signals and they do not always agree: a blank cell means the official source does not state that value, while the verified / unverified badge means the row's published values were confirmed against the source. A recurring programme can be fully verified while legitimately having no single confirmed date. As of the 2026-10-18 build, 213 rows are marked verified and 42 of them still have at least one blank among schedule, location and cost (13 have a blank cost). Separately, 107 rows publish no day-level date at all, which is expected for weekly and open-ended programmes. This is recorded rather than silently changed because re-badging 42 verified rows as unverified would misrepresent them.",
+        source_name="San Francisco Events — generated analysis page",
+        source_url="https://buffedlizard55-lab.github.io/MaltaProj6/analysis.html",
+        action="Decide whether 'verified' should mean 'every value confirmed' or 'every published value confirmed'. Either the rows are re-badged, or the wording on the site is made explicit. The current reading is the second one, and no value has been invented to close a blank."),
     dict(
         id="flag-ai-adjacent-not-tagged",
         title="AI-adjacent conventions are listed but not tagged as AI",

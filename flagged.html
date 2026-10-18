@@ -48,7 +48,7 @@
      the official source involved.</p>
 </section>
 
-<p class="count-note">180 items flagged. Checked 2026-10-18.</p>
+<p class="count-note">181 items flagged. Checked 2026-10-18.</p>
 
 <div class="table-scroll">
 <table class="data-table flag-table">
@@ -418,6 +418,12 @@
   <td data-label="What was found">The four library rows added on 2026-10-18 (Gaming at The Mix, citywide gaming programmes, The Mix music and media studios, and dance and music programmes) are verified from SFPL&#x27;s own pages, which describe a standing programme and point to a rolling events calendar for individual sessions. No session-level date is asserted in the rows, because the official pages publish dates only on that rolling calendar, which changes continuously.</td>
   <td data-label="Action / next step">Read the specific session date and time off the library&#x27;s calendar before travelling; do not back-fill a date into the catalogue.</td>
   <td data-label="Official source"><a href="https://sfpl.org/teens/the-mix/gaming" target="_blank" rel="noopener">San Francisco Public Library — Gaming at The Mix &nearr;</a> · <a href="https://sfpl.org/events?field_event_topic_target_id=553" target="_blank" rel="noopener">SFPL — Upcoming Events, Gaming topic filter &nearr;</a> · <a href="https://sfpl.org/events?field_event_topic_target_id=452" target="_blank" rel="noopener">SFPL — Upcoming Events, Dance &amp; Music topic filter &nearr;</a></td>
+</tr>
+<tr id="flag-verified-rows-with-blank-core-cell">
+  <td class="flag-title" data-label="Item">42 rows are marked verified but still carry a blank schedule, location or cost cell</td>
+  <td data-label="What was found">The catalogue has two separate signals and they do not always agree: a blank cell means the official source does not state that value, while the verified / unverified badge means the row&#x27;s published values were confirmed against the source. A recurring programme can be fully verified while legitimately having no single confirmed date. As of the 2026-10-18 build, 213 rows are marked verified and 42 of them still have at least one blank among schedule, location and cost (13 have a blank cost). Separately, 107 rows publish no day-level date at all, which is expected for weekly and open-ended programmes. This is recorded rather than silently changed because re-badging 42 verified rows as unverified would misrepresent them.</td>
+  <td data-label="Action / next step">Decide whether &#x27;verified&#x27; should mean &#x27;every value confirmed&#x27; or &#x27;every published value confirmed&#x27;. Either the rows are re-badged, or the wording on the site is made explicit. The current reading is the second one, and no value has been invented to close a blank.</td>
+  <td data-label="Official source"><a href="https://buffedlizard55-lab.github.io/MaltaProj6/analysis.html" target="_blank" rel="noopener">San Francisco Events — generated analysis page &nearr;</a></td>
 </tr>
 <tr id="flag-ai-adjacent-not-tagged">
   <td class="flag-title" data-label="Item">AI-adjacent conventions are listed but not tagged as AI</td>
