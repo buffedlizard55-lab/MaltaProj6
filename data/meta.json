@@ -3,14 +3,14 @@
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 217,
-    "recurring": 115,
+    "total": 225,
+    "recurring": 119,
     "annual": 55,
-    "special": 47,
-    "flagged_rows": 103,
-    "unverified_rows": 11,
-    "concluded_rows": 42,
-    "sources": 97
+    "special": 51,
+    "flagged_rows": 106,
+    "unverified_rows": 76,
+    "concluded_rows": 43,
+    "sources": 101
   },
   "pages": [
     "all-events.html",

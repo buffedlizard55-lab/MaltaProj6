@@ -1,0 +1,260 @@
+{
+  "checked_at_utc": "2026-10-18",
+  "session": "arena-91296e94",
+  "base_commit": "56eda46 (217 events, main after PR #31)",
+  "purpose": "N3 gap research focused on the project brief's free gaming / music / AI priority, plus the near-term verification corrections found during N2. Every value below comes from a page fetched from the organiser's or venue's own domain on 2026-10-18. Unconfirmable values are blank with the reason recorded; nothing is inferred. Search results were used only to locate official URLs.",
+  "candidates": [
+    {
+      "candidate_id": "g9-001",
+      "decision": "propose_verified_add",
+      "row": {
+        "id": "spc-techcrunch-disrupt-2026",
+        "title": "TechCrunch Disrupt 2026",
+        "type": "Special - Dated",
+        "timing": "concluded",
+        "schedule": "Three-day conference (October 13-15, 2026); the 2026 edition has concluded and the organiser's page now invites the 2027 waitlist",
+        "dates": "October 13-15, 2026 (concluded)",
+        "location": "Moscone West, 800 Howard Street, San Francisco",
+        "area": "SoMa",
+        "cost": "Standard passes: Attendee $1,049; Founder $1,099; Investor $1,199; Non-Profit $499; Student $399; Expo+ $349 (late-discount prices of $262/$275/$300/$125/$100/$87 were live on the final day)",
+        "organiser": "TechCrunch",
+        "source_name": "TechCrunch — Disrupt 2026 (event and tickets pages)",
+        "source_url": "https://techcrunch.com/events/techcrunch-disrupt/",
+        "status": "verified",
+        "notes": "Added 2026-10-18 by session arena-91296e94. Dates, venue (Moscone West, 800 Howard St) and pass prices are from the organiser's own event and tickets pages (the site sits behind a Cloudflare browser check for plain fetches; content was retrieved). 10,000+ attendees; AI-heavy speaker programme (Hugging Face, Cerebras, Replit, Amazon). Closes the catalogue's biggest AI-conference gap alongside Dreamforce and RSAC."
+      },
+      "evidence": [
+        {"url": "https://techcrunch.com/events/techcrunch-disrupt/", "supports": "Official event page; now shows the 2027 waitlist and the 2026 speaker programme."},
+        {"url": "https://techcrunch.com/events/techcrunch-disrupt/tickets/", "supports": "Official tickets page: pass types and standard/late pricing; 'October 13 – 15, 2026 — San Francisco'; Moscone West, 800 Howard St."}
+      ]
+    },
+    {
+      "candidate_id": "g9-002",
+      "decision": "propose_verified_add",
+      "row": {
+        "id": "spc-gamesforum-sf-2026",
+        "title": "Gamesforum San Francisco 2026",
+        "type": "Special - Dated",
+        "schedule": "Two-day B2B conference",
+        "dates": "Monday-Tuesday, October 26-27, 2026",
+        "location": "Hotel Nikko San Francisco",
+        "area": "Union Square / Downtown",
+        "cost": "Standard conference pass $239 (early-bird $199 before September 26, 2026; super early-bird $149; group of 3 $203 per person, group of 4+ $167 per person); passes are for mobile-games publishers and developers only",
+        "organiser": "Games Forum Ltd (Gamesforum)",
+        "source_name": "Gamesforum — Our Events / San Francisco / Register",
+        "source_url": "https://www.globalgamesforum.com/san-francisco",
+        "status": "verified",
+        "notes": "Added 2026-10-18 by session arena-91296e94. 'The only dedicated F2P mobile games marketing and monetization event in the US' per the organiser. Speaker preview includes Meta, Google, Zynga, EA, Activision Blizzard Media, Scopely and Xbox Media executives."
+      },
+      "evidence": [
+        {"url": "https://www.globalgamesforum.com/our-events", "supports": "'Gamesforum San Francisco 2026 — 26-27 October 2026 | Hotel Nikko San Francisco'."},
+        {"url": "https://www.globalgamesforum.com/san-francisco", "supports": "Event description, speaker preview, registration and discounted-hotel links."},
+        {"url": "https://www.globalgamesforum.com/san-francisco/register-now", "supports": "Pass pricing: $149 super early bird / $199 early bird / $239 standard; group tiers; 'tickets sales end October 26'."}
+      ]
+    },
+    {
+      "candidate_id": "g9-003",
+      "decision": "propose_verified_add",
+      "row": {
+        "id": "spc-gamesbeat-next-2026",
+        "title": "GamesBeat NEXT 2026 (7th annual)",
+        "type": "Special - Dated",
+        "schedule": "Two-day executive conference (gaming & AI)",
+        "dates": "Monday-Tuesday, November 2-3, 2026",
+        "location": "Convene, San Francisco",
+        "area": "Downtown",
+        "cost": "Conference Pass $899; VIP Pass $1,600 (limited-time $1,200, includes 12 months of GB MAX membership); Indie Pass $499 for freelancers and businesses under 50 employees; complimentary Brand & Agency passes by application",
+        "organiser": "GamesBeat (VentureBeat)",
+        "source_name": "GamesBeat Events — GamesBeat NEXT 2026 / Attend",
+        "source_url": "https://events.gamesbeat.com/next26/",
+        "status": "verified",
+        "notes": "Added 2026-10-18 by session arena-91296e94. 'The 7th annual GamesBeat NEXT returns to the Bay Area on November 2-3, 2026, taking place at Convene in San Francisco' per the organiser. Gaming-legends panel (Nintendo, PlayStation, Sega) and an AI-focused programme. Street address not stated on the organiser pages checked, so the location is recorded as published."
+      },
+      "evidence": [
+        {"url": "https://events.gamesbeat.com/", "supports": "'November 2-3, 2026 — San Francisco, CA — The 7th annual GamesBeat NEXT... taking place at Convene in San Francisco.'"},
+        {"url": "https://events.gamesbeat.com/next26/attend/", "supports": "Pass pricing: Conference $899, VIP $1,600 ($1,200 offer), Indie $499, complimentary Brand & Agency pass by application; BOGO offer ended October 11, 2026."}
+      ]
+    },
+    {
+      "candidate_id": "g9-004",
+      "decision": "propose_verified_add",
+      "row": {
+        "id": "rec-ferry-board-game-night",
+        "title": "Board Game Night (Ferry Building Marketplace)",
+        "type": "Recurring - Weekly",
+        "schedule": "Fridays, 5:00-8:00 p.m.",
+        "dates": "",
+        "location": "Ferry Building Marketplace, public seating area between Book Passage and Cholita Linda, 1 Ferry Building",
+        "area": "Embarcadero / Financial District",
+        "cost": "",
+        "organiser": "Ferry Building Marketplace (with Gamescape SF)",
+        "source_name": "Ferry Building Marketplace — Board Game Night",
+        "source_url": "https://www.ferrybuildingmarketplace.com/events/board-game-night-2/",
+        "status": "verified",
+        "notes": "Added 2026-10-18 by session arena-91296e94. 'Games are provided by the Ferry Building Marketplace' — Scrabble, chess, Monopoly and more with Gamescape SF; grab food and drinks from Ferry Building shops. The official page states no admission charge, so cost is left blank rather than inferred."
+      },
+      "evidence": [
+        {"url": "https://www.ferrybuildingmarketplace.com/events/board-game-night-2/", "supports": "'Fridays 5:00 pm to 8:00 pm'; location between Book Passage and Cholita Linda; games provided."},
+        {"url": "https://www.ferrybuildingmarketplace.com/events/", "supports": "Official events calendar listing (next dates Oct 23 and Oct 30, 2026)."}
+      ]
+    },
+    {
+      "candidate_id": "g9-005",
+      "decision": "propose_verified_add",
+      "row": {
+        "id": "rec-ferry-mahjong",
+        "title": "Mahjong Meetup (Ferry Building Marketplace)",
+        "type": "Recurring - Weekly",
+        "schedule": "Wednesdays, 3:00-7:00 p.m.",
+        "dates": "",
+        "location": "Ferry Building Marketplace, across from Delica, 1 Ferry Building",
+        "area": "Embarcadero / Financial District",
+        "cost": "",
+        "organiser": "Ferry Building Marketplace",
+        "source_name": "Ferry Building Marketplace — Mahjong Meetup",
+        "source_url": "https://www.ferrybuildingmarketplace.com/events/mahjong-meetup-1/",
+        "status": "verified",
+        "notes": "Added 2026-10-18 by session arena-91296e94. 'Join us for an afternoon Mahjong meetup every Wednesday from 3-7 PM. All skill levels are welcome!... Sets will be provided'; first-come first-served seating. The official page states no admission charge, so cost is left blank."
+      },
+      "evidence": [
+        {"url": "https://www.ferrybuildingmarketplace.com/events/mahjong-meetup-1/", "supports": "'Wednesdays 3 PM to 7 PM'; Marketplace across from Delica; sets provided."},
+        {"url": "https://www.ferrybuildingmarketplace.com/events/", "supports": "Official events calendar listing (next dates Oct 21 and Oct 28, 2026)."}
+      ]
+    },
+    {
+      "candidate_id": "g9-006",
+      "decision": "propose_verified_add",
+      "row": {
+        "id": "rec-ferry-music-on-the-plaza",
+        "title": "Music on the Plaza (Ferry Building)",
+        "type": "Recurring - Weekly",
+        "schedule": "Thursdays, 5:00-7:00 p.m.",
+        "dates": "",
+        "location": "Ferry Building North Plaza (by Fort Point Beer Garden), 1 Ferry Building",
+        "area": "Embarcadero / Financial District",
+        "cost": "",
+        "organiser": "Ferry Building Marketplace",
+        "source_name": "Ferry Building Marketplace — Music on the Plaza",
+        "source_url": "https://www.ferrybuildingmarketplace.com/events/music-on-the-plaza/",
+        "status": "verified",
+        "notes": "Added 2026-10-18 by session arena-91296e94. 'Kick back and enjoy your Thursday afternoon, accompanied by live performances from our favorite Bay Area musicians.' The official page states no admission charge, so cost is left blank rather than inferred."
+      },
+      "evidence": [
+        {"url": "https://www.ferrybuildingmarketplace.com/events/music-on-the-plaza/", "supports": "'Thursdays, 5:00pm to 7:00pm'; North Plaza by Fort Point Beer Garden; live Bay Area musicians."},
+        {"url": "https://www.ferrybuildingmarketplace.com/events/", "supports": "Official events calendar listing (next dates Oct 22 and Oct 29, 2026)."}
+      ]
+    },
+    {
+      "candidate_id": "g9-007",
+      "decision": "propose_verified_add",
+      "row": {
+        "id": "rec-ferry-monday-yoga",
+        "title": "Monday Yoga at the Ferry Building",
+        "type": "Recurring - Weekly",
+        "schedule": "Every Monday, 12:00-1:00 p.m.",
+        "dates": "",
+        "location": "Ferry Building Back Plaza, 1 Ferry Building",
+        "area": "Embarcadero / Financial District",
+        "cost": "Free (Vinyasa yoga class, per the official calendar listing)",
+        "organiser": "Ferry Building Marketplace",
+        "source_name": "Ferry Building Marketplace — Monday Yoga",
+        "source_url": "https://www.ferrybuildingmarketplace.com/events/monday-yoga/",
+        "status": "verified",
+        "notes": "Added 2026-10-18 by session arena-91296e94. Lunch-hour all-levels vinyasa with headphones provided; bring your own mat; registration link to outdoor-yoga.org on the official page. The events calendar listing titles it 'Monday Yoga — Free Vinyasa Yoga Class'."
+      },
+      "evidence": [
+        {"url": "https://www.ferrybuildingmarketplace.com/events/monday-yoga/", "supports": "'Every Monday 12:00 PM to 1:00 PM'; Back Plaza; headphones provided; bring your own mat."},
+        {"url": "https://www.ferrybuildingmarketplace.com/events/", "supports": "Official events calendar listing: 'Monday Yoga — Free Vinyasa Yoga Class' (next dates Oct 19 and Oct 26, 2026)."}
+      ]
+    },
+    {
+      "candidate_id": "g9-008",
+      "decision": "correction_proposed",
+      "row_id": "x-s-034",
+      "change": "Update the WNBA Finals row: Game 1 (Sat Oct 17) is final with Golden State leading 1-0 (ATL 64 @ GSV 68); Game 2 is Monday, October 19, 2026 at 8:00 p.m. EDT (Atlanta Dream @ Golden State Valkyries) at Chase Center; if the series continues, Games 5 (Mon Oct 26) and 7 (Sat Oct 31) would also be at Chase Center, while Games 3 (Wed Oct 21), 4 (Sat Oct 24) and 6 (Thu Oct 29) are at Atlanta (2-2-1-1-1 format; home team listed last on the team's schedule carousel). Replace the SFMTA-advisory source with the team's official site.",
+      "evidence": [
+        {"url": "https://valkyries.wnba.com/", "supports": "Full Finals schedule with home/away order and tip times; 'WNBA Finals Tickets Available Now... face the Atlanta Dream starting on Saturday, Oct. 17'; Game 1 final ATL 64 @ GSV 68; 'Monday Oct 19 8:00 PM EDT Atlanta Dream @ Golden State Valkyries'."}
+      ]
+    },
+    {
+      "candidate_id": "g9-009",
+      "decision": "correction_proposed",
+      "row_id": "ann-sf-mime-troupe",
+      "change": "Replace the calendar.google.com iCal source_url with the organiser's own page https://www.sfmt.org/full-schedule (linked from /summer-schedule, which carries the 'Download iCal Calendar' link to the same feed). Keep the feed URL in the notes as supporting evidence.",
+      "evidence": [
+        {"url": "https://www.sfmt.org/summer-schedule", "supports": "'THIS IS OUR FULL SCHEDULE OF ALL UPCOMING EVENTS! THIS INCLUDES FREE PARK SHOWS...' with 'Click to Download iCal Calendar' pointing at the same calendar.google.com feed the row cited."}
+      ]
+    },
+    {
+      "candidate_id": "g9-010",
+      "decision": "flag_proposed",
+      "flag_id": "flag-menorah-date-conflict",
+      "detail": "The Castro Merchants' official Menorah Lighting page shows a structured event date of Monday, December 7, 2026 (6:00-7:00 p.m.) but its prose still reads 'on Monday, December 15, at 6 PM' (stale prior-year text; December 15 was a Monday in 2025). The row keeps the structured December 7, 2026 date and publishes the mismatch.",
+      "evidence": [
+        {"url": "https://castromerchants.com/events/castro-menorah-lighting", "supports": "Structured date 'Monday, December 7, 2026, 6:00 PM 7:00 PM' vs prose 'Monday, December 15, at 6 PM'."}
+      ]
+    },
+    {
+      "candidate_id": "g9-011",
+      "decision": "not_added",
+      "title": "Castro Wine Walk (December 17, 2026, 6-9 p.m., ticketed via Eventbrite)",
+      "reason": "Small merchant-association ticketed evening event; candidate record only this pass.",
+      "evidence_url": "https://castromerchants.com/events"
+    },
+    {
+      "candidate_id": "g9-012",
+      "decision": "not_added",
+      "title": "Castro Holiday Tree Fundraiser at Midnight Sun (October 24, 2026, 4-7 p.m.)",
+      "reason": "Merchant fundraiser; candidate record only this pass.",
+      "evidence_url": "https://castromerchants.com/events"
+    },
+    {
+      "candidate_id": "g9-013",
+      "decision": "not_added",
+      "title": "Fall SF International Tea Festival (November 14-15, 2026, Ferry Building Grand Hall)",
+      "reason": "Calendar listing verified (dates and Grand Hall location) but the detail page was not fetched; no row without confirmed cost/schedule detail.",
+      "evidence_url": "https://www.ferrybuildingmarketplace.com/events/"
+    },
+    {
+      "candidate_id": "g9-014",
+      "decision": "not_added",
+      "title": "Ferry Building Trick-or-Treat (October 29, 2026, 4-6 p.m.) and World of Dumplings (October 25, 2026)",
+      "reason": "One-day venue programmes; candidate records only.",
+      "evidence_url": "https://www.ferrybuildingmarketplace.com/events/"
+    },
+    {
+      "candidate_id": "g9-015",
+      "decision": "not_added",
+      "title": "Dogpatch Games weekly game sessions (MTG Commander Night, D&D one-shots, Blood on the Clocktower)",
+      "reason": "Private retail venue's paid programming; below the catalogue's public-programme scope per the coverage note.",
+      "evidence_url": "https://www.dogpatch.games/"
+    },
+    {
+      "candidate_id": "g9-016",
+      "decision": "not_added",
+      "title": "GobbleCon (November 26-29, 2026)",
+      "reason": "Burlingame Hyatt Regency SFO — outside San Francisco city limits.",
+      "evidence_url": "https://gobblecon.com/"
+    },
+    {
+      "candidate_id": "g9-017",
+      "decision": "not_added",
+      "title": "SF Tech Week (October 5-11, 2026)",
+      "reason": "Multi-organiser week (a16z); 2026 edition concluded; candidate record kept for a future pass.",
+      "evidence_url": "https://www.tech-week.com/"
+    },
+    {
+      "candidate_id": "g9-018",
+      "decision": "not_added",
+      "title": "SOMA Pilipinas November-December calendar items (TAGALOG Festival at Bindlestiff Studio Nov 5-21; Manilatown screening Nov 7; Parol Workshops at SFMOMA Nov 8 and Dec 6; ASOG screening Nov 21)",
+      "reason": "Community-calendar listings on the cultural district's official page; candidate records kept for a future pass.",
+      "evidence_url": "https://www.somapilipinas.org/events"
+    }
+  ],
+  "summary_counts": {
+    "propose_verified_add": 7,
+    "correction_proposed": 2,
+    "flag_proposed": 1,
+    "not_added": 10
+  }
+}

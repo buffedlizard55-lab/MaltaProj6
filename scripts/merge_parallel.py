@@ -458,6 +458,14 @@ FIELD_OVERRIDES = {
             "November 1, 2026', which matched only the remaining listed performances."
         ),
     },
+    "s-034": {
+        "title": "WNBA Finals: Valkyries vs Atlanta Dream (Chase Center games)",
+        "dates": "Game 1 Saturday, October 17, 2026 (final: Valkyries 68, Dream 64); Game 2 Monday, October 19, 2026, 5:00 p.m. PT; Games 5 (October 26) and 7 (October 31) would also be at Chase Center if the series runs that long",
+        "schedule": "WNBA Finals (best-of-seven); Chase Center hosts Games 1, 2 and, if necessary, 5 and 7 — Games 3 (October 21), 4 (October 24) and 6 (October 29) are at Atlanta",
+        "source_name": "Golden State Valkyries — official site (WNBA Finals schedule)",
+        "source_url": "https://valkyries.wnba.com/",
+        "notes": "Re-verified 2026-10-18 by session arena-91296e94 against the team's official site: Game 1 final (ATL 64 @ GSV 68, Golden State leads 1-0); Game 2 Monday, October 19 at 8:00 p.m. EDT (Atlanta Dream @ Golden State Valkyries); the Finals carousel lists Games 3 and 4 at Atlanta and Games 5 and 7, if necessary, at Chase Center. Replaces the earlier SFMTA traffic-advisory citation.",
+    },
 }
 
 
