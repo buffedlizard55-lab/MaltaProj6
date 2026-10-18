@@ -574,7 +574,8 @@ publication; it is the audit trail for a manual review.</p>
 
 <h2>1. Rows with unverified fields</h2>
 <p class="section-note">These rows are published with the affected fields left blank. Open the official source to see what it does
-and does not state. Field names are the JSON keys in the underlying data.</p>
+and does not state. Field names are the JSON keys in the underlying data. Rows outside this session's tables carry their
+own unverified badges on the category pages of the integrated catalogue.</p>
 <table class="data" id="unverified-table">
   <caption>Published rows carrying at least one blank, unconfirmed field</caption>
   <thead><tr><th scope="col">Event</th><th scope="col">Unverified fields</th><th scope="col">Official source checked</th></tr></thead>
