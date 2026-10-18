@@ -758,3 +758,37 @@ Session branch: `arena/91296e94-maltaproj6` (Arena-fixed branch for this session
 - **PR #35**: https://github.com/buffedlizard55-lab/MaltaProj6/pull/35 — independent verification + gap-research integration: 7 verified additions (TechCrunch Disrupt 2026 concluded, Gamesforum SF 2026, GamesBeat NEXT 2026, and the Ferry Building's free weekly Board Game Night / Mahjong Meetup / Music on the Plaza / Monday Yoga), the WNBA Finals row corrected to the team's official schedule and source, the Mime Troupe citation moved to the organiser's own domain, `flag-menorah-date-conflict` published, stale `data/meta.json` union counts refreshed, README updated. Pre-merge gates on the branch: build "Wrote 15 pages, 225 events, 173 flagged items"; `tools/validate.py` 225/149/76/173/101/17 OK; `audit/check_91296e94.py` `hard_problems=0`; historical checkers `hard_problems=[]`; local HTTP smoke test 19/19 pages+assets 200. **Merged:** PR #35 merged to `main` at 2026-10-18T10:07:48Z, merge commit `43a9a5711e50b75e2e52d065aab05b61d078ad8d`.
 **GitHub Pages:** the build for `43a9a57` reports `status: built`, `error: null` (checked via the Pages API at 10:08–10:11Z).
 **Live verification** (cache-busted `?v=20261018p35`): the dashboard reports **225 events listed · 149 rows marked verified · 76 rows needing review · 135 entries explicitly listing free access · 43 concluded editions · 173 review items published · 101 distinct official domains**, with 119 recurring / 55 annual / 51 special and categories 37 civic · 72 arts · 10 sports · 7 AI & gaming · 29 markets · 70 community. The near-term executive summary is chronological (Oct 16-18 → Oct 17/19 → Oct 22-24 → Oct 24 → Oct 26 → Oct 26-27 → Oct 30 → Oct 31) and now shows the corrected WNBA Finals row (organiser source, Game 1 final 68–64, Game 2 Mon Oct 19 5:00 p.m. PT at Chase Center) and the new Gamesforum San Francisco 2026 row with its official $239 pass pricing. Flagged irregularities and unverified items (173 + 76) remain published on https://buffedlizard55-lab.github.io/MaltaProj6/flagged.html for post-launch review and do not block anything, per board rules.
+
+- **Irregularities still visible for manual follow-up:** AI Council admission price is unpublished (blank and unverified); ODSC AI West is outside city limits and not listed as an SF event; 12 catalogue rows still have review gaps, all represented on `flagged.html`; existing inventory coverage is not exhaustive and source pages can change after the recorded check date.
+
+## Current session claim — `arena-61a46409` (focus-category research + date-ordered / free-event views, 2026-10-18)
+
+**Session branch:** `arena/61a46409-maltaproj6` (Arena-fixed branch; no branch switch).
+
+**Coordination check on arrival (2026-10-18T09:42Z).** `main` is at `56eda46`. `git ls-remote --heads origin`
+shows two branches with outstanding claims:
+
+| Branch | Last commit | Age at arrival | Claimed scope | Disposition |
+|---|---|---|---|---|
+| `arena/3ab2abd4-maltaproj6` | `2026-10-18T09:41:09Z` (claim-only) | <1 min | `scripts/build_site.py`, generated `index.html`, `COORDINATION.md` — "final dashboard / date-order review" | **Claim respected while live; released by its own PR #32 merge at 2026-10-18T09:54:14Z.** This session did not edit `scripts/build_site.py`, `index.html` or `assets/site.css` while that claim was active; it now takes over the remaining integration work, merging (never discarding) `arena-3ab2abd4`'s published changes. |
+| `arena/ef213634-maltaproj6` | `2026-10-18T05:53:48Z` (claim-only, 2 commits) | ~3h 48m, no commits since | `data/events.py`, `scripts/merge_parallel.py`, `data/meta.json`, `README.md`, generated `*.html`, `assets/site.css` | **Stale under the board's 60-minute rule (no commits).** Taken over for the *research* portion only (`data/events.py` additions); handoff logged here. |
+
+**This session's claimed scope (non-overlapping).** The new requirements in this request — a gaming / music /
+AI / "everything else" focus with free events prioritised, date-ordered upcoming views, an executive summary
+keyed to the current date, explicit cost labelling and mobile-friendly layout — are **not covered by any
+existing claim or by any prior pass**. This session claims:
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| G0 | Register and claim scope; coordinate with live remote branches | 🟡 in progress | `arena-61a46409` | `COORDINATION.md` (this section) | Claim pushed before any other edit. |
+| G1 | Line-by-line review of the published 217-row dataset; flag irregularities | ⬜ unclaimed | `arena-61a46409` | new `audit/AUDIT-2026-10-18-61a46409.md`, `audit/check_61a46409.py`, `audit/row-audit-61a46409.csv` | New files only. |
+| G2 | Gap research: **gaming**, **music**, **AI** and other free San Francisco events, official sources only | ⬜ unclaimed | `arena-61a46409` | new `data/gap-candidates-61a46409.json`, new rows in `data/events.py` | Every field from a fetched official page; unconfirmed fields left blank. |
+| G3 | Date-ordered "Upcoming" view (earliest confirmed date first), free-events view, and gaming / music / AI focus pages | ⬜ unclaimed | `arena-61a46409` | new `scripts/build_focus.py`, new `assets/focus.css`, new `upcoming.html`, `free.html`, `gaming.html`, `music.html`, `ai.html` | New files only; no edit to `scripts/build_site.py` or `index.html` while `arena-3ab2abd4`'s claim is live. |
+| G4 | Executive summary keyed to the current date + explicit cost labels + mobile-friendly layout | ⬜ unclaimed | `arena-61a46409` | `index.html`, `scripts/build_site.py`, `assets/site.css` | IR-61a-G4 was logged while `arena-3ab2abd4` held the claim. That claim was released by PR #32 (merged 09:54:14Z), which already delivered a dated homepage summary, a cost filter and a free-events view. This session now extends it (music focus, stronger near-term summary, mobile layout) without discarding that work. |
+| G5 | Rebuild, validate, broken-link check, PR to `main`, merge, Pages deploy confirmation | ⬜ unclaimed | `arena-61a46409` | generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `README.md`, `COORDINATION.md` | No merge until local checks pass. |
+
+**Integration requests logged for other sessions**
+
+- **IR-61a-G4 (to `arena-3ab2abd4`):** the executive summary, explicit cost column and mobile layout for
+  `index.html` / `scripts/build_site.py` / `assets/site.css`. This session will not edit those files while the
+  claim is live.
