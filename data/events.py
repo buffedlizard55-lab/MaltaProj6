@@ -664,7 +664,7 @@ EVENTS += [
         organiser="Chinese New Year Festival and Parade (San Francisco Chinese Chamber of Commerce)",
         source_name="Chinese New Year Festival & Parade — official FAQ",
         source_url="https://chineseparade.com/faq/", status="verified",
-        notes="Date taken from the organiser's official FAQ, which states the 2027 parade is Saturday, February 20, 2027."),
+        notes="Date taken from the organiser's official FAQ, which states the 2027 parade is Saturday, February 20, 2027. The FAQ labels that lunar year 'Year of the Ram'; 'ram' is one of the common English renderings of the year's zodiac animal (the same year is also published as Goat or Sheep), so the organiser's wording is kept verbatim."),
     dict(
         id="ann-cny-flower-market", title="Chinese New Year Flower Market Fair",
         page="annual", type="Annual",
@@ -1017,10 +1017,10 @@ EVENTS += [
         page="special", type="Special - Dated",
         schedule="", dates="November 20, 2026–January 3, 2027",
         location="San Francisco Botanical Garden, 1199 9th Avenue", area="Richmond / Sunset",
-        cost="Ticketed", organiser="San Francisco Botanical Garden (Gardens of Golden Gate Park)",
+        cost="Adult from $32 general ($27 member); youth 5-17 from $20 general ($17 member); child 4 and under free; flex ticket from $60 general ($49 member); Museums for All tickets $10", organiser="San Francisco Botanical Garden (Gardens of Golden Gate Park)",
         source_name="Gardens of Golden Gate Park — Lightscape",
         source_url="https://gggp.org/lightscape/", status="verified",
-        notes="The official Lightscape event page confirms the 2026–27 run dates."),
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc: the official Lightscape page states the November 20, 2026 - January 3, 2027 run, timed entry in 15-minute windows, and the ticket table used in the cost cell (adult from $32 general / $27 member, youth from $20 / $17, under-5 free, flex from $60 general / $49 member, Museums for All $10 for EBT/SNAP/Medi-Cal holders). A $4 booking fee is included in the published prices; a $5 same-day premium applies."),
     dict(
         id="spc-gala-gardens", title="Gala for the Gardens",
         page="special", type="Special - Dated",
@@ -1645,10 +1645,10 @@ FLAGGED = [
     dict(
         id="flag-board-of-appeals-time",
         title="Assessment Appeals Boards — conflicting October 19, 2026 times on official City pages",
-        detail="The SF.gov citywide events calendar lists Assessment Appeals Boards 1 and 2 at 12:30 p.m. and Board 3 at 4:30 p.m.; the Assessment Appeals Board department page lists the same date's sessions as 9:30 a.m., 9:30 a.m. and 1:30 p.m. The official pages conflict. The event row retains only the department-confirmed weekday/two-session pattern; specific session times are omitted and the row remains unverified. The separate Board of Appeals meets most Wednesdays at 5:00 p.m.; that time does not apply to the Assessment Appeals Boards.",
-        source_name="SF.gov — Citywide events calendar",
-        source_url="https://www.sf.gov/events/upcoming",
-        action="Ask the Assessment Appeals Board clerk to reconcile the October 19 calendar entries; keep specific times blank until confirmed."),
+        detail="The SF.gov citywide events calendar lists Assessment Appeals Boards 1 and 2 at 12:30 p.m. and Board 3 at 4:30 p.m.; the Assessment Appeals Board department page lists the same date's sessions as 9:30 a.m., 9:30 a.m. and 1:30 p.m. For the October 19, 2026 postings the two official pages still disagree. The published row follows the department page, which states the standing rule in words - Monday to Friday, sessions at 9:30 a.m. and 1:30 p.m. - and that page's own upcoming list (Board 1 and 2 at 9:30 a.m., Board 3 at 1:30 p.m.). The separate Board of Appeals meets most Wednesdays at 5:00 p.m.; that time does not apply to the Assessment Appeals Boards.",
+        source_name="SF.gov — Assessment Appeals Board",
+        source_url="https://www.sf.gov/departments--assessment-appeals-board",
+        action="Ask the Assessment Appeals Board clerk to align the citywide calendar's October 19 listings with the department page; the row will follow whichever the clerk confirms."),
     dict(
         id="flag-recpark-commission-day",
         title="Recreation and Park Commission — third vs second/fourth Thursday",
