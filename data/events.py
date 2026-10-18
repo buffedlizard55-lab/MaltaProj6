@@ -9,7 +9,7 @@ Field reference
 id          stable slug used as an HTML anchor
 title       name of the event / programme / meeting
 page        site sub-page the row is rendered on
-            (recurring | annual | special | civic | arts | sports | markets)
+            (recurring | annual | special | civic | arts | sports | technology | markets | community)
 type        Recurring - Weekly | Recurring - Monthly | Recurring - Regular schedule |
             Annual | Special - Dated | Civic meeting | Attraction - Open regularly
 schedule    the cadence / times as stated by the official source (blank if unconfirmed)
@@ -1590,6 +1590,18 @@ EVENTS += [
         source_name="Gardens of Golden Gate Park — Conservatory Light Show",
         source_url="https://gggp.org/event/conservatory-light-show/", status="verified",
         notes="Added 2026-10-18 by session arena-8cb2d3cc from the Gardens' official pages, which describe the winter light show projecting light art onto the Conservatory's exterior, free to the public and about 30 minutes long. It runs nightly rather than on a weekly cadence, so it is listed as a regular-schedule programme."),
+    dict(
+        id="spc-ai-council-2027", title="AI Council 2027",
+        page="technology", type="Special - Dated",
+        schedule="Two-day AI conference",
+        dates="March 23-24, 2027",
+        location="Palace Hotel, 2 New Montgomery Street, San Francisco, CA 94105",
+        area="",
+        cost="", organiser="AI Council",
+        source_name="AI Council — 2027 San Francisco conference",
+        source_url="https://www.aicouncil.com/", status="unverified",
+        additional_sources=[{"name": "Marriott — Palace Hotel official location", "url": "https://www.marriott.com/en-us/hotels/sfolc-palace-hotel-a-luxury-collection-hotel-san-francisco/overview/"}],
+        notes="Official organizer page checked 2026-10-18 states March 23-24, 2027, at the Palace Hotel in San Francisco. Marriott's official property listing confirms the street address. No admission price is published by the organizer; cost is intentionally blank and the row is unverified."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -1948,6 +1960,21 @@ FLAGGED = [
         source_name='SFMTA — Shared Spaces',
         source_url='https://www.sfmta.com/projects/shared-spaces',
         action='Ask Sunset Mercantile or SFMTA to confirm the southern end of the closure. Until then, both official versions are recorded.'),
+    dict(
+        id="flag-ai-council-cost",
+        title="AI Council 2027 — admission price not published",
+        detail="The AI Council organizer page confirms a March 23-24, 2027 San Francisco event at the Palace Hotel but does not publish an admission price. Cost is therefore blank and the entry is marked unverified; no ticket price or free access is inferred.",
+        source_name="AI Council — official event page",
+        source_url="https://www.aicouncil.com/",
+        action="Check the organizer's official registration page when it is published; fill the cost only from the organizer."),
+    dict(
+        id="flag-odsc-ai-west-outside-sf",
+        title="ODSC AI West 2026 — excluded because the stated venue is in Burlingame",
+        detail="The organizer's official event page advertises ODSC AI West for October 27-29, 2026 at the Hyatt Regency SFO. Hyatt's official property page gives the venue address as 1333 Bayshore Highway, Burlingame, CA 94010, outside the City and County of San Francisco. It was not added to the SF-only event table.",
+        source_name="Hyatt Regency San Francisco Airport — official property location",
+        source_url="https://www.hyatt.com/hyatt-regency/en-US/sfobu-hyatt-regency-san-francisco-airport",
+        additional_sources=[{"name": "ODSC AI West — official event page", "url": "https://odsc.ai/west/"}],
+        action="No catalogue change unless the organizer publishes an SF city venue; do not use the airport hotel's name as evidence that it is inside San Francisco."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -1956,7 +1983,7 @@ FLAGGED = [
 #   group     -> recurring (fixed weekly / monthly schedule)
 #                annual   (happens year after year)
 #                special  (a dated, one-off occurrence)
-#   category  -> civic | arts | sports | markets | community
+#   category  -> civic | arts | sports | technology | markets | community
 #
 # Every event therefore appears on exactly one type page and exactly one
 # category page, and the two views can never disagree.
@@ -2093,9 +2120,10 @@ CATEGORY_BY_ID = {
     "art-cable-cars": "arts",
     "art-uss-pampanito": "arts",
     "art-musee-mecanique": "arts",
+    "spc-ai-council-2027": "technology",
 }
 
-VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community")
+VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community", "technology")
 
 
 # Editions whose listed occurrence had already finished when the snapshot was

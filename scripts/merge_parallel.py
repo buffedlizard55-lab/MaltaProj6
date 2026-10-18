@@ -111,7 +111,7 @@ CATEGORY_BY_ORIG_ID = {
     "s-020": "arts", "s-021": "arts", "s-022": "arts", "s-023": "arts",  # Opera productions
     "s-020b": "arts",
     "s-024": "arts", "s-025": "arts",   # Symphony performances
-    "s-026": "community",  # GDC Festival of Gaming 2027
+    "s-026": "technology",  # GDC Festival of Gaming 2027
     "s-027": "arts",      # Frameline50 Fall Showcase
     "s-028": "community",  # Dreamforce 2026
     "s-030": "arts",      # SFFILM Doc Stories 2026
@@ -441,6 +441,13 @@ FIELD_OVERRIDES = {
         "_clear_unverified": True,
         "cost": "Ticketed (festival passes from $240, per the organiser)",
         "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official homepage lists Noise Pop Festival 2027 on February 18, 2027, in San Francisco, with tickets from $240. The end date is not stated on the page, so only the confirmed start date is shown.",
+    },
+    "s-026": {
+        "_clear_unverified": True,
+        "cost": "Early-rate passes through Dec 11, 2026: Festival Hall-only $175; Business Hall-only $125; 1-Day Career $125; Indie/Start-Up/Academic $299; Festival pass $549; Game Changer $1,249. Later rates increase.",
+        "source_name": "GDC Festival of Gaming — Passes & Pricing",
+        "source_url": "https://gdconf.com/passes-pricing/",
+        "notes": "Re-verified 2026-10-18 against the organizer's official pricing page. It lists March 1-5, 2027 at Moscone Center, San Francisco, with the current Early Rate prices shown here (registration by Dec 11, 2026); later rates are listed separately and increase. No free admission is advertised on the source page.",
     },
     "s-020": {
         "dates": "October 15 - November 1, 2026 (opens October 15)",

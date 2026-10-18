@@ -1,14 +1,14 @@
 # San Francisco Events
 
-A curated, source-linked snapshot of public events in San Francisco, organized by recurrence and category. The inventory contains **217 listed entries** (115 recurring, 55 annual, 47 special/dated) and is intended to cover events physically within the City and County of San Francisco.
+A curated, source-linked snapshot of public events in San Francisco, organized by recurrence and category. The inventory contains **218 listed entries** (115 recurring, 55 annual, 48 special/dated) and is intended to cover events physically within the City and County of San Francisco.
 
 > **Coverage limitation:** this is not an exhaustive or live calendar of every concert, gallery opening, private event, pop-up or short-notice listing. The dataset reflects public programmes and event pages found during the recorded research pass. Check the [City's official events calendar](https://www.sf.gov/events/upcoming) and each organizer for additional or current listings.
 
 ## Verification and review status
 
 - Every published event row has a link to an organizer, government agency, state agency or federal park source. The research log records the pages as checked on **2026-10-18**.
-- **206** rows are marked `verified`; **11** rows still have a review gap or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
-- **103** discrepancy, source, scope and other review items are published on `flagged.html`.
+- **206** rows are marked `verified`; **12** rows still have a review gap or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
+- **105** discrepancy, source, scope and other review items are published on `flagged.html`.
 - **42** rows record editions that have already finished (the 2026 state fair, Dreamforce, the Mime Troupe summer season and similar); they stay in the catalogue as records, carry a **concluded** badge, and are kept out of the "upcoming dated events" strip on the home page.
 - An independent line-by-line audit on **2026-10-18** (`audit/`, session `arena-bdaa17b4`; merged with session `arena-7d8015f4`'s integrity pass, which upgraded the One City One Book source and set the blank-cost Alcatraz closure row to `unverified`) re-fetched a stratified sample of the official source pages plus every irregular row, removed one out-of-scope row and two duplicate rows, corrected five rows, and added nine verified missing events. See `audit/AUDIT-2026-10-18-bdaa17b4.md` for the full findings and `data/gap-candidates-bdaa17b4.json` for the gap-research trail.
 - Session `arena-23722ef3` performed a live line-by-line re-verification pass on **2026-10-18**, fetching the official pages behind 22+ high-risk rows (dated annuals, sports schedules, museum exhibitions, civic meetings) and correcting six rows whose values the sources did not support (SF Marathon, Fleet Week Parade of Ships time, Manon run start, SuperNatural times/prices, Rules/LUT committee times, Litquake title). The full row-by-row check log is in `COORDINATION.md`.
@@ -16,6 +16,7 @@ A curated, source-linked snapshot of public events in San Francisco, organized b
 - Session `arena-79993171` completed the post-merge audit on **2026-10-18**: corrected the special-event date-status/schedule mapping, removed placeholder dates, refreshed Lightscape dates, corrected pickleball sourcing and unknown access terms, separated the Board of Appeals from the Assessment Appeals Boards, and left the Escape From Alcatraz race fee blank. See `audit/POST-MERGE-2026-10-18-79993171.md` and the review page for remaining conflicts/gaps.
 - Session `arena-8e8e24dc` ran an independent verification pass on **2026-10-18** (see `audit/AUDIT-2026-10-18-8e8e24dc.md`). After PR #26 released the integration claim it applied the corrections that were still outstanding: removed the Contemporary Jewish Museum (temporarily closed since 15 December 2024, and the row's 364 Ninth Street address was wrong), renamed and re-addressed the Presidio row to Presidio Visitor Center (210 Lincoln Boulevard), moved the San Francisco Symphony to Davies Symphony Hall, replaced the Haight-Ashbury Street Fair's stale June rule with the confirmed 20 September 2026 date, blanked the unconfirmed "March 2-7, 2027" Bouquets to Art dates, filled the published hours for the de Young, Legion of Honor and Exploratorium, corrected the "Quintana" typo on Secondhand Saturdays, and rendered six imported date ranges as prose instead of semicolon-separated ISO dates. Six review items record the evidence and the two source conflicts.
 - Session `arena-8cb2d3cc` ran the final integration pass on **2026-10-18**: removed the fabricated "California Museum" row (the real museum is in Sacramento, outside the city-limits scope), closed the verification gap on four San Francisco institutions that earlier passes had listed as unreachable (FOG Design+Art, Portola Music Festival, Juneteenth Fillmore, Golden State Valkyries), added the SF Mime Troupe summer season, the Yerba Buena Gardens Festival and the Conservatory of Flowers light show, and rebuilt the recurring/annual/special split, the full searchable list (`all-events.html`), the analysis page and a CSV export. It also replaced a dead Rec and Park calendar citation with the department's Meeting Info & Calendar page, added the Assessment Appeals Board session times, and flagged a hours conflict between the Musée Mécanique's two sites.
+- Session `arena-3ab2abd4` performed a final dashboard pass on **2026-10-18**: added a dedicated AI & gaming page, re-verified the GDC Festival of Gaming 2027 dates/location and published early-rate ticket tiers from its official pricing page, and added AI Council 2027 from its official organizer page with the unpublished price left blank and flagged. ODSC AI West 2026 was excluded because its named Hyatt Regency SFO venue is in Burlingame according to Hyatt's official property page. The all-events and special pages now place confirmed upcoming dates first; the home page surfaces a chronological near-term summary with explicit cost and free-access badges; a free-events page and free-cost filter support free-first browsing. The date parser uses only written calendar dates and only years present in the source-derived text; no missing year, price or location is invented.
 - The build-time validator checks dataset integrity, source-link presence, table markup and local links. It does **not** fetch pages; the source-fetch verification above is recorded in `COORDINATION.md` and source freshness must be re-checked against the linked official pages.
 
 ## Site
@@ -25,16 +26,18 @@ The site is plain static HTML and is published with GitHub Pages.
 | Page | Contents |
 |---|---|
 | `index.html` | Dashboard, counts, categories, analysis and coverage notice |
-| `all-events.html` | 217 rows with search, schedule, category, status and timing filters (works without JavaScript) |
-| `recurring.html` | 116 entries on a regular weekly, monthly or other recurring schedule |
+| `all-events.html` | 218 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
+| `free-events.html` | Entries whose published official cost wording explicitly includes free access |
+| `recurring.html` | 115 entries on a regular weekly, monthly or other recurring schedule |
 | `annual.html` | 55 entries that recur year after year |
-| `special.html` | 47 dated or time-limited entries for 2026–2027 |
+| `special.html` | 48 dated or time-limited entries for 2026–2027 |
 | `civic.html` | 37 civic entries, boards, commissions and public meetings |
-| `arts.html` | 73 arts, culture, museums, performance and screen entries |
+| `arts.html` | 72 arts, culture, museums, performance and screen entries |
 | `sports.html` | 10 sports, races and active recreation entries |
+| `technology.html` | 2 AI and gaming events; current ticket price is blank for AI Council because the organizer has not published it |
 | `markets.html` | 29 farmers markets, food halls and street markets |
-| `community.html` | 69 neighbourhood programmes, festivals and free recreation entries |
-| `flagged.html` | 103 review items plus the rows carrying unconfirmed values |
+| `community.html` | 68 neighbourhood programmes, festivals and free recreation entries |
+| `flagged.html` | 105 review items plus the rows carrying unconfirmed values |
 | `methodology.html` | Scope, sourcing rules, build process and limitations |
 | `weekly.html` | Supplementary view from the parallel research session |
 | `analysis.html` | Counts, schedule/category/area breakdowns, blank-field coverage and the list of source domains |
@@ -47,7 +50,7 @@ Each listed event appears on one recurrence-type page and one subject-category p
 ```
 COORDINATION.md             shared task board, research log, verification notes and irregularities
 data/events.py              canonical authored dataset
-data/events.json             generated machine-readable mirror (217 events, 103 review items)
+data/events.json             generated machine-readable mirror (218 events, 105 review items)
 data/gap-candidates-bdaa17b4.json  independent-audit gap-research trail (added / not-added candidates)
 audit/                        independent audit: report, structural row checker, integration script
 data/weekly.json              supplementary raw recurring rows
@@ -72,7 +75,7 @@ python3 scripts/build_site.py
 python3 tools/validate.py
 ```
 
-The build also writes `data/events.csv` (a 16-column spreadsheet export of every row) for anyone who wants to sort or filter the catalogue in a spreadsheet.
+The build also writes `data/events.csv` (a 17-column spreadsheet export of every row, including supporting source URLs) for anyone who wants to sort or filter the catalogue in a spreadsheet.
 
 The site generator writes `data/events.json`, the canonical pages and `assets/site.css`. The validator checks the published union data, per-page row membership, source links, table structure and local links. It cannot verify source-page text or event completeness without a source review.
 

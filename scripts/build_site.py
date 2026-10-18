@@ -18,6 +18,7 @@ import os
 import sys
 from collections import Counter, defaultdict
 from datetime import date
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "data"))
@@ -44,12 +45,14 @@ SITE_TAGLINE = "A curated, source-linked snapshot of public events in San Franci
 PAGES = [
     ("index.html", "Home", "Dashboard", "home"),
     ("all-events.html", "Full list", "Every entry in one searchable table", "full"),
+    ("free-events.html", "Free events", "Entries whose official source explicitly lists free access", "free"),
     ("recurring.html", "Regularly recurring", "Events that happen on a fixed weekly or monthly schedule", "group"),
     ("annual.html", "Annual", "Events that repeat year after year", "group"),
     ("special.html", "Special", "Dated events for 2026–2027", "special"),
     ("civic.html", "Civic", "Boards, commissions and public meetings", "category"),
     ("arts.html", "Arts & culture", "Museums, galleries, performance and screen", "category"),
     ("sports.html", "Sports", "Teams, races and active recreation", "category"),
+    ("technology.html", "AI & gaming", "Artificial intelligence, gaming and technology events", "category"),
     ("markets.html", "Markets & food", "Farmers markets, food halls and street markets", "category"),
     ("community.html", "Community & parks", "Neighbourhood programmes, festivals and free recreation", "category"),
     ("analysis.html", "Analysis", "Counts, coverage and findings", "static"),
@@ -137,10 +140,12 @@ def page_shell(filename: str, title: str, subtitle: str, body: str) -> str:
 
 def _row_data(ev) -> str:
     text = " ".join(
-        str(ev.get(k, "")) for k in ("title", "location", "area", "organiser", "source_name", "type")
+        str(ev.get(k, "")) for k in ("title", "location", "area", "organiser", "source_name", "type", "schedule", "dates", "cost")
     ).lower()
+    cost_filter = "free" if _is_free_cost(ev.get("cost")) else ("unknown" if not ev.get("cost") else "paid")
     return (
         f' data-group="{esc(ev.get("group", ""))}"'
+        f' data-cost="{cost_filter}"'
         f' data-cat="{esc(ev.get("category", ""))}"'
         f' data-status="{esc(ev.get("status", "verified"))}"'
         f' data-timing="{esc(ev.get("timing", "current"))}"'
@@ -164,11 +169,14 @@ def event_table(events, table_id: str) -> str:
         if ev.get("timing") == "concluded":
             badge += '<span class="badge past" title="This edition had already finished when the snapshot was built">concluded</span>'
         title_cell = f'<td><span class="ev-title">{esc(ev["title"])}</span></td>'
-        source_cell = (
-            f'<td class="source-cell"><span class="ev-source">{badge}'
-            f'<a href="{esc(ev["source_url"])}" target="_blank" rel="noopener">'
-            f'{esc(ev["source_name"])} &nearr;</a></span></td>'
+        source_links = [(ev["source_name"], ev["source_url"])]
+        source_links.extend((item.get("name", "Official source"), item.get("url", ""))
+                            for item in ev.get("additional_sources", []))
+        source_html = " · ".join(
+            f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(name)} &nearr;</a>'
+            for name, url in source_links if url
         )
+        source_cell = f'<td class="source-cell"><span class="ev-source">{badge}{source_html}</span></td>'
         cells = [title_cell]
         for key in ("type", "schedule", "dates", "location", "area", "cost", "organiser"):
             value = ev.get(key, "")
@@ -203,9 +211,100 @@ def event_table(events, table_id: str) -> str:
 """
 
 
+_MONTH_PATTERN = (
+    r"January|Jan|February|Feb|March|Mar|April|Apr|May|June|Jun|July|Jul|"
+    r"August|Aug|September|Sept|Sep|October|Oct|November|Nov|December|Dec"
+)
+_MONTH_NUMBER = {
+    "jan": 1, "january": 1, "feb": 2, "february": 2, "mar": 3, "march": 3,
+    "apr": 4, "april": 4, "may": 5, "jun": 6, "june": 6, "jul": 7,
+    "july": 7, "aug": 8, "august": 8, "sep": 9, "sept": 9, "september": 9,
+    "oct": 10, "october": 10, "nov": 11, "november": 11, "dec": 12, "december": 12,
+}
+_DATE_TOKEN = re.compile(
+    rf"\b(?P<month>{_MONTH_PATTERN})\s+(?P<day>\d{{1,2}})(?:st|nd|rd|th)?"
+    rf"(?:,?\s+(?P<year>20\d{{2}}))?", re.IGNORECASE,
+)
+_RANGE_TOKEN = re.compile(
+    rf"\b(?P<m1>{_MONTH_PATTERN})\s+(?P<d1>\d{{1,2}})(?:st|nd|rd|th)?"
+    rf"(?:,?\s*(?P<y1>20\d{{2}}))?\s*(?:-|–|—|\bto\b)\s*"
+    rf"(?:(?P<m2>{_MONTH_PATTERN})\s+)?(?P<d2>\d{{1,2}})(?:st|nd|rd|th)?"
+    rf",?\s*(?P<y2>20\d{{2}})", re.IGNORECASE,
+)
+
+
+def _date_parts(month: str, day: str, year: str):
+    """Parse a month/day/year explicitly present in a confirmed-date cell."""
+    try:
+        return date(int(year), _MONTH_NUMBER[month.lower()], int(day))
+    except (ValueError, KeyError):
+        return None
+
+
+def _next_confirmed_date(event, today=None):
+    """Return the next date explicit in a row, without inventing missing dates.
+
+    Only a year that appears in the official-source-derived date string is used.
+    Textual date ranges that include today are ranked as occurring today; otherwise
+    the earliest future date explicitly stated is used.
+    """
+    today = today or date.today()
+    text = (event.get("dates") or "").strip()
+    if not text:
+        return None
+
+    year_matches = [(m.start(), m.group(0)) for m in re.finditer(r"20\d{2}", text)]
+    parsed = []
+    ranges = []
+    for match in _RANGE_TOKEN.finditer(text):
+        y1 = match.group("y1") or match.group("y2")
+        y2 = match.group("y2") or y1
+        m1 = match.group("m1")
+        m2 = match.group("m2") or m1
+        start = _date_parts(m1, match.group("d1"), y1)
+        end = _date_parts(m2, match.group("d2"), y2)
+        if start and end:
+            parsed.extend((start, end))
+            ranges.append((start, end))
+
+    for match in _DATE_TOKEN.finditer(text):
+        year = match.group("year")
+        if not year and year_matches:
+            year = min(year_matches, key=lambda item: abs(item[0] - match.start()))[1]
+        if year:
+            value = _date_parts(match.group("month"), match.group("day"), year)
+            if value:
+                parsed.append(value)
+
+    active_ranges = [(start, end) for start, end in ranges if start <= today <= end]
+    if active_ranges:
+        # An ongoing run has no new start date; use its officially published
+        # end date as its position so forthcoming one-day events aren't buried.
+        return min(end for _start, end in active_ranges)
+    future = [value for value in parsed if value >= today]
+    return min(future) if future else None
+
+
+def _is_free_cost(value):
+    """True only when the source's cost wording explicitly includes free access."""
+    text = (value or "").strip().lower()
+    return text == "free" or text.startswith("free ") or "free entry" in text or "free admission" in text
+
+
+def _event_date_sort_key(event, today=None):
+    next_date = _next_confirmed_date(event, today=today)
+    if next_date:
+        return (0, next_date, 0 if _is_free_cost(event.get("cost")) else 1, event.get("title", "").casefold())
+    if event.get("timing") == "concluded":
+        return (2, date.max, 1, event.get("title", "").casefold())
+    return (1, date.max, 1, event.get("title", "").casefold())
+
+
 def by_page(page: str):
     """Rows for a page, filtered by the page's kind."""
-    if page == "recurring":
+    if page == "free-events":
+        sel = [e for e in EVENTS if _is_free_cost(e.get("cost"))]
+    elif page == "recurring":
         sel = [e for e in EVENTS if e.get("group") == "recurring"]
     elif page == "annual":
         sel = [e for e in EVENTS if e.get("group") == "annual"]
@@ -213,23 +312,27 @@ def by_page(page: str):
         sel = [e for e in EVENTS if e.get("group") == "special"]
     else:
         sel = [e for e in EVENTS if e.get("category") == page]
+    if page in ("special", "technology", "free-events"):
+        return sorted(sel, key=_event_date_sort_key)
     return sorted(sel, key=lambda e: (e.get("area", ""), e.get("title", "")))
 
 
 def build_index() -> str:
+    today = date.today()
     counts = Counter()
     for e in EVENTS:
         counts[e["group"]] += 1
         counts[e["category"]] += 1
     verified = sum(1 for e in EVENTS if e.get("status") == "verified")
     unverified = len(EVENTS) - verified
+    free_count = sum(1 for e in EVENTS if _is_free_cost(e.get("cost")))
 
     tiles = []
     for filename, label, blurb, kind in PAGES[1:]:
         if kind == "static":
             continue
         key = filename.replace(".html", "")
-        n = len(EVENTS) if key == "all-events" else counts.get(key, 0)
+        n = (len(EVENTS) if key == "all-events" else free_count if key == "free-events" else counts.get(key, 0))
         tiles.append(
             f"""<a class="tile" href="{filename}">
   <span class="tile-n">{n}</span>
@@ -253,30 +356,43 @@ def build_index() -> str:
         f"<tr><td>{esc(k)}</td><td class='num'>{v}</td></tr>" for k, v in sorted(area_counts.items())
     )
 
-    latest = [
-        e for e in EVENTS
-        if e.get("group") == "special" and e.get("dates") and e.get("timing") != "concluded"
-    ][:8]
-    latest_rows = "".join(
-        f"<tr><td>{esc(e['title'])}</td><td>{esc(e['dates'])}</td>"
-        f"<td>{esc(e['location'])}</td>"
-        f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>{esc(e['source_name'])} &nearr;</a></td></tr>"
-        for e in latest
-    )
+    latest = sorted(
+        (e for e in EVENTS
+         if e.get("group") == "special" and e.get("dates")
+         and e.get("timing") != "concluded" and _next_confirmed_date(e, today=today)),
+        key=lambda e: _event_date_sort_key(e, today=today),
+    )[:10]
+    latest_row_parts = []
+    for e in latest:
+        badges = ""
+        if _is_free_cost(e.get("cost")):
+            badges += '<span class="badge free">free access</span>'
+        if e.get("status") != "verified":
+            badges += '<span class="badge warn">unverified</span>'
+        cost_html = esc(e["cost"]) if e.get("cost") else '<span class="na">not confirmed</span>'
+        location_html = esc(e["location"]) if e.get("location") else '<span class="na">not confirmed</span>'
+        latest_row_parts.append(
+            f"<tr id='summary-{esc(e['id'])}' class='upcoming-row'><td><span class='ev-title'>{esc(e['title'])}</span>{badges}</td>"
+            f"<td>{esc(e['dates'])}</td><td>{cost_html}</td><td>{location_html}</td>"
+            f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>"
+            f"{esc(e['source_name'])} &nearr;</a></td></tr>"
+        )
+    latest_rows = "".join(latest_row_parts)
 
     body = f"""
 <section class="hero">
   <h1>San Francisco events, sourced and organized</h1>
   <p class="lede">A curated snapshot of public events inside the City of San Francisco, organized by schedule
      and category. Browse events that happen <strong>every week or every year</strong>, plus
-     <strong>special and dated</strong> listings, civic meetings, arts, sports and markets. Entries link to
-     official organizer or government sources; unconfirmed values are left blank.</p>
+     <strong>special and dated</strong> listings, AI and gaming, civic meetings, arts, sports and markets.
+     Entries link to official organizer or government sources; unconfirmed values are left blank.</p>
   <p class="coverage-note"><strong>Coverage note:</strong> This is not an exhaustive or live events calendar.
      San Francisco has many venue-level, private and short-notice events that are not captured here. Check the
      <a href="https://www.sf.gov/events/upcoming" target="_blank" rel="noopener">City&#x27;s official events calendar</a>
      and each organizer for current listings and details.</p>
   <div class="hero-actions">
     <a class="btn" href="all-events.html">Open the full list ({len(EVENTS)})</a>
+    <a class="btn ghost" href="free-events.html">Free events ({free_count})</a>
     <a class="btn ghost" href="recurring.html">Recurring</a>
     <a class="btn ghost" href="annual.html">Annual</a>
     <a class="btn ghost" href="special.html">Special</a>
@@ -288,6 +404,7 @@ def build_index() -> str:
   <div class="stat"><span class="stat-n">{len(EVENTS)}</span><span class="stat-l">events listed</span></div>
   <div class="stat"><span class="stat-n">{verified}</span><span class="stat-l">rows marked verified</span></div>
   <div class="stat"><span class="stat-n">{unverified}</span><span class="stat-l">rows needing review</span></div>
+  <div class="stat"><span class="stat-n">{free_count}</span><span class="stat-l">entries explicitly listing free access</span></div>
   <div class="stat"><span class="stat-n">{sum(1 for e in EVENTS if e.get("timing") == "concluded")}</span><span class="stat-l">concluded editions</span></div>
   <div class="stat"><span class="stat-n">{len(FLAGGED)}</span><span class="stat-l">review items published</span></div>
   <div class="stat"><span class="stat-n">{len({e['source_url'].split('/')[2] for e in EVENTS})}</span><span class="stat-l">distinct official domains</span></div>
@@ -318,10 +435,12 @@ def build_index() -> str:
 </section>
 
 <section>
-  <h2>Upcoming dated events</h2>
+  <h2>Near-term executive summary</h2>
+  <p class="count-note">Upcoming dated entries closest to today, in chronological order (as of {today.isoformat()}).
+     Cost is shown exactly as published; free access is highlighted. Only confirmed dates appear here.</p>
   <div class="table-scroll">
   <table class="data-table">
-    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
+    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Cost</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
     <tbody>{latest_rows}</tbody>
   </table>
   </div>
@@ -351,12 +470,19 @@ def build_index() -> str:
 def build_flagged() -> str:
     rows = []
     for f in FLAGGED:
+        links = [(f.get("source_name", "Official source"), f.get("source_url", ""))]
+        links.extend((item.get("name", "Official source"), item.get("url", ""))
+                     for item in f.get("additional_sources", []))
+        source_html = " · ".join(
+            f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(name)} &nearr;</a>'
+            for name, url in links if url
+        )
         rows.append(
             f"""<tr id="{esc(f['id'])}">
   <td class="flag-title">{esc(f['title'])}</td>
   <td>{esc(f['detail'])}</td>
   <td>{esc(f['action'])}</td>
-  <td><a href="{esc(f['source_url'])}" target="_blank" rel="noopener">{esc(f['source_name'])} &nearr;</a></td>
+  <td>{source_html}</td>
 </tr>"""
         )
     body = f"""
@@ -455,6 +581,7 @@ FILTER_JS = """
   var fCat = document.getElementById('f-cat');
   var fStatus = document.getElementById('f-status');
   var fTime = document.getElementById('f-time');
+  var fCost = document.getElementById('f-cost');
   var count = document.getElementById('visible-count');
   var table = document.getElementById('all-table');
   if (!table) { return; }
@@ -465,7 +592,7 @@ FILTER_JS = """
   });
   function apply() {
     var term = (q.value || '').trim().toLowerCase();
-    var t = fType.value, c = fCat.value, st = fStatus.value, ti = fTime.value;
+    var t = fType.value, c = fCat.value, st = fStatus.value, ti = fTime.value, co = fCost.value;
     var shown = 0;
     rows.forEach(function (r) {
       if (r.classList.contains('note-row')) { return; }
@@ -474,6 +601,7 @@ FILTER_JS = """
       if (c && r.getAttribute('data-cat') !== c) { ok = false; }
       if (st && r.getAttribute('data-status') !== st) { ok = false; }
       if (ti && r.getAttribute('data-timing') !== ti) { ok = false; }
+      if (co && r.getAttribute('data-cost') !== co) { ok = false; }
       if (ok && term && (r.getAttribute('data-text') || '').indexOf(term) === -1) { ok = false; }
       r.hidden = !ok;
       var n = notes[r.id];
@@ -482,14 +610,14 @@ FILTER_JS = """
     });
     if (count) { count.textContent = shown; }
   }
-  [q, fType, fCat, fStatus, fTime].forEach(function (el) {
+  [q, fType, fCat, fStatus, fTime, fCost].forEach(function (el) {
     if (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); }
   });
   var reset = document.getElementById('reset');
   if (reset) {
     reset.addEventListener('click', function (ev) {
       ev.preventDefault();
-      q.value = ''; fType.value = ''; fCat.value = ''; fStatus.value = ''; fTime.value = '';
+      q.value = ''; fType.value = ''; fCat.value = ''; fStatus.value = ''; fTime.value = ''; fCost.value = '';
       apply();
       q.focus();
     });
@@ -502,9 +630,11 @@ FILTER_JS = """
 def build_full_list() -> str:
     groups = [("", "All schedules"), ("recurring", "Regularly recurring"), ("annual", "Annual"), ("special", "Special / dated")]
     cats = [("", "All categories"), ("civic", "Civic"), ("arts", "Arts & culture"), ("sports", "Sports"),
-            ("markets", "Markets & food"), ("community", "Community & parks")]
+            ("technology", "AI & gaming"), ("markets", "Markets & food"), ("community", "Community & parks")]
     stat = [("", "All rows"), ("verified", "Verified"), ("unverified", "Needs review")]
     tim = [("", "Any timing"), ("current", "Current / upcoming"), ("concluded", "Concluded edition")]
+    costs = [("", "Any cost"), ("free", "Free / includes free access"),
+             ("paid", "Published paid / mixed price"), ("unknown", "Cost not confirmed")]
 
     def opts(items):
         return "".join(f'<option value="{esc(v)}">{esc(l)}</option>' for v, l in items)
@@ -525,6 +655,7 @@ def build_full_list() -> str:
   <label class="field"><span>Category</span><select id="f-cat">{opts(cats)}</select></label>
   <label class="field"><span>Status</span><select id="f-status">{opts(stat)}</select></label>
   <label class="field"><span>Timing</span><select id="f-time">{opts(tim)}</select></label>
+  <label class="field"><span>Cost</span><select id="f-cost">{opts(costs)}</select></label>
   <button id="reset" class="btn ghost" type="button">Reset</button>
 </div>
 
@@ -532,7 +663,7 @@ def build_full_list() -> str:
    checked {esc(VERIFIED_ON)} &middot; <a href="data/events.csv">download CSV</a> &middot;
    <a href="data/events.json">machine-readable JSON</a></p>
 
-{event_table(sorted(EVENTS, key=lambda e: (e.get("group", ""), e.get("title", ""))), "all-table")}
+{event_table(sorted(EVENTS, key=_event_date_sort_key), "all-table")}
 
 <script>{FILTER_JS}</script>
 """
@@ -574,7 +705,7 @@ def build_analysis() -> str:
         return "".join(out)
 
     group_labels = {"recurring": "Regularly recurring (weekly / monthly)", "annual": "Annual (year after year)", "special": "Special / dated one-off"}
-    cat_labels = {"civic": "Civic meetings", "arts": "Arts & culture", "sports": "Sports", "markets": "Markets & food", "community": "Community & parks"}
+    cat_labels = {"civic": "Civic meetings", "arts": "Arts & culture", "sports": "Sports", "technology": "AI & gaming", "markets": "Markets & food", "community": "Community & parks"}
 
     domain_rows = "".join(
         f"<tr><td><a href='https://{esc(d)}' target='_blank' rel='noopener'>{esc(d)} &nearr;</a></td><td class='num'>{n}</td></tr>"
@@ -720,8 +851,9 @@ def build_methodology() -> str:
         (every week / every month) are on the <a href="recurring.html">Regularly recurring</a> page; events that
         recur <em>year after year</em> are on the <a href="annual.html">Annual</a> page; genuinely one-off dated
         events are on the <a href="special.html">Special</a> page.</li>
-    <li><strong>Category pages</strong> for civic meetings, arts and culture, sports, and markets and food are
-        provided for usability. Each listed event appears on its category page and on the page matching its type,
+    <li><strong>Category pages</strong> for civic meetings, arts and culture, sports, AI and gaming, markets and
+        food, and community programmes are provided for usability; a separate free-access page is based only on
+        explicit source wording. Each listed event appears on its category page and on the page matching its type,
         so the same row is never duplicated or contradicted.</li>
   </ul>
 </section>
@@ -918,7 +1050,10 @@ p { margin: 0 0 12px; }
 .ev-source { display: block; margin-top: 3px; font-size: .78rem; }
 .badge { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; vertical-align: 1px; }
 .badge.ok { background: var(--ok-bg); color: var(--ok-ink); }
+.badge.free { background: #dff3ed; color: #145c46; margin: 4px 4px 0 0; }
 .badge.warn { background: var(--warn-bg); color: var(--warn-ink); }
+.upcoming-row td:first-child { border-left: 3px solid #14765a; }
+.upcoming-row td:nth-child(2) { font-weight: 650; color: var(--brand-dark); }
 .na { color: #8b95a1; font-style: italic; font-size: .84rem; }
 .unverified-cell { background: #fffdf5; }
 .note-row td { background: #fbfcfd; padding-top: 0; border-bottom: 1px solid var(--line); }
@@ -996,12 +1131,18 @@ def main() -> int:
     # CSV mirror for spreadsheet users
     import csv
     csv_fields = ["id", "title", "group", "category", "type", "schedule", "dates", "location",
-                  "area", "cost", "organiser", "status", "timing", "source_name", "source_url", "notes"]
+                  "area", "cost", "organiser", "status", "timing", "source_name", "source_url",
+                  "additional_sources", "notes"]
     with open(os.path.join(ROOT, "data", "events.csv"), "w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=csv_fields, extrasaction="ignore")
+        writer = csv.DictWriter(fh, fieldnames=csv_fields, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
-        for ev in sorted(EVENTS, key=lambda e: (e.get("group", ""), e.get("title", ""))):
-            writer.writerow({k: ev.get(k, "") for k in csv_fields})
+        for ev in sorted(EVENTS, key=_event_date_sort_key):
+            row = {k: ev.get(k, "") for k in csv_fields}
+            row["additional_sources"] = " | ".join(
+                f"{item.get('name', 'Official source')}: {item.get('url', '')}"
+                for item in ev.get("additional_sources", []) if item.get("url")
+            )
+            writer.writerow(row)
 
     written = ["index.html", "flagged.html", "methodology.html", "analysis.html", "all-events.html"]
     for filename, label, subtitle, _kind in PAGES:
