@@ -40,9 +40,9 @@ That conflict is resolved below, in **Merge conflict resolution**, without disca
 | 6 | Research: Civic/government public meetings & services | ✅ done | `arena-b0f3cfd3` | `data/events.py` | 36 rows land in the `civic` category. Board of Supervisors + 4 committees, Assessment Appeals Boards, Planning, Historic Preservation, SFMTA, Port, Fire, PUC, Arts Commission (7 bodies), Police, Health, SFUSD, Building Inspection, Ethics, Environment, Small Business, Health Service Board, SFCTA, TIDA, HRC, Library, Rec & Park, City Hall weddings, district events. |
 | 7 | Verification pass — every row has an official source link | ✅ done | `arena-b0f3cfd3` | `data/events.py`, `data/events.json` | 205 rows, 166 fully verified, 39 with a deliberate blank. 168 distinct official source URLs. Every `source_url` is `https://`. |
 | 8 | Site build — GitHub Pages, landing page + subpages | ✅ done | `arena-b0f3cfd3` | `scripts/build_site.py`, `assets/site.css`, `*.html` | 11 generated static pages, no client-side JS. Dashboard landing page with stat tiles, category tiles and analysis tables. |
-| 9 | "Flagged for Review" page | ✅ done | `arena-b0f3cfd3` | `data/events.py` (FLAGGED), `flagged.html` | 53 published items: conflicts between official sources, blank-cell rows, ended events, out-of-scope exclusions. |
+| 9 | "Flagged for Review" page | ✅ done | `arena-b0f3cfd3` | `data/events.py` (FLAGGED), `flagged.html` | **72** published items: conflicts between official sources, blank-cell rows, ended events, out-of-scope exclusions. 19 from this session + 53 merged from the parallel session. |
 | 10 | Integration: merge branches, re-verify, link check, publish | ✅ done | `arena-b0f3cfd3` | `data/*`, `scripts/*`, `tools/*`, `*.html`, `assets/*` | Merged `origin/main` (the parallel session's work), unioned both datasets, re-ran the link/anchor/tag checker over all 14 pages → 0 problems. Row counts on all 8 listing pages match the dataset. |
-| 11 | PR → main, merge, confirm Pages deploy | ✅ done | `arena-b0f3cfd3` | — | PR **#7** https://github.com/buffedlizard55-lab/MaltaProj6/pull/7 — merged to `main` 2026-10-18T01:10:21Z as merge commit `5c0c788`. GitHub Pages build for `5c0c788` completed with status `built`, no error. Live site confirmed at https://buffedlizard55-lab.github.io/MaltaProj6/ (PR #2 was auto-closed by GitHub when the head branch absorbed the base branch's tip commit; PR #7 replaces it from the same branch). |
+| 11 | PR → main, merge, confirm Pages deploy | ✅ done | `arena-b0f3cfd3` | — | PR **#7** https://github.com/buffedlizard55-lab/MaltaProj6/pull/7 — merged to `main` 2026-10-18T01:10:21Z as `5c0c788` (main dataset + site). PR **#9** https://github.com/buffedlizard55-lab/MaltaProj6/pull/9 — merged 2026-10-18T01:13:27Z as `3f16ffb` (final re-sync + register). GitHub Pages build for `3f16ffb` completed with status `built`, `error: null`. Live site confirmed at https://buffedlizard55-lab.github.io/MaltaProj6/ . PR #2 was auto-closed by GitHub when the head branch absorbed the base branch's tip commit; PRs #7 and #9 replaced it from the same branch. |
 
 ## Task board — `arena-8fb52462` (parallel session, as recorded by that session)
 
@@ -106,7 +106,7 @@ carries a note recording which session found it.
 | Sports | `sports.html` | 9 rows — teams, races, active recreation |
 | Markets & food | `markets.html` | 29 rows — farmers markets, food halls, street markets |
 | Community & parks | `community.html` | 67 rows — neighbourhood programmes, festivals, free recreation |
-| Flagged for review | `flagged.html` | 53 published discrepancies / gaps / exclusions + every row carrying a blank cell |
+| Flagged for review | `flagged.html` | 72 published discrepancies / gaps / exclusions + every row carrying a blank cell |
 | Method | `methodology.html` | Scope, sourcing rules, build process, official domains used, known limitations, supplementary views |
 | Weekly & monthly (parallel session) | `weekly.html` | The parallel session's recurring-event view |
 | Analysis (parallel session) | `analysis.html` | The parallel session's category / neighbourhood analysis |
@@ -133,9 +133,10 @@ so the two views can never disagree. The build script re-checks this on every ru
   `data/annual.json`, `data/special.json`, `data/review.csv` and `tools/*` are taken as-is; the generated pages
   are regenerated from the union dataset. Result is unchanged at 205 events / 53 flagged items, with 0 link,
   anchor or tag problems across all 14 pages.
-- **2026-10-18** — **Task 10c final re-sync.** The parallel session pushed PR #6 while this integration was in
-  flight; `origin/main` was merged again and the union rebuilt on top of it — unchanged at 205 events / 53 flagged
-  items, 0 link, anchor or tag problems across all 14 pages.
+- **2026-10-18** — **Task 10c final re-sync.** The parallel session pushed PRs #6 and #8 while this integration was
+  in flight; `origin/main` was merged again and the union rebuilt on top of it. PR #8 added 19 further discrepancy
+  records to the parallel session's register, so the published review register grew from 53 to **72** items while
+  the event list stayed at **205** rows. 0 link, anchor or tag problems across all 14 pages.
 - **2026-10-18** — **Task 11 complete.** PR #2 was auto-closed by GitHub when the head branch absorbed the base
   branch's tip commit, so a replacement PR was opened from the same branch.
   **PR #7 → https://github.com/buffedlizard55-lab/MaltaProj6/pull/7 — MERGED** at 2026-10-18T01:10:21Z,
@@ -145,7 +146,26 @@ so the two views can never disagree. The build script re-checks this on every ru
   39 flagged / 53 discrepancies / 88 official domains), `recurring.html` (111 rows) and `flagged.html`
   (53 items) all serve the merged content, and the parallel session's `weekly.html`, `analysis.html` and
   `sources.html` remain live alongside them.
+- **2026-10-18** — **Task 11 closed out.** PR **#9** https://github.com/buffedlizard55-lab/MaltaProj6/pull/9 —
+  **MERGED** 2026-10-18T01:13:27Z, merge commit `3f16ffbc5b93d2f96ac9ea292601b94ceb4afa7d`.
+  GitHub Pages build for `3f16ffb` finished with status **`built`** and `error: null`.
+  Live content confirmed by fetching the deployed site: the dashboard shows **205 events / 166 fully verified /
+  39 rows with a flagged gap / 72 discrepancies published / 88 official domains**, and the type table now reads
+  111 regularly recurring · 47 annual · 47 special.
   **Published site: https://buffedlizard55-lab.github.io/MaltaProj6/**
+
+### Final published state
+
+| | |
+|---|---|
+| Events | **205** (111 regularly recurring · 47 annual · 47 special/dated) |
+| Fully verified rows | **166** |
+| Rows with one deliberate blank cell | **39** (each with a published reason) |
+| Irregularities published on "Flagged for review" | **72** |
+| Distinct official source URLs / official domains | **142** / **88** |
+| Static pages | **14** (11 generated from the union dataset, 3 preserved from the parallel session) |
+| PRs merged by this session | #7 (`5c0c788`), #9 (`3f16ffb`) |
+| GitHub Pages deploy | **`built`**, `error: null`, source `main` / `/` |
 
 ### `arena-8fb52462` (parallel session, as recorded by that session)
 
