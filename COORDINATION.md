@@ -18,6 +18,8 @@ Shared task board for all agent sessions working on this repository.
 |---|---|---|---|
 | `arena-b0f3cfd3` | `arena/b0f3cfd3-maltaproj6` | Research, canonical dataset (`data/events.py`), site build (`scripts/`, `assets/site.css`, generated pages), integration, PR/merge | ✅ complete |
 | `arena-8fb52462` | `arena/8fb52462-maltaproj6` | Scaffolding, schema, per-task JSON data files (`data/weekly.json`, `data/annual.json`, `data/special.json`, `data/flagged.json`, `data/sources.json`), tooling (`tools/`), own site views (`weekly.html`, `analysis.html`, `sources.html`, `assets/style.css`, `assets/app.js`) | ✅ complete — merged into `main` at `286ae68`, and folded into the union dataset by `arena-b0f3cfd3` |
+| `arena-f54a124f` | `arena/f54a124f-maltaproj6` | Final integration audit: truthful scope/completeness copy, README counts, canonical validation, semantic table markup; `COORDINATION.md`, `README.md`, `scripts/build_site.py`, `tools/validate.py`, generated HTML | 🟡 in progress (claim commit `b938226`, 2026-10-18T01:22Z — observed by `arena-bdaa17b4`, not edited by it) |
+| `arena-bdaa17b4` | `arena/bdaa17b4-maltaproj6` | **Independent line-by-line audit + gap research (NEW FILES ONLY):** `audit/AUDIT-2026-10-18-bdaa17b4.md`, `audit/check_dataset.py`, `audit/row-audit.csv`, `data/gap-candidates-bdaa17b4.json`, plus this board's registry/task/log rows. Will **not** edit `arena-f54a124f`'s claimed files (`README.md`, `scripts/build_site.py`, `tools/validate.py`, generated `*.html`) or `data/events.py`; dataset/site changes are logged below as integration requests. Branch note: work stays on this session's fixed Arena branch, not a `session-<id>/<task>` branch. | 🟡 in progress — claimed 2026-10-18 by `arena-bdaa17b4` |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -55,6 +57,21 @@ That conflict is resolved below, in **Merge conflict resolution**, without disca
 | T5 | Flagged-for-review register + source registry | done | arena-8fb52462 | `data/flagged.json`, `data/sources.json` |
 | T6 | Site build: dashboard, category subpages, tables, analysis | done | arena-8fb52462 | `tools/build_site.py`, `assets/`, generated `*.html`, `data/meta.json` |
 | T7 | Integration: merge branches, line-by-line re-verification, link check, Pages deploy | done | arena-8fb52462 | all shared outputs, `COORDINATION.md` |
+
+## Task board — `arena-bdaa17b4` (independent audit session)
+
+All prior tasks above are ✅ done / claimed by other sessions, so this session claims only new, non-overlapping work.
+
+| ID | Task | Status | Owner | Files in scope |
+|----|------|--------|-------|----------------|
+| A1 | Claim non-overlapping audit scope; record parallel claim by `arena-f54a124f` | 🟡 in progress | arena-bdaa17b4 | `COORDINATION.md` (registry/task/log rows only) |
+| A2 | Structural line-by-line audit of all 205 rows (source present/https, blanks vs status, duplicates, out-of-SF text, past-dated specials) | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `audit/check_dataset.py`, `audit/row-audit.csv` (both new) |
+| A3 | Live official-source spot re-verification (stratified sample + all irregular rows) | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `audit/AUDIT-2026-10-18-bdaa17b4.md` (new) |
+| A4 | Gap research: SF-city-limits events missing from the 205, verified from official sources only | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `data/gap-candidates-bdaa17b4.json` (new) |
+| A5 | Integration requests to `arena-f54a124f` / final integration session (no direct edits to claimed files) | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `COORDINATION.md` log only |
+| A6 | PR from `arena/bdaa17b4-maltaproj6` → `main`, merge if site still builds, confirm Pages | ⬜ unclaimed→claimed here | arena-bdaa17b4 | — (audit files are additive; no generated-HTML edits) |
+
+**Integration requests for `arena-f54a124f`** (log, do not edit their files): _none yet — A2–A4 findings will be appended here._
 
 ---
 
