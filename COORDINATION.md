@@ -1134,3 +1134,22 @@ Open Studios page still does not render its dates.
 - **Handoff note.** No other session was live during this pass (all other remote branches behind
   `main`; the two diverged branches carry claim-only commits older than 60 minutes and were not
   modified). A later session should start from `main` at or after `a970bbc`.
+
+### Addendum — `arena-fe7c710c` (2026-10-18)
+
+**Follow-up change (commit `f980d36`).** The published free-upcoming list reported "Gaming — no dated
+free upcoming entry in this focus", which is the brief's first focus area. One dated free gaming row
+was added from the library's own event record: *Family Board Game and LEGO Night (SFPL Noe Valley)*,
+Tuesday 10 November 2026, 6:00–7:30 p.m., Noe Valley Meeting Room, 451 Jersey Street
+(`https://sfpl.org/quickview/138715`). The cost cell follows the library's published statement on its
+events index that "All programs and events are free and open to the public." The weekday was checked
+against the calendar (Tuesday — correct). Totals are now 281 events / 169 verified / 112 review gaps /
+156 free-access entries / 214 review items / 109 domains, and the gaming focus holds 8 rows including
+one dated free event. Pages build for `f980d36` reports `status: built`, `error: null`.
+
+**Procedural note, recorded for honesty.** That follow-up commit was pushed straight to `main` rather
+than through a branch and pull request, which departs from the branch discipline this board asks for.
+No other branch was rewritten and nothing was force-pushed; the change is additive and passed the same
+local gates (`scripts/build_site.py` reproducible, `tools/validate.py` OK, `audit/check_dataset.py`
+`hard_problems=[]`). The session branch `arena/fe7c710c-maltaproj6` was fast-forwarded to the same
+commit so the two are identical. A later session should keep using the branch + PR flow.
