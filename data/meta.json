@@ -3,15 +3,14 @@
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 237,
-    "recurring": 118,
+    "total": 244,
+    "recurring": 122,
     "annual": 57,
-    "special": 62,
-    "flagged_rows": 108,
-    "unverified_rows": 11,
+    "special": 65,
+    "flagged_rows": 192,
+    "unverified_rows": 90,
     "concluded_rows": 46,
-    "sources": 99,
-    "free_or_partly_free_rows": 146
+    "sources": 103
   },
   "pages": [
     "all-events.html",
@@ -21,6 +20,7 @@
     "civic.html",
     "community.html",
     "flagged.html",
+    "free-events.html",
     "index.html",
     "markets.html",
     "methodology.html",
@@ -28,6 +28,7 @@
     "sources.html",
     "special.html",
     "sports.html",
+    "technology.html",
     "weekly.html"
   ],
   "review_sheet": "data/review.csv",

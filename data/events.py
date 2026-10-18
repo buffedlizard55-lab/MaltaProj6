@@ -9,7 +9,7 @@ Field reference
 id          stable slug used as an HTML anchor
 title       name of the event / programme / meeting
 page        site sub-page the row is rendered on
-            (recurring | annual | special | civic | arts | sports | markets)
+            (recurring | annual | special | civic | arts | sports | technology | markets | community)
 type        Recurring - Weekly | Recurring - Monthly | Recurring - Regular schedule |
             Annual | Special - Dated | Civic meeting | Attraction - Open regularly
 schedule    the cadence / times as stated by the official source (blank if unconfirmed)
@@ -23,6 +23,8 @@ source_url  link to the official source (must be an official / primary site)
 status      "verified" | "unverified"
 notes       notes, caveats, discrepancies to review
 """
+
+import re
 
 # ruff: noqa: E501
 
@@ -1571,18 +1573,9 @@ EVENTS += [
         location="Mission Dolores Park, Yerba Buena Gardens, the Panhandle and other San Francisco parks (the tour also plays Berkeley, Oakland and other Bay Area cities)",
         area="Citywide", cost="Free (donations requested)",
         organiser="San Francisco Mime Troupe",
-        source_name="San Francisco Mime Troupe — Summer Schedule (official)",
-        source_url="https://www.sfmt.org/summer-schedule", status="verified",
-        notes="Added 2026-10-18 by session arena-8cb2d3cc. Source upgraded 2026-10-18 by session "
-              "arena-fc3438db from the company's Google-hosted iCal feed to the organiser's own summer-schedule "
-              "page (which links that feed as 'Download iCal Calendar' and shows the 2026 summer season with "
-              "'free shows in the park' and live music 30 minutes before shows). The feed URL "
-              "calendar.google.com/calendar/ical/c_49cd818e8b83a687e080ec518030bfdcda142d53de55a32a092ac9a67c50675d%40group.calendar.google.com/public/basic.ics "
-              "carries the dated 2026 park performances, including the closing date of Monday, September 7, 2026, "
-              "2:00 p.m., at Mission Dolores Park, 19th & Dolores Streets. The 2026 production was 'Wreckage - A "
-              "Musical Tragicomedy' (sfmt.org/show-archive/wreckage-a-musical-tragicomedy). The tour also plays "
-              "Berkeley, Oakland, Cotati and San Jose; only the San Francisco dates are within this catalogue's "
-              "city-limits scope. The season has concluded."),
+        source_name="San Francisco Mime Troupe — full schedule (official site)",
+        source_url="https://www.sfmt.org/full-schedule", status="verified",
+        notes="Source corrected 2026-10-18 by session arena-91296e94: the row now cites the organiser's own schedule page (sfmt.org/full-schedule, linked from sfmt.org/summer-schedule), which links the same official iCal calendar feed previously cited directly. Added 2026-10-18 by session arena-8cb2d3cc. The company's official calendar feed carries the dated 2026 park performances, including the closing date of Monday, September 7, 2026, 2:00 p.m., at Mission Dolores Park, 19th & Dolores Streets. The 2026 production was 'Wreckage - A Musical Tragicomedy' (sfmt.org/show-archive/wreckage-a-musical-tragicomedy). The tour also plays Berkeley, Oakland, Cotati and San Jose; only the San Francisco dates are within this catalogue's city-limits scope. The season has concluded."),
     dict(
         id="ann-ybg-festival", title="Yerba Buena Gardens Festival",
         page="annual", type="Annual",
@@ -1604,6 +1597,90 @@ EVENTS += [
         source_name="Gardens of Golden Gate Park — Conservatory Light Show",
         source_url="https://gggp.org/event/conservatory-light-show/", status="verified",
         notes="Added 2026-10-18 by session arena-8cb2d3cc from the Gardens' official pages, which describe the winter light show projecting light art onto the Conservatory's exterior, free to the public and about 30 minutes long. It runs nightly rather than on a weekly cadence, so it is listed as a regular-schedule programme."),
+    dict(
+        id="spc-ai-council-2027", title="AI Council 2027",
+        page="technology", type="Special - Dated",
+        schedule="Two-day AI conference",
+        dates="March 23-24, 2027",
+        location="Palace Hotel, 2 New Montgomery Street, San Francisco, CA 94105",
+        area="",
+        cost="", organiser="AI Council",
+        source_name="AI Council — 2027 San Francisco conference",
+        source_url="https://www.aicouncil.com/", status="unverified",
+        additional_sources=[{"name": "Marriott — Palace Hotel official location", "url": "https://www.marriott.com/en-us/hotels/sfolc-palace-hotel-a-luxury-collection-hotel-san-francisco/overview/"}],
+        notes="Official organizer page checked 2026-10-18 states March 23-24, 2027, at the Palace Hotel in San Francisco. Marriott's official property listing confirms the street address. No admission price is published by the organizer; cost is intentionally blank and the row is unverified."),
+    dict(
+        id="spc-techcrunch-disrupt-2026", title="TechCrunch Disrupt 2026",
+        page="technology", type="Special - Dated",
+        schedule="Three-day startup and AI conference (the 2026 edition ran October 13-15; the organiser's page now invites the 2027 waitlist)",
+        dates="October 13-15, 2026 (concluded)",
+        location="Moscone West, 800 Howard Street, San Francisco", area="SoMa",
+        cost="Standard passes: Attendee $1,049; Founder $1,099; Investor $1,199; Non-Profit $499; Student $399; Expo+ $349 (final-day discounted prices $262/$275/$300/$125/$100/$87 were live on the tickets page)",
+        organiser="TechCrunch",
+        source_name="TechCrunch — Disrupt 2026 (event and tickets pages)",
+        source_url="https://techcrunch.com/events/techcrunch-disrupt/", status="verified",
+        additional_sources=[{"name": "TechCrunch — Disrupt 2026 tickets (pass pricing)", "url": "https://techcrunch.com/events/techcrunch-disrupt/tickets/"}],
+        notes="Added 2026-10-18 by session arena-91296e94. Dates, Moscone West venue (800 Howard Street) and pass prices are taken from the organiser's own event and tickets pages (the site sits behind a Cloudflare browser check for plain fetches; the content was retrieved and cited from techcrunch.com). 10,000+ attendees with an AI-heavy speaker programme (Hugging Face, Cerebras, Replit, Amazon). Closes the catalogue's AI-conference gap alongside Dreamforce and RSAC. The 2026 edition has concluded."),
+    dict(
+        id="spc-gamesforum-sf-2026", title="Gamesforum San Francisco 2026",
+        page="technology", type="Special - Dated",
+        schedule="Two-day B2B mobile-gaming conference",
+        dates="Monday-Tuesday, October 26-27, 2026",
+        location="Hotel Nikko San Francisco", area="Union Square / Downtown",
+        cost="Standard conference pass $239 (early-bird $199 before September 26, 2026; super early-bird $149; group of 3 $203 per person, group of 4+ $167 per person); passes are for mobile-games publishers and developers only",
+        organiser="Games Forum Ltd (Gamesforum)",
+        source_name="Gamesforum — Our Events / San Francisco / Register",
+        source_url="https://www.globalgamesforum.com/san-francisco", status="verified",
+        additional_sources=[{"name": "Gamesforum — register now (pass pricing)", "url": "https://www.globalgamesforum.com/san-francisco/register-now"}],
+        notes="Added 2026-10-18 by session arena-91296e94. 'The only dedicated F2P mobile games marketing and monetization event in the US' per the organiser; speaker preview includes Meta, Google, Zynga, EA, Activision Blizzard Media, Scopely and Xbox Media executives. The organiser's pages do not publish the hotel's street address, so the location is recorded as published."),
+    dict(
+        id="spc-gamesbeat-next-2026", title="GamesBeat NEXT 2026 (7th annual)",
+        page="technology", type="Special - Dated",
+        schedule="Two-day gaming-and-AI executive conference",
+        dates="Monday-Tuesday, November 2-3, 2026",
+        location="Convene, San Francisco", area="Downtown",
+        cost="Conference Pass $899; VIP Pass $1,600 (limited-time $1,200, includes 12 months of GB MAX membership); Indie Pass $499 for freelancers and businesses under 50 employees; complimentary Brand & Agency passes by application",
+        organiser="GamesBeat (VentureBeat)",
+        source_name="GamesBeat Events — GamesBeat NEXT 2026 / Attend",
+        source_url="https://events.gamesbeat.com/next26/", status="verified",
+        additional_sources=[{"name": "GamesBeat NEXT 2026 — attend (pass pricing)", "url": "https://events.gamesbeat.com/next26/attend/"}],
+        notes="Added 2026-10-18 by session arena-91296e94. 'The 7th annual GamesBeat NEXT returns to the Bay Area on November 2-3, 2026, taking place at Convene in San Francisco' per the organiser; the programme pairs gaming with AI (Nintendo/PlayStation/Sega legends panel; AI-driven development tracks). The organiser's pages do not publish the venue's street address, so the location is recorded as published."),
+    dict(
+        id="rec-ferry-board-game-night", title="Board Game Night (Ferry Building Marketplace)",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Fridays, 5:00-8:00 p.m.",
+        dates="", location="Ferry Building Marketplace, public seating area between Book Passage and Cholita Linda, 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="", organiser="Ferry Building Marketplace (with Gamescape SF)",
+        source_name="Ferry Building Marketplace — Board Game Night",
+        source_url="https://www.ferrybuildingmarketplace.com/events/board-game-night-2/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. 'Games are provided by the Ferry Building Marketplace' — Scrabble, chess, Monopoly and more, with Gamescape SF; grab food and drinks from the Ferry Building shops. The official page states no admission charge, so the cost cell is left blank rather than inferred."),
+    dict(
+        id="rec-ferry-mahjong", title="Mahjong Meetup (Ferry Building Marketplace)",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Wednesdays, 3:00-7:00 p.m.",
+        dates="", location="Ferry Building Marketplace, across from Delica, 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="", organiser="Ferry Building Marketplace",
+        source_name="Ferry Building Marketplace — Mahjong Meetup",
+        source_url="https://www.ferrybuildingmarketplace.com/events/mahjong-meetup-1/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. 'Join us for an afternoon Mahjong meetup every Wednesday from 3-7 PM. All skill levels are welcome!... Sets will be provided'; Chinese-style quick guide available; seating and sets first come first served. The official page states no admission charge, so the cost cell is left blank."),
+    dict(
+        id="rec-ferry-music-on-the-plaza", title="Music on the Plaza (Ferry Building)",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Thursdays, 5:00-7:00 p.m.",
+        dates="", location="Ferry Building North Plaza (by Fort Point Beer Garden), 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="", organiser="Ferry Building Marketplace",
+        source_name="Ferry Building Marketplace — Music on the Plaza",
+        source_url="https://www.ferrybuildingmarketplace.com/events/music-on-the-plaza/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. 'Kick back and enjoy your Thursday afternoon, accompanied by live performances from our favorite Bay Area musicians.' The official page states no admission charge, so the cost cell is left blank rather than inferred."),
+    dict(
+        id="rec-ferry-monday-yoga", title="Monday Yoga at the Ferry Building",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Every Monday, 12:00-1:00 p.m.",
+        dates="", location="Ferry Building Back Plaza, 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="Free (Vinyasa yoga class, per the official calendar listing)", organiser="Ferry Building Marketplace",
+        source_name="Ferry Building Marketplace — Monday Yoga",
+        source_url="https://www.ferrybuildingmarketplace.com/events/monday-yoga/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. Lunch-hour all-levels vinyasa with headphones provided (bring your own mat); registration link to outdoor-yoga.org on the official page; the venue's official events calendar titles it 'Monday Yoga — Free Vinyasa Yoga Class'."),
     # ------------------------------------------------------------------
     # ADDED 2026-10-18 by session arena-fc3438db (verification +
     # requirements pass). Each row was checked against the official page
@@ -1759,18 +1836,6 @@ EVENTS += [
               "'November 4-5, 2026' at Moscone West and links the organiser's page "
               "(current.confluent.io/san-francisco); the page describes it as Confluent's conference 'where "
               "real-time data and AI come together'. Registration prices are not published on the fetched page."),
-    dict(
-        id="spc-techcrunch-disrupt-2026", title="TechCrunch Disrupt 2026",
-        page="special", type="Special - Dated",
-        schedule="", dates="October 13-15, 2026",
-        location="Moscone Center, 747 Howard Street", area="Civic Center / South of Market",
-        cost="Ticketed (registration via organiser)", organiser="TechCrunch",
-        source_name="Moscone Center — TechCrunch Disrupt 2026",
-        source_url="https://www.moscone.com/events/techcrunch-disrupt-2026", status="verified",
-        notes="Added by arena-fc3438db. Moscone Center's official event page (fetched 2026-10-18) dates it "
-              "'October 13-15' and links the organiser's page (techcrunch.com/events/tc-disrupt-2026/). "
-              "Startup conference with Startup Battlefield, keynotes and expo. The listed edition had already "
-              "finished when this snapshot was built."),
     dict(
         id="spc-semicon-west-2026", title="SEMICON West 2026",
         page="special", type="Special - Dated",
@@ -2217,6 +2282,27 @@ FLAGGED = [
         source_url='https://www.sfmta.com/projects/shared-spaces',
         action='Ask Sunset Mercantile or SFMTA to confirm the southern end of the closure. Until then, both official versions are recorded.'),
     dict(
+        id="flag-ai-council-cost",
+        title="AI Council 2027 — admission price not published",
+        detail="The AI Council organizer page confirms a March 23-24, 2027 San Francisco event at the Palace Hotel but does not publish an admission price. Cost is therefore blank and the entry is marked unverified; no ticket price or free access is inferred.",
+        source_name="AI Council — official event page",
+        source_url="https://www.aicouncil.com/",
+        action="Check the organizer's official registration page when it is published; fill the cost only from the organizer."),
+    dict(
+        id="flag-odsc-ai-west-outside-sf",
+        title="ODSC AI West 2026 — excluded because the stated venue is in Burlingame",
+        detail="The organizer's official event page advertises ODSC AI West for October 27-29, 2026 at the Hyatt Regency SFO. Hyatt's official property page gives the venue address as 1333 Bayshore Highway, Burlingame, CA 94010, outside the City and County of San Francisco. It was not added to the SF-only event table.",
+        source_name="Hyatt Regency San Francisco Airport — official property location",
+        source_url="https://www.hyatt.com/hyatt-regency/en-US/sfobu-hyatt-regency-san-francisco-airport",
+        additional_sources=[{"name": "ODSC AI West — official event page", "url": "https://odsc.ai/west/"}],
+        action="No catalogue change unless the organizer publishes an SF city venue; do not use the airport hotel's name as evidence that it is inside San Francisco."),
+    dict(
+        id="flag-menorah-date-conflict", title="Castro Menorah Lighting — official page prose and structured date disagree",
+        detail="The Castro Merchants' official Menorah Lighting page shows a structured event date of Monday, December 7, 2026, 6:00-7:00 p.m., but its body prose still reads 'on Monday, December 15, at 6 PM' (December 15 was a Monday in 2025, so the prose appears to be stale prior-year copy). The row keeps the structured December 7, 2026 date and this mismatch is published rather than silently resolved.",
+        source_name="Castro Merchants — Castro Menorah Lighting",
+        source_url="https://castromerchants.com/events/castro-menorah-lighting",
+        action="Confirm the 2026 date with Castro Merchants; if the structured date is correct, ask them to update the prose."),
+    dict(
         id='flag-humanx-2027-las-vegas', title='HumanX AI conference leaves San Francisco for its 2027 edition',
         detail="HumanX 2026 (April 6-9, Moscone Center) is recorded in the list as a concluded AI conference. The organiser's own site states HumanX 2027 takes place March 7-10, 2027 at Mandalay Bay, Las Vegas — outside the city-limits scope of this catalogue — so there is no 2027 San Francisco edition to list. Recorded so the AI coverage gap is visible rather than implied.",
         source_name='HumanX — official site (2027 edition)',
@@ -2254,7 +2340,7 @@ FLAGGED = [
 #   group     -> recurring (fixed weekly / monthly schedule)
 #                annual   (happens year after year)
 #                special  (a dated, one-off occurrence)
-#   category  -> civic | arts | sports | markets | community
+#   category  -> civic | arts | sports | technology | markets | community
 #
 # Every event therefore appears on exactly one type page and exactly one
 # category page, and the two views can never disagree.
@@ -2391,7 +2477,6 @@ CATEGORY_BY_ID = {
     "art-cable-cars": "arts",
     "art-uss-pampanito": "arts",
     "art-musee-mecanique": "arts",
-    # --- added by arena-fc3438db (2026-10-18) ---------------------------
     "spc-symphony-the-ring": "arts",
     "spc-symphony-music-for-families": "arts",
     "spc-symphony-adams-mendelssohn": "arts",
@@ -2402,19 +2487,26 @@ CATEGORY_BY_ID = {
     "spc-exploratorium-creepatorium": "arts",
     "spc-castro-tree-fundraiser": "community",
     "spc-castro-wine-walk-dec": "community",
-    "spc-cloudflare-connect-2026": "community",
-    "spc-informs-2026": "community",
-    "spc-current-sf-2026": "community",
-    "spc-techcrunch-disrupt-2026": "community",
-    "spc-semicon-west-2026": "community",
-    "ann-humanx-2026": "community",
-    "ann-sf-tech-week": "community",
-    "rec-sfpl-gaming": "community",
-    "rec-sfpl-chess": "community",
-    "rec-sfpl-ai-workshops": "community",
+    "spc-cloudflare-connect-2026": "technology",
+    "spc-informs-2026": "technology",
+    "spc-current-sf-2026": "technology",
+    "spc-techcrunch-disrupt-2026": "technology",
+    "spc-semicon-west-2026": "technology",
+    "ann-humanx-2026": "technology",
+    "ann-sf-tech-week": "technology",
+    "rec-sfpl-gaming": "technology",
+    "rec-sfpl-chess": "technology",
+    "rec-sfpl-ai-workshops": "technology",
+    "spc-ai-council-2027": "technology",
+    "spc-gamesforum-sf-2026": "technology",
+    "spc-gamesbeat-next-2026": "technology",
+    "rec-ferry-board-game-night": "technology",
+    "rec-ferry-mahjong": "technology",
+    "rec-ferry-music-on-the-plaza": "community",
+    "rec-ferry-monday-yoga": "community",
 }
 
-VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community")
+VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community", "technology")
 
 
 # Editions whose listed occurrence had already finished when the snapshot was
@@ -2437,14 +2529,62 @@ CONCLUDED_2026 = {
     "x-a-008", "x-a-013", "x-a-019", "x-a-025", "x-a-027",
     "x-s-028", "x-s-032", "x-s-033", "x-w-023",
     "ann-sf-mime-troupe",
-    "spc-techcrunch-disrupt-2026", "spc-semicon-west-2026",
-    "ann-humanx-2026", "ann-sf-tech-week",
+    "spc-techcrunch-disrupt-2026", "spc-semicon-west-2026", "ann-humanx-2026",
+    "ann-sf-tech-week"
 }
 
 
+def _needs_numeric_price_review(value):
+    """Flag paid/variable wording when the record has no confirmable amount.
+
+    Explicitly free-only wording remains a valid cost statement. Mixed free/paid,
+    members-only, admission-included, registration-fee and generic ticketed labels
+    are not presented as if they were a numeric price.
+    """
+    text = (value or "").strip()
+    if not text or re.search(r"(?:[$€£]\s*\d|\bUSD\s*\d)", text, re.IGNORECASE):
+        return False
+    lowered = text.casefold()
+    if "free" in lowered and not any(term in lowered for term in (
+        "ticketed", "paid", "fee applies", "registration", "members only", "included with admission",
+    )):
+        return False
+    return True
+
+
+def cost_review_flags(rows):
+    """Create a source-linked review item for each cost made blank for no amount."""
+    flags = []
+    for event in rows:
+        previous = event.get("_price_review")
+        if not previous:
+            continue
+        flags.append(dict(
+            id=f"flag-price-{event['id']}",
+            title=f"{event['title']} — numeric price not confirmed",
+            detail=(f"The catalogue previously recorded only {previous!r}; it did not record a numeric admission amount. "
+                    "The cost cell is now blank and this row is unverified until an exact amount is confirmed from an official source. "
+                    + ("The prior wording explicitly mentioned some free access, which remains highlighted separately; any paid tier still needs an exact amount. " if event.get("_free_access_confirmed") else "This does not imply that the event is free. ")),
+            source_name=event.get("source_name", "Official source"),
+            source_url=event.get("source_url", ""),
+            action="Check the linked official organizer/agency page for a current price. Fill in a number only if that source states it; otherwise keep the cell blank.",
+        ))
+    return flags
+
+
 def assign_views(rows):
-    """Attach ``group`` and ``category`` to every row, in place."""
+    """Attach group/category and apply the no-invented-price rule, in place."""
     for e in rows:
+        cost = e.get("cost", "")
+        if _needs_numeric_price_review(cost) and not e.get("_price_review"):
+            e["_price_review"] = cost
+            if "free" in cost.casefold():
+                e["_free_access_confirmed"] = True
+            e["cost"] = ""
+            e["status"] = "unverified"
+            price_note = f"Numeric admission price not recorded; previous generic cost wording {cost!r} has been blanked pending an official price check. See Flagged for Review."
+            e["notes"] = (f"{e.get('notes', '')} {price_note}").strip()
+
         if e["id"] in CONCLUDED_2026:
             e["timing"] = "concluded"
         e["group"] = EXPLICIT_GROUP.get(e["id"], TYPE_TO_GROUP.get(e.get("type", ""), "recurring"))

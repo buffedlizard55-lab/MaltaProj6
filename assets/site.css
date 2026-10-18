@@ -92,7 +92,10 @@ p { margin: 0 0 12px; }
 .ev-source { display: block; margin-top: 3px; font-size: .78rem; }
 .badge { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; vertical-align: 1px; }
 .badge.ok { background: var(--ok-bg); color: var(--ok-ink); }
+.badge.free { background: #dff3ed; color: #145c46; margin: 4px 4px 0 0; }
 .badge.warn { background: var(--warn-bg); color: var(--warn-ink); }
+.upcoming-row td:first-child { border-left: 3px solid #14765a; }
+.upcoming-row td:nth-child(2) { font-weight: 650; color: var(--brand-dark); }
 .na { color: #8b95a1; font-style: italic; font-size: .84rem; }
 .unverified-cell { background: #fffdf5; }
 .note-row td { background: #fbfcfd; padding-top: 0; border-bottom: 1px solid var(--line); }
@@ -136,41 +139,9 @@ code { background: #eef2f5; padding: 1px 5px; border-radius: 4px; font-size: .88
   .site-nav { margin-left: 0; width: 100%; }
   h1 { font-size: 1.55rem; }
   .hero { padding: 20px; }
-  .two-col { grid-template-columns: 1fr; }
 }
 @media print {
   .site-nav, .hero-actions, .btn { display: none; }
   .table-scroll { overflow: visible; }
   .data-table { min-width: 0; font-size: 8pt; }
-}
-
-/* Cost labels (every table row states the cost exactly as the source words it) */
-.cost-cell { vertical-align: top; }
-.cost-chip {
-  display: inline-block; padding: 1px 8px; border-radius: 999px;
-  font-size: .72rem; font-weight: 700; letter-spacing: .02em;
-  vertical-align: 1px; margin-right: 4px; white-space: nowrap;
-}
-.free-chip { background: var(--ok-bg); color: var(--ok-ink); border: 1px solid #bfe3c9; }
-.paid-chip { background: #eef2f7; color: #3c4a5c; border: 1px solid #d5dde6; }
-.mixed-chip { background: var(--warn-bg); color: var(--warn-ink); border: 1px solid #ead9a8; }
-
-/* Executive summary */
-.exec-summary {
-  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 18px 20px 22px; margin: 22px 0 8px; box-shadow: 0 1px 2px rgba(16, 34, 46, .05);
-}
-.exec-summary h2 { margin-top: 0; }
-.exec-summary h3 { font-size: 1.02rem; margin: 18px 0 8px; }
-.exec-summary .data-table { min-width: 640px; }
-.exec-summary .data-table td, .exec-summary .data-table th { padding: 7px 10px; }
-
-/* Small screens */
-@media (max-width: 640px) {
-  .stat-row { gap: 8px; }
-  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .exec-summary { padding: 14px; }
-  .site-nav a { padding: 5px 9px; font-size: .8rem; }
-  main { padding: 20px 14px 44px; }
-  h2 { font-size: 1.1rem; }
 }

@@ -44,6 +44,7 @@ CATEGORY_PAGE = {
     "civic": "civic.html",
     "arts": "arts.html",
     "sports": "sports.html",
+    "technology": "technology.html",
     "markets": "markets.html",
     "community": "community.html",
 }

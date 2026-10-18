@@ -111,7 +111,7 @@ CATEGORY_BY_ORIG_ID = {
     "s-020": "arts", "s-021": "arts", "s-022": "arts", "s-023": "arts",  # Opera productions
     "s-020b": "arts",
     "s-024": "arts", "s-025": "arts",   # Symphony performances
-    "s-026": "community",  # GDC Festival of Gaming 2027
+    "s-026": "technology",  # GDC Festival of Gaming 2027
     "s-027": "arts",      # Frameline50 Fall Showcase
     "s-028": "community",  # Dreamforce 2026
     "s-030": "arts",      # SFFILM Doc Stories 2026
@@ -442,6 +442,13 @@ FIELD_OVERRIDES = {
         "cost": "Ticketed (festival passes from $240, per the organiser)",
         "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official homepage lists Noise Pop Festival 2027 on February 18, 2027, in San Francisco, with tickets from $240. The end date is not stated on the page, so only the confirmed start date is shown.",
     },
+    "s-026": {
+        "_clear_unverified": True,
+        "cost": "Early-rate passes through Dec 11, 2026: Festival Hall-only $175; Business Hall-only $125; 1-Day Career $125; Indie/Start-Up/Academic $299; Festival pass $549; Game Changer $1,249. Later rates increase.",
+        "source_name": "GDC Festival of Gaming — Passes & Pricing",
+        "source_url": "https://gdconf.com/passes-pricing/",
+        "notes": "Re-verified 2026-10-18 against the organizer's official pricing page. It lists March 1-5, 2027 at Moscone Center, San Francisco, with the current Early Rate prices shown here (registration by Dec 11, 2026); later rates are listed separately and increase. No free admission is advertised on the source page.",
+    },
     "s-020": {
         "dates": "October 15 - November 1, 2026 (opens October 15)",
         "_override_note": (
@@ -450,6 +457,14 @@ FIELD_OVERRIDES = {
             "(https://www.sfopera.com/); the parallel record said 'October 18 - "
             "November 1, 2026', which matched only the remaining listed performances."
         ),
+    },
+    "s-034": {
+        "title": "WNBA Finals: Valkyries vs Atlanta Dream (Chase Center games)",
+        "dates": "Game 1 Saturday, October 17, 2026 (final: Valkyries 68, Dream 64); Game 2 Monday, October 19, 2026, 5:00 p.m. PT; Games 5 (October 26) and 7 (October 31) would also be at Chase Center if the series runs that long",
+        "schedule": "WNBA Finals (best-of-seven); Chase Center hosts Games 1, 2 and, if necessary, 5 and 7 — Games 3 (October 21), 4 (October 24) and 6 (October 29) are at Atlanta",
+        "source_name": "Golden State Valkyries — official site (WNBA Finals schedule)",
+        "source_url": "https://valkyries.wnba.com/",
+        "notes": "Re-verified 2026-10-18 by session arena-91296e94 against the team's official site: Game 1 final (ATL 64 @ GSV 68, Golden State leads 1-0); Game 2 Monday, October 19 at 8:00 p.m. EDT (Atlanta Dream @ Golden State Valkyries); the Finals carousel lists Games 3 and 4 at Atlanta and Games 5 and 7, if necessary, at Chase Center. Replaces the earlier SFMTA traffic-advisory citation.",
     },
 }
 
