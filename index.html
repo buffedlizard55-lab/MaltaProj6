@@ -1,149 +1,164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Overview · SF Events Index</title>
-<meta name="description" content="Verified catalogue of San Francisco events: recurring weekly and monthly programmes, annual events and dated special events, each linked to an official source.">
-<link rel="stylesheet" href="assets/style.css">
+<title>Dashboard &middot; San Francisco Events</title>
+<meta name="description" content="Every event in the City of San Francisco — recurring, annual and special. Dashboard">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site">
-  <div class="wrap header-inner">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">SF</span>
-      <span class="brand-text"><strong>SF Events Index</strong><span>Verified event catalogue</span></span>
+      <span class="brand-mark">SF</span>
+      <span class="brand-text">
+        <strong>San Francisco Events</strong>
+        <small>City-limits only &middot; every row sourced to an official site</small>
+      </span>
     </a>
-    <nav class="site" aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Overview</a>
-<a href="weekly.html">Recurring</a>
-<a href="annual.html">Annual</a>
-<a href="special.html">Special</a>
-<a href="analysis.html">Analysis</a>
-<a href="sources.html">Sources</a>
-<a href="flagged.html">Flagged for Review</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="recurring.html">Regularly recurring</a>
+      <a href="annual.html">Annual</a>
+      <a href="special.html">Special</a>
+      <a href="civic.html">Civic</a>
+      <a href="arts.html">Arts &amp; culture</a>
+      <a href="sports.html">Sports</a>
+      <a href="markets.html">Markets &amp; food</a>
+      <a href="community.html">Community &amp; parks</a>
+      <a href="flagged.html">Flagged for review</a>
+      <a href="methodology.html">Method</a>
     </nav>
   </div>
 </header>
-<main id="main">
-  <div class="wrap">
-    
+
+<main id="main" class="wrap">
+
 <section class="hero">
-  <p class="eyebrow">San Francisco · verified 2026-10-18</p>
-  <h1>What’s on in San Francisco — checked against the source that runs it</h1>
-  <p class="lede">A working catalogue of events inside the <strong>City and County of San Francisco</strong>, split into
-  recurring weekly or monthly programmes, annual traditions, and dated special events. Every row links to an official
-  government, organiser or venue page. Nothing is inferred: if a value was not on an official page, it is blank and the
-  row is marked <span class="badge unverified">unverified</span>.</p>
-  <div class="hero-meta">
-    <span class="pill"><strong>87</strong> events catalogued</span>
-    <span class="pill"><strong>58</strong> official sources</span>
-    <span class="pill"><strong>34</strong> rows with unverified fields</span>
-    <span class="pill"><strong>53</strong> review notes</span>
-  </div>
-  <div class="kpis">
-    <div class="kpi"><a href="weekly.html"><div class="num">26</div><div class="label">Recurring weekly / monthly</div></a></div>
-    <div class="kpi"><a href="annual.html"><div class="num">28</div><div class="label">Annual events</div></a></div>
-    <div class="kpi"><a href="special.html"><div class="num">33</div><div class="label">Special / one-time</div></a></div>
-    <div class="kpi"><a href="flagged.html"><div class="num">34</div><div class="label">Rows flagged unverified</div></a></div>
-    <div class="kpi"><a href="sources.html"><div class="num">7</div><div class="label">Government sources</div></a></div>
+  <h1>Every event happening inside the City of San Francisco</h1>
+  <p class="lede">A verified, source-linked directory of what is on in San Francisco &mdash; split into events that
+     happen <strong>every week or every year</strong> and events that are <strong>special and dated</strong>,
+     plus civic meetings, arts, sports and markets. Every row links to the official organiser or government
+     source that was checked; nothing is filled in from memory.</p>
+  <div class="hero-actions">
+    <a class="btn" href="recurring.html">Browse recurring events</a>
+    <a class="btn ghost" href="annual.html">Browse annual events</a>
+    <a class="btn ghost" href="flagged.html">53 items flagged for review</a>
   </div>
 </section>
 
-<h2>What's on now and next</h2>
-<p class="section-note">Ongoing and upcoming dated events from the annual and special tables, ordered by date. Past editions stay in the
-category tables for completeness.</p>
+<section class="stat-row">
+  <div class="stat"><span class="stat-n">205</span><span class="stat-l">events listed</span></div>
+  <div class="stat"><span class="stat-n">166</span><span class="stat-l">fully verified rows</span></div>
+  <div class="stat"><span class="stat-n">39</span><span class="stat-l">rows with a flagged gap</span></div>
+  <div class="stat"><span class="stat-n">53</span><span class="stat-l">discrepancies published</span></div>
+  <div class="stat"><span class="stat-n">88</span><span class="stat-l">distinct official domains</span></div>
+</section>
 
-<div class="table-tools" data-table="feed">
-  <label for="feed-search">Search</label>
-  <input id="feed-search" type="search" placeholder="Event, place, organiser…" autocomplete="off">
-  
-  <span class="result" aria-live="polite"></span>
-</div>
-<div class="table-wrap">
-<table class="data" id="feed">
-  <caption>What&#x27;s on now and next <span class="small">(<span data-row-count>14</span> rows)</span></caption>
-  <thead><tr><th scope="col">When</th><th scope="col">Event</th><th scope="col">Type</th><th scope="col">Where</th><th scope="col">Source</th></tr></thead>
-  <tbody>
-<tr><td>On now</td><td class="event"><a href="special.html#s-024">Dvořák Symphony No. 8 (SF Symphony)</a></td><td>Special</td><td>Davies Symphony Hall</td><td class="src"><a href="https://www.sfsymphony.org/" target="_blank" rel="noopener" title="San Francisco Symphony">sfsymphony.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-009">Eternal Paris: Photographing the City of Light</a><span class="badge unverified" title="Unverified: start date">unverified</span></td><td>Special</td><td>Legion of Honor</td><td class="src"><a href="https://www.famsf.org/exhibitions/" target="_blank" rel="noopener" title="Exhibitions | Fine Arts Museums of San Francisco">famsf.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-002">Feel the Beat: Dance in Photographs</a></td><td>Special</td><td>SFMOMA, Floor 3</td><td class="src"><a href="https://www.sfmoma.org/exhibitions/" target="_blank" rel="noopener" title="What&#x27;s On View | SFMOMA">sfmoma.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-027">Frameline50 Fall Showcase</a></td><td>Special</td><td>Various San Francisco venues</td><td class="src"><a href="https://www.frameline.org/" target="_blank" rel="noopener" title="Frameline">frameline.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-001">Graciela Iturbide: Between Two Worlds</a></td><td>Special</td><td>SFMOMA, Floor 3</td><td class="src"><a href="https://www.sfmoma.org/exhibitions/" target="_blank" rel="noopener" title="What&#x27;s On View | SFMOMA">sfmoma.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-003">Klee Behind the Mask</a></td><td>Special</td><td>SFMOMA, Floor 2</td><td class="src"><a href="https://www.sfmoma.org/exhibitions/" target="_blank" rel="noopener" title="What&#x27;s On View | SFMOMA">sfmoma.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-020">Manon (San Francisco Opera)</a></td><td>Special</td><td>War Memorial Opera House</td><td class="src"><a href="https://www.sfopera.com/" target="_blank" rel="noopener" title="San Francisco Opera">sfopera.com</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-010">Miró: Proof Against All</a><span class="badge unverified" title="Unverified: start date">unverified</span></td><td>Special</td><td>Legion of Honor</td><td class="src"><a href="https://www.famsf.org/exhibitions/" target="_blank" rel="noopener" title="Exhibitions | Fine Arts Museums of San Francisco">famsf.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-004">O. Smith: Artivist</a></td><td>Special</td><td>SFMOMA, Floor 2</td><td class="src"><a href="https://www.sfmoma.org/exhibitions/" target="_blank" rel="noopener" title="What&#x27;s On View | SFMOMA">sfmoma.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-005">RM x SFMOMA: Between You and Me</a><span class="badge unverified" title="Unverified: end date">unverified</span></td><td>Special</td><td>SFMOMA, Floor 7</td><td class="src"><a href="https://www.sfmoma.org/exhibitions/" target="_blank" rel="noopener" title="What&#x27;s On View | SFMOMA">sfmoma.org</a></td></tr>
-<tr><td>Oct 18, 2026</td><td class="event"><a href="annual.html#a-021">Sunday Streets</a></td><td>Annual</td><td>Car-free routes in different neighbourhoods</td><td class="src"><a href="https://sundaystreetssf.com/" target="_blank" rel="noopener" title="Sunday Streets SF">sundaystreetssf.com</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-008">Treasures of the Pharaohs</a><span class="badge unverified" title="Unverified: start date">unverified</span></td><td>Special</td><td>de Young Museum</td><td class="src"><a href="https://www.famsf.org/exhibitions/" target="_blank" rel="noopener" title="Exhibitions | Fine Arts Museums of San Francisco">famsf.org</a></td></tr>
-<tr><td>On now</td><td class="event"><a href="special.html#s-034">WNBA Finals: Valkyries vs Atlanta Dream (Games 1-2)</a></td><td>Special</td><td>Chase Center</td><td class="src"><a href="https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026" target="_blank" rel="noopener" title="SFMTA Transit and Traffic Advisory for the Week, October 15-21, 2026">sfmta.com</a></td></tr>
-<tr><td>Oct 22, 2026</td><td class="event"><a href="special.html#s-025">Hisaishi Conducts Hisaishi (SF Symphony)</a></td><td>Special</td><td>Davies Symphony Hall</td><td class="src"><a href="https://www.sfsymphony.org/" target="_blank" rel="noopener" title="San Francisco Symphony">sfsymphony.org</a></td></tr>
-  </tbody>
-</table>
-</div>
-
-
-<h2>Browse by category</h2>
-<div class="grid-3">
-  <a class="card-link card" href="weekly.html">
-    <div class="count">26</div>
-    <h3>Recurring weekly &amp; monthly</h3>
-    <p>Farmers markets, museum late nights, street markets and monthly neighbourhood programmes — 18 weekly and 8 monthly entries, each with its confirmed cadence.</p>
-  </a>
-  <a class="card-link card" href="annual.html">
-    <div class="count">28</div>
-    <h3>Annual events</h3>
-    <p>Parades, street fairs, festivals, races, film and music seasons. Where the organiser has already published 2027 dates, those are shown; otherwise the last confirmed edition is shown and flagged.</p>
-  </a>
-  <a class="card-link card" href="special.html">
-    <div class="count">33</div>
-    <h3>Special &amp; one-time events</h3>
-    <p>Dated exhibitions, opera and concert runs, conventions, markets and one-off civic events, each with a start and end date where the organiser publishes them.</p>
-  </a>
-</div>
-
-<h2>How to read this dashboard</h2>
-<div class="grid-3">
-  <div class="card">
-    <h3>Source first</h3>
-    <p>Each row's source column names the domain that confirmed it. Government pages are used first, then the event organiser, then the venue. The full registry is on the <a href="sources.html">Sources page</a>.</p>
+<section>
+  <h2>Browse by category</h2>
+  <div class="tiles">
+    <a class="tile" href="recurring.html">
+  <span class="tile-n">111</span>
+  <span class="tile-label">Regularly recurring</span>
+  <span class="tile-blurb">Events that happen on a fixed weekly or monthly schedule</span>
+</a>
+<a class="tile" href="annual.html">
+  <span class="tile-n">47</span>
+  <span class="tile-label">Annual</span>
+  <span class="tile-blurb">Events that repeat year after year</span>
+</a>
+<a class="tile" href="special.html">
+  <span class="tile-n">47</span>
+  <span class="tile-label">Special</span>
+  <span class="tile-blurb">Dated events for 2026–2027</span>
+</a>
+<a class="tile" href="civic.html">
+  <span class="tile-n">36</span>
+  <span class="tile-label">Civic</span>
+  <span class="tile-blurb">Boards, commissions and public meetings</span>
+</a>
+<a class="tile" href="arts.html">
+  <span class="tile-n">64</span>
+  <span class="tile-label">Arts &amp; culture</span>
+  <span class="tile-blurb">Museums, galleries, performance and screen</span>
+</a>
+<a class="tile" href="sports.html">
+  <span class="tile-n">9</span>
+  <span class="tile-label">Sports</span>
+  <span class="tile-blurb">Teams, races and active recreation</span>
+</a>
+<a class="tile" href="markets.html">
+  <span class="tile-n">29</span>
+  <span class="tile-label">Markets &amp; food</span>
+  <span class="tile-blurb">Farmers markets, food halls and street markets</span>
+</a>
+<a class="tile" href="community.html">
+  <span class="tile-n">67</span>
+  <span class="tile-label">Community &amp; parks</span>
+  <span class="tile-blurb">Neighbourhood programmes, festivals and free recreation</span>
+</a>
   </div>
-  <div class="card">
-    <h3>Blanks are deliberate</h3>
-    <p>If an official page did not state a time, date, address or price, the field is empty. It is never filled from memory or from an aggregator. Rows carrying such gaps are labelled and listed on <a href="flagged.html">Flagged for Review</a>.</p>
-  </div>
-  <div class="card">
-    <h3>City boundary enforced</h3>
-    <p>Only events in San Francisco are included. Oakland's Black Joy Parade, Daly City's street festival and Levi's Stadium events in Santa Clara are excluded on purpose; the exclusions are documented in the review log.</p>
-  </div>
-</div>
+</section>
 
-<div class="callout">
-  <strong>Scope:</strong> this is a broad catalogue of public events, not a ticketing feed. Private and members-only events,
-  school-only programmes and one-off private venue bookings are out of scope. Venue concert calendars are represented by
-  their published seasons and headline runs, not by every individual performance.
-  <a href="analysis.html">Read the method and limitations →</a>
-</div>
-
+<section class="two-col">
+  <div>
+    <h2>How the list is organised</h2>
+    <table class="data-table compact">
+      <thead><tr><th scope="col">Type</th><th scope="col" class="num">Entries</th></tr></thead>
+      <tbody><tr><td>Annual</td><td class='num'>42</td></tr><tr><td>Attraction - Open regularly</td><td class='num'>26</td></tr><tr><td>Civic meeting</td><td class='num'>35</td></tr><tr><td>Recurring - Annual</td><td class='num'>2</td></tr><tr><td>Recurring - Monthly</td><td class='num'>9</td></tr><tr><td>Recurring - Regular schedule</td><td class='num'>6</td></tr><tr><td>Recurring - Weekly</td><td class='num'>38</td></tr><tr><td>Special - Dated</td><td class='num'>47</td></tr></tbody>
+    </table>
   </div>
+  <div>
+    <h2>By neighbourhood / area</h2>
+    <table class="data-table compact">
+      <thead><tr><th scope="col">Area</th><th scope="col" class="num">Entries</th></tr></thead>
+      <tbody><tr><td>Bay (Alcatraz)</td><td class='num'>2</td></tr><tr><td>Bay (Angel Island)</td><td class='num'>1</td></tr><tr><td>Bernal Heights</td><td class='num'>2</td></tr><tr><td>Bernal Heights / Mission</td><td class='num'>1</td></tr><tr><td>Castro</td><td class='num'>8</td></tr><tr><td>Castro / Citywide</td><td class='num'>1</td></tr><tr><td>Chinatown</td><td class='num'>3</td></tr><tr><td>Citywide</td><td class='num'>19</td></tr><tr><td>Citywide / Mission</td><td class='num'>1</td></tr><tr><td>Civic Center</td><td class='num'>37</td></tr><tr><td>Civic Center / Downtown / Mission</td><td class='num'>1</td></tr><tr><td>Civic Center / South of Market</td><td class='num'>6</td></tr><tr><td>Civic Center / South of Market / Union Square</td><td class='num'>1</td></tr><tr><td>Civic Center / Tenderloin</td><td class='num'>1</td></tr><tr><td>Cole Valley</td><td class='num'>1</td></tr><tr><td>Cow Hollow / Marina</td><td class='num'>1</td></tr><tr><td>Downtown / Chinatown</td><td class='num'>1</td></tr><tr><td>Downtown / Civic Center</td><td class='num'>1</td></tr><tr><td>Embarcadero</td><td class='num'>2</td></tr><tr><td>Embarcadero / Presidio / Mission</td><td class='num'>1</td></tr><tr><td>Embarcadero / SoMa / Golden Gate Park</td><td class='num'>1</td></tr><tr><td>Embarcadero / South Beach</td><td class='num'>7</td></tr><tr><td>Excelsior</td><td class='num'>1</td></tr><tr><td>Excelsior / Downtown</td><td class='num'>1</td></tr><tr><td>Fillmore</td><td class='num'>2</td></tr><tr><td>Financial District / SoMa</td><td class='num'>1</td></tr><tr><td>Fisherman&#x27;s Wharf / Embarcadero</td><td class='num'>1</td></tr><tr><td>Fisherman&#x27;s Wharf / North Beach</td><td class='num'>1</td></tr><tr><td>Golden Gate Park</td><td class='num'>3</td></tr><tr><td>Haight-Ashbury / Upper Haight</td><td class='num'>1</td></tr><tr><td>Hayes Valley</td><td class='num'>1</td></tr><tr><td>Inner Richmond</td><td class='num'>1</td></tr><tr><td>Inner Sunset</td><td class='num'>2</td></tr><tr><td>Japantown / Western Addition</td><td class='num'>2</td></tr><tr><td>Lake Merced / Ocean View</td><td class='num'>1</td></tr><tr><td>Lake Merced / SF State</td><td class='num'>1</td></tr><tr><td>Marina</td><td class='num'>2</td></tr><tr><td>Marina / Fisherman&#x27;s Wharf / Embarcadero</td><td class='num'>1</td></tr><tr><td>Mission</td><td class='num'>5</td></tr><tr><td>Mission / SoMa</td><td class='num'>1</td></tr><tr><td>Mission / Tenderloin</td><td class='num'>2</td></tr><tr><td>Mission Bay</td><td class='num'>1</td></tr><tr><td>Mission Bay / South Beach</td><td class='num'>3</td></tr><tr><td>Noe Valley</td><td class='num'>1</td></tr><tr><td>North Beach</td><td class='num'>2</td></tr><tr><td>North Waterfront</td><td class='num'>1</td></tr><tr><td>Outer Sunset</td><td class='num'>8</td></tr><tr><td>Potrero Hill</td><td class='num'>1</td></tr><tr><td>Presidio</td><td class='num'>9</td></tr><tr><td>Presidio / Golden Gate</td><td class='num'>2</td></tr><tr><td>Presidio / Marina</td><td class='num'>1</td></tr><tr><td>Richmond / Sunset</td><td class='num'>19</td></tr><tr><td>SoMa</td><td class='num'>8</td></tr><tr><td>SoMa / Mission</td><td class='num'>2</td></tr><tr><td>SoMa / Yerba Buena</td><td class='num'>8</td></tr><tr><td>Sunset</td><td class='num'>1</td></tr><tr><td>Sunset / Stern Grove</td><td class='num'>1</td></tr><tr><td>Tenderloin</td><td class='num'>1</td></tr><tr><td>Transbay / SoMa</td><td class='num'>1</td></tr><tr><td>Treasure Island</td><td class='num'>3</td></tr><tr><td>Union Square / Downtown</td><td class='num'>1</td></tr><tr><td>Western Addition</td><td class='num'>1</td></tr><tr><td>Yerba Buena / SoMa</td><td class='num'>1</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Recently confirmed dated events</h2>
+  <div class="table-scroll">
+  <table class="data-table">
+    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
+    <tbody><tr><td>Boo at the Zoo</td><td>Saturday, October 31, 2026</td><td>San Francisco Zoo &amp; Gardens, Sloat Boulevard</td><td><a href='https://sfrecpark.org/Calendar.aspx' target='_blank' rel='noopener'>SF Recreation and Parks — calendar (Boo at the Zoo) &nearr;</a></td></tr><tr><td>Scaregrove Halloween Event</td><td>Friday, October 30, 2026</td><td>Sigmund Stern Grove, 601 Sloat Boulevard</td><td><a href='https://sfrecpark.org/Calendar.aspx' target='_blank' rel='noopener'>SF Recreation and Parks — calendar (Scaregrove Halloween Event) &nearr;</a></td></tr><tr><td>SuperNatural — Cal Academy&#x27;s annual Halloween extravaganza</td><td>Saturday, October 24, 2026</td><td>California Academy of Sciences, 55 Music Concourse Drive</td><td><a href='https://www.calacademy.org/supernatural' target='_blank' rel='noopener'>California Academy of Sciences — SuperNatural &nearr;</a></td></tr><tr><td>Presidio 2026 summer event season</td><td>May 25, June 13, July 18-19, August 1 and September 6, 2026</td><td>Presidio Tunnel Tops East Meadow, Main Parade Lawn, San Francisco National Cemetery</td><td><a href='https://presidio.gov/about/press/presidio-unveils-vibrant-2026-summer-event-lineup' target='_blank' rel='noopener'>Presidio — Presidio Unveils Vibrant 2026 Summer Event Lineup &nearr;</a></td></tr><tr><td>Dia de los Muertos and Diwali Festival (Presidio)</td><td>Saturday, November 7, 2026</td><td>Presidio of San Francisco (event page: presidio.gov/explore/events)</td><td><a href='https://presidio.gov/explore/events/dia-de-los-muertos-and-diwali-festival/' target='_blank' rel='noopener'>Presidio — Dia de los Muertos and Diwali Festival &nearr;</a></td></tr><tr><td>&#x27;I Am An American: The Nisei Soldier Experience&#x27; (opening stop of national tour)</td><td>February 23 - July 31, 2026</td><td>Presidio Military Intelligence School Historic Learning Center, 104 Montgomery Street</td><td><a href='https://presidio.gov/about/press/whats-new-at-the-presidio-of-san-francisco-in-2026' target='_blank' rel='noopener'>Presidio — What&#x27;s New at the Presidio of San Francisco in 2026 &nearr;</a></td></tr></tbody>
+  </table>
+  </div>
+  <p class="note"><a href="special.html">See all special events &rarr;</a></p>
+</section>
+
+<section>
+  <h2>How to read a row</h2>
+  <ul class="plain-list">
+    <li><strong>Schedule / when</strong> &mdash; the cadence exactly as the official source words it. A blank cell
+        marked <span class="na">not confirmed</span> means the source did not state it, so it has been left empty
+        rather than guessed.</li>
+    <li><strong>Source</strong> &mdash; a direct link to the organiser's, city agency's or state agency's page
+        that was opened and checked on 2026-10-18.</li>
+    <li><strong>verified</strong> / <strong>unverified</strong> &mdash; the badge shows whether every value on the
+        row could be confirmed from the official source.</li>
+    <li>Rows in italics beneath a table entry are analyst notes recording a discrepancy, a seasonal caveat or a
+        scope decision. They are evidence, not filler.</li>
+  </ul>
+  <p class="note"><a href="methodology.html">Read the method and sourcing rules &rarr;</a></p>
+</section>
+
 </main>
-<footer class="site">
-  <div class="wrap footer-inner">
-    <div>
-      <strong>SF Events Index</strong> · City and County of San Francisco only · Data verified 2026-10-18.
-      <br>Every row links to the government, organiser or venue page that confirms it.
-    </div>
-    <div>
-      <a href="analysis.html">Method &amp; analysis</a> ·
-      <a href="sources.html">Source registry</a> ·
-      <a href="flagged.html">Flagged for Review</a> ·
-      <a href="https://github.com/buffedlizard55-lab/MaltaProj6" target="_blank" rel="noopener">Repository</a>
-      <br><a class="back-top" href="#main">Back to top ↑</a>
-    </div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>San Francisco Events</strong> &mdash; Every event in the City of San Francisco — recurring, annual and special.</p>
+    <p>Every row on this site carries a link to the official organiser, city agency or state source that was
+       checked on <strong>2026-10-18</strong>. Values that could not be confirmed from an official source
+       are left blank and listed on the
+       <a href="flagged.html">Flagged for review</a> page. Nothing on this site is inferred.</p>
+    <p class="muted">Scope is the City and County of San Francisco only. Events physically located in other Bay
+       Area cities are excluded and the exclusions are listed on the Flagged for review page.</p>
   </div>
 </footer>
-<script src="assets/app.js" defer></script>
 </body>
 </html>
