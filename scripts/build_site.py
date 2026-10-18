@@ -727,8 +727,8 @@ def build_full_list() -> str:
 <section class="page-head">
   <h1>Full list</h1>
   <p class="lede">Every entry in the catalogue in one table: recurring programmes, annual events and dated
-     specials. Filter by schedule, category, verification status or timing, or search by name, venue,
-     neighbourhood or organiser. Each row links to its official source.</p>
+     specials. Filter by schedule, category, cost (Free / paid), verification status or timing, or search
+     by name, venue, neighbourhood or organiser. Each row links to its official source.</p>
 </section>
 
 <div class="controls" role="search">
