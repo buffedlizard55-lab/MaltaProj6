@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method &middot; San Francisco Events</title>
+<meta name="description" content="Every event in the City of San Francisco — recurring, annual and special. Method">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SF</span>
+      <span class="brand-text">
+        <strong>San Francisco Events</strong>
+        <small>City-limits only &middot; every row sourced to an official site</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="recurring.html">Regularly recurring</a>
+      <a href="annual.html">Annual</a>
+      <a href="special.html">Special</a>
+      <a href="civic.html">Civic</a>
+      <a href="arts.html">Arts &amp; culture</a>
+      <a href="sports.html">Sports</a>
+      <a href="markets.html">Markets &amp; food</a>
+      <a href="community.html">Community &amp; parks</a>
+      <a href="flagged.html">Flagged for review</a>
+      <a href="methodology.html" class="active">Method</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<section class="page-head">
+  <h1>Method, scope and verification</h1>
+  <p class="lede">How this list was built, what counts as an official source, and what was deliberately left out.</p>
+</section>
+
+<section>
+  <h2>Scope</h2>
+  <ul class="plain-list">
+    <li><strong>City of San Francisco only.</strong> Events physically inside the San Francisco city limits are
+        included. Events in other Bay Area cities are excluded, even when they are called "San Francisco" events
+        (for example the San Francisco 49ers, who play every home game at Levi's Stadium in Santa Clara).</li>
+    <li><strong>Two organising groups, as requested:</strong> events that occur on a <em>regular schedule</em>
+        (every week / every month) are on the <a href="recurring.html">Regularly recurring</a> page; events that
+        recur <em>year after year</em> are on the <a href="annual.html">Annual</a> page; genuinely one-off dated
+        events are on the <a href="special.html">Special</a> page.</li>
+    <li><strong>Category pages</strong> for civic meetings, arts and culture, sports, and markets and food are
+        provided for usability. Every event appears on its category page and on the page matching its type, so the
+        same row is never duplicated or contradicted.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Sourcing rules</h2>
+  <ul class="plain-list">
+    <li><strong>Official sources only.</strong> Every row links to the organiser's own site, a City and County of
+        San Francisco agency page, a state agency page, or a federally operated national-park page. Each link was
+        opened and read on <strong>2026-10-18</strong>.</li>
+    <li><strong>No inference.</strong> If the official page did not state a value, the cell is left blank and marked
+        <span class="na">not confirmed</span>. Nothing has been filled in from prior knowledge, from a news
+        article, or from an aggregator site.</li>
+    <li><strong>No aggregators.</strong> Event-listing and tourism sites were used only to <em>find</em> the
+        official page; they are never cited as the source of a value.</li>
+    <li><strong>Disagreements are published, not resolved silently.</strong> Where two official pages disagree
+        (for example two different meeting times for the same Board committee), the disagreement is recorded on
+        the <a href="flagged.html">Flagged for review</a> page and the affected cell is left blank.</li>
+    <li><strong>Ended and cancelled events are shown.</strong> Events that have been discontinued by their
+        organiser are listed on the Flagged for review page rather than silently omitted, so the gap is visible.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How the data is stored and built</h2>
+  <ul class="plain-list">
+    <li><code>data/events.py</code> holds the canonical dataset; <code>data/events.json</code> is the
+        machine-readable copy emitted by the build.</li>
+    <li><code>scripts/build_site.py</code> renders the static HTML pages. There is no client-side JavaScript: every
+        page is plain HTML that GitHub Pages can serve directly.</li>
+    <li>Re-running <code>python3 scripts/build_site.py</code> regenerates the site deterministically from the
+        dataset, so the tables and the counts can never drift apart.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Official domains used as sources (88)</h2>
+  <ul class="domain-list"><li>annunciation.org</li><li>asi.sfsu.edu</li><li>asianart.org</li><li>broadwaysf.com</li><li>californiamuseum.org</li><li>carnavalsanfrancisco.org</li><li>castromerchants.com</li><li>castrostreetfair.org</li><li>chineseparade.com</li><li>fleetweeksf.org</li><li>foodwise.org</li><li>gdconf.com</li><li>gggp.org</li><li>goldengateparkband.org</li><li>hardlystrictlybluegrass.com</li><li>home.nps.gov</li><li>hotcfarmersmarket.org</li><li>nps.gov</li><li>offthegrid.com</li><li>presidio.gov</li><li>sf-fire.org</li><li>sfbeerweek.org</li><li>sfcherryblossom.org</li><li>sfcityhallevents.org</li><li>sffilm.org</li><li>sfgov.legistar.com</li><li>sfitalianheritage.org</li><li>sfpl.org</li><li>sfplanning.org</li><li>sfpride.org</li><li>sfrecpark.org</li><li>sfshakes.org</li><li>sfsketchfest.com</li><li>silentfilm.org</li><li>sunsetmercantilesf.com</li><li>thecjm.org</li><li>transmarch.org</li><li>uissf.org</li><li>unionstreetsf.com</li><li>warriors.com</li><li>www.agriculturalinstitute.org</li><li>www.baytobreakers.com</li><li>www.cafarmersmkts.com</li><li>www.calacademy.org</li><li>www.cdfa.ca.gov</li><li>www.dayofthedeadsf.org</li><li>www.dftsf.com</li><li>www.dragonboatsf.com</li><li>www.exploratorium.edu</li><li>www.famsf.org</li><li>www.ferrybuildingmarketplace.com</li><li>www.fillmorejazzfest.com</li><li>www.folsomstreet.org</li><li>www.frameline.org</li><li>www.goldengate.org</li><li>www.haightashburystreetfair.org</li><li>www.litquake.org</li><li>www.mlb.com</li><li>www.moonfestival.org</li><li>www.nihonmachistreetfair.org</li><li>www.noevalleyfarmersmarket.com</li><li>www.noisepop.com</li><li>www.northbeachfarmersmarket.com</li><li>www.northbeachfestival.org</li><li>www.nps.gov</li><li>www.parks.ca.gov</li><li>www.parollanternfestival.com</li><li>www.pcfma.org</li><li>www.pistahan.net</li><li>www.randallmuseum.org</li><li>www.rsaconference.com</li><li>www.sf.gov</li><li>www.sfballet.org</li><li>www.sfbg.org</li><li>www.sfjazz.org</li><li>www.sfmoma.org</li><li>www.sfmta.com</li><li>www.sfopera.com</li><li>www.sfport.com</li><li>www.sfrestaurantweek.com</li><li>www.sfsymphony.org</li><li>www.sfzoo.org</li><li>www.sterngrove.org</li><li>www.thesfmarathon.com</li><li>www.tisf.com</li><li>www.treasurefest.com</li><li>www.wnba.com</li><li>www.ybca.org</li></ul>
+</section>
+
+<section>
+  <h2>Supplementary views (from the parallel session)</h2>
+  <p class="lede">A second agent session worked on this repository in parallel and its research was merged into
+     <code>main</code> while this pass was still running. Its raw data files are preserved verbatim in
+     <code>data/weekly.json</code>, <code>data/annual.json</code>, <code>data/special.json</code>,
+     <code>data/flagged.json</code> and <code>data/sources.json</code>, and its own views of the same events are
+     still published. The published tables above are the <em>union</em> of both research passes.</p>
+  <ul class="plain-list">
+    <li><a href="weekly.html">Weekly &amp; monthly view</a> &mdash; the parallel session's recurring-event table, with
+        its own source registry.</li>
+    <li><a href="analysis.html">Analysis</a> &mdash; the parallel session's category and neighbourhood analysis.</li>
+    <li><a href="sources.html">Source registry</a> &mdash; the parallel session's list of the 58 official sources it checked.</li>
+    <li><a href="data/review.csv">Review sheet</a> &mdash; the parallel session's line-by-line review CSV.</li>
+    <li><a href="data/schema.md">Data schema</a> &mdash; the parallel session's documented JSON schema.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Known limitations</h2>
+  <ul class="plain-list">
+    <li>Individual performance dates for large seasons (opera, ballet, theatre) change and are sometimes
+        revised late; the rows record the date ranges published on the official site at the time of checking.</li>
+    <li>Neighbourhood street fairs publish their next edition a few months ahead; the dates shown are the most
+        recent confirmed editions, and later editions were not assumed.</li>
+    <li>Pool and court schedules change with the season; each row points at the department's own schedule page
+        rather than restating a fixed timetable.</li>
+    <li>Where a commission does not publish a regular cadence, the frequency is blank rather than guessed from a
+        handful of observed dates.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>San Francisco Events</strong> &mdash; Every event in the City of San Francisco — recurring, annual and special.</p>
+    <p>Every row on this site carries a link to the official organiser, city agency or state source that was
+       checked on <strong>2026-10-18</strong>. Values that could not be confirmed from an official source
+       are left blank and listed on the
+       <a href="flagged.html">Flagged for review</a> page. Nothing on this site is inferred.</p>
+    <p class="muted">Scope is the City and County of San Francisco only. Events physically located in other Bay
+       Area cities are excluded and the exclusions are listed on the Flagged for review page.</p>
+  </div>
+</footer>
+</body>
+</html>
