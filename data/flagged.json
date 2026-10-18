@@ -306,6 +306,177 @@
       "evidence_url": "https://www.baytobreakers.com/",
       "related_event": "a-003",
       "action": "Organiser copy check; no data change needed."
+    },
+    {
+      "id": "f-035",
+      "kind": "start time conflict",
+      "item": "Board of Supervisors Land Use & Transportation Committee",
+      "issue": "The Legistar meeting calendar lists the 10/19/2026 committee meeting at 4:30 p.m., while the SFGovTV permanent schedule lists 'Mondays at 1:30PM'. The start time has been left blank on the event row.",
+      "evidence_url": "https://sfgov.legistar.com/Calendar.aspx",
+      "related_event": "",
+      "action": "Confirm the current committee start time with the Clerk of the Board before publishing a time."
+    },
+    {
+      "id": "f-036",
+      "kind": "start time conflict",
+      "item": "Board of Supervisors Rules Committee",
+      "issue": "Legistar lists the 10/19/2026 Rules Committee meeting at 1:00 p.m.; the SFGovTV permanent schedule lists 'Mondays at 10:00AM'. Time left blank.",
+      "evidence_url": "https://sfgov.legistar.com/Calendar.aspx",
+      "related_event": "",
+      "action": "Confirm the current Rules Committee start time with the Clerk of the Board."
+    },
+    {
+      "id": "f-037",
+      "kind": "impossible broadcast time",
+      "item": "Board of Supervisors Budget and Finance Committee",
+      "issue": "The SFGovTV permanent schedule lists this committee as 'Wednesdays at 12:30AM'. A 12:30 a.m. committee meeting is not credible and looks like a publishing error on the SFGovTV page. The Legistar record shows 10:00 a.m. on 10/21/2026, which is what the event row uses.",
+      "evidence_url": "https://www.sf.gov/information--sfgovtv-permanent-schedule",
+      "related_event": "",
+      "action": "SF.gov should correct the SFGovTV page; event row uses the Legistar time with a note."
+    },
+    {
+      "id": "f-038",
+      "kind": "conflicting start times on two official City pages",
+      "item": "Assessment Appeals Boards",
+      "issue": "The sf.gov citywide events calendar lists Assessment Appeals Board 1 on 10/19/2026 at 12:30 p.m. and at 9:30 a.m. on the same date on the Board of Supervisors landing page. Times left blank on the event row.",
+      "evidence_url": "https://www.sf.gov/events/upcoming",
+      "related_event": "",
+      "action": "Ask the Clerk of the Board which time is current for each Assessment Appeals Board."
+    },
+    {
+      "id": "f-039",
+      "kind": "third vs second/fourth Thursday",
+      "item": "Recreation and Park Commission",
+      "issue": "The department's own Meeting Info & Calendar page says the full Commission meets on the third Thursday of every month, and the published 2026 meeting dates (Jun 18, Aug 20, Sep 17, Oct 15) are all third Thursdays. The SFGovTV permanent schedule says '2nd & 4th Thursdays at 10:00AM'. The event row follows the department page.",
+      "evidence_url": "https://sfrecpark.org/1744/Meeting-Info-Calendar",
+      "related_event": "",
+      "action": "SF.gov should correct the SFGovTV page to match the department's published schedule."
+    },
+    {
+      "id": "f-040",
+      "kind": "two conflicting descriptions of regular meetings",
+      "item": "Library Commission",
+      "issue": "The Library Commission Bylaws (Section 4) state regular meetings are held on the third Thursday of each month at 4:30 p.m. A separate SFPL policies page (Article VII) says 'the first Tuesday of each month and on the third Thursday of each month ... at 4:00 p.m.'",
+      "evidence_url": "https://sfpl.org/about-us/library-commission/policies/library-commission-bylaws",
+      "related_event": "",
+      "action": "SFPL should reconcile Article VII with the Bylaws, or confirm which applies."
+    },
+    {
+      "id": "f-041",
+      "kind": "date conflict on the organiser's own page",
+      "item": "Bay to Breakers",
+      "issue": "The official site page title reads 'May 16, 2027' while body copy on the same page still refers to 'May 18'. The date recorded is May 16, 2027, taken from the page title.",
+      "evidence_url": "https://www.baytobreakers.com/",
+      "related_event": "",
+      "action": "Re-check the date on the organiser's site closer to the event; the body copy appears to be out of date."
+    },
+    {
+      "id": "f-042",
+      "kind": "two different 2026 date ranges on the organiser's site",
+      "item": "SFFILM Festival",
+      "issue": "The festival event page and homepage give April 24-May 4, 2026, while the submission pages give April 23-May 3, 2026. The row uses April 24-May 4, 2026 from the festival's own event page.",
+      "evidence_url": "https://sffilm.org/event/69th-san-francisco-international-film-festival/",
+      "related_event": "",
+      "action": "SFFILM should align the submission pages with the festival page."
+    },
+    {
+      "id": "f-043",
+      "kind": "venue changed from Treasure Island to Lake Merced",
+      "item": "San Francisco Dragon Boat Festival",
+      "issue": "The long-running San Francisco International Dragon Boat Festival was held on Treasure Island until 2015 and went on indefinite hiatus. The 2026 revival was staged at Lake Merced. The row reflects the 2026 Lake Merced location.",
+      "evidence_url": "https://www.dragonboatsf.com/",
+      "related_event": "",
+      "action": "Confirm the 2027 venue before the next annual update."
+    },
+    {
+      "id": "f-044",
+      "kind": "no confirmed San Francisco date",
+      "item": "TreasureFest",
+      "issue": "TreasureFest was not invited back to Treasure Island and its official site now says it is 'scouting our next location in the Bay Area'. No San Francisco date is confirmed, so every value on the row is blank.",
+      "evidence_url": "https://www.treasurefest.com/",
+      "related_event": "",
+      "action": "Re-check the organiser's site; re-add the event if a San Francisco date is announced."
+    },
+    {
+      "id": "f-045",
+      "kind": "event ended after 25 years (excluded from the list)",
+      "item": "How Weird Street Faire",
+      "issue": "The official site states 'Twenty-five years of costumes, sound systems and dancing in the middle of Howard Street. The Faire is done.' The event ran 2000-2024 and is therefore excluded from the recurring and annual listings, and recorded here for transparency.",
+      "evidence_url": "https://howweird.org/",
+      "related_event": "",
+      "action": "None — permanently discontinued by the organiser. Listed here so the omission is visible."
+    },
+    {
+      "id": "f-046",
+      "kind": "home games are outside the City (excluded from the list)",
+      "item": "San Francisco 49ers",
+      "issue": "The 49ers play every home game at Levi's Stadium, 4900 Marie P. DeBartolo Way, Santa Clara, which is not within the City of San Francisco. The team is therefore excluded from the San Francisco-only listings.",
+      "evidence_url": "https://levisstadium.com/",
+      "related_event": "",
+      "action": "None — out of scope for a city-limits-only list. Recorded for transparency."
+    },
+    {
+      "id": "f-047",
+      "kind": "closed for dock repairs from October 26, 2026",
+      "item": "Alcatraz Island",
+      "issue": "The National Park Service has scheduled Alcatraz Island to close temporarily from October 26, 2026 to approximately November 18, 2026 while crews replace dock pilings. The island is otherwise open with daily tours.",
+      "evidence_url": "https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm",
+      "related_event": "",
+      "action": "Re-check the reopening date when publishing the next update."
+    },
+    {
+      "id": "f-048",
+      "kind": "date conflict on the organiser's own site",
+      "item": "Castro Menorah Lighting",
+      "issue": "The Castro Merchants Association events calendar lists the Castro Menorah Lighting on Monday, December 7, 2026, but the event description text says 'on Monday, December 15 at 6 PM'. The row uses the calendar date, December 7, 2026.",
+      "evidence_url": "https://castromerchants.com/events",
+      "related_event": "",
+      "action": "Confirm the date with the Castro Merchants Association."
+    },
+    {
+      "id": "f-049",
+      "kind": "seasonal, and only two of three Foodwise markets are year-round",
+      "item": "Mission Community Market",
+      "issue": "Foodwise operates three markets: Ferry Plaza (year round), Alemany (year round) and Mission Community Market (March-November only). The Mission market is flagged because its season differs from the other two.",
+      "evidence_url": "https://foodwise.org/markets/",
+      "related_event": "",
+      "action": "None — the season is stated by the operator. Listed for review because it is easy to misread as year-round."
+    },
+    {
+      "id": "f-050",
+      "kind": "meeting cadence not published",
+      "item": "Human Rights Commission",
+      "issue": "The official Human Rights Commission page lists individual meetings (the next listed is October 8, 2026 at 5:00 p.m.) but does not state a regular meeting cadence, so the frequency field is blank.",
+      "evidence_url": "https://www.sf.gov/departments--human-rights-commission",
+      "related_event": "",
+      "action": "Ask the Commission for its regular meeting schedule and add it to the row."
+    },
+    {
+      "id": "f-051",
+      "kind": "street address not published",
+      "item": "Larsen Pickleball Complex",
+      "issue": "The official Rec & Park news release announcing the complex does not publish a street address, so the address field on the event row is blank.",
+      "evidence_url": "https://sfrecpark.org/m/newsflash/home/detail/1544",
+      "related_event": "",
+      "action": "Look up the address on the Rec & Park facilities page and complete the row."
+    },
+    {
+      "id": "f-052",
+      "kind": "no dedicated official programme page located",
+      "item": "SF Music Week",
+      "issue": "SF Music Week is referenced on an official sf.gov news release as 'the City's second annual SF Music Week', but no dedicated official programme page with dates, venues or organisers was found. The row is left with dates and cost blank.",
+      "evidence_url": "https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park",
+      "related_event": "",
+      "action": "Locate the official SF Music Week programme page before the next update."
+    },
+    {
+      "id": "f-053",
+      "kind": "2026-27 home fixtures not verified",
+      "item": "Golden State Valkyries",
+      "issue": "The Valkyries play at Chase Center in San Francisco, but the 2026-27 home fixture list was not confirmed against an official schedule page during this pass, so the dates field is blank.",
+      "evidence_url": "https://www.wnba.com/valkyries/schedule",
+      "related_event": "",
+      "action": "Verify the 2026-27 home schedule against the WNBA site and complete the row."
     }
   ]
 }
