@@ -1040,8 +1040,8 @@ stale under the 60-minute rule; not overwritten.
 
 | # | Task | Status | Owner | Files in scope | Notes |
 |---|---|---|---|---|---|
-| EV0 | Register and claim non-overlapping scope | 🟡 in progress | `arena-8eaf6c0a` | `COORDINATION.md` | Claim commit pushed before any other file edits. |
-| EV1 | Line-by-line structural audit of the published union (source links, blanks vs status, duplicates, cost coverage, HTML membership, date ordering) | ⬜ unclaimed | `arena-8eaf6c0a` | `audit/check_8eaf6c0a.py` (new), `audit/row-audit-8eaf6c0a.csv` (new) | Read-only. |
+| EV0 | Register and claim non-overlapping scope | ✅ done | `arena-8eaf6c0a` | `COORDINATION.md` | Claim commit pushed before any other file edits. |
+| EV1 | Line-by-line structural audit of the published union (source links, blanks vs status, duplicates, cost coverage, HTML membership, date ordering) | ✅ done | `arena-8eaf6c0a` | `audit/check_8eaf6c0a.py` (new), `audit/row-audit-8eaf6c0a.csv` (new) | Read-only. |
 | EV2 | Live official-source re-verification of soonest-dated and free gaming/music/AI rows | ⬜ unclaimed | `arena-8eaf6c0a` | `audit/AUDIT-2026-10-18-8eaf6c0a.md` (new) | Official pages only; blanks stay blank; no inference. |
 | EV3 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ⬜ unclaimed | `arena-8eaf6c0a` | `data/gap-candidates-8eaf6c0a.json` (new) | Candidates + evidence links; additions need integration approval. |
 | EV4 | Log findings + integration requests; closing record | ⬜ unclaimed | `arena-8eaf6c0a` | `COORDINATION.md` | Requests for `arena-fe7c710c` logged here, not applied to shared files. |
