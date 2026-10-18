@@ -5,9 +5,9 @@ A curated, source-linked snapshot of public events in San Francisco, organized b
 
 Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (8), music (52), AI (9), then everything else (218)** — with free admission called out explicitly: **154** entries publish free-access wording, of which **137** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
 =======
-A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **286 listed entries** (126 recurring, 58 annual, 102 special/dated) and is intended to cover events physically within the City and County of San Francisco.
+A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **292 listed entries** (127 recurring, 59 annual, 106 special/dated) and is intended to cover events physically within the City and County of San Francisco.
 
-Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (8), music (52), AI (9), then everything else (217)** — with free admission called out explicitly: **159** entries publish free-access wording, of which **141** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
+Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (8), music (52), AI (9), then everything else (223)** — with free admission called out explicitly: **157** entries publish free-access wording, of which **140** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
 >>>>>>> daa2d70 (integrate(291a13ff): add 5 source-verified rows, honest end dates for running exhibitions, README counts)
 
 > **Coverage limitation:** this is not an exhaustive or live calendar of every concert, gallery opening, private event, pop-up or short-notice listing. The dataset reflects public programmes and event pages found during the recorded research pass. Check the [City's official events calendar](https://www.sf.gov/events/upcoming) and each organizer for additional or current listings.
@@ -22,11 +22,11 @@ Every entry also carries a focus tag, so the same catalogue can be read the way 
 - **How cost is shown.** Each cost cell quotes the official source exactly and is rendered as a colour-coded label — free, partly free, paid, or *cost not published*. A price is never inferred: when the official page does not state an amount the cell is left blank, the row is marked `unverified`, and the official source's own wording (for example "Ticketed") is still shown underneath as *as published*, clearly separated from the price.
 - **22** rows are marked `verified` yet still carry a blank schedule, location or cost cell, because the official source does not publish that value. Here `verified` means *every value the source does publish was confirmed*, not *every cell is filled*. The discrepancy is published as review item `flag-verified-rows-with-blank-core-cell` rather than silently re-badged or filled in.
 =======
-- **172** rows are marked `verified`; **114** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
-- **214** discrepancy, source, scope and other review items are published on `flagged.html`.
+- **172** rows are marked `verified`; **120** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
+- **217** discrepancy, source, scope and other review items are published on `flagged.html`.
 - **46** rows record editions that have already finished (the 2026 state fair, Dreamforce, the Mime Troupe summer season and similar); they stay in the catalogue as records, carry a **concluded** badge, and are kept out of the "upcoming dated events" strip on the home page.
 - **How cost is shown.** Each cost cell quotes the official source exactly and is rendered as a colour-coded label — free, partly free, paid, or *cost not published*. A price is never inferred: when the official page does not state an amount the cell is left blank, the row is marked `unverified`, and the official source's own wording (for example "Ticketed") is still shown underneath as *as published*, clearly separated from the price.
-- **23** rows are marked `verified` yet still carry a blank schedule, location or cost cell, because the official source does not publish that value. Here `verified` means *every value the source does publish was confirmed*, not *every cell is filled*. The discrepancy is published as review item `flag-verified-rows-with-blank-core-cell` rather than silently re-badged or filled in.
+- **22** rows are marked `verified` yet still carry a blank schedule, location or cost cell, because the official source does not publish that value. Here `verified` means *every value the source does publish was confirmed*, not *every cell is filled*. The discrepancy is published as review item `flag-verified-rows-with-blank-core-cell` rather than silently re-badged or filled in.
 >>>>>>> daa2d70 (integrate(291a13ff): add 5 source-verified rows, honest end dates for running exhibitions, README counts)
 - An independent line-by-line audit on **2026-10-18** (`audit/`, session `arena-bdaa17b4`; merged with session `arena-7d8015f4`'s integrity pass, which upgraded the One City One Book source and set the blank-cost Alcatraz closure row to `unverified`) re-fetched a stratified sample of the official source pages plus every irregular row, removed one out-of-scope row and two duplicate rows, corrected five rows, and added nine verified missing events. See `audit/AUDIT-2026-10-18-bdaa17b4.md` for the full findings and `data/gap-candidates-bdaa17b4.json` for the gap-research trail.
 - Session `arena-23722ef3` performed a live line-by-line re-verification pass on **2026-10-18**, fetching the official pages behind 22+ high-risk rows (dated annuals, sports schedules, museum exhibitions, civic meetings) and correcting six rows whose values the sources did not support (SF Marathon, Fleet Week Parade of Ships time, Manon run start, SuperNatural times/prices, Rules/LUT committee times, Litquake title). The full row-by-row check log is in `COORDINATION.md`.
@@ -59,8 +59,8 @@ The site is plain static HTML and is published with GitHub Pages.
 | `free-events.html` | 154 entries whose published official cost wording explicitly includes free access |
 | `paid-events.html` | 150 paid, mixed, or price-not-published entries, kept out of the free main list |
 | `recurring.html` | 127 entries on a regular weekly, monthly or other recurring schedule |
-| `annual.html` | 58 entries that recur year after year |
-| `special.html` | 102 dated or time-limited entries for 2026–2027 |
+| `annual.html` | 59 entries that recur year after year |
+| `special.html` | 106 dated or time-limited entries for 2026–2027 |
 | `civic.html` | 37 civic entries, boards, commissions and public meetings |
 | `arts.html` | 106 arts, culture, museums, performance and screen entries |
 | `sports.html` | 10 sports, races and active recreation entries |
@@ -69,21 +69,21 @@ The site is plain static HTML and is published with GitHub Pages.
 | `markets.html` | 29 farmers markets, food halls and street markets |
 | `community.html` | 91 neighbourhood programmes, festivals and free recreation entries |
 =======
-| `all-events.html` | 286 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
-| `free-events.html` | 159 entries whose published official cost wording explicitly includes free access |
-| `paid-events.html` | 145 paid, mixed, or price-not-published entries, kept out of the free main list |
-| `recurring.html` | 126 entries on a regular weekly, monthly or other recurring schedule |
-| `annual.html` | 58 entries that recur year after year |
-| `special.html` | 102 dated or time-limited entries for 2026–2027 |
+| `all-events.html` | 292 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
+| `free-events.html` | 157 entries whose published official cost wording explicitly includes free access |
+| `paid-events.html` | 152 paid, mixed, or price-not-published entries, kept out of the free main list |
+| `recurring.html` | 127 entries on a regular weekly, monthly or other recurring schedule |
+| `annual.html` | 59 entries that recur year after year |
+| `special.html` | 106 dated or time-limited entries for 2026–2027 |
 | `civic.html` | 37 civic entries, boards, commissions and public meetings |
-| `arts.html` | 104 arts, culture, museums, performance and screen entries |
+| `arts.html` | 108 arts, culture, museums, performance and screen entries |
 | `sports.html` | 10 sports, races and active recreation entries |
-| `technology.html` | 25 AI and gaming entries — the focus-tag view, so library gaming clubs sit alongside GDC, AI Council, TechCrunch Disrupt, Gamesforum and GamesBeat NEXT; the ticket price is blank wherever the organizer has not published one |
+| `technology.html` | 26 AI and gaming entries — the focus-tag view, so library gaming clubs sit alongside GDC, AI Council, TechCrunch Disrupt, Gamesforum and GamesBeat NEXT; the ticket price is blank wherever the organizer has not published one |
 | `music.html` | 52 music entries — concerts, festivals, opera, jazz and free music programmes |
 | `markets.html` | 29 farmers markets, food halls and street markets |
-| `community.html` | 93 neighbourhood programmes, festivals and free recreation entries |
+| `community.html` | 94 neighbourhood programmes, festivals and free recreation entries |
 >>>>>>> daa2d70 (integrate(291a13ff): add 5 source-verified rows, honest end dates for running exhibitions, README counts)
-| `flagged.html` | 214 review items plus the rows carrying unconfirmed values |
+| `flagged.html` | 217 review items plus the rows carrying unconfirmed values |
 | `methodology.html` | Scope, sourcing rules, build process and limitations |
 | `weekly.html` | Supplementary view from the parallel research session |
 | `analysis.html` | Counts, schedule/category/area breakdowns, blank-field coverage and the list of source domains |
@@ -105,7 +105,7 @@ countdown and the gaming / music / AI badge on each row. Paid and unpriced rows 
 ```
 COORDINATION.md             shared task board, research log, verification notes and irregularities
 data/events.py              canonical authored dataset
-data/events.json             generated machine-readable mirror (286 events, 214 review items)
+data/events.json             generated machine-readable mirror (292 events, 217 review items)
 data/gap-candidates-bdaa17b4.json  independent-audit gap-research trail (added / not-added candidates)
 audit/                        independent audit: report, structural row checker, integration script
 data/weekly.json              supplementary raw recurring rows
