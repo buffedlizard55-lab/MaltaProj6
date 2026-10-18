@@ -4,8 +4,8 @@
   "generated": "2026-10-18",
   "verified_on": "2026-10-18",
   "scope": "City and County of San Francisco only",
-  "event_count": 217,
-  "flagged_count": 103,
+  "event_count": 218,
+  "flagged_count": 105,
   "events": [
     {
       "id": "rec-zumba-in-the-parks",
@@ -2885,6 +2885,30 @@
       "category": "arts"
     },
     {
+      "id": "spc-ai-council-2027",
+      "title": "AI Council 2027",
+      "page": "technology",
+      "type": "Special - Dated",
+      "schedule": "Two-day AI conference",
+      "dates": "March 23-24, 2027",
+      "location": "Palace Hotel, 2 New Montgomery Street, San Francisco, CA 94105",
+      "area": "",
+      "cost": "",
+      "organiser": "AI Council",
+      "source_name": "AI Council — 2027 San Francisco conference",
+      "source_url": "https://www.aicouncil.com/",
+      "status": "unverified",
+      "additional_sources": [
+        {
+          "name": "Marriott — Palace Hotel official location",
+          "url": "https://www.marriott.com/en-us/hotels/sfolc-palace-hotel-a-luxury-collection-hotel-san-francisco/overview/"
+        }
+      ],
+      "notes": "Official organizer page checked 2026-10-18 states March 23-24, 2027, at the Palace Hotel in San Francisco. Marriott's official property listing confirms the street address. No admission price is published by the organizer; cost is intentionally blank and the row is unverified.",
+      "group": "special",
+      "category": "technology"
+    },
+    {
       "id": "x-w-003",
       "title": "Heart of the City Farmers Market",
       "page": "",
@@ -3934,15 +3958,15 @@
       "dates": "March 1-5, 2027",
       "location": "Moscone Center",
       "area": "SoMa",
-      "cost": "Ticketed",
+      "cost": "Early-rate passes through Dec 11, 2026: Festival Hall-only $175; Business Hall-only $125; 1-Day Career $125; Indie/Start-Up/Academic $299; Festival pass $549; Game Changer $1,249. Later rates increase.",
       "organiser": "GDC / Informa",
-      "source_name": "GDC Festival of Gaming",
-      "source_url": "https://gdconf.com/",
+      "source_name": "GDC Festival of Gaming — Passes & Pricing",
+      "source_url": "https://gdconf.com/passes-pricing/",
       "status": "verified",
-      "notes": "Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
+      "notes": "Re-verified 2026-10-18 against the organizer's official pricing page. It lists March 1-5, 2027 at Moscone Center, San Francisco, with the current Early Rate prices shown here (registration by Dec 11, 2026); later rates are listed separately and increase. No free admission is advertised on the source page.",
       "_unverified": [],
       "_orig_id": "s-026",
-      "category": "community"
+      "category": "technology"
     },
     {
       "id": "x-s-027",
@@ -4496,6 +4520,28 @@
       "source_name": "SFMTA — Shared Spaces",
       "source_url": "https://www.sfmta.com/projects/shared-spaces",
       "action": "Ask Sunset Mercantile or SFMTA to confirm the southern end of the closure. Until then, both official versions are recorded."
+    },
+    {
+      "id": "flag-ai-council-cost",
+      "title": "AI Council 2027 — admission price not published",
+      "detail": "The AI Council organizer page confirms a March 23-24, 2027 San Francisco event at the Palace Hotel but does not publish an admission price. Cost is therefore blank and the entry is marked unverified; no ticket price or free access is inferred.",
+      "source_name": "AI Council — official event page",
+      "source_url": "https://www.aicouncil.com/",
+      "action": "Check the organizer's official registration page when it is published; fill the cost only from the organizer."
+    },
+    {
+      "id": "flag-odsc-ai-west-outside-sf",
+      "title": "ODSC AI West 2026 — excluded because the stated venue is in Burlingame",
+      "detail": "The organizer's official event page advertises ODSC AI West for October 27-29, 2026 at the Hyatt Regency SFO. Hyatt's official property page gives the venue address as 1333 Bayshore Highway, Burlingame, CA 94010, outside the City and County of San Francisco. It was not added to the SF-only event table.",
+      "source_name": "Hyatt Regency San Francisco Airport — official property location",
+      "source_url": "https://www.hyatt.com/hyatt-regency/en-US/sfobu-hyatt-regency-san-francisco-airport",
+      "additional_sources": [
+        {
+          "name": "ODSC AI West — official event page",
+          "url": "https://odsc.ai/west/"
+        }
+      ],
+      "action": "No catalogue change unless the organizer publishes an SF city venue; do not use the airport hotel's name as evidence that it is inside San Francisco."
     },
     {
       "id": "xflag-f-001",
