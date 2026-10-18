@@ -39,6 +39,11 @@ FLAGGED = list(BASE_FLAGGED) + parallel_flagged()
 SITE_NAME = "San Francisco Events"
 SITE_TAGLINE = "A curated, source-linked snapshot of public events in San Francisco"
 
+# Snapshot date ("today" for the executive summary). The site is a static
+# snapshot, so "close to today" always means close to the verification date.
+VERIFIED_YEAR = int(VERIFIED_ON[:4])
+TODAY = date(VERIFIED_YEAR, int(VERIFIED_ON[5:7]), int(VERIFIED_ON[8:10]))
+
 # (filename, label, blurb, kind) where kind is "group" (recurrence type),
 # "category" (subject area), "static" or "home".
 PAGES = [
@@ -73,6 +78,68 @@ def esc(value) -> str:
     if value is None:
         return ""
     return html.escape(str(value), quote=True)
+
+
+# --- date parsing (presentation only; never invents a date) -----------------
+import re  # noqa: E402
+
+_MONTHS = {
+    "jan": 1, "january": 1, "feb": 2, "february": 2, "mar": 3, "march": 3,
+    "apr": 4, "april": 4, "may": 5, "jun": 6, "june": 6, "jul": 7, "july": 7,
+    "aug": 8, "august": 8, "sep": 9, "sept": 9, "september": 9,
+    "oct": 10, "october": 10, "nov": 11, "november": 11,
+    "dec": 12, "december": 12,
+}
+_MONTH_RE = (
+    r"(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?"
+    r"|aug(?:ust)?|sep(?:t)?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)"
+)
+
+
+def parse_dates(text: str):
+    """Best-effort extraction of the *printed* date tokens in an official date
+    string. Fuzzy wording ("mid-November") is never resolved into a date.
+    """
+    if not text:
+        return []
+    t = text
+    out = set()
+
+    def add(mon_name, day, year):
+        try:
+            out.add(date(year, _MONTHS[mon_name.lower()], int(day)))
+        except (ValueError, KeyError):
+            pass
+
+    years = [int(y) for y in re.findall(r"\b(20\d{2})\b", t)]
+    default_year = years[0] if years else VERIFIED_YEAR
+
+    # 1) Month D, YYYY  (explicit year)
+    for m in re.finditer(rf"\b{_MONTH_RE}\s+(\d{{1,2}})(?!\d)(?:st|nd|rd|th)?,\s*(\d{{4}})", t, re.I):
+        add(m.group(1), m.group(2), int(m.group(3)))
+    # 2) Month D - Month D[, YYYY]  (cross-month range)
+    for m in re.finditer(
+            rf"\b{_MONTH_RE}\s+(\d{{1,2}})(?!\d)\s*[-\u2013\u2014]\s*"
+            rf"{_MONTH_RE}\s+(\d{{1,2}})(?!\d)(?:,\s*(\d{{4}}))?",
+            t, re.I):
+        y = int(m.group(5)) if m.group(5) else default_year
+        add(m.group(1), m.group(2), y)
+        add(m.group(3), m.group(4), y)
+    # 3) Month D-D[, YYYY]  (same-month range)
+    for m in re.finditer(
+            rf"\b{_MONTH_RE}\s+(\d{{1,2}})(?!\d)\s*[-\u2013\u2014]\s*"
+            rf"(\d{{1,2}})(?!\d)(?:,\s*(\d{{4}}))?",
+            t, re.I):
+        y = int(m.group(4)) if m.group(4) else default_year
+        add(m.group(1), m.group(2), y)
+        add(m.group(1), m.group(3), y)
+    # 4) bare Month D  (year defaults to the first year printed in the string)
+    for m in re.finditer(
+            rf"\b{_MONTH_RE}\s+(\d{{1,2}})(?!\d)(?:st|nd|rd|th)?"
+            rf"(?!,\s*\d{{4}})(?![-\u2013\u2014]\s*\d)(?![-\u2013\u2014]\s*{_MONTH_RE})",
+            t, re.I):
+        add(m.group(1), m.group(2), default_year)
+    return sorted(out)
 
 
 def blank(value: str) -> str:
@@ -135,6 +202,33 @@ def page_shell(filename: str, title: str, subtitle: str, body: str) -> str:
 """
 
 
+def _cost_class(cost: str) -> str:
+    c = (cost or "").lower()
+    if not c.strip():
+        return "blank"
+    is_free = "free" in c
+    is_paid = any(w in c for w in ("ticket", "$", "fee", "registration", "prix fixe", "donation", "membership", "admission"))
+    if is_free and is_paid:
+        return "mixed"
+    if is_free:
+        return "free"
+    return "paid"
+
+
+def _cost_cell(cost: str) -> str:
+    cls = _cost_class(cost)
+    if cls == "blank":
+        return '<td class="unverified-cell"><span class="na">not confirmed</span></td>'
+    chip = ""
+    if cls == "free":
+        chip = '<span class="cost-chip free-chip">Free</span> '
+    elif cls == "paid":
+        chip = '<span class="cost-chip paid-chip">$</span> '
+    elif cls == "mixed":
+        chip = '<span class="cost-chip mixed-chip">Free / paid</span> '
+    return f'<td class="cost-cell cost-{cls}">{chip}{esc(cost)}</td>'
+
+
 def _row_data(ev) -> str:
     text = " ".join(
         str(ev.get(k, "")) for k in ("title", "location", "area", "organiser", "source_name", "type")
@@ -144,6 +238,7 @@ def _row_data(ev) -> str:
         f' data-cat="{esc(ev.get("category", ""))}"'
         f' data-status="{esc(ev.get("status", "verified"))}"'
         f' data-timing="{esc(ev.get("timing", "current"))}"'
+        f' data-cost="{_cost_class(ev.get("cost", ""))}"'
         f' data-text="{esc(text)}"'
     )
 
@@ -171,6 +266,9 @@ def event_table(events, table_id: str) -> str:
         )
         cells = [title_cell]
         for key in ("type", "schedule", "dates", "location", "area", "cost", "organiser"):
+            if key == "cost":
+                cells.append(_cost_cell(ev.get("cost", "")))
+                continue
             value = ev.get(key, "")
             if not value:
                 cells.append('<td class="unverified-cell"><span class="na">not confirmed</span></td>')
@@ -253,16 +351,87 @@ def build_index() -> str:
         f"<tr><td>{esc(k)}</td><td class='num'>{v}</td></tr>" for k, v in sorted(area_counts.items())
     )
 
-    latest = [
-        e for e in EVENTS
-        if e.get("group") == "special" and e.get("dates") and e.get("timing") != "concluded"
-    ][:8]
-    latest_rows = "".join(
-        f"<tr><td>{esc(e['title'])}</td><td>{esc(e['dates'])}</td>"
-        f"<td>{esc(e['location'])}</td>"
+    # --- dated rows: parsed from the printed date strings only -------------
+    dated = []
+    for e in EVENTS:
+        if e.get("timing") == "concluded" or not e.get("dates"):
+            continue
+        tokens = parse_dates(e.get("dates", ""))
+        if not tokens:
+            continue
+        dated.append((tokens[0], tokens[-1], e))
+    dated.sort(key=lambda t: (t[0], t[2].get("title", "")))
+    horizon = TODAY.toordinal() + 21
+    starting_soon = [t for t in dated if TODAY.toordinal() <= t[0].toordinal() <= horizon]
+    running_now = [t for t in dated if t[0] <= TODAY <= t[1] and t[1] > t[0]]
+    running_now.sort(key=lambda t: (t[1], t[2].get("title", "")))
+    upcoming = [t for t in dated if t[1] >= TODAY][:12]
+
+    def row_page(e) -> str:
+        return {"recurring": "recurring.html", "annual": "annual.html",
+                "special": "special.html"}.get(e.get("group", ""), "all-events.html")
+
+    def row_link(e) -> str:
+        return f"{row_page(e)}#{esc(e['id'])}"
+
+    def mini_rows(items, show_end=False):
+        out = []
+        for start, end, e in items:
+            when = e.get("dates", "")
+            cost = e.get("cost", "")
+            cls = _cost_class(cost)
+            chip = ('<span class="cost-chip free-chip">Free</span> ' if cls == "free"
+                    else '<span class="cost-chip paid-chip">$</span> ' if cls == "paid"
+                    else '<span class="cost-chip mixed-chip">Free / paid</span> ' if cls == "mixed"
+                    else "")
+            cost_html = f"{chip}{esc(cost)}" if cost else '<span class="na">not confirmed</span>'
+            out.append(
+                f"<tr><td>{esc(when)}</td><td><a href='{row_link(e)}'>{esc(e['title'])}</a></td>"
+                f"<td>{cost_html}</td>"
+                f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>"
+                f"{esc(e['source_name'])} &nearr;</a></td></tr>"
+            )
+        return "".join(out) or ("<tr><td colspan='4'><span class='na'>none listed in this window</span></td></tr>")
+
+    soon_free = sum(1 for _s, _e, ev in starting_soon if _cost_class(ev.get("cost", "")) in ("free", "mixed"))
+    soonest = starting_soon[0][2]["title"] if starting_soon else "—"
+
+    # Free spotlight: user-requested focus on free gaming, music and AI events.
+    def theme_of(ev):
+        t = (ev.get("title", "") + " " + ev.get("notes", "")).lower()
+        if re.search(r"\b(game|gaming|games|chess|dungeons|d&d|nintendo|arcade|pinball|esports)\b", t):
+            return "Gaming"
+        if re.search(r"\b(ai|a\.i\.|artificial intelligence|robotics|machine learning|tech week)\b", t):
+            return "AI & tech"
+        if re.search(r"\b(music|concert|band|jazz|symphony|opera|choir|piano|k-pop|dance|theatre|theater|shakespeare|song)\b", t):
+            return "Music & stage"
+        return ""
+
+    spotlight = []
+    for e in EVENTS:
+        if e.get("timing") == "concluded":
+            continue
+        if _cost_class(e.get("cost", "")) not in ("free", "mixed"):
+            continue
+        theme = theme_of(e)
+        if theme:
+            spotlight.append((theme, e))
+    spotlight.sort(key=lambda t: (t[0], t[1].get("title", "")))
+    spotlight_rows = "".join(
+        f"<tr><td>{esc(theme)}</td><td><a href='{row_link(e)}'>{esc(e['title'])}</a></td>"
+        f"<td>{esc(e.get('schedule') or e.get('dates') or '')}</td>"
         f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>{esc(e['source_name'])} &nearr;</a></td></tr>"
-        for e in latest
-    )
+        for theme, e in spotlight
+    ) or "<tr><td colspan='4'><span class='na'>none listed</span></td></tr>"
+
+    latest_rows = "".join(
+        f"<tr><td><a href='{row_link(e)}'>{esc(e['title'])}</a></td><td>{esc(e.get('dates', ''))}</td>"
+        f"<td>{esc(e.get('location', ''))}</td>"
+        + _cost_cell(e.get("cost", ""))
+        + f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>"
+        f"{esc(e['source_name'])} &nearr;</a></td></tr>"
+        for _s, _e, e in upcoming
+    ) or "<tr><td colspan='5'><span class='na'>none listed</span></td></tr>"
 
     body = f"""
 <section class="hero">
@@ -293,6 +462,45 @@ def build_index() -> str:
   <div class="stat"><span class="stat-n">{len({e['source_url'].split('/')[2] for e in EVENTS})}</span><span class="stat-l">distinct official domains</span></div>
 </section>
 
+<section class="exec-summary">
+  <h2>Executive summary &mdash; what&#x27;s close to today ({esc(VERIFIED_ON)})</h2>
+  <p class="lede">This snapshot was verified on <strong>{esc(VERIFIED_ON)}</strong>. In the next three weeks
+     <strong>{len(starting_soon)}</strong> listed dated events start (soonest: <strong>{esc(soonest)}</strong>),
+     of which <strong>{soon_free}</strong> are free or partly free, and <strong>{len(running_now)}</strong> dated
+     events are running right now. Costs below are exactly as the official source states them;
+     <span class="na">not confirmed</span> means the source publishes no price.</p>
+  <div class="two-col">
+    <div>
+      <h3>Starting soon (next three weeks)</h3>
+      <div class="table-scroll">
+      <table class="data-table compact">
+        <thead><tr><th scope="col">When</th><th scope="col">Event</th><th scope="col">Cost</th><th scope="col">Official source</th></tr></thead>
+        <tbody>{mini_rows(starting_soon)}</tbody>
+      </table>
+      </div>
+    </div>
+    <div>
+      <h3>Running now</h3>
+      <div class="table-scroll">
+      <table class="data-table compact">
+        <thead><tr><th scope="col">Dates</th><th scope="col">Event</th><th scope="col">Cost</th><th scope="col">Official source</th></tr></thead>
+        <tbody>{mini_rows(running_now)}</tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  <h3>Free spotlight &mdash; gaming, music and AI</h3>
+  <p class="note">The brief for this catalogue prioritises free events in gaming, music and AI, then everything
+     else. The rows below are the free (or partly free) entries in those themes; the
+     <a href="all-events.html">full list</a> covers every theme and includes a &ldquo;Free only&rdquo; filter.</p>
+  <div class="table-scroll">
+  <table class="data-table compact">
+    <thead><tr><th scope="col">Theme</th><th scope="col">Event</th><th scope="col">When</th><th scope="col">Official source</th></tr></thead>
+    <tbody>{spotlight_rows}</tbody>
+  </table>
+  </div>
+</section>
+
 <section>
   <h2>Browse by category</h2>
   <div class="tiles">
@@ -319,9 +527,11 @@ def build_index() -> str:
 
 <section>
   <h2>Upcoming dated events</h2>
+  <p class="note">Every listed row with confirmed dates that is running now or starts later, sorted
+     <strong>soonest first</strong>. Costs are labelled as the official source states them.</p>
   <div class="table-scroll">
   <table class="data-table">
-    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
+    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Where</th><th scope="col">Cost</th><th scope="col">Official source</th></tr></thead>
     <tbody>{latest_rows}</tbody>
   </table>
   </div>
@@ -453,6 +663,7 @@ FILTER_JS = """
   var q = document.getElementById('q');
   var fType = document.getElementById('f-type');
   var fCat = document.getElementById('f-cat');
+  var fCost = document.getElementById('f-cost');
   var fStatus = document.getElementById('f-status');
   var fTime = document.getElementById('f-time');
   var count = document.getElementById('visible-count');
@@ -465,13 +676,14 @@ FILTER_JS = """
   });
   function apply() {
     var term = (q.value || '').trim().toLowerCase();
-    var t = fType.value, c = fCat.value, st = fStatus.value, ti = fTime.value;
+    var t = fType.value, c = fCat.value, co = fCost.value, st = fStatus.value, ti = fTime.value;
     var shown = 0;
     rows.forEach(function (r) {
       if (r.classList.contains('note-row')) { return; }
       var ok = true;
       if (t && r.getAttribute('data-group') !== t) { ok = false; }
       if (c && r.getAttribute('data-cat') !== c) { ok = false; }
+      if (co && r.getAttribute('data-cost') !== co) { ok = false; }
       if (st && r.getAttribute('data-status') !== st) { ok = false; }
       if (ti && r.getAttribute('data-timing') !== ti) { ok = false; }
       if (ok && term && (r.getAttribute('data-text') || '').indexOf(term) === -1) { ok = false; }
@@ -482,14 +694,14 @@ FILTER_JS = """
     });
     if (count) { count.textContent = shown; }
   }
-  [q, fType, fCat, fStatus, fTime].forEach(function (el) {
+  [q, fType, fCat, fCost, fStatus, fTime].forEach(function (el) {
     if (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); }
   });
   var reset = document.getElementById('reset');
   if (reset) {
     reset.addEventListener('click', function (ev) {
       ev.preventDefault();
-      q.value = ''; fType.value = ''; fCat.value = ''; fStatus.value = ''; fTime.value = '';
+      q.value = ''; fType.value = ''; fCat.value = ''; fCost.value = ''; fStatus.value = ''; fTime.value = '';
       apply();
       q.focus();
     });
@@ -503,6 +715,8 @@ def build_full_list() -> str:
     groups = [("", "All schedules"), ("recurring", "Regularly recurring"), ("annual", "Annual"), ("special", "Special / dated")]
     cats = [("", "All categories"), ("civic", "Civic"), ("arts", "Arts & culture"), ("sports", "Sports"),
             ("markets", "Markets & food"), ("community", "Community & parks")]
+    costs = [("", "Any cost"), ("free", "Free"), ("paid", "Paid / ticketed"), ("mixed", "Free / paid mix"),
+             ("blank", "Cost not confirmed")]
     stat = [("", "All rows"), ("verified", "Verified"), ("unverified", "Needs review")]
     tim = [("", "Any timing"), ("current", "Current / upcoming"), ("concluded", "Concluded edition")]
 
@@ -523,6 +737,7 @@ def build_full_list() -> str:
   </label>
   <label class="field"><span>Schedule</span><select id="f-type">{opts(groups)}</select></label>
   <label class="field"><span>Category</span><select id="f-cat">{opts(cats)}</select></label>
+  <label class="field"><span>Cost</span><select id="f-cost">{opts(costs)}</select></label>
   <label class="field"><span>Status</span><select id="f-status">{opts(stat)}</select></label>
   <label class="field"><span>Timing</span><select id="f-time">{opts(tim)}</select></label>
   <button id="reset" class="btn ghost" type="button">Reset</button>
@@ -962,11 +1177,43 @@ code { background: #eef2f5; padding: 1px 5px; border-radius: 4px; font-size: .88
   .site-nav { margin-left: 0; width: 100%; }
   h1 { font-size: 1.55rem; }
   .hero { padding: 20px; }
+  .two-col { grid-template-columns: 1fr; }
 }
 @media print {
   .site-nav, .hero-actions, .btn { display: none; }
   .table-scroll { overflow: visible; }
   .data-table { min-width: 0; font-size: 8pt; }
+}
+
+/* Cost labels (every table row states the cost exactly as the source words it) */
+.cost-cell { vertical-align: top; }
+.cost-chip {
+  display: inline-block; padding: 1px 8px; border-radius: 999px;
+  font-size: .72rem; font-weight: 700; letter-spacing: .02em;
+  vertical-align: 1px; margin-right: 4px; white-space: nowrap;
+}
+.free-chip { background: var(--ok-bg); color: var(--ok-ink); border: 1px solid #bfe3c9; }
+.paid-chip { background: #eef2f7; color: #3c4a5c; border: 1px solid #d5dde6; }
+.mixed-chip { background: var(--warn-bg); color: var(--warn-ink); border: 1px solid #ead9a8; }
+
+/* Executive summary */
+.exec-summary {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 20px 22px; margin: 22px 0 8px; box-shadow: 0 1px 2px rgba(16, 34, 46, .05);
+}
+.exec-summary h2 { margin-top: 0; }
+.exec-summary h3 { font-size: 1.02rem; margin: 18px 0 8px; }
+.exec-summary .data-table { min-width: 640px; }
+.exec-summary .data-table td, .exec-summary .data-table th { padding: 7px 10px; }
+
+/* Small screens */
+@media (max-width: 640px) {
+  .stat-row { gap: 8px; }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .exec-summary { padding: 14px; }
+  .site-nav a { padding: 5px 9px; font-size: .8rem; }
+  main { padding: 20px 14px 44px; }
+  h2 { font-size: 1.1rem; }
 }
 """
 
