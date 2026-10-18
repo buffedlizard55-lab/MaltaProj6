@@ -268,10 +268,10 @@ EVENTS = [
         page="recurring", type="Recurring - Regular schedule",
         schedule="Open daily with individual merchant hours",
         dates="", location="Ferry Building, 1 Ferry Building", area="Embarcadero / South Beach",
-        cost="Free entry", organiser="Ferry Building Marketplace",
+        cost="", organiser="Ferry Building Marketplace",
         source_name="Ferry Building Marketplace — official site",
-        source_url="https://www.ferrybuildingmarketplace.com/", status="verified",
-        notes=""),
+        source_url="https://www.ferrybuildingmarketplace.com/", status="unverified",
+        notes="Re-checked 2026-10-18 by session arena-fe7c710c. The Marketplace's own home page describes its shops, restaurants and events programme and publishes no admission price for the building, so the 'Free entry' cell has been blanked and the row marked unverified rather than inferred. See Flagged for Review."),
     dict(
         id="rec-sunday-streets", title="SFMTA Sunday Streets",
         page="recurring", type="Recurring - Monthly",
@@ -1225,10 +1225,10 @@ EVENTS += [
         page="arts", type="Attraction - Open regularly",
         schedule="Open daily 10:00 a.m.-5:00 p.m.; closed Thanksgiving, Christmas and New Year's Day",
         dates="", location="210 Lincoln Boulevard, Presidio of San Francisco, CA 94129", area="Presidio",
-        cost="Free", organiser="Presidio Trust",
+        cost="", organiser="Presidio Trust",
         source_name="Presidio Trust — Presidio Visitor Center",
-        source_url="https://presidio.gov/explore/attractions/presidio-visitor-center", status="verified",
-        notes="Corrected 2026-10-18 by arena-8e8e24dc: the row previously listed '104 Montgomery Street', which is the separate Walt Disney Family Museum (its own row). The Trust's visitor-center page gives 210 Lincoln Boulevard and daily 10-5 hours."),
+        source_url="https://presidio.gov/explore/attractions/presidio-visitor-center", status="unverified",
+        notes="Corrected 2026-10-18 by session arena-8e8e24dc: the row previously listed '104 Montgomery Street', which is the separate Walt Disney Family Museum (its own row). The Trust's visitor-center page gives 210 Lincoln Boulevard and daily 10-5 hours. Re-checked the same day by session arena-fe7c710c: that page publishes no admission price, so the 'Free' cell has been blanked and the row marked unverified rather than inferred. See Flagged for Review."),
     dict(
         id="art-fort-point", title="Fort Point National Historic Site",
         page="arts", type="Attraction - Open regularly",
@@ -1406,10 +1406,10 @@ EVENTS += [
         page="markets", type="Attraction - Open regularly",
         schedule="Open daily; peaks during festival weekends such as the Flower Market Fair and Autumn Moon Festival",
         dates="", location="Grant Avenue and Washington Street, San Francisco, CA 94108", area="Chinatown",
-        cost="Free", organiser="Chinatown Merchants Association / San Francisco Chinatown",
+        cost="", organiser="Chinatown Merchants Association / San Francisco Chinatown",
         source_name="Chinatown Merchants Association — official site",
-        source_url="https://www.moonfestival.org/", status="verified",
-        notes=""),
+        source_url="https://www.moonfestival.org/", status="unverified",
+        notes="Re-checked 2026-10-18 by session arena-fe7c710c. The cited page publishes 'Cost: FREE!' for the Chinatown Autumn Moon Festival, which has its own row, but says nothing about the Chinatown shopping streets as a standing attraction, so the 'Free' cell has been blanked and the row marked unverified rather than inferred. See Flagged for Review."),
     dict(
         id="mkt-treasurefest", title="TreasureFest (Treasure Island flea and craft festival)",
         page="markets", type="Recurring - Monthly",
@@ -2296,6 +2296,13 @@ EVENTS += [
 # "Flagged for Review" page of the generated site.
 # ---------------------------------------------------------------------------
 FLAGGED = [
+    dict(
+        id="flag-four-more-free-claims-unpublished",
+        title="Four more 'Free' cost cells blanked — the official pages publish no price",
+        detail="The Ferry Building Marketplace home page, the Presidio Visitor Center page, SFMTA's Shared Spaces permit list (Castro Art Mart) and the Autumn Moon Festival page (cited for the Chinatown shopping-streets row) were each fetched on 2026-10-18. None of them states an admission price for the row it supports, so the four 'Free' cost cells have been blanked and the rows marked unverified. The Autumn Moon Festival itself keeps its free cost cell, because its own page publishes 'Cost: FREE!'.",
+        source_name="SFMTA — Shared Spaces (street-closure permits)",
+        source_url="https://www.sfmta.com/projects/shared-spaces",
+        action="Ask each venue or sponsor whether admission is charged, and record the answer here."),
     dict(
         id="flag-castro-merchants-cost-not-published",
         title="Castro Merchants Association listings publish no admission price — three 'Free' cost cells blanked",

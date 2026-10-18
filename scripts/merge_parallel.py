@@ -494,6 +494,12 @@ FIELD_OVERRIDES = {
         "_force_unverified": True,
         "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'December 10th - Holiday Nights', 4pm - 9pm, Cole Street between Carl and Parnassus Avenue, and publishes its market dates as 4/16, 5/21, 8/20 and 12/10. The page does not state an admission price, so the cost cell has been blanked and the row marked unverified rather than presented as free. See Flagged for Review.",
     },
+    "w-014": {
+        "source_url": "https://www.sfmta.com/projects/shared-spaces",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the SFMTA Shared Spaces page publishes the street-closure permit for Noe Street (1st Sundays, 11:30 a.m. to 9:30 p.m., permitted through May 2, 2027, sponsor Artyhood) but no admission price, so the 'Free entry' cell has been blanked and the row marked unverified rather than inferred. See Flagged for Review.",
+    },
 }
 
 
