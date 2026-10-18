@@ -78,9 +78,16 @@ def source_link(ev, label=None):
             f'title="{esc(ev.get("source_title"))}">{esc(text)}</a>')
 
 
+FIELD_LABELS = {
+    "schedule.start_time": "start time",
+    "display_dates.end": "end date",
+    "dates.next_edition": "next edition date",
+}
+
+
 def unverified_badge(ev):
     if ev.get("unverified_fields"):
-        fields = ", ".join(ev["unverified_fields"]).replace("_", " ")
+        fields = ", ".join(FIELD_LABELS.get(f, f.replace("_", " ")) for f in ev["unverified_fields"])
         return f'<span class="badge unverified" title="Unverified: {esc(fields)}">unverified</span>'
     return ""
 
