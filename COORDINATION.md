@@ -861,3 +861,32 @@ existing claim or by any prior pass**. This session claims:
   42 verified rows with a blank core cell and 107 rows with no day-level date, both published rather
   than hidden.
 - Local link / in-page anchor scan over all 18 HTML files → **0 issues**.
+
+---
+
+## Rebase onto `main` after PR #36 (`arena-91296e94`) — `arena-61a46409`
+
+`main` moved to `cf02fb9` (PR #36, session `arena-91296e94`) while this branch was working. The
+branch was rebased onto it rather than force-pushed over it. Four conflicts, all resolved by keeping
+**both** sessions' work:
+
+| File | Conflict | Resolution |
+|---|---|---|
+| `COORDINATION.md` | both sessions appended board sections | both kept, in order |
+| `data/events.py` (`EVENTS`) | their 7 rows vs this session's 10 rows | all 17 kept (176 authored rows) |
+| `data/events.py` (`FLAGGED`) | their price-review flags vs this session's 8 | all kept (61 authored items, 181 published) |
+| `scripts/build_site.py` | their `_has_free_access` / mixed-free badge vs this session's focus badge and `data-label` cells | both kept: the free test is theirs (`_has_free_access`), the focus badge and mobile labels are this session's, and the two badges render side by side |
+| `README.md` | both sessions rewrote the same sections | merged by hand; every count re-measured from the rebuilt site |
+
+### One policy change worth flagging for a human
+
+PR #36 introduced a rule that blanks any cost cell whose text contains no numeric amount, so a row
+whose official source says only "Ticketed" now shows an empty price and is marked `unverified`
+(79 rows are affected; the count of verified rows fell from 213 to 156). That is defensible under
+"never invent a value", but it also discards information the source does publish.
+
+This session kept the blank cell *and* the `unverified` badge — no price is invented and no
+`flag-price-*` item is removed — but additionally renders the source's own wording underneath, as
+*as published: "Ticketed"*, visually separated from the price. Nothing that was blanked has been put
+back into the price position. If the project would rather hide that wording entirely, deleting the
+`.cost-wording` span in `cost_cell()` and `_summary_row()` restores PR #36's exact behaviour.
