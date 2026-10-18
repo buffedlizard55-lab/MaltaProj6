@@ -46,6 +46,10 @@ OUT_OF_SF = [
 # jurisdiction is disputed by this dataset's own note -- surface all three.
 # All entries are lowercase: they are matched against lowercased text.
 BORDERLINE = ["Angel island", "treasure island", "yerba buena island"]
+# Pattern lists are matched against lowercased text -- force lowercase here
+# so a capitalised entry can never silently stop matching.
+OUT_OF_SF = [p.lower() for p in OUT_OF_SF]
+BORDERLINE = [p.lower() for p in BORDERLINE]
 
 AGGREGATOR_DOMAINS = {
     "eventbrite.com", "facebook.com", "yelp.com", "funcheap.com",
