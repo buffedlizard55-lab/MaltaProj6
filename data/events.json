@@ -4,7 +4,7 @@
   "generated": "2026-10-18",
   "verified_on": "2026-10-18",
   "scope": "City and County of San Francisco only",
-  "event_count": 280,
+  "event_count": 281,
   "flagged_count": 214,
   "events": [
     {
@@ -4057,6 +4057,35 @@
       "cost_class": "mixed",
       "date_start": "2026-09-23",
       "date_end": "2026-11-18",
+      "date_source": "parsed"
+    },
+    {
+      "id": "spc-sfpl-family-game-night-2026-11-10",
+      "title": "Family Board Game and LEGO Night (SFPL Noe Valley)",
+      "page": "special",
+      "type": "Special - Dated",
+      "category": "community",
+      "schedule": "6:00 p.m.–7:30 p.m.",
+      "dates": "Tuesday, November 10, 2026",
+      "location": "Noe Valley Meeting Room, Noe Valley/Sally Brunn Branch Library, 451 Jersey Street, San Francisco, CA 94114",
+      "area": "Noe Valley",
+      "cost": "Free",
+      "organiser": "San Francisco Public Library",
+      "source_name": "San Francisco Public Library — Social: Family Board Game and LEGO Night",
+      "source_url": "https://sfpl.org/quickview/138715",
+      "status": "verified",
+      "additional_sources": [
+        {
+          "name": "SFPL — Upcoming Events index ('All programs and events are free and open to the public.')",
+          "url": "https://sfpl.org/events"
+        }
+      ],
+      "notes": "Added by arena-fe7c710c on 2026-10-18 from the library's own event record, which states 'Tuesday, 11/10/2026, 6:00 - 7:30', Noe Valley Meeting Room at Noe Valley/Sally Brunn, 451 Jersey Street, tagged Gaming and Science, and describes it as 'Enjoy a board game with friends, family and neighbors or build with LEGOs. For children and their caregivers.' The cost cell follows the library's published statement on its events index that 'All programs and events are free and open to the public.'; the event record itself does not repeat a price.",
+      "group": "special",
+      "focus": "gaming",
+      "cost_class": "free",
+      "date_start": "2026-11-10",
+      "date_end": "2026-11-10",
       "date_source": "parsed"
     },
     {

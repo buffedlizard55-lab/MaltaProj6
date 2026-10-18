@@ -3,20 +3,20 @@
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 280,
+    "total": 281,
     "recurring": 126,
     "annual": 57,
-    "special": 97,
-    "verified_rows": 168,
+    "special": 98,
+    "verified_rows": 169,
     "unverified_rows": 112,
-    "free_access_rows": 155,
-    "explicitly_free_rows": 137,
+    "free_access_rows": 156,
+    "explicitly_free_rows": 138,
     "concluded_rows": 46,
     "flagged_rows": 214,
     "sources": 109
   },
   "focus": {
-    "gaming": 7,
+    "gaming": 8,
     "music": 52,
     "ai": 9,
     "other": 212
