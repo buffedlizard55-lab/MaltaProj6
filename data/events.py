@@ -1568,9 +1568,9 @@ EVENTS += [
         location="Mission Dolores Park, Yerba Buena Gardens, the Panhandle and other San Francisco parks (the tour also plays Berkeley, Oakland and other Bay Area cities)",
         area="Citywide", cost="Free (donations requested)",
         organiser="San Francisco Mime Troupe",
-        source_name="San Francisco Mime Troupe — official summer calendar (iCal feed)",
-        source_url="https://calendar.google.com/calendar/ical/c_49cd818e8b83a687e080ec518030bfdcda142d53de55a32a092ac9a67c50675d%40group.calendar.google.com/public/basic.ics", status="verified",
-        notes="Added 2026-10-18 by session arena-8cb2d3cc. The company's official calendar feed (linked from sfmt.org/summer-schedule as 'Download iCal Calendar') carries the dated 2026 park performances, including the closing date of Monday, September 7, 2026, 2:00 p.m., at Mission Dolores Park, 19th & Dolores Streets. The 2026 production was 'Wreckage - A Musical Tragicomedy' (sfmt.org/show-archive/wreckage-a-musical-tragicomedy). The tour also plays Berkeley, Oakland, Cotati and San Jose; only the San Francisco dates are within this catalogue's city-limits scope. The season has concluded."),
+        source_name="San Francisco Mime Troupe — full schedule (official site)",
+        source_url="https://www.sfmt.org/full-schedule", status="verified",
+        notes="Source corrected 2026-10-18 by session arena-91296e94: the row now cites the organiser's own schedule page (sfmt.org/full-schedule, linked from sfmt.org/summer-schedule), which links the same official iCal calendar feed previously cited directly. Added 2026-10-18 by session arena-8cb2d3cc. The company's official calendar feed carries the dated 2026 park performances, including the closing date of Monday, September 7, 2026, 2:00 p.m., at Mission Dolores Park, 19th & Dolores Streets. The 2026 production was 'Wreckage - A Musical Tragicomedy' (sfmt.org/show-archive/wreckage-a-musical-tragicomedy). The tour also plays Berkeley, Oakland, Cotati and San Jose; only the San Francisco dates are within this catalogue's city-limits scope. The season has concluded."),
     dict(
         id="ann-ybg-festival", title="Yerba Buena Gardens Festival",
         page="annual", type="Annual",
@@ -1604,6 +1604,78 @@ EVENTS += [
         source_url="https://www.aicouncil.com/", status="unverified",
         additional_sources=[{"name": "Marriott — Palace Hotel official location", "url": "https://www.marriott.com/en-us/hotels/sfolc-palace-hotel-a-luxury-collection-hotel-san-francisco/overview/"}],
         notes="Official organizer page checked 2026-10-18 states March 23-24, 2027, at the Palace Hotel in San Francisco. Marriott's official property listing confirms the street address. No admission price is published by the organizer; cost is intentionally blank and the row is unverified."),
+    dict(
+        id="spc-techcrunch-disrupt-2026", title="TechCrunch Disrupt 2026",
+        page="technology", type="Special - Dated",
+        schedule="Three-day startup and AI conference (the 2026 edition ran October 13-15; the organiser's page now invites the 2027 waitlist)",
+        dates="October 13-15, 2026 (concluded)",
+        location="Moscone West, 800 Howard Street, San Francisco", area="SoMa",
+        cost="Standard passes: Attendee $1,049; Founder $1,099; Investor $1,199; Non-Profit $499; Student $399; Expo+ $349 (final-day discounted prices $262/$275/$300/$125/$100/$87 were live on the tickets page)",
+        organiser="TechCrunch",
+        source_name="TechCrunch — Disrupt 2026 (event and tickets pages)",
+        source_url="https://techcrunch.com/events/techcrunch-disrupt/", status="verified",
+        additional_sources=[{"name": "TechCrunch — Disrupt 2026 tickets (pass pricing)", "url": "https://techcrunch.com/events/techcrunch-disrupt/tickets/"}],
+        notes="Added 2026-10-18 by session arena-91296e94. Dates, Moscone West venue (800 Howard Street) and pass prices are taken from the organiser's own event and tickets pages (the site sits behind a Cloudflare browser check for plain fetches; the content was retrieved and cited from techcrunch.com). 10,000+ attendees with an AI-heavy speaker programme (Hugging Face, Cerebras, Replit, Amazon). Closes the catalogue's AI-conference gap alongside Dreamforce and RSAC. The 2026 edition has concluded."),
+    dict(
+        id="spc-gamesforum-sf-2026", title="Gamesforum San Francisco 2026",
+        page="technology", type="Special - Dated",
+        schedule="Two-day B2B mobile-gaming conference",
+        dates="Monday-Tuesday, October 26-27, 2026",
+        location="Hotel Nikko San Francisco", area="Union Square / Downtown",
+        cost="Standard conference pass $239 (early-bird $199 before September 26, 2026; super early-bird $149; group of 3 $203 per person, group of 4+ $167 per person); passes are for mobile-games publishers and developers only",
+        organiser="Games Forum Ltd (Gamesforum)",
+        source_name="Gamesforum — Our Events / San Francisco / Register",
+        source_url="https://www.globalgamesforum.com/san-francisco", status="verified",
+        additional_sources=[{"name": "Gamesforum — register now (pass pricing)", "url": "https://www.globalgamesforum.com/san-francisco/register-now"}],
+        notes="Added 2026-10-18 by session arena-91296e94. 'The only dedicated F2P mobile games marketing and monetization event in the US' per the organiser; speaker preview includes Meta, Google, Zynga, EA, Activision Blizzard Media, Scopely and Xbox Media executives. The organiser's pages do not publish the hotel's street address, so the location is recorded as published."),
+    dict(
+        id="spc-gamesbeat-next-2026", title="GamesBeat NEXT 2026 (7th annual)",
+        page="technology", type="Special - Dated",
+        schedule="Two-day gaming-and-AI executive conference",
+        dates="Monday-Tuesday, November 2-3, 2026",
+        location="Convene, San Francisco", area="Downtown",
+        cost="Conference Pass $899; VIP Pass $1,600 (limited-time $1,200, includes 12 months of GB MAX membership); Indie Pass $499 for freelancers and businesses under 50 employees; complimentary Brand & Agency passes by application",
+        organiser="GamesBeat (VentureBeat)",
+        source_name="GamesBeat Events — GamesBeat NEXT 2026 / Attend",
+        source_url="https://events.gamesbeat.com/next26/", status="verified",
+        additional_sources=[{"name": "GamesBeat NEXT 2026 — attend (pass pricing)", "url": "https://events.gamesbeat.com/next26/attend/"}],
+        notes="Added 2026-10-18 by session arena-91296e94. 'The 7th annual GamesBeat NEXT returns to the Bay Area on November 2-3, 2026, taking place at Convene in San Francisco' per the organiser; the programme pairs gaming with AI (Nintendo/PlayStation/Sega legends panel; AI-driven development tracks). The organiser's pages do not publish the venue's street address, so the location is recorded as published."),
+    dict(
+        id="rec-ferry-board-game-night", title="Board Game Night (Ferry Building Marketplace)",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Fridays, 5:00-8:00 p.m.",
+        dates="", location="Ferry Building Marketplace, public seating area between Book Passage and Cholita Linda, 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="", organiser="Ferry Building Marketplace (with Gamescape SF)",
+        source_name="Ferry Building Marketplace — Board Game Night",
+        source_url="https://www.ferrybuildingmarketplace.com/events/board-game-night-2/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. 'Games are provided by the Ferry Building Marketplace' — Scrabble, chess, Monopoly and more, with Gamescape SF; grab food and drinks from the Ferry Building shops. The official page states no admission charge, so the cost cell is left blank rather than inferred."),
+    dict(
+        id="rec-ferry-mahjong", title="Mahjong Meetup (Ferry Building Marketplace)",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Wednesdays, 3:00-7:00 p.m.",
+        dates="", location="Ferry Building Marketplace, across from Delica, 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="", organiser="Ferry Building Marketplace",
+        source_name="Ferry Building Marketplace — Mahjong Meetup",
+        source_url="https://www.ferrybuildingmarketplace.com/events/mahjong-meetup-1/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. 'Join us for an afternoon Mahjong meetup every Wednesday from 3-7 PM. All skill levels are welcome!... Sets will be provided'; Chinese-style quick guide available; seating and sets first come first served. The official page states no admission charge, so the cost cell is left blank."),
+    dict(
+        id="rec-ferry-music-on-the-plaza", title="Music on the Plaza (Ferry Building)",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Thursdays, 5:00-7:00 p.m.",
+        dates="", location="Ferry Building North Plaza (by Fort Point Beer Garden), 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="", organiser="Ferry Building Marketplace",
+        source_name="Ferry Building Marketplace — Music on the Plaza",
+        source_url="https://www.ferrybuildingmarketplace.com/events/music-on-the-plaza/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. 'Kick back and enjoy your Thursday afternoon, accompanied by live performances from our favorite Bay Area musicians.' The official page states no admission charge, so the cost cell is left blank rather than inferred."),
+    dict(
+        id="rec-ferry-monday-yoga", title="Monday Yoga at the Ferry Building",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Every Monday, 12:00-1:00 p.m.",
+        dates="", location="Ferry Building Back Plaza, 1 Ferry Building", area="Embarcadero / Financial District",
+        cost="Free (Vinyasa yoga class, per the official calendar listing)", organiser="Ferry Building Marketplace",
+        source_name="Ferry Building Marketplace — Monday Yoga",
+        source_url="https://www.ferrybuildingmarketplace.com/events/monday-yoga/", status="verified",
+        notes="Added 2026-10-18 by session arena-91296e94. Lunch-hour all-levels vinyasa with headphones provided (bring your own mat); registration link to outdoor-yoga.org on the official page; the venue's official events calendar titles it 'Monday Yoga — Free Vinyasa Yoga Class'."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -1977,6 +2049,12 @@ FLAGGED = [
         source_url="https://www.hyatt.com/hyatt-regency/en-US/sfobu-hyatt-regency-san-francisco-airport",
         additional_sources=[{"name": "ODSC AI West — official event page", "url": "https://odsc.ai/west/"}],
         action="No catalogue change unless the organizer publishes an SF city venue; do not use the airport hotel's name as evidence that it is inside San Francisco."),
+    dict(
+        id="flag-menorah-date-conflict", title="Castro Menorah Lighting — official page prose and structured date disagree",
+        detail="The Castro Merchants' official Menorah Lighting page shows a structured event date of Monday, December 7, 2026, 6:00-7:00 p.m., but its body prose still reads 'on Monday, December 15, at 6 PM' (December 15 was a Monday in 2025, so the prose appears to be stale prior-year copy). The row keeps the structured December 7, 2026 date and this mismatch is published rather than silently resolved.",
+        source_name="Castro Merchants — Castro Menorah Lighting",
+        source_url="https://castromerchants.com/events/castro-menorah-lighting",
+        action="Confirm the 2026 date with Castro Merchants; if the structured date is correct, ask them to update the prose."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -2123,6 +2201,13 @@ CATEGORY_BY_ID = {
     "art-uss-pampanito": "arts",
     "art-musee-mecanique": "arts",
     "spc-ai-council-2027": "technology",
+    "spc-techcrunch-disrupt-2026": "technology",
+    "spc-gamesforum-sf-2026": "technology",
+    "spc-gamesbeat-next-2026": "technology",
+    "rec-ferry-board-game-night": "technology",
+    "rec-ferry-mahjong": "technology",
+    "rec-ferry-music-on-the-plaza": "community",
+    "rec-ferry-monday-yoga": "community",
 }
 
 VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community", "technology")
@@ -2148,6 +2233,7 @@ CONCLUDED_2026 = {
     "x-a-008", "x-a-013", "x-a-019", "x-a-025", "x-a-027",
     "x-s-028", "x-s-032", "x-s-033", "x-w-023",
     "ann-sf-mime-troupe",
+    "spc-techcrunch-disrupt-2026",
 }
 
 
