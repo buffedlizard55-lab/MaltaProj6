@@ -69,6 +69,13 @@ FOCUS_BY_ID = {
     "spc-opera-ball": "music",
     "spc-opera-adlers-concert": "music",
     "spc-opera-chorus-concert": "music",
+    "spc-illuminate-reggae-2026-10-18": "music",
+    "spc-illuminate-ccs-2026-10-20": "music",
+    "spc-illuminate-midweek-2026-10-21": "music",
+    "spc-illuminate-happyhour-2026-10-23": "music",
+    "spc-illuminate-baybeats-2026-10-24": "music",
+    "spc-illuminate-reggae-2026-10-25": "music",
+    "spc-illuminate-halloween-2026-10-31": "music",
 
     # --- AI -------------------------------------------------------------
     "ann-sfpl-tech-week": "ai",

@@ -1,0 +1,103 @@
+{
+  "session": "arena-db227e31",
+  "checked_on": "2026-10-18",
+  "scope": "Free upcoming events inside San Francisco, especially near 2026-10-18, plus corrections where an official page contradicted a published value.",
+  "added": [
+    {
+      "id": "spc-illuminate-reggae-2026-10-18",
+      "source_url": "https://illuminate.org/event/crucial-reggae-sundays-october-18/",
+      "cost": "Free",
+      "why": "Official page: October 18, 2026, 12:00 p.m.-7:30 p.m., Golden Gate Bandshell, Free Concert category."
+    },
+    {
+      "id": "spc-illuminate-ccs-2026-10-20",
+      "source_url": "https://illuminate.org/event/civic-center-soundtrack-october-20/",
+      "cost": "Free",
+      "why": "Official page says Free live music, October 20, 2026, 12:00-3:00 p.m., 147 Fulton Street."
+    },
+    {
+      "id": "spc-illuminate-midweek-2026-10-21",
+      "source_url": "https://illuminate.org/event/midweek-melodies-october-21/",
+      "cost": "Free",
+      "why": "Official page says free live music, October 21, 2026, 4:00-7:00 p.m."
+    },
+    {
+      "id": "spc-illuminate-happyhour-2026-10-23",
+      "source_url": "https://illuminate.org/event/friday-happy-hour-october-23/",
+      "cost": "Free",
+      "why": "Official page says free live music, October 23, 2026, 4:30-7:30 p.m."
+    },
+    {
+      "id": "spc-illuminate-baybeats-2026-10-24",
+      "source_url": "https://illuminate.org/event/bay-beats-at-the-bandshell-october-24/",
+      "cost": "Free",
+      "why": "Official page calls the October 24, 2026 Bandshell launch a free day-of event."
+    },
+    {
+      "id": "spc-illuminate-reggae-2026-10-25",
+      "source_url": "https://illuminate.org/event/crucial-reggae-sundays-october-25/",
+      "cost": "Free",
+      "why": "Official page: October 25, 2026, 4:30-7:30 p.m., Free Concert category. Body does not repeat the word free."
+    },
+    {
+      "id": "spc-illuminate-halloween-2026-10-31",
+      "source_url": "https://illuminate.org/event/halloween-at-the-bandshell-october-31/",
+      "cost": "Free",
+      "why": "Official page says FREE AND OPEN TO ALL, October 31, 2026, 12:00-2:00 p.m."
+    },
+    {
+      "id": "spc-family-summit-d1-2026-10-22",
+      "source_url": "https://www.sf.gov/event-20261022-district-1-family-summit",
+      "cost": "Free",
+      "why": "SF.gov event page: October 22, 2026, 5:30-8:00 p.m., Cost Free, 251 18th Avenue."
+    },
+    {
+      "id": "spc-family-summit-d11-2026-10-29",
+      "source_url": "https://www.sf.gov/event-20261029-district-11-family-summit-excelsior",
+      "cost": "Free",
+      "why": "SF.gov event page: October 29, 2026, 5:30-8:00 p.m., Cost Free, 4840 Mission Street."
+    },
+    {
+      "id": "spc-family-summit-d2-2026-11-07",
+      "source_url": "https://www.sf.gov/event-20261107-district-2-family-summit",
+      "cost": "Free",
+      "why": "SF.gov event page: November 7, 2026, 11:00 a.m.-1:30 p.m., Cost Free, 3500 Fillmore Street."
+    },
+    {
+      "id": "spc-family-summit-d4-2026-11-14",
+      "source_url": "https://www.sf.gov/event-20261114-district-4-family-summit",
+      "cost": "Free",
+      "why": "SF.gov event page: November 14, 2026, 11:00 a.m.-1:30 p.m., Cost Free, 2201 Lawton Street."
+    },
+    {
+      "id": "spc-family-summit-d3-2026-12-12",
+      "source_url": "https://www.sf.gov/event-20261212-district-3-family-summit",
+      "cost": "Free",
+      "why": "SF.gov event page: December 12, 2026, 11:00 a.m.-1:30 p.m., Cost Free, 1199 Mason Street."
+    },
+    {
+      "id": "spc-sunday-streets-excelsior-2026",
+      "source_url": "https://sundaystreetssf.com/sunday-streets-excelsior-2026/",
+      "cost": "",
+      "status": "unverified",
+      "why": "Date, hours and street span are on the organiser page and the SFMTA advisory. Admission price is not. Cost left blank."
+    }
+  ],
+  "not_added": [
+    {
+      "name": "District 10 Bayview Family Summit",
+      "source_url": "https://www.sf.gov/news-san-francisco-launches-this-is-your-city-2026-family-listening-series",
+      "why": "Press release lists December 5, 2026, 11:00 a.m.-1:30 p.m., 1550 Evans Avenue. Guessed event URLs 404. Press release does not say Cost: Free. Not copied from sibling pages."
+    },
+    {
+      "name": "Filipino American International Book Festival, October 18 continuation",
+      "source_url": "https://sfpl.org/events/2026/10/17/celebration-filipino-american-international-book-festival",
+      "why": "Fetched page did not render an admission price or October 18 hours. Not inferred from a library-wide free-programmes statement."
+    },
+    {
+      "name": "Illuminate LIVE concerts listed on the index but not opened individually",
+      "source_url": "https://illuminate.org/events/",
+      "why": "Index does not state a price. Only pages opened this pass were added as dated free rows. The season row already covers the series."
+    }
+  ]
+}

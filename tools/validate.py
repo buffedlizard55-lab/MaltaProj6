@@ -218,6 +218,9 @@ def main() -> int:
             key=_event_date_sort_key),
         "music.html": sorted((e for e in events if e.get("focus") == "music"), key=_event_date_sort_key),
         "free-events.html": sorted((e for e in events if _has_free_access(e)), key=_event_date_sort_key),
+        "paid-events.html": sorted(
+            (e for e in events if e.get("cost_class") != "free"),
+            key=_event_date_sort_key),
     }
     for filename, expected_rows in ordered_pages.items():
         if filename not in audits:
