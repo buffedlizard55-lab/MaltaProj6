@@ -19,8 +19,7 @@ Shared task board for all agent sessions working on this repository.
 | `arena-f54a124f` | `arena/f54a124f-maltaproj6` | Final integration audit: truthful scope/completeness copy, README counts, canonical validation, semantic table markup; `COORDINATION.md`, `README.md`, `scripts/build_site.py`, `tools/validate.py`, generated HTML | ✅ complete |
 | `arena-b0f3cfd3` | `arena/b0f3cfd3-maltaproj6` | Research, canonical dataset (`data/events.py`), site build (`scripts/`, `assets/site.css`, generated pages), integration, PR/merge | ✅ complete |
 | `arena-8fb52462` | `arena/8fb52462-maltaproj6` | Scaffolding, schema, per-task JSON data files (`data/weekly.json`, `data/annual.json`, `data/special.json`, `data/flagged.json`, `data/sources.json`), tooling (`tools/`), own site views (`weekly.html`, `analysis.html`, `sources.html`, `assets/style.css`, `assets/app.js`) | ✅ complete — merged into `main` at `286ae68`, and folded into the union dataset by `arena-b0f3cfd3` |
-| `arena-f54a124f` | `arena/f54a124f-maltaproj6` | Final integration audit: truthful scope/completeness copy, README counts, canonical validation, semantic table markup; `COORDINATION.md`, `README.md`, `scripts/build_site.py`, `tools/validate.py`, generated HTML | 🟡 in progress (claim commit `b938226`, 2026-10-18T01:22Z — observed by `arena-bdaa17b4`, not edited by it) |
-| `arena-bdaa17b4` | `arena/bdaa17b4-maltaproj6` | **Independent line-by-line audit + gap research (NEW FILES ONLY):** `audit/AUDIT-2026-10-18-bdaa17b4.md`, `audit/check_dataset.py`, `audit/row-audit.csv`, `data/gap-candidates-bdaa17b4.json`, plus this board's registry/task/log rows. Will **not** edit `arena-f54a124f`'s claimed files (`README.md`, `scripts/build_site.py`, `tools/validate.py`, generated `*.html`) or `data/events.py`; dataset/site changes are logged below as integration requests. Branch note: work stays on this session's fixed Arena branch, not a `session-<id>/<task>` branch. | 🟡 in progress — claimed 2026-10-18 by `arena-bdaa17b4` |
+| `arena-bdaa17b4` | `arena/bdaa17b4-maltaproj6` | **Independent line-by-line audit, live source re-verification, gap research, then integration.** Phase 1 (while `arena-f54a124f` was in progress): new files only — `audit/AUDIT-2026-10-18-bdaa17b4.md`, `audit/check_dataset.py`, `audit/row-audit.csv`, `data/gap-candidates-bdaa17b4.json`. Phase 2 (after `arena-f54a124f` completed and merged PRs #12/#13, releasing its claim): integration edits to `data/events.py`, regenerated `*.html`/`data/events.json`, this board. Branch note: work stays on this session's fixed Arena branch, not a `session-<id>/<task>` branch. | 🟡 in progress — claimed 2026-10-18; scope expanded 2026-10-18 after `arena-f54a124f` marked ✅ complete on `main` (`8a4aada`), merged here as `a5e635d` |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -71,14 +70,18 @@ All prior tasks above are ✅ done / claimed by other sessions, so this session 
 
 | ID | Task | Status | Owner | Files in scope |
 |----|------|--------|-------|----------------|
-| A1 | Claim non-overlapping audit scope; record parallel claim by `arena-f54a124f` | 🟡 in progress | arena-bdaa17b4 | `COORDINATION.md` (registry/task/log rows only) |
-| A2 | Structural line-by-line audit of all 205 rows (source present/https, blanks vs status, duplicates, out-of-SF text, past-dated specials) | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `audit/check_dataset.py`, `audit/row-audit.csv` (both new) |
-| A3 | Live official-source spot re-verification (stratified sample + all irregular rows) | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `audit/AUDIT-2026-10-18-bdaa17b4.md` (new) |
-| A4 | Gap research: SF-city-limits events missing from the 205, verified from official sources only | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `data/gap-candidates-bdaa17b4.json` (new) |
-| A5 | Integration requests to `arena-f54a124f` / final integration session (no direct edits to claimed files) | ⬜ unclaimed→claimed here | arena-bdaa17b4 | `COORDINATION.md` log only |
-| A6 | PR from `arena/bdaa17b4-maltaproj6` → `main`, merge if site still builds, confirm Pages | ⬜ unclaimed→claimed here | arena-bdaa17b4 | — (audit files are additive; no generated-HTML edits) |
+| A1 | Claim non-overlapping audit scope; record parallel claim by `arena-f54a124f` | ✅ done | arena-bdaa17b4 | `COORDINATION.md` (registry/task/log rows only) |
+| A2 | Structural line-by-line audit of all 205 rows (source present/https, blanks vs status, duplicates, out-of-SF text, past-dated specials) | ✅ done | arena-bdaa17b4 | `audit/check_dataset.py`, `audit/row-audit.csv` (both new) |
+| A3 | Live official-source spot re-verification (stratified sample + all irregular rows) | 🟡 in progress | arena-bdaa17b4 | `audit/AUDIT-2026-10-18-bdaa17b4.md` (new) |
+| A4 | Gap research: SF-city-limits events missing from the 205, verified from official sources only | 🟡 in progress | arena-bdaa17b4 | `data/gap-candidates-bdaa17b4.json` (new) |
+| A5 | Merge `origin/main` after `arena-f54a124f` completed (PRs #12/#13); resolve board without discarding work | ✅ done | arena-bdaa17b4 | `COORDINATION.md` | Merged as `a5e635d`, no conflicts; duplicate `arena-f54a124f` registry row (their ✅ row + this session's earlier 🟡 observation row) de-duplicated, keeping theirs. `tools/validate.py` passes on merged tree (`events=205 … pages=14`). |
+| A6 | PR from `arena/bdaa17b4-maltaproj6` → `main`, merge if site still builds, confirm Pages | ⬜ unclaimed→claimed here | arena-bdaa17b4 | — |
+| A7 | Integration fixes for audit irregularities + add verified gap rows; regenerate site | 🟡 in progress | arena-bdaa17b4 | `data/events.py`, generated `*.html`, `data/events.json`, `README.md` counts if changed | Only started **after** `arena-f54a124f` released its claim. |
 
-**Integration requests for `arena-f54a124f`** (log, do not edit their files): _none yet — A2–A4 findings will be appended here._
+**Integration requests for `arena-f54a124f`**: none needed — that session finished and merged before A7 started, so `arena-bdaa17b4` performs the integration itself and records every change in the audit report and the log below.
+
+**Audit findings queued for A7** (all re-verified live 2026-10-18; detail in `audit/AUDIT-2026-10-18-bdaa17b4.md`):
+`art-angel-island` jurisdiction note contradicted by official CA State Parks facility listing (Tiburon / Marin County) · `rec-bandshell-illuminate-live` ≡ `ann-illuminate-live` duplicate · `ann-trans-march` ≡ `spc-sf-pride-trans-march-2026` duplicate · `ann-parol-lantern` 2025 prose in the confirmed-dates cell · `spc-opera-in-the-park` venue *is* stated (Robin Williams Meadow) in its cited source · `x-s-020` Manon start date conflicts with SF Opera's season release and `art-sfopera` · `civ-recpark-operations` schedule contradicts its own note, source now redirects to a CivicPlus login · 32 dated rows whose latest date precedes the audit date.
 
 ---
 
