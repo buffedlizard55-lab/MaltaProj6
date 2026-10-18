@@ -24,12 +24,39 @@ Shared task board for all agent sessions working on this repository.
 | `arena-23722ef3` | `arena/23722ef3-maltaproj6` | Verification / final-check: 39 live official-source checks, 6 row corrections, 2 new review items, re-merge with `arena-bdaa17b4`, site rebuild | ✅ complete — PR #18 merged to `main` 2026-10-18T02:00:43Z (`9056bd2`), Pages `built`; see log below |
 | `arena-3239c070` | `arena/3239c070-maltaproj6` | **Deep line-by-line re-verification, gap research, site polish, flagged registry expansion** — 25+ live official-source checks, 4 verified rows added (Cable Cars, SF Open Studios, USS Pampanito, Musée Mécanique), 3 new flagged exclusions, site rebuilt 215/88/95 domains | ✅ complete — PR #20 merged to `main` 2026-10-18T03:03:43Z (`96eb60b`), Pages `built`; see closing record below + PR #21 record commit |
 | `arena-79993171` | `arena/79993171-maltaproj6` | Final post-merge repository/site review; verify current data, source-link/table coverage, local build and live Pages state; document results and fix only confirmed defects | ✅ complete — corrective PR #22 merged to `main` at `6d0e777`; Pages `built` and cache-busted live content verified at 216/176/40/89/95. See closing record below. |
+| `arena-76d2c635` | `arena/76d2c635-maltaproj6` | Independent line-by-line re-verification + gap research (new files only while `arena-7141e086` holds the final-integration claim): `audit/AUDIT-2026-10-18-76d2c635.md`, `data/gap-candidates-76d2c635.json`, `audit/row-audit-76d2c635.csv`, registry/task/log rows in this board. No edits to `data/events.py`, generated `*.html`, `data/events.json`, `scripts/`, `tools/` until `arena-7141e086` releases/merges or its claim goes stale (>60 min, no commits) — integration needs are logged as requests here. Arena-fixed branch used; no branch switch. | 🟡 in progress |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
 session's branch appeared and was merged into `main` later in the run, which produced a merge conflict with
 `index.html`, `annual.html`, `special.html`, `flagged.html`, `assets/style.css`, `COORDINATION.md` and `README.md`.
 That conflict is resolved below, in **Merge conflict resolution**, without discarding either session's work.
+
+---
+
+## Task board — `arena-76d2c635` (independent re-verification / gap-research session)
+
+Session branch: `arena/76d2c635-maltaproj6` (Arena-fixed branch for this session; all work stays on this
+branch rather than a `session-<id>/<task>` branch).
+
+**Concurrency observed on arrival (2026-10-18).** `main` is at `98d8528` (PR #19 merge; 211 events /
+170 verified / 41 review-gap rows / 85 review items, Pages `built`). `git ls-remote origin` shows a
+second live session branch `arena/7141e086-maltaproj6` ahead of `main` by 1 commit `9199715`
+(`2026-10-18T02:57:00Z`, "docs: claim final integration audit", `COORDINATION.md` only, verified via
+`gh api …/compare/main...arena/7141e086-maltaproj6` — this sandbox's fetch spec covers `main` and this
+session's branch only, so the compare API was used to read the claim). That session claims final
+integration review (tasks I0–I2) including, as verified fixes, `data/events.py`, `data/events.json`,
+`*.html`, `scripts/`, `assets/`. All earlier board tasks are ✅ done. This session therefore claims
+only new, non-overlapping work and will not edit files in `arena-7141e086`'s scope while its claim is
+live; needed corrections are logged here as integration requests instead.
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| R0 | Register on the shared board and claim non-overlapping scope | 🟡 in progress | `arena-76d2c635` | `COORDINATION.md` (registry/task/log rows only) | Claim committed and pushed before any other file edits. |
+| R1 | Programmatic line-by-line structural audit of all 211 rows + 85 review items | ⬜ unclaimed | — | `audit/row-audit-76d2c635.csv` (new), `audit/AUDIT-2026-10-18-76d2c635.md` (new) | Source present/https/official-host, blanks vs status, duplicates, out-of-city text, past-dated rows, HTML membership/link integrity. Reuses `audit/check_dataset.py` read-only plus this session's own checks. |
+| R2 | Live official-source spot re-verification (stratified sample + highest-risk dated/annual rows) | ⬜ unclaimed | — | `audit/AUDIT-2026-10-18-76d2c635.md` (new) | Page-fetch tool against official pages only; JS-shell/app pages recorded as content-not-re-verified, never guessed. |
+| R3 | Gap research: candidates recorded by `arena-bdaa17b4` as not yet checked (Union Square ice rink, Kaiser SF Half, SailGP, SF Open Studios, Moscone conventions, USS Pampanito, Musée Mécanique, cable cars) + Yerba Buena Gardens Festival / SF Design Week re-check | ⬜ unclaimed | — | `data/gap-candidates-76d2c635.json` (new) | Official sources only; every field from a fetched official page; unconfirmed fields left blank in the candidate record. |
+| R4 | Integration requests + handoff: if findings require `data/events.py` / `*.html` changes, log them here for `arena-7141e086`; only integrate directly after that session merges/releases or its claim is >60 min stale with no commits (handoff noted here) | ⬜ unclaimed | — | `COORDINATION.md` | No shared-output edits before then. |
 
 ---
 
