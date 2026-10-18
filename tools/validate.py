@@ -100,12 +100,12 @@ def main() -> int:
     try:
         sys.path.insert(0, os.path.join(ROOT, "data"))
         sys.path.insert(0, os.path.join(ROOT, "scripts"))
-        from events import EVENTS as BASE_EVENTS, FLAGGED as BASE_FLAGGED, assign_views
+        from events import EVENTS as BASE_EVENTS, FLAGGED as BASE_FLAGGED, assign_views, cost_review_flags
         from merge_parallel import parallel_events, parallel_flagged
-        from build_site import _event_date_sort_key, _is_free_cost, _next_confirmed_date
+        from build_site import _event_date_sort_key, _has_free_access, _next_confirmed_date
         base_events = deepcopy(BASE_EVENTS)
         expected_events = assign_views(base_events + parallel_events(base_events))
-        expected_flagged = list(BASE_FLAGGED) + parallel_flagged()
+        expected_flagged = list(BASE_FLAGGED) + parallel_flagged() + cost_review_flags(expected_events)
         if events != expected_events:
             errors.append("data/events.json: event rows differ from the reproducible source-data union")
         if flagged != expected_flagged:
@@ -189,7 +189,7 @@ def main() -> int:
         "all-events.html": sorted(events, key=_event_date_sort_key),
         "special.html": sorted((e for e in events if e.get("group") == "special"), key=_event_date_sort_key),
         "technology.html": sorted((e for e in events if e.get("category") == "technology"), key=_event_date_sort_key),
-        "free-events.html": sorted((e for e in events if _is_free_cost(e.get("cost"))), key=_event_date_sort_key),
+        "free-events.html": sorted((e for e in events if _has_free_access(e)), key=_event_date_sort_key),
     }
     for filename, expected_rows in ordered_pages.items():
         if filename not in audits:
