@@ -140,6 +140,62 @@ code { background: #eef2f5; padding: 1px 5px; border-radius: 4px; font-size: .88
   h1 { font-size: 1.55rem; }
   .hero { padding: 20px; }
 }
+/* Cost labelling - the price is quoted exactly as the official source words it */
+.cost-wording { display: block; margin-top: 3px; font-size: .78rem; color: var(--ink-soft); font-style: italic; }
+.cost { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .84rem; font-weight: 650; }
+.cost-free { background: var(--ok-bg); color: var(--ok-ink); }
+.cost-mixed { background: #eaf2fb; color: #205c8a; }
+.cost-paid { background: #f4eef7; color: #5b3b78; }
+.cost-unknown { background: #eceff3; color: #4d5866; font-style: italic; font-weight: 500; }
+
+/* Focus badges (gaming / music / AI) */
+.badge.focus-gaming { background: #ede7fb; color: #4a2f86; }
+.badge.focus-music { background: #fdeaf2; color: #8b2a5c; }
+.badge.focus-ai { background: #e2f0f8; color: #14506e; }
+.badge + .badge { margin-left: 4px; }
+
+/* Executive summary horizons and countdowns */
+.horizon-row td { background: #eef2f5; font-size: .82rem; letter-spacing: .02em; padding: 8px 12px; }
+.horizon-blurb { color: var(--ink-soft); font-weight: 400; }
+.when-now { font-weight: 700; color: #145c46; }
+.when-soon { font-weight: 700; color: var(--accent); }
+.when-mid { color: var(--ink-soft); }
+.when-later { color: var(--ink-soft); }
+.summary-table tbody td { vertical-align: top; }
+.tile-meta { margin-top: 4px; font-size: .78rem; font-weight: 700; color: var(--ok-ink); }
+
+/* Mobile: every table becomes a stack of readable cards. The columns are
+   still there - each cell repeats its column name - so nothing is hidden
+   and no horizontal scrolling is needed on a phone. */
+@media (max-width: 760px) {
+  .wrap { padding: 0 14px; }
+  main { padding: 20px 14px 44px; }
+  h1 { font-size: 1.45rem; }
+  .table-scroll { overflow: visible; background: transparent; border: 0; border-radius: 0; }
+  .data-table:not(.compact) { min-width: 0; display: block; }
+  .data-table:not(.compact) thead { position: absolute; left: -9999px; top: auto; }
+  .data-table:not(.compact) tbody { display: block; }
+  .data-table:not(.compact) tr {
+    display: block; background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 12px 14px; margin: 0 0 12px;
+  }
+  .data-table:not(.compact) tbody tr:hover td { background: transparent; }
+  .data-table:not(.compact) td { display: block; border: 0; padding: 5px 0; }
+  .data-table:not(.compact) td[data-label]::before {
+    content: attr(data-label); display: block; margin-bottom: 1px;
+    font-size: .67rem; font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .data-table:not(.compact) td:first-child::before { display: none; }
+  .data-table:not(.compact) .ev-title { font-size: 1.02rem; }
+  .data-table:not(.compact) .note-row { padding-top: 0; }
+  .data-table:not(.compact) .note-row td { padding-top: 0; }
+  .horizon-row td { border-radius: 8px; }
+  .stat { flex: 1 1 128px; padding: 12px 14px; }
+  .stat-n { font-size: 1.45rem; }
+  .tiles { grid-template-columns: 1fr; }
+  .domain-list { columns: 1; }
+}
 @media print {
   .site-nav, .hero-actions, .btn { display: none; }
   .table-scroll { overflow: visible; }

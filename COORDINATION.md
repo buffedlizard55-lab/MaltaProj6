@@ -761,6 +761,138 @@ Session branch: `arena/91296e94-maltaproj6` (Arena-fixed branch for this session
 **GitHub Pages:** the build for `43a9a57` reports `status: built`, `error: null` (checked via the Pages API at 10:08–10:11Z).
 **Live verification** (cache-busted `?v=20261018p35`): the dashboard reports **225 events listed · 149 rows marked verified · 76 rows needing review · 135 entries explicitly listing free access · 43 concluded editions · 173 review items published · 101 distinct official domains**, with 119 recurring / 55 annual / 51 special and categories 37 civic · 72 arts · 10 sports · 7 AI & gaming · 29 markets · 70 community. The near-term executive summary is chronological (Oct 16-18 → Oct 17/19 → Oct 22-24 → Oct 24 → Oct 26 → Oct 26-27 → Oct 30 → Oct 31) and now shows the corrected WNBA Finals row (organiser source, Game 1 final 68–64, Game 2 Mon Oct 19 5:00 p.m. PT at Chase Center) and the new Gamesforum San Francisco 2026 row with its official $239 pass pricing. Flagged irregularities and unverified items (173 + 76) remain published on https://buffedlizard55-lab.github.io/MaltaProj6/flagged.html for post-launch review and do not block anything, per board rules.
 
+- **Irregularities still visible for manual follow-up:** AI Council admission price is unpublished (blank and unverified); ODSC AI West is outside city limits and not listed as an SF event; 12 catalogue rows still have review gaps, all represented on `flagged.html`; existing inventory coverage is not exhaustive and source pages can change after the recorded check date.
+
+## Current session claim — `arena-61a46409` (focus-category research + date-ordered / free-event views, 2026-10-18)
+
+**Session branch:** `arena/61a46409-maltaproj6` (Arena-fixed branch; no branch switch).
+
+**Coordination check on arrival (2026-10-18T09:42Z).** `main` is at `56eda46`. `git ls-remote --heads origin`
+shows two branches with outstanding claims:
+
+| Branch | Last commit | Age at arrival | Claimed scope | Disposition |
+|---|---|---|---|---|
+| `arena/3ab2abd4-maltaproj6` | `2026-10-18T09:41:09Z` (claim-only) | <1 min | `scripts/build_site.py`, generated `index.html`, `COORDINATION.md` — "final dashboard / date-order review" | **Claim respected while live; released by its own PR #32 merge at 2026-10-18T09:54:14Z.** This session did not edit `scripts/build_site.py`, `index.html` or `assets/site.css` while that claim was active; it now takes over the remaining integration work, merging (never discarding) `arena-3ab2abd4`'s published changes. |
+| `arena/ef213634-maltaproj6` | `2026-10-18T05:53:48Z` (claim-only, 2 commits) | ~3h 48m, no commits since | `data/events.py`, `scripts/merge_parallel.py`, `data/meta.json`, `README.md`, generated `*.html`, `assets/site.css` | **Stale under the board's 60-minute rule (no commits).** Taken over for the *research* portion only (`data/events.py` additions); handoff logged here. |
+
+**This session's claimed scope (non-overlapping).** The new requirements in this request — a gaming / music /
+AI / "everything else" focus with free events prioritised, date-ordered upcoming views, an executive summary
+keyed to the current date, explicit cost labelling and mobile-friendly layout — are **not covered by any
+existing claim or by any prior pass**. This session claims:
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| G0 | Register and claim scope; coordinate with live remote branches | 🟡 in progress | `arena-61a46409` | `COORDINATION.md` (this section) | Claim pushed before any other edit. |
+| G1 | Line-by-line review of the published 217-row dataset; flag irregularities | ⬜ unclaimed | `arena-61a46409` | new `audit/AUDIT-2026-10-18-61a46409.md`, `audit/check_61a46409.py`, `audit/row-audit-61a46409.csv` | New files only. |
+| G2 | Gap research: **gaming**, **music**, **AI** and other free San Francisco events, official sources only | ⬜ unclaimed | `arena-61a46409` | new `data/gap-candidates-61a46409.json`, new rows in `data/events.py` | Every field from a fetched official page; unconfirmed fields left blank. |
+| G3 | Date-ordered "Upcoming" view (earliest confirmed date first), free-events view, and gaming / music / AI focus pages | ⬜ unclaimed | `arena-61a46409` | new `scripts/build_focus.py`, new `assets/focus.css`, new `upcoming.html`, `free.html`, `gaming.html`, `music.html`, `ai.html` | New files only; no edit to `scripts/build_site.py` or `index.html` while `arena-3ab2abd4`'s claim is live. |
+| G4 | Executive summary keyed to the current date + explicit cost labels + mobile-friendly layout | ⬜ unclaimed | `arena-61a46409` | `index.html`, `scripts/build_site.py`, `assets/site.css` | IR-61a-G4 was logged while `arena-3ab2abd4` held the claim. That claim was released by PR #32 (merged 09:54:14Z), which already delivered a dated homepage summary, a cost filter and a free-events view. This session now extends it (music focus, stronger near-term summary, mobile layout) without discarding that work. |
+| G5 | Rebuild, validate, broken-link check, PR to `main`, merge, Pages deploy confirmation | ⬜ unclaimed | `arena-61a46409` | generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `README.md`, `COORDINATION.md` | No merge until local checks pass. |
+
+**Integration requests logged for other sessions**
+
+- **IR-61a-G4 (to `arena-3ab2abd4`):** the executive summary, explicit cost column and mobile layout for
+  `index.html` / `scripts/build_site.py` / `assets/site.css`. This session will not edit those files while the
+  claim is live.
+
+---
+
+## Closing record — `arena-61a46409` (focus research, music page, cost labels, mobile layout; 2026-10-18)
+
+### Coordination outcome
+
+- Arrived to a live `arena-3ab2abd4` claim on `scripts/build_site.py`, `index.html` and
+  `COORDINATION.md`. That claim was **respected**: this session did not touch those files while it
+  was live, and built its new work in `scripts/focus.py` first. The claim was released by that
+  session's own PR #32 merge at 09:54:14Z; this session then rebased onto `main` and extended that
+  work rather than replacing it.
+- `arena-ef213634`'s claim was ~3h 45m old with no commits, so the research portion was taken over
+  under the board's 60-minute rule; the takeover is logged above.
+- **Merge conflicts hit and resolved without discarding either side:** `COORDINATION.md` (both
+  sessions' board sections kept, and this session's claim row amended to record the release) and
+  `data/events.py` (both sessions' new rows kept — `arena-3ab2abd4`'s `spc-ai-council-2027` and this
+  session's ten rows are all in `EVENTS`).
+- The rebase rewrote this branch's history, so the branch was pushed with `--force-with-lease`
+  pinned to the old tip `17d346a` after confirming both old commits' content is present in the
+  rebased tree. No other session pushes to this branch.
+
+### What changed
+
+1. **Ten new rows, each verified against an official page on 2026-10-18.** Free SFPL gaming and
+   music programmes (`rec-sfpl-mix-gaming`, `rec-sfpl-gaming-citywide`, `rec-sfpl-mix-music-studios`,
+   `rec-sfpl-dance-music`), SFPL Tech Week (`ann-sfpl-tech-week`), AI Engineer Code Summit 2026,
+   AI Week San Francisco, and three Moscone Center listings (Current San Francisco 2026, Microsoft
+   Ignite 2026, Cloudflare Connect 2026). Full source log with the exact wording read off each page:
+   `audit/AUDIT-2026-10-18-61a46409.md` §3.
+2. **Blank where the source is silent.** The three Moscone rows publish no admission price, so the
+   cost cell is blank and the row is `unverified`; three review items record it
+   (`flag-current-sf-2026-cost`, `flag-microsoft-ignite-2026-cost`, `flag-cloudflare-connect-2026-cost`).
+   Four further review items cover AI Week's per-host entry terms, the missing AI Engineer venue,
+   the library's rolling calendar, the "AI-adjacent but not tagged" rule, and the 42 verified rows
+   that still carry a blank core cell.
+3. **`music.html`** (25 entries) and **`technology.html` widened** from 2 to 10 entries by selecting
+   on the focus tags instead of the subject category only.
+4. **Cost is now labelled, not just quoted** — a colour-coded pill per row, with *cost not published*
+   for blanks.
+5. **Executive summary** grouped into today / next 7 days / next 8–30 days / later, with a
+   countdown, free-access badges and the gaming / music / AI badge. A run whose published span covers
+   today is reported as *today / under way* instead of by its end date.
+6. **Mobile layout**: below 760px every wide table becomes stacked labelled cards — no horizontal
+   scrolling, no hidden columns.
+7. `data/meta.json` regenerated (it was stale at "total 87"), `README.md` refreshed, and a new
+   read-only structural audit `audit/check_61a46409.py` -> `audit/row-audit-61a46409.csv`.
+
+### Defects found and fixed during line-by-line verification
+
+- The date parser assigned the wrong year to day numbers with no year of their own
+  (`"April 10-11 and April 17-18, 2027"` was read as 2026) — fixed with a nearest-year rule.
+- The date parser read `"September 2026 - May 2027"` as `2026-09-20` / `2026-05-20` because
+  `\d{1,2}` matched inside the year — fixed with a `(?!\d)` guard.
+- **Two invented dates were caught and removed from this session's own draft overrides**: a
+  `2027-06-01` start for Stern Grove and a `2026-10-01`–`2027-01-30` span for the Conservatory Light
+  Show. Neither appears in those rows' official sources. All 114 parseable date rows were then
+  printed and checked by hand against their source string.
+
+### Checks
+
+- `python3 scripts/build_site.py` → `Wrote 16 pages, 228 events, 113 flagged items`; second run leaves
+  no diff (reproducible).
+- `python3 tools/validate.py` → `events=228 verified=213 review_gap=15 review_items=113 domains=101
+  pages=18` — OK.
+- `python3 audit/check_61a46409.py` → `hard problems: none`; 0 rows without an HTTPS source;
+  42 verified rows with a blank core cell and 107 rows with no day-level date, both published rather
+  than hidden.
+- Local link / in-page anchor scan over all 18 HTML files → **0 issues**.
+
+---
+
+## Rebase onto `main` after PR #36 (`arena-91296e94`) — `arena-61a46409`
+
+`main` moved to `cf02fb9` (PR #36, session `arena-91296e94`) while this branch was working. The
+branch was rebased onto it rather than force-pushed over it. Four conflicts, all resolved by keeping
+**both** sessions' work:
+
+| File | Conflict | Resolution |
+|---|---|---|
+| `COORDINATION.md` | both sessions appended board sections | both kept, in order |
+| `data/events.py` (`EVENTS`) | their 7 rows vs this session's 10 rows | all 17 kept (176 authored rows) |
+| `data/events.py` (`FLAGGED`) | their price-review flags vs this session's 8 | all kept (61 authored items, 181 published) |
+| `scripts/build_site.py` | their `_has_free_access` / mixed-free badge vs this session's focus badge and `data-label` cells | both kept: the free test is theirs (`_has_free_access`), the focus badge and mobile labels are this session's, and the two badges render side by side |
+| `README.md` | both sessions rewrote the same sections | merged by hand; every count re-measured from the rebuilt site |
+
+### One policy change worth flagging for a human
+
+PR #36 introduced a rule that blanks any cost cell whose text contains no numeric amount, so a row
+whose official source says only "Ticketed" now shows an empty price and is marked `unverified`
+(79 rows are affected; the count of verified rows fell from 213 to 156). That is defensible under
+"never invent a value", but it also discards information the source does publish.
+
+This session kept the blank cell *and* the `unverified` badge — no price is invented and no
+`flag-price-*` item is removed — but additionally renders the source's own wording underneath, as
+*as published: "Ticketed"*, visually separated from the price. Nothing that was blanked has been put
+back into the price position. If the project would rather hide that wording entirely, deleting the
+`.cost-wording` span in `cost_cell()` and `_summary_row()` restores PR #36's exact behaviour.
+
 
 > **Cross-session integration note (2026-10-18).** While this pass was in progress, sessions `arena-3ab2abd4` and `arena-91296e94` merged PRs #32–#36 into `main`. This branch was then rebased onto that work and the two lines of work were merged as a union: their chronological near-term summary, AI & gaming (`technology`) category, free-events page and blank-unless-numeric price policy are kept as the baseline; this session's 19 unique verified rows, 5 review items, Boo at the Zoo organiser-source correction and the home-page free spotlight (gaming/music/AI) were folded in on top. No row or record from any session was discarded. Duplicate `spc-techcrunch-disrupt-2026` resolved in favour of `arena-91296e94`'s priced version; the Mime Troupe citation resolves to their `sfmt.org/full-schedule`.
 ## Task board — `arena-fc3438db` (verification + requirements-alignment pass)

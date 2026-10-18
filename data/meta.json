@@ -3,14 +3,21 @@
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 244,
-    "recurring": 122,
+    "total": 249,
+    "recurring": 124,
     "annual": 57,
-    "special": 65,
-    "flagged_rows": 192,
-    "unverified_rows": 90,
+    "special": 68,
+    "flagged_rows": 198,
+    "unverified_rows": 91,
     "concluded_rows": 46,
-    "sources": 103
+    "sources": 105,
+    "free_access_rows": 143
+  },
+  "focus": {
+    "gaming": 4,
+    "music": 32,
+    "ai": 7,
+    "other": 206
   },
   "pages": [
     "all-events.html",
@@ -24,6 +31,7 @@
     "index.html",
     "markets.html",
     "methodology.html",
+    "music.html",
     "recurring.html",
     "sources.html",
     "special.html",
