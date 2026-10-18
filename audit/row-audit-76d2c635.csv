@@ -24,7 +24,7 @@ rec-famssf-late-night,Late Night Editions at the de Young and Legion of Honor,re
 rec-japanese-tea-garden-free-hour,Japanese Tea Garden free admission hour,recurring,community,Recurring - Weekly,unverified,,,cost,yes,https://gggp.org/visit/admissions-hours/,gggp.org,
 rec-sfbotanical-free,San Francisco Botanical Garden free admission hours,recurring,community,Recurring - Weekly,unverified,,,cost,yes,https://gggp.org/tickets/,gggp.org,
 rec-ferry-plaza-farmers-market,Foodwise Ferry Plaza Farmers Market,recurring,markets,Recurring - Weekly,verified,,,,yes,https://www.ferrybuildingmarketplace.com/shops/the-ferry-plaza-farmers-market/,www.ferrybuildingmarketplace.com,VERIFIED_BLANK_DATES
-rec-ferry-building-marketplace,Ferry Building Marketplace (shops & food hall),recurring,markets,Recurring - Regular schedule,verified,,,,yes,https://www.ferrybuildingmarketplace.com/,www.ferrybuildingmarketplace.com,VERIFIED_BLANK_DATES
+rec-ferry-building-marketplace,Ferry Building Marketplace (shops & food hall),recurring,markets,Recurring - Regular schedule,unverified,,,cost,yes,https://www.ferrybuildingmarketplace.com/,www.ferrybuildingmarketplace.com,
 rec-sunday-streets,SFMTA Sunday Streets,recurring,community,Recurring - Monthly,unverified,,,cost,yes,https://www.sfmta.com/getting-around/walk/sunday-streets,www.sfmta.com,
 rec-off-the-grid-treasure-island,Off The Grid Treasure Island (fall edition),recurring,markets,Recurring - Weekly,verified,"September 12, 19, 26 and October 3, 10, 17, 2026",,,,https://www.tisf.com/off-the-grid,www.tisf.com,
 rec-sfsymphony,San Francisco Symphony concert season,recurring,arts,Recurring - Weekly,unverified,,,cost,yes,https://www.sfsymphony.org/calendar/,www.sfsymphony.org,
@@ -121,7 +121,7 @@ art-explatorium,Exploratorium,recurring,arts,Attraction - Open regularly,unverif
 art-sfzoo,San Francisco Zoo & Gardens,recurring,arts,Attraction - Open regularly,unverified,,,cost,yes,https://www.sfzoo.org/visit-the-zoo/events-and-programs/,www.sfzoo.org,
 art-conservatory,Conservatory of Flowers,recurring,arts,Attraction - Open regularly,unverified,,,cost,yes,https://gggp.org/visit/admissions-hours/,gggp.org,
 art-randall,Randall Museum,recurring,arts,Attraction - Open regularly,verified,,,,yes,https://www.randallmuseum.org/,www.randallmuseum.org,VERIFIED_BLANK_DATES
-art-presidio-museum,Presidio Visitor Center,recurring,arts,Attraction - Open regularly,verified,,,,yes,https://presidio.gov/explore/attractions/presidio-visitor-center,presidio.gov,VERIFIED_BLANK_DATES
+art-presidio-museum,Presidio Visitor Center,recurring,arts,Attraction - Open regularly,unverified,,,cost,yes,https://presidio.gov/explore/attractions/presidio-visitor-center,presidio.gov,
 art-fort-point,Fort Point National Historic Site,recurring,arts,Attraction - Open regularly,verified,,,,yes,https://www.nps.gov/fopo/planyourvisit/things2do.htm,www.nps.gov,VERIFIED_BLANK_DATES
 art-alcatraz,Alcatraz Island (Golden Gate National Recreation Area),recurring,arts,Attraction - Open regularly,unverified,,,cost,yes,https://www.nps.gov/alca/index.htm,www.nps.gov,
 art-maritime,San Francisco Maritime National Historical Park,recurring,arts,Attraction - Open regularly,verified,,,,yes,https://nps.gov/safr/planyourvisit/fees.htm,nps.gov,VERIFIED_BLANK_DATES
@@ -139,7 +139,7 @@ mkt-alemany,Alemany Farmers Market ('The People's Market'),recurring,markets,Rec
 mkt-mission-community,Mission Community Market,recurring,markets,Recurring - Weekly,verified,,,,yes,https://foodwise.org/markets/,foodwise.org,VERIFIED_BLANK_DATES
 mkt-castro-farmers,Castro Farmers' Market,recurring,markets,Recurring - Weekly,verified,,,,yes,https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf,www.cdfa.ca.gov,VERIFIED_BLANK_DATES
 mkt-inner-sunset,Inner Sunset Farmers' Market,recurring,markets,Recurring - Weekly,verified,,,,yes,https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf,www.cdfa.ca.gov,VERIFIED_BLANK_DATES
-mkt-sf-chinatown-food,"Chinatown food and shopping streets (Grant Avenue, Washington Street)",recurring,markets,Attraction - Open regularly,verified,,,,yes,https://www.moonfestival.org/,www.moonfestival.org,VERIFIED_BLANK_DATES
+mkt-sf-chinatown-food,"Chinatown food and shopping streets (Grant Avenue, Washington Street)",recurring,markets,Attraction - Open regularly,unverified,,,cost,yes,https://www.moonfestival.org/,www.moonfestival.org,
 mkt-treasurefest,TreasureFest (Treasure Island flea and craft festival),annual,markets,Recurring - Monthly,unverified,,,cost,yes,https://www.treasurefest.com/,www.treasurefest.com,GEO_REVIEW(bay area)
 rec-sf-city-guides,San Francisco City Guides — free walking tours,recurring,community,Recurring - Regular schedule,verified,,,,yes,https://sfcityguides.org/,sfcityguides.org,VERIFIED_BLANK_DATES
 art-walt-disney-family-museum,The Walt Disney Family Museum,recurring,arts,Attraction - Open regularly,verified,,,,yes,https://www.waltdisney.org/visit/admission,www.waltdisney.org,VERIFIED_BLANK_DATES
@@ -230,7 +230,7 @@ x-w-010,Inner Sunset Flea Market,recurring,markets,Recurring - Monthly,unverifie
 x-w-011,Secondhand Saturdays,recurring,markets,Recurring - Monthly,unverified,April-November,,cost,,https://sunsetmercantilesf.com/secondhand/,sunsetmercantilesf.com,
 x-w-012,Alemany Flea Market,recurring,markets,Recurring - Weekly,verified,,,cost,yes,https://www.sf.gov/location--alemany-flea-market,www.sf.gov,VERIFIED_BUT_BLANK_CORE(cost);VERIFIED_BLANK_DATES
 x-w-013,Downtown First Thursdays,recurring,markets,Recurring - Monthly,verified,January-December 2026 season,2026-12-31,,,https://www.dftsf.com/blog/dft2026renewal,www.dftsf.com,
-x-w-014,Castro Art Mart,recurring,arts,Recurring - Monthly,verified,"Permitted through May 2, 2027",2027-05-02,,,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
+x-w-014,Castro Art Mart,recurring,arts,Recurring - Monthly,unverified,"Permitted through May 2, 2027",2027-05-02,cost,,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
 x-w-015,Soulful Sundays,recurring,community,Recurring - Monthly,unverified,"Permitted through December 18, 2026",2026-12-18,cost,,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
 x-w-016,Otsego Avenue Shared Space,recurring,community,Recurring - Monthly,unverified,"Permitted through October 25, 2026",2026-10-25,cost,,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
 x-w-017,Larkin Street Tenderloin Shared Space,recurring,community,Recurring - Monthly,unverified,"Permitted through December 12, 2026",2026-12-12,cost,,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,

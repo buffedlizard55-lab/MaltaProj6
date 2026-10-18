@@ -1501,6 +1501,38 @@ def main() -> int:
         json.dump(payload, fh, indent=2, ensure_ascii=False)
         fh.write("\n")
 
+    # Counts mirror, regenerated on every build so it can never drift from the
+    # published union (it previously went stale because only the legacy
+    # tools/build_site.py wrote it).
+    meta = {
+        "site": SITE_NAME,
+        "verified_on": VERIFIED_ON,
+        "generated_on": str(date.today()),
+        "counts": {
+            "total": len(EVENTS),
+            "recurring": sum(1 for e in EVENTS if e.get("group") == "recurring"),
+            "annual": sum(1 for e in EVENTS if e.get("group") == "annual"),
+            "special": sum(1 for e in EVENTS if e.get("group") == "special"),
+            "verified_rows": sum(1 for e in EVENTS if e.get("status") == "verified"),
+            "unverified_rows": sum(1 for e in EVENTS if e.get("status") == "unverified"),
+            "free_access_rows": sum(1 for e in EVENTS if _has_free_access(e)),
+            "explicitly_free_rows": sum(1 for e in EVENTS if _is_explicitly_free(e)),
+            "concluded_rows": sum(1 for e in EVENTS if e.get("timing") == "concluded"),
+            "flagged_rows": len(FLAGGED),
+            "sources": len({e["source_url"].split("/")[2] for e in EVENTS}),
+        },
+        "focus": {
+            key: sum(1 for e in EVENTS if e.get("focus", "other") == key)
+            for key, _label in FOCUS_LABELS
+        },
+        "pages": sorted(["index.html"] + [filename for filename, *_ in PAGES[1:]]),
+        "review_sheet": "data/review.csv",
+        "spreadsheet_export": "data/events.csv",
+    }
+    with open(os.path.join(ROOT, "data", "meta.json"), "w", encoding="utf-8") as fh:
+        json.dump(meta, fh, indent=2, ensure_ascii=False)
+        fh.write("\n")
+
     with open(os.path.join(ROOT, "assets", "site.css"), "w", encoding="utf-8") as fh:
         fh.write(CSS)
 
