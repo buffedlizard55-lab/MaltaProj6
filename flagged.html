@@ -38,14 +38,15 @@ publication; it is the audit trail for a manual review.</p>
 
 <div class="kpis">
   <div class="kpi"><div class="num">34</div><div class="label">Rows with unverified fields</div></div>
-  <div class="kpi"><div class="num">34</div><div class="label">Review notes</div></div>
+  <div class="kpi"><div class="num">53</div><div class="label">Review notes</div></div>
   <div class="kpi"><div class="num">15</div><div class="label">Broken or hijacked official pages</div></div>
   <div class="kpi"><div class="num">8</div><div class="label">Conflicts / date checks</div></div>
 </div>
 
 <h2>1. Rows with unverified fields</h2>
 <p class="section-note">These rows are published with the affected fields left blank. Open the official source to see what it does
-and does not state. Field names are the JSON keys in the underlying data.</p>
+and does not state. Field names are the JSON keys in the underlying data. Rows outside this session's tables carry their
+own unverified badges on the category pages of the integrated catalogue.</p>
 <table class="data" id="unverified-table">
   <caption>Published rows carrying at least one blank, unconfirmed field</caption>
   <thead><tr><th scope="col">Event</th><th scope="col">Unverified fields</th><th scope="col">Official source checked</th></tr></thead>
@@ -199,7 +200,7 @@ excluded from the tables rather than guessed.</p>
   <label for="flag-filter">Kind</label>
   <select id="flag-filter">
     <option value="all">All kinds</option>
-    <option value="broken official page">broken official page</option><option value="data conflict">data conflict</option><option value="date check">date check</option><option value="date inconsistency">date inconsistency</option><option value="domain hijack">domain hijack</option><option value="domain parked">domain parked</option><option value="not yet announced">not yet announced</option><option value="permit expiry">permit expiry</option><option value="scope exclusion">scope exclusion</option><option value="source unavailable">source unavailable</option><option value="stale official listing">stale official listing</option><option value="stale page">stale page</option><option value="unverified field">unverified field</option>
+    <option value="2026-27 home fixtures not verified">2026-27 home fixtures not verified</option><option value="broken official page">broken official page</option><option value="closed for dock repairs from October 26, 2026">closed for dock repairs from October 26, 2026</option><option value="conflicting start times on two official City pages">conflicting start times on two official City pages</option><option value="data conflict">data conflict</option><option value="date check">date check</option><option value="date conflict on the organiser&#x27;s own page">date conflict on the organiser&#x27;s own page</option><option value="date conflict on the organiser&#x27;s own site">date conflict on the organiser&#x27;s own site</option><option value="date inconsistency">date inconsistency</option><option value="domain hijack">domain hijack</option><option value="domain parked">domain parked</option><option value="event ended after 25 years (excluded from the list)">event ended after 25 years (excluded from the list)</option><option value="home games are outside the City (excluded from the list)">home games are outside the City (excluded from the list)</option><option value="impossible broadcast time">impossible broadcast time</option><option value="meeting cadence not published">meeting cadence not published</option><option value="no confirmed San Francisco date">no confirmed San Francisco date</option><option value="no dedicated official programme page located">no dedicated official programme page located</option><option value="not yet announced">not yet announced</option><option value="permit expiry">permit expiry</option><option value="scope exclusion">scope exclusion</option><option value="seasonal, and only two of three Foodwise markets are year-round">seasonal, and only two of three Foodwise markets are year-round</option><option value="source unavailable">source unavailable</option><option value="stale official listing">stale official listing</option><option value="stale page">stale page</option><option value="start time conflict">start time conflict</option><option value="street address not published">street address not published</option><option value="third vs second/fourth Thursday">third vs second/fourth Thursday</option><option value="two conflicting descriptions of regular meetings">two conflicting descriptions of regular meetings</option><option value="two different 2026 date ranges on the organiser&#x27;s site">two different 2026 date ranges on the organiser&#x27;s site</option><option value="unverified field">unverified field</option><option value="venue changed from Treasure Island to Lake Merced">venue changed from Treasure Island to Lake Merced</option>
   </select>
   <span class="result" aria-live="polite"></span>
 </div>
@@ -446,6 +447,139 @@ excluded from the tables rather than guessed.</p>
   <td>The page headline gives May 16, 2027, but some promotional copy still says &#x27;before May 18&#x27;. The headline date is used.</td>
   <td class="src"><a href="https://www.baytobreakers.com/" target="_blank" rel="noopener">baytobreakers.com</a></td>
   <td>Organiser copy check; no data change needed.</td>
+</tr><tr id="f-035" data-bucket="start time conflict" data-search="board of supervisors land use &amp; transportation committee start time conflict the legistar meeting calendar lists the 10/19/2026 committee meeting at 4:30 p.m., while the sfgovtv permanent schedule lists &#x27;mondays at 1:30pm&#x27;. the start time has been left blank on the event row.">
+  <td>f-035</td>
+  <td>start time conflict</td>
+  <td class="event"><span class="name">Board of Supervisors Land Use &amp; Transportation Committee</span><span class="sub">—</span></td>
+  <td>The Legistar meeting calendar lists the 10/19/2026 committee meeting at 4:30 p.m., while the SFGovTV permanent schedule lists &#x27;Mondays at 1:30PM&#x27;. The start time has been left blank on the event row.</td>
+  <td class="src"><a href="https://sfgov.legistar.com/Calendar.aspx" target="_blank" rel="noopener">sfgov.legistar.com</a></td>
+  <td>Confirm the current committee start time with the Clerk of the Board before publishing a time.</td>
+</tr><tr id="f-036" data-bucket="start time conflict" data-search="board of supervisors rules committee start time conflict legistar lists the 10/19/2026 rules committee meeting at 1:00 p.m.; the sfgovtv permanent schedule lists &#x27;mondays at 10:00am&#x27;. time left blank.">
+  <td>f-036</td>
+  <td>start time conflict</td>
+  <td class="event"><span class="name">Board of Supervisors Rules Committee</span><span class="sub">—</span></td>
+  <td>Legistar lists the 10/19/2026 Rules Committee meeting at 1:00 p.m.; the SFGovTV permanent schedule lists &#x27;Mondays at 10:00AM&#x27;. Time left blank.</td>
+  <td class="src"><a href="https://sfgov.legistar.com/Calendar.aspx" target="_blank" rel="noopener">sfgov.legistar.com</a></td>
+  <td>Confirm the current Rules Committee start time with the Clerk of the Board.</td>
+</tr><tr id="f-037" data-bucket="impossible broadcast time" data-search="board of supervisors budget and finance committee impossible broadcast time the sfgovtv permanent schedule lists this committee as &#x27;wednesdays at 12:30am&#x27;. a 12:30 a.m. committee meeting is not credible and looks like a publishing error on the sfgovtv page. the legistar record shows 10:00 a.m. on 10/21/2026, which is what the event row uses.">
+  <td>f-037</td>
+  <td>impossible broadcast time</td>
+  <td class="event"><span class="name">Board of Supervisors Budget and Finance Committee</span><span class="sub">—</span></td>
+  <td>The SFGovTV permanent schedule lists this committee as &#x27;Wednesdays at 12:30AM&#x27;. A 12:30 a.m. committee meeting is not credible and looks like a publishing error on the SFGovTV page. The Legistar record shows 10:00 a.m. on 10/21/2026, which is what the event row uses.</td>
+  <td class="src"><a href="https://www.sf.gov/information--sfgovtv-permanent-schedule" target="_blank" rel="noopener">sf.gov</a></td>
+  <td>SF.gov should correct the SFGovTV page; event row uses the Legistar time with a note.</td>
+</tr><tr id="f-038" data-bucket="conflicting start times on two official City pages" data-search="assessment appeals boards conflicting start times on two official city pages the sf.gov citywide events calendar lists assessment appeals board 1 on 10/19/2026 at 12:30 p.m. and at 9:30 a.m. on the same date on the board of supervisors landing page. times left blank on the event row.">
+  <td>f-038</td>
+  <td>conflicting start times on two official City pages</td>
+  <td class="event"><span class="name">Assessment Appeals Boards</span><span class="sub">—</span></td>
+  <td>The sf.gov citywide events calendar lists Assessment Appeals Board 1 on 10/19/2026 at 12:30 p.m. and at 9:30 a.m. on the same date on the Board of Supervisors landing page. Times left blank on the event row.</td>
+  <td class="src"><a href="https://www.sf.gov/events/upcoming" target="_blank" rel="noopener">sf.gov</a></td>
+  <td>Ask the Clerk of the Board which time is current for each Assessment Appeals Board.</td>
+</tr><tr id="f-039" data-bucket="third vs second/fourth Thursday" data-search="recreation and park commission third vs second/fourth thursday the department&#x27;s own meeting info &amp; calendar page says the full commission meets on the third thursday of every month, and the published 2026 meeting dates (jun 18, aug 20, sep 17, oct 15) are all third thursdays. the sfgovtv permanent schedule says &#x27;2nd &amp; 4th thursdays at 10:00am&#x27;. the event row follows the department page.">
+  <td>f-039</td>
+  <td>third vs second/fourth Thursday</td>
+  <td class="event"><span class="name">Recreation and Park Commission</span><span class="sub">—</span></td>
+  <td>The department&#x27;s own Meeting Info &amp; Calendar page says the full Commission meets on the third Thursday of every month, and the published 2026 meeting dates (Jun 18, Aug 20, Sep 17, Oct 15) are all third Thursdays. The SFGovTV permanent schedule says &#x27;2nd &amp; 4th Thursdays at 10:00AM&#x27;. The event row follows the department page.</td>
+  <td class="src"><a href="https://sfrecpark.org/1744/Meeting-Info-Calendar" target="_blank" rel="noopener">sfrecpark.org</a></td>
+  <td>SF.gov should correct the SFGovTV page to match the department&#x27;s published schedule.</td>
+</tr><tr id="f-040" data-bucket="two conflicting descriptions of regular meetings" data-search="library commission two conflicting descriptions of regular meetings the library commission bylaws (section 4) state regular meetings are held on the third thursday of each month at 4:30 p.m. a separate sfpl policies page (article vii) says &#x27;the first tuesday of each month and on the third thursday of each month ... at 4:00 p.m.&#x27;">
+  <td>f-040</td>
+  <td>two conflicting descriptions of regular meetings</td>
+  <td class="event"><span class="name">Library Commission</span><span class="sub">—</span></td>
+  <td>The Library Commission Bylaws (Section 4) state regular meetings are held on the third Thursday of each month at 4:30 p.m. A separate SFPL policies page (Article VII) says &#x27;the first Tuesday of each month and on the third Thursday of each month ... at 4:00 p.m.&#x27;</td>
+  <td class="src"><a href="https://sfpl.org/about-us/library-commission/policies/library-commission-bylaws" target="_blank" rel="noopener">sfpl.org</a></td>
+  <td>SFPL should reconcile Article VII with the Bylaws, or confirm which applies.</td>
+</tr><tr id="f-041" data-bucket="date conflict on the organiser&#x27;s own page" data-search="bay to breakers date conflict on the organiser&#x27;s own page the official site page title reads &#x27;may 16, 2027&#x27; while body copy on the same page still refers to &#x27;may 18&#x27;. the date recorded is may 16, 2027, taken from the page title.">
+  <td>f-041</td>
+  <td>date conflict on the organiser&#x27;s own page</td>
+  <td class="event"><span class="name">Bay to Breakers</span><span class="sub">—</span></td>
+  <td>The official site page title reads &#x27;May 16, 2027&#x27; while body copy on the same page still refers to &#x27;May 18&#x27;. The date recorded is May 16, 2027, taken from the page title.</td>
+  <td class="src"><a href="https://www.baytobreakers.com/" target="_blank" rel="noopener">baytobreakers.com</a></td>
+  <td>Re-check the date on the organiser&#x27;s site closer to the event; the body copy appears to be out of date.</td>
+</tr><tr id="f-042" data-bucket="two different 2026 date ranges on the organiser&#x27;s site" data-search="sffilm festival two different 2026 date ranges on the organiser&#x27;s site the festival event page and homepage give april 24-may 4, 2026, while the submission pages give april 23-may 3, 2026. the row uses april 24-may 4, 2026 from the festival&#x27;s own event page.">
+  <td>f-042</td>
+  <td>two different 2026 date ranges on the organiser&#x27;s site</td>
+  <td class="event"><span class="name">SFFILM Festival</span><span class="sub">—</span></td>
+  <td>The festival event page and homepage give April 24-May 4, 2026, while the submission pages give April 23-May 3, 2026. The row uses April 24-May 4, 2026 from the festival&#x27;s own event page.</td>
+  <td class="src"><a href="https://sffilm.org/event/69th-san-francisco-international-film-festival/" target="_blank" rel="noopener">sffilm.org</a></td>
+  <td>SFFILM should align the submission pages with the festival page.</td>
+</tr><tr id="f-043" data-bucket="venue changed from Treasure Island to Lake Merced" data-search="san francisco dragon boat festival venue changed from treasure island to lake merced the long-running san francisco international dragon boat festival was held on treasure island until 2015 and went on indefinite hiatus. the 2026 revival was staged at lake merced. the row reflects the 2026 lake merced location.">
+  <td>f-043</td>
+  <td>venue changed from Treasure Island to Lake Merced</td>
+  <td class="event"><span class="name">San Francisco Dragon Boat Festival</span><span class="sub">—</span></td>
+  <td>The long-running San Francisco International Dragon Boat Festival was held on Treasure Island until 2015 and went on indefinite hiatus. The 2026 revival was staged at Lake Merced. The row reflects the 2026 Lake Merced location.</td>
+  <td class="src"><a href="https://www.dragonboatsf.com/" target="_blank" rel="noopener">dragonboatsf.com</a></td>
+  <td>Confirm the 2027 venue before the next annual update.</td>
+</tr><tr id="f-044" data-bucket="no confirmed San Francisco date" data-search="treasurefest no confirmed san francisco date treasurefest was not invited back to treasure island and its official site now says it is &#x27;scouting our next location in the bay area&#x27;. no san francisco date is confirmed, so every value on the row is blank.">
+  <td>f-044</td>
+  <td>no confirmed San Francisco date</td>
+  <td class="event"><span class="name">TreasureFest</span><span class="sub">—</span></td>
+  <td>TreasureFest was not invited back to Treasure Island and its official site now says it is &#x27;scouting our next location in the Bay Area&#x27;. No San Francisco date is confirmed, so every value on the row is blank.</td>
+  <td class="src"><a href="https://www.treasurefest.com/" target="_blank" rel="noopener">treasurefest.com</a></td>
+  <td>Re-check the organiser&#x27;s site; re-add the event if a San Francisco date is announced.</td>
+</tr><tr id="f-045" data-bucket="event ended after 25 years (excluded from the list)" data-search="how weird street faire event ended after 25 years (excluded from the list) the official site states &#x27;twenty-five years of costumes, sound systems and dancing in the middle of howard street. the faire is done.&#x27; the event ran 2000-2024 and is therefore excluded from the recurring and annual listings, and recorded here for transparency.">
+  <td>f-045</td>
+  <td>event ended after 25 years (excluded from the list)</td>
+  <td class="event"><span class="name">How Weird Street Faire</span><span class="sub">—</span></td>
+  <td>The official site states &#x27;Twenty-five years of costumes, sound systems and dancing in the middle of Howard Street. The Faire is done.&#x27; The event ran 2000-2024 and is therefore excluded from the recurring and annual listings, and recorded here for transparency.</td>
+  <td class="src"><a href="https://howweird.org/" target="_blank" rel="noopener">howweird.org</a></td>
+  <td>None — permanently discontinued by the organiser. Listed here so the omission is visible.</td>
+</tr><tr id="f-046" data-bucket="home games are outside the City (excluded from the list)" data-search="san francisco 49ers home games are outside the city (excluded from the list) the 49ers play every home game at levi&#x27;s stadium, 4900 marie p. debartolo way, santa clara, which is not within the city of san francisco. the team is therefore excluded from the san francisco-only listings.">
+  <td>f-046</td>
+  <td>home games are outside the City (excluded from the list)</td>
+  <td class="event"><span class="name">San Francisco 49ers</span><span class="sub">—</span></td>
+  <td>The 49ers play every home game at Levi&#x27;s Stadium, 4900 Marie P. DeBartolo Way, Santa Clara, which is not within the City of San Francisco. The team is therefore excluded from the San Francisco-only listings.</td>
+  <td class="src"><a href="https://levisstadium.com/" target="_blank" rel="noopener">levisstadium.com</a></td>
+  <td>None — out of scope for a city-limits-only list. Recorded for transparency.</td>
+</tr><tr id="f-047" data-bucket="closed for dock repairs from October 26, 2026" data-search="alcatraz island closed for dock repairs from october 26, 2026 the national park service has scheduled alcatraz island to close temporarily from october 26, 2026 to approximately november 18, 2026 while crews replace dock pilings. the island is otherwise open with daily tours.">
+  <td>f-047</td>
+  <td>closed for dock repairs from October 26, 2026</td>
+  <td class="event"><span class="name">Alcatraz Island</span><span class="sub">—</span></td>
+  <td>The National Park Service has scheduled Alcatraz Island to close temporarily from October 26, 2026 to approximately November 18, 2026 while crews replace dock pilings. The island is otherwise open with daily tours.</td>
+  <td class="src"><a href="https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm" target="_blank" rel="noopener">nps.gov</a></td>
+  <td>Re-check the reopening date when publishing the next update.</td>
+</tr><tr id="f-048" data-bucket="date conflict on the organiser&#x27;s own site" data-search="castro menorah lighting date conflict on the organiser&#x27;s own site the castro merchants association events calendar lists the castro menorah lighting on monday, december 7, 2026, but the event description text says &#x27;on monday, december 15 at 6 pm&#x27;. the row uses the calendar date, december 7, 2026.">
+  <td>f-048</td>
+  <td>date conflict on the organiser&#x27;s own site</td>
+  <td class="event"><span class="name">Castro Menorah Lighting</span><span class="sub">—</span></td>
+  <td>The Castro Merchants Association events calendar lists the Castro Menorah Lighting on Monday, December 7, 2026, but the event description text says &#x27;on Monday, December 15 at 6 PM&#x27;. The row uses the calendar date, December 7, 2026.</td>
+  <td class="src"><a href="https://castromerchants.com/events" target="_blank" rel="noopener">castromerchants.com</a></td>
+  <td>Confirm the date with the Castro Merchants Association.</td>
+</tr><tr id="f-049" data-bucket="seasonal, and only two of three Foodwise markets are year-round" data-search="mission community market seasonal, and only two of three foodwise markets are year-round foodwise operates three markets: ferry plaza (year round), alemany (year round) and mission community market (march-november only). the mission market is flagged because its season differs from the other two.">
+  <td>f-049</td>
+  <td>seasonal, and only two of three Foodwise markets are year-round</td>
+  <td class="event"><span class="name">Mission Community Market</span><span class="sub">—</span></td>
+  <td>Foodwise operates three markets: Ferry Plaza (year round), Alemany (year round) and Mission Community Market (March-November only). The Mission market is flagged because its season differs from the other two.</td>
+  <td class="src"><a href="https://foodwise.org/markets/" target="_blank" rel="noopener">foodwise.org</a></td>
+  <td>None — the season is stated by the operator. Listed for review because it is easy to misread as year-round.</td>
+</tr><tr id="f-050" data-bucket="meeting cadence not published" data-search="human rights commission meeting cadence not published the official human rights commission page lists individual meetings (the next listed is october 8, 2026 at 5:00 p.m.) but does not state a regular meeting cadence, so the frequency field is blank.">
+  <td>f-050</td>
+  <td>meeting cadence not published</td>
+  <td class="event"><span class="name">Human Rights Commission</span><span class="sub">—</span></td>
+  <td>The official Human Rights Commission page lists individual meetings (the next listed is October 8, 2026 at 5:00 p.m.) but does not state a regular meeting cadence, so the frequency field is blank.</td>
+  <td class="src"><a href="https://www.sf.gov/departments--human-rights-commission" target="_blank" rel="noopener">sf.gov</a></td>
+  <td>Ask the Commission for its regular meeting schedule and add it to the row.</td>
+</tr><tr id="f-051" data-bucket="street address not published" data-search="larsen pickleball complex street address not published the official rec &amp; park news release announcing the complex does not publish a street address, so the address field on the event row is blank.">
+  <td>f-051</td>
+  <td>street address not published</td>
+  <td class="event"><span class="name">Larsen Pickleball Complex</span><span class="sub">—</span></td>
+  <td>The official Rec &amp; Park news release announcing the complex does not publish a street address, so the address field on the event row is blank.</td>
+  <td class="src"><a href="https://sfrecpark.org/m/newsflash/home/detail/1544" target="_blank" rel="noopener">sfrecpark.org</a></td>
+  <td>Look up the address on the Rec &amp; Park facilities page and complete the row.</td>
+</tr><tr id="f-052" data-bucket="no dedicated official programme page located" data-search="sf music week no dedicated official programme page located sf music week is referenced on an official sf.gov news release as &#x27;the city&#x27;s second annual sf music week&#x27;, but no dedicated official programme page with dates, venues or organisers was found. the row is left with dates and cost blank.">
+  <td>f-052</td>
+  <td>no dedicated official programme page located</td>
+  <td class="event"><span class="name">SF Music Week</span><span class="sub">—</span></td>
+  <td>SF Music Week is referenced on an official sf.gov news release as &#x27;the City&#x27;s second annual SF Music Week&#x27;, but no dedicated official programme page with dates, venues or organisers was found. The row is left with dates and cost blank.</td>
+  <td class="src"><a href="https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park" target="_blank" rel="noopener">sf.gov</a></td>
+  <td>Locate the official SF Music Week programme page before the next update.</td>
+</tr><tr id="f-053" data-bucket="2026-27 home fixtures not verified" data-search="golden state valkyries 2026-27 home fixtures not verified the valkyries play at chase center in san francisco, but the 2026-27 home fixture list was not confirmed against an official schedule page during this pass, so the dates field is blank.">
+  <td>f-053</td>
+  <td>2026-27 home fixtures not verified</td>
+  <td class="event"><span class="name">Golden State Valkyries</span><span class="sub">—</span></td>
+  <td>The Valkyries play at Chase Center in San Francisco, but the 2026-27 home fixture list was not confirmed against an official schedule page during this pass, so the dates field is blank.</td>
+  <td class="src"><a href="https://www.wnba.com/valkyries/schedule" target="_blank" rel="noopener">wnba.com</a></td>
+  <td>Verify the 2026-27 home schedule against the WNBA site and complete the row.</td>
 </tr>
   </tbody>
 </table>
