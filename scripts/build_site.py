@@ -365,7 +365,7 @@ def build_flagged() -> str:
 <div class="table-scroll">
 <table class="data-table">
   <thead><tr>
-    <th scope="col">Event</th><th scope="col">Page</th><th scope="col">Fields left blank</th>
+    <th scope="col">Event</th><th scope="col">Page</th><th scope="col">Row status</th><th scope="col">Fields left blank</th>
     <th scope="col">Official source</th>
   </tr></thead>
   <tbody>
@@ -380,22 +380,42 @@ def build_flagged() -> str:
 def unverified_rows() -> str:
     out = []
     for e in EVENTS:
-        if e.get("status") != "unverified":
-            continue
-        blanks = [
+        value_blanks = [
             label
             for label, key in (
                 ("Schedule", "schedule"),
-                ("Dates", "dates"),
                 ("Location", "location"),
                 ("Cost", "cost"),
             )
             if not e.get(key)
         ]
+        is_unverified = e.get("status") == "unverified"
+        if not is_unverified and not value_blanks:
+            continue
+        if is_unverified:
+            blanks = [
+                label
+                for label, key in (
+                    ("Schedule", "schedule"),
+                    ("Dates", "dates"),
+                    ("Location", "location"),
+                    ("Cost", "cost"),
+                )
+                if not e.get(key)
+            ]
+            status_cell = "unverified"
+            blank_cell = ", ".join(blanks) if blanks else "see note"
+        else:
+            status_cell = "verified (values shown are confirmed)"
+            blank_cell = (
+                ", ".join(value_blanks)
+                + " — not stated on the official source; left blank, nothing inferred"
+            )
         out.append(
             f"<tr id=\"review-{esc(e['id'])}\"><td>{esc(e['title'])}</td>"
             f"<td>{esc(e.get('group', ''))} / {esc(e.get('category', ''))}</td>"
-            f"<td>{esc(', '.join(blanks) if blanks else 'see note')}</td>"
+            f"<td>{esc(status_cell)}</td>"
+            f"<td>{esc(blank_cell)}</td>"
             f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>{esc(e['source_name'])} &nearr;</a></td></tr>"
         )
     return "\n".join(out)
