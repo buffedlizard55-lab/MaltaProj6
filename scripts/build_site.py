@@ -22,7 +22,19 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "data"))
 
-from events import EVENTS, FLAGGED, VERIFIED_ON  # noqa: E402
+from events import (  # noqa: E402
+    EVENTS as BASE_EVENTS,
+    FLAGGED as BASE_FLAGGED,
+    VERIFIED_ON,
+    assign_views,
+)
+from merge_parallel import parallel_events, parallel_flagged  # noqa: E402
+
+# Union of this session's research and the parallel session's research
+# (arena-8fb52462), which is preserved verbatim in data/*.json.
+PARALLEL_EVENTS = parallel_events(BASE_EVENTS)
+EVENTS = assign_views(list(BASE_EVENTS) + PARALLEL_EVENTS)
+FLAGGED = list(BASE_FLAGGED) + parallel_flagged()
 
 SITE_NAME = "San Francisco Events"
 SITE_TAGLINE = "Every event in the City of San Francisco — recurring, annual and special"
@@ -82,7 +94,7 @@ def page_shell(filename: str, title: str, subtitle: str, body: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} &middot; {esc(SITE_NAME)}</title>
 <meta name="description" content="{esc(SITE_TAGLINE)}. {esc(subtitle)}">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -440,6 +452,23 @@ def build_methodology() -> str:
 </section>
 
 <section>
+  <h2>Supplementary views (from the parallel session)</h2>
+  <p class="lede">A second agent session worked on this repository in parallel and its research was merged into
+     <code>main</code> while this pass was still running. Its raw data files are preserved verbatim in
+     <code>data/weekly.json</code>, <code>data/annual.json</code>, <code>data/special.json</code>,
+     <code>data/flagged.json</code> and <code>data/sources.json</code>, and its own views of the same events are
+     still published. The published tables above are the <em>union</em> of both research passes.</p>
+  <ul class="plain-list">
+    <li><a href="weekly.html">Weekly &amp; monthly view</a> &mdash; the parallel session's recurring-event table, with
+        its own source registry.</li>
+    <li><a href="analysis.html">Analysis</a> &mdash; the parallel session's category and neighbourhood analysis.</li>
+    <li><a href="sources.html">Source registry</a> &mdash; the parallel session's list of the 58 official sources it checked.</li>
+    <li><a href="data/review.csv">Review sheet</a> &mdash; the parallel session's line-by-line review CSV.</li>
+    <li><a href="data/schema.md">Data schema</a> &mdash; the parallel session's documented JSON schema.</li>
+  </ul>
+</section>
+
+<section>
   <h2>Known limitations</h2>
   <ul class="plain-list">
     <li>Individual performance dates for large seasons (opera, ballet, theatre) change and are sometimes
@@ -619,7 +648,7 @@ def main() -> int:
         json.dump(payload, fh, indent=2, ensure_ascii=False)
         fh.write("\n")
 
-    with open(os.path.join(ROOT, "assets", "style.css"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(ROOT, "assets", "site.css"), "w", encoding="utf-8") as fh:
         fh.write(CSS)
 
     written = ["index.html", "flagged.html", "methodology.html"]

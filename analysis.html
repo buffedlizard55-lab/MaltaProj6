@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method &amp; analysis · SF Events Index</title>
+<meta name="description" content="Method, coverage counts, findings and limitations for the verified San Francisco events catalogue.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">SF</span>
+      <span class="brand-text"><strong>SF Events Index</strong><span>Verified event catalogue</span></span>
+    </a>
+    <nav class="site" aria-label="Main navigation">
+      <a href="index.html">Overview</a>
+<a href="weekly.html">Recurring</a>
+<a href="annual.html">Annual</a>
+<a href="special.html">Special</a>
+<a href="analysis.html" aria-current="page">Analysis</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html">Flagged for Review</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    
+<div class="breadcrumb"><a href="index.html">Overview</a> / Analysis</div>
+<p class="eyebrow">Method &amp; findings</p>
+<h1>How this catalogue was built — and what it shows</h1>
+<p class="lede">The goal was a source-linked inventory, not a list of guesses. Every entry was opened, read and matched to a
+specific official page on 2026-10-18. This page records the method, the coverage, the patterns in the data and the limits
+that a reader should know about.</p>
+
+<h2>Method</h2>
+<ol class="clean">
+  <li><strong>Define the boundary.</strong> Only events physically inside the City and County of San Francisco. Daly City, Oakland and Santa Clara events are excluded even when they are marketed as “SF Bay Area”.</li>
+  <li><strong>Find the producer.</strong> For each candidate event, locate the page of the organisation that runs it, or the venue that hosts it. Government listings (sf.gov, SFMTA, SF Environment) are used for city-run programmes and street closures.</li>
+  <li><strong>Read the claim on the page.</strong> A date, cadence, time, place or price is recorded only if that page states it. Search-result snippets are treated as leads, not evidence.</li>
+  <li><strong>Record the edition.</strong> Annual dates are tied to the specific edition (2026 or 2027). A future date is never inferred from “usually the third weekend”.</li>
+  <li><strong>Leave gaps visible.</strong> If the official page is silent, the field is blank, the row gets an <span class="badge unverified">unverified</span> badge and the gap appears on <a href="flagged.html">Flagged for Review</a>.</li>
+  <li><strong>Publish the audit trail.</strong> Broken domains, stale pages and conflicting hours are logged with the URL checked and the action taken.</li>
+</ol>
+
+<h2>Coverage at a glance</h2>
+<div class="table-wrap">
+<table class="data" id="coverage-table">
+  <caption>What the catalogue contains</caption>
+  <thead><tr><th scope="col">Measure</th><th scope="col">Count</th><th scope="col">Note</th></tr></thead>
+  <tbody>
+    <tr><td>Total catalogue entries</td><td>87</td><td>All in San Francisco</td></tr>
+    <tr><td>Recurring weekly</td><td>18</td><td>Markets, late nights, weekly programmes</td></tr>
+    <tr><td>Recurring monthly</td><td>8</td><td>First/last/third weekday programmes</td></tr>
+    <tr><td>Annual</td><td>28</td><td>Edition-specific dates</td></tr>
+    <tr><td>Special / one-time</td><td>33</td><td>Exhibitions, runs, conventions, one-offs</td></tr>
+    <tr><td>Annual rows already carrying 2027 dates</td><td>14 of 28</td><td>The rest show the last confirmed edition</td></tr>
+    <tr><td>Rows with at least one unverified field</td><td>34</td><td>39% of entries; all listed on Flagged for Review</td></tr>
+    <tr><td>Official pages in the registry</td><td>58</td><td>Government, organiser and venue pages</td></tr>
+    <tr><td>Review notes</td><td>34</td><td>Broken sources, conflicts, scope decisions</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>What the data shows</h2>
+<ul class="clean">
+  <li><strong>Recurring life is concentrated at the weekend.</strong> Sunday is the most frequently cited day in the recurring set (9 rows), followed by Saturday (8 rows). The weekly table shows the full spread.</li>
+  <li><strong>Farmers markets are the backbone.</strong> The catalogue records markets on Tuesday, Wednesday, Thursday, Saturday and Sunday; no Monday or Friday farmers market could be verified. Saturday and Sunday carry the most options.</li>
+  <li><strong>Annual events cluster from spring to autumn.</strong> Cherry Blossom, Bay to Breakers, Pride, Fillmore Jazz, the Marathon, Pistahan, Nihonmachi, Folsom, Castro and Hardly Strictly span April to October.</li>
+  <li><strong>2027 planning is already possible for 14 annual events.</strong> Organisers including the Chinese New Year Parade, Cherry Blossom Festival, Bay to Breakers, SF Pride, Fillmore Jazz and the Castro Street Fair have published next-year dates.</li>
+  <li><strong>Special events are mostly runs, not single nights.</strong> 12 are on now and 17 are upcoming at the verification date; the rest are recorded past editions.</li>
+  <li><strong>Verification quality is uneven across official sources.</strong> 15 official pages were unreachable, hijacked, parked or broken; 8 date or data conflicts needed adjudication. These are logged rather than smoothed over.</li>
+</ul>
+
+<h2>Recurring events by weekday</h2>
+<p class="section-note">A row is counted once for each weekday named in its cadence or schedule. “1st &amp; 3rd Fridays” counts once for Friday.</p>
+<div class="table-wrap">
+<table class="data" id="weekday-table">
+  <caption>Weekday coverage in the recurring tables</caption>
+  <thead><tr><th scope="col">Day</th><th scope="col">Rows</th><th scope="col">Relative coverage</th></tr></thead>
+  <tbody><tr><td>Monday</td><td>0</td><td></td></tr><tr><td>Tuesday</td><td>1</td><td>█</td></tr><tr><td>Wednesday</td><td>1</td><td>█</td></tr><tr><td>Thursday</td><td>7</td><td>███████</td></tr><tr><td>Friday</td><td>2</td><td>██</td></tr><tr><td>Saturday</td><td>8</td><td>████████</td></tr><tr><td>Sunday</td><td>9</td><td>█████████</td></tr></tbody>
+</table>
+</div>
+
+<h2>Neighbourhood coverage</h2>
+<p class="section-note">Neighbourhoods are recorded as published by the organiser. Multi-neighbourhood routes are counted once for each area named.</p>
+<div class="table-wrap">
+<table class="data" id="hood-table">
+  <caption>Most frequently represented neighbourhoods</caption>
+  <thead><tr><th scope="col">Neighbourhood</th><th scope="col">Rows</th><th scope="col">Relative coverage</th></tr></thead>
+  <tbody><tr><td>SoMa</td><td>17</td><td>█████████████████</td></tr><tr><td>Citywide</td><td>10</td><td>██████████</td></tr><tr><td>Civic Center</td><td>8</td><td>████████</td></tr><tr><td>Yerba Buena</td><td>8</td><td>████████</td></tr><tr><td>Golden Gate Park</td><td>7</td><td>███████</td></tr><tr><td>Mission</td><td>5</td><td>█████</td></tr><tr><td>Outer Sunset</td><td>4</td><td>████</td></tr><tr><td>Castro</td><td>4</td><td>████</td></tr><tr><td>Embarcadero</td><td>3</td><td>███</td></tr><tr><td>Marina</td><td>3</td><td>███</td></tr><tr><td>Lincoln Park</td><td>3</td><td>███</td></tr><tr><td>Bernal Heights</td><td>2</td><td>██</td></tr></tbody>
+</table>
+</div>
+
+<h2>Source mix</h2>
+<div class="table-wrap">
+<table class="data" id="source-mix">
+  <caption>Which type of official page confirms each row</caption>
+  <thead><tr><th scope="col">Source type</th><th scope="col">Rows</th><th scope="col">Share</th></tr></thead>
+  <tbody><tr><td>official organizer</td><td>54</td><td>62%</td></tr><tr><td>official venue</td><td>21</td><td>24%</td></tr><tr><td>government</td><td>12</td><td>14%</td></tr></tbody>
+</table>
+</div>
+
+<h2>Limitations</h2>
+<ul class="clean">
+  <li><strong>Not literally every event.</strong> A city the size of San Francisco has hundreds of venue-level concerts, gallery openings and private ticketed shows each month. This catalogue covers public recurring programmes, the major annual civic calendar, and dated exhibitions, runs and conventions that were verifiable on an official page. It is comprehensive for those classes, not for every individual gig.</li>
+  <li><strong>Official pages go stale.</strong> Several official sites still displayed 2025 dates or outdated hours. Where that happened, the date was left blank and the staleness logged.</li>
+  <li><strong>Permits expire.</strong> Monthly street closures are permitted through specific dates (see SFMTA notes). A recurring row can stop recurring without the organiser updating the page.</li>
+  <li><strong>Status is a snapshot.</strong> “On now”, “upcoming” and “past” are calculated against 2026-10-18 and will drift as time passes. The dates are the durable information.</li>
+  <li><strong>Ticketing and capacity are out of scope.</strong> A row marked “Ticketed” only means the official source describes paid admission; it does not guarantee availability.</li>
+</ul>
+
+<div class="callout warn">
+  <strong>Review workflow:</strong> unverified fields and source irregularities are published on
+  <a href="flagged.html">Flagged for Review</a> with stable row IDs and source links. Nothing is silently corrected by
+  inference. If you spot a change, cite the row ID and the official URL.
+</div>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>SF Events Index</strong> · City and County of San Francisco only · Data verified 2026-10-18.
+      <br>Every row links to the government, organiser or venue page that confirms it.
+    </div>
+    <div>
+      <a href="analysis.html">Method &amp; analysis</a> ·
+      <a href="sources.html">Source registry</a> ·
+      <a href="flagged.html">Flagged for Review</a> ·
+      <a href="https://github.com/buffedlizard55-lab/MaltaProj6" target="_blank" rel="noopener">Repository</a>
+      <br><a class="back-top" href="#main">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

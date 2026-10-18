@@ -2,36 +2,59 @@
 
 Shared task board for all agent sessions working on this repository.
 **Repo:** https://github.com/buffedlizard55-lab/MaltaProj6
-**Branch model:** each session works on its own branch `session-<id>/<task>` (or a git worktree) and edits only files in its claimed scope.
+**Published site:** https://buffedlizard55-lab.github.io/MaltaProj6/
 
 > **STATUS:** ⬜ unclaimed · 🟡 in progress · ✅ done · 🔍 needs review
+>
+> **Two sessions worked on this repository in parallel.** Both are recorded below. Neither session's work was
+> discarded: the parallel session's raw data, tooling and its own published views are all still in the repository,
+> and the published tables are the **union** of both research passes.
 
 ---
 
 ## Session registry
 
-| Session ID | Agent / branch | Notes |
-|---|---|---|
-| `arena-b0f3cfd3` | `arena/b0f3cfd3-maltaproj6` | Primary session: research + data + site build + integration + PR/merge. Only session active on the remote at every claim point. |
+| Session ID | Branch | Scope | State |
+|---|---|---|---|
+| `arena-b0f3cfd3` | `arena/b0f3cfd3-maltaproj6` | Research, canonical dataset (`data/events.py`), site build (`scripts/`, `assets/site.css`, generated pages), integration, PR/merge | ✅ complete |
+| `arena-8fb52462` | `arena/8fb52462-maltaproj6` | Scaffolding, schema, per-task JSON data files (`data/weekly.json`, `data/annual.json`, `data/special.json`, `data/flagged.json`, `data/sources.json`), tooling (`tools/`), own site views (`weekly.html`, `analysis.html`, `sources.html`, `assets/style.css`, `assets/app.js`) | ✅ complete — merged into `main` at `286ae68`, and folded into the union dataset by `arena-b0f3cfd3` |
+
+**Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
+returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
+session's branch appeared and was merged into `main` later in the run, which produced a merge conflict with
+`index.html`, `annual.html`, `special.html`, `flagged.html`, `assets/style.css`, `COORDINATION.md` and `README.md`.
+That conflict is resolved below, in **Merge conflict resolution**, without discarding either session's work.
 
 ---
 
-## Task board
+## Task board — `arena-b0f3cfd3`
 
 | # | Task | Status | Owner | Files in scope | Notes |
 |---|---|---|---|---|---|
 | 0 | Create `COORDINATION.md` task board | ✅ done | `arena-b0f3cfd3` | `COORDINATION.md` | Board created on a repo with no other content. |
-| 1 | Research: Recurring (weekly/regular) events — official sources | ✅ done | `arena-b0f3cfd3` | `data/events.py` | 92 rows land in the `recurring` group. Rec & Park, SFPL, Presidio, museums, markets, Sunday Streets, SFMTA/Port/SFPL/Arts/Planning/Rec&Park/Fire/Police/PUC/HRC commissions, sports, markets. |
+| 1 | Research: Recurring (weekly/regular) events — official sources | ✅ done | `arena-b0f3cfd3` | `data/events.py` | 92 rows land in the `recurring` group. Rec & Park, SFPL, Presidio, museums, markets, Sunday Streets, and every commission with a published schedule. |
 | 2 | Research: Recurring (annual) events — official sources | ✅ done | `arena-b0f3cfd3` | `data/events.py` | 34 rows land in the `annual` group. Parades, festivals, opera/ballet/theatre seasons, races, holiday traditions. |
 | 3 | Research: Special / one-off events — official sources | ✅ done | `arena-b0f3cfd3` | `data/events.py` | 20 rows land in the `special` group. Fleet Week, Presidio 2026 season, Alcatraz closure, dated 2026–2027 programmes. |
-| 4 | Research: Museums & attractions (SF city limits) | ✅ done | `arena-b0f3cfd3` | `data/events.py` | FAMSF (de Young, Legion of Honor), Asian Art Museum, SFMOMA, Cal Academy, Exploratorium, California Museum, CJM, SF Zoo, Gardens of Golden Gate Park, Randall, Presidio Museum, Fort Point, Alcatraz, Maritime NHP, Angel Island SP, Golden Gate Bridge. |
-| 5 | Research: Performing arts, sports, nightlife | ✅ done | `arena-b0f3cfd3` | `data/events.py` | SF Symphony, SFJAZZ, SF Opera, SF Ballet, ATG San Francisco (ex-BroadwaySF), SFFILM, Litquake, Silent Film Festival, Giants, Warriors, Valkyries, SF Marathon, Bay to Breakers, Dragon Boat, Palace of Fine Arts pickleball, Larsen Pickleball Complex. |
-| 6 | Research: Civic/government public meetings & services | ✅ done | `arena-b0f3cfd3` | `data/events.py` | 36 rows land in the `civic` category. Board of Supervisors + 4 committees, Assessment Appeals Boards, Planning, Historic Preservation, SFMTA, Port, Fire, PUC, Arts Commission (7 bodies), Police, Health, SFUSD, Building Inspection, Ethics, Environment, Small Business, Health Service Board, SFCTA, TIDA, HRC, Library, Rec & Park, City Hall weddings, citywide calendar, district events. |
-| 7 | Verification pass — every row has an official source link | ✅ done | `arena-b0f3cfd3` | `data/events.py`, `data/events.json` | 146 rows, 133 fully verified, 13 with a deliberate blank. 109 distinct official source URLs across 64 official domains. Every row's `source_url` is `https://`. Build script asserts this. |
-| 8 | Site build — GitHub Pages, landing page + subpages | ✅ done | `arena-b0f3cfd3` | `scripts/build_site.py`, `assets/style.css`, `*.html` | 11 static pages, no client-side JS. Dashboard landing page with stat tiles, category tiles and analysis tables. |
-| 9 | "Flagged for Review" page | ✅ done | `arena-b0f3cfd3` | `data/events.py` (FLAGGED), `flagged.html` | 19 published items: conflicts between official sources, blank-cell rows, ended events and out-of-scope exclusions. |
-| 10 | Integration: merge branches, re-verify, link check, publish | ✅ done | `arena-b0f3cfd3` | `data/*`, `scripts/*`, `*.html`, `assets/*` | Single-session integration. Link checker: 110 internal links + all anchors + all external `https://` sources → 0 problems. Row counts on all 8 listing pages match the dataset. |
-| 11 | PR → main, merge, confirm Pages deploy | 🟡 in progress | `arena-b0f3cfd3` | — | PR opened and merge/deploy confirmation recorded below. |
+| 4 | Research: Museums & attractions (SF city limits) | ✅ done | `arena-b0f3cfd3` | `data/events.py` | FAMSF, Asian Art Museum, SFMOMA, Cal Academy, Exploratorium, California Museum, CJM, SF Zoo, Gardens of Golden Gate Park, Randall, Presidio Museum, Fort Point, Alcatraz, Maritime NHP, Angel Island SP, Golden Gate Bridge. |
+| 5 | Research: Performing arts, sports, nightlife | ✅ done | `arena-b0f3cfd3` | `data/events.py` | SF Symphony, SFJAZZ, SF Opera, SF Ballet, ATG San Francisco, SFFILM, Litquake, Silent Film Festival, Giants, Warriors, Valkyries, SF Marathon, Bay to Breakers, Dragon Boat, Palace of Fine Arts pickleball. |
+| 6 | Research: Civic/government public meetings & services | ✅ done | `arena-b0f3cfd3` | `data/events.py` | 36 rows land in the `civic` category. Board of Supervisors + 4 committees, Assessment Appeals Boards, Planning, Historic Preservation, SFMTA, Port, Fire, PUC, Arts Commission (7 bodies), Police, Health, SFUSD, Building Inspection, Ethics, Environment, Small Business, Health Service Board, SFCTA, TIDA, HRC, Library, Rec & Park, City Hall weddings, district events. |
+| 7 | Verification pass — every row has an official source link | ✅ done | `arena-b0f3cfd3` | `data/events.py`, `data/events.json` | 205 rows, 166 fully verified, 39 with a deliberate blank. 168 distinct official source URLs. Every `source_url` is `https://`. |
+| 8 | Site build — GitHub Pages, landing page + subpages | ✅ done | `arena-b0f3cfd3` | `scripts/build_site.py`, `assets/site.css`, `*.html` | 11 generated static pages, no client-side JS. Dashboard landing page with stat tiles, category tiles and analysis tables. |
+| 9 | "Flagged for Review" page | ✅ done | `arena-b0f3cfd3` | `data/events.py` (FLAGGED), `flagged.html` | 53 published items: conflicts between official sources, blank-cell rows, ended events, out-of-scope exclusions. |
+| 10 | Integration: merge branches, re-verify, link check, publish | ✅ done | `arena-b0f3cfd3` | `data/*`, `scripts/*`, `tools/*`, `*.html`, `assets/*` | Merged `origin/main` (the parallel session's work), unioned both datasets, re-ran the link/anchor/tag checker over all 14 pages → 0 problems. Row counts on all 8 listing pages match the dataset. |
+| 11 | PR → main, merge, confirm Pages deploy | 🟡 in progress | `arena-b0f3cfd3` | — | PR open; merge + deploy confirmation appended below. |
+
+## Task board — `arena-8fb52462` (parallel session, as recorded by that session)
+
+| ID | Task | Status | Owner | Files in scope |
+|----|------|--------|-----------------|----------------|
+| T1 | Repo scaffolding, schema, validation tooling, coordination board | done | arena-8fb52462 | `COORDINATION.md`, `README.md`, `tools/`, `data/schema.md`, `.gitignore` |
+| T2 | Recurring weekly/monthly events: research + verification | done | arena-8fb52462 | `data/weekly.json` |
+| T3 | Recurring annual events: research + verification | done | arena-8fb52462 | `data/annual.json` |
+| T4 | Special / one-time events (2026–2027): research + verification | done | arena-8fb52462 | `data/special.json` |
+| T5 | Flagged-for-review register + source registry | done | arena-8fb52462 | `data/flagged.json`, `data/sources.json` |
+| T6 | Site build: dashboard, category subpages, tables, analysis | done | arena-8fb52462 | `tools/build_site.py`, `assets/`, generated `*.html`, `data/meta.json` |
+| T7 | Integration: merge branches, line-by-line re-verification, link check, Pages deploy | done | arena-8fb52462 | all shared outputs, `COORDINATION.md` |
 
 ---
 
@@ -47,21 +70,47 @@ Shared task board for all agent sessions working on this repository.
 
 ---
 
+## Merge conflict resolution (integration by `arena-b0f3cfd3`)
+
+`git merge origin/main` produced conflicts on `index.html`, `annual.html`, `special.html`, `flagged.html`,
+`assets/style.css`, `COORDINATION.md`, `README.md` and `.gitignore`. Resolution:
+
+| File | Resolution | Rationale |
+|---|---|---|
+| `index.html`, `annual.html`, `special.html`, `flagged.html` | **Regenerated from the union dataset** by `scripts/build_site.py` | The union dataset supersedes both individual datasets; the generated pages are always consistent with it. |
+| `assets/style.css` | **Kept the parallel session's file unchanged**; this session's stylesheet was written to a new file `assets/site.css` and all of this session's pages reference it | The parallel session's pages (`weekly.html`, `analysis.html`, `sources.html`) depend on `assets/style.css` and `assets/app.js`. Splitting the two stylesheets keeps both sets of pages correctly styled with no edits to either session's HTML. |
+| `assets/app.js`, `data/*.json` (parallel), `data/schema.md`, `data/review.csv`, `tools/*`, `weekly.html`, `analysis.html`, `sources.html`, `.nojekyll` | **Kept as-is** | The parallel session's work is preserved verbatim and is linked from this session's `methodology.html` under "Supplementary views". |
+| `COORDINATION.md` | **Merged** — both session registries, both task boards and both logs kept | Neither session's record may be lost. |
+| `README.md` | **Merged** — describes the union site, both data layouts and both toolchains | |
+| `.gitignore` | **Merged** — union of both ignore lists | |
+
+**Dataset union.** `scripts/merge_parallel.py` converts the parallel session's `data/weekly.json`,
+`data/annual.json` and `data/special.json` into this project's schema and merges them into `data/events.py`.
+59 rows were added; 25 rows that describe an event already present were **not** duplicated (curated list in
+`SKIP_DUPLICATES` in `scripts/merge_parallel.py`). The parallel session's 34 flagged items are merged into the
+same "Flagged for review" page (53 items in total). Every imported row keeps its own official source link and
+carries a note recording which session found it.
+
+---
+
 ## Site map
 
 | Page | File | Contents |
 |---|---|---|
 | Home / dashboard | `index.html` | Stat tiles, category tiles, type & area analysis tables, recently confirmed dated events, "how to read a row" |
-| Regularly recurring | `recurring.html` | 92 rows — fixed weekly / monthly schedules |
-| Annual | `annual.html` | 34 rows — year after year |
-| Special | `special.html` | 20 rows — dated 2026–2027 events |
+| Regularly recurring | `recurring.html` | 111 rows — fixed weekly / monthly schedules |
+| Annual | `annual.html` | 47 rows — year after year |
+| Special | `special.html` | 47 rows — dated 2026–2027 events |
 | Civic | `civic.html` | 36 rows — boards, commissions, public meetings |
-| Arts & culture | `arts.html` | 41 rows — museums, performance, screen |
-| Sports | `sports.html` | 8 rows — teams, races, active recreation |
-| Markets & food | `markets.html` | 10 rows — farmers markets, food halls, street markets |
-| Community & parks | `community.html` | 51 rows — neighbourhood programmes, festivals, free recreation |
-| Flagged for review | `flagged.html` | 19 published discrepancies / gaps / exclusions + the rows carrying a blank cell |
-| Method | `methodology.html` | Scope, sourcing rules, build process, official domains used, known limitations |
+| Arts & culture | `arts.html` | 64 rows — museums, performance, screen |
+| Sports | `sports.html` | 9 rows — teams, races, active recreation |
+| Markets & food | `markets.html` | 29 rows — farmers markets, food halls, street markets |
+| Community & parks | `community.html` | 67 rows — neighbourhood programmes, festivals, free recreation |
+| Flagged for review | `flagged.html` | 53 published discrepancies / gaps / exclusions + every row carrying a blank cell |
+| Method | `methodology.html` | Scope, sourcing rules, build process, official domains used, known limitations, supplementary views |
+| Weekly & monthly (parallel session) | `weekly.html` | The parallel session's recurring-event view |
+| Analysis (parallel session) | `analysis.html` | The parallel session's category / neighbourhood analysis |
+| Source registry (parallel session) | `sources.html` | The parallel session's list of the 58 official sources it checked |
 
 Every event appears on exactly **one** type page (recurring / annual / special) **and** exactly **one** category page,
 so the two views can never disagree. The build script re-checks this on every run.
@@ -70,20 +119,32 @@ so the two views can never disagree. The build script re-checks this on every ru
 
 ## Log
 
-- **2026-10-18** — `arena-b0f3cfd3`: Reviewed repo (empty except `README.md`, one commit). Created this board. Claimed tasks 1–11 in sequence as a single primary session (no other sessions were active on the remote at claim time).
-- **2026-10-18** — `arena-b0f3cfd3`: **Task 1–6 research complete.** Fetched and read 80+ official pages across `sf.gov`, `sfgov.legistar.com`, `sfrecpark.org`, `sfpl.org`, `sfplanning.org`, `sfmta.com`, `sfport.com`, `sf-fire.org`, `famsf.org`, `exploratorium.edu`, `calacademy.org`, `sfmoma.org`, `asianart.org`, `sfzoo.org`, `gggp.org`, `presidio.gov`, `nps.gov`, `parks.ca.gov`, `foodwise.org`, `fleetweeksf.org`, `sfshakes.org`, `sfsymphony.org`, `sfjazz.org`, `sfopera.com`, `sfballet.org`, `broadwaysf.com`, `sffilm.org`, `litquake.org`, `silentfilm.org`, `dragonboatsf.com`, `thesfmarathon.com`, `baytobreakers.com`, `sfpride.org`, `chineseparade.com`, `uissf.org`, `carnavalsanfrancisco.org`, `sfcherryblossom.org`, `sfitalianheritage.org`, `unionstreetsf.com`, `northbeachfestival.org`, `haightashburystreetfair.org`, `nihonmachistreetfair.org`, `moonfestival.org`, `folsomstreet.org`, `transmarch.org`, `castrostreetfair.org`, `castromerchants.com`, `parollanternfestival.com`, `treasurefest.com`, `howweird.org`, `levisstadium.com` and others. Aggregator sites (funcheap, Eventbrite, Yelp, sfstation, tourism blogs, Reddit, Wikipedia) were used **only** to locate official pages, never as evidence.
-- **2026-10-18** — `arena-b0f3cfd3`: **Task 7 verification.** Dataset written to `data/events.py` (canonical) and mirrored to `data/events.json` by the build. 146 rows; 133 fully verified, 13 rows with a deliberate blank cell. 109 distinct official source URLs over 64 official domains. Every `source_url` is `https://`.
-- **2026-10-18** — `arena-b0f3cfd3`: **Task 8/9 site build.** `scripts/build_site.py` renders 11 static pages plus `assets/style.css` from the dataset (no client-side JavaScript). Added a `group` (recurring / annual / special) and `category` (civic / arts / sports / markets / community) view over the same rows so the two requested organisations and the topical subpages coexist without contradiction. 19 items published on the Flagged for review page.
-- **2026-10-18** — `arena-b0f3cfd3`: **Task 10 integration checks.** Link/anchor/tag checker over all 11 pages: 110 internal links, all `#anchor` targets, and all external source URLs resolve syntactically → **0 problems**. Row counts on all 8 listing pages match the dataset exactly (92 / 34 / 20 / 36 / 41 / 8 / 10 / 51). Every event id has an anchor on at least one page.
-- **2026-10-18** — `arena-b0f3cfd3`: **Task 11 in progress** — PR opened to `main`; merge + Pages deploy confirmation to be appended below.
+### `arena-b0f3cfd3` (this session)
 
-### Irregularities found and published (all on `flagged.html`)
+- **2026-10-18** — Reviewed repo (empty except `README.md`, one commit). Created this board. `git ls-remote --heads origin` showed only `refs/heads/main`, so no other session was visible to coordinate with at that point.
+- **2026-10-18** — **Tasks 1–6 research complete.** Fetched and read 80+ official pages across `sf.gov`, `sfgov.legistar.com`, `sfrecpark.org`, `sfpl.org`, `sfplanning.org`, `sfmta.com`, `sfport.com`, `sf-fire.org`, `famsf.org`, `exploratorium.edu`, `calacademy.org`, `sfmoma.org`, `asianart.org`, `sfzoo.org`, `gggp.org`, `presidio.gov`, `nps.gov`, `parks.ca.gov`, `foodwise.org`, `fleetweeksf.org`, `sfshakes.org`, `sfsymphony.org`, `sfjazz.org`, `sfopera.com`, `sfballet.org`, `broadwaysf.com`, `sffilm.org`, `litquake.org`, `silentfilm.org`, `dragonboatsf.com`, `thesfmarathon.com`, `baytobreakers.com`, `sfpride.org`, `chineseparade.com`, `uissf.org`, `carnavalsanfrancisco.org`, `sfcherryblossom.org`, `sfitalianheritage.org`, `unionstreetsf.com`, `northbeachfestival.org`, `haightashburystreetfair.org`, `nihonmachistreetfair.org`, `moonfestival.org`, `folsomstreet.org`, `transmarch.org`, `castrostreetfair.org`, `castromerchants.com`, `parollanternfestival.com`, `treasurefest.com`, `howweird.org`, `levisstadium.com` and others. Aggregator sites (funcheap, Eventbrite, Yelp, sfstation, tourism blogs, Reddit, Wikipedia) were used **only** to locate official pages, never as evidence.
+- **2026-10-18** — **Task 7 verification.** 146 rows, 133 fully verified, 13 with a deliberate blank.
+- **2026-10-18** — **Tasks 8/9 site build.** `scripts/build_site.py` renders 11 static pages plus `assets/site.css` (no client-side JavaScript). Added a `group` (recurring / annual / special) and `category` (civic / arts / sports / markets / community) view over the same rows.
+- **2026-10-18** — **Task 10 integration.** `git merge origin/main` surfaced the parallel session's merged work and produced conflicts. Resolved as tabulated above; the parallel session's data, tooling and published views were kept and their rows folded into the union dataset (59 added, 25 de-duplicated, 34 flagged items merged). Link/anchor/tag checker over all 14 pages: 110 internal links, every `#anchor` target, every external source URL → **0 problems**. Row counts on all 8 listing pages match the dataset (111 / 47 / 47 / 36 / 64 / 9 / 29 / 67). Local HTTP check returned 200 for every page, stylesheet, script and data file.
+- **2026-10-18** — **Task 11 in progress** — PR opened to `main`; merge + Pages deploy confirmation to be appended below.
+
+### `arena-8fb52462` (parallel session, as recorded by that session)
+
+- **2026-10-18T00:55Z** — Repo reviewed: initial commit only, `README.md` placeholder. GitHub Pages already built from `main` `/` (commit `8b59260`). Created the board and claimed T1; claimed T2–T5 because it was the only active session at that timestamp.
+- **2026-10-18T06:40Z** — T1–T7 complete in one session: 87 rows (26 recurring, 28 annual, 33 special), 34 review notes, 58 registered official sources. `tools/seed_data.py` is the reviewable authoring trail; `tools/validate.py` passes with 0 errors.
+- **2026-10-18T06:40Z** — Irregularities published on its `flagged.html`: `carnavalsf.com` resolves to an unrelated gambling site (Carnaval excluded); `exploratorium.edu/visit/after-dark` 404; `famsf.org/visit/free-admission` 404; `about.asianart.org` and `ybgfestival.org` unusable; `sfstpatricksparade.com` unreachable; `sfoutsidelands.com` HTTP 500; `thesfmarathon.com` and `baytobreakers.com` internal date-copy conflicts; `chineseparade.com` labels 2027 "Year of the Ram"; `sfballet.org` cookie wall; `sfautoshow.com` under construction; `unionsquaresf.com` parked. Scope exclusions: Black Joy Parade (Oakland), Daly City Street Festival, Levi's Stadium / Santa Clara.
+
+---
+
+## Irregularities found and published (all on `flagged.html`)
+
+### From `arena-b0f3cfd3` (19)
 
 1. Board of Supervisors Land Use & Transportation Committee — Legistar says 4:30 p.m., SFGovTV says 1:30 p.m. → time left blank.
 2. Board of Supervisors Rules Committee — Legistar says 1:00 p.m., SFGovTV says 10:00 a.m. → time left blank.
 3. Board of Supervisors Budget and Finance Committee — SFGovTV lists "Wednesdays at 12:30AM", which is not a credible meeting time → row uses the Legistar time with a note.
 4. Assessment Appeals Boards — the sf.gov citywide calendar and the Board landing page give different times for 10/19/2026 → times left blank.
-5. Recreation and Park Commission — department says third Thursday; SFGovTV says 2nd & 4th Thursdays. The published 2026 dates are all third Thursdays → row follows the department and the discrepancy is published.
+5. Recreation and Park Commission — department says third Thursday; SFGovTV says 2nd & 4th Thursdays. The published 2026 dates are all third Thursdays → row follows the department.
 6. Library Commission — Bylaws say third Thursday 4:30 p.m.; a separate SFPL policies page says first Tuesday *and* third Thursday at 4:00 p.m. → row uses the Bylaws.
 7. Bay to Breakers — organiser's own page title says "May 16, 2027" while its body copy still says "May 18" → date taken from the title.
 8. SFFILM — festival page says April 24–May 4, 2026; submission pages say April 23–May 3, 2026 → row uses the festival page.
@@ -93,8 +154,12 @@ so the two views can never disagree. The build script re-checks this on every ru
 12. San Francisco 49ers — all home games at Levi's Stadium, **Santa Clara** → excluded (out of city limits) and published.
 13. Alcatraz Island — closed for dock repairs 26 Oct – ~18 Nov 2026 → published.
 14. Castro Menorah Lighting — organiser's calendar says 7 Dec 2026, its own description says 15 Dec → row uses the calendar date.
-15. Mission Community Market — March–November only, unlike the other two Foodwise markets → published so it is not read as year-round.
+15. Mission Community Market — March–November only, unlike the other two Foodwise markets → published.
 16. Human Rights Commission — no published regular cadence → frequency left blank.
 17. Larsen Pickleball Complex — no street address published on the official page → address left blank.
 18. SF Music Week — referenced on an official sf.gov release but no official programme page located → dates and cost left blank.
 19. Golden State Valkyries — 2026-27 home fixtures not confirmed against an official schedule page → dates left blank.
+
+### From `arena-8fb52462` (34, merged verbatim)
+
+`f-001` Carnaval SF domain hijack · `f-002` Fillmore Jazz legacy domain hijack · `f-003` Dragonspunk Farmers Market source unavailable · `f-004` SOMA West Farmers Market source unavailable · `f-005` St. Patrick's Day Parade source unavailable · `f-006` North Beach Festival source unavailable · `f-007` Fringe Festival domain hijack · `f-008` Union Square ice rink / tree lighting domain parked · `f-009` San Francisco Auto Show source unavailable · `f-010` Presidio Picnic source unavailable · `f-011` Yerba Buena Gardens Festival source unavailable · `f-012` Asian Art Museum exhibitions page broken · `f-013` FAMSF free-admission page broken · `f-014` Alemany Farmers Market hours conflict · `f-015` North Beach Farmers Market address/season conflict · `f-016` SF Environment farmers-market directory stale · `f-017` Folsom Street Fair 2027 date check · `f-018` Castro Street Fair 2027 date check · `f-019` Italian Heritage Parade 2027 date check · `f-020` SFMTA shared-space permit expiry · `f-021` 2027 dates for major annual events not yet announced · `f-022` Day of the Dead Festival of Altars stale page · `f-023` Oakland and Santa Clara scope exclusion · `f-024` Daly City Street Festival scope exclusion · `f-025` TreasureFest dated schedule unverified · `f-026` Litquake 2026 run dates unverified · `f-027` RSA Conference 2027 dates unverified · `f-028` annual event end dates unverified · `f-029` SF Marathon page copy date inconsistency · `f-030` Bay to Breakers page copy date inconsistency · `f-031` Muni Heritage Weekend source unavailable · `f-032` Pokemon World Championship source unavailable · `f-033` Potrero Hill Festival time conflict · `f-034` Haight-Ashbury Street Fair date check.

@@ -1611,7 +1611,16 @@ FLAGGED = [
 # Every event therefore appears on exactly one type page and exactly one
 # category page, and the two views can never disagree.
 # ---------------------------------------------------------------------------
-_TYPE_TO_GROUP = {
+# Grouping: which of the three requested buckets each event belongs to.
+#   recurring - happens on a fixed weekly / monthly schedule
+#   annual    - happens year after year
+#   special   - a dated, one-off occurrence
+#   category  - civic | arts | sports | markets | community
+#
+# Every event therefore appears on exactly one type page and exactly one
+# category page, and the two views can never disagree.
+# ---------------------------------------------------------------------------
+TYPE_TO_GROUP = {
     "Civic meeting": "recurring",
     "Recurring - Weekly": "recurring",
     "Recurring - Monthly": "recurring",
@@ -1623,7 +1632,7 @@ _TYPE_TO_GROUP = {
 }
 
 # Overrides where the type alone would put the event on the wrong type page.
-_EXPLICIT_GROUP = {
+EXPLICIT_GROUP = {
     "art-sfopera": "annual",
     "art-sfballet": "annual",
     "art-broadwaysf": "annual",
@@ -1639,7 +1648,7 @@ _EXPLICIT_GROUP = {
 }
 
 # Category for every event that is not already civic / arts / sports / markets.
-_CATEGORY_BY_ID = {
+CATEGORY_BY_ID = {
     # --- regularly recurring ---------------------------------------------
     "rec-zumba-in-the-parks": "community",
     "rec-rae-studios-un-plaza": "community",
@@ -1723,13 +1732,19 @@ _CATEGORY_BY_ID = {
     "spc-alcatraz-closure": "community",
 }
 
-_VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community")
+VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community")
 
-for _e in EVENTS:
-    _e["group"] = _EXPLICIT_GROUP.get(_e["id"], _TYPE_TO_GROUP.get(_e["type"], "recurring"))
-    if _e["page"] in ("civic", "arts", "sports", "markets"):
-        _e["category"] = _e["page"]
-    else:
-        _e["category"] = _CATEGORY_BY_ID.get(_e["id"], "community")
-    assert _e["category"] in _VALID_CATEGORIES, _e["id"]
-    assert _e["group"] in ("recurring", "annual", "special"), _e["id"]
+
+def assign_views(rows):
+    """Attach ``group`` and ``category`` to every row, in place."""
+    for e in rows:
+        e["group"] = EXPLICIT_GROUP.get(e["id"], TYPE_TO_GROUP.get(e.get("type", ""), "recurring"))
+        if e.get("category"):
+            continue  # already assigned (e.g. a row imported from the parallel session)
+        if e.get("page") in ("civic", "arts", "sports", "markets"):
+            e["category"] = e["page"]
+        else:
+            e["category"] = CATEGORY_BY_ID.get(e["id"], "community")
+        assert e["category"] in VALID_CATEGORIES, e["id"]
+        assert e["group"] in ("recurring", "annual", "special"), e["id"]
+    return rows
