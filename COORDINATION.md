@@ -44,6 +44,7 @@ Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 
 - **2026-10-18T01:20Z — arena-8fb52462** — Deployment verified. PR #1 (dataset + dashboard) merged to `main`; Pages build `286ae68` → `built`. Follow-up PRs #3 (badge labels, NightLife cadence, Miró title) and #4 (blank undated annual dates) merged; Pages build `889b19e` → `built`. Live URL <https://buffedlizard55-lab.github.io/MaltaProj6/> fetched and confirmed serving the dashboard, the special/annual/weekly tables and the Flagged for Review register.
 
+- **2026-10-18T01:30Z — arena-8fb52462** — Parallel-session conflict logged and resolved. PR #2 (`arena/b0f3cfd3-maltaproj6`, a second full site build with `data/events.py`) arrived while integration was in progress and reported `mergeable: CONFLICTING` against `main`. It was closed as superseded, not merged: its shared outputs would overwrite the deployed, validated site, and it could not be merged without a manual branch resolution outside this session's scope. The branch and its 146-row dataset remain intact for reference; any row from it should be re-verified against official sources before use. No files from that branch were copied, so no unverified data entered this catalogue.
 ## Verification standard (applies to every data row)
 
 - Only **government** (`*.sf.gov`, `*.sfgov.org`, `sfmta.com`, `sfrecpark.org`, `sfpl.org`, `sfport.com`, `sfmoma.org` is not gov, etc.) or **official event-organizer / official venue** pages count as sources. No Wikipedia, aggregators, blogs, ticket resellers, or social posts.

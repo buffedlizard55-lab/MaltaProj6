@@ -67,7 +67,7 @@ SOURCES = {
     "sffilm": ("https://sffilm.org/", "SFFILM | The Hub of the Bay Area's film culture", "official organizer"),
     "gdc": ("https://gdconf.com/", "GDC Festival of Gaming", "official organizer"),
     "rsac": ("https://www.rsaconference.com/", "RSA Conference", "official organizer"),
-    "dreamforce": ("https://www.salesforce.com/dreamforce/", "Dreamforce 2027 | Salesforce", "official organizer"),
+    "dreamforce": ("https://www.salesforce.com/dreamforce/", "Dreamforce | Salesforce", "official organizer"),
     "dayofthedead": ("https://www.dayofthedeadsf.org/", "Day of the Dead SF by the Marigold Project", "official organizer"),
     "hasf": ("https://www.haightashburystreetfair.org/", "Haight-Ashbury Street Fair", "official organizer"),
     "sfmta_dreamforce": ("https://www.sfmta.com/travel-updates/salesforce-dreamforce-traffic-changes-september-15-17-2026", "Salesforce Dreamforce Traffic Changes: September 15-17, 2026 | SFMTA", "government"),
