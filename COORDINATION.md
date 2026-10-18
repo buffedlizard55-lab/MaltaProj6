@@ -31,7 +31,7 @@ Shared task board for all agent sessions working on this repository.
 | `arena-ef213634` | `arena/ef213634-maltaproj6` | Final-integration / source-recheck takeover attempt (claim commits `846ae85` 05:46Z, `e0c4fc6` 05:53Z; tasks F1/F2 marked in progress, F3 unclaimed). Never produced any file changes beyond the claim rows and never opened a PR. | 🔍 needs review — claim went stale (>60 min with no commits; at takeover check 09:45Z it was ~4 h old). Per the board's 60-minute rule `arena-fc3438db` takes over this scope; superseded by PRs #26–#31 which completed the claimed work first. Handoff noted in the `arena-fc3438db` log below. |
 | `arena-fc3438db` | `arena/fc3438db-maltaproj6` | **Verification + requirements-alignment pass (2026-10-18, eighth pass).** Take over stale `arena-ef213634` integration claims. Line-by-line re-verification of the published dataset against official sources (sampled + all soonest-dated rows), gap research for the user's stated focus (free events: gaming, music, AI), site alignment with the stated requirements (executive summary of events near today's date, date-sorted upcoming listings, clear cost labels, mobile-friendly UX), rebuild, PR to `main`, merge and Pages confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` + `data/*.json` + `data/events.csv`, generated `*.html`, `scripts/build_site.py`, `tools/validate.py`, `assets/site.css`, `data/gap-candidates-fc3438db.json` (new), `audit/AUDIT-2026-10-18-fc3438db.md` (new). No other live session (all other branches behind `main`; `arena/ef213634` stale, claim-only). | ✅ complete — PR #38 merged (`63e80f6`, 10:43:27Z) and closing record PR #39 merged (`2b083ea`, 10:45:06Z); Pages `built`. Registry row updated by `arena-db227e31` at claim time (10:57Z) to match the closing record already in this file. |
 | `arena-db227e31` | `arena/db227e31-maltaproj6` | **Independent verification + requirements-alignment pass (2026-10-18, ninth pass).** Line-by-line structural audit of the published union, live official-source re-check of near-term and free gaming/music/AI rows, gap research for free SF-city events, and a site change so the executive summary and main section show **free upcoming events only** (gaming, then music, then AI, then everything else), with paid events in a separate section. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, `scripts/build_site.py`, `scripts/focus.py`, `assets/site.css`, generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `audit/AUDIT-2026-10-18-db227e31.md` (new), `audit/check_db227e31.py` (new), `data/gap-candidates-db227e31.json` (new). Arena-fixed branch; no branch switch. | ✅ complete — PR #40 merged (`6897d84`, 2026-10-18T11:09:48Z); Pages `built` for that commit, `error: null`. Live site verified. Closing record follows. |
-| `arena-9fca0b37` | `arena/9fca0b37-maltaproj6` | **Independent line-by-line verification + gap research pass (2026-10-18, eleventh pass).** Re-verifies the published 262-row union against official sources row by row, researches gaps for free San Francisco events (gaming, then music, then AI, then everything else), and prepares corrections as a self-contained apply script. Scope, phase 1 (new files only, no shared-output edits): `COORDINATION.md` (board rows only), `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new), `audit/apply_9fca0b37.py` (new), `data/gap-candidates-9fca0b37.json` (new). Shared outputs (`data/events.py`, generated `*.html`, `scripts/`, `assets/`, `data/events.json`, `README.md`) are **not** edited in phase 1 because `arena-fe7c710c` holds a live final-integration claim on them; integration requests are logged on this board instead. Phase 2 (final integration, PR/merge/Pages) only after `arena-fe7c710c` releases its claim via merge, or its claim goes stale (>60 min with no commits), in which case this session takes over and logs the handoff. | 🟡 in progress |
+| `arena-9fca0b37` | `arena/9fca0b37-maltaproj6` | **Independent line-by-line verification + gap research pass (2026-10-18, eleventh pass).** Re-verifies the published 262-row union against official sources row by row, researches gaps for free San Francisco events (gaming, then music, then AI, then everything else), and prepares corrections as a self-contained apply script. Scope, phase 1 (new files only, no shared-output edits): `COORDINATION.md` (board rows only), `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new), `audit/apply_9fca0b37.py` (new), `data/gap-candidates-9fca0b37.json` (new). Shared outputs (`data/events.py`, generated `*.html`, `scripts/`, `assets/`, `data/events.json`, `README.md`) are **not** edited in phase 1 because `arena-fe7c710c` holds a live final-integration claim on them; integration requests are logged on this board instead. Phase 2 (final integration, PR/merge/Pages) only after `arena-fe7c710c` releases its claim via merge, or its claim goes stale (>60 min with no commits), in which case this session takes over and logs the handoff. | 🟡 in progress — **phase 1 (verification) complete**: 56 official pages re-fetched, 7 rows added and 15 row corrections + 4 imported-row corrections staged in `audit/apply_9fca0b37.py` (proven on a throwaway copy), 14 new review items, every gate green; integration (9F4) waits on `arena-fe7c710c`'s claim. |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -1045,8 +1045,71 @@ Remote branches fetched and compared against `main` with `git rev-list --count`:
 
 | # | Task | Status | Owner | Files in scope | Notes |
 |---|---|---|---|---|---|
-| 9F0 | Register on the shared board and claim a non-overlapping scope | 🟡 in progress | `arena-9fca0b37` | `COORDINATION.md` (board rows only) | Claim commit pushed before any other file edits. |
-| 9F1 | Independent line-by-line re-verification of the published union against official sources (near-term dated rows first, then free gaming / music / AI rows, then a stratified sample of the rest) | ⬜ unclaimed | `arena-9fca0b37` | `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new) | Official pages only. Blanks stay blank; nothing is inferred. Every checked row records the page fetched. |
-| 9F2 | Gap research: free San Francisco events near 2026-10-18 (gaming → music → AI → everything else) | ⬜ unclaimed | `arena-9fca0b37` | `data/gap-candidates-9fca0b37.json` (new) | Every candidate records the official page fetched and why it was added or not added. |
-| 9F3 | Prepare corrections as a self-contained, idempotent apply script (no shared-output edit while `arena-fe7c710c` holds the live integration claim) | ⬜ unclaimed | `arena-9fca0b37` | `audit/apply_9fca0b37.py` (new) | Run on a throwaway copy first; integration requests logged here for `arena-fe7c710c`. |
+| 9F0 | Register on the shared board and claim a non-overlapping scope | ✅ done | `arena-9fca0b37` | `COORDINATION.md` (board rows only) | Claim commit pushed before any other file edits. |
+| 9F1 | Independent line-by-line re-verification of the published union against official sources (near-term dated rows first, then free gaming / music / AI rows, then a stratified sample of the rest) | ✅ done | `arena-9fca0b37` | `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new) | Official pages only. Blanks stay blank; nothing is inferred. Every checked row records the page fetched. |
+| 9F2 | Gap research: free San Francisco events near 2026-10-18 (gaming → music → AI → everything else) | ✅ done | `arena-9fca0b37` | `data/gap-candidates-9fca0b37.json` (new) | Every candidate records the official page fetched and why it was added or not added. |
+| 9F3 | Prepare corrections as a self-contained, idempotent apply script (no shared-output edit while `arena-fe7c710c` holds the live integration claim) | ✅ done | `arena-9fca0b37` | `audit/apply_9fca0b37.py` (new) | Run on a throwaway copy first; integration requests logged here for `arena-fe7c710c`. |
 | 9F4 | Final integration (rebuild, validate, PR to `main`, merge, confirm GitHub Pages) | ⬜ unclaimed | `arena-9fca0b37` | `COORDINATION.md` + (only after the `arena-fe7c710c` claim is released or goes stale) `data/events.py`, generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `scripts/`, `assets/`, `README.md` | Handoff logged here if taken over under the 60-minute rule. |
+
+
+---
+
+## Session log — `arena-9fca0b37` — line-by-line verification + gap research (2026-10-18)
+
+**Scope discipline.** Phase 1 was **new-files-only**, per this session's claim: nothing under
+`data/events.py`, `scripts/`, `assets/`, generated `*.html`, `data/events.json` or `README.md` was touched
+while `arena-fe7c710c` holds a live claim on them (claim commit `b3a1c23`, 16:56:38Z, one minute before this
+session's own arrival check). All corrections are staged in the idempotent, exact-string script
+`audit/apply_9fca0b37.py` and were proven on a throwaway copy of the tree.
+
+**Verification performed (56 official pages fetched 2026-10-18).** Every row of the home page's free
+executive summary; the 47 near-term dated rows (2026-10-18 → 2026-11-30) wherever an official page could be
+opened; the free gaming / music / AI focus rows; the city's OCOFI and citywide calendars. Full per-page
+table with results: `audit/AUDIT-2026-10-18-9fca0b37.md`. Highlights:
+
+- **All 13 remaining free executive-summary rows confirmed** against the organiser page (Illuminate ×7,
+  SF.gov Family Summits ×3, SF Open Studios, plus unchanged Scaregrove and Presidio Día/Diwali rows).
+- **7 rows added**: District 10 Bayview Family Summit (free, Dec 5 — the event page a previous session
+  could not find now exists) and six Exploratorium After Dark editions (Oct 22, Nov 5, Nov 12, Dec 3,
+  Dec 10, Dec 17; ticketed → paid section).
+- **4 SF Opera rows gained real prices/times** from the opera's own pages (Strauss "Starting at $30",
+  Adlers "Starting at $34", Chorus "$49.00" + Taube Atrium + 2 p.m., Opera Ball agenda and
+  $450–$10,000 ticket levels); **3 SF Symphony rows gained their published start times**.
+- **9 rows' "Free" claims removed** where the official page publishes no admission price (Castro Menorah,
+  Castro Holiday Tree, Castro Art Walk; Sunset Mercantile Diwali, Día de los Muertos, Holidays on Taraval,
+  Cole Valley Nights — each also marked unverified), plus the Tree Fundraiser source upgraded to the
+  event's own page and unverified for price. One Sunset page (Holiday Mercantile) **does** state
+  "Admission is free!" — Free confirmed there.
+- **11 `UNVERIFIED_NOT_IN_FLAGGED_REGISTER` rows closed to 0** via 12 new source-linked review items (the
+  12th, `flag-ocofi-calendar-d3-link-broken`, records the city's own calendar linking District 3 to a 404
+  slug while the working page is `event-20261212-district-3-family-summit`).
+- **Castro Menorah date conflict resolved by the organiser** — the page prose now reads "Monday,
+  December 7", matching the structured date; both menorah review items updated to resolved.
+- **Day of the Dead Festival of Altars** re-checked on the organiser's own site: still "November 2nd,
+  2025" — no 2026 date published, the row stays blank/unverified, and third-party 2026 dates were not used.
+
+**Gates (throwaway copy, patched tree):** `build_site.py` reproducible (`17 pages, 269 events, 221 review
+items`); `tools/validate.py` OK (269/164/105/221/107/19); `check_dataset.py` `hard_problems=[]`;
+`check_91296e94.py` **`hard_problems=0` (was 2 on pristine `main` — stale `data/meta.json`)**;
+`check_61a46409.py` none; `check_8e8e24dc.py` 0; `check_76d2c635.py` 0 hard; `check_db227e31.py`
+`summary_free=13 problems=0`; `check_fc3438db.py` soft only; `check_9fca0b37.py` `hard_problems(0)` in
+**both** phases; apply script second run = 0 edits; second build byte-identical; zero broken internal
+links; every row's source link present in a page.
+
+**Irregularities published (non-blocking, on `flagged.html`):** 14 new review items and 3 updated
+(2 menorah conflicts → resolved; D10 missing page → resolved with the row added); 4 price-review flags
+generated for the new Exploratorium rows; 4 price-review flags retired because the Opera rows now carry
+real prices; the README headline counts are stale at the old 262/167 — **IR-9F-1** below.
+
+**Handoff / next step.** Integration (task **9F4**: run `audit/apply_9fca0b37.py` for real, rebuild,
+refresh README counts, PR → `main`, merge, confirm Pages) stays ⬜ until `arena-fe7c710c` releases its
+claim by merge, or the claim passes 60 minutes with no commits — re-checked before phase 2, with any
+handoff recorded here.
+
+### Integration requests to `arena-fe7c710c` (owner of the shared files)
+
+| ID | Request | Files | Why |
+|---|---|---|---|
+| IR-9F-1 | Refresh `README.md` headline counts after the next rebuild (**269 events / 164 verified / 105 needing review / 13 free summary rows / 221 review items**, and the per-page counts in the "Site" table). | `README.md` | `check_76d2c635.py` reports `headline_claim_problems` for the stale 262/167 text; README is inside your claim, so this session did not edit it. |
+| IR-9F-2 | Fold in `audit/apply_9fca0b37.py` — or hand integration back to `arena-9fca0b37` for phase 2. It is idempotent, exact-string and proven: 7 rows added, 15 row edits, 4 imported-row corrections, 14 new review items, plus a `scripts/build_site.py` change that writes `data/meta.json` from the build (fixes the 2 hard problems `check_91296e94.py` reports on pristine `main`). | `data/events.py`, `scripts/merge_parallel.py`, `scripts/build_site.py`, generated HTML/JSON | Shared files are yours while the claim is live. |
+| IR-9F-3 | Cosmetic duplicates noted, not touched: `ann-sfpl-tech-week` twice in `CONCLUDED_2026` (`data/events.py`), `s-015` twice in `CATEGORY_BY_ORIG_ID` (`scripts/merge_parallel.py`), and the "Two orthogonal views of the same dataset" comment printed twice before `TYPE_TO_GROUP`. Sets/dicts de-duplicate, so behaviour is unaffected. | same | Recorded so the duplication is a conscious decision. |
