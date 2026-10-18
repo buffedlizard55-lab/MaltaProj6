@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Method &middot; San Francisco Events</title>
-<meta name="description" content="Every event in the City of San Francisco — recurring, annual and special. Method">
+<meta name="description" content="A curated, source-linked snapshot of public events in San Francisco. Method">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
       <span class="brand-mark">SF</span>
       <span class="brand-text">
         <strong>San Francisco Events</strong>
-        <small>City-limits only &middot; every row sourced to an official site</small>
+        <small>City-limits only &middot; entries link to official sources</small>
       </span>
     </a>
     <nav class="site-nav" aria-label="Primary">
@@ -44,9 +44,15 @@
 <section>
   <h2>Scope</h2>
   <ul class="plain-list">
-    <li><strong>City of San Francisco only.</strong> Events physically inside the San Francisco city limits are
-        included. Events in other Bay Area cities are excluded, even when they are called "San Francisco" events
-        (for example the San Francisco 49ers, who play every home game at Levi's Stadium in Santa Clara).</li>
+    <li><strong>City of San Francisco only.</strong> Listed events are intended to be physically inside the
+        San Francisco city limits. Events in other Bay Area cities are excluded, even when they are called
+        "San Francisco" events (for example the San Francisco 49ers, who play every home game at Levi's Stadium
+        in Santa Clara).</li>
+    <li><strong>Not exhaustive.</strong> This is a curated research snapshot, not a complete calendar of every
+        concert, gallery opening, private event or short-notice listing. The inventory is limited to public
+        programmes and event pages located during the research pass. Use the
+        <a href="https://www.sf.gov/events/upcoming" target="_blank" rel="noopener">City&#x27;s official events calendar</a>
+        and organiser sites to find additional or newer listings.</li>
     <li><strong>Two organising groups, as requested:</strong> events that occur on a <em>regular schedule</em>
         (every week / every month) are on the <a href="recurring.html">Regularly recurring</a> page; events that
         recur <em>year after year</em> are on the <a href="annual.html">Annual</a> page; genuinely one-off dated
@@ -60,9 +66,11 @@
 <section>
   <h2>Sourcing rules</h2>
   <ul class="plain-list">
-    <li><strong>Official sources only.</strong> Every row links to the organiser's own site, a City and County of
-        San Francisco agency page, a state agency page, or a federally operated national-park page. Each link was
-        opened and read on <strong>2026-10-18</strong>.</li>
+    <li><strong>Official sources only.</strong> Each listed row links to the organiser's own site, a City and
+        County of San Francisco agency page, a state agency page, or a federally operated national-park page.
+        The research log records these pages as checked on <strong>2026-10-18</strong>; the build-time
+        validator checks links and table consistency but does not re-fetch or independently authenticate page
+        contents.</li>
     <li><strong>No inference.</strong> If the official page did not state a value, the cell is left blank and marked
         <span class="na">not confirmed</span>. Nothing has been filled in from prior knowledge, from a news
         article, or from an aggregator site.</li>
@@ -113,6 +121,11 @@
 <section>
   <h2>Known limitations</h2>
   <ul class="plain-list">
+    <li><strong>Coverage is not exhaustive.</strong> The site is a snapshot of the public programmes found in
+        this research pass. Small venue shows, private events, new listings and short-notice changes may be
+        absent; use the linked official City calendar and organiser pages to search beyond this inventory.</li>
+    <li>Source pages can change after the recorded verification date. Re-check the linked official page before
+        relying on a schedule, date, venue or admission detail.</li>
     <li>Individual performance dates for large seasons (opera, ballet, theatre) change and are sometimes
         revised late; the rows record the date ranges published on the official site at the time of checking.</li>
     <li>Neighbourhood street fairs publish their next edition a few months ahead; the dates shown are the most
@@ -128,11 +141,11 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>San Francisco Events</strong> &mdash; Every event in the City of San Francisco — recurring, annual and special.</p>
-    <p>Every row on this site carries a link to the official organiser, city agency or state source that was
-       checked on <strong>2026-10-18</strong>. Values that could not be confirmed from an official source
-       are left blank and listed on the
-       <a href="flagged.html">Flagged for review</a> page. Nothing on this site is inferred.</p>
+    <p><strong>San Francisco Events</strong> &mdash; A curated, source-linked snapshot of public events in San Francisco.</p>
+    <p>Each listed entry links to the organiser, city agency or state source recorded as checked on
+       <strong>2026-10-18</strong>. Values that could not be confirmed are left blank and marked for
+       review. This is a curated snapshot, not an exhaustive or live events calendar; confirm details with the
+       official organiser before attending. No values are inferred.</p>
     <p class="muted">Scope is the City and County of San Francisco only. Events physically located in other Bay
        Area cities are excluded and the exclusions are listed on the Flagged for review page.</p>
   </div>
