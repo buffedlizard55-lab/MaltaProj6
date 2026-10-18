@@ -1,16 +1,16 @@
 # San Francisco Events
 
-A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **262 listed entries** (124 recurring, 57 annual, 81 special/dated) and is intended to cover events physically within the City and County of San Francisco.
+A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **280 listed entries** (126 recurring, 57 annual, 97 special/dated) and is intended to cover events physically within the City and County of San Francisco.
 
-Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (4), music (39), AI (7), then everything else (212)** — with free admission called out explicitly: **154** entries publish free-access wording, of which **136** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
+Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (7), music (52), AI (9), then everything else (212)** — with free admission called out explicitly: **159** entries publish free-access wording, of which **141** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
 
 > **Coverage limitation:** this is not an exhaustive or live calendar of every concert, gallery opening, private event, pop-up or short-notice listing. The dataset reflects public programmes and event pages found during the recorded research pass. Check the [City's official events calendar](https://www.sf.gov/events/upcoming) and each organizer for additional or current listings.
 
 ## Verification and review status
 
 - Every published event row has a link to an organizer, government agency, state agency or federal park source. The research log records the pages as checked on **2026-10-18**.
-- **167** rows are marked `verified`; **95** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
-- **205** discrepancy, source, scope and other review items are published on `flagged.html`.
+- **172** rows are marked `verified`; **108** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
+- **213** discrepancy, source, scope and other review items are published on `flagged.html`.
 - **46** rows record editions that have already finished (the 2026 state fair, Dreamforce, the Mime Troupe summer season and similar); they stay in the catalogue as records, carry a **concluded** badge, and are kept out of the "upcoming dated events" strip on the home page.
 - **How cost is shown.** Each cost cell quotes the official source exactly and is rendered as a colour-coded label — free, partly free, paid, or *cost not published*. A price is never inferred: when the official page does not state an amount the cell is left blank, the row is marked `unverified`, and the official source's own wording (for example "Ticketed") is still shown underneath as *as published*, clearly separated from the price.
 - **29** rows are marked `verified` yet still carry a blank schedule, location or cost cell, because the official source does not publish that value. Here `verified` means *every value the source does publish was confirmed*, not *every cell is filled*. The discrepancy is published as review item `flag-verified-rows-with-blank-core-cell` rather than silently re-badged or filled in.
@@ -34,8 +34,8 @@ The site is plain static HTML and is published with GitHub Pages.
 | Page | Contents |
 |---|---|
 | `index.html` | Dashboard: free-only executive summary near today, free upcoming main list (gaming, music, AI, then everything else), paid section separate |
-| `all-events.html` | 262 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
-| `free-events.html` | 154 entries whose published official cost wording explicitly includes free access |
+| `all-events.html` | 280 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
+| `free-events.html` | 159 entries whose published official cost wording explicitly includes free access |
 | `paid-events.html` | 126 paid, mixed, or price-not-published entries, kept out of the free main list |
 | `recurring.html` | 124 entries on a regular weekly, monthly or other recurring schedule |
 | `annual.html` | 57 entries that recur year after year |
@@ -47,7 +47,7 @@ The site is plain static HTML and is published with GitHub Pages.
 | `music.html` | 39 music entries — concerts, festivals, opera, jazz and free music programmes |
 | `markets.html` | 29 farmers markets, food halls and street markets |
 | `community.html` | 86 neighbourhood programmes, festivals and free recreation entries |
-| `flagged.html` | 205 review items plus the rows carrying unconfirmed values |
+| `flagged.html` | 213 review items plus the rows carrying unconfirmed values |
 | `methodology.html` | Scope, sourcing rules, build process and limitations |
 | `weekly.html` | Supplementary view from the parallel research session |
 | `analysis.html` | Counts, schedule/category/area breakdowns, blank-field coverage and the list of source domains |
@@ -69,7 +69,7 @@ countdown and the gaming / music / AI badge on each row. Paid and unpriced rows 
 ```
 COORDINATION.md             shared task board, research log, verification notes and irregularities
 data/events.py              canonical authored dataset
-data/events.json             generated machine-readable mirror (262 events, 205 review items)
+data/events.json             generated machine-readable mirror (280 events, 213 review items)
 data/gap-candidates-bdaa17b4.json  independent-audit gap-research trail (added / not-added candidates)
 audit/                        independent audit: report, structural row checker, integration script
 data/weekly.json              supplementary raw recurring rows

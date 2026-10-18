@@ -367,23 +367,22 @@ FIELD_OVERRIDES = {
         "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the market association's page states every Sunday 9:30am-1:30pm at Fort Mason Center, Marina Blvd. Season is not stated on the page and remains blank.",
     },
     "w-009": {
-        "_clear_unverified": True,
-        "location": "37th Avenue at Ortega to Quintara",
-        "schedule": "Sundays, 9:00 a.m.-2:00 p.m., rain or shine",
-        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's official site lists the Outer Sunset Farmers Market & Mercantile as Sundays, rain or shine, 9am-2pm, 37th Avenue at Ortega to Quintara. Season is not stated on the page and remains blank.",
+        "source_url": "https://sunsetmercantilesf.com/osfmm/",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'SUNDAYS', 9 am - 2 pm, 37th Avenue at Ortega to Quintara, 'Year-round RAIN or SHINE', presented by Sunset Mercantile with OEWD and the People of Parkside Sunset. The page describes a 'Free library at the Artship' and free yoga but does not state an admission price for the market itself, so the cost cell has been blanked and the row marked unverified rather than presented as free. See Flagged for Review.",
     },
     "w-010": {
-        "_clear_unverified": True,
-        "schedule": "Second Sundays, 10:00 a.m.-4:00 p.m. (returning April-November 2026)",
-        "dates": "April-November 2026",
-        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's site states second Sundays, returning April-November 2026, 10am-4pm, Irving Street at 9th-11th Avenues. Admission is not stated on the page and remains blank.",
+        "source_url": "https://sunsetmercantilesf.com/innersunsetflea/",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'SECOND SUNDAYS', 10 am - 4 pm, Irving Street at 9th-11th Avenues, April-November, and publishes the 2026 season schedule (April 12 'Spring Fling Market' - marked cancelled on the page - May 10, June 14, July 12, August 9, September 13, October 11, November 8). The page states no admission price, so the cost cell stays blank and the row is marked unverified.",
     },
     "w-011": {
-        "_clear_unverified": True,
-        "location": "37th Avenue at Ortega to Quintara",
-        "schedule": "Third Saturdays, 10:00 a.m.-4:00 p.m. (returning April-November 2026)",
-        "dates": "April-November 2026",
-        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's site states third Saturdays, returning April-November 2026, 10am-4pm, 37th Avenue at Ortega to Quintara. Admission is not stated on the page and remains blank.",
+        "source_url": "https://sunsetmercantilesf.com/secondhand/",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'THIRD SATURDAY MONTHLY', 10 am - 4 pm, 37th Avenue at Ortega to Quintara, April-November, with 60+ vintage vendors, and publishes the 2026 season schedule (April 18, May 16, June 20, July 18, August 15, September 19, October 17, November 21). The page states no admission price, so the cost cell stays blank and the row is marked unverified.",
     },
     "w-012": {
         "_clear_unverified": True,
@@ -466,6 +465,35 @@ FIELD_OVERRIDES = {
         "source_url": "https://valkyries.wnba.com/",
         "notes": "Re-verified 2026-10-18 by session arena-91296e94 against the team's official site: Game 1 final (ATL 64 @ GSV 68, Golden State leads 1-0); Game 2 Monday, October 19 at 8:00 p.m. EDT (Atlanta Dream @ Golden State Valkyries); the Finals carousel lists Games 3 and 4 at Atlanta and Games 5 and 7, if necessary, at Chase Center. Replaces the earlier SFMTA traffic-advisory citation.",
     },
+    "s-015": {
+        "source_url": "https://sunsetmercantilesf.com/diwali2026/",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'November 8th, 2026', 9am-2pm, 37th Avenue at Ortega to Quintara, the fourth annual Diwali Festival. The page mentions free chai and a separate paid raffle ($5 per ticket, five for $20) but does not state an admission price for the festival, so the cost cell has been blanked and the row marked unverified rather than presented as free. See Flagged for Review.",
+    },
+    "s-016": {
+        "source_url": "https://sunsetmercantilesf.com/ddlm/",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'Sunday, November 1, 2026', 9am to 2pm, 37th Avenue at Ortega to Pacheco, Sunset Mercantile's fifth annual Dia de los Muertos. The page does not state an admission price, so the cost cell has been blanked and the row marked unverified rather than presented as free. See Flagged for Review.",
+    },
+    "s-017": {
+        "source_url": "https://sunsetmercantilesf.com/sunsetholidaymercantile/",
+        "cost": "Free",
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'SATURDAY, DEC. 5 + SUNDAY DEC. 6', 11 am - 5 pm, San Francisco County Fair Building, Golden Gate Park, and states 'Admission is free! Come to the County Fair Building in Golden Gate Park, December 5th and 6th from 11 AM to 5 PM' and 'Free admission'. The free cost cell is therefore confirmed by the official source.",
+    },
+    "s-018": {
+        "source_url": "https://sunsetmercantilesf.com/holidaysontaraval/",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'FRIDAY, DECEMBER 11', 5pm - 10pm, McCoppin Park and Taraval at 22nd, with the annual tree lighting, performances, art and games along Taraval Street from 20th to 24th Avenue. The page does not state an admission price, so the cost cell has been blanked and the row marked unverified rather than presented as free. See Flagged for Review.",
+    },
+    "s-019": {
+        "source_url": "https://sunsetmercantilesf.com/colevalleynights2026/",
+        "cost": "",
+        "_force_unverified": True,
+        "_override_note": "Re-checked 2026-10-18 by session arena-fe7c710c: the event's own page confirms 'December 10th - Holiday Nights', 4pm - 9pm, Cole Street between Carl and Parnassus Avenue, and publishes its market dates as 4/16, 5/21, 8/20 and 12/10. The page does not state an admission price, so the cost cell has been blanked and the row marked unverified rather than presented as free. See Flagged for Review.",
+    },
 }
 
 
@@ -537,6 +565,9 @@ def parallel_events(existing) -> list:
                 if override.get("_clear_unverified"):
                     rec["_unverified"] = []
                     rec["status"] = "verified"
+                if override.get("_force_unverified"):
+                    rec["_unverified"] = ["admission"]
+                    rec["status"] = "unverified"
                     rec["notes"] = re.sub(
                         r"^Fields the parallel session could not confirm on the official page: [^.]+\.\s*",
                         "",
