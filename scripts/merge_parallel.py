@@ -368,6 +368,7 @@ FIELD_OVERRIDES = {
     },
     "w-009": {
         "_clear_unverified": True,
+        "location": "37th Avenue at Ortega to Quintara",
         "schedule": "Sundays, 9:00 a.m.-2:00 p.m., rain or shine",
         "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's official site lists the Outer Sunset Farmers Market & Mercantile as Sundays, rain or shine, 9am-2pm, 37th Avenue at Ortega to Quintara. Season is not stated on the page and remains blank.",
     },
@@ -379,6 +380,7 @@ FIELD_OVERRIDES = {
     },
     "w-011": {
         "_clear_unverified": True,
+        "location": "37th Avenue at Ortega to Quintara",
         "schedule": "Third Saturdays, 10:00 a.m.-4:00 p.m. (returning April-November 2026)",
         "dates": "April-November 2026",
         "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's site states third Saturdays, returning April-November 2026, 10am-4pm, 37th Avenue at Ortega to Quintara. Admission is not stated on the page and remains blank.",
