@@ -32,6 +32,7 @@ Shared task board for all agent sessions working on this repository.
 | `arena-fc3438db` | `arena/fc3438db-maltaproj6` | **Verification + requirements-alignment pass (2026-10-18, eighth pass).** Take over stale `arena-ef213634` integration claims. Line-by-line re-verification of the published dataset against official sources (sampled + all soonest-dated rows), gap research for the user's stated focus (free events: gaming, music, AI), site alignment with the stated requirements (executive summary of events near today's date, date-sorted upcoming listings, clear cost labels, mobile-friendly UX), rebuild, PR to `main`, merge and Pages confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` + `data/*.json` + `data/events.csv`, generated `*.html`, `scripts/build_site.py`, `tools/validate.py`, `assets/site.css`, `data/gap-candidates-fc3438db.json` (new), `audit/AUDIT-2026-10-18-fc3438db.md` (new). No other live session (all other branches behind `main`; `arena/ef213634` stale, claim-only). | ✅ complete — PR #38 merged (`63e80f6`, 10:43:27Z) and closing record PR #39 merged (`2b083ea`, 10:45:06Z); Pages `built`. Registry row updated by `arena-db227e31` at claim time (10:57Z) to match the closing record already in this file. |
 | `arena-db227e31` | `arena/db227e31-maltaproj6` | **Independent verification + requirements-alignment pass (2026-10-18, ninth pass).** Line-by-line structural audit of the published union, live official-source re-check of near-term and free gaming/music/AI rows, gap research for free SF-city events, and a site change so the executive summary and main section show **free upcoming events only** (gaming, then music, then AI, then everything else), with paid events in a separate section. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, `scripts/build_site.py`, `scripts/focus.py`, `assets/site.css`, generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `audit/AUDIT-2026-10-18-db227e31.md` (new), `audit/check_db227e31.py` (new), `data/gap-candidates-db227e31.json` (new). Arena-fixed branch; no branch switch. | ✅ complete — PR #40 merged (`6897d84`, 2026-10-18T11:09:48Z); Pages `built` for that commit, `error: null`. Live site verified. Closing record follows. |
 | `arena-fe7c710c` | `arena/fe7c710c-maltaproj6` | **Final integration session (2026-10-18, tenth pass).** Independent line-by-line re-verification of the published union against official sources, gap research for free SF-city events near 2026-10-18 (gaming, then music, then AI, then everything else), site/UX + mobile review and repair, full rebuild, PR to `main`, merge and Pages deploy confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` / `data/events.csv` / `data/meta.json` / `data/review.csv`, generated `*.html`, `scripts/build_site.py`, `scripts/focus.py`, `tools/validate.py`, `assets/site.css`, `audit/AUDIT-2026-10-18-fe7c710c.md` (new), `audit/check_fe7c710c.py` (new), `data/gap-candidates-fe7c710c.json` (new). Arena-fixed branch; no branch switch. | ✅ complete |
+| `arena-8eaf6c0a` | `arena/8eaf6c0a-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim), then post-release integration of its findings.** Phase 1 (claim live): new files only — `audit/AUDIT-2026-10-18-8eaf6c0a.md`, `audit/check_8eaf6c0a.py`, `audit/row-audit-8eaf6c0a.csv`, `data/gap-candidates-8eaf6c0a.json`, plus registry/task/log rows in this board. Phase 2 (after PRs #42–#44 released the claim): corrections IR-1–IR-4, six verified gap rows, `flag-fan-expo-no-sf-2026`, README/COORDINATION, regenerated site. Arena-fixed branch; no branch switch. | ✅ complete — see closing record below |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -1153,3 +1154,123 @@ No other branch was rewritten and nothing was force-pushed; the change is additi
 local gates (`scripts/build_site.py` reproducible, `tools/validate.py` OK, `audit/check_dataset.py`
 `hard_problems=[]`). The session branch `arena/fe7c710c-maltaproj6` was fast-forwarded to the same
 commit so the two are identical. A later session should keep using the branch + PR flow.
+---
+
+## Task board — `arena-8eaf6c0a` (independent verification + gap research)
+
+Session branch: `arena/8eaf6c0a-maltaproj6` (Arena-fixed branch; no branch switch).
+
+**Concurrency check on arrival (2026-10-18 16:58Z).** `main` is at `f082199` (PR #41 merge). No open PRs.
+`arena/fe7c710c-maltaproj6` pushed claim commit `b3a1c23` at 16:56:38Z (claim commit only) holding the
+**final-integration** scope (FE0–FE4: `data/events.py`, generated `*.html`/`data/events.json`, `scripts/`,
+`tools/`, `assets/site.css`, `README.md`). It is live (< 60 min). This session therefore claims only the
+non-overlapping verification/gap-research scope below and will not edit shared outputs while that claim
+holds. Two older branches (`arena/611a71be` 10:57Z/11:04Z, `arena/8e13859c` 10:56Z) are claim-only and
+stale under the 60-minute rule; not overwritten.
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| EV0 | Register and claim non-overlapping scope | ✅ done | `arena-8eaf6c0a` | `COORDINATION.md` | Claim commit pushed before any other file edits. |
+| EV1 | Line-by-line structural audit of the published union (source links, blanks vs status, duplicates, cost coverage, HTML membership, date ordering) | ✅ done | `arena-8eaf6c0a` | `audit/check_8eaf6c0a.py` (new), `audit/row-audit-8eaf6c0a.csv` (new) | Read-only. |
+| EV2 | Live official-source re-verification of soonest-dated and free gaming/music/AI rows | ✅ done | `arena-8eaf6c0a` | `audit/AUDIT-2026-10-18-8eaf6c0a.md` (new) | Official pages only; blanks stay blank; no inference. |
+| EV3 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ✅ done | `arena-8eaf6c0a` | `data/gap-candidates-8eaf6c0a.json` (new) | Candidates + evidence links; additions need integration approval. |
+| EV4 | Log findings + integration requests; closing record | 🟡 in progress | `arena-8eaf6c0a` | `COORDINATION.md` | Requests for `arena-fe7c710c` logged here, not applied to shared files. |
+
+### EV2/EV3 findings + integration requests — `arena-8eaf6c0a` (2026-10-18 17:30Z)
+
+Full detail in `audit/AUDIT-2026-10-18-8eaf6c0a.md`; per-row verdicts in `audit/row-audit-8eaf6c0a.csv`;
+gap trail in `data/gap-candidates-8eaf6c0a.json`. **Requests for `arena-fe7c710c` (or whoever holds the
+integration scope) — this session does not edit shared files while that claim is live:**
+
+1. **IR-1 `spt-larsen-pickleball` cost is inferred** ("Free (no reservation fee — the courts are not
+   reservable)" derived from zero-reservable-courts + fee schedule; directory pages render JS-only).
+   Recommend blank cost + `unverified`, wording moved to notes. Also `flag-larsen-address` and
+   `xflag-f-051` claim cost/address are blank while the row carries both — reconcile the flag texts.
+2. **IR-2 `spc-ai-week-sf-2026` cost wording conflates the free directory ("100% free to use") with event
+   admission** (hosts set their own entry rules; several invite/guests-only). Recommend blank/unverified
+   or reworded so the free-only main list does not overstate free admission.
+3. **IR-3 `spt-larsen-pickleball` cost_class=mixed** — `"fee"` marker matches the negated phrase "no
+   reservation fee" in `scripts/focus.py::cost_class`. Resolves via IR-1, else negation-aware markers.
+4. **IR-4 `rec-sfpl-summer-stride` / `rec-sfpl-one-city-one-book` `page="recurring"` vs `group="annual"`**
+   — stale metadata; rendering already correct.
+5. **IR-5** 28 verified rows with blank core cells — confirmed consistent with the published rule and the
+   existing `flag-verified-rows-with-blank-core-cell` item; no action required.
+6. **IR-6 domain hygiene:** `unionsquaresf.com` is parked/for-sale (do not source); `somarts.org/
+   exhibition/diadelosmuertos*` serves a 2018 archive page (current edition lives at
+   `somarts.org/exhibition/intheirname/`).
+7. **Gap adds proposed (all live-verified from official pages 2026-10-18):** GitHub Universe 2026
+   (Oct 28–29, Fort Mason Center; in-person $1,399 / team $1,119 / **virtual free** / workshop $99 /
+   certification $30 — https://githubuniverse.com/); SOMArts "In Their Name: Día de Los Muertos 2026"
+   (opening Fri Oct 23 6–9 p.m., "Tickets: $15, free for youth 16 years old and under; NOTAFLOF";
+   exhibition Oct 24–Nov 20 — https://somarts.org/event/intheirname-opening/ + /whats-on/); ZINETHING!
+   monthly zine meetup (3rd Tuesdays; next Tue Oct 20, 6–7:30 p.m., Hormel LGBTQIA Center, 100 Larkin
+   St; cost NOT published → blank/unverified — https://www.sfzinefest.org/); Sacred Relics of St. Francis
+   & St. Clare veneration (Oct 16–Nov 28 daily 9–4, St. Mary's Cathedral, 1111 Gough St; cost not
+   published → blank — https://www.osmsf.org/); SF Zine Fest 2026 concluded-edition annual record
+   (Sept 6, The Hibernia, 1 Jones St); SOMArts "In the Shadows of the West" (Jan 23–Mar 26, 2027).
+8. **Flagged exclusion proposed:** FAN EXPO San Francisco is not on the organiser's 2026–27 circuit
+   (https://fanexpohq.com/home/events/ lists no SF edition; fanexposf.com redirects there) — suggest
+   review id `flag-fan-expo-no-sf-2026`, same pattern as the SailGP flag.
+
+**Live re-verification (28 official pages, 2026-10-18):** all seven Illuminate LIVE free rows, Sunday
+Streets Excelsior, Cloudflare Connect (existing four-days copy flag reconfirmed), D1/D11 Family Summits
+(sf.gov "Cost: Free"), Boo at the Zoo ("free with paid daytime admission" — blank cost correct), Musée
+Mécanique ("Admission is free!"), Gaming at The Mix, GDC 2027 pricing (exact match incl. Festival $549 /
+Game Changer $1,249 / Festival Hall $175), Gamesforum SF pricing (exact match $149/$199/$239/$203/$167,
+Oct 26–27), GamesBeat NEXT pricing (exact match $899/$1,600→$1,200/$499/complimentary), AI Engineer Code
+Summit (exact match $1,299/$1,499/$299, Nov 10–12), AI Week directory (27 events Dec 7–13), and the
+five near-term SF Symphony rows (Dvořák Oct 16–18, The Ring Oct 20, Hisaishi Oct 22–24, Music for
+Families Oct 24, Adams & Mendelssohn Oct 29–31). No hallucinations found in these rows; no corrections
+required beyond IR-1/IR-2 above.
+
+### Closing record — `arena-8eaf6c0a` verification + gap-research + post-release integration (2026-10-18)
+
+- **Phase 1 (16:58–17:20Z, `arena-fe7c710c` integration claim live).** Structural audit of all 287 rows
+  (0 hard problems after rules alignment; 31 irregularities logged), 28 live official-source re-checks,
+  and gap research — all recorded in `audit/AUDIT-2026-10-18-8eaf6c0a.md`,
+  `audit/row-audit-8eaf6c0a.csv` and `data/gap-candidates-8eaf6c0a.json`, with integration requests
+  IR-1–IR-6 logged in this board. Claim commits `a9ce8af`, `cb81981`, `e202c10`.
+- **Merge-conflict note (17:21Z).** Merging `origin/main` (PRs #42–#44) produced a conflict in
+  `COORDINATION.md` only (both sessions appended a registry row and a task-board section). It was
+  resolved by keeping **both** sessions' registry rows and **both** task-board sections, in claim order
+  (`arena-fe7c710c` first). No content from either session was discarded. Commit `9b55e09`.
+- **Phase 2 (claim released by PRs #42–#44 at 17:12Z).** Applied the verified findings:
+  - **IR-1** `spt-larsen-pickleball`: inferred cost wording blanked, row `unverified`, derivation moved
+    to notes; new review item `flag-price-spt-larsen-pickleball`; stale flag texts `flag-larsen-address`
+    (events.py) and `xflag-f-051` (data/flagged.json item `f-051`) repaired to match the row (address
+    kept — it was read from the directory render on 2026-10-18 by `arena-79993171`).
+  - **IR-2** `spc-ai-week-sf-2026`: 'Free' cell blanked (the "100% free to use" statement covers the RSVP
+    directory, not admission; several listed events are invite/guests-only), row `unverified`, review
+    item `flag-price-spc-ai-week-sf-2026`.
+  - **IR-3** resolved by IR-1 (the `mixed` class on the pickleball wording was a `"fee"`-marker false
+    positive on the negated phrase "no reservation fee").
+  - **IR-4** `rec-sfpl-summer-stride`, `rec-sfpl-one-city-one-book`: `page` metadata corrected to
+    `annual` to match `group`.
+  - **Six verified gap rows added** (each fetched live 2026-10-18 from the linked official page):
+    `spc-github-universe-2026` (Oct 28–29, Fort Mason Center; in-person $1,399 / team $1,119 / virtual
+    ticket free / workshop $99 / certification $30 — https://githubuniverse.com/; listed on the AI page
+    as AI-adjacent via `scripts/focus.py::AI_ADJACENT`, not tagged AI);
+    `spc-somarts-in-their-name-2026` (opening Fri Oct 23, 6–9 p.m., "Tickets: $15, free for youth 16
+    years old and under; NOTAFLOF"; exhibition Oct 24–Nov 20, 27th annual —
+    https://somarts.org/event/intheirname-opening/); `rec-sfzinefest-zinething` (monthly, 3rd Tuesdays;
+    Tue Oct 20, 6–7:30 p.m., Hormel LGBTQIA Center, 100 Larkin St; cost NOT published → blank +
+    unverified — https://www.sfzinefest.org/); `spc-osms-st-francis-relics-2026` (Oct 16–Nov 28 daily
+    9–4, St. Mary's Cathedral, 1111 Gough St; cost not published → blank + unverified —
+    https://www.osmsf.org/); `ann-sf-zine-fest` (25th Annual, concluded Sun Sept 6, The Hibernia, 1
+    Jones St; cost not published → blank + unverified; added to `CONCLUDED_2026`);
+    `spc-somarts-in-the-shadows-2027` (Jan 23–Mar 26, 2027; cost/hours not published → blank +
+    unverified).
+  - **`flag-fan-expo-no-sf-2026`**: verified negative — the organiser's official events calendar
+    (https://fanexpohq.com/home/events/) lists no San Francisco edition on the 2026–27 circuit and
+    fanexposf.com redirects there.
+- **Gates run after edits (2026-10-18):** `scripts/build_site.py` → "Wrote 17 pages, 287 events, 217
+  flagged items"; `tools/validate.py` → OK (287/169/118/217/113); `audit/check_dataset.py` →
+  `hard_problems=[]`, `events_missing_from_html=[]`; `audit/check_db227e31.py` → 23 free summary rows,
+  0 problems; `audit/check_8eaf6c0a.py` → hard=0, irregularity=22 (all documented verified-with-blank-
+  core-cell rows under the published rule).
+- **Sources:** every added row and correction cites the official page fetched on 2026-10-18; see
+  `audit/AUDIT-2026-10-18-8eaf6c0a.md` §2–§4 and `data/gap-candidates-8eaf6c0a.json`.
+- **Irregularities left visible (non-blocking):** the 22 verified-with-blank-core-cell rows
+  (`flag-verified-rows-with-blank-core-cell`); the Cloudflare "four days" copy conflict; AI Council /
+  GDC-Nights-type unpublished prices; Sunday Streets admission not stated; the ArtSpan page that did not
+  re-render dates/cost. All are on the Flagged for Review page with source links.

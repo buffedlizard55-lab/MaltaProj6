@@ -161,7 +161,7 @@ FOCUS_LABELS = [
 # own official source. They are listed on the AI page under a clearly
 # separated heading rather than being tagged, so nothing is over-claimed.
 AI_ADJACENT = ["x-s-028", "x-s-031", "spc-cloudflare-connect-2026",
-               "spc-informs-2026", "spc-semicon-west-2026"]
+               "spc-informs-2026", "spc-semicon-west-2026", "spc-github-universe-2026"]
 
 # --------------------------------------------------------------------------
 # Cost classification
