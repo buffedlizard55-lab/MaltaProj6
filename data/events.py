@@ -1525,6 +1525,46 @@ EVENTS += [
         source_name="SFMOMA — FOG Design+Art 2027",
         source_url="https://www.sfmoma.org/event/series/fog-design-and-art-fair/", status="unverified",
         notes="Fair hours and admission prices are not stated on the SFMOMA series page fetched 2026-10-18 (the older SFMOMA event URL returned 404 and fogfair.com's homepage carried no dates, hours or prices), so cost and schedule are left blank. Added in the 2026-10-18 gap pass by arena-bdaa17b4."),
+    dict(
+        id="art-cable-cars", title="San Francisco Cable Cars",
+        page="arts", type="Attraction - Open regularly",
+        schedule="Daily service on three lines: California Street, Powell-Hyde and Powell-Mason; boarding at turntables (Powell & Market, Bay & Taylor, Hyde & Beach) and brown-and-white signed stops",
+        dates="", location="Powell & Market turntable (starting point for Powell-Hyde and Powell-Mason lines); California & Market (California line); continuing to Fisherman's Wharf (Powell lines) and Van Ness Avenue (California line)", area="Downtown / Nob Hill / Fisherman's Wharf",
+        cost="Fare required (single ride and visitor Passport; see SFMTA Fares page; Clipper and MuniMobile accepted; prepay required 8 a.m.-8 p.m. at Powell & Market, Bay & Taylor, Hyde & Beach)",
+        organiser="San Francisco Municipal Transportation Agency (SFMTA)",
+        source_name="SFMTA — Cable Cars",
+        source_url="https://www.sfmta.com/getting-around/muni/cable-cars", status="verified",
+        notes="National Historic Landmark; invented 150 years ago in San Francisco (1864 origin); kept by SFMTA operators, mechanics and carpenters. History page: https://www.sfmta.com/node/12041. Added 2026-10-18 by arena-3239c070 after gap research."),
+    dict(
+        id="ann-sf-open-studios", title="SF Open Studios",
+        page="annual", type="Annual",
+        schedule="Annual, fall — artist-hosted weekends over five weekends (one month)",
+        dates="September 26 - October 25, 2026; weekends 11:00 a.m.-5:00 p.m.",
+        location="Artist studios citywide (hundreds of locations; printed guide available while supplies last; preview at 934 Brannan Street, San Francisco, CA 94103)", area="Citywide",
+        cost="Free", organiser="ArtSpan",
+        source_name="ArtSpan — Visit SF Open Studios",
+        source_url="https://www.artspan.org/visitsfopenstudios", status="verified",
+        notes="San Francisco tradition since 1975; each weekend focuses on different neighborhoods; online guide, interactive maps and events at artspan.org/sfosguide. Added 2026-10-18 by arena-3239c070 after gap research."),
+    dict(
+        id="art-uss-pampanito", title="USS Pampanito (WWII Submarine)",
+        page="arts", type="Attraction - Open regularly",
+        schedule="Open daily 10:00 a.m.-6:00 p.m. (last boarding 5:30 p.m.); call (415) 775-1943 during inclement weather",
+        dates="", location="Pier 45, Fisherman's Wharf, San Francisco, CA 94133", area="Fisherman's Wharf / Embarcadero",
+        cost="Adults $25 (14-61); Senior $20 (62+); Juniors $15 (5-13); Students with ID $20; Family (2 adults + 2 juniors) $65; Active Military with ID $10; 4 & under free; Members free",
+        organiser="San Francisco Maritime National Park Association (non-profit partner to SF Maritime NHP)",
+        source_name="San Francisco Maritime National Park Association — USS Pampanito WWII Submarine",
+        source_url="https://maritime.org/uss-pampanito/", status="verified",
+        notes="National Historic Landmark; six Pacific patrols in WWII; over 100,000 visitors/year; educational day/overnight programs; drydocking every ~7 years. Purchase tickets online or at Box Office/Visitor Center at Pier 45. Added 2026-10-18 by arena-3239c070 after gap research."),
+    dict(
+        id="art-musee-mecanique", title="Musée Mécanique",
+        page="arts", type="Attraction - Open regularly",
+        schedule="Open 365 days a year, 10:00 a.m.-8:00 p.m. daily (Mon-Fri, Sat-Sun and holidays)",
+        dates="", location="Pier 45, Fisherman's Wharf, San Francisco, CA 94133", area="Fisherman's Wharf / Embarcadero",
+        cost="Free admission (300+ machines coin-operated; family owned and operated since 1933)",
+        organiser="Musée Mécanique",
+        source_name="Musée Mécanique — Visit",
+        source_url="https://museemecanique.com/visit", status="verified",
+        notes="One of world's largest privately owned collections of 300+ coin-operated mechanical musical instruments and antique arcade artifacts (hand-cranked music boxes to modern video games); includes Laffing Sal; previously at Playland-at-the-Beach and Cliff House. No private events; food/drink not allowed inside. Added 2026-10-18 by arena-3239c070 after gap research."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -1756,6 +1796,27 @@ FLAGGED = [
         source_name="SFMOMA — FOG Design+Art 2027",
         source_url="https://www.sfmoma.org/event/series/fog-design-and-art-fair/",
         action="Complete hours and prices from fogfair.com or SFMOMA ticketing when published."),
+    dict(
+        id="flag-sailgp-no-sf-2026",
+        title="SailGP — no San Francisco race in the 2026 season (not added)",
+        detail="SailGP's official 2026 calendar lists 13 events (Perth Jan 17-18, Auckland Feb 13-14, Sydney Feb 28-Mar 1, Rio Apr 11-12, Bermuda May 9-10, New York May 30-31, Halifax Jun 20-21, Portsmouth Jul 25-26, Sassnitz Aug 22-23, Valencia Sep 5-6, Geneva Sep 19-20, Dubai Nov 21-22, Abu Dhabi Nov 28-29) with no San Francisco stop. The prior gap list noted 'SailGP San Francisco' as unchecked; the 2026 calendar confirms there is no SF race to list for 2026, so no row was added.",
+        source_name="SailGP — 2026 Season Calendar",
+        source_url="https://sailgp.com/general/2026/calendar/",
+        action="Re-check the 2027 calendar when published; add SailGP San Francisco only if an official SF stop and dates are announced."),
+    dict(
+        id="flag-union-square-ice-rink",
+        title="Union Square ice rink — no official 2026 page located (not added)",
+        detail="The Union Square ice-rink / holiday tree lighting was noted as a possible gap but has no dedicated official programme page located in this pass. SF.gov search for 'ice rink Union Square' returned no dedicated event page (sf.gov/event/ice-rink-union-square 404 on 2026-10-18) and unionsquaresf.com carried no dates or organiser. No row was added rather than infer from press or tourism sites.",
+        source_name="SF.gov — Not Found (ice rink search)",
+        source_url="https://www.sf.gov/",
+        action="Add only when an official organiser (e.g. Union Square Alliance, SFMTA holiday route, or SF.gov event page) publishes 2026 dates, venue and organiser."),
+    dict(
+        id="flag-kaiser-sf-half",
+        title="Kaiser Permanente San Francisco Half Marathon — no official 2026 race page located (not added)",
+        detail="Listed as a possible gap, but no official race page for a 2026 San Francisco Half under Kaiser Permanente branding was located. runrocknroll.com San Francisco and kaiserpermanente.org front-door searches returned no SF-specific 2026 half-marathon event page with dates, venue or organiser. No row was added rather than infer from aggregator calendars.",
+        source_name="Kaiser Permanente — front door (search for San Francisco Half Marathon)",
+        source_url="https://healthy.kaiserpermanente.org/",
+        action="Add only when an official race organiser page publishes the SF Half dates, start location and organiser for 2026/2027."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -1894,6 +1955,10 @@ CATEGORY_BY_ID = {
     "spc-portola-2026": "arts",
     "spc-fog-design-art-2027": "arts",
     "spc-alcatraz-closure": "community",
+    "ann-sf-open-studios": "arts",
+    "art-cable-cars": "arts",
+    "art-uss-pampanito": "arts",
+    "art-musee-mecanique": "arts",
 }
 
 VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community")
