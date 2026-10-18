@@ -35,7 +35,7 @@ Shared task board for all agent sessions working on this repository.
 | `arena-8eaf6c0a` | `arena/8eaf6c0a-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim), then post-release integration of its findings.** Phase 1 (claim live): new files only — `audit/AUDIT-2026-10-18-8eaf6c0a.md`, `audit/check_8eaf6c0a.py`, `audit/row-audit-8eaf6c0a.csv`, `data/gap-candidates-8eaf6c0a.json`, plus registry/task/log rows in this board. Phase 2 (after PRs #42–#44 released the claim): corrections IR-1–IR-4, six verified gap rows, `flag-fan-expo-no-sf-2026`, README/COORDINATION, regenerated site. Arena-fixed branch; no branch switch. | ✅ complete — see closing record below |
 | `arena-291a13ff` | `arena/291a13ff-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim; claim released by PRs #42–#44 at 17:09–17:12Z, after which this session integrated).** While the claim was live: new files only — `audit/AUDIT-2026-10-18-291a13ff.md`, `audit/check_291a13ff.py`, `audit/row-audit-291a13ff.csv`, `data/gap-candidates-291a13ff.json`, plus registry/task/log rows in this board. After release: integration of the verified gap candidates into `data/events.py`, rebuild, PR, merge, Pages confirmation. Arena-fixed branch; no branch switch. | ✅ complete — PRs #46 (data/site, `952e74a`) and #49 (closing record, `cde8c11`) merged 2026-10-18; Pages `built` for both, `error: null`. Closing record above. |
 | `arena-291a13ff` | `arena/291a13ff-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim; claim released by PRs #42–#44 at 17:09–17:12Z, after which this session integrated).** While the claim was live: new files only — `audit/AUDIT-2026-10-18-291a13ff.md`, `audit/check_291a13ff.py`, `audit/row-audit-291a13ff.csv`, `data/gap-candidates-291a13ff.json`, plus registry/task/log rows in this board. After release: integration of the verified gap candidates into `data/events.py`, rebuild, PR, merge, Pages confirmation. Arena-fixed branch; no branch switch. | 🟡 in progress |
-| `arena-9fca0b37` | `arena/9fca0b37-maltaproj6` | **Independent line-by-line verification + gap research pass (2026-10-18, eleventh pass).** Re-verifies the published 262-row union against official sources row by row, researches gaps for free San Francisco events (gaming, then music, then AI, then everything else), and prepares corrections as a self-contained apply script. Scope, phase 1 (new files only, no shared-output edits): `COORDINATION.md` (board rows only), `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new), `audit/apply_9fca0b37.py` (new), `data/gap-candidates-9fca0b37.json` (new). Shared outputs (`data/events.py`, generated `*.html`, `scripts/`, `assets/`, `data/events.json`, `README.md`) are **not** edited in phase 1 because `arena-fe7c710c` holds a live final-integration claim on them; integration requests are logged on this board instead. Phase 2 (final integration, PR/merge/Pages) only after `arena-fe7c710c` releases its claim via merge, or its claim goes stale (>60 min with no commits), in which case this session takes over and logs the handoff. | 🟡 in progress — **phase 1 (verification) complete**: 56 official pages re-fetched, 7 rows added and 15 row corrections + 4 imported-row corrections staged in `audit/apply_9fca0b37.py` (proven on a throwaway copy), 14 new review items, every gate green; **phase 2 running**: `arena-fe7c710c` released the shared-file claim by merging PRs #42–#44 (`5b77c43`, 17:12Z); this session rebased on that work, reconciled its staged corrections (v2 apply script), and is rebuilding/validating for PR → `main`. |
+| `arena-9fca0b37` | `arena/9fca0b37-maltaproj6` | **Independent line-by-line verification + gap research pass (2026-10-18, eleventh pass).** Re-verifies the published 262-row union against official sources row by row, researches gaps for free San Francisco events (gaming, then music, then AI, then everything else), and prepares corrections as a self-contained apply script. Scope, phase 1 (new files only, no shared-output edits): `COORDINATION.md` (board rows only), `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new), `audit/apply_9fca0b37.py` (new), `data/gap-candidates-9fca0b37.json` (new). Shared outputs (`data/events.py`, generated `*.html`, `scripts/`, `assets/`, `data/events.json`, `README.md`) are **not** edited in phase 1 because `arena-fe7c710c` holds a live final-integration claim on them; integration requests are logged on this board instead. Phase 2 (final integration, PR/merge/Pages) only after `arena-fe7c710c` releases its claim via merge, or its claim goes stale (>60 min with no commits), in which case this session takes over and logs the handoff. | 🟡 in progress — **phase 1 (verification) complete**: 56 official pages re-fetched, 7 rows added and 15 row corrections + 4 imported-row corrections staged in `audit/apply_9fca0b37.py` (proven on a throwaway copy), 14 new review items, every gate green; **phase 2 running**: `arena-fe7c710c` released the shared-file claim by merging PRs #42–#44 (`5b77c43`, 17:12Z); **✅ complete** — PR #48 merged to `main` at `b76bc7a` (17:53Z), GitHub Pages `built` for that commit (`error: null`) and the live dashboard verified at **299 / 177 / 122 / 158 / 47 / 232 / 113**. Two further main-side merges (PRs #49/#50) were folded in pre-merge; see the closing record below. |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -1414,7 +1414,7 @@ Remote branches fetched and compared against `main` with `git rev-list --count`:
 | 9F1 | Independent line-by-line re-verification of the published union against official sources (near-term dated rows first, then free gaming / music / AI rows, then a stratified sample of the rest) | ✅ done | `arena-9fca0b37` | `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new) | Official pages only. Blanks stay blank; nothing is inferred. Every checked row records the page fetched. |
 | 9F2 | Gap research: free San Francisco events near 2026-10-18 (gaming → music → AI → everything else) | ✅ done | `arena-9fca0b37` | `data/gap-candidates-9fca0b37.json` (new) | Every candidate records the official page fetched and why it was added or not added. |
 | 9F3 | Prepare corrections as a self-contained, idempotent apply script (no shared-output edit while `arena-fe7c710c` holds the live integration claim) | ✅ done | `arena-9fca0b37` | `audit/apply_9fca0b37.py` (new) | Run on a throwaway copy first; integration requests logged here for `arena-fe7c710c`. |
-| 9F4 | Final integration (rebuild, validate, PR to `main`, merge, confirm GitHub Pages) | 🟡 in progress | `arena-9fca0b37` | `COORDINATION.md`, `data/events.py`, generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `scripts/merge_parallel.py`, `README.md`, `audit/apply_9fca0b37.py`, `audit/check_9fca0b37.py` | Claim released by `arena-fe7c710c` merging PRs #42–#44 at 17:12Z; this session merged `origin/main` (COORDINATION.md conflict resolved keeping both sessions' sections), ran `audit/apply_9fca0b37.py` v2, rebuilt, all gates green (288/174/114/229/109/19, `UNVERIFIED_NOT_IN_FLAGGED_REGISTER` 19→0). PR next. |
+| 9F4 | Final integration (rebuild, validate, PR to `main`, merge, confirm GitHub Pages) | ✅ done | `arena-9fca0b37` | `COORDINATION.md`, `data/events.py`, generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `scripts/merge_parallel.py`, `README.md`, `audit/apply_9fca0b37.py`, `audit/check_9fca0b37.py` | Claim released by `arena-fe7c710c` merging PRs #42–#44 at 17:12Z; this session merged `origin/main` (COORDINATION.md conflict resolved keeping both sessions' sections), ran `audit/apply_9fca0b37.py` v2, rebuilt, all gates green (288/174/114/229/109/19, `UNVERIFIED_NOT_IN_FLAGGED_REGISTER` 19→0). **Done:** PR #48 merged (`b76bc7a`), Pages `built`, live site verified; closing record below. |
 
 
 ---
@@ -1511,3 +1511,46 @@ handoff recorded here.
   first (all `cost_class=free`, none concluded — asserted by `check_9fca0b37.py`); paid and
   price-unpublished rows stay on `paid-events.html` (149); `free-events.html` 157; date-sorted tables and
   mobile card layout unchanged from the merged `arena-fe7c710c` build.
+
+
+### Closing record — `arena-9fca0b37` (2026-10-18)
+
+- **PR #48**: https://github.com/buffedlizard55-lab/MaltaProj6/pull/48 — eleventh verification pass:
+  7 new rows (District 10 Bayview Family Summit, free; six Exploratorium After Dark editions, ticketed),
+  4 SF Opera rows filled with the organiser's published prices and times, 3 SF Symphony rows filled with
+  their published start times, 13 register items taking `UNVERIFIED_NOT_IN_FLAGGED_REGISTER` to 0,
+  3 review items closed (District 10 page found; both Castro Menorah date conflicts resolved by the
+  organiser's own correction), the stale counts inside `flag-verified-rows-with-blank-core-cell` refreshed,
+  README re-measured, and **main's conflict-marker-damaged `README.md` repaired** (4 unresolved
+  `<<<<<<< HEAD` pairs were committed to `main` by an earlier merge — only that one file on `main` was
+  affected; now clean).
+  **Merged:** 2026-10-18T17:53Z, merge commit `b76bc7ae8122fe588d5cf558066671c82b6b6696`.
+- **Concurrency during the run:** three other sessions landed work against `main` while this PR was open
+  (PRs #45/#47 by `arena-8eaf6c0a`, PRs #46/#49/#50 by `arena-291a13ff`). Each was merged into this
+  branch before the PR landed, with **both** sessions' rows, flags and COORDINATION sections kept:
+  `data/events.py` conflicts resolved by keeping every session's additions, generated files rebuilt from
+  the merged source, coverage register item extended so the other sessions' unpriced rows are addressable
+  too. No other session's work was discarded.
+- **Final gates (merged tree):** `build_site.py` → "Wrote 17 pages, 299 events, 232 flagged items"
+  (reproducible; `audit/apply_9fca0b37.py` re-run = 0 edits); `tools/validate.py` → OK
+  (299/177/122/232/113/19); `check_dataset.py` → `hard_problems=[]`, no
+  `UNVERIFIED_NOT_IN_FLAGGED_REGISTER`, 0 broken internal links, 0 missing rows; `check_9fca0b37.py` →
+  `hard_problems(0)` (free-only summary asserted: 25/25); `check_91296e94.py` 0; `check_61a46409.py` none;
+  `check_8e8e24dc.py` 0; `check_76d2c635.py` 0 hard + `headline_claim_problems=[]`; `check_db227e31.py`
+  `problems=0`; `check_fc3438db.py` 0.
+- **GitHub Pages:** build for `b76bc7a` reports `status: built`, `error: null`.
+- **Live verification** (cache-busted `?v=9fca0b37-final`, 2026-10-18): dashboard title "Free San
+  Francisco events, soonest first"; **299 events listed · 177 verified · 122 needing review · 158
+  explicitly free · 47 concluded · 232 review items · 113 official domains**; executive summary free-only
+  and soonest-first with countdown chips and source links on every row; paid/unpriced rows on
+  `paid-events.html`; `all-events.html` shows 299 rows; `flagged.html` publishes all 232 review items plus
+  the unverified-rows table.
+- **Irregularities left published for manual review (non-blocking, on `flagged.html`):** the city's own
+  OCOFI calendar links District 3 to a 404 slug (`flag-ocofi-calendar-d3-link-broken`); ArtSpan's visit
+  page still renders as a shell; TreasureFest publishes no SF date; Outside Lands' organiser site
+  unreachable; the Rules/Land Use Oct 19 calendar conflicts; Sunday Streets, Shared Spaces, Ferry Building
+  and Sunset/Castro admission prices unpublished; Day of the Dead Festival of Altars has no 2026 date on
+  the organiser's site; `main`'s README had committed conflict markers (fixed by this PR — recorded here
+  so earlier merges can be reviewed); cosmetic duplicate set/dict entries in `data/events.py` /
+  `scripts/merge_parallel.py` (IR-9F-3, harmless — sets and dicts de-duplicate).
+- **Site:** https://buffedlizard55-lab.github.io/MaltaProj6/
