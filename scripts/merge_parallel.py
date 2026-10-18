@@ -132,6 +132,21 @@ AUDIT_CORRECTIONS = {
     # 2026-10-18) lists Manon as October 15 - November 1, 2026, matching this
     # dataset's own art-sfopera season row; the other imported opera rows
     # already match that announcement exactly.
+    # SFMOMA's current "What's On View" page (fetched 2026-10-18): RM x SFMOMA
+    # opened Oct 3, 2026 on Floor 7; Sarah Sze opens Nov 21, 2026 on Floor 1
+    # (the free ground-floor galleries). Neither page lists a closing date.
+    "s-005": {
+        "_clear_unverified": True,
+        "dates": "Opened Saturday, October 3, 2026 (closing date not listed by the museum)",
+        "cost": "",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc against SFMOMA's exhibitions page, which places 'RM x SFMOMA: Between You and Me' on Floor 7 and dates it 'Opened Oct 3'. No closing date and no separate ticket price are published, so the closing date and cost cells are left blank rather than inferred from the museum's general admission.",
+    },
+    "s-007": {
+        "_clear_unverified": True,
+        "dates": "Opens Saturday, November 21, 2026 (closing date not listed by the museum)",
+        "cost": "Free (Floor 1 galleries)",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc against SFMOMA's exhibitions page, which announces 'Sarah Sze: Forever is Composed of Nows' opening November 21, 2026 on Floor 1 — the museum's free-to-enter ground-floor galleries. The closing date is not published, so it is left blank.",
+    },
     "s-020": {
         "dates": "October 15 - November 1, 2026",
         "source_name": "San Francisco Opera - 2026-27 season announcement",
@@ -175,6 +190,26 @@ def _load(name: str):
         return json.load(fh)
 
 
+def _join_venue(venue: str, address: str) -> str:
+    """Join venue and address without repeating the same text twice.
+
+    The parallel session's raw rows sometimes carry the full address in both
+    fields, which previously produced cells like
+    "100 Alemany Boulevard, 100 Alemany Boulevard".
+    """
+    venue = (venue or "").strip().strip(",")
+    address = (address or "").strip().strip(",")
+    if not address:
+        return venue
+    if not venue:
+        return address
+    if _norm(venue) == _norm(address) or _norm(address).startswith(_norm(venue)):
+        return address
+    if _norm(venue).startswith(_norm(address)):
+        return venue
+    return f"{venue}, {address}"
+
+
 def _neighbourhood_to_area(value: str) -> str:
     return value or "Citywide"
 
@@ -202,9 +237,7 @@ def _convert_weekly_or_annual(row: dict) -> dict:
     if season and season.lower() not in ("year-round", "year round"):
         dates = (dates + " · " + season).strip(" ·")
 
-    venue = row.get("venue", "")
-    address = row.get("address", "")
-    location = venue if not address else f"{venue}, {address}"
+    location = _join_venue(row.get("venue", ""), row.get("address", ""))
 
     unverified = row.get("unverified_fields") or []
     note = row.get("notes", "")
@@ -242,9 +275,7 @@ def _convert_special(row: dict) -> dict:
         if row.get("end_date") and row["end_date"] != row["start_date"]:
             dates = f"{row['start_date']} to {row['end_date']}"
 
-    venue = row.get("venue", "")
-    address = row.get("address", "")
-    location = venue if not address else f"{venue}, {address}"
+    location = _join_venue(row.get("venue", ""), row.get("address", ""))
 
     unverified = row.get("unverified_fields") or []
     note = row.get("notes", "")
@@ -285,6 +316,97 @@ FIELD_OVERRIDES = {
     # SF Opera "Manon": the official homepage states "Manon opens October 15";
     # the performance list (as of 2026-10-18) shows Oct 18, 21, 24, 27, 30 +
     # Nov 1. The run is October 15 - November 1, 2026.
+    # Re-verified 2026-10-18 by session arena-8cb2d3cc against each organiser's
+    # own page. Blank where the official page does not state the value.
+    "w-003": {
+        "_clear_unverified": True,
+        "schedule": "Wednesdays and Sundays, 7:00 a.m.-4:00 p.m.",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the market's official homepage states 'Sundays 7am-4pm Wednesdays 7am-4pm' at Fulton and Larkin Streets. Season is not stated on the page and remains blank.",
+    },
+    "w-007": {
+        "_clear_unverified": True,
+        "schedule": "Sundays, 9:00 a.m.-2:00 p.m., rain or shine",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the Agricultural Institute of Marin page states every Sunday 9am-2pm at 244 Clement St. Season is not stated on the page and remains blank.",
+    },
+    "w-008": {
+        "_clear_unverified": True,
+        "schedule": "Sundays, 9:30 a.m.-1:30 p.m.",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the market association's page states every Sunday 9:30am-1:30pm at Fort Mason Center, Marina Blvd. Season is not stated on the page and remains blank.",
+    },
+    "w-009": {
+        "_clear_unverified": True,
+        "schedule": "Sundays, 9:00 a.m.-2:00 p.m., rain or shine",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's official site lists the Outer Sunset Farmers Market & Mercantile as Sundays, rain or shine, 9am-2pm, 37th Avenue at Ortega to Quintara. Season is not stated on the page and remains blank.",
+    },
+    "w-010": {
+        "_clear_unverified": True,
+        "schedule": "Second Sundays, 10:00 a.m.-4:00 p.m. (returning April-November 2026)",
+        "dates": "April-November 2026",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's site states second Sundays, returning April-November 2026, 10am-4pm, Irving Street at 9th-11th Avenues. Admission is not stated on the page and remains blank.",
+    },
+    "w-011": {
+        "_clear_unverified": True,
+        "schedule": "Third Saturdays, 10:00 a.m.-4:00 p.m. (returning April-November 2026)",
+        "dates": "April-November 2026",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's site states third Saturdays, returning April-November 2026, 10am-4pm, 37th Avenue at Ortega to Quintara. Admission is not stated on the page and remains blank.",
+    },
+    "w-012": {
+        "_clear_unverified": True,
+        "schedule": "Sundays, 7:00 a.m.-3:00 p.m.",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: SF.gov's location page gives Sunday 7:00am-3:00pm at 100 Alemany Boulevard, with free on-site parking. Season and admission are not stated and remain blank.",
+    },
+    "w-013": {
+        "_clear_unverified": True,
+        "schedule": "First Thursday of each month, 5:00-10:00 p.m., rain or shine",
+        "dates": "January-December 2026 season",
+        "source_name": "Downtown First Thursdays — 2026 season announcement",
+        "source_url": "https://www.dftsf.com/blog/dft2026renewal",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the organiser's own announcement states a 12-month season from January to December 2026, every first Thursday, 5-10pm, on 2nd Street between Market and Howard Streets.",
+    },
+    "w-020": {
+        "_clear_unverified": True,
+        "schedule": "Weekdays (Monday-Friday), 11:00 a.m.-2:00 p.m.",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Off the Grid's site listed Levi's Plaza at 1155 Battery Street, 11am-2pm, on each weekday of the week of October 19, 2026. Admission and season are not stated and remain blank.",
+    },
+    "w-021": {
+        "_clear_unverified": True,
+        "schedule": "Weekdays (Monday-Friday), 11:00 a.m.-2:00 p.m.",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Off the Grid's site listed Salesforce Tower at 415 Mission Street, 11am-2pm, on each weekday of the week of October 19, 2026. Admission and season are not stated and remain blank.",
+    },
+    "w-023": {
+        "_clear_unverified": True,
+        "schedule": "Sundays at 1:00 p.m., April-September season (plus July 4 and Labor Day)",
+        "dates": "April-September 2026 season (144th season)",
+        "cost": "Free",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the band's official site states the season runs April through September with free Sunday concerts at 1pm at the Spreckels Temple of Music, plus July 4 and Labor Day.",
+    },
+    "w-024": {
+        "_clear_unverified": True,
+        "schedule": "Thursdays, 10:00 a.m.-3:00 p.m., during fall and spring semesters",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: asi.sfsu.edu states the market runs every Thursday 10am-3pm; parking is $10. Admission is not stated on the page and remains blank.",
+    },
+    "w-025": {
+        "_clear_unverified": True,
+        "schedule": "Saturdays, 9:00 a.m.-2:00 p.m.",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the market's official site states every Saturday 9am-2pm at 725 Greenwich Street, between Columbus and Powell. Season is not stated on the page and remains blank; the SF Environment listing of 659 Columbus Avenue, May-November, remains a recorded conflict.",
+    },
+    "s-031": {
+        "_clear_unverified": True,
+        "dates": "April 5-8, 2027",
+        "cost": "Ticketed (registration and passes)",
+        "source_name": "RSA Conference — official site (RSAC 2027)",
+        "source_url": "https://www.rsaconference.com/usa",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official RSAC 2027 page states April 5-8, 2027, San Francisco, and the FAQ gives the venue as the Moscone Center and Yerba Buena Center for the Arts.",
+    },
+    "a-007": {
+        "_clear_unverified": True,
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official site says 'Thank you for an amazing 2026 season. See you next summer for our 90th season!' No 2027 dates are published, so the dates cell stays blank rather than inferred.",
+    },
+    "a-018": {
+        "_clear_unverified": True,
+        "cost": "Ticketed (festival passes from $240, per the organiser)",
+        "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official homepage lists Noise Pop Festival 2027 on February 18, 2027, in San Francisco, with tickets from $240. The end date is not stated on the page, so only the confirmed start date is shown.",
+    },
     "s-020": {
         "dates": "October 15 - November 1, 2026 (opens October 15)",
         "_override_note": (
@@ -330,27 +452,46 @@ def parallel_events(existing) -> list:
             rec["id"] = f"x-{_slug(orig or rec['title'])}"
             if rec["id"] in existing_ids:
                 continue
+            clear_from_audit = False
             if orig in AUDIT_CORRECTIONS:
                 fix = AUDIT_CORRECTIONS[orig]
                 for key, value in fix.items():
                     if not key.startswith("_"):
                         rec[key] = value
-                rec["notes"] = (fix.get("_correction_note", "") + " " + rec["notes"]).strip()
+                if fix.get("_correction_note"):
+                    rec["notes"] = (fix["_correction_note"] + " " + rec["notes"]).strip()
+                clear_from_audit = bool(fix.get("_clear_unverified"))
             rec["category"] = CATEGORY_BY_ORIG_ID.get(orig, "community")
             if rec["_unverified"]:
                 rec["notes"] = (
                     f"Fields the parallel session could not confirm on the official page: "
                     f"{', '.join(rec['_unverified'])}. " + rec["notes"]
                 )
+            if clear_from_audit:
+                rec["_unverified"] = []
+                rec["status"] = "verified"
+                rec["notes"] = re.sub(
+                    r"^Fields the parallel session could not confirm on the official page: [^.]+\.\s*",
+                    "",
+                    rec["notes"],
+                )
             override = FIELD_OVERRIDES.get(orig)
             if override:
                 note = override.get("_override_note", "")
                 for key, value in override.items():
-                    if key == "_override_note":
+                    if key in ("_override_note", "_clear_unverified"):
                         continue
                     rec[key] = value
                 if note:
                     rec["notes"] = (rec["notes"] + " " + note).strip()
+                if override.get("_clear_unverified"):
+                    rec["_unverified"] = []
+                    rec["status"] = "verified"
+                    rec["notes"] = re.sub(
+                        r"^Fields the parallel session could not confirm on the official page: [^.]+\.\s*",
+                        "",
+                        rec["notes"],
+                    )
             out.append(rec)
     return out
 

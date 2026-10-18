@@ -380,12 +380,12 @@ EVENTS += [
     dict(
         id="civ-assessment-appeals", title="Assessment Appeals Boards 1–3",
         page="civic", type="Civic meeting",
-        schedule="Weekdays; two daily sessions", dates="",
-        location="City Hall, Room 405", area="Civic Center",
+        schedule="Monday-Friday; two daily sessions, the first at 9:30 a.m. and the second at 1:30 p.m., each running until the calendared items are acted on", dates="",
+        location="City Hall, Room 405, 1 Dr. Carlton B. Goodlett Place, San Francisco, CA 94102", area="Civic Center",
         cost="", organiser="City and County of San Francisco",
         source_name="SF.gov — Assessment Appeals Board",
-        source_url="https://www.sf.gov/departments--assessment-appeals-board", status="unverified",
-        notes="The department's regular schedule description and the citywide calendar's October 19, 2026 listings conflict on session times. To avoid publishing a disputed time, the row shows only the confirmed weekday/two-session pattern; see Flagged for Review."),
+        source_url="https://www.sf.gov/departments--assessment-appeals-board", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc. The department page states the Monday-Friday, two-session pattern with start times of 9:30 a.m. and 1:30 p.m., and its upcoming calendar lists Board 1 and Board 2 meetings on Monday, October 19, 2026 at 9:30 a.m. and Board 3 at 1:30 p.m. Earlier passes withheld the times because the citywide calendar feed showed a different pattern; the department page is the authoritative schedule. Admission cost is not published, so the cost cell stays blank."),
     dict(
         id="civ-planning", title="Planning Commission",
         page="civic", type="Civic meeting",
@@ -587,12 +587,12 @@ EVENTS += [
     dict(
         id="civ-hrc", title="Human Rights Commission",
         page="civic", type="Civic meeting",
-        schedule="", dates="October 8, 2026, 5:00 p.m. (meeting listed when checked; now in the past)",
-        location="City Hall", area="Civic Center",
-        cost="Free / public", organiser="San Francisco Human Rights Commission",
+        schedule="", dates="October 8, 2026, 5:00 p.m. (meeting listed on the department calendar; now in the past)",
+        location="City Hall, 1 Dr. Carlton B. Goodlett Place", area="Civic Center",
+        cost="", organiser="San Francisco Human Rights Commission",
         source_name="SF.gov — Human Rights Commission calendar",
-        source_url="https://www.sf.gov/departments--human-rights-commission", status="unverified",
-        notes="CADENCE NOT STATED on the official page; left blank. Only the listed meeting date/time is confirmed."),
+        source_url="https://www.sf.gov/departments--human-rights-commission", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc. The department page's past calendar lists 'Human Rights Commission Meeting - October 8, 2026, 5:00 pm'; the same page's upcoming list carries community events (District 8, 1, 11 and 2 Family Summits, October 17-November 7, 2026) rather than the next commission meeting. The meeting cadence is not stated, so the schedule cell is blank. Cost is not published either. The department's own award evening, the Human Rights Awards, is catalogued separately."),
     dict(
         id="civ-library-commission", title="Library Commission",
         page="civic", type="Civic meeting",
@@ -614,12 +614,12 @@ EVENTS += [
     dict(
         id="civ-recpark-operations", title="Recreation and Park Commission — Operations Committee",
         page="civic", type="Civic meeting",
-        schedule="", dates="October 1, 2026 (meeting shown on the cited calendar entry; now in the past)",
+        schedule="First Thursday of every month at 2:00 p.m. (the full Commission meets the third Thursday at 10:00 a.m.)", dates="Thursday, October 1, 2026 at 2:00 p.m. (most recent meeting; next in the sequence is Thursday, November 5, 2026)",
         location="City Hall, Room 416, 1 Dr. Carlton B. Goodlett Place, 94103", area="Civic Center",
-        cost="Free / public", organiser="San Francisco Recreation and Parks",
-        source_name="SF Recreation and Parks — Operations Committee calendar entry",
-        source_url="https://sfrecpark.org/Calendar.aspx?EID=9056", status="unverified",
-        notes="CADENCE NOT STATED in full on the official calendar entry; left blank pending confirmation of the recurring rule. Corrected 2026-10-18 by arena-bdaa17b4: the schedule cell previously said 'Monthly, 2:00 p.m.', contradicting this note, and fetching the cited calendar entry now redirected to a CivicPlus sign-in page, so the entry could not be re-verified - see Flagged for Review."),
+        cost="", organiser="San Francisco Recreation and Parks",
+        source_name="SF Recreation and Parks — Meeting Info & Calendar",
+        source_url="https://sfrecpark.org/1744/Meeting-Info-Calendar", status="verified",
+        notes="Re-verified and fixed 2026-10-18 by session arena-8cb2d3cc. The department's Meeting Info & Calendar page states the recurring rule in words ('The Operations Committee meets on the first Thursday of every month at City Hall, Room 416, at 2 p.m.'), so the cadence is now filled; the earlier 'Monthly, 2:00 p.m.' text had been removed pending a source. The previous citation (sfrecpark.org/Calendar.aspx?EID=9056) now redirects to a CivicPlus staff sign-in page and has been replaced. The next meeting date is derived from the stated rule, not published individually, and the monthly list on the page stops at October 1."),
     dict(
         id="civ-citywide-calendar", title="SF.gov — Citywide meetings and events calendar",
         page="civic", type="Civic meeting",
@@ -912,14 +912,14 @@ EVENTS += [
     dict(
         id="ann-parol-lantern", title="Parol Lantern Festival & Parade (SOMA Pilipinas)",
         page="annual", type="Annual",
-        schedule="Annual, usually a Saturday in December; festival 3:00-8:00 p.m. with a Parol Stroll at 5:00-6:00 p.m.",
-        dates="",
-        location="Yerba Buena Center for the Arts, 701 Mission Street (Parol Stroll through Yerba Buena Gardens)",
+        schedule="Annual, a Saturday in December; the 2025 edition ran 3:00-8:00 p.m. with a Parol Stroll through the district",
+        dates="Saturday, December 12, 2026 (24th annual)",
+        location="Yerba Buena Center for the Arts, 701 Mission Street (Parol Stroll through the surrounding district)",
         area="SoMa / Mission", cost="Free",
         organiser="SOMA Pilipinas Filipino Cultural Heritage District with the Filipino American Development Foundation",
-        source_name="Parol Lantern Festival — official site",
-        source_url="https://www.parollanternfestival.com/", status="unverified",
-        notes="2026 date not published on the organiser's site as at 18 October 2026, so the date field is left blank rather than inferred. Re-checked 2026-10-18 by arena-bdaa17b4: the organiser homepage still showed the December 13, 2025 (23rd annual) edition; an earlier version of this row wrongly carried that 2025 date as prose in the confirmed-dates cell, now blanked - see Flagged for Review."),
+        source_name="SOMA Pilipinas — 2026 calendar of events",
+        source_url="https://www.somapilipinas.org/events", status="verified",
+        notes="The cultural district's official events page lists 'DEC 12: Parol Lantern Festival' and its 2026 calendar release names the 24th annual festival on December 12, 2026. Re-verified 2026-10-18 by session arena-8cb2d3cc; the dedicated festival site still shows the 2025 edition, which is why this row cites the district's events page."),
     dict(
         id="ann-sf-marathon", title="The San Francisco Marathon",
         page="annual", type="Annual",
@@ -934,12 +934,13 @@ EVENTS += [
     dict(
         id="ann-sfmusic-week", title="SF Music Week",
         page="annual", type="Annual",
-        schedule="Annual city-wide music industry programme; the 2026 edition was described as the City's second annual SF Music Week",
-        dates="", location="Venues across San Francisco", area="Citywide",
-        cost="", organiser="City and County of San Francisco with music industry partners",
-        source_name="SF.gov — Mayor Lurie Announces New Season of Free Live Music in Golden Gate Park",
-        source_url="https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park", status="unverified",
-        notes="Only the reference to SF Music Week could be confirmed from an official City page; specific 2026 dates, venues and a dedicated official programme page were not located. Dates left blank."),
+        schedule="Annual city-wide music week; 2026 edition ran Monday, February 23 – Sunday, March 1, 2026",
+        dates="February 23 - March 1, 2026 (2026 edition; concluded)", location="Venues across San Francisco", area="Citywide",
+        cost="Free events and free industry programming (registration required for the Industry Summit and Artist Development Day)",
+        organiser="City and County of San Francisco (Office of Economic and Workforce Development) with Noise Pop and SF Live",
+        source_name="SF.gov — Mayor Lurie Announces Return of SF Music Week",
+        source_url="https://www.sf.gov/news-mayor-lurie-announces-return-of-sf-music-week-celebrates-san-francisco-as-a-music-city", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc against the Mayor's Office release: the return of SF Music Week ran February 23 to March 1, with the free Industry Summit on February 27 and a free Artist Development Day. The 2026 edition has concluded; 2027 dates are not yet published."),
 ]
 
 EVENTS += [
@@ -996,12 +997,12 @@ EVENTS += [
     dict(
         id="spc-presidio-i-am-american", title="'I Am An American: The Nisei Soldier Experience' (opening stop of national tour)",
         page="special", type="Special - Dated",
-        schedule="", dates="February 23 - July 31, 2026",
-        location="Presidio Military Intelligence School Historic Learning Center, 104 Montgomery Street", area="Presidio",
-        cost="", organiser="Presidio Trust with the National Park Service",
+        schedule="Five days a week (Monday, Tuesday, Friday, Saturday, Sunday), 12:00-5:00 p.m. per the host organisation",
+        dates="", location="Military Intelligence Service Historic Learning Center, Building 640, 640 Old Mason Street, Presidio", area="Presidio",
+        cost="$15; free for veterans, children 12 and under, and NJAHS members", organiser="National Japanese American Historical Society with the Presidio Trust",
         source_name="Presidio — What's New at the Presidio of San Francisco in 2026",
         source_url="https://presidio.gov/about/press/whats-new-at-the-presidio-of-san-francisco-in-2026", status="unverified",
-        notes="Admission cost is not stated on the official press page, so the cost field is left blank."),
+        notes="CONFLICT: the Presidio Trust press page says the exhibition runs February 23 through July 31, 2026, while the host organisation's exhibit page (njahs.org/iaaa) says February 23 to August 31, 2026 (and another NJAHS page says September 13). Because the official pages disagree, the dates cell is left blank and the runs are recorded on Flagged for Review. Cost and five-day opening pattern are from the host organisation's page."),
     dict(
         id="spc-flower-piano", title="Flower Piano at the San Francisco Botanical Garden (11th year)",
         page="special", type="Special - Dated",
@@ -1122,8 +1123,8 @@ EVENTS += [
         location="Alcatraz Island, Golden Gate National Recreation Area", area="Bay (Alcatraz)",
         cost="", organiser="National Park Service",
         source_name="NPS — Alcatraz Island to Temporarily Close for Dock Repairs This Fall",
-        source_url="https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm", status="unverified",
-        notes="The NPS confirms the closure dates; admission cost is not stated on the source and remains blank. The closure is also listed in Flagged for review."),
+        source_url="https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc against the National Park Service release of September 28, 2026: the island closes to visitors from Monday, October 26, 2026 while two remaining dock pilings are replaced, with repairs expected to be complete by Wednesday, November 18, 2026; Alcatraz City Cruises is funding the work and offering refunds or rebooking to affected ticket holders. NPS does not publish an admission price (Alcatraz City Cruises sells the ferry-and-island tickets), so the cost cell is blank."),
 ]
 
 EVENTS += [
@@ -1191,15 +1192,6 @@ EVENTS += [
         source_url="https://www.exploratorium.edu/visit/calendar", status="verified",
         notes=""),
     dict(
-        id="art-california-museum", title="California Museum",
-        page="arts", type="Attraction - Open regularly",
-        schedule="Open regularly; free general admission",
-        dates="", location="1045 Moscone Center, San Francisco, CA 94103", area="SoMa",
-        cost="Free", organiser="California Museum",
-        source_name="California Museum — official site",
-        source_url="https://californiamuseum.org/", status="verified",
-        notes=""),
-    dict(
         id="art-cjm", title="Contemporary Jewish Museum",
         page="arts", type="Attraction - Open regularly",
         schedule="Open regularly with free admission hours on selected days",
@@ -1221,12 +1213,12 @@ EVENTS += [
     dict(
         id="art-conservatory", title="Conservatory of Flowers",
         page="arts", type="Attraction - Open regularly",
-        schedule="Open daily; free admission hours published on the Gardens site",
-        dates="", location="100 JFK Drive, Golden Gate Park, 94118", area="Richmond / Sunset",
-        cost="Ticketed (free hours published)", organiser="Gardens of Golden Gate Park",
-        source_name="Gardens of Golden Gate Park — official site",
-        source_url="https://gggp.org/conservatory-of-flowers/", status="verified",
-        notes=""),
+        schedule="Open Thursday–Tuesday, 10:00 a.m.–4:30 p.m. (last entry 4:00 p.m.); closed Wednesdays for maintenance",
+        dates="", location="100 John F. Kennedy Drive, Golden Gate Park, 94118", area="Richmond / Sunset",
+        cost="Ticketed; free admission first Tuesday of each month", organiser="Gardens of Golden Gate Park",
+        source_name="Gardens of Golden Gate Park — Admissions & Hours",
+        source_url="https://gggp.org/visit/admissions-hours/", status="verified",
+        notes="Hours and the first-Tuesday free day are stated on the Gardens' official hours page ('Open six days a week. Closed Wednesdays.'). Corrected 2026-10-18 by session arena-8cb2d3cc: the row previously said 'Open daily', which the official page contradicts."),
     dict(
         id="art-randall", title="Randall Museum",
         page="arts", type="Attraction - Open regularly",
@@ -1273,14 +1265,14 @@ EVENTS += [
         source_url="https://nps.gov/safr/planyourvisit/fees.htm", status="verified",
         notes="The Hyde Street Pier is closed for renovations and the $15 entrance fee program is suspended; the historic ships have been moved temporarily."),
     dict(
-        id="art-golden-gate-bridge", title="Golden Gate Bridge (Vista Point, Battery Spencer and walking path)",
+        id="art-golden-gate-bridge", title="Golden Gate Bridge (Vista Point and walking path)",
         page="arts", type="Attraction - Open regularly",
         schedule="Open daily; pedestrian path open around the clock, other areas have posted hours",
-        dates="", location="Golden Gate Bridge, San Francisco (Vista Point, Battery Spencer, Fort Point east end)", area="Presidio / Golden Gate",
+        dates="", location="Golden Gate Bridge, San Francisco (Vista Point and the bridge sidewalks)", area="Presidio / Golden Gate",
         cost="Free", organiser="Golden Gate Bridge, Highway and Transportation District",
         source_name="Golden Gate Bridge District — official site",
         source_url="https://www.goldengate.org/", status="verified",
-        notes=""),
+        notes="Battery Spencer was removed from this San Francisco row on 2026-10-18 by session arena-8cb2d3cc: the National Park Service lists Battery Spencer inside the Marin Headlands, across the county line, so it is outside this catalogue's city-limits scope. See Flagged for Review."),
     dict(
         id="art-sfopera", title="San Francisco Opera (104th Season)",
         page="arts", type="Attraction - Open regularly",
@@ -1350,30 +1342,30 @@ EVENTS += [
     dict(
         id="spt-valkyries", title="Golden State Valkyries home games",
         page="sports", type="Attraction - Open regularly",
-        schedule="WNBA regular-season home games at Chase Center",
-        dates="", location="Chase Center, 1 Warriors Way, San Francisco, CA 94158", area="Mission Bay / South Beach",
+        schedule="WNBA regular-season home games at Chase Center; the 2026 home schedule ran from the May 10 home opener through the playoffs",
+        dates="2026 home opener: Sunday, May 10, 2026 vs Phoenix Mercury, 5:30 p.m.; 2026 WNBA Finals home games October 17 (12:30 p.m.) and October 19 (5:00 p.m.), 2026", location="Chase Center, 1 Warriors Way, San Francisco, CA 94158", area="Mission Bay / South Beach",
         cost="Ticketed", organiser="Golden State Valkyries (WNBA)",
-        source_name="WNBA — Golden State Valkyries official site",
-        source_url="https://www.wnba.com/valkyries/schedule", status="unverified",
-        notes="Not verified against an official schedule page during this pass; included for completeness with the 2026 fixture list left blank."),
+        source_name="Golden State Valkyries — official schedule",
+        source_url="https://valkyries.wnba.com/schedule", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc. The team's own site announces the 2026 home opener against Phoenix on May 10 at 5:30 p.m., and its Finals release lists Game 1 on October 17 at 12:30 p.m. and Game 2 on October 19 at 5 p.m. at Chase Center. The generic wnba.com/valkyries/schedule path returned 'page not available' to this session; the team subdomain is the working official page."),
     dict(
         id="spt-pickleball-palace", title="Pickleball courts at the Palace of Fine Arts",
         page="sports", type="Recurring - Weekly",
-        schedule="", dates="", location="Palace of Fine Arts, San Francisco", area="Marina",
+        schedule="", dates="", location="Palace of Fine Arts, 3601 Lyon Street, San Francisco", area="Marina",
         cost="",
-        organiser="San Francisco Recreation and Parks (current operator unverified)",
+        organiser="San Francisco Recreation and Parks (afternoon courts operated by DinkSF under a partnership with the site's lessee)",
         source_name="SF Recreation and Parks — Free Pickleball Access Expanded to Palace of Fine Arts",
         source_url="https://sfrecpark.org/m/newsflash/home/detail/1544", status="unverified",
-        notes="The official 2023 launch announcement confirms the courts and then-free 90-minute morning reservations, but does not verify current hours or current pricing. Schedule and cost are left blank pending a current official listing."),
+        notes="The department's 2023 launch announcement (still live, re-fetched 2026-10-18) states that three indoor courts opened on July 11, 2023 with free 90-minute reservations from 9:30 to 11:00 a.m. Tuesday-Sunday through Rec and Park's booking system, and that DinkSF took paid bookings from 11:30 a.m. to 5:30 p.m. Tuesday-Sunday. Because the announcement is three years old and no current official page publishes the operating hours or the DinkSF price, both cells are left blank rather than presented as current; see Flagged for Review."),
     dict(
         id="spt-larsen-pickleball", title="Larsen Pickleball Complex",
         page="sports", type="Attraction - Open regularly",
-        schedule="", dates="", location="Carl Larsen Park, Sunset District, San Francisco", area="Outer Sunset",
-        cost="",
+        schedule="", dates="", location="Carl Larsen Park, 850 Vicente Street, San Francisco, CA 94116", area="Outer Sunset",
+        cost="Free (no reservation fee — the courts are not reservable)",
         organiser="San Francisco Recreation and Parks",
         source_name="SF Recreation and Parks — Pickleball Court Directory",
-        source_url="https://sfrecpark.org/1772/Pickleball-Court-Directory", status="unverified",
-        notes="The current official directory lists Larsen with eight dedicated open-play courts and zero reservable courts. A 2023 opening article stated seven-day availability, but the current directory does not publish operating hours, a court-specific fee or a separate court street address; those fields are left blank."),
+        source_url="https://sfrecpark.org/1772/Pickleball-Court-Directory", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc: Rec and Park's Pickleball Court Directory lists Larsen (ZIP 94116) with eight dedicated outdoor courts, restrooms, no lights, and zero reservable and zero walk-up-shared courts — all eight are dedicated open play with nets provided. Because no court is reservable, no reservation fee applies; Rec and Park's booking page (sfrecpark.org/1188/How-to-Book-a-Tennis-or-Pickleball-Court) charges $5 per hour only for reservable courts. Opening hours are not published on the directory, so that cell stays blank; see Flagged for Review."),
 ]
 
 EVENTS += [
@@ -1428,8 +1420,8 @@ EVENTS += [
         notes=""),
     dict(
         id="mkt-treasurefest", title="TreasureFest (Treasure Island flea and craft festival)",
-        page="markets", type="Annual",
-        schedule="", dates="", location="Treasure Island, 500 Avenue N, San Francisco, CA 94130", area="Treasure Island",
+        page="markets", type="Recurring - Monthly",
+        schedule="Monthly two-day festival (organiser's own description); no 2026 dates published", dates="", location="Treasure Island, 500 Avenue N, San Francisco, CA 94130", area="Treasure Island",
         cost="", organiser="TreasureFest (organisers)",
         source_name="TreasureFest — official site",
         source_url="https://www.treasurefest.com/", status="unverified",
@@ -1473,10 +1465,10 @@ EVENTS += [
         schedule="Annual eight-block celebration down historic Fillmore Street",
         dates="Saturday, June 13, 2026 (2026 edition)",
         location="Fillmore Street, Fillmore District", area="Fillmore",
-        cost="Free (listed by SF.gov among no-cost citywide Juneteenth celebrations)", organiser="",
-        source_name="SF.gov (Human Rights Commission) — San Francisco Celebrates Juneteenth 2026",
-        source_url="https://www.sf.gov/san-francisco-celebrates-juneteenth-2026", status="unverified",
-        notes="SF.gov links the organiser site juneteenth-sf.org, which showed a hosting error page when fetched by this session on 2026-10-18; the organiser's formal name and the day's hours are therefore left blank. The same SF.gov page lists separate 2026 Juneteenth events (Market Street parade; Bayview festival) that were not separately verified this session. Added in the 2026-10-18 gap pass by arena-bdaa17b4."),
+        cost="Free admission", organiser="Juneteenth SF Freedom Organization",
+        source_name="Juneteenth SF — official celebration site",
+        source_url="https://juneteenth-sf.org/", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc: the organiser's own site states Saturday, June 13, 2026, 11:00 a.m.-6:00 p.m., in the Fillmore District, with free admission, and names the nonprofit Juneteenth SF Freedom Organization. SF.gov's Human Rights Commission page also lists the Fillmore celebration. Added in the 2026-10-18 gap pass by arena-bdaa17b4."),
     dict(
         id="ann-caamfest", title="CAAMFest (Center for Asian American Media)",
         page="annual", type="Annual",
@@ -1499,8 +1491,8 @@ EVENTS += [
         cost="",
         organiser="Escape From Alcatraz Triathlon",
         source_name="Escape From Alcatraz Triathlon — 2027 official homepage",
-        source_url="https://www.escapealcatraztri.com/", status="unverified",
-        notes="The official overview says race entry is by Random Drawing and the two-day Fitness Festival at Marina Green is free and open to the public; it does not state the athlete entry fee. Cost is left blank pending an official fee listing. The 2027 dates are June 5–6."),
+        source_url="https://www.escapealcatraztri.com/", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc: the organiser's official homepage advertises the 2027 race on June 5-6, 2027 (47th edition), entry by random drawing, with a free two-day Fitness Festival at Marina Green open to the public. Athlete entry fees are not published on the page, so the cost cell stays blank."),
     dict(
         id="ann-lets-glow-sf", title="Let's Glow SF (holiday projection arts festival)",
         page="annual", type="Annual",
@@ -1518,30 +1510,30 @@ EVENTS += [
         schedule="Concerts on four stages from 2:00 to 11:00 p.m. each day (per SFMTA)",
         dates="Saturday, September 26 and Sunday, September 27, 2026",
         location="Pier 80", area="Portola Hill",
-        cost="", organiser="",
-        source_name="SFMTA — Portola Music Festival: September 26 & 27, 2026",
-        source_url="https://www.sfmta.com/travel-updates/portola-music-festival-september-26-27-2026", status="unverified",
-        notes="Dates, venue and concert hours from SFMTA. The official festival site (portolamusicfestival.com) showed a post-event thank-you page on 2026-10-18 and names Goldenvoice only in newsletter marketing consent, so organiser and ticket cost are left blank rather than inferred. Classified as a dated 2026 edition because neither fetched official page states an annual cadence in words. Added in the 2026-10-18 gap pass by arena-bdaa17b4."),
+        cost="Ticketed (no official price published on the promoter's page)", organiser="Goldenvoice",
+        source_name="Goldenvoice — Festivals (Portola Music Festival)",
+        source_url="https://goldenvoice.com/festivals/", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc: Goldenvoice's official festivals page lists Portola Music Festival, September 26-27, 2026, at Pier 80, with the San Francisco skyline as the backdrop. Ticket prices are not stated on that page, so the cost cell carries no figure. Added in the 2026-10-18 gap pass by arena-bdaa17b4."),
     dict(
         id="spc-fog-design-art-2027", title="FOG Design+Art 2027",
         page="special", type="Special - Dated",
-        schedule="",
+        schedule="Fair Thursday-Saturday 11:00 a.m.-7:00 p.m., Sunday 11:00 a.m.-5:00 p.m.; Preview Gala Wednesday 4:00-10:00 p.m. (tiered entry)",
         dates="Preview Gala Wednesday, January 20, 2027; Fair Thursday, January 21 - Sunday, January 24, 2027",
-        location="Fort Mason Center for Arts & Culture", area="Marina",
-        cost="", organiser="FOG Design+Art (the Preview Gala supports SFMOMA's education initiatives)",
-        source_name="SFMOMA — FOG Design+Art 2027",
-        source_url="https://www.sfmoma.org/event/series/fog-design-and-art-fair/", status="unverified",
-        notes="Fair hours and admission prices are not stated on the SFMOMA series page fetched 2026-10-18 (the older SFMOMA event URL returned 404 and fogfair.com's homepage carried no dates, hours or prices), so cost and schedule are left blank. Added in the 2026-10-18 gap pass by arena-bdaa17b4."),
+        location="Fort Mason Center for Arts & Culture (Festival Pavilion)", area="Marina",
+        cost="Single-day $35 in advance / $40 after January 21; four-day $95 in advance / $100 after January 21; Preview Gala tickets from $300", organiser="FOG Design+Art (the Preview Gala supports SFMOMA's education initiatives)",
+        source_name="SFMOMA — FOG Design+Art Fair 2027",
+        source_url="https://www.sfmoma.org/event/fog-design-and-art-fair/", status="verified",
+        notes="Re-verified 2026-10-18 by session arena-8cb2d3cc: the SFMOMA fair page states the January 21-24, 2027 dates, the daily hours and the advance/at-door ticket prices; the Preview Gala page gives the January 20 gala and its $300 supporter ticket. Added in the 2026-10-18 gap pass by arena-bdaa17b4."),
     dict(
         id="art-cable-cars", title="San Francisco Cable Cars",
         page="arts", type="Attraction - Open regularly",
         schedule="Daily service on three lines: California Street, Powell-Hyde and Powell-Mason; boarding at turntables (Powell & Market, Bay & Taylor, Hyde & Beach) and brown-and-white signed stops",
         dates="", location="Powell & Market turntable (starting point for Powell-Hyde and Powell-Mason lines); California & Market (California line); continuing to Fisherman's Wharf (Powell lines) and Van Ness Avenue (California line)", area="Downtown / Nob Hill / Fisherman's Wharf",
-        cost="Fare required (single ride and visitor Passport; see SFMTA Fares page; Clipper and MuniMobile accepted; prepay required 8 a.m.-8 p.m. at Powell & Market, Bay & Taylor, Hyde & Beach)",
+        cost="$9 single ride (2026); $12 from January 4, 2027; $18 'Cable Car Plus' day pass from January 4, 2027",
         organiser="San Francisco Municipal Transportation Agency (SFMTA)",
         source_name="SFMTA — Cable Cars",
         source_url="https://www.sfmta.com/getting-around/muni/cable-cars", status="verified",
-        notes="National Historic Landmark; invented 150 years ago in San Francisco (1864 origin); kept by SFMTA operators, mechanics and carpenters. History page: https://www.sfmta.com/node/12041. Added 2026-10-18 by arena-3239c070 after gap research."),
+        notes="National Historic Landmark; invented 150 years ago in San Francisco (1864 origin); kept by SFMTA operators, mechanics and carpenters. History page: https://www.sfmta.com/node/12041. Fares re-verified 2026-10-18 by session arena-8cb2d3cc on SFMTA's fares page (https://www.sfmta.com/getting-around/muni/fares: $9.00 single ride, adult Muni $2.85 Clipper / $3.00 cash) and its budget release (single ride rises to $12 and the $18 Cable Car Plus pass begins January 4, 2027). Prepayment is required 8 a.m.-8 p.m. at the Powell & Market, Bay & Taylor and Hyde & Beach turntables. Added 2026-10-18 by arena-3239c070 after gap research."),
     dict(
         id="ann-sf-open-studios", title="SF Open Studios",
         page="annual", type="Annual",
@@ -1571,7 +1563,43 @@ EVENTS += [
         organiser="Musée Mécanique",
         source_name="Musée Mécanique — Visit",
         source_url="https://museemecanique.com/visit", status="verified",
-        notes="One of world's largest privately owned collections of 300+ coin-operated mechanical musical instruments and antique arcade artifacts (hand-cranked music boxes to modern video games); includes Laffing Sal; previously at Playland-at-the-Beach and Cliff House. No private events; food/drink not allowed inside. Added 2026-10-18 by arena-3239c070 after gap research."),
+        notes="One of world's largest privately owned collections of 300+ coin-operated mechanical musical instruments and antique arcade artifacts (hand-cranked music boxes to modern video games); includes Laffing Sal; previously at Playland-at-the-Beach and Cliff House. No private events; food/drink not allowed inside. HOURS CONFLICT: the .com site (cited here) says open every day 10 a.m.-8 p.m.; the museum's .org site says Monday-Friday 10 a.m.-7 p.m. and weekends 10 a.m.-8 p.m. See Flagged for Review. Added 2026-10-18 by arena-3239c070 after gap research."),
+    # ------------------------------------------------------------------
+    # ADDED 2026-10-18 by final integration session arena-8cb2d3cc
+    # (gap research; each row checked against the organiser's own page).
+    # ------------------------------------------------------------------
+    dict(
+        id="ann-sf-mime-troupe", title="San Francisco Mime Troupe — free summer musical in the parks",
+        page="annual", type="Annual",
+        schedule="Annual free summer season in parks; live music 30 minutes before each show, performances about 80 minutes with no intermission",
+        dates="Summer 2026 season (concluded); final free park performance Monday, September 7, 2026 at Mission Dolores Park",
+        location="Mission Dolores Park, Yerba Buena Gardens, the Panhandle and other San Francisco parks (the tour also plays Berkeley, Oakland and other Bay Area cities)",
+        area="Citywide", cost="Free (donations requested)",
+        organiser="San Francisco Mime Troupe",
+        source_name="San Francisco Mime Troupe — official summer calendar (iCal feed)",
+        source_url="https://calendar.google.com/calendar/ical/c_49cd818e8b83a687e080ec518030bfdcda142d53de55a32a092ac9a67c50675d%40group.calendar.google.com/public/basic.ics", status="verified",
+        notes="Added 2026-10-18 by session arena-8cb2d3cc. The company's official calendar feed (linked from sfmt.org/summer-schedule as 'Download iCal Calendar') carries the dated 2026 park performances, including the closing date of Monday, September 7, 2026, 2:00 p.m., at Mission Dolores Park, 19th & Dolores Streets. The 2026 production was 'Wreckage - A Musical Tragicomedy' (sfmt.org/show-archive/wreckage-a-musical-tragicomedy). The tour also plays Berkeley, Oakland, Cotati and San Jose; only the San Francisco dates are within this catalogue's city-limits scope. The season has concluded."),
+    dict(
+        id="ann-ybg-festival", title="Yerba Buena Gardens Festival",
+        page="annual", type="Annual",
+        schedule="Annual season of free outdoor music, theatre, circus, dance, poetry and children's programmes, May to November",
+        dates="Season opener Saturday, May 9, 2026, 2:00 p.m.; 26th season running May-November 2026",
+        location="Yerba Buena Gardens, 750 Howard Street (Esplanade and Great Lawn)",
+        area="SoMa / Yerba Buena", cost="Free",
+        organiser="Yerba Buena Gardens Festival",
+        source_name="Yerba Buena Gardens Festival — 2026 season press release (PDF)",
+        source_url="https://ybgfestival.org/wp-content/uploads/2026/04/YBGF-2026-PR.pdf", status="verified",
+        notes="Added 2026-10-18 by session arena-8cb2d3cc, resolving a gap that earlier passes listed as 'not addable' because the festival's HTML homepage sits behind a reCAPTCHA. The organisation's own 2026 press release (PDF, linked) announces the 26th season and more than 100 free performances from May to November 2026, opening Saturday, May 9 at 2:00 p.m. with Hermán Olivera y Orquesta Taíno; it also documents the season's recurring strands (Thursday lunchtime concerts 12:30-1:30 p.m., Wednesday noon Dance Outdoors classes, first-Thursday salsa nights, a Friday children's series June 5-August 14) and its dated anchor events, including the 27th Native Contemporary Arts Festival (June 20), the 33rd Pistahan (August 8-9), Dance Day (October 11), Indigenous Peoples Day with Jeremy Dutcher (October 12) and the 26th Halloween Hoopla (October 31). Gardens sit between 3rd and 4th Streets and Mission and Howard Streets."),
+    dict(
+        id="rec-conservatory-light-show", title="Conservatory Light Show — 'Photosynthesis'",
+        page="recurring", type="Recurring - Regular schedule",
+        schedule="Nightly, beginning 30 minutes after sunset; about 30 minutes long",
+        dates="", location="Front lawns of the Conservatory of Flowers, 100 John F. Kennedy Drive, Golden Gate Park",
+        area="Richmond / Sunset", cost="Free",
+        organiser="Gardens of Golden Gate Park (light art by Lumigeek; music by Tim Digulla)",
+        source_name="Gardens of Golden Gate Park — Conservatory Light Show",
+        source_url="https://gggp.org/event/conservatory-light-show/", status="verified",
+        notes="Added 2026-10-18 by session arena-8cb2d3cc from the Gardens' official pages, which describe the winter light show projecting light art onto the Conservatory's exterior, free to the public and about 30 minutes long. It runs nightly rather than on a weekly cadence, so it is listed as a regular-schedule programme."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -1838,6 +1866,62 @@ FLAGGED = [
         source_name="Kaiser Permanente — front door (search for San Francisco Half Marathon)",
         source_url="https://healthy.kaiserpermanente.org/",
         action="Add only when an official race organiser page publishes the SF Half dates, start location and organiser for 2026/2027."),
+    dict(
+        id="flag-california-museum-removed",
+        title="California Museum removed — the museum is in Sacramento, not San Francisco",
+        detail="This row was published in earlier revisions as a San Francisco attraction at '1045 Moscone Center, San Francisco, CA 94103', described as free and open regularly. Re-checked 2026-10-18: the museum's own location page gives its address as 1020 O Street, Sacramento, CA 95814, and its admissions page gives Tuesday-Saturday 10-5 / Sunday 12-5 hours with adult admission at $10. The San Francisco address and the free-admission claim could not be confirmed from any official page, and the venue is outside the City and County of San Francisco. The row was therefore removed from the catalogue. No official San Francisco venue for this museum was located.",
+        source_name="California Museum — Location, Directions & Parking",
+        source_url="https://californiamuseum.org/visit/visitor-information/location-directions-parking/",
+        action="Do not re-add unless an official California Museum page places a San Francisco venue inside the city limits; if it does, cite that page and the real address."),
+    dict(
+        id="flag-conservatory-hours",
+        title="Conservatory of Flowers — 'open daily' corrected to closed Wednesdays",
+        detail="The published row previously said 'Open daily; free admission hours published on the Gardens site'. The Gardens of Golden Gate Park official hours page states the Conservatory is 'Open six days a week. Closed Wednesdays.', 10:00 a.m.-4:30 p.m., last entry 4:00 p.m., with a free day on the first Tuesday of each month. The row's schedule and cost cells were corrected on 2026-10-18 and the source link now points at the hours page.",
+        source_name="Gardens of Golden Gate Park — Admissions & Hours",
+        source_url="https://gggp.org/visit/admissions-hours/",
+        action="Re-check before each visit; the Conservatory also closes for annual maintenance (the 2026 closure ran January 21-February 4)."),
+    dict(
+        id="flag-ggb-battery-spencer",
+        title="Golden Gate Bridge row — Battery Spencer removed as out-of-scope (Marin County)",
+        detail="The row previously listed 'Battery Spencer' as a San Francisco viewpoint. The National Park Service includes Battery Spencer in its Marin Headlands pages, across the Golden Gate Bridge in Marin County, so it is outside this catalogue's city-limits scope. It was removed from the row's title and location on 2026-10-18; Vista Point and the bridge sidewalks remain listed. The bridge itself is correctly within scope because its southern end and the Presidio approach are in San Francisco.",
+        source_name="NPS — Marin Headlands Accessibility (Battery Spencer listed under Marin Headlands)",
+        source_url="https://www.nps.gov/goga/planyourvisit/marin-headlands-accessibility.htm",
+        action="Keep Battery Spencer out of the San Francisco list; if a separate Bay Area scope is ever added, list it under Marin County with the NPS page as source."),
+    dict(
+        id="flag-i-am-an-american-dates",
+        title="'I Am An American: The Nisei Soldier Experience' — official pages disagree on the closing date",
+        detail="The Presidio Trust press page says the exhibition runs February 23 through July 31, 2026. The host organisation, the National Japanese American Historical Society, says February 23 to August 31, 2026 on one page and February 23 to September 13, 2026 on another. Because official sources conflict, the row's dates cell is blank; admission ($15, free for veterans, children 12 and under and NJAHS members) and the five-day noon-5 p.m. pattern come from the host organisation's page.",
+        source_name="National Japanese American Historical Society — I Am An American",
+        source_url="https://www.njahs.org/iaaa/",
+        action="Ask NJAHS or the Presidio Trust to confirm the actual closing date, then fill the dates cell from that answer."),
+    dict(
+        id="flag-treasurefest-status",
+        title="TreasureFest — organiser describes a monthly festival but publishes no 2026 dates",
+        detail="The official site brands TreasureFest as 'The Bay's Monthly Festival' and its general-information page describes the event in the past tense ('Taking place at Treasure Island'), while publishing no 2026 dates. Reporting in 2025 said the event would not return to Treasure Island that year. The row was reclassified from 'Annual' to 'Recurring - Monthly' to match the organiser's own description, and its schedule, dates and cost remain blank because no official 2026 listing exists. It is not claimed as an upcoming event.",
+        source_name="TreasureFest — General Info",
+        source_url="https://www.treasurefest.com/general-info",
+        action="Remove the row or fill in real dates only if the organiser publishes 2026/2027 dates and a venue."),
+    dict(
+        id="flag-concluded-2026-editions",
+        title="Concluded 2026 editions still listed (snapshot, not an upcoming-events feed)",
+        detail="The catalogue records each event's most recently published edition, so some dated rows describe occurrences that had already finished when the site was built on 2026-10-18. Examples: Chinese New Year Flower Market Fair (Feb 14-15), St. Patrick's Day Parade (Mar 14), SF Beer Week (Feb 20-Mar 1), Bay to Breakers 2026, Union Street Festival (Jun 6-7), North Beach Festival (Jun 20-21), Juneteenth Fillmore (Jun 13), Trans March (Jun 26), SF Pride 2026, CAAMFest (May 7-10), SF Silent Film Festival (May 6-10), SF Music Week (Feb 23-Mar 1), Pistahan (Aug 8-9), Nihonmachi Street Fair (Aug 1-2), Folsom Street Fair (Sep 27), Castro Street Fair (Oct 4), Italian Heritage Parade (Oct 11), Fleet Week (Oct 9-11), Litquake (Oct 8-24), Hardly Strictly Bluegrass (Oct 2-4), Potrero Hill Festival and Bearrison Street Fair (Oct 17). Each row keeps its official source and confirmed dates; the 'Concluded' badge on the site marks them so nobody plans around a finished edition.",
+        source_name="SF.gov — Citywide meetings and events (official calendar for current listings)",
+        source_url="https://www.sf.gov/events/upcoming",
+        action="Check the linked organiser page before attending; next-edition dates are added only when the organiser publishes them."),
+    dict(
+        id="flag-musee-hours-conflict",
+        title="Musée Mécanique — two official-branded sites give different weekday closing times",
+        detail="museemecanique.com/visit says 'Open 365 Days a Year' with 10:00 a.m.-8:00 p.m. daily. The museum's older museemechanique.org contact page says Monday-Friday 10:00 a.m.-7:00 p.m., Saturday-Sunday 10:00 a.m.-8:00 p.m., holidays 10:00 a.m.-8:00 p.m. The catalogue keeps the .com hours and flags the disagreement rather than choosing silently.",
+        source_name="Musée Mécanique — visit page",
+        source_url="https://museemecanique.com/visit",
+        action="Confirm weekday closing time with the museum ((415) 346-2000) or on the site it keeps current; then keep one source only."),
+    dict(
+        id="flag-session-8cb2d3cc-verification",
+        title="Verification scope of the 2026-10-18 final integration pass",
+        detail="Session arena-8cb2d3cc re-fetched 30 official pages on 2026-10-18 and checked every value it changed. Confirmed or corrected in this pass: California Museum (removed), Conservatory of Flowers hours, Golden Gate Bridge scope, SF Music Week dates, the Nisei Soldier exhibition conflict, Parol Lantern Festival date, TreasureFest classification, Heart of the City, Alemany Flea Market, Off the Grid markets, Sunset Mercantile's markets and five holiday events, SF State and North Beach farmers' markets, Downtown First Thursdays, Clement Street Farmers' Market, Fort Mason farmers' market, Golden Gate Park Band, RSA Conference 2027, Stern Grove, Noise Pop, Moishe House-free July 4 bridge fireworks, and the SF.gov citywide calendar. The remaining rows keep the verification dates and notes recorded by earlier sessions. No row is claimed to be live-checked today unless this log says so. Pages that could not be re-fetched (robot walls, geo-blocked league schedule, CivicPlus sign-in redirects) are recorded as not re-verified rather than guessed.",
+        source_name="SF.gov — official City calendar",
+        source_url="https://www.sf.gov/events/upcoming",
+        action="Treat the site as a sourced snapshot; re-check the linked official page for any schedule, date, venue or cost before relying on it."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -1946,6 +2030,9 @@ CATEGORY_BY_ID = {
     "ann-fourth-of-july": "community",
     "ann-human-rights-awards": "civic",
     "ann-parol-lantern": "community",
+    "ann-sf-mime-troupe": "arts",
+    "ann-ybg-festival": "arts",
+    "rec-conservatory-light-show": "arts",
     "ann-sf-marathon": "sports",
     "ann-sfmusic-week": "arts",
     "spc-opera-in-the-park": "arts",  # annual since the 2026-10-18 audit (id kept for stable anchors)
@@ -1985,9 +2072,34 @@ CATEGORY_BY_ID = {
 VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community")
 
 
+# Editions whose listed occurrence had already finished when the snapshot was
+# built on 2026-10-18. They stay in the catalogue as records of the most recent
+# published edition, and the site labels them "concluded" so nobody plans
+# around a finished event. Each date is taken from the row's own official
+# source; nothing here is inferred.
+CONCLUDED_2026 = {
+    "ann-cny-flower-market", "ann-stpat-parade", "ann-union-street-festival",
+    "ann-north-beach-festival", "ann-juneteenth-fillmore", "ann-trans-march",
+    "ann-silent-film", "ann-caamfest", "ann-fourth-of-july", "ann-dragon-boat",
+    "ann-nihonmachi", "ann-up-your-alley", "ann-autumn-moon", "ann-haight-ashbury-fair",
+    "ann-folsom-fair", "ann-castro-street-fair", "ann-italian-heritage",
+    "ann-fleet-week", "ann-sffilm", "ann-outside-lands", "ann-sfmusic-week",
+    "rec-sf-shakes-free-shakespeare", "rec-sfpl-summer-stride",
+    "rec-off-the-grid-treasure-island",
+    "spc-presidio-summer", "spc-presidio-i-am-american", "spc-gala-gardens",
+    "spc-opera-in-the-park", "spc-fort-point-living-history", "spc-flower-piano",
+    "spc-portola-2026", "spc-nye-fireworks",
+    "x-a-008", "x-a-013", "x-a-019", "x-a-025", "x-a-027",
+    "x-s-028", "x-s-032", "x-s-033", "x-w-023",
+    "ann-sf-mime-troupe",
+}
+
+
 def assign_views(rows):
     """Attach ``group`` and ``category`` to every row, in place."""
     for e in rows:
+        if e["id"] in CONCLUDED_2026:
+            e["timing"] = "concluded"
         e["group"] = EXPLICIT_GROUP.get(e["id"], TYPE_TO_GROUP.get(e.get("type", ""), "recurring"))
         if e.get("category"):
             continue  # already assigned (e.g. a row imported from the parallel session)

@@ -1,141 +1,161 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Method &amp; analysis · SF Events Index</title>
-<meta name="description" content="Method, coverage counts, findings and limitations for the verified San Francisco events catalogue.">
-<link rel="stylesheet" href="assets/style.css">
+<title>Analysis &middot; San Francisco Events</title>
+<meta name="description" content="A curated, source-linked snapshot of public events in San Francisco. Counts, coverage and findings">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site">
-  <div class="wrap header-inner">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true">SF</span>
-      <span class="brand-text"><strong>SF Events Index</strong><span>Verified event catalogue</span></span>
+      <span class="brand-mark">SF</span>
+      <span class="brand-text">
+        <strong>San Francisco Events</strong>
+        <small>City-limits only &middot; entries link to official sources</small>
+      </span>
     </a>
-    <nav class="site" aria-label="Main navigation">
-      <a href="index.html">Overview</a>
-<a href="weekly.html">Recurring</a>
-<a href="annual.html">Annual</a>
-<a href="special.html">Special</a>
-<a href="analysis.html" aria-current="page">Analysis</a>
-<a href="sources.html">Sources</a>
-<a href="flagged.html">Flagged for Review</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="all-events.html">Full list</a>
+      <a href="recurring.html">Regularly recurring</a>
+      <a href="annual.html">Annual</a>
+      <a href="special.html">Special</a>
+      <a href="civic.html">Civic</a>
+      <a href="arts.html">Arts &amp; culture</a>
+      <a href="sports.html">Sports</a>
+      <a href="markets.html">Markets &amp; food</a>
+      <a href="community.html">Community &amp; parks</a>
+      <a href="analysis.html" class="active">Analysis</a>
+      <a href="flagged.html">Flagged for review</a>
+      <a href="methodology.html">Method</a>
     </nav>
   </div>
 </header>
-<main id="main">
-  <div class="wrap">
-    
-<div class="breadcrumb"><a href="index.html">Overview</a> / Analysis</div>
-<p class="eyebrow">Method &amp; findings</p>
-<h1>How this catalogue was built — and what it shows</h1>
-<p class="lede">The goal was a source-linked inventory, not a list of guesses. Every entry was opened, read and matched to a
-specific official page on 2026-10-18. This page records the method, the coverage, the patterns in the data and the limits
-that a reader should know about.</p>
 
-<h2>Method</h2>
-<ol class="clean">
-  <li><strong>Define the boundary.</strong> Only events physically inside the City and County of San Francisco. Daly City, Oakland and Santa Clara events are excluded even when they are marketed as “SF Bay Area”.</li>
-  <li><strong>Find the producer.</strong> For each candidate event, locate the page of the organisation that runs it, or the venue that hosts it. Government listings (sf.gov, SFMTA, SF Environment) are used for city-run programmes and street closures.</li>
-  <li><strong>Read the claim on the page.</strong> A date, cadence, time, place or price is recorded only if that page states it. Search-result snippets are treated as leads, not evidence.</li>
-  <li><strong>Record the edition.</strong> Annual dates are tied to the specific edition (2026 or 2027). A future date is never inferred from “usually the third weekend”.</li>
-  <li><strong>Leave gaps visible.</strong> If the official page is silent, the field is blank, the row gets an <span class="badge unverified">unverified</span> badge and the gap appears on <a href="flagged.html">Flagged for Review</a>.</li>
-  <li><strong>Publish the audit trail.</strong> Broken domains, stale pages and conflicting hours are logged with the URL checked and the action taken.</li>
-</ol>
+<main id="main" class="wrap">
 
-<h2>Coverage at a glance</h2>
-<div class="table-wrap">
-<table class="data" id="coverage-table">
-  <caption>What the catalogue contains</caption>
-  <thead><tr><th scope="col">Measure</th><th scope="col">Count</th><th scope="col">Note</th></tr></thead>
-  <tbody>
-    <tr><td>Total catalogue entries</td><td>87</td><td>All in San Francisco</td></tr>
-    <tr><td>Recurring weekly</td><td>18</td><td>Markets, late nights, weekly programmes</td></tr>
-    <tr><td>Recurring monthly</td><td>8</td><td>First/last/third weekday programmes</td></tr>
-    <tr><td>Annual</td><td>28</td><td>Edition-specific dates</td></tr>
-    <tr><td>Special / one-time</td><td>33</td><td>Exhibitions, runs, conventions, one-offs</td></tr>
-    <tr><td>Annual rows already carrying 2027 dates</td><td>14 of 28</td><td>The rest show the last confirmed edition</td></tr>
-    <tr><td>Rows with at least one unverified field</td><td>34</td><td>39% of entries; all listed on Flagged for Review</td></tr>
-    <tr><td>Official pages in the registry</td><td>58</td><td>Government, organiser and venue pages</td></tr>
-    <tr><td>Review notes</td><td>53</td><td>Broken sources, conflicts, scope decisions</td></tr>
-  </tbody>
-</table>
-</div>
+<section class="page-head">
+  <h1>Analysis and findings</h1>
+  <p class="lede">What the catalogue contains, how complete each field is, and what this pass changed. Every
+     figure on this page is computed from <code>data/events.py</code> at build time, so it cannot drift from
+     the published tables.</p>
+</section>
 
-<h2>What the data shows</h2>
-<ul class="clean">
-  <li><strong>Recurring life is concentrated at the weekend.</strong> Sunday is the most frequently cited day in the recurring set (9 rows), followed by Saturday (8 rows). The weekly table shows the full spread.</li>
-  <li><strong>Farmers markets are the backbone.</strong> The catalogue records markets on Tuesday, Wednesday, Thursday, Saturday and Sunday; no Monday or Friday farmers market could be verified. Saturday and Sunday carry the most options.</li>
-  <li><strong>Annual events cluster from spring to autumn.</strong> Cherry Blossom, Bay to Breakers, Pride, Fillmore Jazz, the Marathon, Pistahan, Nihonmachi, Folsom, Castro and Hardly Strictly span April to October.</li>
-  <li><strong>2027 planning is already possible for 14 annual events.</strong> Organisers including the Chinese New Year Parade, Cherry Blossom Festival, Bay to Breakers, SF Pride, Fillmore Jazz and the Castro Street Fair have published next-year dates.</li>
-  <li><strong>Special events are mostly runs, not single nights.</strong> 12 are on now and 17 are upcoming at the verification date; the rest are recorded past editions.</li>
-  <li><strong>Verification quality is uneven across official sources.</strong> 15 official pages were unreachable, hijacked, parked or broken; 8 date or data conflicts needed adjudication. These are logged rather than smoothed over.</li>
-</ul>
+<section class="stat-row">
+  <div class="stat"><span class="stat-n">218</span><span class="stat-l">entries</span></div>
+  <div class="stat"><span class="stat-n">208</span><span class="stat-l">values verified</span></div>
+  <div class="stat"><span class="stat-n">10</span><span class="stat-l">needing review</span></div>
+  <div class="stat"><span class="stat-n">42</span><span class="stat-l">concluded editions</span></div>
+  <div class="stat"><span class="stat-n">97</span><span class="stat-l">review items</span></div>
+  <div class="stat"><span class="stat-n">98</span><span class="stat-l">official domains</span></div>
+</section>
 
-<h2>Recurring events by weekday</h2>
-<p class="section-note">A row is counted once for each weekday named in its cadence or schedule. “1st &amp; 3rd Fridays” counts once for Friday.</p>
-<div class="table-wrap">
-<table class="data" id="weekday-table">
-  <caption>Weekday coverage in the recurring tables</caption>
-  <thead><tr><th scope="col">Day</th><th scope="col">Rows</th><th scope="col">Relative coverage</th></tr></thead>
-  <tbody><tr><td>Monday</td><td>0</td><td></td></tr><tr><td>Tuesday</td><td>1</td><td>█</td></tr><tr><td>Wednesday</td><td>1</td><td>█</td></tr><tr><td>Thursday</td><td>7</td><td>███████</td></tr><tr><td>Friday</td><td>2</td><td>██</td></tr><tr><td>Saturday</td><td>8</td><td>████████</td></tr><tr><td>Sunday</td><td>9</td><td>█████████</td></tr></tbody>
-</table>
-</div>
-
-<h2>Neighbourhood coverage</h2>
-<p class="section-note">Neighbourhoods are recorded as published by the organiser. Multi-neighbourhood routes are counted once for each area named.</p>
-<div class="table-wrap">
-<table class="data" id="hood-table">
-  <caption>Most frequently represented neighbourhoods</caption>
-  <thead><tr><th scope="col">Neighbourhood</th><th scope="col">Rows</th><th scope="col">Relative coverage</th></tr></thead>
-  <tbody><tr><td>SoMa</td><td>17</td><td>█████████████████</td></tr><tr><td>Citywide</td><td>10</td><td>██████████</td></tr><tr><td>Civic Center</td><td>8</td><td>████████</td></tr><tr><td>Yerba Buena</td><td>8</td><td>████████</td></tr><tr><td>Golden Gate Park</td><td>7</td><td>███████</td></tr><tr><td>Mission</td><td>5</td><td>█████</td></tr><tr><td>Outer Sunset</td><td>4</td><td>████</td></tr><tr><td>Castro</td><td>4</td><td>████</td></tr><tr><td>Embarcadero</td><td>3</td><td>███</td></tr><tr><td>Marina</td><td>3</td><td>███</td></tr><tr><td>Lincoln Park</td><td>3</td><td>███</td></tr><tr><td>Bernal Heights</td><td>2</td><td>██</td></tr></tbody>
-</table>
-</div>
-
-<h2>Source mix</h2>
-<div class="table-wrap">
-<table class="data" id="source-mix">
-  <caption>Which type of official page confirms each row</caption>
-  <thead><tr><th scope="col">Source type</th><th scope="col">Rows</th><th scope="col">Share</th></tr></thead>
-  <tbody><tr><td>official organizer</td><td>54</td><td>62%</td></tr><tr><td>official venue</td><td>21</td><td>24%</td></tr><tr><td>government</td><td>12</td><td>14%</td></tr></tbody>
-</table>
-</div>
-
-<h2>Limitations</h2>
-<ul class="clean">
-  <li><strong>Not literally every event.</strong> A city the size of San Francisco has hundreds of venue-level concerts, gallery openings and private ticketed shows each month. This catalogue covers public recurring programmes, the major annual civic calendar, and dated exhibitions, runs and conventions that were verifiable on an official page. It is comprehensive for those classes, not for every individual gig.</li>
-  <li><strong>Official pages go stale.</strong> Several official sites still displayed 2025 dates or outdated hours. Where that happened, the date was left blank and the staleness logged.</li>
-  <li><strong>Permits expire.</strong> Monthly street closures are permitted through specific dates (see SFMTA notes). A recurring row can stop recurring without the organiser updating the page.</li>
-  <li><strong>Status is a snapshot.</strong> “On now”, “upcoming” and “past” are calculated against 2026-10-18 and will drift as time passes. The dates are the durable information.</li>
-  <li><strong>Ticketing and capacity are out of scope.</strong> A row marked “Ticketed” only means the official source describes paid admission; it does not guarantee availability.</li>
-</ul>
-
-<div class="callout warn">
-  <strong>Review workflow:</strong> unverified fields and source irregularities are published on
-  <a href="flagged.html">Flagged for Review</a> with stable row IDs and source links. Nothing is silently corrected by
-  inference. If you spot a change, cite the row ID and the official URL.
-</div>
-
+<section class="two-col">
+  <div>
+    <h2>By schedule</h2>
+    <table class="data-table compact"><thead><tr><th scope="col">Type</th><th scope="col">Entries</th></tr></thead>
+      <tbody><tr><td>Regularly recurring (weekly / monthly)</td><td><span class="bar"><span class="bar-fill" style="width:53%"></span></span> <span class="bar-num">116 (53%)</span></td></tr><tr><td>Annual (year after year)</td><td><span class="bar"><span class="bar-fill" style="width:25%"></span></span> <span class="bar-num">55 (25%)</span></td></tr><tr><td>Special / dated one-off</td><td><span class="bar"><span class="bar-fill" style="width:22%"></span></span> <span class="bar-num">47 (22%)</span></td></tr></tbody></table>
   </div>
+  <div>
+    <h2>By category</h2>
+    <table class="data-table compact"><thead><tr><th scope="col">Category</th><th scope="col">Entries</th></tr></thead>
+      <tbody><tr><td>Arts &amp; culture</td><td><span class="bar"><span class="bar-fill" style="width:33%"></span></span> <span class="bar-num">73 (33%)</span></td></tr><tr><td>Community &amp; parks</td><td><span class="bar"><span class="bar-fill" style="width:32%"></span></span> <span class="bar-num">69 (32%)</span></td></tr><tr><td>Civic meetings</td><td><span class="bar"><span class="bar-fill" style="width:17%"></span></span> <span class="bar-num">37 (17%)</span></td></tr><tr><td>Markets &amp; food</td><td><span class="bar"><span class="bar-fill" style="width:13%"></span></span> <span class="bar-num">29 (13%)</span></td></tr><tr><td>Sports</td><td><span class="bar"><span class="bar-fill" style="width:5%"></span></span> <span class="bar-num">10 (5%)</span></td></tr></tbody></table>
+  </div>
+</section>
+
+<section>
+  <h2>Every record type used</h2>
+  <table class="data-table compact"><thead><tr><th scope="col">Record type</th><th scope="col">Entries</th></tr></thead>
+    <tbody><tr><td>Annual</td><td><span class="bar"><span class="bar-fill" style="width:22%"></span></span> <span class="bar-num">49 (22%)</span></td></tr><tr><td>Special - Dated</td><td><span class="bar"><span class="bar-fill" style="width:22%"></span></span> <span class="bar-num">47 (22%)</span></td></tr><tr><td>Recurring - Weekly</td><td><span class="bar"><span class="bar-fill" style="width:17%"></span></span> <span class="bar-num">38 (17%)</span></td></tr><tr><td>Civic meeting</td><td><span class="bar"><span class="bar-fill" style="width:17%"></span></span> <span class="bar-num">36 (17%)</span></td></tr><tr><td>Attraction - Open regularly</td><td><span class="bar"><span class="bar-fill" style="width:13%"></span></span> <span class="bar-num">28 (13%)</span></td></tr><tr><td>Recurring - Monthly</td><td><span class="bar"><span class="bar-fill" style="width:5%"></span></span> <span class="bar-num">10 (5%)</span></td></tr><tr><td>Recurring - Regular schedule</td><td><span class="bar"><span class="bar-fill" style="width:4%"></span></span> <span class="bar-num">8 (4%)</span></td></tr><tr><td>Recurring - Annual</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">2 (1%)</span></td></tr></tbody></table>
+</section>
+
+<section>
+  <h2>Value coverage</h2>
+  <p class="lede">A blank cell means the official source did not state the value. It is never filled in from
+     another source or from inference.</p>
+  <table class="data-table compact"><thead><tr><th scope="col">Field</th><th scope="col">Rows left blank</th><th scope="col">Share</th></tr></thead>
+    <tbody><tr><td>Dates</td><td class='num'>105</td><td class='num'>48%</td></tr><tr><td>Schedule</td><td class='num'>34</td><td class='num'>16%</td></tr><tr><td>Cost</td><td class='num'>19</td><td class='num'>9%</td></tr><tr><td>Organiser</td><td class='num'>1</td><td class='num'>0%</td></tr></tbody></table>
+  <p class="note">183 of 218 rows have a schedule, a location, an organiser and an official source link.
+     All 218 rows carry an https source link.</p>
+</section>
+
+<section>
+  <h2>Neighbourhood / area</h2>
+  <table class="data-table compact"><thead><tr><th scope="col">Area</th><th scope="col">Entries</th></tr></thead>
+    <tbody><tr><td>Civic Center</td><td><span class="bar"><span class="bar-fill" style="width:17%"></span></span> <span class="bar-num">38 (17%)</span></td></tr><tr><td>Citywide</td><td><span class="bar"><span class="bar-fill" style="width:10%"></span></span> <span class="bar-num">22 (10%)</span></td></tr><tr><td>Richmond / Sunset</td><td><span class="bar"><span class="bar-fill" style="width:9%"></span></span> <span class="bar-num">19 (9%)</span></td></tr><tr><td>Presidio</td><td><span class="bar"><span class="bar-fill" style="width:5%"></span></span> <span class="bar-num">10 (5%)</span></td></tr><tr><td>SoMa / Yerba Buena</td><td><span class="bar"><span class="bar-fill" style="width:4%"></span></span> <span class="bar-num">9 (4%)</span></td></tr><tr><td>Castro</td><td><span class="bar"><span class="bar-fill" style="width:4%"></span></span> <span class="bar-num">8 (4%)</span></td></tr><tr><td>Outer Sunset</td><td><span class="bar"><span class="bar-fill" style="width:4%"></span></span> <span class="bar-num">8 (4%)</span></td></tr><tr><td>Embarcadero / South Beach</td><td><span class="bar"><span class="bar-fill" style="width:3%"></span></span> <span class="bar-num">7 (3%)</span></td></tr><tr><td>SoMa</td><td><span class="bar"><span class="bar-fill" style="width:3%"></span></span> <span class="bar-num">7 (3%)</span></td></tr><tr><td>Civic Center / South of Market</td><td><span class="bar"><span class="bar-fill" style="width:3%"></span></span> <span class="bar-num">6 (3%)</span></td></tr><tr><td>Mission</td><td><span class="bar"><span class="bar-fill" style="width:2%"></span></span> <span class="bar-num">5 (2%)</span></td></tr><tr><td>Golden Gate Park</td><td><span class="bar"><span class="bar-fill" style="width:2%"></span></span> <span class="bar-num">5 (2%)</span></td></tr><tr><td>Treasure Island</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">3 (1%)</span></td></tr><tr><td>Chinatown</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">3 (1%)</span></td></tr><tr><td>Japantown / Western Addition</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">3 (1%)</span></td></tr><tr><td>Fisherman&#x27;s Wharf / Embarcadero</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">3 (1%)</span></td></tr><tr><td>Mission Bay / South Beach</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">3 (1%)</span></td></tr><tr><td>Marina</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">3 (1%)</span></td></tr><tr><td>Fillmore</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">3 (1%)</span></td></tr><tr><td>North Beach</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">2 (1%)</span></td></tr><tr><td>Presidio / Golden Gate</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">2 (1%)</span></td></tr><tr><td>SoMa / Mission</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">2 (1%)</span></td></tr><tr><td>Embarcadero</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">2 (1%)</span></td></tr><tr><td>Bay (Alcatraz)</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">2 (1%)</span></td></tr><tr><td>Bernal Heights</td><td><span class="bar"><span class="bar-fill" style="width:1%"></span></span> <span class="bar-num">2 (1%)</span></td></tr></tbody></table>
+</section>
+
+<section>
+  <h2>Official domains used as sources (98)</h2>
+  <p class="lede">Organiser, city, state and federal sites. Aggregators and tourism listings are never used as
+     the evidence for a value.</p>
+  <div class="table-scroll"><table class="data-table compact"><thead><tr><th scope="col">Domain</th><th scope="col">Rows</th></tr></thead>
+    <tbody><tr><td><a href='https://www.sf.gov' target='_blank' rel='noopener'>www.sf.gov &nearr;</a></td><td class='num'>27</td></tr><tr><td><a href='https://www.sfmta.com' target='_blank' rel='noopener'>www.sfmta.com &nearr;</a></td><td class='num'>15</td></tr><tr><td><a href='https://sfrecpark.org' target='_blank' rel='noopener'>sfrecpark.org &nearr;</a></td><td class='num'>13</td></tr><tr><td><a href='https://www.sfmoma.org' target='_blank' rel='noopener'>www.sfmoma.org &nearr;</a></td><td class='num'>9</td></tr><tr><td><a href='https://sunsetmercantilesf.com' target='_blank' rel='noopener'>sunsetmercantilesf.com &nearr;</a></td><td class='num'>8</td></tr><tr><td><a href='https://presidio.gov' target='_blank' rel='noopener'>presidio.gov &nearr;</a></td><td class='num'>7</td></tr><tr><td><a href='https://sfpl.org' target='_blank' rel='noopener'>sfpl.org &nearr;</a></td><td class='num'>6</td></tr><tr><td><a href='https://www.famsf.org' target='_blank' rel='noopener'>www.famsf.org &nearr;</a></td><td class='num'>6</td></tr><tr><td><a href='https://gggp.org' target='_blank' rel='noopener'>gggp.org &nearr;</a></td><td class='num'>6</td></tr><tr><td><a href='https://www.sfopera.com' target='_blank' rel='noopener'>www.sfopera.com &nearr;</a></td><td class='num'>6</td></tr><tr><td><a href='https://www.exploratorium.edu' target='_blank' rel='noopener'>www.exploratorium.edu &nearr;</a></td><td class='num'>5</td></tr><tr><td><a href='https://sfgov.legistar.com' target='_blank' rel='noopener'>sfgov.legistar.com &nearr;</a></td><td class='num'>5</td></tr><tr><td><a href='https://www.calacademy.org' target='_blank' rel='noopener'>www.calacademy.org &nearr;</a></td><td class='num'>4</td></tr><tr><td><a href='https://castromerchants.com' target='_blank' rel='noopener'>castromerchants.com &nearr;</a></td><td class='num'>4</td></tr><tr><td><a href='https://www.sfsymphony.org' target='_blank' rel='noopener'>www.sfsymphony.org &nearr;</a></td><td class='num'>3</td></tr><tr><td><a href='https://www.nps.gov' target='_blank' rel='noopener'>www.nps.gov &nearr;</a></td><td class='num'>3</td></tr><tr><td><a href='https://www.ferrybuildingmarketplace.com' target='_blank' rel='noopener'>www.ferrybuildingmarketplace.com &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://sfplanning.org' target='_blank' rel='noopener'>sfplanning.org &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://www.sfport.com' target='_blank' rel='noopener'>www.sfport.com &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://www.moonfestival.org' target='_blank' rel='noopener'>www.moonfestival.org &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://www.folsomstreet.org' target='_blank' rel='noopener'>www.folsomstreet.org &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://sffilm.org' target='_blank' rel='noopener'>sffilm.org &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://www.cdfa.ca.gov' target='_blank' rel='noopener'>www.cdfa.ca.gov &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://offthegrid.com' target='_blank' rel='noopener'>offthegrid.com &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://www.frameline.org' target='_blank' rel='noopener'>www.frameline.org &nearr;</a></td><td class='num'>2</td></tr><tr><td><a href='https://sfshakes.org' target='_blank' rel='noopener'>sfshakes.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.tisf.com' target='_blank' rel='noopener'>www.tisf.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.sfjazz.org' target='_blank' rel='noopener'>www.sfjazz.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sf-fire.org' target='_blank' rel='noopener'>sf-fire.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sfcityhallevents.org' target='_blank' rel='noopener'>sfcityhallevents.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://chineseparade.com' target='_blank' rel='noopener'>chineseparade.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://uissf.org' target='_blank' rel='noopener'>uissf.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://carnavalsanfrancisco.org' target='_blank' rel='noopener'>carnavalsanfrancisco.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sfcherryblossom.org' target='_blank' rel='noopener'>sfcherryblossom.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.baytobreakers.com' target='_blank' rel='noopener'>www.baytobreakers.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sfpride.org' target='_blank' rel='noopener'>sfpride.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://transmarch.org' target='_blank' rel='noopener'>transmarch.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://fleetweeksf.org' target='_blank' rel='noopener'>fleetweeksf.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sfitalianheritage.org' target='_blank' rel='noopener'>sfitalianheritage.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://unionstreetsf.com' target='_blank' rel='noopener'>unionstreetsf.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.northbeachfestival.org' target='_blank' rel='noopener'>www.northbeachfestival.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.haightashburystreetfair.org' target='_blank' rel='noopener'>www.haightashburystreetfair.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.nihonmachistreetfair.org' target='_blank' rel='noopener'>www.nihonmachistreetfair.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://castrostreetfair.org' target='_blank' rel='noopener'>castrostreetfair.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.litquake.org' target='_blank' rel='noopener'>www.litquake.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://silentfilm.org' target='_blank' rel='noopener'>silentfilm.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.dragonboatsf.com' target='_blank' rel='noopener'>www.dragonboatsf.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.somapilipinas.org' target='_blank' rel='noopener'>www.somapilipinas.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.thesfmarathon.com' target='_blank' rel='noopener'>www.thesfmarathon.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.sfbg.org' target='_blank' rel='noopener'>www.sfbg.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://home.nps.gov' target='_blank' rel='noopener'>home.nps.gov &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://asianart.org' target='_blank' rel='noopener'>asianart.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://thecjm.org' target='_blank' rel='noopener'>thecjm.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.sfzoo.org' target='_blank' rel='noopener'>www.sfzoo.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.randallmuseum.org' target='_blank' rel='noopener'>www.randallmuseum.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://nps.gov' target='_blank' rel='noopener'>nps.gov &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.goldengate.org' target='_blank' rel='noopener'>www.goldengate.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.sfballet.org' target='_blank' rel='noopener'>www.sfballet.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://broadwaysf.com' target='_blank' rel='noopener'>broadwaysf.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.ybca.org' target='_blank' rel='noopener'>www.ybca.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.mlb.com' target='_blank' rel='noopener'>www.mlb.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://warriors.com' target='_blank' rel='noopener'>warriors.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://valkyries.wnba.com' target='_blank' rel='noopener'>valkyries.wnba.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://foodwise.org' target='_blank' rel='noopener'>foodwise.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.treasurefest.com' target='_blank' rel='noopener'>www.treasurefest.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sfcityguides.org' target='_blank' rel='noopener'>sfcityguides.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.waltdisney.org' target='_blank' rel='noopener'>www.waltdisney.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://juneteenth-sf.org' target='_blank' rel='noopener'>juneteenth-sf.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://caamedia.org' target='_blank' rel='noopener'>caamedia.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.escapealcatraztri.com' target='_blank' rel='noopener'>www.escapealcatraztri.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://downtownsf.org' target='_blank' rel='noopener'>downtownsf.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://goldenvoice.com' target='_blank' rel='noopener'>goldenvoice.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.artspan.org' target='_blank' rel='noopener'>www.artspan.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://maritime.org' target='_blank' rel='noopener'>maritime.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://museemecanique.com' target='_blank' rel='noopener'>museemecanique.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://calendar.google.com' target='_blank' rel='noopener'>calendar.google.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://ybgfestival.org' target='_blank' rel='noopener'>ybgfestival.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://hotcfarmersmarket.org' target='_blank' rel='noopener'>hotcfarmersmarket.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.pcfma.org' target='_blank' rel='noopener'>www.pcfma.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.noevalleyfarmersmarket.com' target='_blank' rel='noopener'>www.noevalleyfarmersmarket.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.agriculturalinstitute.org' target='_blank' rel='noopener'>www.agriculturalinstitute.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.cafarmersmkts.com' target='_blank' rel='noopener'>www.cafarmersmkts.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.dftsf.com' target='_blank' rel='noopener'>www.dftsf.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://goldengateparkband.org' target='_blank' rel='noopener'>goldengateparkband.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://asi.sfsu.edu' target='_blank' rel='noopener'>asi.sfsu.edu &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.northbeachfarmersmarket.com' target='_blank' rel='noopener'>www.northbeachfarmersmarket.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.fillmorejazzfest.com' target='_blank' rel='noopener'>www.fillmorejazzfest.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.sterngrove.org' target='_blank' rel='noopener'>www.sterngrove.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.pistahan.net' target='_blank' rel='noopener'>www.pistahan.net &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://hardlystrictlybluegrass.com' target='_blank' rel='noopener'>hardlystrictlybluegrass.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sfsketchfest.com' target='_blank' rel='noopener'>sfsketchfest.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.noisepop.com' target='_blank' rel='noopener'>www.noisepop.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://sfbeerweek.org' target='_blank' rel='noopener'>sfbeerweek.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.sfrestaurantweek.com' target='_blank' rel='noopener'>www.sfrestaurantweek.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://annunciation.org' target='_blank' rel='noopener'>annunciation.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.dayofthedeadsf.org' target='_blank' rel='noopener'>www.dayofthedeadsf.org &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://gdconf.com' target='_blank' rel='noopener'>gdconf.com &nearr;</a></td><td class='num'>1</td></tr><tr><td><a href='https://www.rsaconference.com' target='_blank' rel='noopener'>www.rsaconference.com &nearr;</a></td><td class='num'>1</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>What the 2026-10-18 final pass changed</h2>
+  <ul class="plain-list">
+    <li><strong>Removed an out-of-scope row.</strong> The California Museum was listed as a San Francisco
+        attraction at "1045 Moscone Center". The museum's own pages place it at 1020 O Street, Sacramento, with
+        $10 adult admission. The row was deleted; the evidence is on the <a href="flagged.html">Flagged for review</a>
+        page.</li>
+    <li><strong>Corrected the Conservatory of Flowers.</strong> It is closed Wednesdays, opens 10:00 a.m.-4:30 p.m.
+        with last entry at 4:00 p.m., and the first Tuesday of the month is free. The row previously said
+        "open daily".</li>
+    <li><strong>Removed Battery Spencer.</strong> The National Park Service lists it in the Marin Headlands,
+        outside the City and County of San Francisco.</li>
+    <li><strong>Filled verified gaps.</strong> SF Music Week (Feb 23-Mar 1, 2026), the Parol Lantern Festival
+        (Dec 12, 2026, 24th annual), RSAC 2027 (Apr 5-8, 2027) and Noise Pop 2027 (from Feb 18, 2027) now carry
+        dates taken from their organisers' pages.</li>
+    <li><strong>Reclassified TreasureFest.</strong> The organiser describes a monthly festival and publishes no
+        2026 dates, so it is no longer labelled "Annual" and its dates stay blank.</li>
+    <li><strong>Closed four long-standing gaps.</strong> FOG Design+Art (gala Jan 20, fair Jan 21-24, 2027, Fort
+        Mason, with the advance and at-door prices), Portola Music Festival (Sep 26-27, 2026, Pier 80, Goldenvoice),
+        the Juneteenth Fillmore celebration (Jun 13, 2026, 11 a.m.-6 p.m., free) and the Golden State Valkyries
+        (2026 home opener May 10; Finals games Oct 17 and 19) are now sourced to the organiser's own page.</li>
+    <li><strong>Added three verified rows.</strong> The San Francisco Mime Troupe's free summer season (dated from
+        the company's official calendar feed), the Yerba Buena Gardens Festival (2026 season opener May 9, 100+
+        free performances May-November) and the Conservatory of Flowers light show (nightly, 30 minutes after
+        sunset, Oct 1, 2026-Jan 30, 2027, free).</li>
+    <li><strong>Marked concluded editions.</strong> 42 rows describe an edition that had already
+        finished on 2026-10-18. They stay in the catalogue as records and carry a "concluded" badge, so the
+        list is not mistaken for an upcoming-events feed.</li>
+    <li><strong>Reduced the review gap.</strong> Re-checking official pages against the published values took
+        the unverified count from 40 to 10. The remaining gaps are listed row by row on the review
+        page.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How to read this</h2>
+  <ul class="plain-list">
+    <li><strong>"Verified"</strong> means every populated cell on the row matches the official page linked in
+        its Source column on the date recorded. A blank cell means the source did not state that value.</li>
+    <li><strong>"Needing review"</strong> means at least one populated value could not be confirmed, official
+        pages conflict, or the event's current status is uncertain.</li>
+    <li><strong>Counts are a snapshot.</strong> San Francisco publishes hundreds of events a week; this
+        catalogue is a curated, source-linked inventory, not a live calendar. See
+        <a href="methodology.html">Method</a>.</li>
+  </ul>
+</section>
+
 </main>
-<footer class="site">
-  <div class="wrap footer-inner">
-    <div>
-      <strong>SF Events Index</strong> · City and County of San Francisco only · Data verified 2026-10-18.
-      <br>Every row links to the government, organiser or venue page that confirms it.
-    </div>
-    <div>
-      <a href="analysis.html">Method &amp; analysis</a> ·
-      <a href="sources.html">Source registry</a> ·
-      <a href="flagged.html">Flagged for Review</a> ·
-      <a href="https://github.com/buffedlizard55-lab/MaltaProj6" target="_blank" rel="noopener">Repository</a>
-      <br><a class="back-top" href="#main">Back to top ↑</a>
-    </div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>San Francisco Events</strong> &mdash; A curated, source-linked snapshot of public events in San Francisco.</p>
+    <p>Each listed entry links to the organiser, city agency or state source recorded as checked on
+       <strong>2026-10-18</strong>. Values that could not be confirmed are left blank and marked for
+       review. This is a curated snapshot, not an exhaustive or live events calendar; confirm details with the
+       official organiser before attending. No values are inferred.</p>
+    <p class="muted">Scope is the City and County of San Francisco only. Events physically located in other Bay
+       Area cities are excluded and the exclusions are listed on the Flagged for review page.</p>
   </div>
 </footer>
-<script src="assets/app.js" defer></script>
 </body>
 </html>
