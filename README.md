@@ -20,6 +20,7 @@ data/special.json     special / one-time rows
 data/flagged.json     flagged-for-review register
 data/sources.json     source registry (official domains)
 data/meta.json        build metadata and counts (generated)
+data/review.csv       one line per row with dates, venue and source URL (generated)
 tools/seed_data.py    authoring script: sources + every verified row, dumps data/*.json
 tools/build_site.py   static site generator (pages at repo root)
 tools/validate.py     schema + source + link validation
