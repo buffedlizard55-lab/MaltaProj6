@@ -24,6 +24,8 @@ status      "verified" | "unverified"
 notes       notes, caveats, discrepancies to review
 """
 
+import re
+
 # ruff: noqa: E501
 
 VERIFIED_ON = "2026-10-18"
@@ -2149,9 +2151,57 @@ CONCLUDED_2026 = {
 }
 
 
+def _needs_numeric_price_review(value):
+    """Flag paid/variable wording when the record has no confirmable amount.
+
+    Explicitly free-only wording remains a valid cost statement. Mixed free/paid,
+    members-only, admission-included, registration-fee and generic ticketed labels
+    are not presented as if they were a numeric price.
+    """
+    text = (value or "").strip()
+    if not text or re.search(r"(?:[$€£]\s*\d|\bUSD\s*\d)", text, re.IGNORECASE):
+        return False
+    lowered = text.casefold()
+    if "free" in lowered and not any(term in lowered for term in (
+        "ticketed", "paid", "fee applies", "registration", "members only", "included with admission",
+    )):
+        return False
+    return True
+
+
+def cost_review_flags(rows):
+    """Create a source-linked review item for each cost made blank for no amount."""
+    flags = []
+    for event in rows:
+        previous = event.get("_price_review")
+        if not previous:
+            continue
+        flags.append(dict(
+            id=f"flag-price-{event['id']}",
+            title=f"{event['title']} — numeric price not confirmed",
+            detail=(f"The catalogue previously recorded only {previous!r}; it did not record a numeric admission amount. "
+                    "The cost cell is now blank and this row is unverified until an exact amount is confirmed from an official source. "
+                    + ("The prior wording explicitly mentioned some free access, which remains highlighted separately; any paid tier still needs an exact amount. " if event.get("_free_access_confirmed") else "This does not imply that the event is free. ")),
+            source_name=event.get("source_name", "Official source"),
+            source_url=event.get("source_url", ""),
+            action="Check the linked official organizer/agency page for a current price. Fill in a number only if that source states it; otherwise keep the cell blank.",
+        ))
+    return flags
+
+
 def assign_views(rows):
-    """Attach ``group`` and ``category`` to every row, in place."""
+    """Attach group/category and apply the no-invented-price rule, in place."""
     for e in rows:
+        cost = e.get("cost", "")
+        if _needs_numeric_price_review(cost) and not e.get("_price_review"):
+            e["_price_review"] = cost
+            if "free" in cost.casefold():
+                e["_free_access_confirmed"] = True
+            e["cost"] = ""
+            e["status"] = "unverified"
+            price_note = f"Numeric admission price not recorded; previous generic cost wording {cost!r} has been blanked pending an official price check. See Flagged for Review."
+            e["notes"] = (f"{e.get('notes', '')} {price_note}").strip()
+
         if e["id"] in CONCLUDED_2026:
             e["timing"] = "concluded"
         e["group"] = EXPLICIT_GROUP.get(e["id"], TYPE_TO_GROUP.get(e.get("type", ""), "recurring"))

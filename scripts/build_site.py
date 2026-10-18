@@ -28,6 +28,7 @@ from events import (  # noqa: E402
     FLAGGED as BASE_FLAGGED,
     VERIFIED_ON,
     assign_views,
+    cost_review_flags,
 )
 from merge_parallel import parallel_events, parallel_flagged  # noqa: E402
 
@@ -35,7 +36,7 @@ from merge_parallel import parallel_events, parallel_flagged  # noqa: E402
 # (arena-8fb52462), which is preserved verbatim in data/*.json.
 PARALLEL_EVENTS = parallel_events(BASE_EVENTS)
 EVENTS = assign_views(list(BASE_EVENTS) + PARALLEL_EVENTS)
-FLAGGED = list(BASE_FLAGGED) + parallel_flagged()
+FLAGGED = list(BASE_FLAGGED) + parallel_flagged() + cost_review_flags(EVENTS)
 
 SITE_NAME = "San Francisco Events"
 SITE_TAGLINE = "A curated, source-linked snapshot of public events in San Francisco"
@@ -142,7 +143,7 @@ def _row_data(ev) -> str:
     text = " ".join(
         str(ev.get(k, "")) for k in ("title", "location", "area", "organiser", "source_name", "type", "schedule", "dates", "cost")
     ).lower()
-    cost_filter = "free" if _is_free_cost(ev.get("cost")) else ("unknown" if not ev.get("cost") else "paid")
+    cost_filter = "free" if _has_free_access(ev) else ("unknown" if not ev.get("cost") else "paid")
     return (
         f' data-group="{esc(ev.get("group", ""))}"'
         f' data-cost="{cost_filter}"'
@@ -168,7 +169,10 @@ def event_table(events, table_id: str) -> str:
         )
         if ev.get("timing") == "concluded":
             badge += '<span class="badge past" title="This edition had already finished when the snapshot was built">concluded</span>'
-        title_cell = f'<td><span class="ev-title">{esc(ev["title"])}</span></td>'
+        title_cell = f'<td><span class="ev-title">{esc(ev["title"])}</span>'
+        if ev.get("_free_access_confirmed"):
+            title_cell += '<span class="badge free">some free access listed</span>'
+        title_cell += '</td>'
         source_links = [(ev["source_name"], ev["source_url"])]
         source_links.extend((item.get("name", "Official source"), item.get("url", ""))
                             for item in ev.get("additional_sources", []))
@@ -291,10 +295,15 @@ def _is_free_cost(value):
     return text == "free" or text.startswith("free ") or "free entry" in text or "free admission" in text
 
 
+def _has_free_access(event):
+    """Include exact free-cost wording and separately confirmed mixed-access rows."""
+    return _is_free_cost(event.get("cost")) or bool(event.get("_free_access_confirmed"))
+
+
 def _event_date_sort_key(event, today=None):
     next_date = _next_confirmed_date(event, today=today)
     if next_date:
-        return (0, next_date, 0 if _is_free_cost(event.get("cost")) else 1, event.get("title", "").casefold())
+        return (0, next_date, 0 if _has_free_access(event) else 1, event.get("title", "").casefold())
     if event.get("timing") == "concluded":
         return (2, date.max, 1, event.get("title", "").casefold())
     return (1, date.max, 1, event.get("title", "").casefold())
@@ -303,7 +312,7 @@ def _event_date_sort_key(event, today=None):
 def by_page(page: str):
     """Rows for a page, filtered by the page's kind."""
     if page == "free-events":
-        sel = [e for e in EVENTS if _is_free_cost(e.get("cost"))]
+        sel = [e for e in EVENTS if _has_free_access(e)]
     elif page == "recurring":
         sel = [e for e in EVENTS if e.get("group") == "recurring"]
     elif page == "annual":
@@ -325,7 +334,7 @@ def build_index() -> str:
         counts[e["category"]] += 1
     verified = sum(1 for e in EVENTS if e.get("status") == "verified")
     unverified = len(EVENTS) - verified
-    free_count = sum(1 for e in EVENTS if _is_free_cost(e.get("cost")))
+    free_count = sum(1 for e in EVENTS if _has_free_access(e))
 
     tiles = []
     for filename, label, blurb, kind in PAGES[1:]:
@@ -365,7 +374,7 @@ def build_index() -> str:
     latest_row_parts = []
     for e in latest:
         badges = ""
-        if _is_free_cost(e.get("cost")):
+        if _has_free_access(e):
             badges += '<span class="badge free">free access</span>'
         if e.get("status") != "verified":
             badges += '<span class="badge warn">unverified</span>'
