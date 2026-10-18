@@ -214,6 +214,39 @@ def _neighbourhood_to_area(value: str) -> str:
     return value or "Citywide"
 
 
+_MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+           "August", "September", "October", "November", "December"]
+
+
+def _humanize_dates(value: str) -> str:
+    """Render semicolon-separated ISO dates as readable prose.
+
+    The parallel session stored multi-day runs as ``2026-10-02;2026-10-03;
+    2026-10-04``. Only the formatting changes here; the dates themselves are
+    carried over exactly, and anything that is not a pure ISO list is returned
+    untouched.
+    """
+    value = (value or "").strip()
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}(;\d{4}-\d{2}-\d{2})*", value):
+        return value
+    parts = []
+    for token in value.split(";"):
+        year, month, day = (int(part) for part in token.split("-"))
+        parts.append((year, month, day))
+    parts.sort()
+    first, last = parts[0], parts[-1]
+    if len(parts) == 1:
+        return f"{_MONTHS[first[1] - 1]} {first[2]}, {first[0]}"
+    same_month = first[0] == last[0] and first[1] == last[1]
+    if same_month:
+        return f"{_MONTHS[first[1] - 1]} {first[2]}-{last[2]}, {first[0]}"
+    if first[0] == last[0]:
+        return (f"{_MONTHS[first[1] - 1]} {first[2]} - "
+                f"{_MONTHS[last[1] - 1]} {last[2]}, {first[0]}")
+    return (f"{_MONTHS[first[1] - 1]} {first[2]}, {first[0]} - "
+            f"{_MONTHS[last[1] - 1]} {last[2]}, {last[0]}")
+
+
 def _convert_weekly_or_annual(row: dict) -> dict:
     cadence = row.get("cadence", "")
     schedule = row.get("schedule", "")
@@ -232,7 +265,7 @@ def _convert_weekly_or_annual(row: dict) -> dict:
         etype = "Recurring - Weekly"
         group = "recurring"
 
-    dates = row.get("dates") or row.get("display_dates") or ""
+    dates = _humanize_dates(row.get("dates") or row.get("display_dates") or "")
     season = row.get("season") or ""
     if season and season.lower() not in ("year-round", "year round"):
         dates = (dates + " · " + season).strip(" ·")
