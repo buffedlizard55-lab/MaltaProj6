@@ -21,6 +21,8 @@ Shared task board for all agent sessions working on this repository.
 | `arena-8fb52462` | `arena/8fb52462-maltaproj6` | Scaffolding, schema, per-task JSON data files (`data/weekly.json`, `data/annual.json`, `data/special.json`, `data/flagged.json`, `data/sources.json`), tooling (`tools/`), own site views (`weekly.html`, `analysis.html`, `sources.html`, `assets/style.css`, `assets/app.js`) | ✅ complete — merged into `main` at `286ae68`, and folded into the union dataset by `arena-b0f3cfd3` |
 | `arena-bdaa17b4` | `arena/bdaa17b4-maltaproj6` | **Independent line-by-line audit, live source re-verification, gap research, then integration.** Phase 1 (while `arena-f54a124f` was in progress): new files only — `audit/AUDIT-2026-10-18-bdaa17b4.md`, `audit/check_dataset.py`, `audit/row-audit.csv`, `data/gap-candidates-bdaa17b4.json`. Phase 2 (after `arena-f54a124f` completed and merged PRs #12/#13, releasing its claim): integration edits to `data/events.py`, regenerated `*.html`/`data/events.json`, this board. Branch note: work stays on this session's fixed Arena branch, not a `session-<id>/<task>` branch. | ✅ complete — PR #16 merged to `main` 2026-10-18T01:44:12Z (`6d7d63a`), Pages build for that commit `built`, `error: null`; see closing record below |
 | `arena-7d8015f4` | `arena/7d8015f4-maltaproj6` | Post-merge integrity audit and repair (`tools/validate.py` reproducibility/blocked-host checks, One City One Book current-selection source, Alcatraz closure row → `unverified`) | ✅ complete — PRs #14/#15 merged to `main` (`2660263`); registry row recorded by `arena-bdaa17b4` during merge resolution (that session logged itself in a "Current session" section, kept below) |
+| `arena-23722ef3` | `arena/23722ef3-maltaproj6` | Verification / final-check: 39 live official-source checks, 6 row corrections, 2 new review items, re-merge with `arena-bdaa17b4`, site rebuild | ✅ complete — PR #18 merged to `main` 2026-10-18T02:00:43Z (`9056bd2`), Pages `built`; see log below |
+| `arena-3239c070` | `arena/3239c070-maltaproj6` | **Current audit: deep line-by-line re-verification, gap research for missing SF-city events, site polish, flagged registry expansion** | 🟡 in progress — claimed 2026-10-18 |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -42,6 +44,20 @@ stays on this branch rather than a `session-<id>/<task>` branch).
 | V2 | Build + validator + link integrity of the published site | ✅ done | `arena-23722ef3` | — | `python3 scripts/build_site.py` + `python3 tools/validate.py` (OK after both the pre-merge 205-event state and the post-rebase 211-event merge) + independent link/anchor audit (0 problems) + row-coverage audit (all unverified and verified-with-blank rows published on `flagged.html`). |
 | V3 | Fix irregularities found by V1/V2 | ✅ done | `arena-23722ef3` | `data/events.py`, `scripts/merge_parallel.py`, `scripts/build_site.py`, `README.md`, `data/events.json`, `*.html` | `tools/validate.py`'s 34 cross-toolchain errors were already resolved by `arena-f54a124f`'s canonical validator (checked, not re-fixed). Corrections are itemised in the session log. |
 | V4 | PR to `main`, merge, confirm GitHub Pages deploy, record on this board | ✅ done | `arena-23722ef3` | `COORDINATION.md` | **PR #18** https://github.com/buffedlizard55-lab/MaltaProj6/pull/18 — MERGED 2026-10-18T02:00:43Z as `9056bd2`. GitHub Pages build for the merge: status `built`, `error: null`. Live site confirmed serving the 211-event / 85-review-item state. |
+
+---
+
+## Task board — `arena-3239c070` — deep re-verification & gap research (2026-10-18)
+
+Session branch: `arena/3239c070-maltaproj6` (Arena-fixed branch for this session; per Arena rules all work stays on this branch rather than a `session-<id>/<task>` branch).
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| W0 | Register on the shared board and claim | 🟡 in progress | `arena-3239c070` | `COORDINATION.md` | This claim commit — pushed before any file edits. |
+| W1 | Full line-by-line re-verification against official sources (all 211 rows) | ⬜ unclaimed | `arena-3239c070` | `COORDINATION.md` (log), `data/events.py`, `data/events.json` | Every row's source_url must be fetched and compared; conflicts blanked, flagged. |
+| W2 | Gap research: find SF-city events not yet in catalogue, verified from official sources | ⬜ unclaimed | `arena-3239c070` | `data/events.py`, `audit/*.md`, `data/gap-*.json` | Only adds rows where every field is confirmed from official source; leaves blank otherwise. |
+| W3 | Site polish & verification artifacts (validator, flagged page, methodology) | ⬜ unclaimed | `arena-3239c070` | `scripts/build_site.py`, `*.html`, `assets/*`, `README.md` | Ensure clean dashboard, tables, analysis, no broken links. |
+| W4 | PR to `main`, merge, confirm GitHub Pages deploy, record on this board | ⬜ unclaimed | `arena-3239c070` | `COORDINATION.md` | Merge only after build+validator pass and link audit 0 errors. |
 
 ---
 
