@@ -344,7 +344,7 @@ NEW_FLAGS = '''    dict(
     dict(
         id="flag-unverified-rows-register-coverage",
         title="Unverified rows whose narrative record lives in another review item (or in the row's own note)",
-        detail="A group entry so that every unverified row is also addressable in this register by its row id. Each row below is published with its official source in the flagged rows table of this page and is marked unverified because its official page publishes no admission price: rec-ferry-building-marketplace (ferrybuildingmarketplace.com; also narrated by flag-four-more-free-claims-unpublished), spc-castro-art-walk (castromerchants.com; also narrated by flag-castro-merchants-cost-not-published), mkt-sf-chinatown-food (moonfestival.org; also narrated by flag-four-more-free-claims-unpublished), spc-dogpatch-love-potion-2026-10-22 (dogpatch.games; also narrated by flag-dogpatch-love-potion-cost), spc-osai-debates-2026-10-19 and spc-osai-awards-2026-10-23 (opensourceaiweek.com; also narrated by flag-opensource-ai-week-bay-area-scope), x-w-010 (sunsetmercantilesf.com/innersunsetflea/), and x-s-015 (sunsetmercantilesf.com/diwali2026/; also narrated by flag-sunset-mercantile-cost-not-published). No value has been changed here; this item only makes the coverage explicit.",
+        detail="A group entry so that every unverified row is also addressable in this register by its row id. Each row below is published with its official source in the flagged rows table of this page and is marked unverified because its official page publishes no admission price: rec-ferry-building-marketplace (ferrybuildingmarketplace.com; also narrated by flag-four-more-free-claims-unpublished), spc-castro-art-walk (castromerchants.com; also narrated by flag-castro-merchants-cost-not-published), mkt-sf-chinatown-food (moonfestival.org; also narrated by flag-four-more-free-claims-unpublished), spc-dogpatch-love-potion-2026-10-22 (dogpatch.games; also narrated by flag-dogpatch-love-potion-cost), spc-osai-debates-2026-10-19 and spc-osai-awards-2026-10-23 (opensourceaiweek.com; also narrated by flag-opensource-ai-week-bay-area-scope), x-w-010 (sunsetmercantilesf.com/innersunsetflea/), and x-s-015 (sunsetmercantilesf.com/diwali2026/; also narrated by flag-sunset-mercantile-cost-not-published). Added after the merge of PR #45 (session arena-8eaf6c0a): rec-sfzinefest-zinething and ann-sf-zine-fest (sfzinefest.org), spc-osms-st-francis-relics-2026 (osmsf.org) and spc-somarts-in-the-shadows-2027 (somarts.org), each unverified because its official page publishes no admission price, with the narrative in the row's own note. No value has been changed here; this item only makes the coverage explicit.",
         source_name="San Francisco Events — flagged for review page",
         source_url="https://buffedlizard55-lab.github.io/MaltaProj6/flagged.html",
         action="If a row's situation changes, update its own row first; then split this group entry into a per-row item or close it."),
@@ -419,11 +419,16 @@ def apply_edits(path: str, edits) -> int:
     return applied
 
 
-def insert_after(path: str, marker: str, block: str) -> int:
-    """Insert ``block`` immediately after the single occurrence of ``marker``."""
+def insert_after(path: str, marker: str, block: str, probe: str = "") -> int:
+    """Insert ``block`` immediately after the single occurrence of ``marker``.
+
+    Already-applied state is detected by ``probe`` (a stable id inside the
+    block) when given, so later edits to the block's wording do not cause a
+    duplicate insert; otherwise by the block's exact text.
+    """
     with open(path, encoding="utf-8") as fh:
         text = fh.read()
-    if block.strip() in text:
+    if (probe or block.strip()) in text:
         return 0
     if text.count(marker) != 1:
         raise SystemExit(f"marker is not unique in {path}: {marker[:120]!r}")
@@ -447,6 +452,7 @@ def main() -> int:
         EVENTS_PY,
         "action=\"Re-open the event page. Add a row only with the hours and cost that page itself states.\"),\n",
         NEW_FLAGS,
+        probe="flag-unverified-rows-register-coverage",
     )
     print(f"  + data/events.py: {n} new review items")
     n = apply_edits(EVENTS_PY, FLAG_EDITS)

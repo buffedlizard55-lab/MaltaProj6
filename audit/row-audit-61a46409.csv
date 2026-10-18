@@ -134,7 +134,7 @@ spt-giants,San Francisco Giants home games,other,unknown,,unverified,current,202
 spt-warriors,Golden State Warriors home games,other,unknown,,unverified,current,2026-10-23,2026-10-23,parsed,2026-10-23,warriors.com,152,unverified-row
 spt-valkyries,Golden State Valkyries home games,other,unknown,,unverified,current,2026-05-10,2026-10-19,parsed,2026-10-19,valkyries.wnba.com,550,unverified-row
 spt-pickleball-palace,Pickleball courts at the Palace of Fine Arts,other,unknown,,unverified,current,,,none,,sfrecpark.org,532,no-confirmed-date;unverified-row
-spt-larsen-pickleball,Larsen Pickleball Complex,other,mixed,Free (no reservation fee — the courts are not reservable),verified,current,,,none,,sfrecpark.org,580,verified-with-blank-core:schedule;no-confirmed-date
+spt-larsen-pickleball,Larsen Pickleball Complex,other,unknown,,unverified,current,,,none,,sfrecpark.org,969,no-confirmed-date;unverified-row
 mkt-alemany,Alemany Farmers Market ('The People's Market'),other,free,Free entry,verified,current,,,none,,www.sf.gov,176,no-confirmed-date
 mkt-mission-community,Mission Community Market,other,free,Free entry,verified,current,,,none,,foodwise.org,0,no-confirmed-date
 mkt-castro-farmers,Castro Farmers' Market,other,free,Free entry,verified,current,,,none,,www.cdfa.ca.gov,110,no-confirmed-date
@@ -175,7 +175,7 @@ rec-sfpl-mix-music-studios,The Mix at SFPL — free music and media production s
 rec-sfpl-dance-music,San Francisco Public Library dance and music programmes,music,free,Free,verified,current,,,none,,sfpl.org,570,no-confirmed-date;new-this-session
 ann-sfpl-tech-week,SFPL Tech Week — free digital-skills and AI workshops,ai,free,Free,verified,concluded,2026-05-09,2026-05-16,parsed,,sfpl.org,812,new-this-session
 spc-ai-engineer-code-2026,AI Engineer Code Summit 2026,ai,mixed,"Regular $1,299 + fees (talks + expo, Nov 11-12); Final & At-Door $1,499 + fees; Workshop Add-On $299 + fees (Nov 10). Applying is free and does not reserve a seat",verified,current,2026-11-10,2026-11-12,parsed,2026-11-10,ai.engineer,516,new-this-session
-spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",ai,free,Free — the official site states the directory is '100% free to use'; each host-run event sets its own entry rules and several are invite-only or guests-only,verified,current,2026-12-07,2026-12-13,parsed,2026-12-07,week-of-ai.com,789,new-this-session
+spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",ai,unknown,,unverified,current,2026-12-07,2026-12-13,parsed,2026-12-07,week-of-ai.com,1057,unverified-row;new-this-session
 spc-osai-debates-2026-10-19,Open Weight Debate Night (Open Source AI Week 2026),ai,unknown,,unverified,current,2026-10-19,2026-10-19,parsed,2026-10-19,opensourceaiweek.com,618,unverified-row
 spc-osai-awards-2026-10-23,Open Source AI Awards Night (Open Source AI Week 2026),ai,unknown,,unverified,current,2026-10-23,2026-10-23,parsed,2026-10-23,opensourceaiweek.com,537,unverified-row
 spc-current-sf-2026,Current San Francisco 2026 (Confluent — real-time data and AI),ai,unknown,,unverified,current,2026-11-04,2026-11-05,parsed,2026-11-04,www.moscone.com,526,unverified-row;new-this-session
@@ -228,6 +228,12 @@ spc-exploratorium-after-dark-2026-11-12,"After Dark: Unplug and Play (Explorator
 spc-exploratorium-after-dark-2026-12-03,After Dark: Rule Breakers (Exploratorium),other,unknown,,unverified,current,2026-12-03,2026-12-03,parsed,2026-12-03,www.exploratorium.edu,431,unverified-row
 spc-exploratorium-after-dark-2026-12-10,"After Dark: Unplug and Play (Exploratorium, December)",other,unknown,,unverified,current,2026-12-10,2026-12-10,parsed,2026-12-10,www.exploratorium.edu,434,unverified-row
 spc-exploratorium-after-dark-2026-12-17,After Dark: Solstice (Exploratorium),other,unknown,,unverified,current,2026-12-17,2026-12-17,parsed,2026-12-17,www.exploratorium.edu,427,unverified-row
+spc-github-universe-2026,GitHub Universe 2026,other,mixed,"In-person $1,399; team $1,119 per pass (4+); virtual ticket free; workshop add-on $99; certification voucher $30",verified,current,2026-10-27,2026-10-30,parsed,2026-10-27,githubuniverse.com,353,
+spc-somarts-in-their-name-2026,In Their Name: Día de Los Muertos 2026 (SOMArts),other,mixed,"Opening reception: $15, free for youth 16 years old and under; NOTAFLOF. Exhibition-run admission not published.",verified,current,2026-10-23,2026-11-20,parsed,2026-10-23,somarts.org,420,
+rec-sfzinefest-zinething,ZINETHING! — monthly LGBTQIA zine-making meetup,other,unknown,,unverified,current,2026-10-20,2026-10-20,parsed,2026-10-20,www.sfzinefest.org,464,unverified-row
+spc-osms-st-francis-relics-2026,Sacred Relics of St. Francis & St. Clare — veneration,other,unknown,,unverified,current,2026-10-16,2026-11-28,parsed,2026-11-28,www.osmsf.org,455,unverified-row
+ann-sf-zine-fest,"San Francisco Zine Fest (25th Annual, 2026 edition)",other,unknown,,unverified,concluded,2026-09-06,2026-09-06,parsed,,www.sfzinefest.org,428,unverified-row
+spc-somarts-in-the-shadows-2027,In the Shadows of the West (SOMArts),other,unknown,,unverified,current,2027-01-23,2027-03-26,parsed,2027-01-23,somarts.org,248,unverified-row
 x-w-003,Heart of the City Farmers Market,other,free,Free entry,verified,current,,,none,,hotcfarmersmarket.org,206,no-confirmed-date
 x-w-005,Fillmore Farmers' Market,other,free,Free entry,verified,current,,,none,,www.pcfma.org,166,no-confirmed-date
 x-w-006,Noe Valley Farmers Market,other,free,Free entry,verified,current,,,none,,www.noevalleyfarmersmarket.com,172,no-confirmed-date

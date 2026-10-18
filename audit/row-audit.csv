@@ -134,7 +134,7 @@ spt-giants,San Francisco Giants home games,Attraction - Open regularly,unverifie
 spt-warriors,Golden State Warriors home games,Attraction - Open regularly,unverified,warriors.com,https://warriors.com/news/warriors-announce-2026-27-regular-season-schedule-20260813,cost,2026-10-23,
 spt-valkyries,Golden State Valkyries home games,Attraction - Open regularly,unverified,valkyries.wnba.com,https://valkyries.wnba.com/schedule,cost,2026-05-10,
 spt-pickleball-palace,Pickleball courts at the Palace of Fine Arts,Recurring - Weekly,unverified,sfrecpark.org,https://sfrecpark.org/m/newsflash/home/detail/1544,schedule;dates;cost,,
-spt-larsen-pickleball,Larsen Pickleball Complex,Attraction - Open regularly,verified,sfrecpark.org,https://sfrecpark.org/1772/Pickleball-Court-Directory,schedule;dates,,"VERIFIED_BUT_BLANK:schedule,dates"
+spt-larsen-pickleball,Larsen Pickleball Complex,Attraction - Open regularly,unverified,sfrecpark.org,https://sfrecpark.org/1772/Pickleball-Court-Directory,schedule;dates;cost,,
 mkt-alemany,Alemany Farmers Market ('The People's Market'),Recurring - Weekly,verified,sf.gov,https://www.sf.gov/location--alemany-farmers-market,dates,,VERIFIED_BUT_BLANK:dates
 mkt-mission-community,Mission Community Market,Recurring - Weekly,verified,foodwise.org,https://foodwise.org/markets/,dates,,VERIFIED_BUT_BLANK:dates
 mkt-castro-farmers,Castro Farmers' Market,Recurring - Weekly,verified,cdfa.ca.gov,https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf,dates,,VERIFIED_BUT_BLANK:dates
@@ -175,7 +175,7 @@ rec-sfpl-mix-music-studios,The Mix at SFPL — free music and media production s
 rec-sfpl-dance-music,San Francisco Public Library dance and music programmes,Recurring - Weekly,verified,sfpl.org,https://sfpl.org/events?field_event_topic_target_id=452,dates,,VERIFIED_BUT_BLANK:dates
 ann-sfpl-tech-week,SFPL Tech Week — free digital-skills and AI workshops,Annual,verified,sfpl.org,https://sfpl.org/techweek,,,
 spc-ai-engineer-code-2026,AI Engineer Code Summit 2026,Special - Dated,verified,ai.engineer,https://ai.engineer/code/2026,,,
-spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",Special - Dated,verified,week-of-ai.com,https://week-of-ai.com/,,,
+spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",Special - Dated,unverified,week-of-ai.com,https://week-of-ai.com/,cost,,
 spc-osai-debates-2026-10-19,Open Weight Debate Night (Open Source AI Week 2026),Special - Dated,unverified,opensourceaiweek.com,https://opensourceaiweek.com/the-debates/,cost,2026-10-19,
 spc-osai-awards-2026-10-23,Open Source AI Awards Night (Open Source AI Week 2026),Special - Dated,unverified,opensourceaiweek.com,https://opensourceaiweek.com/open-source-ai-awards/,cost,2026-10-23,
 spc-current-sf-2026,Current San Francisco 2026 (Confluent — real-time data and AI),Special - Dated,unverified,moscone.com,https://www.moscone.com/events/current-san-francisco-2026,cost,,
@@ -228,6 +228,12 @@ spc-exploratorium-after-dark-2026-11-12,"After Dark: Unplug and Play (Explorator
 spc-exploratorium-after-dark-2026-12-03,After Dark: Rule Breakers (Exploratorium),Special - Dated,unverified,exploratorium.edu,https://www.exploratorium.edu/visit/calendar/after-dark-rule-breakers,cost,2026-12-03,
 spc-exploratorium-after-dark-2026-12-10,"After Dark: Unplug and Play (Exploratorium, December)",Special - Dated,unverified,exploratorium.edu,https://www.exploratorium.edu/visit/calendar/after-dark-unplug-play-dec2026,cost,2026-12-10,
 spc-exploratorium-after-dark-2026-12-17,After Dark: Solstice (Exploratorium),Special - Dated,unverified,exploratorium.edu,https://www.exploratorium.edu/visit/calendar/after-dark-solstice,cost,2026-12-17,
+spc-github-universe-2026,GitHub Universe 2026,Special - Dated,verified,githubuniverse.com,https://githubuniverse.com/,,,
+spc-somarts-in-their-name-2026,In Their Name: Día de Los Muertos 2026 (SOMArts),Special - Dated,verified,somarts.org,https://somarts.org/event/intheirname-opening/,,2026-11-20,
+rec-sfzinefest-zinething,ZINETHING! — monthly LGBTQIA zine-making meetup,Recurring - Monthly,unverified,sfzinefest.org,https://www.sfzinefest.org/,cost,2026-10-20,
+spc-osms-st-francis-relics-2026,Sacred Relics of St. Francis & St. Clare — veneration,Special - Dated,unverified,osmsf.org,https://www.osmsf.org/,cost,2026-11-28,
+ann-sf-zine-fest,"San Francisco Zine Fest (25th Annual, 2026 edition)",Annual,unverified,sfzinefest.org,https://www.sfzinefest.org/,schedule;cost,2026-09-06,LATEST_DATE_BEFORE_AUDIT_DATE
+spc-somarts-in-the-shadows-2027,In the Shadows of the West (SOMArts),Special - Dated,unverified,somarts.org,https://somarts.org/whats-on/,cost,2027-03-26,
 x-w-003,Heart of the City Farmers Market,Recurring - Weekly,verified,hotcfarmersmarket.org,https://hotcfarmersmarket.org/,dates,,VERIFIED_BUT_BLANK:dates
 x-w-005,Fillmore Farmers' Market,Recurring - Weekly,verified,pcfma.org,https://www.pcfma.org/market/fillmore-farmers-market,dates,,VERIFIED_BUT_BLANK:dates
 x-w-006,Noe Valley Farmers Market,Recurring - Weekly,verified,noevalleyfarmersmarket.com,https://www.noevalleyfarmersmarket.com/,dates,,VERIFIED_BUT_BLANK:dates
