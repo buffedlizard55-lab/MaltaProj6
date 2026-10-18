@@ -1274,3 +1274,26 @@ required beyond IR-1/IR-2 above.
   (`flag-verified-rows-with-blank-core-cell`); the Cloudflare "four days" copy conflict; AI Council /
   GDC-Nights-type unpublished prices; Sunday Streets admission not stated; the ArtSpan page that did not
   re-render dates/cost. All are on the Flagged for Review page with source links.
+
+### PR / merge / Pages record — `arena-8eaf6c0a` (2026-10-18)
+
+- **PR #45**: https://github.com/buffedlizard55-lab/MaltaProj6/pull/45 — verification + gap research +
+  post-release integration (6 verified rows, 2 inferred cost cells blanked, 2 stale flag texts repaired,
+  `page` metadata fixes, `flag-fan-expo-no-sf-2026`). **Merged:** 2026-10-18 ~17:33Z, merge commit
+  `be5d416` ("Merge pull request #45 from buffedlizard55-lab/arena/8eaf6c0a-maltaproj6").
+- **GitHub Pages:** build for `be5d416` reports `status: built`, `error: {message: null}`
+  (created/updated 2026-10-18T17:33:27–17:33:48Z). Site: https://buffedlizard55-lab.github.io/MaltaProj6/
+- **Live verification** (cache-busted `?v=8eaf6c0a-final`, 2026-10-18): dashboard title "Free San
+  Francisco events, soonest first"; counts **287 events listed · 169 rows marked verified · 118 rows
+  needing review · 154 entries explicitly listing free access · 47 concluded editions · 217 review items
+  published · 113 distinct official domains**. Executive summary is free-only, earliest-first, with
+  countdown chips and per-row cost + official-source links (23 free entries in the 21-day window, opening
+  with Crucial Reggae Sundays today and SF Open Studios under way). `technology.html` renders 26 entries
+  including the new GitHub Universe 2026 row with its verbatim pricing block and official link;
+  `flagged.html` renders all 217 review items including `flag-fan-expo-no-sf-2026`,
+  `flag-price-spt-larsen-pickleball` and `flag-price-spc-ai-week-sf-2026`.
+- Gates before merge: `scripts/build_site.py` reproducible; `tools/validate.py` OK (287/169/118/217/113);
+  `audit/check_dataset.py` hard_problems=[]; `audit/check_db227e31.py` 0 problems; `audit/check_8eaf6c0a.py`
+  hard=0. Flagged irregularities (22 verified-with-blank-core-cell rows, Cloudflare copy conflict, Sunday
+  Streets/ArtSpan/AI Council unpublished prices) remain published on the Flagged for Review page and did
+  not block the merge, per board rules.
