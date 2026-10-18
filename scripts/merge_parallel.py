@@ -275,6 +275,26 @@ def _convert_special(row: dict) -> dict:
     }
 
 
+# Corrections applied to imported rows during the 2026-10-18 line-by-line
+# re-verification pass (session arena-23722ef3). The parallel session's raw
+# files are left untouched as its record; only the published union row is
+# corrected, with the reason appended to its notes.
+FIELD_OVERRIDES = {
+    # SF Opera "Manon": the official homepage states "Manon opens October 15";
+    # the performance list (as of 2026-10-18) shows Oct 18, 21, 24, 27, 30 +
+    # Nov 1. The run is October 15 - November 1, 2026.
+    "s-020": {
+        "dates": "October 15 - November 1, 2026 (opens October 15)",
+        "_override_note": (
+            "Corrected 2026-10-18 by session arena-23722ef3: the run start was "
+            "changed to October 15 per the official banner 'Manon opens October 15' "
+            "(https://www.sfopera.com/); the parallel record said 'October 18 - "
+            "November 1, 2026', which matched only the remaining listed performances."
+        ),
+    },
+}
+
+
 def parallel_events(existing) -> list:
     """Return the parallel session's rows that are not already in ``existing``."""
     existing_titles = [e.get("title", "") for e in existing]
@@ -320,6 +340,15 @@ def parallel_events(existing) -> list:
                     f"Fields the parallel session could not confirm on the official page: "
                     f"{', '.join(rec['_unverified'])}. " + rec["notes"]
                 )
+            override = FIELD_OVERRIDES.get(orig)
+            if override:
+                note = override.get("_override_note", "")
+                for key, value in override.items():
+                    if key == "_override_note":
+                        continue
+                    rec[key] = value
+                if note:
+                    rec["notes"] = (rec["notes"] + " " + note).strip()
             out.append(rec)
     return out
 
