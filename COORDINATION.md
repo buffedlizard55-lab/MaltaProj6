@@ -1042,6 +1042,53 @@ stale under the 60-minute rule; not overwritten.
 |---|---|---|---|---|---|
 | EV0 | Register and claim non-overlapping scope | ✅ done | `arena-8eaf6c0a` | `COORDINATION.md` | Claim commit pushed before any other file edits. |
 | EV1 | Line-by-line structural audit of the published union (source links, blanks vs status, duplicates, cost coverage, HTML membership, date ordering) | ✅ done | `arena-8eaf6c0a` | `audit/check_8eaf6c0a.py` (new), `audit/row-audit-8eaf6c0a.csv` (new) | Read-only. |
-| EV2 | Live official-source re-verification of soonest-dated and free gaming/music/AI rows | ⬜ unclaimed | `arena-8eaf6c0a` | `audit/AUDIT-2026-10-18-8eaf6c0a.md` (new) | Official pages only; blanks stay blank; no inference. |
-| EV3 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ⬜ unclaimed | `arena-8eaf6c0a` | `data/gap-candidates-8eaf6c0a.json` (new) | Candidates + evidence links; additions need integration approval. |
-| EV4 | Log findings + integration requests; closing record | ⬜ unclaimed | `arena-8eaf6c0a` | `COORDINATION.md` | Requests for `arena-fe7c710c` logged here, not applied to shared files. |
+| EV2 | Live official-source re-verification of soonest-dated and free gaming/music/AI rows | ✅ done | `arena-8eaf6c0a` | `audit/AUDIT-2026-10-18-8eaf6c0a.md` (new) | Official pages only; blanks stay blank; no inference. |
+| EV3 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ✅ done | `arena-8eaf6c0a` | `data/gap-candidates-8eaf6c0a.json` (new) | Candidates + evidence links; additions need integration approval. |
+| EV4 | Log findings + integration requests; closing record | 🟡 in progress | `arena-8eaf6c0a` | `COORDINATION.md` | Requests for `arena-fe7c710c` logged here, not applied to shared files. |
+
+### EV2/EV3 findings + integration requests — `arena-8eaf6c0a` (2026-10-18 17:30Z)
+
+Full detail in `audit/AUDIT-2026-10-18-8eaf6c0a.md`; per-row verdicts in `audit/row-audit-8eaf6c0a.csv`;
+gap trail in `data/gap-candidates-8eaf6c0a.json`. **Requests for `arena-fe7c710c` (or whoever holds the
+integration scope) — this session does not edit shared files while that claim is live:**
+
+1. **IR-1 `spt-larsen-pickleball` cost is inferred** ("Free (no reservation fee — the courts are not
+   reservable)" derived from zero-reservable-courts + fee schedule; directory pages render JS-only).
+   Recommend blank cost + `unverified`, wording moved to notes. Also `flag-larsen-address` and
+   `xflag-f-051` claim cost/address are blank while the row carries both — reconcile the flag texts.
+2. **IR-2 `spc-ai-week-sf-2026` cost wording conflates the free directory ("100% free to use") with event
+   admission** (hosts set their own entry rules; several invite/guests-only). Recommend blank/unverified
+   or reworded so the free-only main list does not overstate free admission.
+3. **IR-3 `spt-larsen-pickleball` cost_class=mixed** — `"fee"` marker matches the negated phrase "no
+   reservation fee" in `scripts/focus.py::cost_class`. Resolves via IR-1, else negation-aware markers.
+4. **IR-4 `rec-sfpl-summer-stride` / `rec-sfpl-one-city-one-book` `page="recurring"` vs `group="annual"`**
+   — stale metadata; rendering already correct.
+5. **IR-5** 28 verified rows with blank core cells — confirmed consistent with the published rule and the
+   existing `flag-verified-rows-with-blank-core-cell` item; no action required.
+6. **IR-6 domain hygiene:** `unionsquaresf.com` is parked/for-sale (do not source); `somarts.org/
+   exhibition/diadelosmuertos*` serves a 2018 archive page (current edition lives at
+   `somarts.org/exhibition/intheirname/`).
+7. **Gap adds proposed (all live-verified from official pages 2026-10-18):** GitHub Universe 2026
+   (Oct 28–29, Fort Mason Center; in-person $1,399 / team $1,119 / **virtual free** / workshop $99 /
+   certification $30 — https://githubuniverse.com/); SOMArts "In Their Name: Día de Los Muertos 2026"
+   (opening Fri Oct 23 6–9 p.m., "Tickets: $15, free for youth 16 years old and under; NOTAFLOF";
+   exhibition Oct 24–Nov 20 — https://somarts.org/event/intheirname-opening/ + /whats-on/); ZINETHING!
+   monthly zine meetup (3rd Tuesdays; next Tue Oct 20, 6–7:30 p.m., Hormel LGBTQIA Center, 100 Larkin
+   St; cost NOT published → blank/unverified — https://www.sfzinefest.org/); Sacred Relics of St. Francis
+   & St. Clare veneration (Oct 16–Nov 28 daily 9–4, St. Mary's Cathedral, 1111 Gough St; cost not
+   published → blank — https://www.osmsf.org/); SF Zine Fest 2026 concluded-edition annual record
+   (Sept 6, The Hibernia, 1 Jones St); SOMArts "In the Shadows of the West" (Jan 23–Mar 26, 2027).
+8. **Flagged exclusion proposed:** FAN EXPO San Francisco is not on the organiser's 2026–27 circuit
+   (https://fanexpohq.com/home/events/ lists no SF edition; fanexposf.com redirects there) — suggest
+   review id `flag-fan-expo-no-sf-2026`, same pattern as the SailGP flag.
+
+**Live re-verification (28 official pages, 2026-10-18):** all seven Illuminate LIVE free rows, Sunday
+Streets Excelsior, Cloudflare Connect (existing four-days copy flag reconfirmed), D1/D11 Family Summits
+(sf.gov "Cost: Free"), Boo at the Zoo ("free with paid daytime admission" — blank cost correct), Musée
+Mécanique ("Admission is free!"), Gaming at The Mix, GDC 2027 pricing (exact match incl. Festival $549 /
+Game Changer $1,249 / Festival Hall $175), Gamesforum SF pricing (exact match $149/$199/$239/$203/$167,
+Oct 26–27), GamesBeat NEXT pricing (exact match $899/$1,600→$1,200/$499/complimentary), AI Engineer Code
+Summit (exact match $1,299/$1,499/$299, Nov 10–12), AI Week directory (27 events Dec 7–13), and the
+five near-term SF Symphony rows (Dvořák Oct 16–18, The Ring Oct 20, Hisaishi Oct 22–24, Music for
+Families Oct 24, Adams & Mendelssohn Oct 29–31). No hallucinations found in these rows; no corrections
+required beyond IR-1/IR-2 above.

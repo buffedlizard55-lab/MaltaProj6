@@ -1,0 +1,146 @@
+{
+  "session": "arena-8eaf6c0a",
+  "date": "2026-10-18",
+  "scope": "Gap research for free SF-city events near 2026-10-18 (gaming, then music, then AI, then everything else), plus paid/special candidates and verified negative exclusions. Every candidate was fetched from an official organiser / venue / government page during this session. Decisions are proposals for the final integration session; nothing here is applied to data/events.py by this session.",
+  "candidates": [
+    {
+      "proposed_id": "spc-github-universe-2026",
+      "title": "GitHub Universe 2026",
+      "decision": "propose_verified_add",
+      "group": "special",
+      "category": "technology",
+      "focus_note": "Developer conference with an agentic-AI theme; focus tag left to integration (ai vs other).",
+      "dates": "October 27-30, 2026 (main conference October 28-29; invitation-only day 0 October 27; Day of Learning at GitHub HQ October 30)",
+      "schedule": "Oct 28: doors 7:30 a.m., keynote 9:00 a.m., sessions 10:00 a.m.-5:30 p.m.; Oct 29: doors 8:00 a.m., sessions 9:00 a.m.-2:00 p.m., closing keynote 2:00 p.m.",
+      "location": "Fort Mason Center, San Francisco, CA",
+      "cost_published_wording": "In-person $1,399; team $1,119 per pass (4+); virtual free; workshop add-on $99; certification voucher $30; Day of Learning sold out",
+      "cost_note": "Mixed: in-person tiers are paid and the virtual ticket is explicitly free. Under the project rules the amount wording is quoted exactly; the free virtual tier is explicit free access.",
+      "source_url": "https://githubuniverse.com/",
+      "source_checked": "2026-10-18 — fetched live: 'october 28-29 / fort mason center, san francisco, CA', pricing block lists in-person $1399, virtual 'free', team $1119/$1399, workshop $99, certification $30.",
+      "why": "Near-term (10 days out), physically inside SF city limits (Fort Mason), missing from the 262-row union (title scan for 'github'/'universe' returned no rows). Fits the brief's AI/developer focus area alongside TechCrunch Disrupt and Microsoft Ignite."
+    },
+    {
+      "proposed_id": "spc-somarts-in-their-name-2026",
+      "title": "In Their Name: Día de Los Muertos 2026 (SOMArts Cultural Center)",
+      "decision": "propose_verified_add",
+      "group": "special",
+      "category": "arts",
+      "dates": "Exhibition October 24 - November 20, 2026; opening reception & exhibition unveiling Friday, October 23, 2026, 6:00-9:00 p.m.",
+      "location": "SOMArts Cultural Center, 934 Brannan Street, San Francisco, CA 94103",
+      "cost_published_wording": "Opening reception tickets: $15, free for youth 16 years old and under; NOTAFLOF. Exhibition gallery admission not stated on the fetched pages.",
+      "cost_note": "Mixed with explicit free access for youth 16 and under (opening). Exhibition-run cost is not published — leave blank/unverified unless the exhibition page states one.",
+      "source_url": "https://somarts.org/event/intheirname-opening/",
+      "secondary_source_url": "https://somarts.org/whats-on/",
+      "source_checked": "2026-10-18 — fetched live: event page states 'October 23 @ 6:00 pm - 9:00 pm ... Tickets: $15, free for youth 16 years old and under; NOTAFLOF'; What's On states exhibition 'October 24, 2026 - November 20, 2026', 'Now in its 27th year'.",
+      "why": "Near-term (opening in 5 days), inside SF city limits, an annual Day-of-the-Dead exhibition in its 27th year — fills an arts/community gap for late October; not present in the union (title scan 'somarts'/'marigold'/'día' returned no rows)."
+    },
+    {
+      "proposed_id": "rec-sfzinefest-zinething",
+      "title": "ZINETHING! monthly LGBTQIA zine-making meetup (SF Zine Fest with James C. Hormel LGBTQIA Center)",
+      "decision": "propose_verified_add_cost_blank",
+      "group": "recurring",
+      "category": "community",
+      "focus_note": "Arts/zine community programme; not gaming/music/AI.",
+      "dates": "Every 3rd Tuesday of the month; published next date Tuesday, October 20, 2026 (page also states: no ZINETHING in November, none in December)",
+      "schedule": "6:00-7:30 p.m.",
+      "location": "James C. Hormel LGBTQIA Center, 3rd Floor, 100 Larkin Street, San Francisco, CA 94102 (SF Public Library Main Library)",
+      "cost_published_wording": "",
+      "cost_note": "The official page does not state a cost. Leave blank and mark unverified per the project rules; do not infer 'free' even though it is a library-space meetup.",
+      "source_url": "https://www.sfzinefest.org/",
+      "source_checked": "2026-10-18 — fetched live: 'a monthly LGBTQIA zine-making meetup presented by SF Zine Fest in partnership with the Hormel LGBTQIA Center ... Every 3rd Tuesday of the month ... Tues., October 20 - 6-7:30 pm'.",
+      "why": "Near-term recurring (Oct 20, 2 days out), inside SF city limits, a monthly community programme missing from the union; kept out of the free-only main list until a source states the cost."
+    },
+    {
+      "proposed_id": "spc-osms-st-francis-relics-2026",
+      "title": "Sacred Relics of St. Francis & St. Clare — veneration at St. Mary's Cathedral",
+      "decision": "propose_verified_add_cost_blank",
+      "group": "special",
+      "category": "arts",
+      "dates": "October 16 - November 28, 2026 (already under way on 2026-10-18)",
+      "schedule": "Daily 9:00 a.m. - 4:00 p.m., except during weekday Mass 12:00-1:00 p.m.",
+      "location": "St. Mary's Cathedral, 1111 Gough Street, San Francisco, CA 94109",
+      "cost_published_wording": "",
+      "cost_note": "The announcement states 'Visitors are welcome to venerate the relics' but publishes no admission amount. Leave blank/unverified; never infer.",
+      "source_url": "https://www.osmsf.org/",
+      "source_checked": "2026-10-18 — fetched live on the Old St. Mary's Cathedral & Chinese Mission site: 'sacred relics and treasures from Assisi ... Visitors are welcome to venerate the relics from October 16 through November 28, 2026, daily from 9:00 a.m. to 4:00 p.m. ... at St. Mary's Cathedral (1111 Gough St.; San Francisco CA, 94109)'.",
+      "why": "Under way now through late November, inside SF city limits (announced by Old St. Mary's; hosted at St. Mary's Cathedral), free-admission wording unconfirmed so cost stays blank."
+    },
+    {
+      "proposed_id": "ann-sf-zine-fest",
+      "title": "San Francisco Zine Fest (25th Annual, 2026 edition)",
+      "decision": "propose_verified_add_concluded",
+      "group": "annual",
+      "category": "arts",
+      "dates": "Sunday, September 6, 2026 (2026 edition concluded before today)",
+      "location": "The Hibernia, 1 Jones Street, San Francisco, CA",
+      "cost_published_wording": "",
+      "cost_note": "Admission amount not stated on the fetched homepage; leave blank/unverified if added.",
+      "source_url": "https://www.sfzinefest.org/",
+      "source_checked": "2026-10-18 — fetched live: poster description 'Forever Zines! The 25th Annual San Francisco Zine Fest. 2026 and beyond. Venue: The Hibernia, 1 Jones St, SF, CA on Sunday Sept. 6. Masks required'; closing message confirms the 2026 fest has concluded.",
+      "why": "Annual SF-city event in its 25th year, consistent with the catalogue's practice of keeping concluded editions as records with a concluded badge (see README)."
+    },
+    {
+      "proposed_id": "spc-somarts-in-the-shadows-2027",
+      "title": "In the Shadows of the West (SOMArts Cultural Center)",
+      "decision": "propose_verified_add_cost_blank",
+      "group": "special",
+      "category": "arts",
+      "dates": "January 23 - March 26, 2027",
+      "location": "SOMArts Cultural Center, 934 Brannan Street, San Francisco, CA 94103",
+      "cost_published_wording": "",
+      "cost_note": "Admission not stated on the What's On page; leave blank/unverified.",
+      "source_url": "https://somarts.org/whats-on/",
+      "source_checked": "2026-10-18 — fetched live: 'In the Shadows of the West ... January 23, 2027 - March 26, 2027'.",
+      "why": "Future dated exhibition with confirmed calendar dates, inside SF city limits; optional for the catalogue's exhibition coverage."
+    }
+  ],
+  "not_added": [
+    {
+      "title": "FAN EXPO San Francisco",
+      "decision": "not_added_propose_flagged_exclusion",
+      "reason": "The organiser's official events calendar (Informa/FAN EXPO HQ) lists no San Francisco edition on the 2026-2027 circuit; fanexposf.com now redirects to the HQ events page. Same evidence pattern as the existing SailGP no-SF-stop flag.",
+      "source_url": "https://fanexpohq.com/home/events/",
+      "source_checked": "2026-10-18 — fetched live: event tiles list New Orleans, Portland, Vancouver, Cleveland, Toronto Comicon, Calgary, MEGACON Orlando, Philadelphia, Dallas, Denver, Chicago, FAN EXPO Canada, Edmonton, Boston, Dallas FAN FESTIVAL — no San Francisco.",
+      "suggested_review_id": "flag-fan-expo-no-sf-2026"
+    },
+    {
+      "title": "Noontime Concerts (Old St. Mary's)",
+      "decision": "not_added",
+      "reason": "The historic free lunchtime concert series is not published on the church's current official site, which lists Mass and devotions only (weekend Mass, weekday Mass Tue-Fri 12:05 p.m., Adoration, confessions). No series page, schedule or current edition could be verified from an official source, so no row is created.",
+      "source_url": "https://www.osmsf.org/",
+      "source_checked": "2026-10-18 — fetched live (also tried https://www.oldsaintmarys.org/noontime-concerts which returned empty content)."
+    },
+    {
+      "title": "Union Square tree lighting / ice rink (2026 season)",
+      "decision": "not_added",
+      "reason": "unionsquaresf.com is no longer an official district site (the fetched page is a parked/for-sale domain with ad-injection content, 'unionsquaresf.com may be for sale'). No official 2026 page for a tree-lighting ceremony was located from a government or organiser source. Consistent with the existing flag-union-square-ice-rink item.",
+      "source_url": "https://www.unionsquaresf.com/events",
+      "source_checked": "2026-10-18 — fetched live; parked-domain content observed. Union Square free programming already covered by rec-union-square-programming via SF Rec & Park."
+    },
+    {
+      "title": "SOMArts Día de los Muertos archive URL",
+      "decision": "not_added_source_hygiene_note",
+      "reason": "somarts.org/exhibition/diadelosmuertos (and the 2018 slug) serves a 2018 archive page, not the current edition. Any future row must cite the current exhibition page (somarts.org/exhibition/intheirname/) rather than the redirecting slug.",
+      "source_url": "https://somarts.org/exhibition/diadelosmuertos2018/",
+      "source_checked": "2026-10-18 — fetched live; 2018 exhibition content returned."
+    },
+    {
+      "title": "SF Tech Week 2026",
+      "decision": "not_added_already_rejected",
+      "reason": "2026 edition ran October 5-11, 2026 (concluded before today) and was already evaluated and not added by session arena-91296e94 (see data/gap-candidates-91296e94.json). Not re-proposed.",
+      "source_url": "https://www.sf.gov/",
+      "source_checked": "2026-10-18 — cross-checked prior gap-candidates files before research to avoid duplicate proposals."
+    },
+    {
+      "title": "Together in Holiness marriage conference (Oct 24, 2026)",
+      "decision": "not_added_out_of_scope",
+      "reason": "Official page places it at St. Patrick's Seminary, Menlo Park, CA — outside San Francisco city limits.",
+      "source_url": "https://www.osmsf.org/",
+      "source_checked": "2026-10-18 — fetched live on osmsf.org; 'October 24 at St. Patrick's Seminary in Menlo Park'."
+    }
+  ],
+  "coverage_notes": [
+    "Title/notes scan of the 262-row union before research confirmed Bay to Breakers (ann-bay-to-breakers), SF City Guides walking tours (rec-sf-city-guides), HumanX (ann-humanx-2026), Dreamforce (x-s-028) and Litquake (ann-litquake) are already catalogued, so they were not re-proposed.",
+    "Prior gap files (76d2c635, 8e8e24dc, 91296e94, bdaa17b4, db227e31, fc3438db) were read first; SF Tech Week, Ferry Building Trick-or-Treat, Dogpatch Games, GobbleCon and the Castro items were already evaluated there."
+  ]
+}
