@@ -61,12 +61,23 @@ FOCUS_BY_ID = {
     "x-s-024": "music",
     "x-s-025": "music",
 
+    # --- arena-fc3438db additions (2026-10-18) ---------------------------
+    "spc-symphony-the-ring": "music",
+    "spc-symphony-music-for-families": "music",
+    "spc-symphony-adams-mendelssohn": "music",
+    "spc-opera-strauss-concert": "music",
+    "spc-opera-ball": "music",
+    "spc-opera-adlers-concert": "music",
+    "spc-opera-chorus-concert": "music",
+
     # --- AI -------------------------------------------------------------
     "ann-sfpl-tech-week": "ai",
     "spc-ai-engineer-code-2026": "ai",
     "spc-ai-week-sf-2026": "ai",
     "spc-current-sf-2026": "ai",
     "spc-microsoft-ignite-2026": "ai",
+    "rec-sfpl-ai-workshops": "ai",
+    "ann-humanx-2026": "ai",
 }
 
 FOCUS_LABELS = [
@@ -79,7 +90,8 @@ FOCUS_LABELS = [
 # Rows that are AI/tech adjacent in programme but are NOT branded AI by their
 # own official source. They are listed on the AI page under a clearly
 # separated heading rather than being tagged, so nothing is over-claimed.
-AI_ADJACENT = ["x-s-028", "x-s-031", "spc-cloudflare-connect-2026"]
+AI_ADJACENT = ["x-s-028", "x-s-031", "spc-cloudflare-connect-2026",
+               "spc-informs-2026", "spc-semicon-west-2026"]
 
 # --------------------------------------------------------------------------
 # Cost classification

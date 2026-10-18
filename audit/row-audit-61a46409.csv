@@ -93,7 +93,7 @@ ann-human-rights-awards,Human Rights Awards,other,free,Free,verified,current,202
 ann-parol-lantern,Parol Lantern Festival & Parade (SOMA Pilipinas),other,free,Free,verified,current,2026-12-12,2026-12-12,parsed,2026-12-12,www.somapilipinas.org,330,
 ann-sf-marathon,The San Francisco Marathon,other,unknown,,unverified,current,2027-07-24,2027-07-25,parsed,2027-07-24,www.thesfmarathon.com,843,unverified-row
 ann-sfmusic-week,SF Music Week,music,unknown,,unverified,concluded,2026-02-23,2026-03-01,parsed,,www.sf.gov,547,unverified-row
-spc-boo-at-zoo,Boo at the Zoo,other,unknown,,unverified,current,2026-10-31,2026-10-31,parsed,2026-10-31,sfrecpark.org,209,unverified-row
+spc-boo-at-zoo,Boo at the Zoo,other,unknown,,unverified,current,2026-10-31,2026-10-31,parsed,2026-10-31,www.sfzoo.org,411,unverified-row
 spc-scaregrove,Scaregrove Halloween Event,other,free,Free,verified,current,2026-10-30,2026-10-30,parsed,2026-10-30,sfrecpark.org,56,
 spc-supernatural,SuperNatural — Cal Academy's annual Halloween extravaganza,other,paid,General admission adult $60 ($55 members); youth 3-17 $45 ($40 members),verified,current,2026-10-24,2026-10-24,parsed,2026-10-24,www.calacademy.org,265,
 spc-presidio-summer,Presidio 2026 summer event season,other,free,Free,verified,concluded,2026-05-25,2026-09-06,parsed,,presidio.gov,372,
@@ -175,6 +175,20 @@ spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",ai,free,
 spc-current-sf-2026,Current San Francisco 2026 (Confluent — real-time data and AI),ai,unknown,,unverified,current,2026-11-04,2026-11-05,parsed,2026-11-04,www.moscone.com,526,unverified-row;new-this-session
 spc-microsoft-ignite-2026,"Microsoft Ignite 2026 (AI, cloud, security and developer conference)",ai,unknown,,unverified,current,2026-11-17,2026-11-20,parsed,2026-11-17,www.moscone.com,467,unverified-row;new-this-session
 spc-cloudflare-connect-2026,Cloudflare Connect 2026,other,unknown,,unverified,current,2026-10-19,2026-10-21,parsed,2026-10-19,www.moscone.com,409,unverified-row;new-this-session
+spc-symphony-the-ring,The Ring — Film with Live Orchestra (SF Symphony),music,unknown,,unverified,current,2026-10-20,2026-10-20,parsed,2026-10-20,www.sfsymphony.org,403,unverified-row
+spc-symphony-music-for-families,Music for Families (SF Symphony),music,unknown,,unverified,current,2026-10-24,2026-10-24,parsed,2026-10-24,www.sfsymphony.org,312,unverified-row
+spc-symphony-adams-mendelssohn,Elim Chan Conducts Adams and Mendelssohn (SF Symphony),music,unknown,,unverified,current,2026-10-29,2026-10-31,parsed,2026-10-29,www.sfsymphony.org,365,unverified-row
+spc-opera-strauss-concert,Strauss In Concert (San Francisco Opera),music,unknown,,unverified,current,2026-11-06,2026-11-06,parsed,2026-11-06,www.sfopera.com,401,unverified-row
+spc-opera-ball,Opera Ball (San Francisco Opera),music,unknown,,unverified,current,2026-11-12,2026-11-12,parsed,2026-11-12,www.sfopera.com,410,unverified-row
+spc-opera-adlers-concert,The Future Is Now: Adlers in Concert (San Francisco Opera),music,unknown,,unverified,current,2026-11-20,2026-11-20,parsed,2026-11-20,www.sfopera.com,378,unverified-row
+spc-opera-chorus-concert,San Francisco Opera Chorus in Concert,music,unknown,,unverified,current,2026-11-22,2026-11-22,parsed,2026-11-22,www.sfopera.com,489,unverified-row
+spc-castro-tree-fundraiser,Castro Holiday Tree Fundraiser at Midnight Sun,other,unknown,,verified,current,2026-10-24,2026-10-24,parsed,2026-10-24,castromerchants.com,274,verified-with-blank-core:cost
+spc-castro-wine-walk-dec,Castro Wine Walk (December edition),other,unknown,,unverified,current,2026-12-17,2026-12-17,parsed,2026-12-17,castromerchants.com,553,unverified-row
+spc-exploratorium-creepatorium,After Dark: Creepatorium (Exploratorium),other,unknown,,unverified,current,2026-10-29,2026-10-29,parsed,2026-10-29,www.exploratorium.edu,460,unverified-row
+spc-informs-2026,INFORMS Annual Meeting 2026,other,unknown,,unverified,current,2026-11-01,2026-11-04,parsed,2026-11-01,www.moscone.com,493,unverified-row
+spc-semicon-west-2026,SEMICON West 2026,other,unknown,,unverified,concluded,2026-10-13,2026-10-15,parsed,,www.moscone.com,415,unverified-row
+ann-humanx-2026,HumanX 2026 (AI conference),ai,unknown,,unverified,concluded,2026-04-06,2026-04-09,parsed,,moscone.com,634,unverified-row
+rec-sfpl-ai-workshops,"SF Public Library AI workshops, talks & panels",ai,free,Free,verified,current,,,none,,sfpl.org,621,no-confirmed-date
 x-w-003,Heart of the City Farmers Market,other,free,Free entry,verified,current,,,none,,hotcfarmersmarket.org,206,no-confirmed-date
 x-w-005,Fillmore Farmers' Market,other,free,Free entry,verified,current,,,none,,www.pcfma.org,166,no-confirmed-date
 x-w-006,Noe Valley Farmers Market,other,free,Free entry,verified,current,,,none,,www.noevalleyfarmersmarket.com,172,no-confirmed-date

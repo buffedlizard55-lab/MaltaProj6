@@ -1,0 +1,154 @@
+{
+  "session": "arena-fc3438db",
+  "verified_on": "2026-10-18",
+  "note": "Gap research for the brief's stated focus (free events: gaming, music, AI, then everything else), SF city-limits only. Every candidate was checked against an official page on 2026-10-18. Candidates added to the catalogue appear in data/events.py with full sources; candidates below were NOT added and say why.",
+  "added_to_catalogue": [
+    {
+      "id": "rec-sfpl-gaming",
+      "source": "https://sfpl.org/teens/the-mix/gaming",
+      "why": "Free gaming programmes at SFPL (The Mix drop-in video/tabletop, D&D, monthly tournaments)"
+    },
+    {
+      "id": "rec-sfpl-chess",
+      "source": "https://sfpl.org/events",
+      "why": "Free recurring chess clubs at SFPL branches"
+    },
+    {
+      "id": "rec-sfpl-ai-workshops",
+      "source": "https://sfpl.org/events",
+      "why": "Free periodic AI workshops/talks/panels at SFPL"
+    },
+    {
+      "id": "ann-sf-tech-week",
+      "source": "https://sfpl.org/locations/main-library/bridge-main-5th-floor/sf-tech-week",
+      "why": "Free annual technology week (May 9-16, 2026), AI tools among the topics"
+    },
+    {
+      "id": "ann-humanx-2026",
+      "source": "https://moscone.com/events/humanx-2026",
+      "why": "HumanX AI conference 2026 edition at Moscone (Apr 6-9, concluded)"
+    },
+    {
+      "id": "spc-current-sf-2026",
+      "source": "https://www.moscone.com/events/current-san-francisco-2026",
+      "why": "Confluent's real-time data & AI conference (Nov 4-5, Moscone West)"
+    },
+    {
+      "id": "spc-techcrunch-disrupt-2026",
+      "source": "https://www.moscone.com/events/techcrunch-disrupt-2026",
+      "why": "Startup/AI-adjacent conference (Oct 13-15, concluded)"
+    },
+    {
+      "id": "spc-symphony-the-ring",
+      "source": "https://www.sfsymphony.org/Buy-Tickets/2026-27/The-Ring",
+      "why": "Music: film-with-orchestra performance Oct 20"
+    },
+    {
+      "id": "spc-symphony-music-for-families",
+      "source": "https://www.sfsymphony.org/Buy-Tickets/2026-27/Music-for-Families-Oct",
+      "why": "Music: family concert Oct 24"
+    },
+    {
+      "id": "spc-symphony-adams-mendelssohn",
+      "source": "https://www.sfsymphony.org/Buy-Tickets/2026-27/Doctor-Atomic-and-Mendelssohn",
+      "why": "Music: concert run Oct 29-31"
+    },
+    {
+      "id": "spc-opera-strauss-concert",
+      "source": "https://www.sfopera.com/seasons/fall-concert/",
+      "why": "Music: Nov 6"
+    },
+    {
+      "id": "spc-opera-ball",
+      "source": "https://www.sfopera.com/seasons/opera-ball/",
+      "why": "Music/fundraiser: Nov 12"
+    },
+    {
+      "id": "spc-opera-adlers-concert",
+      "source": "https://www.sfopera.com/seasons/the-future-is-now-adlers-in-concert/",
+      "why": "Music: Nov 20"
+    },
+    {
+      "id": "spc-opera-chorus-concert",
+      "source": "https://www.sfopera.com/seasons/san-francisco-opera-chorus-in-concert/",
+      "why": "Music: Nov 22"
+    },
+    {
+      "id": "spc-exploratorium-creepatorium",
+      "source": "https://www.exploratorium.edu/visit/calendar/after-dark",
+      "why": "Named After Dark Halloween party Oct 29"
+    },
+    {
+      "id": "spc-cloudflare-connect-2026",
+      "source": "https://www.moscone.com/events/cloudflare-connect-2026",
+      "why": "Tech convention Oct 19-21"
+    },
+    {
+      "id": "spc-informs-2026",
+      "source": "https://www.moscone.com/events/informs-annual-meeting-2026",
+      "why": "Analytics/ML convention Nov 1-4"
+    },
+    {
+      "id": "spc-semicon-west-2026",
+      "source": "https://www.moscone.com/events/semicon-west-2026",
+      "why": "Semiconductor tradeshow Oct 13-15 (concluded)"
+    },
+    {
+      "id": "spc-castro-tree-fundraiser",
+      "source": "https://castromerchants.com/events",
+      "why": "Neighbourhood fundraiser Oct 24 (cost blank)"
+    },
+    {
+      "id": "spc-castro-wine-walk-dec",
+      "source": "https://castromerchants.com/events",
+      "why": "Ticketed neighbourhood walk Dec 17"
+    }
+  ],
+  "not_added": [
+    {
+      "candidate": "SF Blackout: Gambits & Ghouls Chess Game Night (SPARK Social, Oct 24 2026, free)",
+      "checked": "Aggregator listing only; sf.gov city calendar checked 2026-10-18 (civic meetings only)",
+      "reason": "No official organiser page; aggregator URLs barred as sources",
+      "published_as": "flag-sf-blackout-chess"
+    },
+    {
+      "candidate": "The AI Conference (San Francisco)",
+      "checked": "https://www.theaiconference.com/ \u2014 fetch failed 2026-10-18",
+      "reason": "Official page unreachable; third-party calendars claim Sep 29-Oct 1, 2026 and Oct 12-14, 2027 SF dates but the project's rules bar asserting unverified dates",
+      "published_as": "flag-ai-conference-unconfirmed"
+    },
+    {
+      "candidate": "Bay Area Science Festival (free; press places a 2026 edition at UCSF Mission Bay on Oct 17)",
+      "checked": "https://www.bayareascience.org/calendar/ fetched 2026-10-18 \u2014 regional multi-city calendar, festival's own page not confirmed",
+      "reason": "City-limits rule + no official festival page confirmed this pass",
+      "published_as": "flag-bay-area-science-festival"
+    },
+    {
+      "candidate": "HumanX 2027",
+      "checked": "https://www.humanx.co/us (organiser)",
+      "reason": "2027 edition moves to Las Vegas (Mar 7-10, 2027) \u2014 outside city-limits scope",
+      "published_as": "flag-humanx-2027-las-vegas"
+    },
+    {
+      "candidate": "AI Engineer World's Fair",
+      "checked": "no official page fetched successfully this pass (third-party calendars only)",
+      "reason": "Dates/city not confirmed from an official page; nothing asserted"
+    },
+    {
+      "candidate": "Config 2026, APA 2026, ACP Internal Medicine 2026, Biophysical Society 2026, Winter FancyFaire 2027, Atlassian Team '27 (all Moscone)",
+      "checked": "https://moscone.com/taxonomy/term/114 (official venue listing)",
+      "reason": "Not in the brief's focus themes (gaming/music/AI) and not near the snapshot window; venue row already points at the Moscone calendar. A future pass can add them the same way as the six Moscone rows added here"
+    },
+    {
+      "candidate": "Castro Night Market (3rd Fridays, select months, free)",
+      "checked": "castromerchants.com/events (official) lists a September 18 edition only; castronightmarket.com linked from that page",
+      "reason": "No upcoming edition posted at fetch time; cadence 'select months' not enough to assert a next date"
+    },
+    {
+      "candidate": "Stern Grove Festival 2027, Hardly Strictly Bluegrass 2027",
+      "checked": "sterngrove.org / hardlystrictlybluegrass.com (prior passes)",
+      "reason": "2027 dates not announced; already carried as unverified/flagged rows from earlier passes"
+    }
+  ],
+  "integration_note_2026_10_18": "After this pass, concurrent sessions arena-3ab2abd4 / arena-91296e94 / arena-61a46409 merged overlapping work (PR #32-#37). Of the 20 rows recorded here as added, spc-techcrunch-disrupt-2026 was superseded by arena-91296e94's priced version; rec-sfpl-gaming, rec-sfpl-chess and ann-sf-tech-week were superseded by arena-61a46409's richer-sourced SFPL rows (rec-sfpl-mix-gaming, rec-sfpl-gaming-citywide, ann-sfpl-tech-week); spc-current-sf-2026 and spc-cloudflare-connect-2026 were superseded by arena-61a46409's same-id rows (identical Moscone sources). 14 rows from this pass remain in the published catalogue."
+}

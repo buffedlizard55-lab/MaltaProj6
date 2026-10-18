@@ -955,10 +955,10 @@ EVENTS += [
         page="special", type="Special - Dated",
         schedule="10:00 a.m.-3:00 p.m.", dates="Saturday, October 31, 2026",
         location="San Francisco Zoo & Gardens, Sloat Boulevard", area="Outer Sunset",
-        cost="Ticketed", organiser="San Francisco Zoo & Gardens with SF Recreation and Parks",
-        source_name="SF Recreation and Parks — calendar (Boo at the Zoo)",
-        source_url="https://sfrecpark.org/Calendar.aspx", status="verified",
-        notes="Listed on the official SF Recreation and Parks calendar."),
+        cost="Free with paid zoo admission or Zoo membership", organiser="San Francisco Zoo & Gardens",
+        source_name="San Francisco Zoo & Gardens — Boo at the Zoo (official event page)",
+        source_url="https://www.sfzoo.org/event/boo-at-the-zoo/", status="verified",
+        notes="Verified 2026-10-18 against the official San Francisco Zoo & Gardens event page: Saturday, October 31, 2026, 10:00 a.m.-3:00 p.m. The zoo page states the event is free with paid daytime zoo admission or a Zoo membership."),
     dict(
         id="spc-scaregrove", title="Scaregrove Halloween Event",
         page="special", type="Special - Dated",
@@ -1807,6 +1807,187 @@ EVENTS += [
         source_name="Moscone Center — Cloudflare Connect 2026 (official venue event listing)",
         source_url="https://www.moscone.com/events/cloudflare-connect-2026", status="unverified",
         notes="Added 2026-10-18 by session arena-61a46409 from the Moscone Center's own event listing, which gives the in-person dates (October 19-21, 2026) and the city. The listing describes a 'bigger and bolder program' spanning keynotes, technical sessions and deep dives on security, networking, performance and developer solutions, but publishes no admission price, so the cost cell is left blank rather than inferred."),
+    dict(
+        id="spc-symphony-the-ring", title="The Ring — Film with Live Orchestra (SF Symphony)",
+        page="special", type="Special - Dated",
+        schedule="", dates="October 20, 2026",
+        location="Davies Symphony Hall, 201 Van Ness Avenue", area="Civic Center",
+        cost="Ticketed", organiser="San Francisco Symphony",
+        source_name="San Francisco Symphony — The Ring (film with live orchestra)",
+        source_url="https://www.sfsymphony.org/Buy-Tickets/2026-27/The-Ring", status="verified",
+        notes="Added by arena-fc3438db. The Symphony homepage (fetched 2026-10-18) lists 'The Ring—Film with "
+              "Live Orchestra, Oct 20' under MORE UPCOMING and links this ticket page. Start time is not "
+              "published on the fetched page, so the schedule cell is left blank."),
+
+    dict(
+        id="spc-symphony-music-for-families", title="Music for Families (SF Symphony)",
+        page="special", type="Special - Dated",
+        schedule="", dates="October 24, 2026",
+        location="Davies Symphony Hall, 201 Van Ness Avenue", area="Civic Center",
+        cost="Ticketed", organiser="San Francisco Symphony",
+        source_name="San Francisco Symphony — Music for Families (October)",
+        source_url="https://www.sfsymphony.org/Buy-Tickets/2026-27/Music-for-Families-Oct", status="verified",
+        notes="Added by arena-fc3438db. Listed as 'Music for Families, Oct 24' on the Symphony homepage "
+              "(fetched 2026-10-18). Start time is not published on the fetched page."),
+
+    dict(
+        id="spc-symphony-adams-mendelssohn", title="Elim Chan Conducts Adams and Mendelssohn (SF Symphony)",
+        page="special", type="Special - Dated",
+        schedule="", dates="October 29-31, 2026",
+        location="Davies Symphony Hall, 201 Van Ness Avenue", area="Civic Center",
+        cost="Ticketed", organiser="San Francisco Symphony",
+        source_name="San Francisco Symphony — Doctor Atomic and Mendelssohn",
+        source_url="https://www.sfsymphony.org/Buy-Tickets/2026-27/Doctor-Atomic-and-Mendelssohn", status="verified",
+        notes="Added by arena-fc3438db. The Symphony homepage (fetched 2026-10-18) lists 'Elim Chan Conducts "
+              "Adams and Mendelssohn, Oct 29 - Oct 31' and links this ticket page. Start times are not "
+              "published on the fetched page."),
+
+    dict(
+        id="spc-opera-strauss-concert", title="Strauss In Concert (San Francisco Opera)",
+        page="special", type="Special - Dated",
+        schedule="", dates="November 6, 2026",
+        location="War Memorial Opera House", area="Civic Center",
+        cost="Ticketed", organiser="San Francisco Opera",
+        source_name="San Francisco Opera — Strauss In Concert",
+        source_url="https://www.sfopera.com/seasons/fall-concert/", status="verified",
+        notes="Added by arena-fc3438db from the opera's Upcoming Events list (fetched 2026-10-18): 'NOV 6 ... "
+              "Strauss In Concert, War Memorial Opera House' — Music Director Eun Sun Kim leads the SF Opera "
+              "Orchestra. Start time is not published on the fetched page."),
+
+    dict(
+        id="spc-opera-ball", title="Opera Ball (San Francisco Opera)",
+        page="special", type="Special - Dated",
+        schedule="", dates="November 12, 2026",
+        location="City Hall, 1 Dr. Carlton B. Goodlett Place", area="Civic Center",
+        cost="Ticketed (fundraiser)", organiser="San Francisco Opera",
+        source_name="San Francisco Opera — Opera Ball",
+        source_url="https://www.sfopera.com/seasons/opera-ball/", status="verified",
+        notes="Added by arena-fc3438db from the opera's Upcoming Events list (fetched 2026-10-18): 'NOV 12 ... "
+              "Opera Ball, City Hall' — described on the page as the company's biggest fundraiser of the year. "
+              "Ticket prices are not published on the fetched page."),
+
+    dict(
+        id="spc-opera-adlers-concert", title="The Future Is Now: Adlers in Concert (San Francisco Opera)",
+        page="special", type="Special - Dated",
+        schedule="", dates="November 20, 2026",
+        location="Herbst Theatre, 401 Van Ness Avenue", area="Civic Center",
+        cost="Ticketed", organiser="San Francisco Opera",
+        source_name="San Francisco Opera — The Future Is Now: Adlers in Concert",
+        source_url="https://www.sfopera.com/seasons/the-future-is-now-adlers-in-concert/", status="verified",
+        notes="Added by arena-fc3438db from the opera's Upcoming Events list (fetched 2026-10-18): 'NOV 20 ... "
+              "Herbst Theatre' — the annual Adler Fellows showcase with the SF Opera Orchestra. Start time is "
+              "not published on the fetched page."),
+
+    dict(
+        id="spc-opera-chorus-concert", title="San Francisco Opera Chorus in Concert",
+        page="special", type="Special - Dated",
+        schedule="", dates="November 22, 2026",
+        location="Multiple venues (as listed by the organiser)", area="Civic Center",
+        cost="Ticketed", organiser="San Francisco Opera",
+        source_name="San Francisco Opera — San Francisco Opera Chorus in Concert",
+        source_url="https://www.sfopera.com/seasons/san-francisco-opera-chorus-in-concert/", status="verified",
+        notes="Added by arena-fc3438db from the opera's Upcoming Events list (fetched 2026-10-18): 'NOV 22 ... "
+              "Multiple Venues' — Chorus Director John Keene leads the company's full-time chorus. The organiser "
+              "lists the venue only as 'Multiple Venues'; the exact hall and start time are not published on the "
+              "fetched page, so those cells are left blank."),
+
+    dict(
+        id="spc-castro-tree-fundraiser", title="Castro Holiday Tree Fundraiser at Midnight Sun",
+        page="special", type="Special - Dated",
+        schedule="4:00-7:00 p.m.", dates="Saturday, October 24, 2026",
+        location="Midnight Sun, 4067 18th Street", area="Castro",
+        cost="", organiser="Castro Merchants Association with Midnight Sun",
+        source_name="Castro Merchants Association — Events in the Hood",
+        source_url="https://castromerchants.com/events", status="verified",
+        notes="Added by arena-fc3438db. Listed on the organiser's events calendar (fetched 2026-10-18) as a "
+              "holiday-tree fundraiser hosted by Midnight Sun, Saturday, October 24, 2026, 4:00-7:00 p.m. The "
+              "listing states no admission price, so the cost cell is left blank rather than guessed."),
+
+    dict(
+        id="spc-castro-wine-walk-dec", title="Castro Wine Walk (December edition)",
+        page="special", type="Special - Dated",
+        schedule="6:00-9:00 p.m.", dates="Thursday, December 17, 2026",
+        location="Castro district businesses, San Francisco", area="Castro",
+        cost="Ticketed (ticket link on the official listing)",
+        organiser="Castro Merchants Association",
+        source_name="Castro Merchants Association — Castro Wine Walk December",
+        source_url="https://castromerchants.com/events", status="verified",
+        notes="Added by arena-fc3438db. The organiser's events calendar (fetched 2026-10-18) lists the December "
+              "edition on Thursday, December 17, 2026, 6:00-9:00 p.m. with a ticket link (11 participating "
+              "businesses). Editions run in select months (September 24 and December 17 are the ones listed); "
+              "the ticket price is not stated on the listing, so only 'Ticketed' is recorded."),
+
+    dict(
+        id="spc-exploratorium-creepatorium", title="After Dark: Creepatorium (Exploratorium)",
+        page="special", type="Special - Dated",
+        schedule="6:00-10:00 p.m.", dates="Thursday, October 29, 2026",
+        location="Exploratorium, Pier 15", area="Embarcadero / South Beach",
+        cost="Ticketed", organiser="Exploratorium",
+        source_name="Exploratorium — After Dark Thursday Nights",
+        source_url="https://www.exploratorium.edu/visit/calendar/after-dark", status="verified",
+        notes="Added by arena-fc3438db. Named on the After Dark page (fetched 2026-10-18) as the annual "
+              "Halloween party: 'After Dark: Creepatorium, Thu, Oct 29 2026, 6-10pm' with Gothicumbia and a "
+              "science-themed costume contest. Distinct from the weekly After Dark row; ticket prices are not "
+              "published on the fetched page."),
+
+    dict(
+        id="spc-informs-2026", title="INFORMS Annual Meeting 2026",
+        page="special", type="Special - Dated",
+        schedule="", dates="November 1-4, 2026",
+        location="Moscone Center, 747 Howard Street", area="Civic Center / South of Market",
+        cost="Ticketed (registration via organiser)",
+        organiser="INFORMS (Institute for Operations Research and the Management Sciences)",
+        source_name="Moscone Center — INFORMS Annual Meeting 2026",
+        source_url="https://www.moscone.com/events/informs-annual-meeting-2026", status="verified",
+        notes="Added by arena-fc3438db. Moscone Center's official event page (fetched 2026-10-18) dates it "
+              "'November 1-4, 2026' and links the organiser's meeting page (meetings.informs.org). Analytics, "
+              "operations research, data science and machine-learning programme; registration prices are not "
+              "published on the fetched page."),
+
+    dict(
+        id="spc-semicon-west-2026", title="SEMICON West 2026",
+        page="special", type="Special - Dated",
+        schedule="", dates="October 13-15, 2026",
+        location="Moscone Center, 747 Howard Street", area="Civic Center / South of Market",
+        cost="Ticketed (registration via organiser)", organiser="SEMI (semiconductor industry association)",
+        source_name="Moscone Center — SEMICON West 2026",
+        source_url="https://www.moscone.com/events/semicon-west-2026", status="verified",
+        notes="Added by arena-fc3438db. Moscone Center's official event page (fetched 2026-10-18) dates it "
+              "'October 13-15, 2026' and links the organiser's page (semiconwest.org). The listed edition had "
+              "already finished when this snapshot was built."),
+
+    dict(
+        id="ann-humanx-2026", title="HumanX 2026 (AI conference)",
+        page="annual", type="Annual",
+        schedule="", dates="April 6-9, 2026 (2026 edition concluded)",
+        location="Moscone Center North and South, 747 Howard Street",
+        area="Civic Center / South of Market",
+        cost="Ticketed (registration via organiser)", organiser="HumanX",
+        source_name="Moscone Center — HumanX 2026",
+        source_url="https://moscone.com/events/humanx-2026", status="verified",
+        notes="Added by arena-fc3438db. Moscone Center's official listing (fetched 2026-10-18) dates the "
+              "second edition of the AI conference 'Apr 06 - 09 2026' at Moscone North and South; the city's "
+              "announcement (sf.gov) and press coverage describe it as an AI-industry conference. The 2026 "
+              "edition has concluded; the organiser's site states HumanX 2027 takes place in Las Vegas "
+              "(March 7-10, 2027) — outside this catalogue's city-limits scope; see Flagged for Review."),
+
+    dict(
+        id="rec-sfpl-ai-workshops", title="SF Public Library AI workshops, talks & panels",
+        page="recurring", type="Recurring - Regular schedule",
+        schedule="Periodic free workshops, talks and panels on artificial intelligence; dates posted on the "
+                 "library events calendar (some sessions also run during SF Tech Week and SF AI Week)",
+        dates="", location="Main Library, 100 Larkin Street (Learning Studio, Koret Auditorium) and branches",
+        area="Civic Center / South of Market", cost="Free",
+        organiser="San Francisco Public Library with partner organisations",
+        source_name="SF Public Library — Events calendar (AI programmes)",
+        source_url="https://sfpl.org/events", status="verified",
+        notes="Added by arena-fc3438db (free-AI gap research). Official library listings fetched 2026-10-18 "
+              "confirm an ongoing series of free AI programmes, e.g. 'Workshop: Home Improvement with AI' "
+              "(5/14/2026, SF Tech Council), 'Activity: Exploring the Future of AI Robotics' (3/25/2026), "
+              "'Workshop: Creating Music with AI' (8/23/2026, Presidio and Portola branches) and the "
+              "'Panel: AI and the Environment' / 'Workshop: Navigating AI' sessions of SF AI Week (Dec 2025, "
+              "listed on sf.gov). SFPL states all programmes are free and open to the public; no future dated "
+              "sessions were published at fetch time, so the dates cell is left blank."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -2248,6 +2429,41 @@ FLAGGED = [
         source_name="Moscone Center — official events calendar",
         source_url="https://www.moscone.com/events",
         action="Tag a row as AI only when its own official source describes it as an AI event."),
+    dict(
+        id='flag-humanx-2027-las-vegas', title='HumanX AI conference leaves San Francisco for its 2027 edition',
+        detail="HumanX 2026 (April 6-9, Moscone Center) is recorded in the list as a concluded AI conference. The organiser's own site states HumanX 2027 takes place March 7-10, 2027 at Mandalay Bay, Las Vegas — outside the city-limits scope of this catalogue — so there is no 2027 San Francisco edition to list. Recorded so the AI coverage gap is visible rather than implied.",
+        source_name='HumanX — official site (2027 edition)',
+        source_url='https://www.humanx.co/us',
+        action='If the conference returns to San Francisco in a later year, add that edition from the organiser announcement.'),
+
+    dict(
+        id='flag-sf-blackout-chess', title="Free chess game night (Oct 24) found only on an aggregator — not added",
+        detail="A free 'SF Blackout: Gambits & Ghouls Chess Game Night' at SPARK Social SF (601 Mission Bay Blvd) on Saturday, October 24, 2026, 3:00-9:00 p.m. (donation suggested), attributed to the Black Men's Chess League and SALON, appears only on an aggregator listing. The city's official events calendar (checked 2026-10-18) lists only civic meetings and does not carry it, and no official organiser page could be located in this pass. Aggregator URLs are barred as sources by this project's rules, so the event is recorded here rather than in the tables.",
+        source_name='SF.gov — Citywide meetings and events (official calendar checked 2026-10-18)',
+        source_url='https://www.sf.gov/events/upcoming',
+        action='If the organisers or SPARK Social publish an official page, add the row from that page.'),
+
+    dict(
+        id='flag-ai-conference-unconfirmed', title="'The AI Conference' (San Francisco) — official page not fetchable this pass",
+        detail="Third-party conference calendars list 'The AI Conference' as September 29-October 1, 2026 in San Francisco and October 12-14, 2027 in San Francisco. The organiser's site (theaiconference.com) could not be fetched during the 2026-10-18 verification pass, so no row was added and no date is asserted here as verified.",
+        source_name='theaiconference.com (fetch failed 2026-10-18)',
+        source_url='https://www.theaiconference.com/',
+        action='Re-fetch the organiser site; if it publishes the San Francisco dates and venue, add rows from that page.'),
+
+    dict(
+        id='flag-cloudflare-days-copy', title='Cloudflare Connect 2026 — venue page copy says "over four days" but gives three dates',
+        detail="Moscone Center's official event page dates Cloudflare Connect 2026 'October 19-21' while its description says attendees will experience a program 'over four days'. The row records the stated dates; the internal inconsistency is published here rather than silently resolved.",
+        source_name='Moscone Center — Cloudflare Connect 2026',
+        source_url='https://www.moscone.com/events/cloudflare-connect-2026',
+        action='Check the organiser registration page for the final programme span before attending.'),
+
+    dict(
+        id='flag-bay-area-science-festival', title='Bay Area Science Festival — regional, and no official 2026 event page confirmed this pass',
+        detail="Press coverage describes a free Bay Area Science Festival at the UCSF Mission Bay campus on Saturday, October 17, 2026 (125 exhibits), and the regional calendar bayareascience.org lists Bay Area science events, but the festival's own official 2026 page was not confirmed during this pass. The umbrella calendar also mixes venues across the Bay Area (San Jose, Berkeley, Stanford), which the city-limits rule excludes. No row added.",
+        source_name='bayareascience.org calendar (regional; fetch 2026-10-18)',
+        source_url='https://www.bayareascience.org/calendar/',
+        action='If an official festival page confirms a San Francisco edition with dates and venue, add it as a free annual science event.'),
+
 ]
 
 # ---------------------------------------------------------------------------
@@ -2310,6 +2526,20 @@ CATEGORY_BY_ID = {
     "spc-current-sf-2026": "community",
     "spc-microsoft-ignite-2026": "community",
     "spc-cloudflare-connect-2026": "community",
+    "spc-symphony-the-ring": "arts",
+    "spc-symphony-music-for-families": "arts",
+    "spc-symphony-adams-mendelssohn": "arts",
+    "spc-opera-strauss-concert": "arts",
+    "spc-opera-ball": "arts",
+    "spc-opera-adlers-concert": "arts",
+    "spc-opera-chorus-concert": "arts",
+    "spc-castro-tree-fundraiser": "community",
+    "spc-castro-wine-walk-dec": "community",
+    "spc-exploratorium-creepatorium": "arts",
+    "spc-informs-2026": "technology",
+    "spc-semicon-west-2026": "technology",
+    "ann-humanx-2026": "technology",
+    "rec-sfpl-ai-workshops": "technology",
     # --- regularly recurring ---------------------------------------------
     "rec-zumba-in-the-parks": "community",
     "rec-rae-studios-un-plaza": "community",
@@ -2438,6 +2668,7 @@ CONCLUDED_2026 = {
     "x-s-028", "x-s-032", "x-s-033", "x-w-023",
     "ann-sf-mime-troupe",
     "spc-techcrunch-disrupt-2026",
+    "spc-semicon-west-2026", "ann-humanx-2026", "ann-sfpl-tech-week",
     "ann-sfpl-tech-week",
 }
 

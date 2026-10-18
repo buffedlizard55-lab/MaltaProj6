@@ -1,53 +1,23 @@
 {
-  "site": "San Francisco Events",
+  "site": "SF Events Index",
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 235,
-    "recurring": 123,
-    "annual": 56,
-    "special": 56,
-    "verified": 156,
-    "review_gap": 79,
-    "concluded": 44,
-    "free": 141,
-    "free_cost_wording": 125,
-    "flagged_rows": 181,
-    "sources": 104
+    "total": 249,
+    "recurring": 124,
+    "annual": 57,
+    "special": 68,
+    "flagged_rows": 198,
+    "unverified_rows": 91,
+    "concluded_rows": 46,
+    "sources": 105,
+    "free_access_rows": 143
   },
   "focus": {
     "gaming": 4,
-    "music": 25,
-    "ai": 5,
-    "other": 201
-  },
-  "focus_free": {
-    "gaming": 3,
-    "music": 11,
-    "ai": 2,
-    "other": 125
-  },
-  "categories": {
-    "arts": 74,
-    "civic": 37,
-    "community": 78,
-    "markets": 29,
-    "sports": 10,
-    "technology": 7
-  },
-  "page_counts": {
-    "all-events.html": 0,
-    "annual.html": 56,
-    "arts.html": 74,
-    "civic.html": 37,
-    "community.html": 78,
-    "free-events.html": 141,
-    "markets.html": 29,
-    "music.html": 25,
-    "recurring.html": 123,
-    "special.html": 56,
-    "sports.html": 10,
-    "technology.html": 15
+    "music": 32,
+    "ai": 7,
+    "other": 206
   },
   "pages": [
     "all-events.html",

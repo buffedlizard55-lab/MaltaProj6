@@ -28,6 +28,8 @@ Shared task board for all agent sessions working on this repository.
 | `arena-8cb2d3cc` | `arena/8cb2d3cc-maltaproj6` | **Final integration session (2026-10-18, seventh pass).** Independent repo review, line-by-line official-source re-verification of the published dataset, gap research, defect repair, site UX/full-list page, rebuild, PR to `main`, merge and Pages deploy confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json`, generated `*.html`, `scripts/build_site.py`, `scripts/merge_parallel.py`, `tools/validate.py`, `assets/`, `data/meta.json`, `data/events.csv` (new). No other session is live (verified via `gh api compare`: every other branch is behind `main`; `arena/7141e086` is ahead by one stale claim-only commit and never merged). | ✅ complete — PR #26 merged to `main` at `1cdd3ab`, Pages `built`, live site verified at 218/208/10/97/42/98; see the closing record below |
 | `arena-8e8e24dc` | `arena/8e8e24dc-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-8cb2d3cc`'s final-integration claim).** New files only while that claim is live: `audit/AUDIT-2026-10-18-8e8e24dc.md`, `audit/check_8e8e24dc.py`, `audit/row-audit-8e8e24dc.csv`, `data/gap-candidates-8e8e24dc.json`, plus registry/task/log rows in this board. No edits to `data/events.py`, `data/events.json`, generated `*.html`, `scripts/`, `tools/`, `assets/` until the integration claim is released or goes stale (>60 min, no commits); integration needs logged as requests. Arena-fixed branch used; no branch switch. | ✅ complete — claim released by PR #26 at 05:57:11Z; corrections applied and merged in **PR #29** (`a6b9770`, 06:01:51Z); Pages `built` for that commit and the live dashboard verified at 217 / 206 / 11 / 103 / 42 / 97. See the closing record below. |
 | `arena-3ab2abd4` | `arena/3ab2abd4-maltaproj6` | Final integration for date-first and free/AI gaming pages, verified GDC/AI Council scope, strict blank-and-flag handling for 67 generic nonnumeric cost records, regenerated site and exports | ✅ complete — PR #32 and follow-up PR #33 merged; Pages succeeded for both; live site checked at 218 / 142 / 76 / 172 / 134. See closing record below. |
+| `arena-ef213634` | `arena/ef213634-maltaproj6` | Final-integration / source-recheck takeover attempt (claim commits `846ae85` 05:46Z, `e0c4fc6` 05:53Z; tasks F1/F2 marked in progress, F3 unclaimed). Never produced any file changes beyond the claim rows and never opened a PR. | 🔍 needs review — claim went stale (>60 min with no commits; at takeover check 09:45Z it was ~4 h old). Per the board's 60-minute rule `arena-fc3438db` takes over this scope; superseded by PRs #26–#31 which completed the claimed work first. Handoff noted in the `arena-fc3438db` log below. |
+| `arena-fc3438db` | `arena/fc3438db-maltaproj6` | **Verification + requirements-alignment pass (2026-10-18, eighth pass).** Take over stale `arena-ef213634` integration claims. Line-by-line re-verification of the published dataset against official sources (sampled + all soonest-dated rows), gap research for the user's stated focus (free events: gaming, music, AI), site alignment with the stated requirements (executive summary of events near today's date, date-sorted upcoming listings, clear cost labels, mobile-friendly UX), rebuild, PR to `main`, merge and Pages confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` + `data/*.json` + `data/events.csv`, generated `*.html`, `scripts/build_site.py`, `tools/validate.py`, `assets/site.css`, `data/gap-candidates-fc3438db.json` (new), `audit/AUDIT-2026-10-18-fc3438db.md` (new). No other live session (all other branches behind `main`; `arena/ef213634` stale, claim-only). | 🟡 in progress |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -890,3 +892,57 @@ This session kept the blank cell *and* the `unverified` badge — no price is in
 *as published: "Ticketed"*, visually separated from the price. Nothing that was blanked has been put
 back into the price position. If the project would rather hide that wording entirely, deleting the
 `.cost-wording` span in `cost_cell()` and `_summary_row()` restores PR #36's exact behaviour.
+
+
+> **Cross-session integration note (2026-10-18).** While this pass was in progress, sessions `arena-3ab2abd4` and `arena-91296e94` merged PRs #32–#36 into `main`. This branch was then rebased onto that work and the two lines of work were merged as a union: their chronological near-term summary, AI & gaming (`technology`) category, free-events page and blank-unless-numeric price policy are kept as the baseline; this session's 19 unique verified rows, 5 review items, Boo at the Zoo organiser-source correction and the home-page free spotlight (gaming/music/AI) were folded in on top. No row or record from any session was discarded. Duplicate `spc-techcrunch-disrupt-2026` resolved in favour of `arena-91296e94`'s priced version; the Mime Troupe citation resolves to their `sfmt.org/full-schedule`.
+## Task board — `arena-fc3438db` (verification + requirements-alignment pass)
+
+Session branch: `arena/fc3438db-maltaproj6` (Arena-fixed branch for this session; no branch switch).
+
+**Concurrency check on arrival (2026-10-18 09:41Z).** `main` at `56eda46` (PR #31 merge; 217 events /
+206 verified / 11 review-gap rows / 103 review items / 42 concluded / 97 domains; Pages `built`). All prior
+session branches are behind `main`. `arena/ef213634-maltaproj6` is ahead by 2 claim-only commits
+(`846ae85` 05:46Z, `e0c4fc6` 05:53Z) with **no commits for ~4 hours** and no PR — its F1/F2 claims are stale
+under the board's 60-minute rule and are taken over by this session. The work those claims describe was in
+fact completed and merged by `arena-8cb2d3cc` (PR #26) and `arena-8e8e24dc` (PRs #29–#31) before the claims
+expired; nothing is overwritten. This session uses the Arena-fixed branch `arena/fc3438db-maltaproj6`.
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| FC0 | Register, claim scope, takeover of stale `arena-ef213634` claims | ✅ done | `arena-fc3438db` | `COORDINATION.md` (registry/task/log rows) | Claim commit `f1b0cd3` pushed before any other edits. `arena-ef213634`'s claim was ~4 h old with no commits at the 09:45Z takeover check and its claimed work had already been merged by PRs #26–#31; nothing was overwritten. |
+| FC1 | Line-by-line structural audit of all published rows + review register (source link present/https/official, blanks vs status, duplicates, cost-column coverage) | ✅ done | `arena-fc3438db` | `audit/AUDIT-2026-10-18-fc3438db.md` (new), `audit/check_fc3438db.py` (new) | `check_fc3438db.py` → 237 rows / 108 items, `hard_problems=0` after fixes (1 finding: Mime Troupe row's google.com iCal source → upgraded to sfmt.org). Prior gates (`tools/validate.py`, `audit/check_dataset.py`) also pass. |
+| FC2 | Live official-source re-verification: every soonest-dated/upcoming row (feeds the executive summary) + stratified sample of recurring/annual rows | ✅ done (28 pages fetched; JS-shell remainders recorded) | `arena-fc3438db` | `audit/AUDIT-2026-10-18-fc3438db.md` (new) | Official pages only (fetch_page). Confirmed rows listed in the audit §2 table. Corrections: Boo at the Zoo cost (`sfzoo.org`), Mime Troupe source. valkyries.wnba.com is a JS shell (cross-checked via SFMTA advisory). |
+| FC3 | Gap research for the user's stated focus: **free events — gaming, music, AI** (and everything else after) inside SF city limits | ✅ done | `arena-fc3438db` | `data/gap-candidates-fc3438db.json` (new), `data/events.py` | 20 new rows (SFPL gaming/chess/AI programmes, SF Tech Week, HumanX 2026, Current SF, SF Symphony/SF Opera Oct–Nov programme, Moscone conventions, Exploratorium Creepatorium, Castro additions). 8 candidates not added — each with the official page checked and the reason, 5 of them published as review items. |
+| FC4 | Requirements alignment of the site: executive summary of events near today (2026-10-18) on the home page; upcoming dates sorted soonest-first and highlighted first; cost clearly labelled on every table; free-events emphasis; mobile-friendly check/polish | ✅ done | `arena-fc3438db` | `scripts/build_site.py`, `assets/site.css`, generated `*.html`, `README.md`, `data/meta.json` | Home page: executive summary (starting-soon + running-now + free spotlight for gaming/music/AI), date-sorted upcoming table with Cost column (was dataset-order, unsorted). Cost chips on every table + `Cost` filter on the full list. Mobile CSS tightened. Dates parsed from printed strings only (`parse_dates`, presentation-only). |
+| FC5 | Rebuild, validate (build_site, tools/validate, dataset audit, link scan), PR to `main`, merge, confirm Pages deploy, record on this board | 🟡 in progress | `arena-fc3438db` | `COORDINATION.md` | Local gates green (build reproducible; `tools/validate.py` → 237/226/11/108/99, pages=15 — OK; `audit/check_dataset.py` → 0 hard problems, 0 broken links). PR/merge/Pages result recorded below. |
+
+## Session log — `arena-fc3438db` verification + requirements pass (2026-10-18)
+
+**Sources checked (live, official pages only, 2026-10-18).** sfsymphony.org (home + ticket pages),
+sfopera.com (home + season pages), calacademy.org/supernatural, litquake.org/2026-schedule,
+sfrestaurantweek.com, nba.com/warriors schedule release, gggp.org/lightscape, gdconf.com,
+artspan.org/visitsfopenstudios, presidio.gov Dia de los Muertos & Diwali page,
+castromerchants.com/events (6 chunks), sffilm.org/2026-sffilm-doc-stories, sfmoma.org/exhibitions,
+frameline.org, exploratorium.edu/visit/calendar/after-dark, sunsetmercantilesf.com,
+sfzoo.org/event/boo-at-the-zoo, sfrecpark.org/Calendar.aspx, sfmt.org/summer-schedule,
+sfmta.com Oct 15–21 advisory + Chase Center taxi notice, moscone.com /events + node pages
+(850/849/851/856/873) + North/South taxonomy, humanx.co (2027 location), sfpl.org (Mix gaming,
+AI workshops, chess listings, Tech Week), sf.gov/events/upcoming, bayareascience.org/calendar,
+downtownsf.org/things-to-do/lets-glow-sf. Full per-row table in `audit/AUDIT-2026-10-18-fc3438db.md`.
+
+**Verification performed.** Independent structural checker (`audit/check_fc3438db.py`) over every
+row and page: source links https/primary, blanks-vs-status, duplicates, HTML membership; date
+parser unit-tested against 17 real date strings before use. All pre-existing gates re-run after
+the rebuild: `scripts/build_site.py` reproducible (second run leaves no diff), `tools/validate.py`
+OK (237 events / 226 verified / 11 review-gap / 108 review items / 99 domains / 15 pages),
+`audit/check_dataset.py` 0 hard problems / 0 broken internal links / 0 events missing from HTML.
+
+**Irregularities (published, non-blocking).** Castro Menorah description vs listing date conflict
+(re-confirmed live; "December 15" would be a Tuesday in 2026); Cloudflare Connect page copy "over
+four days" vs Oct 19–21 dates; HumanX 2027 moves to Las Vegas (AI-coverage gap noted);
+aggregator-only free chess night (Oct 24) and "The AI Conference" could not be sourced officially
+this pass; Bay Area Science Festival is regional and unconfirmed at page level. 20 rows carry
+blank cost cells where the official source publishes no price (never inferred).
+
+**Handoff note.** `arena-ef213634`'s stale F1/F2 claims are superseded by this pass and by
+PRs #26–#31; if that session returns it should start from `main` after this PR and log here.

@@ -93,7 +93,7 @@ ann-human-rights-awards,Human Rights Awards,annual,verified,,Free,"Annual awards
 ann-parol-lantern,Parol Lantern Festival & Parade (SOMA Pilipinas),annual,verified,,Free,"Annual, a Saturday in December; the 2025 edition ran 3:00-8:00 p.m. with a Parol Stroll through the district","Saturday, December 12, 2026 (24th annual)",https://www.somapilipinas.org/events
 ann-sf-marathon,The San Francisco Marathon,annual,unverified,,,"Annual race weekend; the official site lists Ultramarathon, Full Marathon, 1st Half, 2nd Half, 10K, Saturday 5K and Sunday 5K","July 24-25, 2027 (2027 edition, 50th anniversary)",https://www.thesfmarathon.com/
 ann-sfmusic-week,SF Music Week,annual,unverified,concluded,,"Annual city-wide music week; 2026 edition ran Monday, February 23 – Sunday, March 1, 2026","February 23 - March 1, 2026 (2026 edition; concluded)",https://www.sf.gov/news-mayor-lurie-announces-return-of-sf-music-week-celebrates-san-francisco-as-a-music-city
-spc-boo-at-zoo,Boo at the Zoo,special,unverified,,,10:00 a.m.-3:00 p.m.,"Saturday, October 31, 2026",https://sfrecpark.org/Calendar.aspx
+spc-boo-at-zoo,Boo at the Zoo,special,unverified,,,10:00 a.m.-3:00 p.m.,"Saturday, October 31, 2026",https://www.sfzoo.org/event/boo-at-the-zoo/
 spc-scaregrove,Scaregrove Halloween Event,special,verified,,Free,3:00-9:00 p.m.,"Friday, October 30, 2026",https://sfrecpark.org/Calendar.aspx
 spc-supernatural,SuperNatural — Cal Academy's annual Halloween extravaganza,special,verified,,General admission adult $60 ($55 members); youth 3-17 $45 ($40 members),6:30-9:00 p.m. (VIP and Early Admission entry 5:00 p.m.),"Saturday, October 24, 2026",https://www.calacademy.org/supernatural
 spc-presidio-summer,Presidio 2026 summer event season,special,verified,concluded,Free,See notes for individual events,"May 25, June 13, July 18-19, August 1 and September 6, 2026",https://presidio.gov/about/press/presidio-unveils-vibrant-2026-summer-event-lineup
@@ -165,6 +165,25 @@ rec-ferry-board-game-night,Board Game Night (Ferry Building Marketplace),recurri
 rec-ferry-mahjong,Mahjong Meetup (Ferry Building Marketplace),recurring,verified,,,"Wednesdays, 3:00-7:00 p.m.",,https://www.ferrybuildingmarketplace.com/events/mahjong-meetup-1/
 rec-ferry-music-on-the-plaza,Music on the Plaza (Ferry Building),recurring,verified,,,"Thursdays, 5:00-7:00 p.m.",,https://www.ferrybuildingmarketplace.com/events/music-on-the-plaza/
 rec-ferry-monday-yoga,Monday Yoga at the Ferry Building,recurring,verified,,"Free (Vinyasa yoga class, per the official calendar listing)","Every Monday, 12:00-1:00 p.m.",,https://www.ferrybuildingmarketplace.com/events/monday-yoga/
+spc-symphony-the-ring,The Ring — Film with Live Orchestra (SF Symphony),special,unverified,,,,"October 20, 2026",https://www.sfsymphony.org/Buy-Tickets/2026-27/The-Ring
+spc-symphony-music-for-families,Music for Families (SF Symphony),special,unverified,,,,"October 24, 2026",https://www.sfsymphony.org/Buy-Tickets/2026-27/Music-for-Families-Oct
+spc-symphony-adams-mendelssohn,Elim Chan Conducts Adams and Mendelssohn (SF Symphony),special,unverified,,,,"October 29-31, 2026",https://www.sfsymphony.org/Buy-Tickets/2026-27/Doctor-Atomic-and-Mendelssohn
+spc-opera-strauss-concert,Strauss In Concert (San Francisco Opera),special,unverified,,,,"November 6, 2026",https://www.sfopera.com/seasons/fall-concert/
+spc-opera-ball,Opera Ball (San Francisco Opera),special,unverified,,,,"November 12, 2026",https://www.sfopera.com/seasons/opera-ball/
+spc-opera-adlers-concert,The Future Is Now: Adlers in Concert (San Francisco Opera),special,unverified,,,,"November 20, 2026",https://www.sfopera.com/seasons/the-future-is-now-adlers-in-concert/
+spc-opera-chorus-concert,San Francisco Opera Chorus in Concert,special,unverified,,,,"November 22, 2026",https://www.sfopera.com/seasons/san-francisco-opera-chorus-in-concert/
+spc-castro-tree-fundraiser,Castro Holiday Tree Fundraiser at Midnight Sun,special,verified,,,4:00-7:00 p.m.,"Saturday, October 24, 2026",https://castromerchants.com/events
+spc-castro-wine-walk-dec,Castro Wine Walk (December edition),special,unverified,,,6:00-9:00 p.m.,"Thursday, December 17, 2026",https://castromerchants.com/events
+spc-exploratorium-creepatorium,After Dark: Creepatorium (Exploratorium),special,unverified,,,6:00-10:00 p.m.,"Thursday, October 29, 2026",https://www.exploratorium.edu/visit/calendar/after-dark
+spc-cloudflare-connect-2026,Cloudflare Connect 2026,special,unverified,,,,"October 19-21, 2026",https://www.moscone.com/events/cloudflare-connect-2026
+spc-informs-2026,INFORMS Annual Meeting 2026,special,unverified,,,,"November 1-4, 2026",https://www.moscone.com/events/informs-annual-meeting-2026
+spc-current-sf-2026,Current San Francisco 2026 (real-time data & AI),special,unverified,,,,"November 4-5, 2026",https://www.moscone.com/events/current-san-francisco-2026
+spc-semicon-west-2026,SEMICON West 2026,special,unverified,concluded,,,"October 13-15, 2026",https://www.moscone.com/events/semicon-west-2026
+ann-humanx-2026,HumanX 2026 (AI conference),annual,unverified,concluded,,,"April 6-9, 2026 (2026 edition concluded)",https://moscone.com/events/humanx-2026
+ann-sf-tech-week,SF Tech Week (free technology programmes),annual,verified,concluded,Free (all programmes),"Annual week of free technology workshops, tutorials, presentations and tech support","May 9-16, 2026 (2026 edition concluded)",https://sfpl.org/locations/main-library/bridge-main-5th-floor/sf-tech-week
+rec-sfpl-gaming,"SF Public Library gaming programmes (game nights, The Mix, D&D, tournaments)",recurring,verified,,Free,"Drop-in game nights and gaming afternoons at branches plus console, tabletop and D&D sessions at The Mix (Main Library), with monthly gaming tournaments; dates posted on the library calendar",,https://sfpl.org/teens/the-mix/gaming
+rec-sfpl-chess,"SF Public Library chess clubs (Bright Knights, Chinese Chess, branch clubs)",recurring,verified,,Free,Recurring chess sessions at branches (e.g. Excelsior with Bright Knights Chess Club on Saturdays; Chinese Chess at the Main Library; Visitacion Valley Chess Club on the 2nd and 3rd Fridays of the month); dates posted on the library calendar,,https://sfpl.org/events
+rec-sfpl-ai-workshops,"SF Public Library AI workshops, talks & panels",recurring,verified,,Free,"Periodic free workshops, talks and panels on artificial intelligence; dates posted on the library events calendar (some sessions also run during SF Tech Week and SF AI Week)",,https://sfpl.org/events
 x-w-003,Heart of the City Farmers Market,recurring,verified,,Free entry,"Wednesdays and Sundays, 7:00 a.m.-4:00 p.m.",,https://hotcfarmersmarket.org/
 x-w-005,Fillmore Farmers' Market,recurring,verified,,Free entry,Weekly (Saturday) — Sat 9am-1pm,,https://www.pcfma.org/market/fillmore-farmers-market
 x-w-006,Noe Valley Farmers Market,recurring,verified,,Free entry,Weekly (Saturday) — Sat 8am-1pm,,https://www.noevalleyfarmersmarket.com/
