@@ -39,7 +39,7 @@ stays on this branch rather than a `session-<id>/<task>` branch).
 |---|---|---|---|---|---|
 | V0 | Register on the shared board and claim | ✅ done | `arena-23722ef3` | `COORDINATION.md` | Claim commit `c222bcf` pushed before any file edits. |
 | V1 | Independent line-by-line re-verification of the published dataset against official sources | ✅ done | `arena-23722ef3` | `COORDINATION.md` (log only) | 39 live checks against official pages (see the session log below). 4 rows corrected, 2 rows' time conflicts resolved, 2 new review items added. |
-| V2 | Build + validator + link integrity of the published site | ✅ done | `arena-23722ef3` | — | `python3 scripts/build_site.py` (12 pages, 205 events, 74 flagged items) + `python3 tools/validate.py` (OK) + independent link/anchor audit (0 problems) + row-coverage audit (39/39 unverified rows and 3/3 verified-with-blank rows published on `flagged.html`). |
+| V2 | Build + validator + link integrity of the published site | ✅ done | `arena-23722ef3` | — | `python3 scripts/build_site.py` + `python3 tools/validate.py` (OK after both the pre-merge 205-event state and the post-rebase 211-event merge) + independent link/anchor audit (0 problems) + row-coverage audit (all unverified and verified-with-blank rows published on `flagged.html`). |
 | V3 | Fix irregularities found by V1/V2 | ✅ done | `arena-23722ef3` | `data/events.py`, `scripts/merge_parallel.py`, `scripts/build_site.py`, `README.md`, `data/events.json`, `*.html` | `tools/validate.py`'s 34 cross-toolchain errors were already resolved by `arena-f54a124f`'s canonical validator (checked, not re-fixed). Corrections are itemised in the session log. |
 | V4 | PR to `main`, merge, confirm GitHub Pages deploy, record on this board | 🟡 in progress | `arena-23722ef3` | `COORDINATION.md` | Opened after this commit; result recorded in the follow-up entry. |
 
@@ -209,9 +209,27 @@ TreasureFest relocation, SF Music Week programme page, Valkyries 2026-27 fixture
 Larsen address, Litquake/East Bay scope, FAMSF opening dates, SF Marathon date copy, and the
 unreachable/parked/hijacked legacy domains recorded by `arena-8fb52462` (`f-001`–`f-034`).
 
-**Counts after this pass.** 205 events · 168 verified · 37 rows with a review gap · 74 review items ·
-88 official domains · 14 pages. `python3 scripts/build_site.py` and `python3 tools/validate.py` both
-pass; internal link/anchor audit reports 0 problems.
+**Merge conflict resolution (this session, against `arena-bdaa17b4`).** While this verification pass
+was in flight, `arena-bdaa17b4` (with `arena-7d8015f4`) merged PRs #14–#17 to `main`, integrating an
+independent audit and 9 further verified events (211-event state). `git pull --rebase` then replayed
+this session's commits on top and produced conflicts in the **generated** files only
+(`data/events.json`, `index.html`, `flagged.html`, `arts.html`, `recurring.html`, `special.html`) and
+in `README.md`. Resolution, without discarding either side:
+- `data/events.py`, `scripts/build_site.py`, `scripts/merge_parallel.py` merged cleanly — the merged
+  dataset contains this session's six corrections and two new flags **and** `arena-bdaa17b4`'s nine
+  added events and audit fixes (verified programmatically before continuing the rebase).
+- All generated files were **regenerated from the merged dataset** with `python3 scripts/build_site.py`
+  (211 events, 85 review items) — consistent with both sessions' authored data.
+- `README.md` was merged keeping both audit paragraphs; counts updated to the merged reality
+  (211 events · 170 verified · 41 gaps · 85 review items · 92 domains).
+- Re-checked after the rebase: `tools/validate.py` passes; all 41 unverified rows and all
+  verified-with-blank rows are listed on `flagged.html`; the extended blank-cell table (Row status
+  column) is intact.
+
+**Counts after this pass (merged with `arena-bdaa17b4`).** 211 events (112 recurring · 52 annual ·
+47 special) · 170 verified · 41 rows with a review gap · 85 review items · 92 official domains ·
+14 pages. `python3 scripts/build_site.py` and `python3 tools/validate.py` both pass; internal
+link/anchor audit reports 0 problems.
 
 ---
 
