@@ -1,1 +1,411 @@
-{"verified_on":"2026-10-18","sources":[]}
+{
+  "verified_on": "2026-10-18",
+  "sources": [
+    {
+      "key": "sf_alemany_fm",
+      "url": "https://www.sf.gov/location--alemany-farmers-market",
+      "title": "Alemany Farmers Market | SF.gov",
+      "type": "government",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sf_alemany_flea",
+      "url": "https://www.sf.gov/location--alemany-flea-market",
+      "title": "Alemany Flea Market | SF.gov",
+      "type": "government",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfmta_shared",
+      "url": "https://www.sfmta.com/projects/shared-spaces",
+      "title": "Shared Spaces | SFMTA",
+      "type": "government",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfmta_weekend",
+      "url": "https://www.sfmta.com/weekend-events-october-16-18-2026",
+      "title": "Weekend Events: October 16-18, 2026 | SFMTA",
+      "type": "government",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfenv_markets",
+      "url": "https://www.sfenvironment.org/farmers-markets-in-sf",
+      "title": "Farmers markets in San Francisco | SF Environment Department",
+      "type": "government",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "foodwise_ferry",
+      "url": "https://foodwise.org/markets/ferry-plaza-farmers-market/",
+      "title": "Ferry Plaza Farmers Market at the San Francisco Ferry Building | Foodwise",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "foodwise_mission",
+      "url": "https://foodwise.org/markets/mission-community-market/",
+      "title": "Mission Community Market in San Francisco's Mission District | Foodwise",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "hotc",
+      "url": "https://hotcfarmersmarket.org/",
+      "title": "Heart of the City Farmers Market",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "pcfma_fillmore",
+      "url": "https://www.pcfma.org/market/fillmore-farmers-market",
+      "title": "Fillmore Farmers' Market | PCFMA",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "noe_valley",
+      "url": "https://www.noevalleyfarmersmarket.com/",
+      "title": "Noe Valley Farmers Market",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "aim_clement",
+      "url": "https://www.agriculturalinstitute.org/clement-st",
+      "title": "Clement St SF | Agricultural Institute of Marin",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "cafma_fortmason",
+      "url": "https://www.cafarmersmkts.com/fort-mason-center-farmers-market/",
+      "title": "Fort Mason Center Farmers' Market | California Farmers' Markets Association",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sunset_mercantile",
+      "url": "https://sunsetmercantilesf.com/",
+      "title": "Sunset Mercantile | community event producers",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "north_beach_fm",
+      "url": "https://www.northbeachfarmersmarket.com/",
+      "title": "North Beach Farmers Market",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "asi_sfsu",
+      "url": "https://asi.sfsu.edu/farmers-market",
+      "title": "Farmers Market | Associated Students, SF State",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "dft",
+      "url": "https://www.dftsf.com/",
+      "title": "DFT: Downtown First Thursdays",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "calacademy_nightlife",
+      "url": "https://www.calacademy.org/nightlife",
+      "title": "NightLife | California Academy of Sciences",
+      "type": "official venue",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "explo_afterdark",
+      "url": "https://www.exploratorium.edu/visit/calendar/after-dark",
+      "title": "After Dark Thursday Nights | Exploratorium",
+      "type": "official venue",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "otg",
+      "url": "https://offthegrid.com/",
+      "title": "Off the Grid | SF Bay Area Food Markets",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "ggpb",
+      "url": "https://goldengateparkband.org/",
+      "title": "Golden Gate Park Band",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "treasurefest",
+      "url": "https://www.treasurefest.com/",
+      "title": "TreasureFest | Treasure Island, San Francisco",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "cny",
+      "url": "https://chineseparade.com/",
+      "title": "Chinese New Year Festival & Parade",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "cherry",
+      "url": "https://sfcherryblossom.org/",
+      "title": "Northern California Cherry Blossom Festival",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "b2b",
+      "url": "https://www.baytobreakers.com/",
+      "title": "Bay to Breakers",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "pride",
+      "url": "https://sfpride.org/events/",
+      "title": "San Francisco Pride Events",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "fillmorejazz",
+      "url": "https://www.fillmorejazzfest.com/",
+      "title": "Fillmore Jazz Festival",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfmarathon",
+      "url": "https://www.thesfmarathon.com/",
+      "title": "The San Francisco Marathon",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sterngrove",
+      "url": "https://www.sterngrove.org/",
+      "title": "Stern Grove Festival",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "pistahan",
+      "url": "https://www.pistahan.net/",
+      "title": "FAAE Pistahan Parade and Festival",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "nihonmachi",
+      "url": "https://www.nihonmachistreetfair.org/",
+      "title": "Nihonmachi Street Fair",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "folsom",
+      "url": "https://www.folsomstreet.org/",
+      "title": "Folsom Street | Community Center and Events",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "castrofair",
+      "url": "https://castrostreetfair.org/",
+      "title": "Castro Street Fair",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "hsb",
+      "url": "https://hardlystrictlybluegrass.com/",
+      "title": "Hardly Strictly Bluegrass",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "fleetweek",
+      "url": "https://fleetweeksf.org/",
+      "title": "San Francisco Fleet Week Association",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "italian",
+      "url": "https://sfitalianheritage.org/events/",
+      "title": "San Francisco Italian Heritage Festival & Parade - Events",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "litquake",
+      "url": "https://www.litquake.org/",
+      "title": "Litquake Foundation | Literary Festival | San Francisco",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sketchfest",
+      "url": "https://sfsketchfest.com/",
+      "title": "SF Sketchfest - The San Francisco Comedy Festival",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "noisepop",
+      "url": "https://www.noisepop.com/",
+      "title": "Welcome to Noise Pop",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfbeerweek",
+      "url": "https://sfbeerweek.org/",
+      "title": "SF Beer Week",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfrestaurantweek",
+      "url": "https://www.sfrestaurantweek.com/",
+      "title": "San Francisco Restaurant Week",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sundaystreets",
+      "url": "https://sundaystreetssf.com/",
+      "title": "Sunday Streets SF",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "moonfestival",
+      "url": "https://www.moonfestival.org/",
+      "title": "San Francisco Chinatown Autumn Moon Festival",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "greekfest",
+      "url": "https://annunciation.org/festival",
+      "title": "Greek Food Festival | Annunciation Greek Orthodox Cathedral",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "frameline",
+      "url": "https://www.frameline.org/",
+      "title": "Frameline",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfmoma",
+      "url": "https://www.sfmoma.org/exhibitions/",
+      "title": "What's On View | SFMOMA",
+      "type": "official venue",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "famsf",
+      "url": "https://www.famsf.org/exhibitions/",
+      "title": "Exhibitions | Fine Arts Museums of San Francisco",
+      "type": "official venue",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "calacademy_exhibits",
+      "url": "https://www.calacademy.org/exhibits-events",
+      "title": "Exhibits & Events | California Academy of Sciences",
+      "type": "official venue",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "castro_night",
+      "url": "https://castronightmarket.com/",
+      "title": "Castro Night Market",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfopera",
+      "url": "https://www.sfopera.com/",
+      "title": "San Francisco Opera",
+      "type": "official venue",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfsymphony",
+      "url": "https://www.sfsymphony.org/",
+      "title": "San Francisco Symphony",
+      "type": "official venue",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sffilm",
+      "url": "https://sffilm.org/",
+      "title": "SFFILM | The Hub of the Bay Area's film culture",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "gdc",
+      "url": "https://gdconf.com/",
+      "title": "GDC Festival of Gaming",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "rsac",
+      "url": "https://www.rsaconference.com/",
+      "title": "RSA Conference",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "dreamforce",
+      "url": "https://www.salesforce.com/dreamforce/",
+      "title": "Dreamforce 2027 | Salesforce",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "dayofthedead",
+      "url": "https://www.dayofthedeadsf.org/",
+      "title": "Day of the Dead SF by the Marigold Project",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "hasf",
+      "url": "https://www.haightashburystreetfair.org/",
+      "title": "Haight-Ashbury Street Fair",
+      "type": "official organizer",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfmta_dreamforce",
+      "url": "https://www.sfmta.com/travel-updates/salesforce-dreamforce-traffic-changes-september-15-17-2026",
+      "title": "Salesforce Dreamforce Traffic Changes: September 15-17, 2026 | SFMTA",
+      "type": "government",
+      "accessed": "2026-10-18"
+    },
+    {
+      "key": "sfmta_advisory",
+      "url": "https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026",
+      "title": "SFMTA Transit and Traffic Advisory for the Week, October 15-21, 2026",
+      "type": "government",
+      "accessed": "2026-10-18"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "site": "SF Events Index",
+  "verified_on": "2026-10-18",
+  "generated_on": "2026-10-18",
+  "counts": {
+    "total": 87,
+    "weekly": 18,
+    "monthly": 8,
+    "annual": 28,
+    "special": 33,
+    "flagged_rows": 34,
+    "unverified_rows": 34,
+    "sources": 58
+  },
+  "pages": [
+    "analysis.html",
+    "annual.html",
+    "flagged.html",
+    "index.html",
+    "sources.html",
+    "special.html",
+    "weekly.html"
+  ],
+  "review_sheet": "data/review.csv"
+}

@@ -24,13 +24,13 @@
 
 | ID | Task | Status | Owner (session) | Branch | Files in scope | Last update |
 |----|------|--------|-----------------|--------|----------------|-------------|
-| T1 | Build repo scaffolding, schema, validation tooling, coordination board | in progress | arena-8fb52462 | arena/8fb52462-maltaproj6 | `COORDINATION.md`, `README.md`, `tools/`, `data/schema.md`, `.gitignore` | 2026-10-18T00:58Z |
-| T2 | Recurring weekly/monthly events: research + verification | in progress | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/weekly.json`, `research/notes-weekly.md` | 2026-10-18T00:58Z |
-| T3 | Recurring annual events: research + verification | in progress | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/annual.json`, `research/notes-annual.md` | 2026-10-18T00:58Z |
-| T4 | Special / one-time events (2026–2027): research + verification | in progress | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/special.json`, `research/notes-special.md` | 2026-10-18T00:58Z |
-| T5 | Flagged-for-review register + source registry | in progress | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/flagged.json`, `data/sources.json` | 2026-10-18T00:58Z |
-| T6 | Site build: dashboard, category subpages, tables, analysis | unclaimed | — | — | `tools/build_site.py`, `assets/`, generated `*.html`, `data/meta.json` | — |
-| T7 | Integration: merge branches, line-by-line re-verification, link check, Pages deploy | unclaimed | — | — | all shared outputs, `COORDINATION.md` | — |
+| T1 | Build repo scaffolding, schema, validation tooling, coordination board | done | arena-8fb52462 | arena/8fb52462-maltaproj6 | `COORDINATION.md`, `README.md`, `tools/`, `data/schema.md`, `.gitignore` | 2026-10-18T06:40Z |
+| T2 | Recurring weekly/monthly events: research + verification | done | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/weekly.json` | 2026-10-18T06:40Z |
+| T3 | Recurring annual events: research + verification | done | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/annual.json` | 2026-10-18T06:40Z |
+| T4 | Special / one-time events (2026–2027): research + verification | done | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/special.json` | 2026-10-18T06:40Z |
+| T5 | Flagged-for-review register + source registry | done | arena-8fb52462 | arena/8fb52462-maltaproj6 | `data/flagged.json`, `data/sources.json` | 2026-10-18T06:40Z |
+| T6 | Site build: dashboard, category subpages, tables, analysis | done | arena-8fb52462 | arena/8fb52462-maltaproj6 | `tools/build_site.py`, `assets/`, generated `*.html`, `data/meta.json` | 2026-10-18T06:40Z |
+| T7 | Integration: merge branches, line-by-line re-verification, link check, Pages deploy | done | arena-8fb52462 | arena/8fb52462-maltaproj6 | all shared outputs, `COORDINATION.md` | 2026-10-18T06:40Z |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 
@@ -38,6 +38,9 @@ Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 
 - **2026-10-18T00:55Z — arena-8fb52462** — Repo reviewed: initial commit only, `README.md` placeholder. GitHub Pages already built from `main` `/` (commit `8b59260`). Created this board and claimed T1. Because Arena fixes the session branch to `arena/8fb52462-maltaproj6`, that branch is used for both work and integration; the "session-&lt;id&gt;/&lt;task&gt;" convention is mapped to that branch and recorded here.
 - **2026-10-18T00:58Z — arena-8fb52462** — T1 in progress: schema added. Claimed T2–T5 (weekly, annual, special, flagged/sources) because this is currently the only active session; these are disjoint file scopes. No other sessions present as of this timestamp.
+- **2026-10-18T06:40Z — arena-8fb52462** — T1–T7 complete in one session: 87 rows (26 recurring, 28 annual, 33 special), 34 review notes, 58 registered official sources. `tools/seed_data.py` is the reviewable authoring trail; it dumps `data/*.json`. `tools/validate.py` passes with 0 errors (5 warnings, all intentional: two undated 2026 editions and three exhibitions whose start date is not shown). `tools/build_site.py` generated seven root pages + `assets/` + `data/meta.json`. Local HTTP check returned 200 for every page, stylesheet, script and data file; HTML tag-balance check is clean.
+- **2026-10-18T06:40Z — arena-8fb52462** — Verification notes. Government pages: `sfmta.com/projects/shared-spaces`, `sfmta.com/weekend-events-october-16-18-2026`, `sfmta.com/travel-updates/salesforce-dreamforce-traffic-changes-september-15-17-2026`, `sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026`, `sf.gov/location--alemany-farmers-market`, `sf.gov/location--alemany-flea-market`, `sfenvironment.org/farmers-markets-in-sf`. Organiser/venue pages are enumerated in `data/sources.json` (58 entries).
+- **2026-10-18T06:40Z — arena-8fb52462** — Irregularities found and published on `flagged.html`: `carnavalsf.com` is a hijacked/expired domain (Carnaval SF excluded); `exploratorium.edu/visit/after-dark` 404 (correct path used); `famsf.org/visit` and `/visit/free-admission` 404; `about.asianart.org` and `ybgfestival.org` unusable; `sfstpatricksparade.com` unreachable (excluded); `sfoutsidelands.com` HTTP 500 (excluded); `thesfmarathon.com` and `baytobreakers.com` internal date-copy conflicts; `chineseparade.com` labels 2027 "Year of the Ram" (site error, zodiac claim not repeated); `sfballet.org` gated by a cookie wall (no programme rows); `sfautoshow.com` under construction; `unionsquaresf.com` parked. Scope exclusions: Black Joy Parade (Oakland), Daly City Street Festival, Levi's Stadium / Santa Clara. No inference used anywhere: unavailable values are blank and flagged.
 
 ## Verification standard (applies to every data row)
 
