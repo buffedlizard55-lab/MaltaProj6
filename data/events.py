@@ -2376,6 +2376,68 @@ EVENTS += [
         notes="Added 2026-10-18 by session arena-8eaf6c0a. The What's On page lists 'In the Shadows of the West ... January 23, 2027 - March 26, 2027'. Admission and gallery hours are not published on that page, so those cells are blank and the row is unverified."),
 ]
 
+EVENTS += [
+
+    # ------------------------------------------------------------------
+    # ADDED 2026-10-18 by session arena-291a13ff (gap research, IR-1).
+    # Every value read off the official source page fetched that day;
+    # candidates recorded in data/gap-candidates-291a13ff.json.
+    # ------------------------------------------------------------------
+    dict(
+        id="spc-ferry-trick-or-treat-2026", title="Trick-or-Treat at the Ferry Building (kids & family Halloween)",
+        page="special", type="Special - Dated",
+        schedule="Thursday, October 29, 2026, 4:00-6:00 p.m.",
+        dates="Thursday, October 29, 2026, 4-6 p.m.",
+        location="Ferry Building Marketplace", area="Embarcadero",
+        cost="Free (all activities are free and open to the public, per the official event page; RSVP on Eventbrite requested for candy supply)",
+        organiser="Ferry Building Marketplace",
+        source_name="Ferry Building Marketplace — Trick-or-Treat",
+        source_url="https://www.ferrybuildingmarketplace.com/events/trick-or-treat-2026/", status="verified",
+        notes="Added by arena-291a13ff. Official venue event page fetched 2026-10-18: 'Visit the Ferry Building on Thursday, October 29th from 4-6 PM ... All activities are free and open to the public. Trick-or-treating and crafts will continue while supplies last.' Halloween crafts, music and games inside the Marketplace."),
+    dict(
+        id="spc-ferry-world-of-dumplings-2026", title="World of Dumplings (third annual, Ferry Building)",
+        page="special", type="Special - Dated",
+        schedule="Sunday, October 25, 2026, 11:00 a.m.-5:00 p.m.",
+        dates="Sunday, October 25, 2026, 11 a.m.-5 p.m.",
+        location="Ferry Building", area="Embarcadero",
+        cost="", organiser="Asians Are Strong (per the official venue event page)",
+        source_name="Ferry Building Marketplace — World of Dumplings",
+        source_url="https://www.ferrybuildingmarketplace.com/events/world-of-dumplings/", status="unverified",
+        notes="Added by arena-291a13ff. Official venue event page fetched 2026-10-18: 'World of Dumplings is back for its third year ... Sunday, October 25th 11:00 am to 5:00 pm ... Ferry Building ... Brought to you by Asians Are Strong.' The page states no admission price, so the cost cell is blank and the row is unverified. The venue calendar grid shows a '11:00pm to 5:00pm' typo; the event page itself states 11:00 am-5:00 pm."),
+    dict(
+        id="ann-sf-tea-festival", title="Fall SF International Tea Festival",
+        page="annual", type="Annual",
+        schedule="Saturday-Sunday, November 14-15, 2026, 11:00 a.m.-5:00 p.m.",
+        dates="November 14-15, 2026, 11 a.m.-5 p.m.",
+        location="Ferry Building, Grand Hall, Second Floor", area="Embarcadero",
+        cost="", organiser="SF International Tea Festival, hosted at the Ferry Building",
+        source_name="Ferry Building Marketplace — Fall SF International Tea Festival",
+        source_url="https://www.ferrybuildingmarketplace.com/events/sf-international-tea-festival-2026/", status="unverified",
+        notes="Added by arena-291a13ff. Official venue event page fetched 2026-10-18: 'November 14 & 15 11am to 5pm ... Second Floor, Grand Hall ... Get Tickets' (Eventbrite link). Admission includes unlimited tastings and a porcelain cup, but no price is stated on the page, so the cost cell is blank and the row is unverified."),
+    dict(
+        id="spc-sfmoma-steinkamp", title="Jennifer Steinkamp: It's a nice day for a white wedding. (SFMOMA installation, free to see)",
+        page="special", type="Special - Dated",
+        schedule="August 22, 2026 - December 3, 2026, and December 14, 2026 - January 15, 2027",
+        dates="August 22, 2026 - December 3, 2026; December 14, 2026 - January 15, 2027",
+        location="Humboldt Bank Building, 785 Market St", area="SoMa / Mid-Market",
+        cost="Free (listed 'free to see' on SFMOMA's official What's On View page)",
+        organiser="San Francisco Museum of Modern Art",
+        source_name="SFMOMA — What's On View (Installations and Special Projects)",
+        source_url="https://www.sfmoma.org/exhibitions/", status="verified",
+        notes="Added by arena-291a13ff. SFMOMA exhibitions index fetched 2026-10-18: 'Humboldt Bank Building, 785 Market St — free to see — August 22, 2026-December 3, 2026; December 14, 2026-January 15, 2027.'"),
+    dict(
+        id="spc-sfmoma-in-between", title="In Between (SFMOMA, Koret Education Center, free to see)",
+        page="special", type="Special - Dated",
+        schedule="September 3, 2026 - May 2027",
+        dates="September 3, 2026 - May 2027",
+        location="SFMOMA, Floor 2, Koret Education Center", area="SoMa / Yerba Buena",
+        cost="Free (listed 'free to see' on SFMOMA's official What's On View page)",
+        organiser="San Francisco Museum of Modern Art",
+        source_name="SFMOMA — What's On View (Installations and Special Projects)",
+        source_url="https://www.sfmoma.org/exhibitions/", status="verified",
+        notes="Added by arena-291a13ff. SFMOMA exhibitions index fetched 2026-10-18: 'Floor 2, Koret Education Center — free to see — September 3, 2026-May 2027.'"),
+]
+
 # ---------------------------------------------------------------------------
 # Irregularities detected during verification. Each item is surfaced on the
 # "Flagged for Review" page of the generated site.
@@ -3163,6 +3225,12 @@ CATEGORY_BY_ID = {
     "rec-ferry-mahjong": "technology",
     "rec-ferry-music-on-the-plaza": "community",
     "rec-ferry-monday-yoga": "community",
+    # arena-291a13ff additions (2026-10-18)
+    "spc-ferry-trick-or-treat-2026": "community",
+    "spc-ferry-world-of-dumplings-2026": "community",
+    "ann-sf-tea-festival": "community",
+    "spc-sfmoma-steinkamp": "arts",
+    "spc-sfmoma-in-between": "arts",
 }
 
 VALID_CATEGORIES = ("civic", "arts", "sports", "markets", "community", "technology")
