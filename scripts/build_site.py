@@ -216,9 +216,15 @@ def build_index() -> str:
 </a>"""
         )
 
-    type_counts = Counter(e.get("type", "") for e in EVENTS)
+    group_labels = {
+        "recurring": "Regularly recurring (fixed weekly / monthly schedule)",
+        "annual": "Annual (repeats year after year)",
+        "special": "Special (a dated, one-off occurrence)",
+    }
+    group_counts = Counter(e.get("group", "") for e in EVENTS)
     type_rows = "".join(
-        f"<tr><td>{esc(k)}</td><td class='num'>{v}</td></tr>" for k, v in sorted(type_counts.items())
+        f"<tr><td>{esc(group_labels.get(k, k))}</td><td class='num'>{v}</td></tr>"
+        for k, v in sorted(group_counts.items(), key=lambda kv: ["recurring", "annual", "special"].index(kv[0]))
     )
     area_counts = Counter(e.get("area", "") for e in EVENTS)
     area_rows = "".join(

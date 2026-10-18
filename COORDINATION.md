@@ -42,7 +42,7 @@ That conflict is resolved below, in **Merge conflict resolution**, without disca
 | 8 | Site build — GitHub Pages, landing page + subpages | ✅ done | `arena-b0f3cfd3` | `scripts/build_site.py`, `assets/site.css`, `*.html` | 11 generated static pages, no client-side JS. Dashboard landing page with stat tiles, category tiles and analysis tables. |
 | 9 | "Flagged for Review" page | ✅ done | `arena-b0f3cfd3` | `data/events.py` (FLAGGED), `flagged.html` | 53 published items: conflicts between official sources, blank-cell rows, ended events, out-of-scope exclusions. |
 | 10 | Integration: merge branches, re-verify, link check, publish | ✅ done | `arena-b0f3cfd3` | `data/*`, `scripts/*`, `tools/*`, `*.html`, `assets/*` | Merged `origin/main` (the parallel session's work), unioned both datasets, re-ran the link/anchor/tag checker over all 14 pages → 0 problems. Row counts on all 8 listing pages match the dataset. |
-| 11 | PR → main, merge, confirm Pages deploy | 🟡 in progress | `arena-b0f3cfd3` | — | PR open; merge + deploy confirmation appended below. |
+| 11 | PR → main, merge, confirm Pages deploy | ✅ done | `arena-b0f3cfd3` | — | PR **#7** https://github.com/buffedlizard55-lab/MaltaProj6/pull/7 — merged to `main` 2026-10-18T01:10:21Z as merge commit `5c0c788`. GitHub Pages build for `5c0c788` completed with status `built`, no error. Live site confirmed at https://buffedlizard55-lab.github.io/MaltaProj6/ (PR #2 was auto-closed by GitHub when the head branch absorbed the base branch's tip commit; PR #7 replaces it from the same branch). |
 
 ## Task board — `arena-8fb52462` (parallel session, as recorded by that session)
 
@@ -133,9 +133,19 @@ so the two views can never disagree. The build script re-checks this on every ru
   `data/annual.json`, `data/special.json`, `data/review.csv` and `tools/*` are taken as-is; the generated pages
   are regenerated from the union dataset. Result is unchanged at 205 events / 53 flagged items, with 0 link,
   anchor or tag problems across all 14 pages.
-- **2026-10-18** — **Task 11 in progress** — PR #2 was auto-closed by GitHub when the head branch absorbed the
-  base branch's tip commit; a replacement PR is opened from the same branch. Merge + Pages deploy confirmation to
-  be appended below.
+- **2026-10-18** — **Task 10c final re-sync.** The parallel session pushed PR #6 while this integration was in
+  flight; `origin/main` was merged again and the union rebuilt on top of it — unchanged at 205 events / 53 flagged
+  items, 0 link, anchor or tag problems across all 14 pages.
+- **2026-10-18** — **Task 11 complete.** PR #2 was auto-closed by GitHub when the head branch absorbed the base
+  branch's tip commit, so a replacement PR was opened from the same branch.
+  **PR #7 → https://github.com/buffedlizard55-lab/MaltaProj6/pull/7 — MERGED** at 2026-10-18T01:10:21Z,
+  merge commit `5c0c788` (`Merge pull request #7 from buffedlizard55-lab/arena/b0f3cfd3-maltaproj6`).
+  GitHub Pages build for `5c0c788` finished with status **`built`** and `error: null` (23 s build, source
+  `main` / `/`). Live pages confirmed by fetching the deployed site: `index.html` (205 events / 166 verified /
+  39 flagged / 53 discrepancies / 88 official domains), `recurring.html` (111 rows) and `flagged.html`
+  (53 items) all serve the merged content, and the parallel session's `weekly.html`, `analysis.html` and
+  `sources.html` remain live alongside them.
+  **Published site: https://buffedlizard55-lab.github.io/MaltaProj6/**
 
 ### `arena-8fb52462` (parallel session, as recorded by that session)
 
