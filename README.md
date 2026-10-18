@@ -1,33 +1,19 @@
 # San Francisco Events
 
-<<<<<<< HEAD
-A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **287 listed entries** (127 recurring, 58 annual, 102 special/dated) and is intended to cover events physically within the City and County of San Francisco.
+A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **299 listed entries** (127 recurring, 59 annual, 113 special/dated) and is intended to cover events physically within the City and County of San Francisco.
 
-Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (8), music (52), AI (9), then everything else (218)** — with free admission called out explicitly: **154** entries publish free-access wording, of which **137** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
-=======
-A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **292 listed entries** (127 recurring, 59 annual, 106 special/dated) and is intended to cover events physically within the City and County of San Francisco.
-
-Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (8), music (52), AI (9), then everything else (223)** — with free admission called out explicitly: **157** entries publish free-access wording, of which **140** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
->>>>>>> daa2d70 (integrate(291a13ff): add 5 source-verified rows, honest end dates for running exhibitions, README counts)
+Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (8), music (52), AI (9), then everything else (230)** — with free admission called out explicitly: **158** entries publish free-access wording, of which **141** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
 
 > **Coverage limitation:** this is not an exhaustive or live calendar of every concert, gallery opening, private event, pop-up or short-notice listing. The dataset reflects public programmes and event pages found during the recorded research pass. Check the [City's official events calendar](https://www.sf.gov/events/upcoming) and each organizer for additional or current listings.
 
 ## Verification and review status
 
 - Every published event row has a link to an organizer, government agency, state agency or federal park source. The research log records the pages as checked on **2026-10-18**.
-<<<<<<< HEAD
-- **169** rows are marked `verified`; **118** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
-- **217** discrepancy, source, scope and other review items are published on `flagged.html`.
+- **177** rows are marked `verified`; **122** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
+- **232** discrepancy, source, scope and other review items are published on `flagged.html`.
 - **47** rows record editions that have already finished (the 2026 state fair, Dreamforce, the Mime Troupe summer season and similar); they stay in the catalogue as records, carry a **concluded** badge, and are kept out of the "upcoming dated events" strip on the home page.
 - **How cost is shown.** Each cost cell quotes the official source exactly and is rendered as a colour-coded label — free, partly free, paid, or *cost not published*. A price is never inferred: when the official page does not state an amount the cell is left blank, the row is marked `unverified`, and the official source's own wording (for example "Ticketed") is still shown underneath as *as published*, clearly separated from the price.
 - **22** rows are marked `verified` yet still carry a blank schedule, location or cost cell, because the official source does not publish that value. Here `verified` means *every value the source does publish was confirmed*, not *every cell is filled*. The discrepancy is published as review item `flag-verified-rows-with-blank-core-cell` rather than silently re-badged or filled in.
-=======
-- **172** rows are marked `verified`; **120** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
-- **217** discrepancy, source, scope and other review items are published on `flagged.html`.
-- **46** rows record editions that have already finished (the 2026 state fair, Dreamforce, the Mime Troupe summer season and similar); they stay in the catalogue as records, carry a **concluded** badge, and are kept out of the "upcoming dated events" strip on the home page.
-- **How cost is shown.** Each cost cell quotes the official source exactly and is rendered as a colour-coded label — free, partly free, paid, or *cost not published*. A price is never inferred: when the official page does not state an amount the cell is left blank, the row is marked `unverified`, and the official source's own wording (for example "Ticketed") is still shown underneath as *as published*, clearly separated from the price.
-- **22** rows are marked `verified` yet still carry a blank schedule, location or cost cell, because the official source does not publish that value. Here `verified` means *every value the source does publish was confirmed*, not *every cell is filled*. The discrepancy is published as review item `flag-verified-rows-with-blank-core-cell` rather than silently re-badged or filled in.
->>>>>>> daa2d70 (integrate(291a13ff): add 5 source-verified rows, honest end dates for running exhibitions, README counts)
 - An independent line-by-line audit on **2026-10-18** (`audit/`, session `arena-bdaa17b4`; merged with session `arena-7d8015f4`'s integrity pass, which upgraded the One City One Book source and set the blank-cost Alcatraz closure row to `unverified`) re-fetched a stratified sample of the official source pages plus every irregular row, removed one out-of-scope row and two duplicate rows, corrected five rows, and added nine verified missing events. See `audit/AUDIT-2026-10-18-bdaa17b4.md` for the full findings and `data/gap-candidates-bdaa17b4.json` for the gap-research trail.
 - Session `arena-23722ef3` performed a live line-by-line re-verification pass on **2026-10-18**, fetching the official pages behind 22+ high-risk rows (dated annuals, sports schedules, museum exhibitions, civic meetings) and correcting six rows whose values the sources did not support (SF Marathon, Fleet Week Parade of Ships time, Manon run start, SuperNatural times/prices, Rules/LUT committee times, Litquake title). The full row-by-row check log is in `COORDINATION.md`.
 - Session `arena-3239c070` performed a full gap-research and re-verification pass on **2026-10-18**, fetching 25+ official pages (SFMTA cable cars, ArtSpan SF Open Studios, Maritime USS Pampanito, Musée Mécanique, SailGP 2026 calendar, Yerba Buena Gardens Festival, SF Design Week, Moscone Center calendar, plus spot-checks of SFMOMA, Asian Art Museum, SF Symphony, FAMSF and Exploratorium). Added four verified rows (SF Cable Cars, SF Open Studios, USS Pampanito, Musée Mécanique) and three new flagged exclusions (SailGP no SF stop in 2026, Union Square ice rink and Kaiser SF Half unverified). See `COORDINATION.md` for the full log and `data/events.py` for every source link.
@@ -40,11 +26,9 @@ Every entry also carries a focus tag, so the same catalogue can be read the way 
 - Session `arena-fc3438db` ran the verification + requirements-alignment pass on **2026-10-18** (see `audit/AUDIT-2026-10-18-fc3438db.md` and `data/gap-candidates-fc3438db.json`): re-verified every soonest-dated row against its official page (28 live checks), corrected the Boo at the Zoo listing to the zoo's own event page (the published wording 'free with paid daytime admission or Zoo membership' is preserved in the review register under the project's blank-unless-numeric price rule) and added 14 source-verified rows not already covered by concurrent sessions (SF Symphony and SF Opera October–November programme, Exploratorium Creepatorium, Castro additions, INFORMS, SEMICON West, HumanX 2026, SFPL AI workshops) with a focus on the brief's free gaming / music / AI themes (SFPL gaming, chess and AI workshop programmes, SF Tech Week, HumanX 2026, Current SF, plus the SF Symphony / SF Opera October–November programme and the Moscone conventions). Concurrent sessions' focus taxonomy (gaming/music/AI), free-events page and cost rendering were kept as the baseline; five of this session's rows were superseded by arena-61a46409's richer-sourced SFPL and conference rows and were not duplicated.
 - Session `arena-db227e31` ran a free-upcoming alignment pass on **2026-10-18** (see `audit/AUDIT-2026-10-18-db227e31.md`). The homepage executive summary and main list are now free-only and date-ordered, with gaming, music and AI before everything else, and paid or unpriced rows on `paid-events.html`. It added 12 verified free dated rows (Illuminate LIVE concerts, Bay Beats, and Family Summits) from official pages, left Sunday Streets admission blank because the official pages do not state a price, corrected the Presidio Día de los Muertos / Diwali time and address, and flagged the Rules and Land Use calendar conflicts plus the ArtSpan page that no longer re-rendered its dates.
 - Session `arena-fe7c710c` ran the final integration pass on **2026-10-18** (see `audit/AUDIT-2026-10-18-fe7c710c.md`). It opened the organiser's own events index and each individual event page and added **18 source-verified rows** — 13 free Illuminate LIVE concerts from 22 October to 15 November 2026, two Open Source AI Week San Francisco flagship events, and three Dogpatch Games rows carrying that venue's exact published prices. It then re-read every recently-touched page and **blanked 15 cost cells that asserted "Free" without the official page saying so** (Castro Merchants, Sunset Mercantile, the Ferry Building Marketplace, the Presidio Visitor Center, the Chinatown shopping streets and the Castro Art Mart), marking those rows unverified and flagging them, while keeping the free cells that the organisers do publish (Sunset Holiday Mercantile, the Autumn Moon Festival, the Conservatory Light Show, all Illuminate listings, the Presidio Diwali festival and the four SF.gov family summits). It date-qualified 17 repeated Illuminate titles so no two rows share a title, pointed eight Sunset Mercantile rows at each event's own page instead of the organisation home page, resolved the Castro Menorah date conflict in the organiser's favour, published 9 new review items, and made `data/meta.json` a build output so its counts can no longer drift.
-<<<<<<< HEAD
 - Session `arena-8eaf6c0a` ran an independent verification + gap-research pass on **2026-10-18** (`audit/AUDIT-2026-10-18-8eaf6c0a.md`), then — after `arena-fe7c710c` released the integration claim — applied its verified corrections and additions: 28 live official-source re-checks of the soonest-dated and free gaming/music/AI rows (all confirmed except two); the derived Larsen Pickleball cost wording ("Free (no reservation fee…)") blanked under the never-infer rule with `flag-price-spt-larsen-pickleball` and two stale Larsen flag texts repaired; the AI Week San Francisco 'Free' cell blanked because "100% free to use" describes the RSVP directory, not admission (`flag-price-spc-ai-week-sf-2026`); the `page` metadata corrected on the two SFPL annual programme rows; and six rows added from live-fetched official pages — GitHub Universe 2026 (Oct 28–29, Fort Mason, virtual ticket free), SOMArts In Their Name: Día de Los Muertos 2026 (opening Oct 23, $15 / free youth 16 & under; exhibition Oct 24–Nov 20), ZINETHING! monthly zine meetup (Oct 20, Main Library, cost not published), St. Francis & St. Clare relics veneration (Oct 16–Nov 28, 1111 Gough St, cost not published), SF Zine Fest 2026 concluded-edition record, and SOMArts In the Shadows of the West (Jan 23–Mar 26, 2027) — plus the verified exclusion `flag-fan-expo-no-sf-2026` (FAN EXPO San Francisco is not on the organiser's 2026–27 circuit).
-=======
+- Session `arena-9fca0b37` ran the eleventh line-by-line verification pass on **2026-10-18** (see `audit/AUDIT-2026-10-18-9fca0b37.md` and `data/gap-candidates-9fca0b37.json`): 56 official pages re-fetched, then integrated after `arena-fe7c710c` released the shared-file claim. It added the **District 10 Bayview Family Summit** (free, 5 December — the event page earlier sessions could not find now exists) and six **Exploratorium After Dark** editions; it filled the four **SF Opera** rows with the organiser's published prices and times (Strauss "Starting at $30", Adlers "Starting at $34", Chorus "$49.00" at the Dianne and Tad Taube Atrium Theater, and the Opera Ball agenda with its $450–$10,000 levels) and the three **SF Symphony** rows with their published start times; it added 13 register items that took `UNVERIFIED_NOT_IN_FLAGGED_REGISTER` from 19 to 0; it closed the District 10 "page not found" item and both Castro Menorah date-conflict items after the organiser corrected its prose; and it recorded the city's own OCOFI calendar linking District 3 to a 404 slug. Overlapping corrections already merged from `arena-fe7c710c` were kept untouched.
 - Session `arena-291a13ff` ran a concurrent independent verification and gap-research pass on **2026-10-18** (see `audit/AUDIT-2026-10-18-291a13ff.md` and `data/gap-candidates-291a13ff.json`), integrating after `arena-fe7c710c`'s claim was released. It re-fetched 25 official pages for the near-term and free gaming/music/AI rows (all matched; two JS-shell pages recorded as not re-rendered, nothing guessed), ran a new structural checker over the union (`audit/check_291a13ff.py`: 0 duplicate ids, all sources https, 0 broken internal links, mirror in sync), and added **five source-verified rows** — free Trick-or-Treat at the Ferry Building (Oct 29), free SFMOMA *Jennifer Steinkamp* and *In Between* installations, World of Dumplings (Oct 25) and the Fall SF International Tea Festival (Nov 14–15) with costs left blank because the official pages state no price. It also left an honest blank end date (instead of a wrong parsed one) for two running exhibitions whose museum pages publish no closing date (`DATE_OVERRIDES`), and recorded the Cloudflare "Oct 19–21 vs over four days" self-inconsistency and the stale Castro Menorah index-teaser text as review notes.
->>>>>>> daa2d70 (integrate(291a13ff): add 5 source-verified rows, honest end dates for running exhibitions, README counts)
 - The build-time validator checks dataset integrity, source-link presence, table markup and local links. It does **not** fetch pages; the source-fetch verification above is recorded in `COORDINATION.md` and source freshness must be re-checked against the linked official pages.
 
 ## Site
@@ -54,36 +38,20 @@ The site is plain static HTML and is published with GitHub Pages.
 | Page | Contents |
 |---|---|
 | `index.html` | Dashboard: free-only executive summary near today, free upcoming main list (gaming, music, AI, then everything else), paid section separate |
-<<<<<<< HEAD
-| `all-events.html` | 287 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
-| `free-events.html` | 154 entries whose published official cost wording explicitly includes free access |
-| `paid-events.html` | 150 paid, mixed, or price-not-published entries, kept out of the free main list |
+| `all-events.html` | 299 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
+| `free-events.html` | 158 entries whose published official cost wording explicitly includes free access |
+| `paid-events.html` | 158 paid, mixed, or price-not-published entries, kept out of the free main list |
 | `recurring.html` | 127 entries on a regular weekly, monthly or other recurring schedule |
 | `annual.html` | 59 entries that recur year after year |
-| `special.html` | 106 dated or time-limited entries for 2026–2027 |
+| `special.html` | 113 dated or time-limited entries for 2026–2027 |
 | `civic.html` | 37 civic entries, boards, commissions and public meetings |
-| `arts.html` | 106 arts, culture, museums, performance and screen entries |
+| `arts.html` | 114 arts, culture, museums, performance and screen entries |
 | `sports.html` | 10 sports, races and active recreation entries |
 | `technology.html` | 26 AI and gaming entries — the focus-tag view, so library gaming clubs sit alongside GDC, AI Council, TechCrunch Disrupt, Gamesforum and GamesBeat NEXT; the ticket price is blank wherever the organizer has not published one |
 | `music.html` | 52 music entries — concerts, festivals, opera, jazz and free music programmes |
 | `markets.html` | 29 farmers markets, food halls and street markets |
-| `community.html` | 91 neighbourhood programmes, festivals and free recreation entries |
-=======
-| `all-events.html` | 292 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
-| `free-events.html` | 157 entries whose published official cost wording explicitly includes free access |
-| `paid-events.html` | 152 paid, mixed, or price-not-published entries, kept out of the free main list |
-| `recurring.html` | 127 entries on a regular weekly, monthly or other recurring schedule |
-| `annual.html` | 59 entries that recur year after year |
-| `special.html` | 106 dated or time-limited entries for 2026–2027 |
-| `civic.html` | 37 civic entries, boards, commissions and public meetings |
-| `arts.html` | 108 arts, culture, museums, performance and screen entries |
-| `sports.html` | 10 sports, races and active recreation entries |
-| `technology.html` | 26 AI and gaming entries — the focus-tag view, so library gaming clubs sit alongside GDC, AI Council, TechCrunch Disrupt, Gamesforum and GamesBeat NEXT; the ticket price is blank wherever the organizer has not published one |
-| `music.html` | 52 music entries — concerts, festivals, opera, jazz and free music programmes |
-| `markets.html` | 29 farmers markets, food halls and street markets |
-| `community.html` | 94 neighbourhood programmes, festivals and free recreation entries |
->>>>>>> daa2d70 (integrate(291a13ff): add 5 source-verified rows, honest end dates for running exhibitions, README counts)
-| `flagged.html` | 217 review items plus the rows carrying unconfirmed values |
+| `community.html` | 95 neighbourhood programmes, festivals and free recreation entries |
+| `flagged.html` | 232 review items plus the rows carrying unconfirmed values |
 | `methodology.html` | Scope, sourcing rules, build process and limitations |
 | `weekly.html` | Supplementary view from the parallel research session |
 | `analysis.html` | Counts, schedule/category/area breakdowns, blank-field coverage and the list of source domains |
@@ -105,7 +73,7 @@ countdown and the gaming / music / AI badge on each row. Paid and unpriced rows 
 ```
 COORDINATION.md             shared task board, research log, verification notes and irregularities
 data/events.py              canonical authored dataset
-data/events.json             generated machine-readable mirror (292 events, 217 review items)
+data/events.json             generated machine-readable mirror (299 events, 232 review items)
 data/gap-candidates-bdaa17b4.json  independent-audit gap-research trail (added / not-added candidates)
 audit/                        independent audit: report, structural row checker, integration script
 data/weekly.json              supplementary raw recurring rows

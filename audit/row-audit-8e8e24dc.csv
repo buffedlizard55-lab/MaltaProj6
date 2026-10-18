@@ -24,7 +24,7 @@ rec-famssf-late-night,Late Night Editions at the de Young and Legion of Honor,re
 rec-japanese-tea-garden-free-hour,Japanese Tea Garden free admission hour,recurring,community,unverified,https://gggp.org/visit/admissions-hours/,gggp.org,
 rec-sfbotanical-free,San Francisco Botanical Garden free admission hours,recurring,community,unverified,https://gggp.org/tickets/,gggp.org,
 rec-ferry-plaza-farmers-market,Foodwise Ferry Plaza Farmers Market,recurring,markets,verified,https://www.ferrybuildingmarketplace.com/shops/the-ferry-plaza-farmers-market/,www.ferrybuildingmarketplace.com,
-rec-ferry-building-marketplace,Ferry Building Marketplace (shops & food hall),recurring,markets,verified,https://www.ferrybuildingmarketplace.com/,www.ferrybuildingmarketplace.com,
+rec-ferry-building-marketplace,Ferry Building Marketplace (shops & food hall),recurring,markets,unverified,https://www.ferrybuildingmarketplace.com/,www.ferrybuildingmarketplace.com,
 rec-sunday-streets,SFMTA Sunday Streets,recurring,community,unverified,https://www.sfmta.com/getting-around/walk/sunday-streets,www.sfmta.com,
 rec-off-the-grid-treasure-island,Off The Grid Treasure Island (fall edition),recurring,markets,verified,https://www.tisf.com/off-the-grid,www.tisf.com,
 rec-sfsymphony,San Francisco Symphony concert season,recurring,arts,unverified,https://www.sfsymphony.org/calendar/,www.sfsymphony.org,
@@ -108,9 +108,9 @@ spc-opera-in-the-park,Opera in the Park (free concert by San Francisco Opera),an
 spc-fort-point-living-history,Fort Point Living History Weekend,special,community,verified,https://home.nps.gov/fopo/living-history-weekend.htm,home.nps.gov,past-dated edition (latest 2026-08-01)
 spc-nye-fireworks,New Year's Eve fireworks on the Embarcadero,special,community,verified,https://www.sfport.com/meetings/new-years-eve-fireworks-celebration-1,www.sfport.com,past-dated edition (latest 2026-01-01)
 spc-castro-halloween,Halloween in The Castro,special,community,unverified,https://castromerchants.com/events,castromerchants.com,
-spc-castro-holiday-tree,Castro Holiday Tree Lighting Ceremony,special,community,verified,https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023,castromerchants.com,
-spc-castro-menorah,Castro Menorah Lighting,special,community,verified,https://castromerchants.com/events/castro-menorah-lighting,castromerchants.com,
-spc-castro-art-walk,Castro Art Walk (first Friday of the month),special,community,verified,https://castromerchants.com/events,castromerchants.com,
+spc-castro-holiday-tree,Castro Holiday Tree Lighting Ceremony,special,community,unverified,https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023,castromerchants.com,
+spc-castro-menorah,Castro Menorah Lighting,special,community,unverified,https://castromerchants.com/events/castro-menorah-lighting,castromerchants.com,
+spc-castro-art-walk,Castro Art Walk (first Friday of the month),special,community,unverified,https://castromerchants.com/events/event-two-bmpss-x9twa-cchrg-k7z72-f4j9e-2lpxg-dspen-dfb7l-jpma9-8zzy5-sl46a-dlk63-sdb58-yhyke-bry5g-shj4l-5ls3k,castromerchants.com,
 spc-alcatraz-closure,Alcatraz Island temporary closure (dock repairs),special,community,verified,https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm,www.nps.gov,"verified but core field blank: schedule,cost"
 art-deyoung,de Young Museum,recurring,arts,verified,https://www.famsf.org/visit/de-young-tickets-hours,www.famsf.org,
 art-legion-honor,Legion of Honor,recurring,arts,verified,https://www.famsf.org/visit/legion-tickets-hours,www.famsf.org,
@@ -121,7 +121,7 @@ art-explatorium,Exploratorium,recurring,arts,unverified,https://www.exploratoriu
 art-sfzoo,San Francisco Zoo & Gardens,recurring,arts,unverified,https://www.sfzoo.org/visit-the-zoo/events-and-programs/,www.sfzoo.org,
 art-conservatory,Conservatory of Flowers,recurring,arts,unverified,https://gggp.org/visit/admissions-hours/,gggp.org,
 art-randall,Randall Museum,recurring,arts,verified,https://www.randallmuseum.org/,www.randallmuseum.org,
-art-presidio-museum,Presidio Visitor Center,recurring,arts,verified,https://presidio.gov/explore/attractions/presidio-visitor-center,presidio.gov,
+art-presidio-museum,Presidio Visitor Center,recurring,arts,unverified,https://presidio.gov/explore/attractions/presidio-visitor-center,presidio.gov,
 art-fort-point,Fort Point National Historic Site,recurring,arts,verified,https://www.nps.gov/fopo/planyourvisit/things2do.htm,www.nps.gov,
 art-alcatraz,Alcatraz Island (Golden Gate National Recreation Area),recurring,arts,unverified,https://www.nps.gov/alca/index.htm,www.nps.gov,
 art-maritime,San Francisco Maritime National Historical Park,recurring,arts,verified,https://nps.gov/safr/planyourvisit/fees.htm,nps.gov,
@@ -134,12 +134,12 @@ spt-giants,San Francisco Giants home games,recurring,sports,unverified,https://w
 spt-warriors,Golden State Warriors home games,recurring,sports,unverified,https://warriors.com/news/warriors-announce-2026-27-regular-season-schedule-20260813,warriors.com,
 spt-valkyries,Golden State Valkyries home games,recurring,sports,unverified,https://valkyries.wnba.com/schedule,valkyries.wnba.com,past-dated edition (latest 2026-05-10)
 spt-pickleball-palace,Pickleball courts at the Palace of Fine Arts,recurring,sports,unverified,https://sfrecpark.org/m/newsflash/home/detail/1544,sfrecpark.org,
-spt-larsen-pickleball,Larsen Pickleball Complex,recurring,sports,verified,https://sfrecpark.org/1772/Pickleball-Court-Directory,sfrecpark.org,verified but core field blank: schedule
+spt-larsen-pickleball,Larsen Pickleball Complex,recurring,sports,unverified,https://sfrecpark.org/1772/Pickleball-Court-Directory,sfrecpark.org,
 mkt-alemany,Alemany Farmers Market ('The People's Market'),recurring,markets,verified,https://www.sf.gov/location--alemany-farmers-market,www.sf.gov,
 mkt-mission-community,Mission Community Market,recurring,markets,verified,https://foodwise.org/markets/,foodwise.org,
 mkt-castro-farmers,Castro Farmers' Market,recurring,markets,verified,https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf,www.cdfa.ca.gov,
 mkt-inner-sunset,Inner Sunset Farmers' Market,recurring,markets,verified,https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf,www.cdfa.ca.gov,
-mkt-sf-chinatown-food,"Chinatown food and shopping streets (Grant Avenue, Washington Street)",recurring,markets,verified,https://www.moonfestival.org/,www.moonfestival.org,
+mkt-sf-chinatown-food,"Chinatown food and shopping streets (Grant Avenue, Washington Street)",recurring,markets,unverified,https://www.moonfestival.org/,www.moonfestival.org,
 mkt-treasurefest,TreasureFest (Treasure Island flea and craft festival),annual,markets,unverified,https://www.treasurefest.com/,www.treasurefest.com,
 rec-sf-city-guides,San Francisco City Guides — free walking tours,recurring,community,verified,https://sfcityguides.org/,sfcityguides.org,
 art-walt-disney-family-museum,The Walt Disney Family Museum,recurring,arts,verified,https://www.waltdisney.org/visit/admission,www.waltdisney.org,
@@ -169,12 +169,13 @@ rec-sfpl-mix-gaming,Gaming at The Mix (free teen video and tabletop gaming),recu
 rec-sfpl-gaming-citywide,"San Francisco Public Library gaming programmes (board games, chess, D&D, mahjong, bocce)",recurring,community,verified,https://sfpl.org/events?field_event_topic_target_id=553,sfpl.org,
 rec-dogpatch-games-venue,Dogpatch Games — tabletop and board game community hub,recurring,community,verified,https://www.dogpatch.games/tablerates,www.dogpatch.games,
 rec-dogpatch-boardgame-league,Recreational Board Game League (Wednesdays) — Dogpatch Games,recurring,community,verified,https://www.dogpatch.games/team-league,www.dogpatch.games,
+spc-sfpl-family-game-night-2026-11-10,Family Board Game and LEGO Night (SFPL Noe Valley),special,community,verified,https://sfpl.org/quickview/138715,sfpl.org,
 spc-dogpatch-love-potion-2026-10-22,Game Night at Love Potion Library (hosted by Dogpatch Games),special,community,unverified,https://www.dogpatch.games/events1/love-potion-library-2026-10-22-gaxsg,www.dogpatch.games,
 rec-sfpl-mix-music-studios,The Mix at SFPL — free music and media production studios for teens,recurring,arts,verified,https://sfpl.org/teens/the-mix,sfpl.org,
 rec-sfpl-dance-music,San Francisco Public Library dance and music programmes,recurring,arts,verified,https://sfpl.org/events?field_event_topic_target_id=452,sfpl.org,
 ann-sfpl-tech-week,SFPL Tech Week — free digital-skills and AI workshops,annual,community,verified,https://sfpl.org/techweek,sfpl.org,past-dated edition (latest 2026-05-16)
 spc-ai-engineer-code-2026,AI Engineer Code Summit 2026,special,community,verified,https://ai.engineer/code/2026,ai.engineer,
-spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",special,community,verified,https://week-of-ai.com/,week-of-ai.com,
+spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",special,community,unverified,https://week-of-ai.com/,week-of-ai.com,
 spc-osai-debates-2026-10-19,Open Weight Debate Night (Open Source AI Week 2026),special,technology,unverified,https://opensourceaiweek.com/the-debates/,opensourceaiweek.com,
 spc-osai-awards-2026-10-23,Open Source AI Awards Night (Open Source AI Week 2026),special,technology,unverified,https://opensourceaiweek.com/open-source-ai-awards/,opensourceaiweek.com,
 spc-current-sf-2026,Current San Francisco 2026 (Confluent — real-time data and AI),special,community,unverified,https://www.moscone.com/events/current-san-francisco-2026,www.moscone.com,
@@ -183,10 +184,10 @@ spc-cloudflare-connect-2026,Cloudflare Connect 2026,special,community,unverified
 spc-symphony-the-ring,The Ring — Film with Live Orchestra (SF Symphony),special,arts,unverified,https://www.sfsymphony.org/Buy-Tickets/2026-27/The-Ring,www.sfsymphony.org,
 spc-symphony-music-for-families,Music for Families (SF Symphony),special,arts,unverified,https://www.sfsymphony.org/Buy-Tickets/2026-27/Music-for-Families-Oct,www.sfsymphony.org,
 spc-symphony-adams-mendelssohn,Elim Chan Conducts Adams and Mendelssohn (SF Symphony),special,arts,unverified,https://www.sfsymphony.org/Buy-Tickets/2026-27/Doctor-Atomic-and-Mendelssohn,www.sfsymphony.org,
-spc-opera-strauss-concert,Strauss In Concert (San Francisco Opera),special,arts,unverified,https://www.sfopera.com/seasons/fall-concert/,www.sfopera.com,
-spc-opera-ball,Opera Ball (San Francisco Opera),special,arts,unverified,https://www.sfopera.com/seasons/opera-ball/,www.sfopera.com,
-spc-opera-adlers-concert,The Future Is Now: Adlers in Concert (San Francisco Opera),special,arts,unverified,https://www.sfopera.com/seasons/the-future-is-now-adlers-in-concert/,www.sfopera.com,
-spc-opera-chorus-concert,San Francisco Opera Chorus in Concert,special,arts,unverified,https://www.sfopera.com/seasons/san-francisco-opera-chorus-in-concert/,www.sfopera.com,
+spc-opera-strauss-concert,Strauss In Concert (San Francisco Opera),special,arts,verified,https://www.sfopera.com/seasons/fall-concert/,www.sfopera.com,
+spc-opera-ball,Opera Ball (San Francisco Opera),special,arts,verified,https://www.sfopera.com/seasons/opera-ball/,www.sfopera.com,
+spc-opera-adlers-concert,The Future Is Now: Adlers in Concert (San Francisco Opera),special,arts,verified,https://www.sfopera.com/seasons/the-future-is-now-adlers-in-concert/,www.sfopera.com,
+spc-opera-chorus-concert,San Francisco Opera Chorus in Concert,special,arts,verified,https://www.sfopera.com/seasons/san-francisco-opera-chorus-in-concert/,www.sfopera.com,
 spc-castro-tree-fundraiser,Castro Holiday Tree Fundraiser at Midnight Sun,special,community,verified,https://castromerchants.com/events,castromerchants.com,verified but core field blank: cost
 spc-castro-wine-walk-dec,Castro Wine Walk (December edition),special,community,unverified,https://castromerchants.com/events,castromerchants.com,
 spc-exploratorium-creepatorium,After Dark: Creepatorium (Exploratorium),special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark,www.exploratorium.edu,
@@ -194,43 +195,56 @@ spc-informs-2026,INFORMS Annual Meeting 2026,special,technology,unverified,https
 spc-semicon-west-2026,SEMICON West 2026,special,technology,unverified,https://www.moscone.com/events/semicon-west-2026,www.moscone.com,past-dated edition (latest 2026-10-15)
 ann-humanx-2026,HumanX 2026 (AI conference),annual,technology,unverified,https://moscone.com/events/humanx-2026,moscone.com,past-dated edition (latest 2026-04-09)
 rec-sfpl-ai-workshops,"SF Public Library AI workshops, talks & panels",recurring,technology,verified,https://sfpl.org/events,sfpl.org,
-spc-illuminate-reggae-2026-10-18,Crucial Reggae Sundays (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-october-18/,illuminate.org,
-spc-illuminate-ccs-2026-10-20,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-20/,illuminate.org,
-spc-illuminate-midweek-2026-10-21,Midweek Melodies (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/midweek-melodies-october-21/,illuminate.org,
-spc-illuminate-happyhour-2026-10-23,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-october-23/,illuminate.org,
+spc-illuminate-reggae-2026-10-18,"Crucial Reggae Sundays, October 18 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-october-18/,illuminate.org,
+spc-illuminate-ccs-2026-10-20,"Civic Center Soundtrack, October 20 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-20/,illuminate.org,
+spc-illuminate-midweek-2026-10-21,"Midweek Melodies, October 21 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/midweek-melodies-october-21/,illuminate.org,
+spc-illuminate-happyhour-2026-10-23,"Friday Happy Hour, October 23 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/friday-happy-hour-october-23/,illuminate.org,
 spc-illuminate-baybeats-2026-10-24,Bay Beats Launch Party at the Bandshell,special,arts,verified,https://illuminate.org/event/bay-beats-at-the-bandshell-october-24/,illuminate.org,
 spc-illuminate-reggae-2026-10-25,"Crucial Reggae Sundays, October 25 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-october-25/,illuminate.org,
 spc-illuminate-halloween-2026-10-31,Halloween at the Bandshell (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/halloween-at-the-bandshell-october-31/,illuminate.org,
-spc-illuminate-ccs-2026-10-22,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-22/,illuminate.org,duplicate title with spc-illuminate-ccs-2026-10-20
-spc-illuminate-ccs-2026-10-27,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-27/,illuminate.org,duplicate title with spc-illuminate-ccs-2026-10-20
-spc-illuminate-midweek-2026-10-28,Midweek Melodies (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/midweek-melodies-october-28/,illuminate.org,duplicate title with spc-illuminate-midweek-2026-10-21
-spc-illuminate-ccs-2026-10-29,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-29/,illuminate.org,duplicate title with spc-illuminate-ccs-2026-10-20
-spc-illuminate-happyhour-2026-10-30,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-october-30/,illuminate.org,duplicate title with spc-illuminate-happyhour-2026-10-23
-spc-illuminate-reggae-2026-11-01,Crucial Reggae Sundays (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-november-1/,illuminate.org,duplicate title with spc-illuminate-reggae-2026-10-18
-spc-illuminate-mtb-2026-11-04,Market to Bandshell (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/market-to-bandshell-november-4/,illuminate.org,
-spc-illuminate-happyhour-2026-11-06,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-november-6/,illuminate.org,duplicate title with spc-illuminate-happyhour-2026-10-23
-spc-illuminate-saturday-2026-11-07,Saturday at the Bandshell (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/saturday-at-the-bandshell-november-7/,illuminate.org,
-spc-illuminate-reggae-2026-11-08,Crucial Reggae Sundays (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-november-8/,illuminate.org,duplicate title with spc-illuminate-reggae-2026-10-18
-spc-illuminate-midweek-2026-11-11,Midweek Melodies (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/midweek-melodies-november-11/,illuminate.org,duplicate title with spc-illuminate-midweek-2026-10-21
-spc-illuminate-happyhour-2026-11-13,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-november-13/,illuminate.org,duplicate title with spc-illuminate-happyhour-2026-10-23
-spc-illuminate-otisology-2026-11-15,Nick Otis Presents Otisology: A Tribute to Shuggie & Johnny Otis (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/nick-otis-presents-otisology-a-tribute-to-shuggie-johnny-otis-november-15/,illuminate.org,
+spc-illuminate-ccs-2026-10-22,"Civic Center Soundtrack, October 22 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-22/,illuminate.org,
+spc-illuminate-ccs-2026-10-27,"Civic Center Soundtrack, October 27 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-27/,illuminate.org,
+spc-illuminate-midweek-2026-10-28,"Midweek Melodies, October 28 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/midweek-melodies-october-28/,illuminate.org,
+spc-illuminate-ccs-2026-10-29,"Civic Center Soundtrack, October 29 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-29/,illuminate.org,
+spc-illuminate-happyhour-2026-10-30,"Friday Happy Hour, October 30 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/friday-happy-hour-october-30/,illuminate.org,
+spc-illuminate-reggae-2026-11-01,"Crucial Reggae Sundays, November 1 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-november-1/,illuminate.org,
+spc-illuminate-mtb-2026-11-04,"Market to Bandshell, November 4 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/market-to-bandshell-november-4/,illuminate.org,
+spc-illuminate-happyhour-2026-11-06,"Friday Happy Hour, November 6 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/friday-happy-hour-november-6/,illuminate.org,
+spc-illuminate-saturday-2026-11-07,"Saturday at the Bandshell, November 7 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/saturday-at-the-bandshell-november-7/,illuminate.org,
+spc-illuminate-reggae-2026-11-08,"Crucial Reggae Sundays, November 8 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-november-8/,illuminate.org,
+spc-illuminate-midweek-2026-11-11,"Midweek Melodies, November 11 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/midweek-melodies-november-11/,illuminate.org,
+spc-illuminate-happyhour-2026-11-13,"Friday Happy Hour, November 13 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/friday-happy-hour-november-13/,illuminate.org,
+spc-illuminate-otisology-2026-11-15,"Nick Otis Presents Otisology, November 15 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/nick-otis-presents-otisology-a-tribute-to-shuggie-johnny-otis-november-15/,illuminate.org,
 spc-family-summit-d1-2026-10-22,District 1 Richmond Family Summit,special,community,verified,https://www.sf.gov/event-20261022-district-1-family-summit,www.sf.gov,
 spc-family-summit-d11-2026-10-29,District 11 Excelsior Family Summit,special,community,verified,https://www.sf.gov/event-20261029-district-11-family-summit-excelsior,www.sf.gov,
 spc-family-summit-d2-2026-11-07,District 2 Marina Family Summit,special,community,verified,https://www.sf.gov/event-20261107-district-2-family-summit,www.sf.gov,
 spc-family-summit-d4-2026-11-14,District 4 Family Summit,special,community,verified,https://www.sf.gov/event-20261114-district-4-family-summit,www.sf.gov,
 spc-family-summit-d3-2026-12-12,District 3 Chinatown Family Summit,special,community,verified,https://www.sf.gov/event-20261212-district-3-family-summit,www.sf.gov,
 spc-sunday-streets-excelsior-2026,Sunday Streets Excelsior 2026,special,community,unverified,https://sundaystreetssf.com/sunday-streets-excelsior-2026/,sundaystreetssf.com,
+spc-family-summit-d10-2026-12-05,District 10 Bayview Family Summit,special,community,verified,https://www.sf.gov/event-20261205-district-10-family-summit-bayview/,www.sf.gov,
+spc-exploratorium-after-dark-2026-10-22,After Dark: Death and Life / La muerte y la vida (Exploratorium),special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark-death-and-life,www.exploratorium.edu,
+spc-exploratorium-after-dark-2026-11-05,After Dark: Digest This (Exploratorium),special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark-digest-this,www.exploratorium.edu,
+spc-exploratorium-after-dark-2026-11-12,"After Dark: Unplug and Play (Exploratorium, November)",special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark-unplug-play-nov2026,www.exploratorium.edu,
+spc-exploratorium-after-dark-2026-12-03,After Dark: Rule Breakers (Exploratorium),special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark-rule-breakers,www.exploratorium.edu,
+spc-exploratorium-after-dark-2026-12-10,"After Dark: Unplug and Play (Exploratorium, December)",special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark-unplug-play-dec2026,www.exploratorium.edu,
+spc-exploratorium-after-dark-2026-12-17,After Dark: Solstice (Exploratorium),special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark-solstice,www.exploratorium.edu,
+spc-github-universe-2026,GitHub Universe 2026,special,technology,verified,https://githubuniverse.com/,githubuniverse.com,
+spc-somarts-in-their-name-2026,In Their Name: Día de Los Muertos 2026 (SOMArts),special,arts,verified,https://somarts.org/event/intheirname-opening/,somarts.org,
+rec-sfzinefest-zinething,ZINETHING! — monthly LGBTQIA zine-making meetup,recurring,community,unverified,https://www.sfzinefest.org/,www.sfzinefest.org,
+spc-osms-st-francis-relics-2026,Sacred Relics of St. Francis & St. Clare — veneration,special,arts,unverified,https://www.osmsf.org/,www.osmsf.org,
+ann-sf-zine-fest,"San Francisco Zine Fest (25th Annual, 2026 edition)",annual,arts,unverified,https://www.sfzinefest.org/,www.sfzinefest.org,past-dated edition (latest 2026-09-06)
+spc-somarts-in-the-shadows-2027,In the Shadows of the West (SOMArts),special,arts,unverified,https://somarts.org/whats-on/,somarts.org,
 x-w-003,Heart of the City Farmers Market,recurring,markets,verified,https://hotcfarmersmarket.org/,hotcfarmersmarket.org,
 x-w-005,Fillmore Farmers' Market,recurring,markets,verified,https://www.pcfma.org/market/fillmore-farmers-market,www.pcfma.org,
 x-w-006,Noe Valley Farmers Market,recurring,markets,verified,https://www.noevalleyfarmersmarket.com/,www.noevalleyfarmersmarket.com,duplicated address text in location
 x-w-007,Clement Street Farmers Market,recurring,markets,verified,https://www.agriculturalinstitute.org/clement-st,www.agriculturalinstitute.org,out-of-city term: marin
 x-w-008,Fort Mason Center Farmers' Market,recurring,markets,verified,https://www.cafarmersmkts.com/fort-mason-center-farmers-market/,www.cafarmersmkts.com,
-x-w-009,Outer Sunset Farmers Market & Mercantile,recurring,markets,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,
-x-w-010,Inner Sunset Flea Market,recurring,markets,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,verified but core field blank: cost
-x-w-011,Secondhand Saturdays,recurring,markets,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,verified but core field blank: cost
+x-w-009,Outer Sunset Farmers Market & Mercantile,recurring,markets,unverified,https://sunsetmercantilesf.com/osfmm/,sunsetmercantilesf.com,
+x-w-010,Inner Sunset Flea Market,recurring,markets,unverified,https://sunsetmercantilesf.com/innersunsetflea/,sunsetmercantilesf.com,
+x-w-011,Secondhand Saturdays,recurring,markets,unverified,https://sunsetmercantilesf.com/secondhand/,sunsetmercantilesf.com,
 x-w-012,Alemany Flea Market,recurring,markets,verified,https://www.sf.gov/location--alemany-flea-market,www.sf.gov,verified but core field blank: cost
 x-w-013,Downtown First Thursdays,recurring,markets,verified,https://www.dftsf.com/blog/dft2026renewal,www.dftsf.com,
-x-w-014,Castro Art Mart,recurring,arts,verified,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
+x-w-014,Castro Art Mart,recurring,arts,unverified,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
 x-w-015,Soulful Sundays,recurring,community,unverified,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
 x-w-016,Otsego Avenue Shared Space,recurring,community,unverified,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
 x-w-017,Larkin Street Tenderloin Shared Space,recurring,community,unverified,https://www.sfmta.com/projects/shared-spaces,www.sfmta.com,
@@ -260,11 +274,11 @@ x-s-005,RM x SFMOMA: Between You and Me,special,arts,verified,https://www.sfmoma
 x-s-006,New Work: Raven Chacon,special,arts,unverified,https://www.sfmoma.org/exhibitions/,www.sfmoma.org,
 x-s-007,Sarah Sze: Forever is Composed of Nows,special,arts,verified,https://www.sfmoma.org/exhibitions/,www.sfmoma.org,verified but core field blank: schedule
 x-s-013,After Dark: Glow Opening,special,arts,unverified,https://www.exploratorium.edu/visit/calendar/after-dark,www.exploratorium.edu,
-x-s-015,Diwali at the Outer Sunset Farmers Market,special,markets,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,verified but core field blank: schedule
-x-s-016,Dia de los Muertos Outer Sunset,special,community,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,verified but core field blank: schedule
-x-s-017,Sunset Holiday Mercantile,special,markets,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,verified but core field blank: schedule
-x-s-018,Holidays on Taraval,special,community,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,verified but core field blank: schedule
-x-s-019,Cole Valley Nights,special,community,verified,https://sunsetmercantilesf.com/,sunsetmercantilesf.com,verified but core field blank: schedule
+x-s-015,Diwali at the Outer Sunset Farmers Market,special,markets,unverified,https://sunsetmercantilesf.com/diwali2026/,sunsetmercantilesf.com,
+x-s-016,Dia de los Muertos Outer Sunset,special,community,unverified,https://sunsetmercantilesf.com/ddlm/,sunsetmercantilesf.com,
+x-s-017,Sunset Holiday Mercantile,special,markets,verified,https://sunsetmercantilesf.com/sunsetholidaymercantile/,sunsetmercantilesf.com,verified but core field blank: schedule
+x-s-018,Holidays on Taraval,special,community,unverified,https://sunsetmercantilesf.com/holidaysontaraval/,sunsetmercantilesf.com,
+x-s-019,Cole Valley Nights,special,community,unverified,https://sunsetmercantilesf.com/colevalleynights2026/,sunsetmercantilesf.com,
 x-s-020,Manon (San Francisco Opera),special,arts,unverified,https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/,www.sfopera.com,
 x-s-021,The Marriage of Figaro (San Francisco Opera),special,arts,unverified,https://www.sfopera.com/,www.sfopera.com,
 x-s-022,Das Rheingold (San Francisco Opera),special,arts,unverified,https://www.sfopera.com/,www.sfopera.com,

@@ -1,0 +1,183 @@
+{
+  "session": "arena-9fca0b37",
+  "verified_on": "2026-10-18",
+  "scope": "City and County of San Francisco only; free events preferred (gaming, music, AI, then everything else), paid events collected in a separate section",
+  "policy": "Only pages of the organiser, the agency or the venue itself were treated as sources. Every candidate records the exact page that was fetched. A field that the fetched page does not state is left blank; nothing is inferred. A candidate is only marked 'added' when every value in the row comes from the fetched official page.",
+  "candidates": [
+    {
+      "decision": "added",
+      "title": "District 10 Bayview Family Summit",
+      "new_id": "spc-family-summit-d10-2026-12-05",
+      "kind": "free, dated, city-run",
+      "source_name": "SF.gov — District 10 Bayview Family Summit",
+      "source_url": "https://www.sf.gov/event-20261205-district-10-family-summit-bayview/",
+      "supporting_sources": [
+        {
+          "name": "SF.gov — Our Children Our Families Initiative, upcoming events",
+          "url": "https://www.sf.gov/department-ocofi/events/upcoming"
+        },
+        {
+          "name": "SF.gov — This is Your City: 2026 Family Listening Series",
+          "url": "https://www.sf.gov/news-san-francisco-launches-this-is-your-city-2026-family-listening-series"
+        }
+      ],
+      "values_read_from_source": {
+        "dates": "Saturday, December 5, 2026",
+        "schedule": "11:00 a.m.–1:30 p.m.",
+        "location": "Southeast Community Center, 1550 Evans Avenue, San Francisco, CA 94124",
+        "cost": "Free"
+      },
+      "why": "The review item flag-d10-family-summit-page-missing recorded that no event page could be found for this summit. Re-checked on 2026-10-18: the city's own OCOFI upcoming-events calendar now links a working event page, which states the date, time, venue and 'Cost: Free'. Fills the last missing member of the free Family Summit series near 2026-12-05.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "added",
+      "title": "After Dark: Death and Life / La muerte y la vida (Exploratorium)",
+      "new_id": "spc-exploratorium-after-dark-2026-10-22",
+      "kind": "paid, dated, museum",
+      "source_name": "Exploratorium — After Dark: Death and Life / La muerte y la vida",
+      "source_url": "https://www.exploratorium.edu/visit/calendar/after-dark-death-and-life",
+      "values_read_from_source": {
+        "dates": "Thursday, October 22, 2026",
+        "schedule": "6:00-10:00 p.m.",
+        "location": "Exploratorium, Pier 15, San Francisco",
+        "cost": "Ticketed (no numeric price published on the page)"
+      },
+      "why": "Named on the museum's own After Dark calendar for Oct 22, 2026, two days after the snapshot date; collected into the paid section because the series requires tickets and publishes no price.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "added",
+      "title": "After Dark: Digest This (Exploratorium)",
+      "new_id": "spc-exploratorium-after-dark-2026-11-05",
+      "kind": "paid, dated, museum",
+      "source_name": "Exploratorium — After Dark: Digest This",
+      "source_url": "https://www.exploratorium.edu/visit/calendar/after-dark-digest-this",
+      "values_read_from_source": {
+        "dates": "Thursday, November 5, 2026",
+        "schedule": "6:00-10:00 p.m.",
+        "cost": "Ticketed (no numeric price published on the page)"
+      },
+      "why": "Listed on the museum's own After Dark calendar and event page; the catalogue held only the weekly After Dark row and Creepatorium/Glow.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "added",
+      "title": "After Dark: Unplug and Play (Exploratorium, November)",
+      "new_id": "spc-exploratorium-after-dark-2026-11-12",
+      "kind": "paid, dated, museum",
+      "source_name": "Exploratorium — After Dark: Unplug and Play (November 2026)",
+      "source_url": "https://www.exploratorium.edu/visit/calendar/after-dark-unplug-play-nov2026",
+      "values_read_from_source": {
+        "dates": "Thursday, November 12, 2026",
+        "schedule": "6:00-10:00 p.m.",
+        "cost": "Ticketed (no numeric price published on the page)"
+      },
+      "why": "Listed on the museum's own After Dark calendar and event page.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "added",
+      "title": "After Dark: Rule Breakers (Exploratorium)",
+      "new_id": "spc-exploratorium-after-dark-2026-12-03",
+      "kind": "paid, dated, museum",
+      "source_name": "Exploratorium — After Dark: Rule Breakers",
+      "source_url": "https://www.exploratorium.edu/visit/calendar/after-dark-rule-breakers",
+      "values_read_from_source": {
+        "dates": "Thursday, December 3, 2026",
+        "schedule": "6:00-10:00 p.m.",
+        "cost": "Ticketed (no numeric price published on the page)"
+      },
+      "why": "Listed on the museum's own After Dark calendar and event page.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "added",
+      "title": "After Dark: Unplug and Play (Exploratorium, December)",
+      "new_id": "spc-exploratorium-after-dark-2026-12-10",
+      "kind": "paid, dated, museum",
+      "source_name": "Exploratorium — After Dark: Unplug and Play (December 2026)",
+      "source_url": "https://www.exploratorium.edu/visit/calendar/after-dark-unplug-play-dec2026",
+      "values_read_from_source": {
+        "dates": "Thursday, December 10, 2026",
+        "schedule": "6:00-10:00 p.m.",
+        "cost": "Ticketed (no numeric price published on the page)"
+      },
+      "why": "Listed on the museum's own After Dark calendar and event page.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "added",
+      "title": "After Dark: Solstice (Exploratorium)",
+      "new_id": "spc-exploratorium-after-dark-2026-12-17",
+      "kind": "paid, dated, museum",
+      "source_name": "Exploratorium — After Dark: Solstice",
+      "source_url": "https://www.exploratorium.edu/visit/calendar/after-dark-solstice",
+      "values_read_from_source": {
+        "dates": "Thursday, December 17, 2026",
+        "schedule": "6:00-10:00 p.m.",
+        "cost": "Ticketed (no numeric price published on the page)"
+      },
+      "why": "Listed on the museum's own After Dark calendar and event page.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "not added",
+      "title": "Day of the Dead Festival of Altars — 2026 date",
+      "existing_row": "x-a-028",
+      "source_name": "Day of the Dead SF by the Marigold Project",
+      "source_url": "https://www.dayofthedeadsf.org/",
+      "why_not": "Re-fetched 2026-10-18: the organiser's own site still displays 'November 2nd, 2025 @ 8 AM' and publishes no 2026 date, so the existing row's dates cell stays blank and the row stays unverified. The claim of a November 1/2 2026 date found on third-party listings was not used, because no official page states it.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "not added",
+      "title": "Assessment Appeals Board 1/2/3 meetings and other citywide calendar instances (October 19, 2026)",
+      "source_name": "SF.gov — Citywide meetings and events",
+      "source_url": "https://www.sf.gov/events/upcoming",
+      "why_not": "Each instance duplicates a standing civic row already in the catalogue (civ-assessment-appeals, civ-bos-rules, civ-bos-lut, civ-board-of-appeals). The calendar re-confirms the facts already recorded: the Land Use meeting on October 19 is listed at 4:30 p.m. and marked Cancelled, and the Rules Committee meeting on October 19 is listed at 1:00 p.m. — both conflicts are already published as review items rather than silently resolved.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "not added",
+      "title": "District 3 Chinatown Family Summit",
+      "existing_row": "spc-family-summit-d3-2026-12-12",
+      "source_name": "SF.gov — District 3 Chinatown Family Summit",
+      "source_url": "https://www.sf.gov/event-20261212-district-3-family-summit",
+      "why_not": "Already in the catalogue. Re-verified on 2026-10-18: this URL loads and states Saturday, December 12, 2026, 11:00 a.m. to 1:30 p.m., Cost: Free, Betty Ann Ong Recreation Center. The city's OCOFI calendar, however, links a different slug (event-20261212-district-3-family-summit) that returns 404; that broken city link is published as review item flag-ocofi-calendar-d3-link-broken.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "not added (sources upgraded instead)",
+      "title": "Sunset Mercantile event pages (Diwali, Dia de los Muertos, Holiday Mercantile, Holidays on Taraval, Cole Valley Nights)",
+      "existing_rows": [
+        "x-s-015",
+        "x-s-016",
+        "x-s-017",
+        "x-s-018",
+        "x-s-019"
+      ],
+      "source_name": "Sunset Mercantile — event pages",
+      "source_url": "https://sunsetmercantilesf.com/",
+      "why_not": "All five events are already in the catalogue. This pass fetched each organiser page individually and: upgraded three source links from the home page to the event page; confirmed 'Admission is free!' only on the Sunset Holiday Mercantile page (x-s-017 keeps Free); blanked the four admission cells whose pages publish no price; and corrected the Cole Valley Nights location from 'Carl Street at Parnassus Avenue' to 'Cole Street between Carl and Parnassus Avenue' as the page states.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "not added",
+      "title": "Día de los Muertos Celebration, Garfield Square (November 1, 2026)",
+      "source_name": "dayofthedeadart.com (aggregator, not an organiser page)",
+      "source_url": "https://dayofthedeadart.com/ca-d%C3%ADa-de-los-muertos-map",
+      "why_not": "The only page found stating a 2026 date for this listing is a third-party aggregator. Aggregator URLs are barred as evidence by this project's rules, and the organiser's own site publishes no 2026 date.",
+      "fetched_on": "2026-10-18"
+    },
+    {
+      "decision": "not added",
+      "title": "2026 ZSFG Employee Flu Vaccine Clinic (September 14 to November 20, 2026)",
+      "source_name": "SF.gov — event listing, Occupational Health Services at ZSFG",
+      "source_url": "https://www.sf.gov/event-20260914-2026-zsfg-employee-flu-vaccine-clinic-is-now-open/",
+      "why_not": "A staff-only occupational-health clinic, not a public event; outside the catalogue's public-events scope.",
+      "fetched_on": "2026-10-18"
+    }
+  ],
+  "integration": "Applied to the shared dataset by audit/apply_9fca0b37.py v2 during phase 2, after arena-fe7c710c released the shared-file claim via PRs #42-#44. Overlapping corrections already made by that pass were removed from the script; see audit/AUDIT-2026-10-18-9fca0b37.md section 8."
+}
