@@ -1050,7 +1050,7 @@ No other session holds a live claim on the files below. This session claims them
 | FE1 | Line-by-line re-verification of the published union against official sources (near-term + free gaming/music/AI rows) | ✅ done | `arena-fe7c710c` | `audit/AUDIT-2026-10-18-fe7c710c.md` (new) | Official pages only; blanks stay blank. |
 | FE2 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ✅ done | `arena-fe7c710c` | `data/gap-candidates-fe7c710c.json` (new), `data/events.py` | Only rows with an official source link. |
 | FE3 | Site review and repair (mobile, dashboard clarity, cost labels, free/paid separation, no broken links) | ✅ done | `arena-fe7c710c` | `scripts/build_site.py`, `scripts/focus.py`, `assets/site.css`, generated `*.html`, `README.md` | Rebuild must stay reproducible. |
-| FE4 | Rebuild, validate, PR to `main`, merge, confirm Pages, record here | 🟡 in progress | `arena-fe7c710c` | `COORDINATION.md` | PR, merge, deploy confirmation. |
+| FE4 | Rebuild, validate, PR to `main`, merge, confirm Pages, record here | ✅ done | `arena-fe7c710c` | `COORDINATION.md` | PR, merge, deploy confirmation. |
 
 ### Verification log — `arena-fe7c710c` (2026-10-18)
 
@@ -1106,3 +1106,31 @@ Open Studios page still does not render its dates.
 `audit/apply_fe7c710c.py`, `audit/retitle_illuminate_fe7c710c.py`,
 `audit/apply_corrections_fe7c710c.py`, `audit/apply_corrections2_fe7c710c.py`, this board.
 
+### Closing record — `arena-fe7c710c` (2026-10-18)
+
+- **PR #42**: https://github.com/buffedlizard55-lab/MaltaProj6/pull/42 — *Final integration: 18 verified
+  rows, 15 unpriced 'Free' cells blanked, free-only dashboard corrected*. 33 files changed,
+  +2,879 / −427. **Merged:** 2026-10-18T17:09:48Z, merge commit
+  `a970bbc820d42e70ae993b6645fa5124f67d63e8`. No CI workflows are configured on this repository
+  (`gh pr checks` → "no checks reported"), so the pre-merge gates were the local checks in §Verification.
+- **GitHub Pages:** build `1294867874` for commit `a970bbc` reports `status: built`, `error: null`
+  (created 17:09:49Z, finished 17:10:07Z). Site: https://buffedlizard55-lab.github.io/MaltaProj6/
+- **Live verification** (cache-busted `?v=fe7c710c-final`, 2026-10-18 17:11Z): the dashboard reports
+  **280 events listed · 168 rows marked verified · 112 rows needing review · 155 entries explicitly
+  listing free access · 46 concluded editions · 214 review items published · 109 distinct official
+  domains**. The executive summary lists **23 free events, earliest first**, opening with Crucial
+  Reggae Sundays (today) and SF Open Studios, then Civic Center Soundtrack (Oct 20), Midweek Melodies
+  (Oct 21), Civic Center Soundtrack (Oct 22), District 1 Richmond Family Summit, and so on through
+  Nov 8 — every row carries a `Free` cost label and an official-source link. Paid and unpriced rows
+  sit in the separate *Paid and cost not confirmed* section. `flagged.html` renders all nine new
+  review items with their source links.
+- **Sources:** enumerated in `audit/AUDIT-2026-10-18-fe7c710c.md` §2–§3.
+- **Irregularities left on the Flagged for Review page (non-blocking):** Open Source AI Week is
+  Bay-Area-wide and only the two SF flagships are listed; the Awards Night end time differs between
+  the official page (9 p.m.) and its Luma page (10 p.m.); fifteen rows have no published price; the
+  Castro Holiday Tree 2026 page lives at a slug ending `-2023`; two Illuminate pages still say
+  "More details coming soon!"; SFPL's 18 Oct board-games session renders live as scheduled against a
+  cached "Canceled:" heading; ArtSpan's Open Studios page still does not render its dates.
+- **Handoff note.** No other session was live during this pass (all other remote branches behind
+  `main`; the two diverged branches carry claim-only commits older than 60 minutes and were not
+  modified). A later session should start from `main` at or after `a970bbc`.
