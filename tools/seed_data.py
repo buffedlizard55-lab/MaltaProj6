@@ -458,7 +458,7 @@ SPECIAL = [
     special(23, "Tosca (San Francisco Opera)", "performance", "2027-06-04", "2027-07-02",
             "June 4 - July 2, 2027", "confirmed", "War Memorial Opera House", "Civic Center",
             "San Francisco Opera", "Ticketed", "sfopera", []),
-    special(24, "Dvorak Symphony No. 8 (SF Symphony)", "performance", "2026-10-16", "2026-10-18",
+    special(24, "Dvořák Symphony No. 8 (SF Symphony)", "performance", "2026-10-16", "2026-10-18",
             "October 16-18, 2026", "confirmed", "Davies Symphony Hall", "Civic Center",
             "San Francisco Symphony", "Ticketed", "sfsymphony", []),
     special(25, "Hisaishi Conducts Hisaishi (SF Symphony)", "performance", "2026-10-22", "2026-10-24",
