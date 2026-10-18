@@ -25,16 +25,16 @@ rec-japanese-tea-garden-free-hour,Japanese Tea Garden free admission hour,recurr
 rec-sfbotanical-free,San Francisco Botanical Garden free admission hours,recurring,community,unverified,https://gggp.org/tickets/,gggp.org,
 rec-ferry-plaza-farmers-market,Foodwise Ferry Plaza Farmers Market,recurring,markets,verified,https://www.ferrybuildingmarketplace.com/shops/the-ferry-plaza-farmers-market/,www.ferrybuildingmarketplace.com,
 rec-ferry-building-marketplace,Ferry Building Marketplace (shops & food hall),recurring,markets,verified,https://www.ferrybuildingmarketplace.com/,www.ferrybuildingmarketplace.com,
-rec-sunday-streets,SFMTA Sunday Streets,recurring,community,verified,https://www.sfmta.com/getting-around/walk/sunday-streets,www.sfmta.com,
+rec-sunday-streets,SFMTA Sunday Streets,recurring,community,unverified,https://www.sfmta.com/getting-around/walk/sunday-streets,www.sfmta.com,
 rec-off-the-grid-treasure-island,Off The Grid Treasure Island (fall edition),recurring,markets,verified,https://www.tisf.com/off-the-grid,www.tisf.com,
 rec-sfsymphony,San Francisco Symphony concert season,recurring,arts,unverified,https://www.sfsymphony.org/calendar/,www.sfsymphony.org,
 rec-sfjazz-season,SFJAZZ concert season,recurring,arts,unverified,https://www.sfjazz.org/tickets/productions/26-27/season-overview/,www.sfjazz.org,
 rec-sfpl-library-hours,SF Public Library branch hours,recurring,community,verified,https://sfpl.org/locations,sfpl.org,
 civ-bos,Board of Supervisors (full board),recurring,civic,verified,https://sfgov.legistar.com/Calendar.aspx,sfgov.legistar.com,
-civ-bos-lut,Board of Supervisors — Land Use and Transportation Committee,recurring,civic,verified,https://sfgov.legistar.com/Calendar.aspx,sfgov.legistar.com,
+civ-bos-lut,Board of Supervisors — Land Use and Transportation Committee,recurring,civic,unverified,https://sfgov.legistar.com/Calendar.aspx,sfgov.legistar.com,
 civ-bos-budget-finance,Board of Supervisors — Budget and Finance Committee,recurring,civic,verified,https://sfgov.legistar.com/Calendar.aspx,sfgov.legistar.com,
 civ-bos-psns,Board of Supervisors — Public Safety and Neighborhood Services Committee,recurring,civic,verified,https://sfgov.legistar.com/Calendar.aspx,sfgov.legistar.com,
-civ-bos-rules,Board of Supervisors — Rules Committee,recurring,civic,verified,https://sfgov.legistar.com/Calendar.aspx,sfgov.legistar.com,
+civ-bos-rules,Board of Supervisors — Rules Committee,recurring,civic,unverified,https://sfgov.legistar.com/Calendar.aspx,sfgov.legistar.com,
 civ-board-of-appeals,Board of Appeals,recurring,civic,verified,https://www.sf.gov/departments--board-appeals,www.sf.gov,verified but core field blank: cost
 civ-assessment-appeals,Assessment Appeals Boards 1–3,recurring,civic,verified,https://www.sf.gov/departments--assessment-appeals-board,www.sf.gov,verified but core field blank: cost
 civ-planning,Planning Commission,recurring,civic,verified,https://sfplanning.org/public-hearings,sfplanning.org,
@@ -167,11 +167,16 @@ rec-ferry-music-on-the-plaza,Music on the Plaza (Ferry Building),recurring,commu
 rec-ferry-monday-yoga,Monday Yoga at the Ferry Building,recurring,community,verified,https://www.ferrybuildingmarketplace.com/events/monday-yoga/,www.ferrybuildingmarketplace.com,
 rec-sfpl-mix-gaming,Gaming at The Mix (free teen video and tabletop gaming),recurring,community,verified,https://sfpl.org/teens/the-mix/gaming,sfpl.org,
 rec-sfpl-gaming-citywide,"San Francisco Public Library gaming programmes (board games, chess, D&D, mahjong, bocce)",recurring,community,verified,https://sfpl.org/events?field_event_topic_target_id=553,sfpl.org,
+rec-dogpatch-games-venue,Dogpatch Games — tabletop and board game community hub,recurring,community,verified,https://www.dogpatch.games/tablerates,www.dogpatch.games,
+rec-dogpatch-boardgame-league,Recreational Board Game League (Wednesdays) — Dogpatch Games,recurring,community,verified,https://www.dogpatch.games/team-league,www.dogpatch.games,
+spc-dogpatch-love-potion-2026-10-22,Game Night at Love Potion Library (hosted by Dogpatch Games),special,community,unverified,https://www.dogpatch.games/events1/love-potion-library-2026-10-22-gaxsg,www.dogpatch.games,
 rec-sfpl-mix-music-studios,The Mix at SFPL — free music and media production studios for teens,recurring,arts,verified,https://sfpl.org/teens/the-mix,sfpl.org,
 rec-sfpl-dance-music,San Francisco Public Library dance and music programmes,recurring,arts,verified,https://sfpl.org/events?field_event_topic_target_id=452,sfpl.org,
 ann-sfpl-tech-week,SFPL Tech Week — free digital-skills and AI workshops,annual,community,verified,https://sfpl.org/techweek,sfpl.org,past-dated edition (latest 2026-05-16)
 spc-ai-engineer-code-2026,AI Engineer Code Summit 2026,special,community,verified,https://ai.engineer/code/2026,ai.engineer,
 spc-ai-week-sf-2026,"AI Week San Francisco (Week of AI), December 2026",special,community,verified,https://week-of-ai.com/,week-of-ai.com,
+spc-osai-debates-2026-10-19,Open Weight Debate Night (Open Source AI Week 2026),special,technology,unverified,https://opensourceaiweek.com/the-debates/,opensourceaiweek.com,
+spc-osai-awards-2026-10-23,Open Source AI Awards Night (Open Source AI Week 2026),special,technology,unverified,https://opensourceaiweek.com/open-source-ai-awards/,opensourceaiweek.com,
 spc-current-sf-2026,Current San Francisco 2026 (Confluent — real-time data and AI),special,community,unverified,https://www.moscone.com/events/current-san-francisco-2026,www.moscone.com,
 spc-microsoft-ignite-2026,"Microsoft Ignite 2026 (AI, cloud, security and developer conference)",special,community,unverified,https://www.moscone.com/events/microsoft-ignite-2026,www.moscone.com,
 spc-cloudflare-connect-2026,Cloudflare Connect 2026,special,community,unverified,https://www.moscone.com/events/cloudflare-connect-2026,www.moscone.com,
@@ -189,6 +194,32 @@ spc-informs-2026,INFORMS Annual Meeting 2026,special,technology,unverified,https
 spc-semicon-west-2026,SEMICON West 2026,special,technology,unverified,https://www.moscone.com/events/semicon-west-2026,www.moscone.com,past-dated edition (latest 2026-10-15)
 ann-humanx-2026,HumanX 2026 (AI conference),annual,technology,unverified,https://moscone.com/events/humanx-2026,moscone.com,past-dated edition (latest 2026-04-09)
 rec-sfpl-ai-workshops,"SF Public Library AI workshops, talks & panels",recurring,technology,verified,https://sfpl.org/events,sfpl.org,
+spc-illuminate-reggae-2026-10-18,Crucial Reggae Sundays (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-october-18/,illuminate.org,
+spc-illuminate-ccs-2026-10-20,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-20/,illuminate.org,
+spc-illuminate-midweek-2026-10-21,Midweek Melodies (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/midweek-melodies-october-21/,illuminate.org,
+spc-illuminate-happyhour-2026-10-23,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-october-23/,illuminate.org,
+spc-illuminate-baybeats-2026-10-24,Bay Beats Launch Party at the Bandshell,special,arts,verified,https://illuminate.org/event/bay-beats-at-the-bandshell-october-24/,illuminate.org,
+spc-illuminate-reggae-2026-10-25,"Crucial Reggae Sundays, October 25 (Illuminate LIVE)",special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-october-25/,illuminate.org,
+spc-illuminate-halloween-2026-10-31,Halloween at the Bandshell (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/halloween-at-the-bandshell-october-31/,illuminate.org,
+spc-illuminate-ccs-2026-10-22,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-22/,illuminate.org,duplicate title with spc-illuminate-ccs-2026-10-20
+spc-illuminate-ccs-2026-10-27,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-27/,illuminate.org,duplicate title with spc-illuminate-ccs-2026-10-20
+spc-illuminate-midweek-2026-10-28,Midweek Melodies (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/midweek-melodies-october-28/,illuminate.org,duplicate title with spc-illuminate-midweek-2026-10-21
+spc-illuminate-ccs-2026-10-29,Civic Center Soundtrack (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/civic-center-soundtrack-october-29/,illuminate.org,duplicate title with spc-illuminate-ccs-2026-10-20
+spc-illuminate-happyhour-2026-10-30,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-october-30/,illuminate.org,duplicate title with spc-illuminate-happyhour-2026-10-23
+spc-illuminate-reggae-2026-11-01,Crucial Reggae Sundays (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-november-1/,illuminate.org,duplicate title with spc-illuminate-reggae-2026-10-18
+spc-illuminate-mtb-2026-11-04,Market to Bandshell (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/market-to-bandshell-november-4/,illuminate.org,
+spc-illuminate-happyhour-2026-11-06,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-november-6/,illuminate.org,duplicate title with spc-illuminate-happyhour-2026-10-23
+spc-illuminate-saturday-2026-11-07,Saturday at the Bandshell (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/saturday-at-the-bandshell-november-7/,illuminate.org,
+spc-illuminate-reggae-2026-11-08,Crucial Reggae Sundays (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/crucial-reggae-sundays-november-8/,illuminate.org,duplicate title with spc-illuminate-reggae-2026-10-18
+spc-illuminate-midweek-2026-11-11,Midweek Melodies (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/midweek-melodies-november-11/,illuminate.org,duplicate title with spc-illuminate-midweek-2026-10-21
+spc-illuminate-happyhour-2026-11-13,Friday Happy Hour (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/friday-happy-hour-november-13/,illuminate.org,duplicate title with spc-illuminate-happyhour-2026-10-23
+spc-illuminate-otisology-2026-11-15,Nick Otis Presents Otisology: A Tribute to Shuggie & Johnny Otis (Illuminate LIVE),special,arts,verified,https://illuminate.org/event/nick-otis-presents-otisology-a-tribute-to-shuggie-johnny-otis-november-15/,illuminate.org,
+spc-family-summit-d1-2026-10-22,District 1 Richmond Family Summit,special,community,verified,https://www.sf.gov/event-20261022-district-1-family-summit,www.sf.gov,
+spc-family-summit-d11-2026-10-29,District 11 Excelsior Family Summit,special,community,verified,https://www.sf.gov/event-20261029-district-11-family-summit-excelsior,www.sf.gov,
+spc-family-summit-d2-2026-11-07,District 2 Marina Family Summit,special,community,verified,https://www.sf.gov/event-20261107-district-2-family-summit,www.sf.gov,
+spc-family-summit-d4-2026-11-14,District 4 Family Summit,special,community,verified,https://www.sf.gov/event-20261114-district-4-family-summit,www.sf.gov,
+spc-family-summit-d3-2026-12-12,District 3 Chinatown Family Summit,special,community,verified,https://www.sf.gov/event-20261212-district-3-family-summit,www.sf.gov,
+spc-sunday-streets-excelsior-2026,Sunday Streets Excelsior 2026,special,community,unverified,https://sundaystreetssf.com/sunday-streets-excelsior-2026/,sundaystreetssf.com,
 x-w-003,Heart of the City Farmers Market,recurring,markets,verified,https://hotcfarmersmarket.org/,hotcfarmersmarket.org,
 x-w-005,Fillmore Farmers' Market,recurring,markets,verified,https://www.pcfma.org/market/fillmore-farmers-market,www.pcfma.org,
 x-w-006,Noe Valley Farmers Market,recurring,markets,verified,https://www.noevalleyfarmersmarket.com/,www.noevalleyfarmersmarket.com,duplicated address text in location
