@@ -23,9 +23,14 @@ CATEGORY_PAGE = {
     "civic": "civic.html",
     "arts": "arts.html",
     "sports": "sports.html",
-    "technology": "technology.html",
     "markets": "markets.html",
     "community": "community.html",
+}
+# Focus pages cut the catalogue by the brief's subject areas (gaming, music,
+# AI) rather than by the subject categories, so a row can belong to both.
+FOCUS_PAGE = {
+    "technology.html": {"ai", "gaming"},
+    "music.html": {"music"},
 }
 EXPECTED_CELLS = 9  # Event, type, schedule, dates, location, area, cost, organiser, source
 DATE_STATUS_METADATA = {"confirmed", "partial", "not announced"}
@@ -100,11 +105,21 @@ def main() -> int:
     try:
         sys.path.insert(0, os.path.join(ROOT, "data"))
         sys.path.insert(0, os.path.join(ROOT, "scripts"))
-        from events import EVENTS as BASE_EVENTS, FLAGGED as BASE_FLAGGED, assign_views, cost_review_flags
+        from events import EVENTS as BASE_EVENTS, FLAGGED as BASE_FLAGGED, assign_views, cost_review_flags, cost_review_flags
         from merge_parallel import parallel_events, parallel_flagged
         from build_site import _event_date_sort_key, _has_free_access, _next_confirmed_date
         base_events = deepcopy(BASE_EVENTS)
         expected_events = assign_views(base_events + parallel_events(base_events))
+        expected_flagged = list(BASE_FLAGGED) + parallel_flagged() + cost_review_flags(expected_events)
+        from build_site import (
+            _event_date_sort_key,
+            _has_free_access,
+            _next_confirmed_date,
+            attach_focus,
+            executive_summary_rows,
+        )
+        base_events = deepcopy(BASE_EVENTS)
+        expected_events = attach_focus(assign_views(base_events + parallel_events(base_events)))
         expected_flagged = list(BASE_FLAGGED) + parallel_flagged() + cost_review_flags(expected_events)
         if events != expected_events:
             errors.append("data/events.json: event rows differ from the reproducible source-data union")
@@ -150,7 +165,8 @@ def main() -> int:
                 )
         if event.get("group") not in GROUP_PAGE:
             errors.append(f"{event_id}: unknown group {event.get('group')!r}")
-        if event.get("category") not in CATEGORY_PAGE:
+        known_categories = set(CATEGORY_PAGE) | {"technology"}
+        if event.get("category") not in known_categories:
             errors.append(f"{event_id}: unknown category {event.get('category')!r}")
 
         expected_pages = []
@@ -182,6 +198,13 @@ def main() -> int:
         actual = {event_id for event_id in audits[filename].rows if event_id in events_by_id}
         if actual != expected:
             errors.append(f"{filename}: row membership differs (expected {len(expected)}, found {len(actual)})")
+    for filename, focus_keys in FOCUS_PAGE.items():
+        expected = {event["id"] for event in events
+                    if event.get("focus") in focus_keys
+                    or (filename == "technology.html" and event.get("category") == "technology")}
+        actual = {event_id for event_id in audits[filename].rows if event_id in events_by_id}
+        if actual != expected:
+            errors.append(f"{filename}: focus-page membership differs (expected {len(expected)}, found {len(actual)})")
 
     # Keep chronological-first presentation reproducible and ensure the dedicated
     # free page only contains rows whose source wording explicitly includes free access.
@@ -189,6 +212,11 @@ def main() -> int:
         "all-events.html": sorted(events, key=_event_date_sort_key),
         "special.html": sorted((e for e in events if e.get("group") == "special"), key=_event_date_sort_key),
         "technology.html": sorted((e for e in events if e.get("category") == "technology"), key=_event_date_sort_key),
+        "free-events.html": sorted((e for e in events if _has_free_access(e)), key=_event_date_sort_key),
+        "technology.html": sorted(
+            (e for e in events if e.get("focus") in ("ai", "gaming") or e.get("category") == "technology"),
+            key=_event_date_sort_key),
+        "music.html": sorted((e for e in events if e.get("focus") == "music"), key=_event_date_sort_key),
         "free-events.html": sorted((e for e in events if _has_free_access(e)), key=_event_date_sort_key),
     }
     for filename, expected_rows in ordered_pages.items():
@@ -205,11 +233,7 @@ def main() -> int:
                 errors.append(f"{filename}:{event['id']}: official source link missing from its row")
 
     today = date.today()
-    upcoming_summary = sorted(
-        (e for e in events if e.get("group") == "special" and e.get("dates")
-         and e.get("timing") != "concluded" and _next_confirmed_date(e, today=today)),
-        key=lambda e: _event_date_sort_key(e, today=today),
-    )[:10]
+    upcoming_summary = executive_summary_rows(events, today)
     if "index.html" in audits:
         summary_ids = [row["id"][len("summary-"):] for row in audits["index.html"].all_rows
                        if (row.get("id") or "").startswith("summary-")]

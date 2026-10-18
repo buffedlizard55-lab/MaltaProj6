@@ -17,7 +17,7 @@ import json
 import os
 import sys
 from collections import Counter, defaultdict
-from datetime import date
+from datetime import date, timedelta
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +38,38 @@ PARALLEL_EVENTS = parallel_events(BASE_EVENTS)
 EVENTS = assign_views(list(BASE_EVENTS) + PARALLEL_EVENTS)
 FLAGGED = list(BASE_FLAGGED) + parallel_flagged() + cost_review_flags(EVENTS)
 
+from focus import (  # noqa: E402
+    FOCUS_BY_ID,
+    FOCUS_LABELS,
+    AI_ADJACENT,
+    COST_LABELS,
+    cost_class,
+    event_dates,
+)
+
+
+def attach_focus(rows):
+    """Derive the focus tag, cost class and published date span for every row.
+
+    Nothing here is inferred: ``focus`` comes from an explicit id -> tag map,
+    ``cost_class`` is read off the row's own published ``cost`` wording, and
+    ``date_start`` / ``date_end`` are parsed out of the row's own ``dates``
+    string (empty when the official source publishes no calendar day).
+    """
+    for e in rows:
+        e["focus"] = FOCUS_BY_ID.get(e["id"], "other")
+        e["cost_class"] = cost_class(e.get("cost", ""))
+        start, end, source = event_dates(e)
+        e["date_start"] = start
+        e["date_end"] = end
+        e["date_source"] = source
+    return rows
+
+
+attach_focus(EVENTS)
+
+FOCUS_LABEL_BY_KEY = dict(FOCUS_LABELS)
+
 SITE_NAME = "San Francisco Events"
 SITE_TAGLINE = "A curated, source-linked snapshot of public events in San Francisco"
 
@@ -53,7 +85,8 @@ PAGES = [
     ("civic.html", "Civic", "Boards, commissions and public meetings", "category"),
     ("arts.html", "Arts & culture", "Museums, galleries, performance and screen", "category"),
     ("sports.html", "Sports", "Teams, races and active recreation", "category"),
-    ("technology.html", "AI & gaming", "Artificial intelligence, gaming and technology events", "category"),
+    ("technology.html", "AI & gaming", "Artificial intelligence, gaming and technology events", "focus-tech"),
+    ("music.html", "Music", "Concerts, festivals, opera, jazz and free music programmes", "focus-music"),
     ("markets.html", "Markets & food", "Farmers markets, food halls and street markets", "category"),
     ("community.html", "Community & parks", "Neighbourhood programmes, festivals and free recreation", "category"),
     ("analysis.html", "Analysis", "Counts, coverage and findings", "static"),
@@ -139,6 +172,32 @@ def page_shell(filename: str, title: str, subtitle: str, body: str) -> str:
 """
 
 
+def cost_cell(ev) -> str:
+    """Render the cost exactly as published, with an explicit class label.
+
+    A blank cost stays blank and is labelled "not confirmed" - the site never
+    guesses a price.
+    """
+    value = (ev.get("cost") or "").strip()
+    if not value:
+        # A cost is only ever blanked when the official source publishes no
+        # amount. Where that source did publish generic wording ("Ticketed",
+        # "Free; ticketed grand stand") the wording stays visible here, clearly
+        # separated from the price, so the information is not lost.
+        published = (ev.get("_price_review") or "").strip()
+        if published:
+            return (
+                '<td class="unverified-cell" data-label="Cost">'
+                '<span class="na">exact price not published</span>'
+                '<span class="cost-wording">as published: &ldquo;' + esc(published) + '&rdquo;</span></td>'
+            )
+        return '<td class="unverified-cell" data-label="Cost"><span class="na">not confirmed</span></td>'
+    cls = ev.get("cost_class", "unknown")
+    return (
+        '<td data-label="Cost"><span class="cost cost-' + esc(cls) + '">' + esc(value) + '</span></td>'
+    )
+
+
 def _row_data(ev) -> str:
     text = " ".join(
         str(ev.get(k, "")) for k in ("title", "location", "area", "organiser", "source_name", "type", "schedule", "dates", "cost")
@@ -148,13 +207,14 @@ def _row_data(ev) -> str:
         f' data-group="{esc(ev.get("group", ""))}"'
         f' data-cost="{cost_filter}"'
         f' data-cat="{esc(ev.get("category", ""))}"'
+        f' data-focus="{esc(ev.get("focus", "other"))}"'
         f' data-status="{esc(ev.get("status", "verified"))}"'
         f' data-timing="{esc(ev.get("timing", "current"))}"'
         f' data-text="{esc(text)}"'
     )
 
 
-def event_table(events, table_id: str) -> str:
+def event_table(events, table_id: str, show_focus_badges: bool = True) -> str:
     if not events:
         return '<p class="empty">No entries on this page yet.</p>'
 
@@ -169,7 +229,12 @@ def event_table(events, table_id: str) -> str:
         )
         if ev.get("timing") == "concluded":
             badge += '<span class="badge past" title="This edition had already finished when the snapshot was built">concluded</span>'
-        title_cell = f'<td><span class="ev-title">{esc(ev["title"])}</span>'
+        focus_key = ev.get("focus", "other")
+        if focus_key != "other" and show_focus_badges:
+            badge += (f'<span class="badge focus-{esc(focus_key)}" title="Focus area: '
+                      f'{esc(FOCUS_LABEL_BY_KEY.get(focus_key, focus_key))}">'
+                      f'{esc(FOCUS_LABEL_BY_KEY.get(focus_key, focus_key))}</span>')
+        title_cell = f'<td data-label="Event"><span class="ev-title">{esc(ev["title"])}</span>'
         if ev.get("_free_access_confirmed"):
             title_cell += '<span class="badge free">some free access listed</span>'
         title_cell += '</td>'
@@ -180,14 +245,18 @@ def event_table(events, table_id: str) -> str:
             f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(name)} &nearr;</a>'
             for name, url in source_links if url
         )
-        source_cell = f'<td class="source-cell"><span class="ev-source">{badge}{source_html}</span></td>'
+        source_cell = f'<td class="source-cell" data-label="Official source"><span class="ev-source">{badge}{source_html}</span></td>'
         cells = [title_cell]
-        for key in ("type", "schedule", "dates", "location", "area", "cost", "organiser"):
+        for key, label in (("type", "Type"), ("schedule", "Schedule / when"),
+                           ("dates", "Confirmed dates"), ("location", "Where"),
+                           ("area", "Area"), ("organiser", "Organiser")):
             value = ev.get(key, "")
             if not value:
-                cells.append('<td class="unverified-cell"><span class="na">not confirmed</span></td>')
+                cells.append(f'<td class="unverified-cell" data-label="{label}"><span class="na">not confirmed</span></td>')
             else:
-                cells.append(f"<td>{esc(value)}</td>")
+                cells.append(f'<td data-label="{label}">{esc(value)}</td>')
+        # cost sits between area and organiser in COLUMNS order
+        cells.insert(6, cost_cell(ev))
         cells.append(source_cell)
         note = ev.get("notes", "")
         note_html = f'<p class="row-note">{esc(note)}</p>' if note else ""
@@ -313,6 +382,14 @@ def by_page(page: str):
     """Rows for a page, filtered by the page's kind."""
     if page == "free-events":
         sel = [e for e in EVENTS if _has_free_access(e)]
+    elif page == "technology":
+        # AI & gaming: rows the dataset tags AI or gaming, wherever they also
+        # sit in the subject categories (a library gaming club is a gaming
+        # entry even though its category is "community").
+        sel = [e for e in EVENTS if e.get("focus") in ("ai", "gaming")
+               or e.get("category") == "technology"]
+    elif page == "music":
+        sel = [e for e in EVENTS if e.get("focus") == "music"]
     elif page == "recurring":
         sel = [e for e in EVENTS if e.get("group") == "recurring"]
     elif page == "annual":
@@ -321,9 +398,90 @@ def by_page(page: str):
         sel = [e for e in EVENTS if e.get("group") == "special"]
     else:
         sel = [e for e in EVENTS if e.get("category") == page]
-    if page in ("special", "technology", "free-events"):
+    if page in ("special", "technology", "music", "free-events"):
         return sorted(sel, key=_event_date_sort_key)
     return sorted(sel, key=lambda e: (e.get("area", ""), e.get("title", "")))
+
+
+def _summary_row(e, today: date) -> str:
+    """One executive-summary row: event, dates, countdown, cost, where, source."""
+    when = _next_confirmed_date(e, today=today)
+    span_start, span_end = e.get("date_start", ""), e.get("date_end", "")
+    running_now = bool(span_start and span_end and span_start <= today.isoformat() <= span_end)
+    badges = ""
+    if _has_free_access(e):
+        badges += '<span class="badge free">free access</span>'
+    if e.get("status") != "verified":
+        badges += '<span class="badge warn">unverified</span>'
+    focus_key = e.get("focus", "other")
+    if focus_key != "other":
+        badges += (f'<span class="badge focus-{esc(focus_key)}">'
+                   f'{esc(FOCUS_LABEL_BY_KEY.get(focus_key, focus_key))}</span>')
+    days = (when - today).days if when else None
+    if running_now or days == 0:
+        when_html = "<span class='when-now'>today / under way</span>"
+    elif days == 1:
+        when_html = "<span class='when-soon'>tomorrow</span>"
+    else:
+        css = "when-soon" if days <= 7 else ("when-mid" if days <= 30 else "when-later")
+        when_html = f"<span class='{css}'>in {days} days</span>"
+    published_cost = (e.get("_price_review") or "").strip()
+    if e.get("cost"):
+        cost_html = ('<span class="cost cost-' + esc(e.get("cost_class", "unknown")) + '">'
+                     + esc(e["cost"]) + '</span>')
+    elif published_cost:
+        cost_html = ('<span class="na">exact price not published</span>'
+                     '<span class="cost-wording">as published: &ldquo;'
+                     + esc(published_cost) + '&rdquo;</span>')
+    else:
+        cost_html = '<span class="na">not confirmed</span>'
+    location_html = esc(e["location"]) if e.get("location") else '<span class="na">not confirmed</span>'
+    return (
+        f"<tr id='summary-{esc(e['id'])}' class='upcoming-row' data-focus='{esc(focus_key)}'>"
+        f"<td data-label='Event'><span class='ev-title'>{esc(e['title'])}</span>{badges}</td>"
+        f"<td data-label='Confirmed dates'>{esc(e['dates'])}</td>"
+        f"<td data-label='Countdown'>{when_html}</td>"
+        f"<td data-label='Cost'>{cost_html}</td>"
+        f"<td data-label='Where'>{location_html}</td>"
+        f"<td data-label='Official source'><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>"
+        f"{esc(e['source_name'])} &nearr;</a></td></tr>"
+    )
+
+
+def executive_summary_rows(events, today: date, limit: int = 14):
+    """The dated rows closest to ``today``, grouped into "when it happens" bands.
+
+    Rows whose officially published run already covers today are put in the
+    "today" band even though their published end date is later, so an
+    exhibition that is open right now is not reported as "in 7 days".
+    """
+    candidates = [e for e in events
+                  if e.get("dates") and e.get("timing") != "concluded"
+                  and _next_confirmed_date(e, today=today)]
+    candidates.sort(key=lambda e: _event_date_sort_key(e, today=today))
+    candidates = candidates[:limit]
+
+    def band(e) -> int:
+        span_start, span_end = e.get("date_start", ""), e.get("date_end", "")
+        if span_start and span_end and span_start <= today.isoformat() <= span_end:
+            return 0
+        when = _next_confirmed_date(e, today=today)
+        delta = (when - today).days
+        if delta <= 0:
+            return 0
+        if delta <= 7:
+            return 1
+        if delta <= 30:
+            return 2
+        return 3
+
+    grouped: dict[int, list] = {}
+    for e in candidates:
+        grouped.setdefault(band(e), []).append(e)
+    ordered = []
+    for key in sorted(grouped):
+        ordered.extend(grouped[key])
+    return ordered
 
 
 def build_index() -> str:
@@ -341,7 +499,7 @@ def build_index() -> str:
         if kind == "static":
             continue
         key = filename.replace(".html", "")
-        n = (len(EVENTS) if key == "all-events" else free_count if key == "free-events" else counts.get(key, 0))
+        n = len(EVENTS) if key == "all-events" else len(by_page(key))
         tiles.append(
             f"""<a class="tile" href="{filename}">
   <span class="tile-n">{n}</span>
@@ -365,28 +523,60 @@ def build_index() -> str:
         f"<tr><td>{esc(k)}</td><td class='num'>{v}</td></tr>" for k, v in sorted(area_counts.items())
     )
 
-    latest = sorted(
-        (e for e in EVENTS
-         if e.get("group") == "special" and e.get("dates")
-         and e.get("timing") != "concluded" and _next_confirmed_date(e, today=today)),
-        key=lambda e: _event_date_sort_key(e, today=today),
-    )[:10]
+    upcoming = executive_summary_rows(EVENTS, today)
+
+    horizon_labels = {
+        0: ("Today and already running", "Happening today or already under way"),
+        1: ("Next 7 days", f"{today.isoformat()} to {(today + timedelta(days=7)).isoformat()}"),
+        2: ("Next 8-30 days", f"{(today + timedelta(days=8)).isoformat()} to {(today + timedelta(days=30)).isoformat()}"),
+        3: ("Later than 30 days out", "Confirmed, but further away"),
+    }
+    # Group first, then emit, so each horizon heading appears exactly once and
+    # rows inside a horizon stay in confirmed-date order.
+    def _band(e) -> int:
+        span_start, span_end = e.get("date_start", ""), e.get("date_end", "")
+        if span_start and span_end and span_start <= today.isoformat() <= span_end:
+            return 0
+        delta = (_next_confirmed_date(e, today=today) - today).days
+        return 0 if delta <= 0 else (1 if delta <= 7 else (2 if delta <= 30 else 3))
+
+    grouped: dict[int, list] = {}
+    for e in upcoming:
+        grouped.setdefault(_band(e), []).append(e)
+
     latest_row_parts = []
-    for e in latest:
-        badges = ""
-        if _has_free_access(e):
-            badges += '<span class="badge free">free access</span>'
-        if e.get("status") != "verified":
-            badges += '<span class="badge warn">unverified</span>'
-        cost_html = esc(e["cost"]) if e.get("cost") else '<span class="na">not confirmed</span>'
-        location_html = esc(e["location"]) if e.get("location") else '<span class="na">not confirmed</span>'
+    free_upcoming = 0
+    for bucket in sorted(grouped):
+        label, blurb = horizon_labels[bucket]
         latest_row_parts.append(
-            f"<tr id='summary-{esc(e['id'])}' class='upcoming-row'><td><span class='ev-title'>{esc(e['title'])}</span>{badges}</td>"
-            f"<td>{esc(e['dates'])}</td><td>{cost_html}</td><td>{location_html}</td>"
-            f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>"
-            f"{esc(e['source_name'])} &nearr;</a></td></tr>"
+            f"<tr class='horizon-row'><td colspan='6'><strong>{esc(label)}</strong>"
+            f"<span class='horizon-blurb'> &mdash; {esc(blurb)}</span></td></tr>"
         )
+        for e in grouped[bucket]:
+            latest_row_parts.append(_summary_row(e, today))
+        free_upcoming += sum(1 for e in grouped[bucket] if _is_free_cost(e.get("cost")))
     latest_rows = "".join(latest_row_parts)
+
+    focus_blurbs = {
+        "gaming": "Video and tabletop gaming, from free library clubs to GDC at Moscone",
+        "music": "Concerts, festivals, opera, jazz, bandstands and free music programmes",
+        "ai": "Artificial-intelligence conferences, weeks and free library workshops",
+        "other": "Everything else in the catalogue: civic, arts, sport, markets, parks",
+    }
+    focus_links = {"gaming": "technology.html", "music": "music.html", "ai": "technology.html",
+                   "other": "all-events.html"}
+    focus_counts = Counter(e.get("focus", "other") for e in EVENTS)
+    focus_free = Counter(e.get("focus", "other") for e in EVENTS if _is_free_cost(e.get("cost")))
+    focus_tiles = []
+    for key, label in FOCUS_LABELS:
+        focus_tiles.append(
+            f"""<a class="tile" href="{focus_links[key]}">
+  <span class="tile-n">{focus_counts.get(key, 0)}</span>
+  <span class="tile-label">{esc(label)}</span>
+  <span class="tile-blurb">{esc(focus_blurbs[key])}</span>
+  <span class="tile-meta">{focus_free.get(key, 0)} free</span>
+</a>"""
+        )
 
     body = f"""
 <section class="hero">
@@ -444,16 +634,32 @@ def build_index() -> str:
 </section>
 
 <section>
-  <h2>Near-term executive summary</h2>
-  <p class="count-note">Upcoming dated entries closest to today, in chronological order (as of {today.isoformat()}).
-     Cost is shown exactly as published; free access is highlighted. Only confirmed dates appear here.</p>
+  <h2 id="executive-summary">Executive summary &mdash; what is coming up</h2>
+  <p class="count-note">The dated entries closest to today, earliest first, as of <strong>{today.isoformat()}</strong>.
+     Grouped by how soon they happen. Cost is shown exactly as the official source words it; free access is
+     highlighted and an unconfirmed price is labelled rather than guessed. {free_upcoming} of the
+     {len(upcoming)} entries below are free. Only rows whose official source publishes a confirmed date appear
+     here &mdash; recurring programmes without a stated date are on the
+     <a href="recurring.html">regularly recurring</a> page.</p>
   <div class="table-scroll">
-  <table class="data-table">
-    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Cost</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
+  <table class="data-table summary-table">
+    <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Countdown</th><th scope="col">Cost</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
     <tbody>{latest_rows}</tbody>
   </table>
   </div>
-  <p class="note"><a href="special.html">See all special events &rarr;</a></p>
+  <p class="note"><a href="special.html">See all special events &rarr;</a> &middot;
+     <a href="free-events.html">Free events &rarr;</a> &middot;
+     <a href="music.html">Music &rarr;</a> &middot;
+     <a href="technology.html">AI &amp; gaming &rarr;</a></p>
+</section>
+
+<section>
+  <h2>Focus areas &mdash; gaming, music, AI</h2>
+  <p class="count-note">The same catalogue cut the way the brief asks for: gaming first, then music, then AI,
+     with everything else after. Every entry keeps its own official source link.</p>
+  <div class="tiles">
+    {chr(10).join(focus_tiles)}
+  </div>
 </section>
 
 <section>
@@ -488,10 +694,10 @@ def build_flagged() -> str:
         )
         rows.append(
             f"""<tr id="{esc(f['id'])}">
-  <td class="flag-title">{esc(f['title'])}</td>
-  <td>{esc(f['detail'])}</td>
-  <td>{esc(f['action'])}</td>
-  <td>{source_html}</td>
+  <td class="flag-title" data-label="Item">{esc(f['title'])}</td>
+  <td data-label="What was found">{esc(f['detail'])}</td>
+  <td data-label="Action / next step">{esc(f['action'])}</td>
+  <td data-label="Official source">{source_html}</td>
 </tr>"""
         )
     body = f"""
@@ -573,11 +779,13 @@ def unverified_rows() -> str:
                 + " — not stated on the official source; left blank, nothing inferred"
             )
         out.append(
-            f"<tr id=\"review-{esc(e['id'])}\"><td>{esc(e['title'])}</td>"
-            f"<td>{esc(e.get('group', ''))} / {esc(e.get('category', ''))}</td>"
-            f"<td>{esc(status_cell)}</td>"
-            f"<td>{esc(blank_cell)}</td>"
-            f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>{esc(e['source_name'])} &nearr;</a></td></tr>"
+            f"""<tr id="review-{esc(e['id'])}">
+  <td data-label="Event">{esc(e['title'])}</td>
+  <td data-label="Page">{esc(e.get('group', ''))} / {esc(e.get('category', ''))}</td>
+  <td data-label="Row status">{esc(status_cell)}</td>
+  <td data-label="Fields left blank">{esc(blank_cell)}</td>
+  <td data-label="Official source"><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>{esc(e['source_name'])} &nearr;</a></td>
+</tr>"""
         )
     return "\n".join(out)
 
@@ -591,6 +799,7 @@ FILTER_JS = """
   var fStatus = document.getElementById('f-status');
   var fTime = document.getElementById('f-time');
   var fCost = document.getElementById('f-cost');
+  var fFocus = document.getElementById('f-focus');
   var count = document.getElementById('visible-count');
   var table = document.getElementById('all-table');
   if (!table) { return; }
@@ -602,6 +811,7 @@ FILTER_JS = """
   function apply() {
     var term = (q.value || '').trim().toLowerCase();
     var t = fType.value, c = fCat.value, st = fStatus.value, ti = fTime.value, co = fCost.value;
+    var fo = fFocus ? fFocus.value : '';
     var shown = 0;
     rows.forEach(function (r) {
       if (r.classList.contains('note-row')) { return; }
@@ -611,6 +821,7 @@ FILTER_JS = """
       if (st && r.getAttribute('data-status') !== st) { ok = false; }
       if (ti && r.getAttribute('data-timing') !== ti) { ok = false; }
       if (co && r.getAttribute('data-cost') !== co) { ok = false; }
+      if (fo && r.getAttribute('data-focus') !== fo) { ok = false; }
       if (ok && term && (r.getAttribute('data-text') || '').indexOf(term) === -1) { ok = false; }
       r.hidden = !ok;
       var n = notes[r.id];
@@ -619,14 +830,15 @@ FILTER_JS = """
     });
     if (count) { count.textContent = shown; }
   }
-  [q, fType, fCat, fStatus, fTime, fCost].forEach(function (el) {
+  [q, fType, fCat, fStatus, fTime, fCost, fFocus].forEach(function (el) {
     if (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); }
   });
   var reset = document.getElementById('reset');
   if (reset) {
     reset.addEventListener('click', function (ev) {
       ev.preventDefault();
-      q.value = ''; fType.value = ''; fCat.value = ''; fStatus.value = ''; fTime.value = ''; fCost.value = '';
+      q.value = ''; fType.value = ''; fCat.value = ''; fStatus.value = ''; fTime.value = '';
+      fCost.value = ''; if (fFocus) { fFocus.value = ''; }
       apply();
       q.focus();
     });
@@ -644,6 +856,7 @@ def build_full_list() -> str:
     tim = [("", "Any timing"), ("current", "Current / upcoming"), ("concluded", "Concluded edition")]
     costs = [("", "Any cost"), ("free", "Free / includes free access"),
              ("paid", "Published paid / mixed price"), ("unknown", "Cost not confirmed")]
+    foci = [("", "All focus areas")] + [(key, label) for key, label in FOCUS_LABELS]
 
     def opts(items):
         return "".join(f'<option value="{esc(v)}">{esc(l)}</option>' for v, l in items)
@@ -664,6 +877,7 @@ def build_full_list() -> str:
   <label class="field"><span>Category</span><select id="f-cat">{opts(cats)}</select></label>
   <label class="field"><span>Status</span><select id="f-status">{opts(stat)}</select></label>
   <label class="field"><span>Timing</span><select id="f-time">{opts(tim)}</select></label>
+  <label class="field"><span>Focus</span><select id="f-focus">{opts(foci)}</select></label>
   <label class="field"><span>Cost</span><select id="f-cost">{opts(costs)}</select></label>
   <button id="reset" class="btn ghost" type="button">Reset</button>
 </div>
@@ -951,6 +1165,9 @@ def build_page(filename: str, label: str, subtitle: str) -> str:
     page = filename.replace(".html", "")
     events = by_page(page)
     verified = sum(1 for e in events if e.get("status") == "verified")
+    # The focus pages already state their focus area in the heading, so the
+    # badge is suppressed there rather than repeated on every row.
+    show_focus = page not in ("technology", "music")
     body = f"""
 <section class="page-head">
   <h1>{esc(label)}</h1>
@@ -960,7 +1177,7 @@ def build_page(filename: str, label: str, subtitle: str) -> str:
 <p class="count-note">{len(events)} entries &middot; {verified} fully verified &middot;
   {len(events) - verified} with a flagged gap &middot; checked {esc(VERIFIED_ON)}</p>
 
-{event_table(events, page + "-table")}
+{event_table(events, page + "-table", show_focus_badges=show_focus)}
 """
     return page_shell(filename, label, subtitle, body)
 
@@ -1107,6 +1324,62 @@ code { background: #eef2f5; padding: 1px 5px; border-radius: 4px; font-size: .88
   h1 { font-size: 1.55rem; }
   .hero { padding: 20px; }
 }
+/* Cost labelling - the price is quoted exactly as the official source words it */
+.cost-wording { display: block; margin-top: 3px; font-size: .78rem; color: var(--ink-soft); font-style: italic; }
+.cost { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .84rem; font-weight: 650; }
+.cost-free { background: var(--ok-bg); color: var(--ok-ink); }
+.cost-mixed { background: #eaf2fb; color: #205c8a; }
+.cost-paid { background: #f4eef7; color: #5b3b78; }
+.cost-unknown { background: #eceff3; color: #4d5866; font-style: italic; font-weight: 500; }
+
+/* Focus badges (gaming / music / AI) */
+.badge.focus-gaming { background: #ede7fb; color: #4a2f86; }
+.badge.focus-music { background: #fdeaf2; color: #8b2a5c; }
+.badge.focus-ai { background: #e2f0f8; color: #14506e; }
+.badge + .badge { margin-left: 4px; }
+
+/* Executive summary horizons and countdowns */
+.horizon-row td { background: #eef2f5; font-size: .82rem; letter-spacing: .02em; padding: 8px 12px; }
+.horizon-blurb { color: var(--ink-soft); font-weight: 400; }
+.when-now { font-weight: 700; color: #145c46; }
+.when-soon { font-weight: 700; color: var(--accent); }
+.when-mid { color: var(--ink-soft); }
+.when-later { color: var(--ink-soft); }
+.summary-table tbody td { vertical-align: top; }
+.tile-meta { margin-top: 4px; font-size: .78rem; font-weight: 700; color: var(--ok-ink); }
+
+/* Mobile: every table becomes a stack of readable cards. The columns are
+   still there - each cell repeats its column name - so nothing is hidden
+   and no horizontal scrolling is needed on a phone. */
+@media (max-width: 760px) {
+  .wrap { padding: 0 14px; }
+  main { padding: 20px 14px 44px; }
+  h1 { font-size: 1.45rem; }
+  .table-scroll { overflow: visible; background: transparent; border: 0; border-radius: 0; }
+  .data-table:not(.compact) { min-width: 0; display: block; }
+  .data-table:not(.compact) thead { position: absolute; left: -9999px; top: auto; }
+  .data-table:not(.compact) tbody { display: block; }
+  .data-table:not(.compact) tr {
+    display: block; background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 12px 14px; margin: 0 0 12px;
+  }
+  .data-table:not(.compact) tbody tr:hover td { background: transparent; }
+  .data-table:not(.compact) td { display: block; border: 0; padding: 5px 0; }
+  .data-table:not(.compact) td[data-label]::before {
+    content: attr(data-label); display: block; margin-bottom: 1px;
+    font-size: .67rem; font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .data-table:not(.compact) td:first-child::before { display: none; }
+  .data-table:not(.compact) .ev-title { font-size: 1.02rem; }
+  .data-table:not(.compact) .note-row { padding-top: 0; }
+  .data-table:not(.compact) .note-row td { padding-top: 0; }
+  .horizon-row td { border-radius: 8px; }
+  .stat { flex: 1 1 128px; padding: 12px 14px; }
+  .stat-n { font-size: 1.45rem; }
+  .tiles { grid-template-columns: 1fr; }
+  .domain-list { columns: 1; }
+}
 @media print {
   .site-nav, .hero-actions, .btn { display: none; }
   .table-scroll { overflow: visible; }
@@ -1139,9 +1412,9 @@ def main() -> int:
 
     # CSV mirror for spreadsheet users
     import csv
-    csv_fields = ["id", "title", "group", "category", "type", "schedule", "dates", "location",
-                  "area", "cost", "organiser", "status", "timing", "source_name", "source_url",
-                  "additional_sources", "notes"]
+    csv_fields = ["id", "title", "group", "category", "focus", "type", "schedule", "dates",
+                  "date_start", "date_end", "location", "area", "cost", "cost_class", "organiser",
+                  "status", "timing", "source_name", "source_url", "additional_sources", "notes"]
     with open(os.path.join(ROOT, "data", "events.csv"), "w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=csv_fields, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
