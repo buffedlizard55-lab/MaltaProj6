@@ -164,7 +164,7 @@ so the two views can never disagree. The build script re-checks this on every ru
 | Irregularities published on "Flagged for review" | **72** |
 | Distinct official source URLs / official domains | **142** / **88** |
 | Static pages | **14** (11 generated from the union dataset, 3 preserved from the parallel session) |
-| PRs merged by this session | #7 (`5c0c788`), #9 (`3f16ffb`) |
+| PRs merged by this session | #7 (`5c0c788`), #9 (`3f16ffb`), #10 (`9ff8e59`) |
 | GitHub Pages deploy | **`built`**, `error: null`, source `main` / `/` |
 
 ### `arena-8fb52462` (parallel session, as recorded by that session)
