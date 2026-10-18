@@ -1676,6 +1676,129 @@ EVENTS += [
         source_name="Ferry Building Marketplace — Monday Yoga",
         source_url="https://www.ferrybuildingmarketplace.com/events/monday-yoga/", status="verified",
         notes="Added 2026-10-18 by session arena-91296e94. Lunch-hour all-levels vinyasa with headphones provided (bring your own mat); registration link to outdoor-yoga.org on the official page; the venue's official events calendar titles it 'Monday Yoga — Free Vinyasa Yoga Class'."),
+    # ------------------------------------------------------------------
+    # FOCUS CATEGORIES — gaming, music, AI (added 2026-10-18, session
+    # arena-61a46409). Every field below was read off the official page
+    # named in `source_url`; nothing is inferred. Where the official page
+    # does not publish a value (e.g. a ticket price) the cell is left blank
+    # and the row is marked status="unverified".
+    # ------------------------------------------------------------------
+
+    # --- GAMING --------------------------------------------------------
+    dict(
+        id="rec-sfpl-mix-gaming", title="Gaming at The Mix (free teen video and tabletop gaming)",
+        page="recurring", type="Recurring - Regular schedule",
+        schedule="Drop-in gaming during The Mix open hours; Dungeons & Dragons campaigns; monthly gaming tournaments",
+        dates="The Mix open hours: Sunday 12-6 p.m., Monday 9-6, Tuesday-Thursday 9-8, Friday 12-6, Saturday 10-6",
+        location="The Mix, Main Library, 2nd Floor, 100 Larkin Street",
+        area="Civic Center / Tenderloin", cost="Free",
+        organiser="San Francisco Public Library (The Mix)",
+        source_name="San Francisco Public Library — Gaming at The Mix",
+        source_url="https://sfpl.org/teens/the-mix/gaming", status="verified",
+        notes="Added 2026-10-18 by session arena-61a46409 from the library's own page, which states: 'Come in and play video games or tabletop gaming with friends! Teens can check out controllers with their library card, and our staff will set them up with a console. If tabletop gaming is more your style, we offer sessions of D&D led by teen interns or professional DMs, along with a wide selection of traditional board games and new RPGs. The Mix also hosts monthly gaming tournaments, giving you the chance to compete against your friends and the librarians.' The Mix is for ages 12-18; open hours are taken from https://sfpl.org/teens/the-mix, which also lists Gaming (PS5, Nintendo Switch or Meta Quest 2) among its spaces."),
+    dict(
+        id="rec-sfpl-gaming-citywide", title="San Francisco Public Library gaming programmes (board games, chess, D&D, mahjong, bocce)",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Recurring gaming sessions published on the library's own events calendar; day, time and branch vary by programme",
+        dates="",
+        location="SF Public Library branches citywide (Sunset, Excelsior, Ingleside, Presidio, Main, Glen Park, Richmond, West Portal, Bernal Heights, North Beach, Noe Valley, Ortega and others)",
+        area="Citywide", cost="Free",
+        organiser="San Francisco Public Library",
+        source_name="San Francisco Public Library — Upcoming Events, Gaming topic filter",
+        source_url="https://sfpl.org/events?field_event_topic_target_id=553", status="verified",
+        notes="Added 2026-10-18 by session arena-61a46409. The library's own filtered Gaming calendar returned 84 upcoming results on that date. Named recurring strands visible on the official listing include Activity: Chess Club (Ingleside, Excelsior, Richmond, Bernal Heights), Activity: Horrified: Dungeons & Dragons (Presidio), Activity: Bocce Ball for adults and older adults (North Beach), Activity: LEGO Robotics (Richmond), Social: Afternoon Board Games (Sunset), Workshop: Mahjong for Beginners (Sunset), Social: Puzzle Swap (Noe Valley), Social: Gaming Hour (Bayview) and Social: Family Game Night. The library states on its events index that 'All programs and events are free and open to the public.' Individual session dates and times are only published on the rolling calendar, so no session-level date is asserted here."),
+    dict(
+        id="rec-sfpl-mix-music-studios", title="The Mix at SFPL — free music and media production studios for teens",
+        page="recurring", type="Recurring - Regular schedule",
+        schedule="Two media production studios open to teens during The Mix open hours",
+        dates="The Mix open hours: Sunday 12-6 p.m., Monday 9-6, Tuesday-Thursday 9-8, Friday 12-6, Saturday 10-6",
+        location="The Mix, Main Library, 2nd Floor, 100 Larkin Street",
+        area="Civic Center / Tenderloin", cost="Free",
+        organiser="San Francisco Public Library (The Mix)",
+        source_name="San Francisco Public Library — The Mix",
+        source_url="https://sfpl.org/teens/the-mix", status="verified",
+        notes="Added 2026-10-18 by session arena-61a46409 from the library's own page, which describes 'Two media production studios where teens can play musical instruments and produce, record, edit, and save music, videos, and podcasts.' The Mix is a 4,770 sq ft teen-designed media space for ages 12-18 at 100 Larkin Street, 2nd Floor; contact 415-557-4404 / themix@sfpl.org. The library states all programmes and events are free and open to the public."),
+    dict(
+        id="rec-sfpl-dance-music", title="San Francisco Public Library dance and music programmes",
+        page="recurring", type="Recurring - Weekly",
+        schedule="Recurring music, dance and audio-production programmes published on the library's own events calendar; day, time and branch vary by programme",
+        dates="",
+        location="SF Public Library branches citywide (Main, Presidio, Glen Park, Mission Bay and others)",
+        area="Citywide", cost="Free",
+        organiser="San Francisco Public Library",
+        source_name="San Francisco Public Library — Upcoming Events, Dance & Music topic filter",
+        source_url="https://sfpl.org/events?field_event_topic_target_id=452", status="verified",
+        notes="Added 2026-10-18 by session arena-61a46409. The library's own filtered Dance & Music calendar returned 104 upcoming results on that date. Named programmes visible on the official listing include Performance: Mariela's Music Time (Presidio), Social: Monday Fun Day Family Dance Party (Glen Park) and teen Audio & Video Production sessions (Main). The library states on its events index that 'All programs and events are free and open to the public.' Individual session dates and times are only published on the rolling calendar, so no session-level date is asserted here."),
+
+    # --- AI ------------------------------------------------------------
+    dict(
+        id="ann-sfpl-tech-week", title="SFPL Tech Week — free digital-skills and AI workshops",
+        page="annual", type="Annual",
+        schedule="Annual week-long series of free workshops, tutorials, presentations and tech support across library branches and partner sites; topics have included artificial intelligence, cybersecurity, accessibility, digital art and social media",
+        dates="May 9-16, 2026",
+        location="SF Public Library branches citywide and partner sites (Main Library, 100 Larkin Street)",
+        area="Citywide", cost="Free",
+        organiser="San Francisco Public Library with a coalition of Bay Area organisations",
+        source_name="San Francisco Public Library — SF Tech Week",
+        source_url="https://sfpl.org/techweek", status="verified",
+        notes="Added 2026-10-18 by session arena-61a46409. The library's own Tech Week page states 'Take your next step with technology during Tech Week. Explore, connect and level up your skills. All programs are free.' and gives the 2026 dates as May 9-16, 2026, with the programme schedule published at sfpl.org/events (Tech Week topic filter) and a downloadable brochure (TechWeek2026_Brochure_rem.pdf). AI sessions in the 2026 edition included 'Workshop: Home Improvement with AI' presented by SF Tech Council (sfpl.org/events/2026/05/14/workshop-home-improvement-ai) and 'Workshop: Digital Literacy & AI Robotics Course' presented by Scaleup Robotics AB (sfpl.org/events/2026/02/21/full-workshop-digital-literacy-ai-robotics-course). Presented by San Francisco Public Library and partners. The 2026 edition has concluded."),
+    dict(
+        id="spc-ai-engineer-code-2026", title="AI Engineer Code Summit 2026",
+        page="special", type="Special - Dated",
+        schedule="Three days: hands-on AIE workshops on day one, then two days of talks plus a summit expo; single track. Attendance is by application only",
+        dates="November 10-12, 2026",
+        location="San Francisco, CA (the official page publishes the city but no venue address)",
+        area="Not published by the official source",
+        cost="Regular $1,299 + fees (talks + expo, Nov 11-12); Final & At-Door $1,499 + fees; Workshop Add-On $299 + fees (Nov 10). Applying is free and does not reserve a seat",
+        organiser="AI Engineer (AIE), presented by Google DeepMind",
+        source_name="AI Engineer — Code Summit 2026 (official event site)",
+        source_url="https://ai.engineer/code/2026", status="verified",
+        notes="Added 2026-10-18 by session arena-61a46409 from the organiser's own page, which states 'NOV 10-12, 2026 // SF, CA', describes it as the second annual code-focused summit, and publishes the ticket table (Regular $1,299 + fees; Final & At-Door $1,499 + fees; Workshop Add-On $299 + fees) with the note 'Applying is free and doesn't reserve a seat. If you're approved, we'll email you a link to purchase.' 800 were admitted last year. Free alternatives published by the organiser: a livestream plus its YouTube channel."),
+    dict(
+        id="spc-ai-week-sf-2026", title="AI Week San Francisco (Week of AI), December 2026",
+        page="special", type="Special - Dated",
+        schedule="Seven days of independently hosted, community-run AI events — talks, demos, workshops, hackathons, roundtables, breakfasts, parties and dinners; 27 events listed on the official schedule",
+        dates="December 7-13, 2026",
+        location="Venues across San Francisco, including Pier 29 Annex (SoMa), Fort Mason Center (Marina), Embarcadero Center Tower 4 (FiDi), The Foundry at Pier 70 (Dogpatch), The Midway Annex (SoMa), The Bunker (Potrero) and the Officers' Club at the Presidio",
+        area="Citywide",
+        cost="Free — the official site states the directory is '100% free to use'; each host-run event sets its own entry rules and several are invite-only or guests-only",
+        organiser="Week of AI, with independent hosts",
+        source_name="Week of AI — official AI Week San Francisco schedule",
+        source_url="https://week-of-ai.com/", status="verified",
+        notes="Added 2026-10-18 by session arena-61a46409 from the official AI Week site, which states that the official AI week in San Francisco runs December 7-13, 2026. All events independently hosted. Talks, demos, parties, and more. 100% free to use.' The published schedule lists 27 events (for example Fortune Brainstorm AI 2026 at The St. Regis San Francisco on Mon 12/07; Opening Night: State of the Stack at Pier 29 Annex, Mon 12/07 6-9pm; Hardware Hackathon (48h) at The Bunker from Fri 12/11; Sunday Hike: Lands End on Sun 12/13). Several listings are marked 'guests only' or 'invite only'. Because the week is a directory of independently hosted events, entry terms are set by each host and are not published centrally; only the directory's own '100% free to use' statement is asserted here."),
+    dict(
+        id="spc-current-sf-2026", title="Current San Francisco 2026 (Confluent — real-time data and AI)",
+        page="special", type="Special - Dated",
+        schedule="Two-day conference: keynotes, product announcements, technical sessions, hands-on learning and networking",
+        dates="November 4-5, 2026",
+        location="Moscone West, 747 Howard Street",
+        area="SoMa / Yerba Buena", cost="",
+        organiser="Confluent",
+        source_name="Moscone Center — Current San Francisco 2026 (official venue event listing)",
+        source_url="https://www.moscone.com/events/current-san-francisco-2026", status="unverified",
+        notes="Added 2026-10-18 by session arena-61a46409 from the Moscone Center's own event listing, which gives the in-person dates (November 4-5, 2026), the venue (Moscone West) and describes it as Confluent's flagship conference 'dedicated to real-time data, data streaming, and artificial intelligence'. The official listing says 'Register your interest to receive the latest conference updates, speaker announcements, and registration information' and publishes no admission price, so the cost cell is left blank rather than inferred."),
+    dict(
+        id="spc-microsoft-ignite-2026", title="Microsoft Ignite 2026 (AI, cloud, security and developer conference)",
+        page="special", type="Special - Dated",
+        schedule="Four-day conference, in person and digital: technical sessions, product innovations, hands-on learning and networking",
+        dates="November 17-20, 2026",
+        location="Moscone Center, 747 Howard Street",
+        area="SoMa / Yerba Buena", cost="",
+        organiser="Microsoft",
+        source_name="Moscone Center — Microsoft Ignite 2026 (official venue event listing)",
+        source_url="https://www.moscone.com/events/microsoft-ignite-2026", status="unverified",
+        notes="Added 2026-10-18 by session arena-61a46409 from the Moscone Center's own event listing, which gives the in-person and digital dates (November 17-20, 2026), the venue (Moscone Center) and describes the programme as covering Microsoft 365 Copilot, Agent Factory, AI security, the Agent 365 control plane, Azure, security and compliance, and developer/IT deep dives. The official listing publishes no admission price, so the cost cell is left blank rather than inferred."),
+    dict(
+        id="spc-cloudflare-connect-2026", title="Cloudflare Connect 2026",
+        page="special", type="Special - Dated",
+        schedule="Multi-day flagship event: keynotes, product announcements, technical sessions, deep dives, customer stories and networking",
+        dates="October 19-21, 2026",
+        location="San Francisco, CA (the Moscone Center listing gives the city but names no specific hall)",
+        area="SoMa / Yerba Buena", cost="",
+        organiser="Cloudflare",
+        source_name="Moscone Center — Cloudflare Connect 2026 (official venue event listing)",
+        source_url="https://www.moscone.com/events/cloudflare-connect-2026", status="unverified",
+        notes="Added 2026-10-18 by session arena-61a46409 from the Moscone Center's own event listing, which gives the in-person dates (October 19-21, 2026) and the city. The listing describes a 'bigger and bolder program' spanning keynotes, technical sessions and deep dives on security, networking, performance and developer solutions, but publishes no admission price, so the cost cell is left blank rather than inferred."),
 ]
 
 # ---------------------------------------------------------------------------
@@ -2106,6 +2229,17 @@ EXPLICIT_GROUP = {
 
 # Category for every event that is not already civic / arts / sports / markets.
 CATEGORY_BY_ID = {
+    # --- focus categories added 2026-10-18 by session arena-61a46409 ---
+    "rec-sfpl-mix-gaming": "community",
+    "rec-sfpl-gaming-citywide": "community",
+    "rec-sfpl-mix-music-studios": "arts",
+    "rec-sfpl-dance-music": "arts",
+    "ann-sfpl-tech-week": "community",
+    "spc-ai-engineer-code-2026": "community",
+    "spc-ai-week-sf-2026": "community",
+    "spc-current-sf-2026": "community",
+    "spc-microsoft-ignite-2026": "community",
+    "spc-cloudflare-connect-2026": "community",
     # --- regularly recurring ---------------------------------------------
     "rec-zumba-in-the-parks": "community",
     "rec-rae-studios-un-plaza": "community",
@@ -2234,6 +2368,7 @@ CONCLUDED_2026 = {
     "x-s-028", "x-s-032", "x-s-033", "x-w-023",
     "ann-sf-mime-troupe",
     "spc-techcrunch-disrupt-2026",
+    "ann-sfpl-tech-week",
 }
 
 
