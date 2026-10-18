@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+from copy import deepcopy
 from collections import Counter
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlsplit
@@ -25,6 +26,11 @@ CATEGORY_PAGE = {
     "community": "community.html",
 }
 EXPECTED_CELLS = 9  # Event, type, schedule, dates, location, area, cost, organiser, source
+NON_PRIMARY_HOST_PARTS = (
+    "eventbrite.", "facebook.com", "instagram.com", "twitter.com", "tiktok.com",
+    "wikipedia.org", "funcheap.com", "yelp.com", "tripadvisor.", "timeout.com",
+    "google.com/search", "bing.com/search",
+)
 
 
 class PageAudit(HTMLParser):
@@ -86,6 +92,23 @@ def main() -> int:
     if payload.get("flagged_count") != len(flagged):
         errors.append(f"data/events.json: flagged_count={payload.get('flagged_count')} but rows={len(flagged)}")
 
+    # Keep the committed JSON mirror reproducible from the authored records and
+    # the preserved parallel-session input files.
+    try:
+        sys.path.insert(0, os.path.join(ROOT, "data"))
+        sys.path.insert(0, os.path.join(ROOT, "scripts"))
+        from events import EVENTS as BASE_EVENTS, FLAGGED as BASE_FLAGGED, assign_views
+        from merge_parallel import parallel_events, parallel_flagged
+        base_events = deepcopy(BASE_EVENTS)
+        expected_events = assign_views(base_events + parallel_events(base_events))
+        expected_flagged = list(BASE_FLAGGED) + parallel_flagged()
+        if events != expected_events:
+            errors.append("data/events.json: event rows differ from the reproducible source-data union")
+        if flagged != expected_flagged:
+            errors.append("data/events.json: review rows differ from the reproducible source-data union")
+    except Exception as exc:
+        errors.append(f"could not reproduce canonical data union: {exc}")
+
     event_ids = [event.get("id", "") for event in events]
     duplicate_ids = [event_id for event_id, count in Counter(event_ids).items() if not event_id or count != 1]
     if duplicate_ids:
@@ -104,6 +127,10 @@ def main() -> int:
         source_url = event.get("source_url", "")
         if urlsplit(source_url).scheme != "https" or not urlsplit(source_url).netloc:
             errors.append(f"{event_id}: source_url is not an absolute HTTPS URL: {source_url!r}")
+        if any(host in source_url.lower() for host in NON_PRIMARY_HOST_PARTS):
+            errors.append(f"{event_id}: source_url uses a blocked non-primary host: {source_url}")
+        if event.get("status") not in ("verified", "unverified"):
+            errors.append(f"{event_id}: invalid status {event.get('status')!r}")
         if event.get("group") not in GROUP_PAGE:
             errors.append(f"{event_id}: unknown group {event.get('group')!r}")
         if event.get("category") not in CATEGORY_PAGE:
@@ -149,6 +176,8 @@ def main() -> int:
             url = item.get("source_url", "")
             if urlsplit(url).scheme != "https" or not urlsplit(url).netloc:
                 errors.append(f"{item_id}: review source_url is not an absolute HTTPS URL")
+            if any(host in url.lower() for host in NON_PRIMARY_HOST_PARTS):
+                errors.append(f"{item_id}: review source_url uses a blocked non-primary host: {url}")
             row = flagged_audit.rows.get(item_id)
             if row is None:
                 errors.append(f"flagged.html: missing review item {item_id}")
