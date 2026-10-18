@@ -4,7 +4,7 @@
   "generated": "2026-10-18",
   "verified_on": "2026-10-18",
   "scope": "City and County of San Francisco only",
-  "event_count": 225,
+  "event_count": 235,
   "flagged_count": 173,
   "events": [
     {
@@ -23,7 +23,12 @@
       "status": "verified",
       "notes": "Page also lists a Fall Zumba Party on Sunday, October 25, 11am-1pm at 1199 9th Ave @ Lincoln.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-rae-studios-un-plaza",
@@ -41,7 +46,12 @@
       "status": "verified",
       "notes": "Weekly class timetable taken from the official event listing (Mon-Thu Jazz Funk / K-Pop / Hip Hop / RnB; Sat K-Pop & Shuffle; Sun Drenched! & BollyX).",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-mobile-rec",
@@ -59,7 +69,12 @@
       "status": "verified",
       "notes": "Examples verified in the official calendar: Mobile Rec and B Mo Magic at Civic Center Plaza (Oct 17, 2026, 10am-2pm), Mobile Rec at Sunday Streets on Mission St (Oct 18, 2026, 11am-4pm), Mobile Rec at Rochambeau Playground (Oct 24, 2026, 10am-4pm), Mobile Rec at Scaregrove (Oct 30, 2026, 12pm-8pm).",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-polo-field-cycle-track",
@@ -77,7 +92,12 @@
       "status": "verified",
       "notes": "Official calendar publishes a rolling set of 'Cycle Track Open ...' entries with different daily start/finish times.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-union-square-programming",
@@ -95,7 +115,12 @@
       "status": "verified",
       "notes": "Individual session dates are posted on the department calendar; cadence confirmed from recurring weekly entries.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-swim-schedules",
@@ -114,7 +139,12 @@
       "notes": "Pool schedules are published per facility and per season; the linked document is the official posted Balboa Pool summer 2026 schedule. Numeric admission price not recorded; previous generic cost wording 'Fee applies (varies by program)' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Fee applies (varies by program)",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-bandshell-illuminate-live",
@@ -132,7 +162,12 @@
       "status": "verified",
       "notes": "Named weekly blocks: Midweek Melodies (Wednesdays), Friday Happy Hour (Fridays), Crucial Reggae Sundays (Sundays). The 2026 sixth season was also announced by the Mayor's Office (https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park); a former duplicate annual-season row sourced to that release was removed in the 2026-10-18 audit by arena-bdaa17b4 - see Flagged for Review.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "2026-03-01",
+      "date_end": "",
+      "date_source": "override"
     },
     {
       "id": "rec-sf-shakes-free-shakespeare",
@@ -151,7 +186,12 @@
       "notes": "44th season. San Francisco dates confirmed as McLaren Park (Sept 5-13, 2026) and Sue Bierman Park; the season also plays Cupertino and Redwood City, which are outside San Francisco and are excluded from this list.",
       "timing": "concluded",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-07-25",
+      "date_end": "2026-09-27",
+      "date_source": "override"
     },
     {
       "id": "rec-sfpl-storytime",
@@ -169,7 +209,12 @@
       "status": "verified",
       "notes": "Confirmed example from the official calendar: Storytime for Babies, Park Branch, Saturday 10/17/2026 11:00-12:00.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-sfpl-author-readings",
@@ -187,7 +232,12 @@
       "status": "verified",
       "notes": "Confirmed example: Author: Diana Kapp, The Last Free Women — Tuesday 9/29/2026 6:00-7:30 p.m., Koret Auditorium, Main Library.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-sfpl-summer-stride",
@@ -206,7 +256,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-06-01",
+      "date_end": "2026-08-31",
+      "date_source": "parsed"
     },
     {
       "id": "rec-sfpl-one-city-one-book",
@@ -224,7 +279,12 @@
       "status": "verified",
       "notes": "The official page promotes the 2026 selection, Awake in the Floating City; this recurring-program row does not infer cycle-specific dates.",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-presidio-habitat-stewards",
@@ -242,7 +302,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-presidio-yoga",
@@ -260,7 +325,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-presidio-ranger-programs",
@@ -278,7 +348,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-explatorium-after-dark",
@@ -297,7 +372,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-explatorium-member-hours",
@@ -316,7 +396,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Members only' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Members only",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-explatorium-storytime",
@@ -335,7 +420,12 @@
       "notes": "Sessions listed for Saturdays and Sundays, e.g. Sat 10/17/2026 12-1pm and 2-3pm, Sun 10/18/2026 12-1pm and 10/25/2026 12-1pm. Numeric admission price not recorded; previous generic cost wording 'Included with admission' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Included with admission",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-calacademy-nightlife",
@@ -354,7 +444,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-calacademy-planetarium",
@@ -373,7 +468,12 @@
       "notes": "Daily show list for 'Timescapes' verified for October-December 2026. Numeric admission price not recorded; previous generic cost wording 'Included with admission' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Included with admission",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-famssf-family-tour",
@@ -392,7 +492,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Included with admission' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Included with admission",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-famssf-late-night",
@@ -411,7 +516,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-japanese-tea-garden-free-hour",
@@ -431,7 +541,12 @@
       "_price_review": "Free 9-10 a.m. Mon/Wed/Fri (otherwise ticketed)",
       "_free_access_confirmed": true,
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-sfbotanical-free",
@@ -451,7 +566,12 @@
       "_price_review": "Free during free hours (otherwise ticketed)",
       "_free_access_confirmed": true,
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-ferry-plaza-farmers-market",
@@ -469,7 +589,12 @@
       "status": "verified",
       "notes": "Merchant hours may vary from the listed hours.",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-ferry-building-marketplace",
@@ -487,7 +612,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-sunday-streets",
@@ -505,7 +635,12 @@
       "status": "verified",
       "notes": "SFMTA is the primary City sponsor. Programme page: https://sundaystreetssf.com/",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-off-the-grid-treasure-island",
@@ -524,7 +659,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-09-12",
+      "date_end": "2026-10-03",
+      "date_source": "parsed"
     },
     {
       "id": "rec-sfsymphony",
@@ -543,7 +683,12 @@
       "notes": "Venue confirmed 2026-10-18 by arena-8e8e24dc on the Symphony's Getting Here page and 2026-27 season calendar: all concerts are at Davies Symphony Hall, 201 Van Ness Avenue (main entrance and box office at 249 Grove Street). The War Memorial Opera House is the home of San Francisco Opera and San Francisco Ballet. Season confirmed through August 2027. Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-sfjazz-season",
@@ -562,7 +707,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-sfpl-library-hours",
@@ -580,7 +730,12 @@
       "status": "verified",
       "notes": "All libraries close on major City holidays (e.g. Labor Day, Indigenous Peoples' Day).",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-bos",
@@ -598,7 +753,12 @@
       "status": "verified",
       "notes": "SF.gov publishes the full annual 2026 meeting calendar (including spring, summer and winter recesses) at https://www.sf.gov/regularly-scheduled-board-of-supervisors-meetings.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-bos-lut",
@@ -616,7 +776,12 @@
       "status": "verified",
       "notes": "TIME DISCREPANCY RESOLVED on re-check 2026-10-18: the Legistar calendar now lists the 10/5/2026 regular meeting at 1:30 p.m., matching the SFGovTV permanent schedule ('Mondays at 1:30PM'). The earlier 4:30 p.m. listing for 10/19/2026 is no longer on the calendar (that date currently shows no Land Use meeting posted). Time filled from the official Legistar meeting record.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-bos-budget-finance",
@@ -634,7 +799,12 @@
       "status": "verified",
       "notes": "TIME DISCREPANCY: the SFGovTV permanent schedule lists this committee on 'Wednesdays at 12:30AM', which conflicts with the Legistar record. See Flagged for Review.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-bos-psns",
@@ -652,7 +822,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-bos-rules",
@@ -670,7 +845,12 @@
       "status": "verified",
       "notes": "TIME DISCREPANCY RESOLVED on re-check 2026-10-18: the Legistar calendar now lists both the 10/5/2026 and 10/19/2026 regular meetings at 10:00 a.m., matching the SFGovTV permanent schedule ('Mondays at 10:00AM'). The earlier 1:00 p.m. listing is no longer on the calendar. Time filled from the official Legistar meeting records.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-board-of-appeals",
@@ -688,7 +868,12 @@
       "status": "verified",
       "notes": "The official page says the Board meets most Wednesdays at 5:00 p.m. and lists exceptions and cancellations. This is separate from the Assessment Appeals Boards.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-assessment-appeals",
@@ -706,7 +891,12 @@
       "status": "verified",
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc. The department page states the Monday-Friday, two-session pattern with start times of 9:30 a.m. and 1:30 p.m., and its upcoming calendar lists Board 1 and Board 2 meetings on Monday, October 19, 2026 at 9:30 a.m. and Board 3 at 1:30 p.m. Earlier passes withheld the times because the citywide calendar feed showed a different pattern; the department page is the authoritative schedule. Admission cost is not published, so the cost cell stays blank.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-planning",
@@ -724,7 +914,12 @@
       "status": "verified",
       "notes": "Commission Rules state regular meetings are held each Thursday of each month except where there are five Thursdays, in which case the fifth is cancelled.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-hpc",
@@ -742,7 +937,12 @@
       "status": "verified",
       "notes": "Confirmed hearing date: Wednesday, October 21, 2026, 12:30 p.m.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-sfmta-board",
@@ -760,7 +960,12 @@
       "status": "verified",
       "notes": "Broadcast live on SFGovTV2 (cable channel 78).",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-port",
@@ -778,7 +983,12 @@
       "status": "verified",
       "notes": "Official 2026 meeting list published on the same page.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-fire",
@@ -796,7 +1006,12 @@
       "status": "verified",
       "notes": "Special Commission Meetings are also scheduled outside the regular cycle.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-puc",
@@ -814,7 +1029,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-arts-full",
@@ -832,7 +1052,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-arts-cdr",
@@ -850,7 +1075,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-arts-ci",
@@ -868,7 +1098,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-arts-exec",
@@ -886,7 +1121,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-arts-visual",
@@ -904,7 +1144,12 @@
       "status": "verified",
       "notes": "The Arts Commission meeting schedule is also given at https://www.sf.gov/departments--arts-commission-meetings, which lists the same pattern.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-arts-street-artists",
@@ -922,7 +1167,12 @@
       "status": "verified",
       "notes": "Subject to change, per the official page.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-police",
@@ -940,7 +1190,12 @@
       "status": "verified",
       "notes": "Confirmed dates on the official calendar: Oct 21, 2026; Jan 7, 2026; Jan 14, 2026. The 5:30 p.m. time is taken from the SFGovTV permanent schedule.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-health",
@@ -958,7 +1213,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-sfusd-board",
@@ -976,7 +1236,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-building-inspection",
@@ -994,7 +1259,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-ethics",
@@ -1012,7 +1282,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-environment",
@@ -1030,7 +1305,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-small-business",
@@ -1048,7 +1328,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-health-service-board",
@@ -1066,7 +1351,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-sfcta",
@@ -1084,7 +1374,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-tida",
@@ -1102,7 +1397,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-hrc",
@@ -1120,7 +1420,12 @@
       "status": "verified",
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc. The department page's past calendar lists 'Human Rights Commission Meeting - October 8, 2026, 5:00 pm'; the same page's upcoming list carries community events (District 8, 1, 11 and 2 Family Summits, October 17-November 7, 2026) rather than the next commission meeting. The meeting cadence is not stated, so the schedule cell is blank. Cost is not published either. The department's own award evening, the Human Rights Awards, is catalogued separately.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-08",
+      "date_end": "2026-10-08",
+      "date_source": "parsed"
     },
     {
       "id": "civ-library-commission",
@@ -1138,7 +1443,12 @@
       "status": "verified",
       "notes": "CONFLICT: a separate SFPL policies page (Article VII) describes regular meetings as 'the first Tuesday of each month and on the third Thursday of each month ... at 4:00 p.m.' See Flagged for Review. Confirmed 2026 dates include Oct 15, Nov 19 and Sep 17.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-recpark-commission",
@@ -1156,7 +1466,12 @@
       "status": "verified",
       "notes": "CONFLICT: the SFGovTV permanent schedule lists this commission as '2nd & 4th Thursdays at 10:00AM', but the department's own page and the published 2026 meeting dates (Jun 18, Aug 20, Sep 17, Oct 15) are all third Thursdays. See Flagged for Review.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-recpark-operations",
@@ -1174,7 +1489,12 @@
       "status": "verified",
       "notes": "Re-verified and fixed 2026-10-18 by session arena-8cb2d3cc. The department's Meeting Info & Calendar page states the recurring rule in words ('The Operations Committee meets on the first Thursday of every month at City Hall, Room 416, at 2 p.m.'), so the cadence is now filled; the earlier 'Monthly, 2:00 p.m.' text had been removed pending a source. The previous citation (sfrecpark.org/Calendar.aspx?EID=9056) now redirects to a CivicPlus staff sign-in page and has been replaced. The next meeting date is derived from the stated rule, not published individually, and the monthly list on the page stops at October 1.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-01",
+      "date_end": "2026-11-05",
+      "date_source": "parsed"
     },
     {
       "id": "civ-citywide-calendar",
@@ -1192,7 +1512,12 @@
       "status": "verified",
       "notes": "Official single index of City boards, commissions and departments' meetings and events.",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-supervisor-district-events",
@@ -1210,7 +1535,12 @@
       "status": "verified",
       "notes": "Confirmed entries: Bayview 3rd Street Community Cleanup (Sat Oct 17, 2026, 1:00 p.m.); District 8 Castro Family Summit (Sat Oct 17, 2026, 4:00 p.m.); District 1 Richmond Family Summit (Thu Oct 22, 2026, 5:30 p.m.); District 11 Excelsior Family Summit (Thu Oct 29, 2026, 5:30 p.m.); District 2 Marina Family Summit (Sat Nov 7, 2026, 11:00 a.m.).",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "civ-cityhall-weddings",
@@ -1229,7 +1559,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Fee applies' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Fee applies",
       "group": "recurring",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "ann-cny-parade",
@@ -1249,7 +1584,12 @@
       "_price_review": "Free to watch; ticketed bleacher seats",
       "_free_access_confirmed": true,
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-02-20",
+      "date_end": "2027-02-20",
+      "date_source": "parsed"
     },
     {
       "id": "ann-cny-flower-market",
@@ -1268,7 +1608,12 @@
       "notes": "2026 edition confirmed by the City transportation agency, which also lists the street closures. The 2027 edition date is not yet published by the organiser and is left blank.",
       "timing": "concluded",
       "group": "annual",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-02-14",
+      "date_end": "2026-02-15",
+      "date_source": "parsed"
     },
     {
       "id": "ann-stpat-parade",
@@ -1287,7 +1632,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-03-14",
+      "date_end": "2026-03-14",
+      "date_source": "parsed"
     },
     {
       "id": "ann-carnaval",
@@ -1307,7 +1657,12 @@
       "_price_review": "Free; ticketed grand stand seating",
       "_free_access_confirmed": true,
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-05-29",
+      "date_end": "2027-05-30",
+      "date_source": "parsed"
     },
     {
       "id": "ann-cherry-blossom",
@@ -1325,7 +1680,12 @@
       "status": "verified",
       "notes": "",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2027-04-10",
+      "date_end": "2027-04-18",
+      "date_source": "parsed"
     },
     {
       "id": "ann-bay-to-breakers",
@@ -1344,7 +1704,12 @@
       "notes": "IRREGULARITY: the site page title says 'May 16, 2027' while body copy on the same page still refers to 'May 18'. Date recorded from the page title. See Flagged for Review. Numeric admission price not recorded; previous generic cost wording 'Registration fee' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Registration fee",
       "group": "annual",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-05-16",
+      "date_end": "2027-05-16",
+      "date_source": "parsed"
     },
     {
       "id": "ann-sf-pride",
@@ -1364,7 +1729,12 @@
       "_price_review": "Free; ticketed viewing",
       "_free_access_confirmed": true,
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-06-26",
+      "date_end": "2027-06-27",
+      "date_source": "parsed"
     },
     {
       "id": "ann-trans-march",
@@ -1383,7 +1753,12 @@
       "notes": "The 2026 edition (Friday, June 26, 2026, 6:00-7:30 p.m. march) is also documented by SFMTA (https://www.sfmta.com/travel-updates/sf-pride-trans-march-friday-june-26-2026); a former duplicate 2026-edition row sourced to SFMTA was removed in the 2026-10-18 audit by arena-bdaa17b4 - see Flagged for Review.",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-06-26",
+      "date_end": "2026-06-26",
+      "date_source": "parsed"
     },
     {
       "id": "ann-fleet-week",
@@ -1404,7 +1779,12 @@
       "_free_access_confirmed": true,
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-09",
+      "date_end": "2026-10-11",
+      "date_source": "parsed"
     },
     {
       "id": "ann-italian-heritage",
@@ -1423,7 +1803,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-10-11",
+      "date_end": "2026-10-11",
+      "date_source": "parsed"
     },
     {
       "id": "ann-union-street-festival",
@@ -1442,7 +1827,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-06-06",
+      "date_end": "2026-06-07",
+      "date_source": "parsed"
     },
     {
       "id": "ann-north-beach-festival",
@@ -1461,7 +1851,12 @@
       "notes": "Established 1954.",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-06-20",
+      "date_end": "2026-06-21",
+      "date_source": "parsed"
     },
     {
       "id": "ann-haight-ashbury-fair",
@@ -1480,7 +1875,12 @@
       "notes": "Re-verified 2026-10-18 by arena-8e8e24dc: the organiser's own 2026 vendor page gives 'Event Date: Sunday, September 20, 2026', and SFMTA's event page confirms Sunday 20 September 2026, 11 a.m.-5:30 p.m., Haight Street between Masonic and Stanyan (https://www.sfmta.com/travel-updates/haight-ashbury-street-fair-sunday-september-20-2026). The About page's 'second Sunday in June' rule is stale copy, recorded on Flagged for Review.",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-09-20",
+      "date_end": "2026-09-20",
+      "date_source": "parsed"
     },
     {
       "id": "ann-nihonmachi",
@@ -1499,7 +1899,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-08-01",
+      "date_end": "2026-08-02",
+      "date_source": "parsed"
     },
     {
       "id": "ann-autumn-moon",
@@ -1518,7 +1923,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-09-19",
+      "date_end": "2026-09-20",
+      "date_source": "parsed"
     },
     {
       "id": "ann-folsom-fair",
@@ -1538,7 +1948,12 @@
       "_price_review": "Donation-based gate entry; 18+",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-09-27",
+      "date_end": "2026-09-27",
+      "date_source": "parsed"
     },
     {
       "id": "ann-up-your-alley",
@@ -1558,7 +1973,12 @@
       "_price_review": "Donation-based gate entry; 18+",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-07-26",
+      "date_end": "2026-07-26",
+      "date_source": "parsed"
     },
     {
       "id": "ann-castro-street-fair",
@@ -1577,7 +1997,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-10-04",
+      "date_end": "2026-10-04",
+      "date_source": "parsed"
     },
     {
       "id": "ann-sffilm",
@@ -1598,7 +2023,12 @@
       "_free_access_confirmed": true,
       "timing": "concluded",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-04-24",
+      "date_end": "2026-05-04",
+      "date_source": "parsed"
     },
     {
       "id": "ann-litquake",
@@ -1618,7 +2048,12 @@
       "_price_review": "Mixed free and ticketed; per-event pricing in the official 2026 programme",
       "_free_access_confirmed": true,
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-08",
+      "date_end": "2026-10-24",
+      "date_source": "parsed"
     },
     {
       "id": "ann-silent-film",
@@ -1639,7 +2074,12 @@
       "_free_access_confirmed": true,
       "timing": "concluded",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-05-06",
+      "date_end": "2026-05-10",
+      "date_source": "parsed"
     },
     {
       "id": "ann-dragon-boat",
@@ -1658,7 +2098,12 @@
       "notes": "LOCATION CHANGE: the long-running San Francisco International Dragon Boat Festival was held on Treasure Island until 2015; the 2026 revival took place at Lake Merced. Treasure Island is no longer the venue.",
       "timing": "concluded",
       "group": "annual",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-06-20",
+      "date_end": "2026-06-21",
+      "date_source": "parsed"
     },
     {
       "id": "ann-fourth-of-july",
@@ -1677,7 +2122,12 @@
       "notes": "",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-07-04",
+      "date_end": "2026-07-04",
+      "date_source": "parsed"
     },
     {
       "id": "ann-human-rights-awards",
@@ -1695,7 +2145,12 @@
       "status": "verified",
       "notes": "Second annual Human Rights Awards; nominations due 5:00 p.m. Friday, October 30, 2026.",
       "group": "annual",
-      "category": "civic"
+      "category": "civic",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-12-09",
+      "date_end": "2026-12-09",
+      "date_source": "parsed"
     },
     {
       "id": "ann-parol-lantern",
@@ -1713,7 +2168,12 @@
       "status": "verified",
       "notes": "The cultural district's official events page lists 'DEC 12: Parol Lantern Festival' and its 2026 calendar release names the 24th annual festival on December 12, 2026. Re-verified 2026-10-18 by session arena-8cb2d3cc; the dedicated festival site still shows the 2025 edition, which is why this row cites the district's events page.",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-12-12",
+      "date_end": "2026-12-12",
+      "date_source": "parsed"
     },
     {
       "id": "ann-sf-marathon",
@@ -1732,7 +2192,12 @@
       "notes": "Re-verified 2026-10-18 against the official site: banner states the 2027 edition as July 24-25, 2027 and bills it as the 50th anniversary; the page title still reads 'July 25 - 26, 2026' (stale copy — see flagged item). Earlier row values 'Race weekend July 24-26, 2026', 'marathon start 5:15 a.m.', 'Start and finish on the Embarcadero at Mission Street; course crosses the Golden Gate Bridge' and '(49th)' could not be confirmed from any current official page (the /faq/ page is 404 and the course preview page carries only a video), so they were removed rather than inferred. A 2026 recap confirms the 2026 race has been run. Numeric admission price not recorded; previous generic cost wording 'Registration fee (2027 per-race prices published on the official site)' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Registration fee (2027 per-race prices published on the official site)",
       "group": "annual",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-07-24",
+      "date_end": "2027-07-25",
+      "date_source": "parsed"
     },
     {
       "id": "ann-sfmusic-week",
@@ -1753,7 +2218,12 @@
       "_free_access_confirmed": true,
       "timing": "concluded",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-02-23",
+      "date_end": "2026-03-01",
+      "date_source": "parsed"
     },
     {
       "id": "spc-boo-at-zoo",
@@ -1772,7 +2242,12 @@
       "notes": "Listed on the official SF Recreation and Parks calendar. Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-31",
+      "date_end": "2026-10-31",
+      "date_source": "parsed"
     },
     {
       "id": "spc-scaregrove",
@@ -1790,7 +2265,12 @@
       "status": "verified",
       "notes": "Listed on the official SF Recreation and Parks calendar.",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-10-30",
+      "date_end": "2026-10-30",
+      "date_source": "parsed"
     },
     {
       "id": "spc-supernatural",
@@ -1808,7 +2288,12 @@
       "status": "verified",
       "notes": "The Academy closes at 3 p.m. on Oct 24 for this event; last entry 2 p.m. Re-verified 2026-10-18: times and general-admission prices are now published on the official page and were filled in (previously blank). VIP and Early Admission packages are also listed there.",
       "group": "special",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "paid",
+      "date_start": "2026-10-24",
+      "date_end": "2026-10-24",
+      "date_source": "parsed"
     },
     {
       "id": "spc-presidio-summer",
@@ -1827,7 +2312,12 @@
       "notes": "Memorial Day Commemoration (Mon May 25, band concert 10:30 a.m., program 11 a.m., San Francisco National Cemetery); Presidio Soccer Festival (Sat Jun 13, 1-5 p.m., Main Parade Lawn); Community Arts Market (Sat-Sun Jul 18-19, 10 a.m.-4 p.m., Presidio Tunnel Tops East Meadow); Fiesta en el Parque (Sat Aug 1, 1-4 p.m.); World Arts West Dance Festival (Sun Sep 6, 1-4 p.m.).",
       "timing": "concluded",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-05-25",
+      "date_end": "2026-09-06",
+      "date_source": "parsed"
     },
     {
       "id": "spc-presidio-diwali",
@@ -1845,7 +2335,12 @@
       "status": "verified",
       "notes": "Afternoon of live performances, arts and crafts and cultural ceremonies.",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-11-07",
+      "date_end": "2026-11-07",
+      "date_source": "parsed"
     },
     {
       "id": "spc-presidio-i-am-american",
@@ -1864,7 +2359,12 @@
       "notes": "CONFLICT: the Presidio Trust press page says the exhibition runs February 23 through July 31, 2026, while the host organisation's exhibit page (njahs.org/iaaa) says February 23 to August 31, 2026 (and another NJAHS page says September 13). Because the official pages disagree, the dates cell is left blank and the runs are recorded on Flagged for Review. Cost and five-day opening pattern are from the host organisation's page.",
       "timing": "concluded",
       "group": "special",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "spc-flower-piano",
@@ -1884,7 +2384,12 @@
       "_price_review": "Ticketed",
       "timing": "concluded",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-09-10",
+      "date_end": "2026-09-20",
+      "date_source": "parsed"
     },
     {
       "id": "spc-lightscape",
@@ -1902,7 +2407,12 @@
       "status": "verified",
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official Lightscape page states the November 20, 2026 - January 3, 2027 run, timed entry in 15-minute windows, and the ticket table used in the cost cell (adult from $32 general / $27 member, youth from $20 / $17, under-5 free, flex from $60 general / $49 member, Museums for All $10 for EBT/SNAP/Medi-Cal holders). A $4 booking fee is included in the published prices; a $5 same-day premium applies.",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "2026-11-20",
+      "date_end": "2027-01-03",
+      "date_source": "override"
     },
     {
       "id": "spc-gala-gardens",
@@ -1922,7 +2432,12 @@
       "_price_review": "Ticketed",
       "timing": "concluded",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-05-09",
+      "date_end": "2026-05-09",
+      "date_source": "parsed"
     },
     {
       "id": "spc-famssf-exhibitions",
@@ -1942,7 +2457,12 @@
       "_price_review": "Ticketed (free on designated days)",
       "_free_access_confirmed": true,
       "group": "special",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-01-31",
+      "date_end": "2028-08-31",
+      "date_source": "parsed"
     },
     {
       "id": "spc-bouquets-to-art",
@@ -1961,7 +2481,12 @@
       "notes": "The 2027 page confirms the 43rd exhibition and that the Legion of Honor is included, but publishes no dates. The previously listed March 2-7, 2027 could not be confirmed anywhere on the official site and was removed rather than inferred (the page's only dated material is the 2026 opening-night photograph). Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "special",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "spc-opera-in-the-park",
@@ -1980,7 +2505,12 @@
       "notes": "Corrected 2026-10-18 by arena-bdaa17b4: the cited release describes a 'free, annual OPERA IN THE PARK concert (Sunday, September 13)' at 'Robin Williams Meadow in San Francisco's Golden Gate Park', so the row is now Annual with the venue filled in. The previously published 1:30 p.m. start time and Chronicle presenter credit could not be confirmed in the fetched release text and were removed rather than kept unverified - see Flagged for Review.",
       "timing": "concluded",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "2026-09-13",
+      "date_end": "2026-09-13",
+      "date_source": "parsed"
     },
     {
       "id": "spc-fort-point-living-history",
@@ -1999,7 +2529,12 @@
       "notes": "Twice a year the NPS holds living-history weekends at Fort Point.",
       "timing": "concluded",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-08-01",
+      "date_end": "2026-08-01",
+      "date_source": "parsed"
     },
     {
       "id": "spc-nye-fireworks",
@@ -2018,7 +2553,12 @@
       "notes": "The 2026-27 edition date had not been published on the Port's calendar at the time of checking; the most recent confirmed edition is listed.",
       "timing": "concluded",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2025-12-31",
+      "date_end": "2026-01-01",
+      "date_source": "parsed"
     },
     {
       "id": "spc-castro-halloween",
@@ -2038,7 +2578,12 @@
       "_price_review": "Free entry; ticketed at some venues",
       "_free_access_confirmed": true,
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-31",
+      "date_end": "2026-10-31",
+      "date_source": "parsed"
     },
     {
       "id": "spc-castro-holiday-tree",
@@ -2056,7 +2601,12 @@
       "status": "verified",
       "notes": "",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-11-30",
+      "date_end": "2026-11-30",
+      "date_source": "parsed"
     },
     {
       "id": "spc-castro-menorah",
@@ -2074,7 +2624,12 @@
       "status": "verified",
       "notes": "The organiser's own description gives the date as Monday, December 15 while the calendar listing gives December 7, 2026 — see Flagged for Review.",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-12-07",
+      "date_end": "2026-12-07",
+      "date_source": "parsed"
     },
     {
       "id": "spc-castro-art-walk",
@@ -2092,7 +2647,12 @@
       "status": "verified",
       "notes": "A self-guided tour where local businesses host special events.",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-11-06",
+      "date_end": "2026-12-04",
+      "date_source": "parsed"
     },
     {
       "id": "spc-alcatraz-closure",
@@ -2110,7 +2670,12 @@
       "status": "verified",
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc against the National Park Service release of September 28, 2026: the island closes to visitors from Monday, October 26, 2026 while two remaining dock pilings are replaced, with repairs expected to be complete by Wednesday, November 18, 2026; Alcatraz City Cruises is funding the work and offering refunds or rebooking to affected ticket holders. NPS does not publish an admission price (Alcatraz City Cruises sells the ferry-and-island tickets), so the cost cell is blank.",
       "group": "special",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-26",
+      "date_end": "2026-11-18",
+      "date_source": "override"
     },
     {
       "id": "art-deyoung",
@@ -2128,7 +2693,12 @@
       "status": "verified",
       "notes": "Corrected 2026-10-18 by arena-8e8e24dc: the previous schedule said 'Open daily', but the museum is closed Mondays. Free + reduced admission details: https://www.famsf.org/visit/free-reduced-admission",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-legion-honor",
@@ -2146,7 +2716,12 @@
       "status": "verified",
       "notes": "Hours and prices added 2026-10-18 by arena-8e8e24dc from the museum's tickets + hours page; the previous schedule said only 'Open regularly'.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-asian-art-museum",
@@ -2166,7 +2741,12 @@
       "_price_review": "Ticketed; free on designated days",
       "_free_access_confirmed": true,
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-sfmoma",
@@ -2184,7 +2764,12 @@
       "status": "verified",
       "notes": "Admission prices as published on the official Visitor's Guide.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-calacademy",
@@ -2204,7 +2789,12 @@
       "_price_review": "Ticketed; free on designated days",
       "_free_access_confirmed": true,
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-explatorium",
@@ -2223,7 +2813,12 @@
       "notes": "Hours added 2026-10-18 by arena-8e8e24dc from the official Plan Your Visit page; the previous schedule did not state the Monday closure or the noon Sunday opening. Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-sfzoo",
@@ -2242,7 +2837,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-conservatory",
@@ -2262,7 +2862,12 @@
       "_price_review": "Ticketed; free admission first Tuesday of each month",
       "_free_access_confirmed": true,
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-randall",
@@ -2280,7 +2885,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-presidio-museum",
@@ -2298,7 +2908,12 @@
       "status": "verified",
       "notes": "Corrected 2026-10-18 by arena-8e8e24dc: the row previously listed '104 Montgomery Street', which is the separate Walt Disney Family Museum (its own row). The Trust's visitor-center page gives 210 Lincoln Boulevard and daily 10-5 hours.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-fort-point",
@@ -2316,7 +2931,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-alcatraz",
@@ -2335,7 +2955,12 @@
       "notes": "Closure notice: https://www.nps.gov/goga/learn/news/alcatraz-island-to-temporarily-close-for-dock-repairs-this-fall.htm Numeric admission price not recorded; previous generic cost wording 'Ticketed (ferry + site fee)' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed (ferry + site fee)",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-maritime",
@@ -2353,7 +2978,12 @@
       "status": "verified",
       "notes": "The Hyde Street Pier is closed for renovations and the $15 entrance fee program is suspended; the historic ships have been moved temporarily.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-golden-gate-bridge",
@@ -2371,7 +3001,12 @@
       "status": "verified",
       "notes": "Battery Spencer was removed from this San Francisco row on 2026-10-18 by session arena-8cb2d3cc: the National Park Service lists Battery Spencer inside the Marin Headlands, across the county line, so it is outside this catalogue's city-limits scope. See Flagged for Review.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-sfopera",
@@ -2390,7 +3025,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-09-12",
+      "date_end": "2027-07-02",
+      "date_source": "parsed"
     },
     {
       "id": "art-sfballet",
@@ -2409,7 +3049,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-12-04",
+      "date_end": "2027-05-02",
+      "date_source": "parsed"
     },
     {
       "id": "art-broadwaysf",
@@ -2428,7 +3073,12 @@
       "notes": "The organisation rebranded from BroadwaySF to ATG San Francisco in January 2026; broadwaysf.com redirects to the new site. Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-12-09",
+      "date_end": "2027-05-16",
+      "date_source": "parsed"
     },
     {
       "id": "art-ybca",
@@ -2448,7 +3098,12 @@
       "_price_review": "Ticketed / free for selected exhibitions",
       "_free_access_confirmed": true,
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "spt-giants",
@@ -2467,7 +3122,12 @@
       "notes": "The 2026 MLB season runs Wednesday, March 25 through Sunday, September 27. Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-03-25",
+      "date_end": "2026-03-25",
+      "date_source": "parsed"
     },
     {
       "id": "spt-warriors",
@@ -2486,7 +3146,12 @@
       "notes": "Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-23",
+      "date_end": "2026-10-23",
+      "date_source": "parsed"
     },
     {
       "id": "spt-valkyries",
@@ -2505,7 +3170,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc. The team's own site announces the 2026 home opener against Phoenix on May 10 at 5:30 p.m., and its Finals release lists Game 1 on October 17 at 12:30 p.m. and Game 2 on October 19 at 5 p.m. at Chase Center. The generic wnba.com/valkyries/schedule path returned 'page not available' to this session; the team subdomain is the working official page. Numeric admission price not recorded; previous generic cost wording 'Ticketed' has been blanked pending an official price check. See Flagged for Review.",
       "_price_review": "Ticketed",
       "group": "recurring",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-05-10",
+      "date_end": "2026-10-19",
+      "date_source": "parsed"
     },
     {
       "id": "spt-pickleball-palace",
@@ -2523,7 +3193,12 @@
       "status": "unverified",
       "notes": "The department's 2023 launch announcement (still live, re-fetched 2026-10-18) states that three indoor courts opened on July 11, 2023 with free 90-minute reservations from 9:30 to 11:00 a.m. Tuesday-Sunday through Rec and Park's booking system, and that DinkSF took paid bookings from 11:30 a.m. to 5:30 p.m. Tuesday-Sunday. Because the announcement is three years old and no current official page publishes the operating hours or the DinkSF price, both cells are left blank rather than presented as current; see Flagged for Review.",
       "group": "recurring",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "spt-larsen-pickleball",
@@ -2541,7 +3216,12 @@
       "status": "verified",
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Rec and Park's Pickleball Court Directory lists Larsen (ZIP 94116) with eight dedicated outdoor courts, restrooms, no lights, and zero reservable and zero walk-up-shared courts — all eight are dedicated open play with nets provided. Because no court is reservable, no reservation fee applies; Rec and Park's booking page (sfrecpark.org/1188/How-to-Book-a-Tennis-or-Pickleball-Court) charges $5 per hour only for reservable courts. Opening hours are not published on the directory, so that cell stays blank; see Flagged for Review.",
       "group": "recurring",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "mkt-alemany",
@@ -2559,7 +3239,12 @@
       "status": "verified",
       "notes": "Established 1943; the oldest continuously operated farmers market in California. Foodwise took over day-to-day operations from the City's Real Estate Division in February 2026.",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "mkt-mission-community",
@@ -2577,7 +3262,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "mkt-castro-farmers",
@@ -2595,7 +3285,12 @@
       "status": "verified",
       "notes": "Hours and location taken from the State of California's certified farmers market listing (as at July 1, 2026).",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "mkt-inner-sunset",
@@ -2613,7 +3308,12 @@
       "status": "verified",
       "notes": "Hours and location taken from the State of California's certified farmers market listing (as at July 1, 2026).",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "mkt-sf-chinatown-food",
@@ -2631,7 +3331,12 @@
       "status": "verified",
       "notes": "",
       "group": "recurring",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "mkt-treasurefest",
@@ -2649,7 +3354,12 @@
       "status": "unverified",
       "notes": "FLAG: the official site states 'We're scouting our next location in the Bay Area' and no longer lists Treasure Island dates. The monthly event, previously held on Treasure Island for years, has no confirmed San Francisco date. Schedule, dates and cost left blank rather than inferred.",
       "group": "annual",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-sf-city-guides",
@@ -2667,7 +3377,12 @@
       "status": "verified",
       "notes": "Homepage states the non-profit was founded in 1978 and that more than 300 trained volunteers lead free tours for over 35,000 locals and visitors each year. Added in the 2026-10-18 gap pass by arena-bdaa17b4.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-walt-disney-family-museum",
@@ -2685,7 +3400,12 @@
       "status": "verified",
       "notes": "Hours and prices from the admission page; the 104 Montgomery Street Presidio address is stated in the Transportation section of the museum's Visit page (https://www.waltdisney.org/visit), fetched the same day. Added in the 2026-10-18 gap pass by arena-bdaa17b4.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "ann-outside-lands",
@@ -2704,7 +3424,12 @@
       "notes": "SFMTA calls it 'The annual Outside Lands Music Festival' in Golden Gate Park, August 7-9, expected around 75,000 people each day. The organiser's official site (sfoutsidelands.com) returned HTTP 500 to this session on 2026-10-18 (also logged as HTTP 500 by session arena-8fb52462), so organiser and ticket cost are left blank rather than sourced to press or resale pages. Added in the 2026-10-18 gap pass by arena-bdaa17b4.",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-08-07",
+      "date_end": "2026-08-09",
+      "date_source": "parsed"
     },
     {
       "id": "ann-juneteenth-fillmore",
@@ -2723,7 +3448,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the organiser's own site states Saturday, June 13, 2026, 11:00 a.m.-6:00 p.m., in the Fillmore District, with free admission, and names the nonprofit Juneteenth SF Freedom Organization. SF.gov's Human Rights Commission page also lists the Fillmore celebration. Added in the 2026-10-18 gap pass by arena-bdaa17b4.",
       "timing": "concluded",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-06-13",
+      "date_end": "2026-06-13",
+      "date_source": "parsed"
     },
     {
       "id": "ann-caamfest",
@@ -2742,7 +3472,12 @@
       "notes": "Dates and Japantown return from caamedia.org; venues and prices from the official festival site's 2026 schedule and box-office pages (caamfest.com/2026/schedule, caamfest.com/2026/box-office), fetched the same day. Organiser copy says 'five days of films' against a four-day May 7-10 range; the row records the dates only. Added in the 2026-10-18 gap pass by arena-bdaa17b4.",
       "timing": "concluded",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "paid",
+      "date_start": "2026-05-07",
+      "date_end": "2026-05-10",
+      "date_source": "parsed"
     },
     {
       "id": "ann-escape-from-alcatraz-triathlon",
@@ -2760,7 +3495,12 @@
       "status": "verified",
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the organiser's official homepage advertises the 2027 race on June 5-6, 2027 (47th edition), entry by random drawing, with a free two-day Fitness Festival at Marina Green open to the public. Athlete entry fees are not published on the page, so the cost cell stays blank.",
       "group": "annual",
-      "category": "sports"
+      "category": "sports",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-06-05",
+      "date_end": "2027-06-06",
+      "date_source": "parsed"
     },
     {
       "id": "ann-lets-glow-sf",
@@ -2778,7 +3518,12 @@
       "status": "verified",
       "notes": "The organiser page bills it as the nation's largest holiday projection arts festival, hosted by the Downtown SF Partnership. Nightly projection hours are not stated on that page and are not recorded here. Added in the 2026-10-18 gap pass by arena-bdaa17b4.",
       "group": "annual",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-12-04",
+      "date_end": "2026-12-13",
+      "date_source": "parsed"
     },
     {
       "id": "spc-portola-2026",
@@ -2798,7 +3543,12 @@
       "_price_review": "Ticketed (no official price published on the promoter's page)",
       "timing": "concluded",
       "group": "special",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-09-26",
+      "date_end": "2026-09-27",
+      "date_source": "parsed"
     },
     {
       "id": "spc-fog-design-art-2027",
@@ -2816,7 +3566,12 @@
       "status": "verified",
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the SFMOMA fair page states the January 21-24, 2027 dates, the daily hours and the advance/at-door ticket prices; the Preview Gala page gives the January 20 gala and its $300 supporter ticket. Added in the 2026-10-18 gap pass by arena-bdaa17b4.",
       "group": "special",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "paid",
+      "date_start": "2027-01-20",
+      "date_end": "2027-01-24",
+      "date_source": "parsed"
     },
     {
       "id": "art-cable-cars",
@@ -2834,7 +3589,12 @@
       "status": "verified",
       "notes": "National Historic Landmark; invented 150 years ago in San Francisco (1864 origin); kept by SFMTA operators, mechanics and carpenters. History page: https://www.sfmta.com/node/12041. Fares re-verified 2026-10-18 by session arena-8cb2d3cc on SFMTA's fares page (https://www.sfmta.com/getting-around/muni/fares: $9.00 single ride, adult Muni $2.85 Clipper / $3.00 cash) and its budget release (single ride rises to $12 and the $18 Cable Car Plus pass begins January 4, 2027). Prepayment is required 8 a.m.-8 p.m. at the Powell & Market, Bay & Taylor and Hyde & Beach turntables. Added 2026-10-18 by arena-3239c070 after gap research.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "paid",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "ann-sf-open-studios",
@@ -2852,7 +3612,12 @@
       "status": "verified",
       "notes": "San Francisco tradition since 1975; each weekend focuses on different neighborhoods; online guide, interactive maps and events at artspan.org/sfosguide. Added 2026-10-18 by arena-3239c070 after gap research.",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-09-26",
+      "date_end": "2026-10-25",
+      "date_source": "parsed"
     },
     {
       "id": "art-uss-pampanito",
@@ -2870,7 +3635,12 @@
       "status": "verified",
       "notes": "National Historic Landmark; six Pacific patrols in WWII; over 100,000 visitors/year; educational day/overnight programs; drydocking every ~7 years. Purchase tickets online or at Box Office/Visitor Center at Pier 45. Added 2026-10-18 by arena-3239c070 after gap research.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "art-musee-mecanique",
@@ -2888,7 +3658,12 @@
       "status": "verified",
       "notes": "One of world's largest privately owned collections of 300+ coin-operated mechanical musical instruments and antique arcade artifacts (hand-cranked music boxes to modern video games); includes Laffing Sal; previously at Playland-at-the-Beach and Cliff House. No private events; food/drink not allowed inside. HOURS CONFLICT: the .com site (cited here) says open every day 10 a.m.-8 p.m.; the museum's .org site says Monday-Friday 10 a.m.-7 p.m. and weekends 10 a.m.-8 p.m. See Flagged for Review. Added 2026-10-18 by arena-3239c070 after gap research.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "gaming",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "ann-sf-mime-troupe",
@@ -2907,7 +3682,12 @@
       "notes": "Source corrected 2026-10-18 by session arena-91296e94: the row now cites the organiser's own schedule page (sfmt.org/full-schedule, linked from sfmt.org/summer-schedule), which links the same official iCal calendar feed previously cited directly. Added 2026-10-18 by session arena-8cb2d3cc. The company's official calendar feed carries the dated 2026 park performances, including the closing date of Monday, September 7, 2026, 2:00 p.m., at Mission Dolores Park, 19th & Dolores Streets. The 2026 production was 'Wreckage - A Musical Tragicomedy' (sfmt.org/show-archive/wreckage-a-musical-tragicomedy). The tour also plays Berkeley, Oakland, Cotati and San Jose; only the San Francisco dates are within this catalogue's city-limits scope. The season has concluded.",
       "timing": "concluded",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "2026-09-07",
+      "date_end": "2026-09-07",
+      "date_source": "parsed"
     },
     {
       "id": "ann-ybg-festival",
@@ -2925,7 +3705,12 @@
       "status": "verified",
       "notes": "Added 2026-10-18 by session arena-8cb2d3cc, resolving a gap that earlier passes listed as 'not addable' because the festival's HTML homepage sits behind a reCAPTCHA. The organisation's own 2026 press release (PDF, linked) announces the 26th season and more than 100 free performances from May to November 2026, opening Saturday, May 9 at 2:00 p.m. with Hermán Olivera y Orquesta Taíno; it also documents the season's recurring strands (Thursday lunchtime concerts 12:30-1:30 p.m., Wednesday noon Dance Outdoors classes, first-Thursday salsa nights, a Friday children's series June 5-August 14) and its dated anchor events, including the 27th Native Contemporary Arts Festival (June 20), the 33rd Pistahan (August 8-9), Dance Day (October 11), Indigenous Peoples Day with Jeremy Dutcher (October 12) and the 26th Halloween Hoopla (October 31). Gardens sit between 3rd and 4th Streets and Mission and Howard Streets.",
       "group": "annual",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "2026-05-09",
+      "date_end": "2026-05-09",
+      "date_source": "parsed"
     },
     {
       "id": "rec-conservatory-light-show",
@@ -2943,7 +3728,12 @@
       "status": "verified",
       "notes": "Added 2026-10-18 by session arena-8cb2d3cc from the Gardens' official pages, which describe the winter light show projecting light art onto the Conservatory's exterior, free to the public and about 30 minutes long. It runs nightly rather than on a weekly cadence, so it is listed as a regular-schedule programme.",
       "group": "recurring",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "spc-ai-council-2027",
@@ -2967,7 +3757,12 @@
       ],
       "notes": "Official organizer page checked 2026-10-18 states March 23-24, 2027, at the Palace Hotel in San Francisco. Marriott's official property listing confirms the street address. No admission price is published by the organizer; cost is intentionally blank and the row is unverified.",
       "group": "special",
-      "category": "technology"
+      "category": "technology",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-03-23",
+      "date_end": "2027-03-24",
+      "date_source": "parsed"
     },
     {
       "id": "spc-techcrunch-disrupt-2026",
@@ -2992,7 +3787,12 @@
       "notes": "Added 2026-10-18 by session arena-91296e94. Dates, Moscone West venue (800 Howard Street) and pass prices are taken from the organiser's own event and tickets pages (the site sits behind a Cloudflare browser check for plain fetches; the content was retrieved and cited from techcrunch.com). 10,000+ attendees with an AI-heavy speaker programme (Hugging Face, Cerebras, Replit, Amazon). Closes the catalogue's AI-conference gap alongside Dreamforce and RSAC. The 2026 edition has concluded.",
       "timing": "concluded",
       "group": "special",
-      "category": "technology"
+      "category": "technology",
+      "focus": "other",
+      "cost_class": "paid",
+      "date_start": "2026-10-13",
+      "date_end": "2026-10-15",
+      "date_source": "parsed"
     },
     {
       "id": "spc-gamesforum-sf-2026",
@@ -3016,7 +3816,12 @@
       ],
       "notes": "Added 2026-10-18 by session arena-91296e94. 'The only dedicated F2P mobile games marketing and monetization event in the US' per the organiser; speaker preview includes Meta, Google, Zynga, EA, Activision Blizzard Media, Scopely and Xbox Media executives. The organiser's pages do not publish the hotel's street address, so the location is recorded as published.",
       "group": "special",
-      "category": "technology"
+      "category": "technology",
+      "focus": "other",
+      "cost_class": "paid",
+      "date_start": "2026-10-26",
+      "date_end": "2026-10-27",
+      "date_source": "parsed"
     },
     {
       "id": "spc-gamesbeat-next-2026",
@@ -3040,7 +3845,12 @@
       ],
       "notes": "Added 2026-10-18 by session arena-91296e94. 'The 7th annual GamesBeat NEXT returns to the Bay Area on November 2-3, 2026, taking place at Convene in San Francisco' per the organiser; the programme pairs gaming with AI (Nintendo/PlayStation/Sega legends panel; AI-driven development tracks). The organiser's pages do not publish the venue's street address, so the location is recorded as published.",
       "group": "special",
-      "category": "technology"
+      "category": "technology",
+      "focus": "other",
+      "cost_class": "mixed",
+      "date_start": "2026-11-02",
+      "date_end": "2026-11-03",
+      "date_source": "parsed"
     },
     {
       "id": "rec-ferry-board-game-night",
@@ -3058,7 +3868,12 @@
       "status": "verified",
       "notes": "Added 2026-10-18 by session arena-91296e94. 'Games are provided by the Ferry Building Marketplace' — Scrabble, chess, Monopoly and more, with Gamescape SF; grab food and drinks from the Ferry Building shops. The official page states no admission charge, so the cost cell is left blank rather than inferred.",
       "group": "recurring",
-      "category": "technology"
+      "category": "technology",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-ferry-mahjong",
@@ -3076,7 +3891,12 @@
       "status": "verified",
       "notes": "Added 2026-10-18 by session arena-91296e94. 'Join us for an afternoon Mahjong meetup every Wednesday from 3-7 PM. All skill levels are welcome!... Sets will be provided'; Chinese-style quick guide available; seating and sets first come first served. The official page states no admission charge, so the cost cell is left blank.",
       "group": "recurring",
-      "category": "technology"
+      "category": "technology",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-ferry-music-on-the-plaza",
@@ -3094,7 +3914,12 @@
       "status": "verified",
       "notes": "Added 2026-10-18 by session arena-91296e94. 'Kick back and enjoy your Thursday afternoon, accompanied by live performances from our favorite Bay Area musicians.' The official page states no admission charge, so the cost cell is left blank rather than inferred.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "rec-ferry-monday-yoga",
@@ -3112,7 +3937,243 @@
       "status": "verified",
       "notes": "Added 2026-10-18 by session arena-91296e94. Lunch-hour all-levels vinyasa with headphones provided (bring your own mat); registration link to outdoor-yoga.org on the official page; the venue's official events calendar titles it 'Monday Yoga — Free Vinyasa Yoga Class'.",
       "group": "recurring",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
+    },
+    {
+      "id": "rec-sfpl-mix-gaming",
+      "title": "Gaming at The Mix (free teen video and tabletop gaming)",
+      "page": "recurring",
+      "type": "Recurring - Regular schedule",
+      "schedule": "Drop-in gaming during The Mix open hours; Dungeons & Dragons campaigns; monthly gaming tournaments",
+      "dates": "The Mix open hours: Sunday 12-6 p.m., Monday 9-6, Tuesday-Thursday 9-8, Friday 12-6, Saturday 10-6",
+      "location": "The Mix, Main Library, 2nd Floor, 100 Larkin Street",
+      "area": "Civic Center / Tenderloin",
+      "cost": "Free",
+      "organiser": "San Francisco Public Library (The Mix)",
+      "source_name": "San Francisco Public Library — Gaming at The Mix",
+      "source_url": "https://sfpl.org/teens/the-mix/gaming",
+      "status": "verified",
+      "notes": "Added 2026-10-18 by session arena-61a46409 from the library's own page, which states: 'Come in and play video games or tabletop gaming with friends! Teens can check out controllers with their library card, and our staff will set them up with a console. If tabletop gaming is more your style, we offer sessions of D&D led by teen interns or professional DMs, along with a wide selection of traditional board games and new RPGs. The Mix also hosts monthly gaming tournaments, giving you the chance to compete against your friends and the librarians.' The Mix is for ages 12-18; open hours are taken from https://sfpl.org/teens/the-mix, which also lists Gaming (PS5, Nintendo Switch or Meta Quest 2) among its spaces.",
+      "group": "recurring",
+      "category": "community",
+      "focus": "gaming",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
+    },
+    {
+      "id": "rec-sfpl-gaming-citywide",
+      "title": "San Francisco Public Library gaming programmes (board games, chess, D&D, mahjong, bocce)",
+      "page": "recurring",
+      "type": "Recurring - Weekly",
+      "schedule": "Recurring gaming sessions published on the library's own events calendar; day, time and branch vary by programme",
+      "dates": "",
+      "location": "SF Public Library branches citywide (Sunset, Excelsior, Ingleside, Presidio, Main, Glen Park, Richmond, West Portal, Bernal Heights, North Beach, Noe Valley, Ortega and others)",
+      "area": "Citywide",
+      "cost": "Free",
+      "organiser": "San Francisco Public Library",
+      "source_name": "San Francisco Public Library — Upcoming Events, Gaming topic filter",
+      "source_url": "https://sfpl.org/events?field_event_topic_target_id=553",
+      "status": "verified",
+      "notes": "Added 2026-10-18 by session arena-61a46409. The library's own filtered Gaming calendar returned 84 upcoming results on that date. Named recurring strands visible on the official listing include Activity: Chess Club (Ingleside, Excelsior, Richmond, Bernal Heights), Activity: Horrified: Dungeons & Dragons (Presidio), Activity: Bocce Ball for adults and older adults (North Beach), Activity: LEGO Robotics (Richmond), Social: Afternoon Board Games (Sunset), Workshop: Mahjong for Beginners (Sunset), Social: Puzzle Swap (Noe Valley), Social: Gaming Hour (Bayview) and Social: Family Game Night. The library states on its events index that 'All programs and events are free and open to the public.' Individual session dates and times are only published on the rolling calendar, so no session-level date is asserted here.",
+      "group": "recurring",
+      "category": "community",
+      "focus": "gaming",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
+    },
+    {
+      "id": "rec-sfpl-mix-music-studios",
+      "title": "The Mix at SFPL — free music and media production studios for teens",
+      "page": "recurring",
+      "type": "Recurring - Regular schedule",
+      "schedule": "Two media production studios open to teens during The Mix open hours",
+      "dates": "The Mix open hours: Sunday 12-6 p.m., Monday 9-6, Tuesday-Thursday 9-8, Friday 12-6, Saturday 10-6",
+      "location": "The Mix, Main Library, 2nd Floor, 100 Larkin Street",
+      "area": "Civic Center / Tenderloin",
+      "cost": "Free",
+      "organiser": "San Francisco Public Library (The Mix)",
+      "source_name": "San Francisco Public Library — The Mix",
+      "source_url": "https://sfpl.org/teens/the-mix",
+      "status": "verified",
+      "notes": "Added 2026-10-18 by session arena-61a46409 from the library's own page, which describes 'Two media production studios where teens can play musical instruments and produce, record, edit, and save music, videos, and podcasts.' The Mix is a 4,770 sq ft teen-designed media space for ages 12-18 at 100 Larkin Street, 2nd Floor; contact 415-557-4404 / themix@sfpl.org. The library states all programmes and events are free and open to the public.",
+      "group": "recurring",
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
+    },
+    {
+      "id": "rec-sfpl-dance-music",
+      "title": "San Francisco Public Library dance and music programmes",
+      "page": "recurring",
+      "type": "Recurring - Weekly",
+      "schedule": "Recurring music, dance and audio-production programmes published on the library's own events calendar; day, time and branch vary by programme",
+      "dates": "",
+      "location": "SF Public Library branches citywide (Main, Presidio, Glen Park, Mission Bay and others)",
+      "area": "Citywide",
+      "cost": "Free",
+      "organiser": "San Francisco Public Library",
+      "source_name": "San Francisco Public Library — Upcoming Events, Dance & Music topic filter",
+      "source_url": "https://sfpl.org/events?field_event_topic_target_id=452",
+      "status": "verified",
+      "notes": "Added 2026-10-18 by session arena-61a46409. The library's own filtered Dance & Music calendar returned 104 upcoming results on that date. Named programmes visible on the official listing include Performance: Mariela's Music Time (Presidio), Social: Monday Fun Day Family Dance Party (Glen Park) and teen Audio & Video Production sessions (Main). The library states on its events index that 'All programs and events are free and open to the public.' Individual session dates and times are only published on the rolling calendar, so no session-level date is asserted here.",
+      "group": "recurring",
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
+    },
+    {
+      "id": "ann-sfpl-tech-week",
+      "title": "SFPL Tech Week — free digital-skills and AI workshops",
+      "page": "annual",
+      "type": "Annual",
+      "schedule": "Annual week-long series of free workshops, tutorials, presentations and tech support across library branches and partner sites; topics have included artificial intelligence, cybersecurity, accessibility, digital art and social media",
+      "dates": "May 9-16, 2026",
+      "location": "SF Public Library branches citywide and partner sites (Main Library, 100 Larkin Street)",
+      "area": "Citywide",
+      "cost": "Free",
+      "organiser": "San Francisco Public Library with a coalition of Bay Area organisations",
+      "source_name": "San Francisco Public Library — SF Tech Week",
+      "source_url": "https://sfpl.org/techweek",
+      "status": "verified",
+      "notes": "Added 2026-10-18 by session arena-61a46409. The library's own Tech Week page states 'Take your next step with technology during Tech Week. Explore, connect and level up your skills. All programs are free.' and gives the 2026 dates as May 9-16, 2026, with the programme schedule published at sfpl.org/events (Tech Week topic filter) and a downloadable brochure (TechWeek2026_Brochure_rem.pdf). AI sessions in the 2026 edition included 'Workshop: Home Improvement with AI' presented by SF Tech Council (sfpl.org/events/2026/05/14/workshop-home-improvement-ai) and 'Workshop: Digital Literacy & AI Robotics Course' presented by Scaleup Robotics AB (sfpl.org/events/2026/02/21/full-workshop-digital-literacy-ai-robotics-course). Presented by San Francisco Public Library and partners. The 2026 edition has concluded.",
+      "timing": "concluded",
+      "group": "annual",
+      "category": "community",
+      "focus": "ai",
+      "cost_class": "free",
+      "date_start": "2026-05-09",
+      "date_end": "2026-05-16",
+      "date_source": "parsed"
+    },
+    {
+      "id": "spc-ai-engineer-code-2026",
+      "title": "AI Engineer Code Summit 2026",
+      "page": "special",
+      "type": "Special - Dated",
+      "schedule": "Three days: hands-on AIE workshops on day one, then two days of talks plus a summit expo; single track. Attendance is by application only",
+      "dates": "November 10-12, 2026",
+      "location": "San Francisco, CA (the official page publishes the city but no venue address)",
+      "area": "Not published by the official source",
+      "cost": "Regular $1,299 + fees (talks + expo, Nov 11-12); Final & At-Door $1,499 + fees; Workshop Add-On $299 + fees (Nov 10). Applying is free and does not reserve a seat",
+      "organiser": "AI Engineer (AIE), presented by Google DeepMind",
+      "source_name": "AI Engineer — Code Summit 2026 (official event site)",
+      "source_url": "https://ai.engineer/code/2026",
+      "status": "verified",
+      "notes": "Added 2026-10-18 by session arena-61a46409 from the organiser's own page, which states 'NOV 10-12, 2026 // SF, CA', describes it as the second annual code-focused summit, and publishes the ticket table (Regular $1,299 + fees; Final & At-Door $1,499 + fees; Workshop Add-On $299 + fees) with the note 'Applying is free and doesn't reserve a seat. If you're approved, we'll email you a link to purchase.' 800 were admitted last year. Free alternatives published by the organiser: a livestream plus its YouTube channel.",
+      "group": "special",
+      "category": "community",
+      "focus": "ai",
+      "cost_class": "mixed",
+      "date_start": "2026-11-10",
+      "date_end": "2026-11-12",
+      "date_source": "parsed"
+    },
+    {
+      "id": "spc-ai-week-sf-2026",
+      "title": "AI Week San Francisco (Week of AI), December 2026",
+      "page": "special",
+      "type": "Special - Dated",
+      "schedule": "Seven days of independently hosted, community-run AI events — talks, demos, workshops, hackathons, roundtables, breakfasts, parties and dinners; 27 events listed on the official schedule",
+      "dates": "December 7-13, 2026",
+      "location": "Venues across San Francisco, including Pier 29 Annex (SoMa), Fort Mason Center (Marina), Embarcadero Center Tower 4 (FiDi), The Foundry at Pier 70 (Dogpatch), The Midway Annex (SoMa), The Bunker (Potrero) and the Officers' Club at the Presidio",
+      "area": "Citywide",
+      "cost": "Free — the official site states the directory is '100% free to use'; each host-run event sets its own entry rules and several are invite-only or guests-only",
+      "organiser": "Week of AI, with independent hosts",
+      "source_name": "Week of AI — official AI Week San Francisco schedule",
+      "source_url": "https://week-of-ai.com/",
+      "status": "verified",
+      "notes": "Added 2026-10-18 by session arena-61a46409 from the official AI Week site, which states that the official AI week in San Francisco runs December 7-13, 2026. All events independently hosted. Talks, demos, parties, and more. 100% free to use.' The published schedule lists 27 events (for example Fortune Brainstorm AI 2026 at The St. Regis San Francisco on Mon 12/07; Opening Night: State of the Stack at Pier 29 Annex, Mon 12/07 6-9pm; Hardware Hackathon (48h) at The Bunker from Fri 12/11; Sunday Hike: Lands End on Sun 12/13). Several listings are marked 'guests only' or 'invite only'. Because the week is a directory of independently hosted events, entry terms are set by each host and are not published centrally; only the directory's own '100% free to use' statement is asserted here.",
+      "group": "special",
+      "category": "community",
+      "focus": "ai",
+      "cost_class": "free",
+      "date_start": "2026-12-07",
+      "date_end": "2026-12-13",
+      "date_source": "parsed"
+    },
+    {
+      "id": "spc-current-sf-2026",
+      "title": "Current San Francisco 2026 (Confluent — real-time data and AI)",
+      "page": "special",
+      "type": "Special - Dated",
+      "schedule": "Two-day conference: keynotes, product announcements, technical sessions, hands-on learning and networking",
+      "dates": "November 4-5, 2026",
+      "location": "Moscone West, 747 Howard Street",
+      "area": "SoMa / Yerba Buena",
+      "cost": "",
+      "organiser": "Confluent",
+      "source_name": "Moscone Center — Current San Francisco 2026 (official venue event listing)",
+      "source_url": "https://www.moscone.com/events/current-san-francisco-2026",
+      "status": "unverified",
+      "notes": "Added 2026-10-18 by session arena-61a46409 from the Moscone Center's own event listing, which gives the in-person dates (November 4-5, 2026), the venue (Moscone West) and describes it as Confluent's flagship conference 'dedicated to real-time data, data streaming, and artificial intelligence'. The official listing says 'Register your interest to receive the latest conference updates, speaker announcements, and registration information' and publishes no admission price, so the cost cell is left blank rather than inferred.",
+      "group": "special",
+      "category": "community",
+      "focus": "ai",
+      "cost_class": "unknown",
+      "date_start": "2026-11-04",
+      "date_end": "2026-11-05",
+      "date_source": "parsed"
+    },
+    {
+      "id": "spc-microsoft-ignite-2026",
+      "title": "Microsoft Ignite 2026 (AI, cloud, security and developer conference)",
+      "page": "special",
+      "type": "Special - Dated",
+      "schedule": "Four-day conference, in person and digital: technical sessions, product innovations, hands-on learning and networking",
+      "dates": "November 17-20, 2026",
+      "location": "Moscone Center, 747 Howard Street",
+      "area": "SoMa / Yerba Buena",
+      "cost": "",
+      "organiser": "Microsoft",
+      "source_name": "Moscone Center — Microsoft Ignite 2026 (official venue event listing)",
+      "source_url": "https://www.moscone.com/events/microsoft-ignite-2026",
+      "status": "unverified",
+      "notes": "Added 2026-10-18 by session arena-61a46409 from the Moscone Center's own event listing, which gives the in-person and digital dates (November 17-20, 2026), the venue (Moscone Center) and describes the programme as covering Microsoft 365 Copilot, Agent Factory, AI security, the Agent 365 control plane, Azure, security and compliance, and developer/IT deep dives. The official listing publishes no admission price, so the cost cell is left blank rather than inferred.",
+      "group": "special",
+      "category": "community",
+      "focus": "ai",
+      "cost_class": "unknown",
+      "date_start": "2026-11-17",
+      "date_end": "2026-11-20",
+      "date_source": "parsed"
+    },
+    {
+      "id": "spc-cloudflare-connect-2026",
+      "title": "Cloudflare Connect 2026",
+      "page": "special",
+      "type": "Special - Dated",
+      "schedule": "Multi-day flagship event: keynotes, product announcements, technical sessions, deep dives, customer stories and networking",
+      "dates": "October 19-21, 2026",
+      "location": "San Francisco, CA (the Moscone Center listing gives the city but names no specific hall)",
+      "area": "SoMa / Yerba Buena",
+      "cost": "",
+      "organiser": "Cloudflare",
+      "source_name": "Moscone Center — Cloudflare Connect 2026 (official venue event listing)",
+      "source_url": "https://www.moscone.com/events/cloudflare-connect-2026",
+      "status": "unverified",
+      "notes": "Added 2026-10-18 by session arena-61a46409 from the Moscone Center's own event listing, which gives the in-person dates (October 19-21, 2026) and the city. The listing describes a 'bigger and bolder program' spanning keynotes, technical sessions and deep dives on security, networking, performance and developer solutions, but publishes no admission price, so the cost cell is left blank rather than inferred.",
+      "group": "special",
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-19",
+      "date_end": "2026-10-21",
+      "date_source": "parsed"
     },
     {
       "id": "x-w-003",
@@ -3132,7 +4193,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the market's official homepage states 'Sundays 7am-4pm Wednesdays 7am-4pm' at Fulton and Larkin Streets. Season is not stated on the page and remains blank.",
       "_unverified": [],
       "_orig_id": "w-003",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-005",
@@ -3152,7 +4218,12 @@
       "notes": "Run in partnership with the Fillmore Center. Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "w-005",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-006",
@@ -3172,7 +4243,12 @@
       "notes": "Volunteer-run California certified farmers market. Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "w-006",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-007",
@@ -3192,7 +4268,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the Agricultural Institute of Marin page states every Sunday 9am-2pm at 244 Clement St. Season is not stated on the page and remains blank.",
       "_unverified": [],
       "_orig_id": "w-007",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-008",
@@ -3212,7 +4293,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the market association's page states every Sunday 9:30am-1:30pm at Fort Mason Center, Marina Blvd. Season is not stated on the page and remains blank.",
       "_unverified": [],
       "_orig_id": "w-008",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-009",
@@ -3232,7 +4318,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's official site lists the Outer Sunset Farmers Market & Mercantile as Sundays, rain or shine, 9am-2pm, 37th Avenue at Ortega to Quintara. Season is not stated on the page and remains blank.",
       "_unverified": [],
       "_orig_id": "w-009",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-010",
@@ -3252,7 +4343,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's site states second Sundays, returning April-November 2026, 10am-4pm, Irving Street at 9th-11th Avenues. Admission is not stated on the page and remains blank.",
       "_unverified": [],
       "_orig_id": "w-010",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-011",
@@ -3272,7 +4368,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Sunset Mercantile's site states third Saturdays, returning April-November 2026, 10am-4pm, 37th Avenue at Ortega to Quintara. Admission is not stated on the page and remains blank.",
       "_unverified": [],
       "_orig_id": "w-011",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-012",
@@ -3292,7 +4393,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: SF.gov's location page gives Sunday 7:00am-3:00pm at 100 Alemany Boulevard, with free on-site parking. Season and admission are not stated and remain blank.",
       "_unverified": [],
       "_orig_id": "w-012",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-013",
@@ -3312,7 +4418,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the organiser's own announcement states a 12-month season from January to December 2026, every first Thursday, 5-10pm, on 2nd Street between Market and Howard Streets.",
       "_unverified": [],
       "_orig_id": "w-013",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-014",
@@ -3332,7 +4443,12 @@
       "notes": "Shared Spaces street closure listing published by SFMTA. Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "w-014",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2027-05-02",
+      "date_end": "2027-05-02",
+      "date_source": "parsed"
     },
     {
       "id": "x-w-015",
@@ -3354,7 +4470,12 @@
         "admission"
       ],
       "_orig_id": "w-015",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-12-18",
+      "date_end": "2026-12-18",
+      "date_source": "parsed"
     },
     {
       "id": "x-w-016",
@@ -3376,7 +4497,12 @@
         "admission"
       ],
       "_orig_id": "w-016",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-25",
+      "date_end": "2026-10-25",
+      "date_source": "parsed"
     },
     {
       "id": "x-w-017",
@@ -3398,7 +4524,12 @@
         "admission"
       ],
       "_orig_id": "w-017",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-12-12",
+      "date_end": "2026-12-12",
+      "date_source": "parsed"
     },
     {
       "id": "x-w-020",
@@ -3418,7 +4549,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Off the Grid's site listed Levi's Plaza at 1155 Battery Street, 11am-2pm, on each weekday of the week of October 19, 2026. Admission and season are not stated and remain blank.",
       "_unverified": [],
       "_orig_id": "w-020",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-021",
@@ -3438,7 +4574,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: Off the Grid's site listed Salesforce Tower at 415 Mission Street, 11am-2pm, on each weekday of the week of October 19, 2026. Admission and season are not stated and remain blank.",
       "_unverified": [],
       "_orig_id": "w-021",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-023",
@@ -3459,7 +4600,12 @@
       "_unverified": [],
       "_orig_id": "w-023",
       "category": "arts",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-024",
@@ -3479,7 +4625,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: asi.sfsu.edu states the market runs every Thursday 10am-3pm; parking is $10. Admission is not stated on the page and remains blank.",
       "_unverified": [],
       "_orig_id": "w-024",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-w-025",
@@ -3499,7 +4650,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the market's official site states every Saturday 9am-2pm at 725 Greenwich Street, between Columbus and Powell. Season is not stated on the page and remains blank; the SF Environment listing of 659 Columbus Avenue, May-November, remains a recorded conflict.",
       "_unverified": [],
       "_orig_id": "w-025",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-a-005",
@@ -3519,7 +4675,12 @@
       "notes": "One of San Francisco's largest free music events. Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "a-005",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "2027-07-03",
+      "date_end": "2027-07-04",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-007",
@@ -3539,7 +4700,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official site says 'Thank you for an amazing 2026 season. See you next summer for our 90th season!' No 2027 dates are published, so the dates cell stays blank rather than inferred.",
       "_unverified": [],
       "_orig_id": "a-007",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-a-008",
@@ -3560,7 +4726,12 @@
       "_unverified": [],
       "_orig_id": "a-008",
       "category": "community",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-08-08",
+      "date_end": "2026-08-09",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-013",
@@ -3581,7 +4752,12 @@
       "_unverified": [],
       "_orig_id": "a-013",
       "category": "community",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "music",
+      "cost_class": "free",
+      "date_start": "2026-10-02",
+      "date_end": "2026-10-04",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-017",
@@ -3602,7 +4778,12 @@
       "_unverified": [],
       "_orig_id": "a-017",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-01-14",
+      "date_end": "2027-01-31",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-018",
@@ -3622,7 +4803,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc: the official homepage lists Noise Pop Festival 2027 on February 18, 2027, in San Francisco, with tickets from $240. The end date is not stated on the page, so only the confirmed start date is shown.",
       "_unverified": [],
       "_orig_id": "a-018",
-      "category": "arts"
+      "category": "arts",
+      "focus": "music",
+      "cost_class": "paid",
+      "date_start": "2027-02-18",
+      "date_end": "2027-02-18",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-019",
@@ -3644,7 +4830,12 @@
       "_orig_id": "a-019",
       "category": "markets",
       "_price_review": "Ticketed events",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-02-20",
+      "date_end": "2026-03-01",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-020",
@@ -3665,7 +4856,12 @@
       "_unverified": [],
       "_orig_id": "a-020",
       "category": "markets",
-      "_price_review": "Ticketed prix fixe"
+      "_price_review": "Ticketed prix fixe",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-16",
+      "date_end": "2026-10-25",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-023",
@@ -3689,7 +4885,12 @@
       ],
       "_orig_id": "a-023",
       "category": "markets",
-      "_price_review": "Ticketed / food sales"
+      "_price_review": "Ticketed / food sales",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-a-024",
@@ -3712,7 +4913,12 @@
       ],
       "_orig_id": "a-024",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-a-025",
@@ -3733,7 +4939,12 @@
       "_unverified": [],
       "_orig_id": "a-025",
       "category": "community",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-10-17",
+      "date_end": "2026-10-17",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-027",
@@ -3754,7 +4965,12 @@
       "_unverified": [],
       "_orig_id": "a-027",
       "category": "community",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-10-17",
+      "date_end": "2026-10-17",
+      "date_source": "parsed"
     },
     {
       "id": "x-a-028",
@@ -3777,7 +4993,12 @@
         "edition"
       ],
       "_orig_id": "a-028",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "",
+      "date_end": "",
+      "date_source": "none"
     },
     {
       "id": "x-s-001",
@@ -3798,7 +5019,12 @@
       "_unverified": [],
       "_orig_id": "s-001",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-07-11",
+      "date_end": "2026-11-29",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-002",
@@ -3819,7 +5045,12 @@
       "_unverified": [],
       "_orig_id": "s-002",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-05-16",
+      "date_end": "2027-02-28",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-003",
@@ -3840,7 +5071,12 @@
       "_unverified": [],
       "_orig_id": "s-003",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-08-08",
+      "date_end": "2027-04-18",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-004",
@@ -3861,7 +5097,12 @@
       "_unverified": [],
       "_orig_id": "s-004",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-07-25",
+      "date_end": "2027-07-04",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-005",
@@ -3881,7 +5122,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc against SFMOMA's exhibitions page, which places 'RM x SFMOMA: Between You and Me' on Floor 7 and dates it 'Opened Oct 3'. No closing date and no separate ticket price are published, so the closing date and cost cells are left blank rather than inferred from the museum's general admission.",
       "_unverified": [],
       "_orig_id": "s-005",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-03",
+      "date_end": "2026-10-03",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-006",
@@ -3902,7 +5148,12 @@
       "_unverified": [],
       "_orig_id": "s-006",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-24",
+      "date_end": "2027-11-07",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-007",
@@ -3922,7 +5173,12 @@
       "notes": "Re-verified 2026-10-18 by session arena-8cb2d3cc against SFMOMA's exhibitions page, which announces 'Sarah Sze: Forever is Composed of Nows' opening November 21, 2026 on Floor 1 — the museum's free-to-enter ground-floor galleries. The closing date is not published, so it is left blank.",
       "_unverified": [],
       "_orig_id": "s-007",
-      "category": "arts"
+      "category": "arts",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-11-21",
+      "date_end": "2026-11-21",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-013",
@@ -3943,7 +5199,12 @@
       "_unverified": [],
       "_orig_id": "s-013",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-11-19",
+      "date_end": "2026-11-19",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-015",
@@ -3963,7 +5224,12 @@
       "notes": "Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "s-015",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-11-08",
+      "date_end": "2026-11-08",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-016",
@@ -3983,7 +5249,12 @@
       "notes": "Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "s-016",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-11-01",
+      "date_end": "2026-11-01",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-017",
@@ -4003,7 +5274,12 @@
       "notes": "Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "s-017",
-      "category": "markets"
+      "category": "markets",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-12-05",
+      "date_end": "2026-12-06",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-018",
@@ -4023,7 +5299,12 @@
       "notes": "Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "s-018",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-12-11",
+      "date_end": "2026-12-11",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-019",
@@ -4043,7 +5324,12 @@
       "notes": "Integrated from the parallel session arena-8fb52462 (branch arena/8fb52462-maltaproj6) during the final integration pass.",
       "_unverified": [],
       "_orig_id": "s-019",
-      "category": "community"
+      "category": "community",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-12-10",
+      "date_end": "2026-12-10",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-020",
@@ -4064,7 +5350,12 @@
       "_unverified": [],
       "_orig_id": "s-020",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-10-15",
+      "date_end": "2026-11-01",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-021",
@@ -4085,7 +5376,12 @@
       "_unverified": [],
       "_orig_id": "s-021",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-10-31",
+      "date_end": "2026-11-29",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-022",
@@ -4106,7 +5402,12 @@
       "_unverified": [],
       "_orig_id": "s-022",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2027-05-29",
+      "date_end": "2027-06-22",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-023",
@@ -4127,7 +5428,12 @@
       "_unverified": [],
       "_orig_id": "s-023",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2027-06-04",
+      "date_end": "2027-07-02",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-024",
@@ -4148,7 +5454,12 @@
       "_unverified": [],
       "_orig_id": "s-024",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-10-16",
+      "date_end": "2026-10-18",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-025",
@@ -4169,7 +5480,12 @@
       "_unverified": [],
       "_orig_id": "s-025",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "music",
+      "cost_class": "unknown",
+      "date_start": "2026-10-22",
+      "date_end": "2026-10-24",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-026",
@@ -4189,7 +5505,12 @@
       "notes": "Re-verified 2026-10-18 against the organizer's official pricing page. It lists March 1-5, 2027 at Moscone Center, San Francisco, with the current Early Rate prices shown here (registration by Dec 11, 2026); later rates are listed separately and increase. No free admission is advertised on the source page.",
       "_unverified": [],
       "_orig_id": "s-026",
-      "category": "technology"
+      "category": "technology",
+      "focus": "gaming",
+      "cost_class": "paid",
+      "date_start": "2027-03-01",
+      "date_end": "2027-03-05",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-027",
@@ -4210,7 +5531,12 @@
       "_unverified": [],
       "_orig_id": "s-027",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-11",
+      "date_end": "2026-11-05",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-028",
@@ -4232,7 +5558,12 @@
       "_orig_id": "s-028",
       "category": "community",
       "_price_review": "Ticketed",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-09-15",
+      "date_end": "2026-09-17",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-030",
@@ -4253,7 +5584,12 @@
       "_unverified": [],
       "_orig_id": "s-030",
       "category": "arts",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-11-05",
+      "date_end": "2026-11-08",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-031",
@@ -4274,7 +5610,12 @@
       "_unverified": [],
       "_orig_id": "s-031",
       "category": "community",
-      "_price_review": "Ticketed (registration and passes)"
+      "_price_review": "Ticketed (registration and passes)",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2027-04-05",
+      "date_end": "2027-04-08",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-032",
@@ -4295,7 +5636,12 @@
       "_unverified": [],
       "_orig_id": "s-032",
       "category": "community",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-10-17",
+      "date_end": "2026-10-17",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-033",
@@ -4316,7 +5662,12 @@
       "_unverified": [],
       "_orig_id": "s-033",
       "category": "community",
-      "timing": "concluded"
+      "timing": "concluded",
+      "focus": "other",
+      "cost_class": "free",
+      "date_start": "2026-10-17",
+      "date_end": "2026-10-17",
+      "date_source": "parsed"
     },
     {
       "id": "x-s-034",
@@ -4337,7 +5688,12 @@
       "_unverified": [],
       "_orig_id": "s-034",
       "category": "sports",
-      "_price_review": "Ticketed"
+      "_price_review": "Ticketed",
+      "focus": "other",
+      "cost_class": "unknown",
+      "date_start": "2026-10-17",
+      "date_end": "2026-10-31",
+      "date_source": "parsed"
     }
   ],
   "flagged": [
