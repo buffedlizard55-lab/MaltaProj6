@@ -5,7 +5,7 @@
   "verified_on": "2026-10-18",
   "scope": "City and County of San Francisco only",
   "event_count": 235,
-  "flagged_count": 173,
+  "flagged_count": 180,
   "events": [
     {
       "id": "rec-zumba-in-the-parks",
@@ -6134,6 +6134,72 @@
       "source_name": "Castro Merchants — Castro Menorah Lighting",
       "source_url": "https://castromerchants.com/events/castro-menorah-lighting",
       "action": "Confirm the 2026 date with Castro Merchants; if the structured date is correct, ask them to update the prose."
+    },
+    {
+      "id": "flag-current-sf-2026-cost",
+      "title": "Current San Francisco 2026 — admission price not published on the official listing",
+      "detail": "The Moscone Center's own event listing for Current San Francisco 2026 (Confluent's real-time data and AI conference) confirms the in-person dates, November 4-5, 2026, and the venue, Moscone West, but says only 'Register your interest to receive the latest conference updates, speaker announcements, and registration information.' No admission price is published there, so the row's cost cell is blank and the row is marked unverified rather than having a price inferred from a third-party listing.",
+      "source_name": "Moscone Center — Current San Francisco 2026 (official venue event listing)",
+      "source_url": "https://www.moscone.com/events/current-san-francisco-2026",
+      "action": "Fill the cost only from Confluent's own registration page once it is published."
+    },
+    {
+      "id": "flag-microsoft-ignite-2026-cost",
+      "title": "Microsoft Ignite 2026 — admission price not published on the official listing",
+      "detail": "The Moscone Center's own event listing confirms Microsoft Ignite 2026 runs in person and digitally on November 17-20, 2026 at Moscone Center, and describes the AI, cloud, security and developer programme. It publishes no price. In particular the free digital-pass / paid in-person split is widely reported elsewhere but is not stated on the official page used here, so the cost cell stays blank and the row is marked unverified.",
+      "source_name": "Moscone Center — Microsoft Ignite 2026 (official venue event listing)",
+      "source_url": "https://www.moscone.com/events/microsoft-ignite-2026",
+      "action": "Confirm the pass types and prices on Microsoft's own Ignite registration page and fill the cost cell from there only."
+    },
+    {
+      "id": "flag-cloudflare-connect-2026-cost",
+      "title": "Cloudflare Connect 2026 — admission price not published, and no hall named",
+      "detail": "The Moscone Center's own listing gives the in-person dates as October 19-21, 2026 and the city as San Francisco, but names no specific hall and publishes no admission price. The row therefore leaves cost blank, marks the row unverified, and records the venue only as 'San Francisco, CA' rather than asserting a hall.",
+      "source_name": "Moscone Center — Cloudflare Connect 2026 (official venue event listing)",
+      "source_url": "https://www.moscone.com/events/cloudflare-connect-2026",
+      "action": "Fill the cost and hall only from Cloudflare's own event page when it publishes them."
+    },
+    {
+      "id": "flag-ai-week-sf-2026-entry-terms",
+      "title": "AI Week San Francisco — entry terms are set by each independent host, not centrally",
+      "detail": "The official AI Week site states that the week runs December 7-13, 2026, that all events are independently hosted, and that the directory is '100% free to use'. Individual listings on the official schedule are marked 'guests only' or 'invite only' (for example the closing dinner), and no central price is published. The row therefore states only the directory's own 'free to use' wording and does not claim that every listed event is free or open to all.",
+      "source_name": "Week of AI — official AI Week San Francisco schedule",
+      "source_url": "https://week-of-ai.com/",
+      "action": "Check each host's own listing before attending; update the row if the hosts publish a central admissions policy."
+    },
+    {
+      "id": "flag-ai-engineer-code-2026-venue",
+      "title": "AI Engineer Code Summit 2026 — the official page publishes the city but no venue",
+      "detail": "The organiser's own event page states 'NOV 10-12, 2026 // SF, CA' and publishes the ticket table, but names no venue address. The row records the city only and leaves the area blank rather than guessing a neighbourhood or hall.",
+      "source_name": "AI Engineer — Code Summit 2026 (official event site)",
+      "source_url": "https://ai.engineer/code/2026",
+      "action": "Fill the venue when the organiser publishes it; attendance is by application and the page states that applying is free and does not reserve a seat."
+    },
+    {
+      "id": "flag-sfpl-rolling-calendar-dates",
+      "title": "SFPL gaming and music programmes — session dates only exist on a rolling calendar",
+      "detail": "The four library rows added on 2026-10-18 (Gaming at The Mix, citywide gaming programmes, The Mix music and media studios, and dance and music programmes) are verified from SFPL's own pages, which describe a standing programme and point to a rolling events calendar for individual sessions. No session-level date is asserted in the rows, because the official pages publish dates only on that rolling calendar, which changes continuously.",
+      "source_name": "San Francisco Public Library — Gaming at The Mix",
+      "source_url": "https://sfpl.org/teens/the-mix/gaming",
+      "additional_sources": [
+        {
+          "name": "SFPL — Upcoming Events, Gaming topic filter",
+          "url": "https://sfpl.org/events?field_event_topic_target_id=553"
+        },
+        {
+          "name": "SFPL — Upcoming Events, Dance & Music topic filter",
+          "url": "https://sfpl.org/events?field_event_topic_target_id=452"
+        }
+      ],
+      "action": "Read the specific session date and time off the library's calendar before travelling; do not back-fill a date into the catalogue."
+    },
+    {
+      "id": "flag-ai-adjacent-not-tagged",
+      "title": "AI-adjacent conventions are listed but not tagged as AI",
+      "detail": "Dreamforce 2026, RSA Conference 2027 and Cloudflare Connect 2026 carry substantial AI content, but their own official sources describe them as a Salesforce conference, a security conference and an internet-infrastructure event respectively. They are therefore kept in the general catalogue and listed on the AI & gaming page as AI-adjacent rather than being tagged 'AI', so the focus tag never claims more than the organiser states.",
+      "source_name": "Moscone Center — official events calendar",
+      "source_url": "https://www.moscone.com/events",
+      "action": "Tag a row as AI only when its own official source describes it as an AI event."
     },
     {
       "id": "xflag-f-001",
