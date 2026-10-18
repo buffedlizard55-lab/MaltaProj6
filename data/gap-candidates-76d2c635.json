@@ -1,13 +1,13 @@
 {
   "checked_at_utc": "2026-10-18",
   "session": "arena-76d2c635",
-  "base_commit": "98d8528 (211 events, main after PR #19)",
+  "base_commit": "98d8528 (211 events, main after PR #19); post-base addendum vs 6d0e777 (216 events after PRs #20/#22)",
   "purpose": "R3 gap re-check: remaining unchecked official-source candidates from data/gap-candidates-bdaa17b4.json (Kaiser SF Half Marathon, USS Pampanito, SS Jeremiah Treasure Island, Union Square Ice Rink f-008, Yerba Buena Gardens Festival f-011, SailGP, SF Open Studios, SF cable cars) plus gaps found during this session's R2 live audit (Musée Mécanique, SF Juneteenth Parade, Juneteenth Bayview Father's Day Festival). Search results were used only to locate official URLs; every value below comes from a page fetched from the organiser's, venue's, league's or City's own domain on 2026-10-18. Unconfirmable values are blank with the reason recorded; nothing is inferred.",
   "method_note": "A candidate is 'propose_verified' only when schedule/dates, location, cost and organiser are all stated on fetched official pages. Otherwise 'propose_unverified' with the blank fields itemised so the integration session can add matching register entries. Proposed ids/categories/groups follow existing dataset conventions; final classification is the integration session's call (CATEGORY_BY_ID / EXPLICIT_GROUP in data/events.py). This file is a proposal only - no row has been added to data/events.py by this session (that file is owned by the final-integration claim).",
   "candidates": [
     {
       "candidate_id": "g76-001",
-      "decision": "propose_verified",
+      "decision": "integrated_by_pr20",
       "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json (maritime.org).",
       "row": {
         "id": "art-uss-pampanito",
@@ -20,7 +20,7 @@
         "dates": "",
         "location": "Historic Pier 45, Fisherman's Wharf, San Francisco",
         "area": "Fisherman's Wharf",
-        "cost": "Adults (14-61) $25; Seniors (62+) / Students with ID $20; Juniors (5-13) $15; Family (up to 2 adults + 4 juniors) $65; Active Military $10; ages 4 and under free; members free",
+        "cost": "Adults (14-61) $25; Seniors (62+) / Students with ID $20; Juniors (5-13) $15; Family $65; Active Military $10; ages 4 and under free; members free",
         "organiser": "San Francisco Maritime National Park Association",
         "source_name": "San Francisco Maritime National Park Association - USS Pampanito",
         "source_url": "https://maritime.org/uss-pampanito",
@@ -37,7 +37,9 @@
         }
       ],
       "blanks": {},
-      "integration_notes": "maritime.org/uss-pampanito/pampanito-tickets/ and /visit-us/ return 404 (checked 2026-10-18); cite /uss-pampanito instead."
+      "integration_notes": "maritime.org/uss-pampanito/pampanito-tickets/ and /visit-us/ return 404 (checked 2026-10-18); cite /uss-pampanito instead.",
+      "integrated_as": "art-uss-pampanito",
+      "cross_check": "PR #20's merged row agrees with my fetched hours/prices. One wording difference: my draft specified a Family-ticket composition that I could not re-confirm when maritime.org was re-fetched after the rebase (homepage then showed a 'Website update in progress' variant without the price table), so the composition has been removed from this record; the merged row states '2 adults + 2 juniors'."
     },
     {
       "candidate_id": "g76-002",
@@ -109,11 +111,12 @@
         }
       ],
       "blanks": {},
-      "integration_notes": "Supersedes flagged item f-008: values no longer depend on the parked unionsquaresf.com domain."
+      "integration_notes": "Supersedes flagged item f-008: values no longer depend on the parked unionsquaresf.com domain.",
+      "resolves_on_main": "Supersedes PR #20 register item flag-union-square-ice-rink ('no official page located' - the official page was located and fetched for this candidate)."
     },
     {
       "candidate_id": "g76-004",
-      "decision": "propose_unverified",
+      "decision": "integrated_by_pr20",
       "prior_trail": "New gap found in this session's R3 keyword-absence scan (no row mentions the museum).",
       "row": {
         "id": "art-musee-mecanique",
@@ -146,11 +149,13 @@
         "schedule": "museemechanique.org/contact.html prints Mon-Fri 10-7 / Sat-Sun 10-8 / holidays 10-8, while the other official-branded domain museemecanique.com is indexed with 'Open Everyday 10AM-8PM'. The .com page itself could not be fetched (returns a script shell; alias museemecaniquesf.com returns HTTP 500), so the conflict cannot be resolved from fetched pages. Blank per the official-conflict rule.",
         "cost": "No admission price or free-entry statement appears on the fetched .org pages; the About page describes coin operation historically. Blank - do not infer 'free entry, pay per machine' from third-party coverage."
       },
-      "integration_notes": "If a future fetch of museemecanique.com succeeds and confirms one hours set, promote to verified and close the register item. Register action: 'Keep schedule and cost blank until one official domain's hours/admission can be fetched and reconciled.'"
+      "integration_notes": "If a future fetch of museemecanique.com succeeds and confirms one hours set, promote to verified and close the register item. Register action: 'Keep schedule and cost blank until one official domain's hours/admission can be fetched and reconciled.'",
+      "integrated_as": "art-musee-mecanique",
+      "cross_check": "PR #20 cited museemecanique.com/visit, which I fetched after the rebase: 'Open 365 Days a Year', 'Admission is free!', Mon-Fri/Sat-Sun/Holidays 10:00am-8:00pm, 'Pier 45 at the end of Taylor Street... Tel (415) 346-2000', 300-plus machines. This fully supports the merged verified row and supersedes my blank schedule/cost proposal (my .com root fetch had returned a script shell). Residual irregularity for the register: museemechanique.org/contact.html (fetched, same phone/address) prints Mon-Fri 10-7 - a one-hour weekday-closing disagreement between the museum's two official-branded domains (audit IR-17)."
     },
     {
       "candidate_id": "g76-005",
-      "decision": "propose_unverified",
+      "decision": "integrated_by_pr20",
       "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json.",
       "row": {
         "id": "art-sf-cable-cars",
@@ -187,7 +192,9 @@
         "cost": "SFMTA's own fares page still lists $9.00 while the Board-approved FY26-27 budget raises the single ride to $12 (fiscal year already under way; no effective calendar date stated on the fetched release chunk). The operative fare cannot be determined from fetched official pages. Blank per the official-conflict rule.",
         "schedule_detail": "First/last car times are route-specific timetable material not printed on the fetched overview/fares pages; schedule cell therefore describes the network only."
       },
-      "integration_notes": "Attraction-vs-transit framing is an integration judgement (cf. art-golden-gate-bridge landmark precedent). Re-check the fares page at merge time: if it then prints $12, publish the fare and close the flag."
+      "integration_notes": "Attraction-vs-transit framing is an integration judgement (cf. art-golden-gate-bridge landmark precedent). Re-check the fares page at merge time: if it then prints $12, publish the fare and close the flag.",
+      "integrated_as": "art-cable-cars",
+      "cross_check": "Merged as verified with a number-free cost cell ('Fare required... see SFMTA Fares page'), which sidesteps the fare conflict documented in my blanks. Recommend a register item recording the $9 (fares page) vs $12 (Board-approved FY26-27 budget) transition and the 8am-8pm vs 8am-5pm prepay-window inconsistency (audit IR-18); the merged row uses 8am-8pm."
     },
     {
       "candidate_id": "g76-006",
@@ -228,11 +235,12 @@
         "organiser": "No producing organisation is named on the fetched homepage, race-information or registration pages (contact shown as raceinfo@sanfranciscohalfmarathon.org; Sutter Health is presenting sponsor and SF Rec & Park appears among partner logos - neither is identified as organiser). Blank per rule.",
         "cost": "Entry fees appear only inside the linked third-party registration flow, not on the organiser's fetched pages. Blank - do not copy fees from registration-platform or aggregator listings."
       },
-      "integration_notes": "Weekday check: Feb 7, 2027 is a Sunday, matching the registration page. Compare ann-bay-to-breakers / ann-sf-marathon house style for race rows at merge."
+      "integration_notes": "Weekday check: Feb 7, 2027 is a Sunday, matching the registration page. Compare ann-bay-to-breakers / ann-sf-marathon house style for race rows at merge.",
+      "resolves_on_main": "Supersedes PR #20 register item flag-kaiser-sf-half ('no official page located' - the official page was located and fetched for this candidate)."
     },
     {
       "candidate_id": "g76-007",
-      "decision": "propose_verified",
+      "decision": "integrated_by_pr20",
       "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json (ArtSpan).",
       "row": {
         "id": "ann-sf-open-studios",
@@ -262,7 +270,9 @@
         }
       ],
       "blanks": {},
-      "integration_notes": "ArtSpan's /programs/visitsfopenstudios path 404s; the live path is /visitsfopenstudios. Season is in progress at audit date (final weekend Oct 24-25, 2026)."
+      "integration_notes": "ArtSpan's /programs/visitsfopenstudios path 404s; the live path is /visitsfopenstudios. Season is in progress at audit date (final weekend Oct 24-25, 2026).",
+      "integrated_as": "ann-sf-open-studios",
+      "cross_check": "Merged row agrees field-for-field with my fetched ArtSpan/SOMArts evidence (Sep 26-Oct 25, 2026, weekends 11-5, Free, ArtSpan)."
     },
     {
       "candidate_id": "g76-008",
@@ -298,7 +308,8 @@
       "blanks": {
         "schedule_times": "Race Stadium opening and race start times are printed as TBC on the official tickets page (fetched 2026-10-18). Row stays unverified until times publish; the schedule cell discloses TBC rather than inventing times."
       },
-      "integration_notes": "Presale prices ($85/$136 and $145/$235, Oct 23-25 window) are time-limited and deliberately not published; standard prices used. Re-check times before merge - a TBC may have resolved."
+      "integration_notes": "Presale prices ($85/$136 and $145/$235, Oct 23-25 window) are time-limited and deliberately not published; standard prices used. Re-check times before merge - a TBC may have resolved.",
+      "resolves_on_main": "Complements PR #20 register item flag-sailgp-no-sf-2026: no 2026 SF edition (agreed), but the official 2027 SF edition page is live and is proposed here."
     },
     {
       "candidate_id": "g76-009",
@@ -428,8 +439,23 @@
   ],
   "summary_counts": {
     "candidates_total": 11,
-    "propose_verified": 5,
-    "propose_unverified": 6,
-    "prior_flagged_gaps_resolved": ["f-008 (Union Square Ice Rink) -> g76-003", "f-011 (Yerba Buena Gardens Festival) -> g76-009"]
-  }
+    "integrated_by_pr20": 4,
+    "still_proposed_verified": 3,
+    "still_proposed_unverified": 4,
+    "still_proposed_ids": [
+      "g76-002 SS Jeremiah Treasure Island (verified)",
+      "g76-003 Union Square Ice Rink (verified)",
+      "g76-009 Yerba Buena Gardens Festival (verified)",
+      "g76-006 SF Half Marathon & 5K (unverified)",
+      "g76-008 SailGP SF 2027 (unverified)",
+      "g76-010 SF Juneteenth Parade (unverified)",
+      "g76-011 Juneteenth Bayview Father's Day Festival (unverified)"
+    ],
+    "prior_flagged_gaps_resolved": [
+      "f-008/flag-union-square-ice-rink -> g76-003",
+      "f-011 (YBG Festival reCAPTCHA) -> g76-009",
+      "flag-kaiser-sf-half -> g76-006"
+    ]
+  },
+  "post_base_note": "Main advanced during this session: PR #20 (arena-3239c070) independently added USS Pampanito, Musée Mécanique, SF Cable Cars and SF Open Studios as verified rows, and PR #22 (arena-79993171) applied further corrections. Candidates g76-001, g76-004, g76-005 and g76-007 below are therefore marked integrated_by_pr20 and retained as this session's independent evidence record with cross-checks. Seven candidates remain live proposals. Three of them resolve flags that PR #20 itself published: flag-union-square-ice-rink ('no official 2026 page located') -> g76-003 found the operator's official domain; flag-kaiser-sf-half -> g76-006 fetched the official race site; flag-sailgp-no-sf-2026 -> g76-008 documents the official 2027 San Francisco edition."
 }
