@@ -33,6 +33,7 @@ Shared task board for all agent sessions working on this repository.
 | `arena-db227e31` | `arena/db227e31-maltaproj6` | **Independent verification + requirements-alignment pass (2026-10-18, ninth pass).** Line-by-line structural audit of the published union, live official-source re-check of near-term and free gaming/music/AI rows, gap research for free SF-city events, and a site change so the executive summary and main section show **free upcoming events only** (gaming, then music, then AI, then everything else), with paid events in a separate section. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, `scripts/build_site.py`, `scripts/focus.py`, `assets/site.css`, generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `audit/AUDIT-2026-10-18-db227e31.md` (new), `audit/check_db227e31.py` (new), `data/gap-candidates-db227e31.json` (new). Arena-fixed branch; no branch switch. | ✅ complete — PR #40 merged (`6897d84`, 2026-10-18T11:09:48Z); Pages `built` for that commit, `error: null`. Live site verified. Closing record follows. |
 | `arena-fe7c710c` | `arena/fe7c710c-maltaproj6` | **Final integration session (2026-10-18, tenth pass).** Independent line-by-line re-verification of the published union against official sources, gap research for free SF-city events near 2026-10-18 (gaming, then music, then AI, then everything else), site/UX + mobile review and repair, full rebuild, PR to `main`, merge and Pages deploy confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` / `data/events.csv` / `data/meta.json` / `data/review.csv`, generated `*.html`, `scripts/build_site.py`, `scripts/focus.py`, `tools/validate.py`, `assets/site.css`, `audit/AUDIT-2026-10-18-fe7c710c.md` (new), `audit/check_fe7c710c.py` (new), `data/gap-candidates-fe7c710c.json` (new). Arena-fixed branch; no branch switch. | ✅ complete |
 | `arena-8eaf6c0a` | `arena/8eaf6c0a-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim), then post-release integration of its findings.** Phase 1 (claim live): new files only — `audit/AUDIT-2026-10-18-8eaf6c0a.md`, `audit/check_8eaf6c0a.py`, `audit/row-audit-8eaf6c0a.csv`, `data/gap-candidates-8eaf6c0a.json`, plus registry/task/log rows in this board. Phase 2 (after PRs #42–#44 released the claim): corrections IR-1–IR-4, six verified gap rows, `flag-fan-expo-no-sf-2026`, README/COORDINATION, regenerated site. Arena-fixed branch; no branch switch. | ✅ complete — see closing record below |
+| `arena-291a13ff` | `arena/291a13ff-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim; claim released by PRs #42–#44 at 17:09–17:12Z, after which this session integrated).** While the claim was live: new files only — `audit/AUDIT-2026-10-18-291a13ff.md`, `audit/check_291a13ff.py`, `audit/row-audit-291a13ff.csv`, `data/gap-candidates-291a13ff.json`, plus registry/task/log rows in this board. After release: integration of the verified gap candidates into `data/events.py`, rebuild, PR, merge, Pages confirmation. Arena-fixed branch; no branch switch. | 🟡 in progress |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -1297,3 +1298,34 @@ required beyond IR-1/IR-2 above.
   hard=0. Flagged irregularities (22 verified-with-blank-core-cell rows, Cloudflare copy conflict, Sunday
   Streets/ArtSpan/AI Council unpublished prices) remain published on the Flagged for Review page and did
   not block the merge, per board rules.
+
+## Task board — `arena-291a13ff` (concurrent independent verification / gap-research session)
+
+Session branch: `arena/291a13ff-maltaproj6` (Arena-fixed branch for this session; all work stays on this
+branch rather than a `session-<id>/<task>` branch).
+
+**Concurrency check on arrival (2026-10-18, 16:59Z).** `main` is at `f082199` (PR #41 merge; 262 events /
+167 verified / 95 review-gap rows / 205 review items / 107 domains; Pages `built`, `error: null`).
+`git ls-remote origin` plus `gh api compare` shows exactly one live claim:
+
+| Branch | Ahead of `main` | Latest ahead commit | Treatment |
+|---|---|---|---|
+| `arena/fe7c710c-maltaproj6` | 1 | `b3a1c23` 16:56:38Z — "chore(fe7c710c): claim final-integration scope on the shared board" (`COORDINATION.md` only, verified via compare API) | **Live final-integration claim** (registry row mirrored above). This session will not touch any file in that scope while the claim is fresh (<60 min since their last commit). |
+| `arena/ef213634-maltaproj6` | 2 | claim-only, ~11 h old | Stale under the 60-minute rule; already superseded. Not overwritten. |
+| `arena/7141e086-maltaproj6` | 1 | claim-only, ~14 h old | Stale. Not overwritten. |
+| `arena/611a71be-maltaproj6` | 2 | 11:04Z "docs: expand audit source scope", ~6 h old, behind `main` by 5 | Not in registry on `main`; no live claim on shared outputs (docs-only); not treated as live. |
+| `arena/8e13859c-maltaproj6` | 1 | 10:56Z claim-only for "post-merge events requirements audit", ~6 h old | Stale. Not overwritten. |
+| all other `arena/*` branches | 0 | — | Behind `main`. |
+
+This session therefore claims only new, non-overlapping files below, and logs integration needs as
+requests for `arena-fe7c710c`. Per the board's 60-minute rule, this session may take over the
+integration scope if `arena-fe7c710c`'s claim goes stale (>60 min with no commits); any such handoff
+is noted here.
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| A0 | Register on the shared board and claim non-overlapping scope | ✅ done | `arena-291a13ff` | `COORDINATION.md` (registry/task/log rows only) | Claim commit pushed before any other file edits. Baseline verified: `tools/validate.py` → 262/167/95/205/107, 19 pages, OK. |
+| A1 | Programmatic line-by-line structural audit of all 262 rows + 205 review items | ⬜ unclaimed | `arena-291a13ff` | `audit/check_291a13ff.py` (new), `audit/row-audit-291a13ff.csv` (new), `audit/AUDIT-2026-10-18-291a13ff.md` (new) | Source present/https/official-host, blanks vs status, duplicates, out-of-city text, past-dated rows, HTML membership/link integrity. Read-only against the canonical dataset. |
+| A2 | Live official-source spot re-verification (soonest-dated rows + free gaming/music/AI rows) | ⬜ unclaimed | `arena-291a13ff` | `audit/AUDIT-2026-10-18-291a13ff.md` (new) | Page-fetch tool against official pages only; JS-shell/app pages recorded as content-not-re-verified, never guessed. |
+| A3 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ⬜ unclaimed | `arena-291a13ff` | `data/gap-candidates-291a13ff.json` (new) | Official sources only; every field from a fetched official page; unconfirmed fields left blank in the candidate record. |
+| A4 | Integration requests + handoff: log findings for `arena-fe7c710c`; integrate directly only if that claim is released/merged or goes stale (>60 min, no commits) — handoff noted here | 🟡 in progress | `arena-291a13ff` | `COORDINATION.md` | **Claim released** (PRs #42–#44 merged 17:09–17:12Z, claim no longer live). This session now integrates its verified findings per the released-claim path. |
