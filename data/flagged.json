@@ -1,0 +1,311 @@
+{
+  "verified_on": "2026-10-18",
+  "items": [
+    {
+      "id": "f-001",
+      "kind": "source unavailable",
+      "item": "Carnaval San Francisco",
+      "issue": "The organiser domain carnavalsf.com resolves to an unrelated online gambling site, so the 2026/2027 parade could not be verified from an official source. It is therefore excluded from the verified tables.",
+      "evidence_url": "https://carnavalsf.com/",
+      "related_event": "",
+      "action": "Confirm the current official Carnaval domain before adding a row."
+    },
+    {
+      "id": "f-002",
+      "kind": "domain hijack",
+      "item": "Fillmore Jazz Festival legacy domain",
+      "issue": "fillmorejazzfestival.com redirects to an unrelated e-cigarette site. The verified official site is fillmorejazzfest.com, which is the source used for the 2027 dates.",
+      "evidence_url": "https://www.fillmorejazzfest.com/",
+      "related_event": "a-005",
+      "action": "Link only the .com domain; legacy domain should not be cited."
+    },
+    {
+      "id": "f-003",
+      "kind": "source unavailable",
+      "item": "Dragonspunk Farmers Market",
+      "issue": "dragonspunk.org returns a Wix 'domain isn't connected' page, so the Thursday market at 1550 Evans Avenue could not be verified and is excluded.",
+      "evidence_url": "https://www.dragonspunk.org/farmers-markets",
+      "related_event": "",
+      "action": "Re-check the market's domain or its SF Environment listing before adding."
+    },
+    {
+      "id": "f-004",
+      "kind": "source unavailable",
+      "item": "SOMA West Farmers Market",
+      "issue": "The SF Environment list points to somawest.org, but the farmers-market path returns HTTP 404. Excluded pending a working official page.",
+      "evidence_url": "https://www.somawest.org/farmers-market",
+      "related_event": "",
+      "action": "Find the current organiser page or remove from scope."
+    },
+    {
+      "id": "f-005",
+      "kind": "source unavailable",
+      "item": "St. Patrick's Day Parade",
+      "issue": "The official organiser site sfstpatricksparade.com could not be fetched (two attempts), so the 2026/2027 parade dates are not verified and no row was added.",
+      "evidence_url": "https://www.sfstpatricksparade.com/",
+      "related_event": "",
+      "action": "Retry the organiser site or obtain the date from an SFMTA street-closure advisory."
+    },
+    {
+      "id": "f-006",
+      "kind": "source unavailable",
+      "item": "North Beach Festival",
+      "issue": "nbdyc.com (the North Beach District merchants site) returns HTTP 500, so the June festival could not be verified and is excluded.",
+      "evidence_url": "https://www.nbdyc.com/",
+      "related_event": "",
+      "action": "Retry the organiser site."
+    },
+    {
+      "id": "f-007",
+      "kind": "domain hijack",
+      "item": "San Francisco Fringe Festival",
+      "issue": "sffringe.org redirects to an unrelated 404 page, so the festival could not be verified and is excluded.",
+      "evidence_url": "https://www.sffringe.org/",
+      "related_event": "",
+      "action": "Locate the current organiser domain."
+    },
+    {
+      "id": "f-008",
+      "kind": "domain parked",
+      "item": "Union Square ice rink and tree lighting",
+      "issue": "unionsquaresf.com is parked/for sale and redirects through an ad network, so the seasonal ice rink and holiday events could not be verified.",
+      "evidence_url": "https://www.unionsquaresf.com/",
+      "related_event": "",
+      "action": "Use the Union Square Business Improvement District site if it publishes the dates."
+    },
+    {
+      "id": "f-009",
+      "kind": "source unavailable",
+      "item": "San Francisco Auto Show",
+      "issue": "sfautoshow.com displays an 'under construction' holding page, so the annual show could not be verified.",
+      "evidence_url": "https://www.sfautoshow.com/",
+      "related_event": "",
+      "action": "Re-check before the next show."
+    },
+    {
+      "id": "f-010",
+      "kind": "source unavailable",
+      "item": "Presidio Picnic",
+      "issue": "The Presidio Trust page presidio.gov/do/presidio-picnic returns a 404, so the seasonal Sunday picnic could not be verified and is excluded.",
+      "evidence_url": "https://presidio.gov/do/presidio-picnic",
+      "related_event": "",
+      "action": "Locate the current Presidio events page."
+    },
+    {
+      "id": "f-011",
+      "kind": "source unavailable",
+      "item": "Yerba Buena Gardens Festival",
+      "issue": "ybgfestival.org returns only a reCAPTCHA challenge with no content, so the free summer performance series could not be verified.",
+      "evidence_url": "https://ybgfestival.org/",
+      "related_event": "",
+      "action": "Try the Yerba Buena Center for the Arts or SF.gov listing."
+    },
+    {
+      "id": "f-012",
+      "kind": "broken official page",
+      "item": "Asian Art Museum exhibitions",
+      "issue": "about.asianart.org/exhibitions/ returns a 404, so no Asian Art Museum exhibition rows are included.",
+      "evidence_url": "https://about.asianart.org/exhibitions/",
+      "related_event": "",
+      "action": "Use asianart.org's current exhibitions path."
+    },
+    {
+      "id": "f-013",
+      "kind": "broken official page",
+      "item": "FAMSF free-admission page",
+      "issue": "famsf.org/visit/free-admission returns a 404, so no free-museum-day claim is made for de Young or the Legion of Honor.",
+      "evidence_url": "https://www.famsf.org/visit/free-admission",
+      "related_event": "",
+      "action": "Check current visitor-information page before publishing any free-day claim."
+    },
+    {
+      "id": "f-014",
+      "kind": "data conflict",
+      "item": "Alemany Farmers Market hours",
+      "issue": "SF.gov lists Saturday 7am-2pm; the SF Environment Department list still shows 6am-3pm. The SF.gov location page is used as the primary source.",
+      "evidence_url": "https://www.sf.gov/location--alemany-farmers-market",
+      "related_event": "w-002",
+      "action": "SF.gov is authoritative for the city-owned site; confirm with Foodwise before visiting early."
+    },
+    {
+      "id": "f-015",
+      "kind": "data conflict",
+      "item": "North Beach Farmers Market address and season",
+      "issue": "The organiser lists 725 Greenwich Street, Saturdays 9am-2pm with no season. SF Environment lists 659 Columbus Avenue, May-November. The organiser page is used.",
+      "evidence_url": "https://www.northbeachfarmersmarket.com/",
+      "related_event": "w-025",
+      "action": "Confirm with the organiser at the start of the 2027 season."
+    },
+    {
+      "id": "f-016",
+      "kind": "stale official listing",
+      "item": "SF Environment farmers-market directory",
+      "issue": "The page is dated 03/21/2025 and contains hours and addresses that conflict with several organiser pages. Organiser pages were preferred wherever they were reachable.",
+      "evidence_url": "https://www.sfenvironment.org/farmers-markets-in-sf",
+      "related_event": "",
+      "action": "Treat as a secondary city listing, not primary."
+    },
+    {
+      "id": "f-017",
+      "kind": "date check",
+      "item": "Folsom Street Fair 2027 date",
+      "issue": "The homepage banner reads 'FOLSOM STREET FAIR 9/26/2027' while 2026 material refers to Sunday, September 27, 2026. September 26, 2027 is a Sunday, so the date is internally consistent, but the banner is the only official statement found.",
+      "evidence_url": "https://www.folsomstreet.org/",
+      "related_event": "a-010",
+      "action": "Re-confirm closer to the event."
+    },
+    {
+      "id": "f-018",
+      "kind": "date check",
+      "item": "Castro Street Fair 2027 date",
+      "issue": "The site says 'Sunday, October 3, 2027'; October 3, 2027 is indeed a Sunday. The 2026 fair was held October 4, 2026.",
+      "evidence_url": "https://castrostreetfair.org/",
+      "related_event": "a-012",
+      "action": "None; recorded for transparency."
+    },
+    {
+      "id": "f-019",
+      "kind": "date check",
+      "item": "Italian Heritage Parade 2027 date",
+      "issue": "The official events page lists the 2027 parade on 'Sunday, October 10th 2027'. October 10, 2027 is a Sunday. The same page also lists High Mass on October 11, 2026.",
+      "evidence_url": "https://sfitalianheritage.org/events/",
+      "related_event": "a-015",
+      "action": "None; recorded for transparency."
+    },
+    {
+      "id": "f-020",
+      "kind": "permit expiry",
+      "item": "SFMTA Shared Spaces recurring closures",
+      "issue": "Several recurring street closures have permit end dates in late 2026 or 2027 (e.g., Otsego Avenue through October 25, 2026; Larkin Street through December 12, 2026). The cadence may stop after the permit end date.",
+      "evidence_url": "https://www.sfmta.com/projects/shared-spaces",
+      "related_event": "w-014;w-015;w-016;w-017",
+      "action": "Check the SFMTA list (updated August 2026) before relying on a date after the permit ends."
+    },
+    {
+      "id": "f-021",
+      "kind": "not yet announced",
+      "item": "2027 dates for major annual events",
+      "issue": "Hardly Strictly Bluegrass, San Francisco Fleet Week, Stern Grove Festival, Pistahan, Chinatown Autumn Moon Festival and SF Beer Week have not published 2027 dates on their official pages as of 2026-10-18. Their rows carry the last confirmed edition and are flagged.",
+      "evidence_url": "https://www.sterngrove.org/",
+      "related_event": "a-007;a-008;a-013;a-014;a-019;a-022",
+      "action": "Re-check each organiser page in early 2027."
+    },
+    {
+      "id": "f-022",
+      "kind": "stale page",
+      "item": "Day of the Dead Festival of Altars",
+      "issue": "The Marigold Project page still shows 'November 2nd, 2025' for the Festival of Altars. No 2026 date was confirmed, so the row is flagged and carries no 2026 date.",
+      "evidence_url": "https://www.dayofthedeadsf.org/",
+      "related_event": "a-028",
+      "action": "Confirm the 2026 date with the organiser."
+    },
+    {
+      "id": "f-023",
+      "kind": "scope exclusion",
+      "item": "Oakland and Santa Clara events",
+      "issue": "Black Joy Parade is rooted in Oakland; Super Bowl LX and FIFA World Cup matches at Levi's Stadium are in Santa Clara. All are outside the City and County of San Francisco and were excluded to honour the city-only requirement.",
+      "evidence_url": "https://www.blackjoyparade.org/",
+      "related_event": "",
+      "action": "Add only if the scope is widened beyond San Francisco."
+    },
+    {
+      "id": "f-024",
+      "kind": "scope exclusion",
+      "item": "Daly City Street Festival",
+      "issue": "SFMTA's weekend advisory lists a Daly City street festival on Mission Street. Despite the Mission Street address it is a Daly City event, so it is excluded.",
+      "evidence_url": "https://www.sfmta.com/weekend-events-october-16-18-2026",
+      "related_event": "",
+      "action": "None; recorded to show the city-boundary check."
+    },
+    {
+      "id": "f-025",
+      "kind": "unverified field",
+      "item": "TreasureFest dated schedule",
+      "issue": "The official site calls itself 'The Bay's Monthly Festival' but the page checked does not publish a dated 2026-27 calendar. Cadence is recorded; schedule and dates are blank and flagged.",
+      "evidence_url": "https://www.treasurefest.com/",
+      "related_event": "w-026",
+      "action": "Use the ticketing calendar when it is published."
+    },
+    {
+      "id": "f-026",
+      "kind": "unverified field",
+      "item": "Litquake 2026 run dates",
+      "issue": "The Litquake homepage links a 2026 festival schedule but does not display the festival run dates. Dates are blank and flagged.",
+      "evidence_url": "https://www.litquake.org/",
+      "related_event": "a-016",
+      "action": "Open the 2026 schedule page and record the span."
+    },
+    {
+      "id": "f-027",
+      "kind": "unverified field",
+      "item": "RSA Conference 2027 dates",
+      "issue": "The RSA Conference homepage promotes 2027 registration but does not state the conference dates. Dates are blank and flagged.",
+      "evidence_url": "https://www.rsaconference.com/",
+      "related_event": "s-031",
+      "action": "Check the USA conference page."
+    },
+    {
+      "id": "f-028",
+      "kind": "unverified field",
+      "item": "Annual event end dates",
+      "issue": "Noise Pop 2027 and SFFILM Doc Stories 2026 publish start dates but no end date; SFMOMA's RM x SFMOMA and Sarah Sze, and Exploratorium Glow publish opening dates but no closing date. End dates are blank and flagged.",
+      "evidence_url": "https://www.noisepop.com/",
+      "related_event": "a-018;s-005;s-007;s-013;s-030",
+      "action": "Fill in when the organiser publishes the closing date."
+    },
+    {
+      "id": "f-029",
+      "kind": "date inconsistency",
+      "item": "SF Marathon page copy",
+      "issue": "The page title says 'July 25-26, 2026' while the body promotes 'July 24-25, 2027'. The 2027 body copy is used for the row.",
+      "evidence_url": "https://www.thesfmarathon.com/",
+      "related_event": "a-006",
+      "action": "Organiser should update the title; no data change needed."
+    },
+    {
+      "id": "f-031",
+      "kind": "source unavailable",
+      "item": "Muni Heritage Weekend",
+      "issue": "SFMTA's September weekend-events URL now redirects to the October page, and the October 15-21 advisory does not list the event. The September 19-20, 2026 dates seen in search results could not be confirmed on an official page, so the row was removed.",
+      "evidence_url": "https://www.sfmta.com/weekend-events-september-18-20-2026",
+      "related_event": "",
+      "action": "Verify from SFMTA or the San Francisco Railway Museum before re-adding."
+    },
+    {
+      "id": "f-032",
+      "kind": "source unavailable",
+      "item": "Pokemon World Championship 2026",
+      "issue": "Search results referenced an SFMTA advisory for August 28-30, 2026, but the page fetched did not contain that event. The row was removed rather than cite an unverified page.",
+      "evidence_url": "https://www.sfmta.com/",
+      "related_event": "",
+      "action": "Re-check the Moscone Center calendar if needed."
+    },
+    {
+      "id": "f-033",
+      "kind": "data conflict",
+      "item": "Potrero Hill Festival time",
+      "issue": "SFMTA's weekend listing says 11am-4pm; SFMTA's October 15-21 advisory says 10am-4:30pm on 20th Street between Wisconsin and Missouri. The advisory (more specific) is used.",
+      "evidence_url": "https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026",
+      "related_event": "a-025",
+      "action": "Confirm with the organiser before 2027."
+    },
+    {
+      "id": "f-034",
+      "kind": "unverified field",
+      "item": "Haight-Ashbury Street Fair date",
+      "issue": "The official fair site thanks 2026 participants but does not display the 2026 event date. No date is carried in the row.",
+      "evidence_url": "https://www.haightashburystreetfair.org/",
+      "related_event": "a-026",
+      "action": "Use the SFMTA street-closure advisory when the 2027 date is set."
+    },
+    {
+      "id": "f-030",
+      "kind": "date inconsistency",
+      "item": "Bay to Breakers page copy",
+      "issue": "The page headline gives May 16, 2027, but some promotional copy still says 'before May 18'. The headline date is used.",
+      "evidence_url": "https://www.baytobreakers.com/",
+      "related_event": "a-003",
+      "action": "Organiser copy check; no data change needed."
+    }
+  ]
+}

@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review · SF Events Index</title>
+<meta name="description" content="Audit trail: unverified fields, broken or hijacked official pages, data conflicts and scope exclusions for the San Francisco events catalogue.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">SF</span>
+      <span class="brand-text"><strong>SF Events Index</strong><span>Verified event catalogue</span></span>
+    </a>
+    <nav class="site" aria-label="Main navigation">
+      <a href="index.html">Overview</a>
+<a href="weekly.html">Recurring</a>
+<a href="annual.html">Annual</a>
+<a href="special.html">Special</a>
+<a href="analysis.html">Analysis</a>
+<a href="sources.html">Sources</a>
+<a href="flagged.html" aria-current="page">Flagged for Review</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    
+<div class="breadcrumb"><a href="index.html">Overview</a> / Flagged for Review</div>
+<p class="eyebrow">Quality control</p>
+<h1>Flagged for Review</h1>
+<p class="lede">This page is deliberately public. It lists every row with a value that could not be confirmed, every source
+irregularity found while verifying, and every scope decision that removed an event from the tables. Nothing here blocks
+publication; it is the audit trail for a manual review.</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="num">34</div><div class="label">Rows with unverified fields</div></div>
+  <div class="kpi"><div class="num">34</div><div class="label">Review notes</div></div>
+  <div class="kpi"><div class="num">15</div><div class="label">Broken or hijacked official pages</div></div>
+  <div class="kpi"><div class="num">8</div><div class="label">Conflicts / date checks</div></div>
+</div>
+
+<h2>1. Rows with unverified fields</h2>
+<p class="section-note">These rows are published with the affected fields left blank. Open the official source to see what it does
+and does not state. Field names are the JSON keys in the underlying data.</p>
+<table class="data" id="unverified-table">
+  <caption>Published rows carrying at least one blank, unconfirmed field</caption>
+  <thead><tr><th scope="col">Event</th><th scope="col">Unverified fields</th><th scope="col">Official source checked</th></tr></thead>
+  <tbody>
+<tr>
+  <td><a href="annual.html#a-007">Stern Grove Festival</a><span class="sub">a-007 · annual</span></td>
+  <td>dates</td>
+  <td class="src"><a href="https://www.sterngrove.org/" target="_blank" rel="noopener" title="Stern Grove Festival">sterngrove.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="annual.html#a-016">Litquake</a><span class="sub">a-016 · annual</span></td>
+  <td>dates</td>
+  <td class="src"><a href="https://www.litquake.org/" target="_blank" rel="noopener" title="Litquake Foundation | Literary Festival | San Francisco">litquake.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="annual.html#a-018">Noise Pop Festival</a><span class="sub">a-018 · annual</span></td>
+  <td>display dates.end</td>
+  <td class="src"><a href="https://www.noisepop.com/" target="_blank" rel="noopener" title="Welcome to Noise Pop">noisepop.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="annual.html#a-023">San Francisco Greek Food Festival</a><span class="sub">a-023 · annual</span></td>
+  <td>edition, dates</td>
+  <td class="src"><a href="https://annunciation.org/festival" target="_blank" rel="noopener" title="Greek Food Festival | Annunciation Greek Orthodox Cathedral">annunciation.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="annual.html#a-024">Frameline San Francisco International LGBTQ+ Film Festival</a><span class="sub">a-024 · annual</span></td>
+  <td>dates</td>
+  <td class="src"><a href="https://www.frameline.org/" target="_blank" rel="noopener" title="Frameline">frameline.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="annual.html#a-026">Haight-Ashbury Street Fair</a><span class="sub">a-026 · annual</span></td>
+  <td>dates, edition</td>
+  <td class="src"><a href="https://www.haightashburystreetfair.org/" target="_blank" rel="noopener" title="Haight-Ashbury Street Fair">haightashburystreetfair.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="annual.html#a-028">Day of the Dead Festival of Altars</a><span class="sub">a-028 · annual</span></td>
+  <td>dates, edition</td>
+  <td class="src"><a href="https://www.dayofthedeadsf.org/" target="_blank" rel="noopener" title="Day of the Dead SF by the Marigold Project">dayofthedeadsf.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-010">Inner Sunset Flea Market</a><span class="sub">w-010 · monthly</span></td>
+  <td>admission</td>
+  <td class="src"><a href="https://sunsetmercantilesf.com/" target="_blank" rel="noopener" title="Sunset Mercantile | community event producers">sunsetmercantilesf.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-011">Secondhand Saturdays</a><span class="sub">w-011 · monthly</span></td>
+  <td>admission</td>
+  <td class="src"><a href="https://sunsetmercantilesf.com/" target="_blank" rel="noopener" title="Sunset Mercantile | community event producers">sunsetmercantilesf.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-013">Downtown First Thursdays</a><span class="sub">w-013 · monthly</span></td>
+  <td>season</td>
+  <td class="src"><a href="https://www.dftsf.com/" target="_blank" rel="noopener" title="DFT: Downtown First Thursdays">dftsf.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-015">Soulful Sundays</a><span class="sub">w-015 · monthly</span></td>
+  <td>admission</td>
+  <td class="src"><a href="https://www.sfmta.com/projects/shared-spaces" target="_blank" rel="noopener" title="Shared Spaces | SFMTA">sfmta.com</a><span class="type">government</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-016">Otsego Avenue Shared Space</a><span class="sub">w-016 · monthly</span></td>
+  <td>admission</td>
+  <td class="src"><a href="https://www.sfmta.com/projects/shared-spaces" target="_blank" rel="noopener" title="Shared Spaces | SFMTA">sfmta.com</a><span class="type">government</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-017">Larkin Street Tenderloin Shared Space</a><span class="sub">w-017 · monthly</span></td>
+  <td>admission</td>
+  <td class="src"><a href="https://www.sfmta.com/projects/shared-spaces" target="_blank" rel="noopener" title="Shared Spaces | SFMTA">sfmta.com</a><span class="type">government</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-026">TreasureFest</a><span class="sub">w-026 · monthly</span></td>
+  <td>schedule, dates, admission</td>
+  <td class="src"><a href="https://www.treasurefest.com/" target="_blank" rel="noopener" title="TreasureFest | Treasure Island, San Francisco">treasurefest.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="special.html#s-005">RM x SFMOMA: Between You and Me</a><span class="sub">s-005 · special</span></td>
+  <td>end date</td>
+  <td class="src"><a href="https://www.sfmoma.org/exhibitions/" target="_blank" rel="noopener" title="What&#x27;s On View | SFMOMA">sfmoma.org</a><span class="type">official venue</span></td>
+</tr><tr>
+  <td><a href="special.html#s-007">Sarah Sze: Forever is Composed of Nows</a><span class="sub">s-007 · special</span></td>
+  <td>end date</td>
+  <td class="src"><a href="https://www.sfmoma.org/exhibitions/" target="_blank" rel="noopener" title="What&#x27;s On View | SFMOMA">sfmoma.org</a><span class="type">official venue</span></td>
+</tr><tr>
+  <td><a href="special.html#s-008">Treasures of the Pharaohs</a><span class="sub">s-008 · special</span></td>
+  <td>start date</td>
+  <td class="src"><a href="https://www.famsf.org/exhibitions/" target="_blank" rel="noopener" title="Exhibitions | Fine Arts Museums of San Francisco">famsf.org</a><span class="type">official venue</span></td>
+</tr><tr>
+  <td><a href="special.html#s-009">Eternal Paris: Photographing the City of Light</a><span class="sub">s-009 · special</span></td>
+  <td>start date</td>
+  <td class="src"><a href="https://www.famsf.org/exhibitions/" target="_blank" rel="noopener" title="Exhibitions | Fine Arts Museums of San Francisco">famsf.org</a><span class="type">official venue</span></td>
+</tr><tr>
+  <td><a href="special.html#s-010">Miro: Proof Against All</a><span class="sub">s-010 · special</span></td>
+  <td>start date</td>
+  <td class="src"><a href="https://www.famsf.org/exhibitions/" target="_blank" rel="noopener" title="Exhibitions | Fine Arts Museums of San Francisco">famsf.org</a><span class="type">official venue</span></td>
+</tr><tr>
+  <td><a href="special.html#s-013">Glow: opening night</a><span class="sub">s-013 · special</span></td>
+  <td>end date</td>
+  <td class="src"><a href="https://www.exploratorium.edu/visit/calendar/after-dark" target="_blank" rel="noopener" title="After Dark Thursday Nights | Exploratorium">exploratorium.edu</a><span class="type">official venue</span></td>
+</tr><tr>
+  <td><a href="special.html#s-030">SFFILM Doc Stories 2026</a><span class="sub">s-030 · special</span></td>
+  <td>end date</td>
+  <td class="src"><a href="https://sffilm.org/" target="_blank" rel="noopener" title="SFFILM | The Hub of the Bay Area&#x27;s film culture">sffilm.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="special.html#s-031">RSA Conference 2027</a><span class="sub">s-031 · special</span></td>
+  <td>start date, end date</td>
+  <td class="src"><a href="https://www.rsaconference.com/" target="_blank" rel="noopener" title="RSA Conference">rsaconference.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-002">Alemany Farmers Market</a><span class="sub">w-002 · weekly</span></td>
+  <td>season</td>
+  <td class="src"><a href="https://www.sf.gov/location--alemany-farmers-market" target="_blank" rel="noopener" title="Alemany Farmers Market | SF.gov">sf.gov</a><span class="type">government</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-003">Heart of the City Farmers Market</a><span class="sub">w-003 · weekly</span></td>
+  <td>season</td>
+  <td class="src"><a href="https://hotcfarmersmarket.org/" target="_blank" rel="noopener" title="Heart of the City Farmers Market">hotcfarmersmarket.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-007">Clement Street Farmers Market</a><span class="sub">w-007 · weekly</span></td>
+  <td>season</td>
+  <td class="src"><a href="https://www.agriculturalinstitute.org/clement-st" target="_blank" rel="noopener" title="Clement St SF | Agricultural Institute of Marin">agriculturalinstitute.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-008">Fort Mason Center Farmers&#x27; Market</a><span class="sub">w-008 · weekly</span></td>
+  <td>season</td>
+  <td class="src"><a href="https://www.cafarmersmkts.com/fort-mason-center-farmers-market/" target="_blank" rel="noopener" title="Fort Mason Center Farmers&#x27; Market | California Farmers&#x27; Markets Association">cafarmersmkts.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-009">Outer Sunset Farmers Market &amp; Mercantile</a><span class="sub">w-009 · weekly</span></td>
+  <td>season</td>
+  <td class="src"><a href="https://sunsetmercantilesf.com/" target="_blank" rel="noopener" title="Sunset Mercantile | community event producers">sunsetmercantilesf.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-012">Alemany Flea Market</a><span class="sub">w-012 · weekly</span></td>
+  <td>season, admission</td>
+  <td class="src"><a href="https://www.sf.gov/location--alemany-flea-market" target="_blank" rel="noopener" title="Alemany Flea Market | SF.gov">sf.gov</a><span class="type">government</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-020">Off the Grid: Levi&#x27;s Plaza</a><span class="sub">w-020 · weekly</span></td>
+  <td>admission, season</td>
+  <td class="src"><a href="https://offthegrid.com/" target="_blank" rel="noopener" title="Off the Grid | SF Bay Area Food Markets">offthegrid.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-021">Off the Grid: Salesforce Tower</a><span class="sub">w-021 · weekly</span></td>
+  <td>admission, season</td>
+  <td class="src"><a href="https://offthegrid.com/" target="_blank" rel="noopener" title="Off the Grid | SF Bay Area Food Markets">offthegrid.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-022">Off the Grid: Treasure Island</a><span class="sub">w-022 · weekly</span></td>
+  <td>admission</td>
+  <td class="src"><a href="https://offthegrid.com/" target="_blank" rel="noopener" title="Off the Grid | SF Bay Area Food Markets">offthegrid.com</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-023">Golden Gate Park Band concerts</a><span class="sub">w-023 · weekly</span></td>
+  <td>schedule.start time</td>
+  <td class="src"><a href="https://goldengateparkband.org/" target="_blank" rel="noopener" title="Golden Gate Park Band">goldengateparkband.org</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-024">SF State Associated Students Farmers Market</a><span class="sub">w-024 · weekly</span></td>
+  <td>admission</td>
+  <td class="src"><a href="https://asi.sfsu.edu/farmers-market" target="_blank" rel="noopener" title="Farmers Market | Associated Students, SF State">asi.sfsu.edu</a><span class="type">official organizer</span></td>
+</tr><tr>
+  <td><a href="weekly.html#w-025">North Beach Farmers Market</a><span class="sub">w-025 · weekly</span></td>
+  <td>season</td>
+  <td class="src"><a href="https://www.northbeachfarmersmarket.com/" target="_blank" rel="noopener" title="North Beach Farmers Market">northbeachfarmersmarket.com</a><span class="type">official organizer</span></td>
+</tr>
+  </tbody>
+</table>
+
+<h2>2. Source and data irregularities</h2>
+<p class="section-note">Each note names the page that was checked and the action needed. “Source unavailable” entries were
+excluded from the tables rather than guessed.</p>
+<div class="table-tools" data-table="flag-table">
+  <label for="flag-search">Search</label>
+  <input id="flag-search" type="search" placeholder="Domain, event, issue…" autocomplete="off">
+  <label for="flag-filter">Kind</label>
+  <select id="flag-filter">
+    <option value="all">All kinds</option>
+    <option value="broken official page">broken official page</option><option value="data conflict">data conflict</option><option value="date check">date check</option><option value="date inconsistency">date inconsistency</option><option value="domain hijack">domain hijack</option><option value="domain parked">domain parked</option><option value="not yet announced">not yet announced</option><option value="permit expiry">permit expiry</option><option value="scope exclusion">scope exclusion</option><option value="source unavailable">source unavailable</option><option value="stale official listing">stale official listing</option><option value="stale page">stale page</option><option value="unverified field">unverified field</option>
+  </select>
+  <span class="result" aria-live="polite"></span>
+</div>
+<div class="table-wrap">
+<table class="data" id="flag-table">
+  <caption>Review register</caption>
+  <thead><tr><th scope="col">ID</th><th scope="col">Kind</th><th scope="col">Item</th><th scope="col">Issue</th><th scope="col">Source checked</th><th scope="col">Action</th></tr></thead>
+  <tbody>
+<tr id="f-001" data-bucket="source unavailable" data-search="carnaval san francisco source unavailable the organiser domain carnavalsf.com resolves to an unrelated online gambling site, so the 2026/2027 parade could not be verified from an official source. it is therefore excluded from the verified tables.">
+  <td>f-001</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">Carnaval San Francisco</span><span class="sub">—</span></td>
+  <td>The organiser domain carnavalsf.com resolves to an unrelated online gambling site, so the 2026/2027 parade could not be verified from an official source. It is therefore excluded from the verified tables.</td>
+  <td class="src"><a href="https://carnavalsf.com/" target="_blank" rel="noopener">carnavalsf.com</a></td>
+  <td>Confirm the current official Carnaval domain before adding a row.</td>
+</tr><tr id="f-002" data-bucket="domain hijack" data-search="fillmore jazz festival legacy domain domain hijack fillmorejazzfestival.com redirects to an unrelated e-cigarette site. the verified official site is fillmorejazzfest.com, which is the source used for the 2027 dates.">
+  <td>f-002</td>
+  <td>domain hijack</td>
+  <td class="event"><span class="name">Fillmore Jazz Festival legacy domain</span><span class="sub">a-005</span></td>
+  <td>fillmorejazzfestival.com redirects to an unrelated e-cigarette site. The verified official site is fillmorejazzfest.com, which is the source used for the 2027 dates.</td>
+  <td class="src"><a href="https://www.fillmorejazzfest.com/" target="_blank" rel="noopener">fillmorejazzfest.com</a></td>
+  <td>Link only the .com domain; legacy domain should not be cited.</td>
+</tr><tr id="f-003" data-bucket="source unavailable" data-search="dragonspunk farmers market source unavailable dragonspunk.org returns a wix &#x27;domain isn&#x27;t connected&#x27; page, so the thursday market at 1550 evans avenue could not be verified and is excluded.">
+  <td>f-003</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">Dragonspunk Farmers Market</span><span class="sub">—</span></td>
+  <td>dragonspunk.org returns a Wix &#x27;domain isn&#x27;t connected&#x27; page, so the Thursday market at 1550 Evans Avenue could not be verified and is excluded.</td>
+  <td class="src"><a href="https://www.dragonspunk.org/farmers-markets" target="_blank" rel="noopener">dragonspunk.org</a></td>
+  <td>Re-check the market&#x27;s domain or its SF Environment listing before adding.</td>
+</tr><tr id="f-004" data-bucket="source unavailable" data-search="soma west farmers market source unavailable the sf environment list points to somawest.org, but the farmers-market path returns http 404. excluded pending a working official page.">
+  <td>f-004</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">SOMA West Farmers Market</span><span class="sub">—</span></td>
+  <td>The SF Environment list points to somawest.org, but the farmers-market path returns HTTP 404. Excluded pending a working official page.</td>
+  <td class="src"><a href="https://www.somawest.org/farmers-market" target="_blank" rel="noopener">somawest.org</a></td>
+  <td>Find the current organiser page or remove from scope.</td>
+</tr><tr id="f-005" data-bucket="source unavailable" data-search="st. patrick&#x27;s day parade source unavailable the official organiser site sfstpatricksparade.com could not be fetched (two attempts), so the 2026/2027 parade dates are not verified and no row was added.">
+  <td>f-005</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">St. Patrick&#x27;s Day Parade</span><span class="sub">—</span></td>
+  <td>The official organiser site sfstpatricksparade.com could not be fetched (two attempts), so the 2026/2027 parade dates are not verified and no row was added.</td>
+  <td class="src"><a href="https://www.sfstpatricksparade.com/" target="_blank" rel="noopener">sfstpatricksparade.com</a></td>
+  <td>Retry the organiser site or obtain the date from an SFMTA street-closure advisory.</td>
+</tr><tr id="f-006" data-bucket="source unavailable" data-search="north beach festival source unavailable nbdyc.com (the north beach district merchants site) returns http 500, so the june festival could not be verified and is excluded.">
+  <td>f-006</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">North Beach Festival</span><span class="sub">—</span></td>
+  <td>nbdyc.com (the North Beach District merchants site) returns HTTP 500, so the June festival could not be verified and is excluded.</td>
+  <td class="src"><a href="https://www.nbdyc.com/" target="_blank" rel="noopener">nbdyc.com</a></td>
+  <td>Retry the organiser site.</td>
+</tr><tr id="f-007" data-bucket="domain hijack" data-search="san francisco fringe festival domain hijack sffringe.org redirects to an unrelated 404 page, so the festival could not be verified and is excluded.">
+  <td>f-007</td>
+  <td>domain hijack</td>
+  <td class="event"><span class="name">San Francisco Fringe Festival</span><span class="sub">—</span></td>
+  <td>sffringe.org redirects to an unrelated 404 page, so the festival could not be verified and is excluded.</td>
+  <td class="src"><a href="https://www.sffringe.org/" target="_blank" rel="noopener">sffringe.org</a></td>
+  <td>Locate the current organiser domain.</td>
+</tr><tr id="f-008" data-bucket="domain parked" data-search="union square ice rink and tree lighting domain parked unionsquaresf.com is parked/for sale and redirects through an ad network, so the seasonal ice rink and holiday events could not be verified.">
+  <td>f-008</td>
+  <td>domain parked</td>
+  <td class="event"><span class="name">Union Square ice rink and tree lighting</span><span class="sub">—</span></td>
+  <td>unionsquaresf.com is parked/for sale and redirects through an ad network, so the seasonal ice rink and holiday events could not be verified.</td>
+  <td class="src"><a href="https://www.unionsquaresf.com/" target="_blank" rel="noopener">unionsquaresf.com</a></td>
+  <td>Use the Union Square Business Improvement District site if it publishes the dates.</td>
+</tr><tr id="f-009" data-bucket="source unavailable" data-search="san francisco auto show source unavailable sfautoshow.com displays an &#x27;under construction&#x27; holding page, so the annual show could not be verified.">
+  <td>f-009</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">San Francisco Auto Show</span><span class="sub">—</span></td>
+  <td>sfautoshow.com displays an &#x27;under construction&#x27; holding page, so the annual show could not be verified.</td>
+  <td class="src"><a href="https://www.sfautoshow.com/" target="_blank" rel="noopener">sfautoshow.com</a></td>
+  <td>Re-check before the next show.</td>
+</tr><tr id="f-010" data-bucket="source unavailable" data-search="presidio picnic source unavailable the presidio trust page presidio.gov/do/presidio-picnic returns a 404, so the seasonal sunday picnic could not be verified and is excluded.">
+  <td>f-010</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">Presidio Picnic</span><span class="sub">—</span></td>
+  <td>The Presidio Trust page presidio.gov/do/presidio-picnic returns a 404, so the seasonal Sunday picnic could not be verified and is excluded.</td>
+  <td class="src"><a href="https://presidio.gov/do/presidio-picnic" target="_blank" rel="noopener">presidio.gov</a></td>
+  <td>Locate the current Presidio events page.</td>
+</tr><tr id="f-011" data-bucket="source unavailable" data-search="yerba buena gardens festival source unavailable ybgfestival.org returns only a recaptcha challenge with no content, so the free summer performance series could not be verified.">
+  <td>f-011</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">Yerba Buena Gardens Festival</span><span class="sub">—</span></td>
+  <td>ybgfestival.org returns only a reCAPTCHA challenge with no content, so the free summer performance series could not be verified.</td>
+  <td class="src"><a href="https://ybgfestival.org/" target="_blank" rel="noopener">ybgfestival.org</a></td>
+  <td>Try the Yerba Buena Center for the Arts or SF.gov listing.</td>
+</tr><tr id="f-012" data-bucket="broken official page" data-search="asian art museum exhibitions broken official page about.asianart.org/exhibitions/ returns a 404, so no asian art museum exhibition rows are included.">
+  <td>f-012</td>
+  <td>broken official page</td>
+  <td class="event"><span class="name">Asian Art Museum exhibitions</span><span class="sub">—</span></td>
+  <td>about.asianart.org/exhibitions/ returns a 404, so no Asian Art Museum exhibition rows are included.</td>
+  <td class="src"><a href="https://about.asianart.org/exhibitions/" target="_blank" rel="noopener">about.asianart.org</a></td>
+  <td>Use asianart.org&#x27;s current exhibitions path.</td>
+</tr><tr id="f-013" data-bucket="broken official page" data-search="famsf free-admission page broken official page famsf.org/visit/free-admission returns a 404, so no free-museum-day claim is made for de young or the legion of honor.">
+  <td>f-013</td>
+  <td>broken official page</td>
+  <td class="event"><span class="name">FAMSF free-admission page</span><span class="sub">—</span></td>
+  <td>famsf.org/visit/free-admission returns a 404, so no free-museum-day claim is made for de Young or the Legion of Honor.</td>
+  <td class="src"><a href="https://www.famsf.org/visit/free-admission" target="_blank" rel="noopener">famsf.org</a></td>
+  <td>Check current visitor-information page before publishing any free-day claim.</td>
+</tr><tr id="f-014" data-bucket="data conflict" data-search="alemany farmers market hours data conflict sf.gov lists saturday 7am-2pm; the sf environment department list still shows 6am-3pm. the sf.gov location page is used as the primary source.">
+  <td>f-014</td>
+  <td>data conflict</td>
+  <td class="event"><span class="name">Alemany Farmers Market hours</span><span class="sub">w-002</span></td>
+  <td>SF.gov lists Saturday 7am-2pm; the SF Environment Department list still shows 6am-3pm. The SF.gov location page is used as the primary source.</td>
+  <td class="src"><a href="https://www.sf.gov/location--alemany-farmers-market" target="_blank" rel="noopener">sf.gov</a></td>
+  <td>SF.gov is authoritative for the city-owned site; confirm with Foodwise before visiting early.</td>
+</tr><tr id="f-015" data-bucket="data conflict" data-search="north beach farmers market address and season data conflict the organiser lists 725 greenwich street, saturdays 9am-2pm with no season. sf environment lists 659 columbus avenue, may-november. the organiser page is used.">
+  <td>f-015</td>
+  <td>data conflict</td>
+  <td class="event"><span class="name">North Beach Farmers Market address and season</span><span class="sub">w-025</span></td>
+  <td>The organiser lists 725 Greenwich Street, Saturdays 9am-2pm with no season. SF Environment lists 659 Columbus Avenue, May-November. The organiser page is used.</td>
+  <td class="src"><a href="https://www.northbeachfarmersmarket.com/" target="_blank" rel="noopener">northbeachfarmersmarket.com</a></td>
+  <td>Confirm with the organiser at the start of the 2027 season.</td>
+</tr><tr id="f-016" data-bucket="stale official listing" data-search="sf environment farmers-market directory stale official listing the page is dated 03/21/2025 and contains hours and addresses that conflict with several organiser pages. organiser pages were preferred wherever they were reachable.">
+  <td>f-016</td>
+  <td>stale official listing</td>
+  <td class="event"><span class="name">SF Environment farmers-market directory</span><span class="sub">—</span></td>
+  <td>The page is dated 03/21/2025 and contains hours and addresses that conflict with several organiser pages. Organiser pages were preferred wherever they were reachable.</td>
+  <td class="src"><a href="https://www.sfenvironment.org/farmers-markets-in-sf" target="_blank" rel="noopener">sfenvironment.org</a></td>
+  <td>Treat as a secondary city listing, not primary.</td>
+</tr><tr id="f-017" data-bucket="date check" data-search="folsom street fair 2027 date date check the homepage banner reads &#x27;folsom street fair 9/26/2027&#x27; while 2026 material refers to sunday, september 27, 2026. september 26, 2027 is a sunday, so the date is internally consistent, but the banner is the only official statement found.">
+  <td>f-017</td>
+  <td>date check</td>
+  <td class="event"><span class="name">Folsom Street Fair 2027 date</span><span class="sub">a-010</span></td>
+  <td>The homepage banner reads &#x27;FOLSOM STREET FAIR 9/26/2027&#x27; while 2026 material refers to Sunday, September 27, 2026. September 26, 2027 is a Sunday, so the date is internally consistent, but the banner is the only official statement found.</td>
+  <td class="src"><a href="https://www.folsomstreet.org/" target="_blank" rel="noopener">folsomstreet.org</a></td>
+  <td>Re-confirm closer to the event.</td>
+</tr><tr id="f-018" data-bucket="date check" data-search="castro street fair 2027 date date check the site says &#x27;sunday, october 3, 2027&#x27;; october 3, 2027 is indeed a sunday. the 2026 fair was held october 4, 2026.">
+  <td>f-018</td>
+  <td>date check</td>
+  <td class="event"><span class="name">Castro Street Fair 2027 date</span><span class="sub">a-012</span></td>
+  <td>The site says &#x27;Sunday, October 3, 2027&#x27;; October 3, 2027 is indeed a Sunday. The 2026 fair was held October 4, 2026.</td>
+  <td class="src"><a href="https://castrostreetfair.org/" target="_blank" rel="noopener">castrostreetfair.org</a></td>
+  <td>None; recorded for transparency.</td>
+</tr><tr id="f-019" data-bucket="date check" data-search="italian heritage parade 2027 date date check the official events page lists the 2027 parade on &#x27;sunday, october 10th 2027&#x27;. october 10, 2027 is a sunday. the same page also lists high mass on october 11, 2026.">
+  <td>f-019</td>
+  <td>date check</td>
+  <td class="event"><span class="name">Italian Heritage Parade 2027 date</span><span class="sub">a-015</span></td>
+  <td>The official events page lists the 2027 parade on &#x27;Sunday, October 10th 2027&#x27;. October 10, 2027 is a Sunday. The same page also lists High Mass on October 11, 2026.</td>
+  <td class="src"><a href="https://sfitalianheritage.org/events/" target="_blank" rel="noopener">sfitalianheritage.org</a></td>
+  <td>None; recorded for transparency.</td>
+</tr><tr id="f-020" data-bucket="permit expiry" data-search="sfmta shared spaces recurring closures permit expiry several recurring street closures have permit end dates in late 2026 or 2027 (e.g., otsego avenue through october 25, 2026; larkin street through december 12, 2026). the cadence may stop after the permit end date.">
+  <td>f-020</td>
+  <td>permit expiry</td>
+  <td class="event"><span class="name">SFMTA Shared Spaces recurring closures</span><span class="sub">w-014;w-015;w-016;w-017</span></td>
+  <td>Several recurring street closures have permit end dates in late 2026 or 2027 (e.g., Otsego Avenue through October 25, 2026; Larkin Street through December 12, 2026). The cadence may stop after the permit end date.</td>
+  <td class="src"><a href="https://www.sfmta.com/projects/shared-spaces" target="_blank" rel="noopener">sfmta.com</a></td>
+  <td>Check the SFMTA list (updated August 2026) before relying on a date after the permit ends.</td>
+</tr><tr id="f-021" data-bucket="not yet announced" data-search="2027 dates for major annual events not yet announced hardly strictly bluegrass, san francisco fleet week, stern grove festival, pistahan, chinatown autumn moon festival and sf beer week have not published 2027 dates on their official pages as of 2026-10-18. their rows carry the last confirmed edition and are flagged.">
+  <td>f-021</td>
+  <td>not yet announced</td>
+  <td class="event"><span class="name">2027 dates for major annual events</span><span class="sub">a-007;a-008;a-013;a-014;a-019;a-022</span></td>
+  <td>Hardly Strictly Bluegrass, San Francisco Fleet Week, Stern Grove Festival, Pistahan, Chinatown Autumn Moon Festival and SF Beer Week have not published 2027 dates on their official pages as of 2026-10-18. Their rows carry the last confirmed edition and are flagged.</td>
+  <td class="src"><a href="https://www.sterngrove.org/" target="_blank" rel="noopener">sterngrove.org</a></td>
+  <td>Re-check each organiser page in early 2027.</td>
+</tr><tr id="f-022" data-bucket="stale page" data-search="day of the dead festival of altars stale page the marigold project page still shows &#x27;november 2nd, 2025&#x27; for the festival of altars. no 2026 date was confirmed, so the row is flagged and carries no 2026 date.">
+  <td>f-022</td>
+  <td>stale page</td>
+  <td class="event"><span class="name">Day of the Dead Festival of Altars</span><span class="sub">a-028</span></td>
+  <td>The Marigold Project page still shows &#x27;November 2nd, 2025&#x27; for the Festival of Altars. No 2026 date was confirmed, so the row is flagged and carries no 2026 date.</td>
+  <td class="src"><a href="https://www.dayofthedeadsf.org/" target="_blank" rel="noopener">dayofthedeadsf.org</a></td>
+  <td>Confirm the 2026 date with the organiser.</td>
+</tr><tr id="f-023" data-bucket="scope exclusion" data-search="oakland and santa clara events scope exclusion black joy parade is rooted in oakland; super bowl lx and fifa world cup matches at levi&#x27;s stadium are in santa clara. all are outside the city and county of san francisco and were excluded to honour the city-only requirement.">
+  <td>f-023</td>
+  <td>scope exclusion</td>
+  <td class="event"><span class="name">Oakland and Santa Clara events</span><span class="sub">—</span></td>
+  <td>Black Joy Parade is rooted in Oakland; Super Bowl LX and FIFA World Cup matches at Levi&#x27;s Stadium are in Santa Clara. All are outside the City and County of San Francisco and were excluded to honour the city-only requirement.</td>
+  <td class="src"><a href="https://www.blackjoyparade.org/" target="_blank" rel="noopener">blackjoyparade.org</a></td>
+  <td>Add only if the scope is widened beyond San Francisco.</td>
+</tr><tr id="f-024" data-bucket="scope exclusion" data-search="daly city street festival scope exclusion sfmta&#x27;s weekend advisory lists a daly city street festival on mission street. despite the mission street address it is a daly city event, so it is excluded.">
+  <td>f-024</td>
+  <td>scope exclusion</td>
+  <td class="event"><span class="name">Daly City Street Festival</span><span class="sub">—</span></td>
+  <td>SFMTA&#x27;s weekend advisory lists a Daly City street festival on Mission Street. Despite the Mission Street address it is a Daly City event, so it is excluded.</td>
+  <td class="src"><a href="https://www.sfmta.com/weekend-events-october-16-18-2026" target="_blank" rel="noopener">sfmta.com</a></td>
+  <td>None; recorded to show the city-boundary check.</td>
+</tr><tr id="f-025" data-bucket="unverified field" data-search="treasurefest dated schedule unverified field the official site calls itself &#x27;the bay&#x27;s monthly festival&#x27; but the page checked does not publish a dated 2026-27 calendar. cadence is recorded; schedule and dates are blank and flagged.">
+  <td>f-025</td>
+  <td>unverified field</td>
+  <td class="event"><span class="name">TreasureFest dated schedule</span><span class="sub">w-026</span></td>
+  <td>The official site calls itself &#x27;The Bay&#x27;s Monthly Festival&#x27; but the page checked does not publish a dated 2026-27 calendar. Cadence is recorded; schedule and dates are blank and flagged.</td>
+  <td class="src"><a href="https://www.treasurefest.com/" target="_blank" rel="noopener">treasurefest.com</a></td>
+  <td>Use the ticketing calendar when it is published.</td>
+</tr><tr id="f-026" data-bucket="unverified field" data-search="litquake 2026 run dates unverified field the litquake homepage links a 2026 festival schedule but does not display the festival run dates. dates are blank and flagged.">
+  <td>f-026</td>
+  <td>unverified field</td>
+  <td class="event"><span class="name">Litquake 2026 run dates</span><span class="sub">a-016</span></td>
+  <td>The Litquake homepage links a 2026 festival schedule but does not display the festival run dates. Dates are blank and flagged.</td>
+  <td class="src"><a href="https://www.litquake.org/" target="_blank" rel="noopener">litquake.org</a></td>
+  <td>Open the 2026 schedule page and record the span.</td>
+</tr><tr id="f-027" data-bucket="unverified field" data-search="rsa conference 2027 dates unverified field the rsa conference homepage promotes 2027 registration but does not state the conference dates. dates are blank and flagged.">
+  <td>f-027</td>
+  <td>unverified field</td>
+  <td class="event"><span class="name">RSA Conference 2027 dates</span><span class="sub">s-031</span></td>
+  <td>The RSA Conference homepage promotes 2027 registration but does not state the conference dates. Dates are blank and flagged.</td>
+  <td class="src"><a href="https://www.rsaconference.com/" target="_blank" rel="noopener">rsaconference.com</a></td>
+  <td>Check the USA conference page.</td>
+</tr><tr id="f-028" data-bucket="unverified field" data-search="annual event end dates unverified field noise pop 2027 and sffilm doc stories 2026 publish start dates but no end date; sfmoma&#x27;s rm x sfmoma and sarah sze, and exploratorium glow publish opening dates but no closing date. end dates are blank and flagged.">
+  <td>f-028</td>
+  <td>unverified field</td>
+  <td class="event"><span class="name">Annual event end dates</span><span class="sub">a-018;s-005;s-007;s-013;s-030</span></td>
+  <td>Noise Pop 2027 and SFFILM Doc Stories 2026 publish start dates but no end date; SFMOMA&#x27;s RM x SFMOMA and Sarah Sze, and Exploratorium Glow publish opening dates but no closing date. End dates are blank and flagged.</td>
+  <td class="src"><a href="https://www.noisepop.com/" target="_blank" rel="noopener">noisepop.com</a></td>
+  <td>Fill in when the organiser publishes the closing date.</td>
+</tr><tr id="f-029" data-bucket="date inconsistency" data-search="sf marathon page copy date inconsistency the page title says &#x27;july 25-26, 2026&#x27; while the body promotes &#x27;july 24-25, 2027&#x27;. the 2027 body copy is used for the row.">
+  <td>f-029</td>
+  <td>date inconsistency</td>
+  <td class="event"><span class="name">SF Marathon page copy</span><span class="sub">a-006</span></td>
+  <td>The page title says &#x27;July 25-26, 2026&#x27; while the body promotes &#x27;July 24-25, 2027&#x27;. The 2027 body copy is used for the row.</td>
+  <td class="src"><a href="https://www.thesfmarathon.com/" target="_blank" rel="noopener">thesfmarathon.com</a></td>
+  <td>Organiser should update the title; no data change needed.</td>
+</tr><tr id="f-031" data-bucket="source unavailable" data-search="muni heritage weekend source unavailable sfmta&#x27;s september weekend-events url now redirects to the october page, and the october 15-21 advisory does not list the event. the september 19-20, 2026 dates seen in search results could not be confirmed on an official page, so the row was removed.">
+  <td>f-031</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">Muni Heritage Weekend</span><span class="sub">—</span></td>
+  <td>SFMTA&#x27;s September weekend-events URL now redirects to the October page, and the October 15-21 advisory does not list the event. The September 19-20, 2026 dates seen in search results could not be confirmed on an official page, so the row was removed.</td>
+  <td class="src"><a href="https://www.sfmta.com/weekend-events-september-18-20-2026" target="_blank" rel="noopener">sfmta.com</a></td>
+  <td>Verify from SFMTA or the San Francisco Railway Museum before re-adding.</td>
+</tr><tr id="f-032" data-bucket="source unavailable" data-search="pokemon world championship 2026 source unavailable search results referenced an sfmta advisory for august 28-30, 2026, but the page fetched did not contain that event. the row was removed rather than cite an unverified page.">
+  <td>f-032</td>
+  <td>source unavailable</td>
+  <td class="event"><span class="name">Pokemon World Championship 2026</span><span class="sub">—</span></td>
+  <td>Search results referenced an SFMTA advisory for August 28-30, 2026, but the page fetched did not contain that event. The row was removed rather than cite an unverified page.</td>
+  <td class="src"><a href="https://www.sfmta.com/" target="_blank" rel="noopener">sfmta.com</a></td>
+  <td>Re-check the Moscone Center calendar if needed.</td>
+</tr><tr id="f-033" data-bucket="data conflict" data-search="potrero hill festival time data conflict sfmta&#x27;s weekend listing says 11am-4pm; sfmta&#x27;s october 15-21 advisory says 10am-4:30pm on 20th street between wisconsin and missouri. the advisory (more specific) is used.">
+  <td>f-033</td>
+  <td>data conflict</td>
+  <td class="event"><span class="name">Potrero Hill Festival time</span><span class="sub">a-025</span></td>
+  <td>SFMTA&#x27;s weekend listing says 11am-4pm; SFMTA&#x27;s October 15-21 advisory says 10am-4:30pm on 20th Street between Wisconsin and Missouri. The advisory (more specific) is used.</td>
+  <td class="src"><a href="https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026" target="_blank" rel="noopener">sfmta.com</a></td>
+  <td>Confirm with the organiser before 2027.</td>
+</tr><tr id="f-034" data-bucket="unverified field" data-search="haight-ashbury street fair date unverified field the official fair site thanks 2026 participants but does not display the 2026 event date. no date is carried in the row.">
+  <td>f-034</td>
+  <td>unverified field</td>
+  <td class="event"><span class="name">Haight-Ashbury Street Fair date</span><span class="sub">a-026</span></td>
+  <td>The official fair site thanks 2026 participants but does not display the 2026 event date. No date is carried in the row.</td>
+  <td class="src"><a href="https://www.haightashburystreetfair.org/" target="_blank" rel="noopener">haightashburystreetfair.org</a></td>
+  <td>Use the SFMTA street-closure advisory when the 2027 date is set.</td>
+</tr><tr id="f-030" data-bucket="date inconsistency" data-search="bay to breakers page copy date inconsistency the page headline gives may 16, 2027, but some promotional copy still says &#x27;before may 18&#x27;. the headline date is used.">
+  <td>f-030</td>
+  <td>date inconsistency</td>
+  <td class="event"><span class="name">Bay to Breakers page copy</span><span class="sub">a-003</span></td>
+  <td>The page headline gives May 16, 2027, but some promotional copy still says &#x27;before May 18&#x27;. The headline date is used.</td>
+  <td class="src"><a href="https://www.baytobreakers.com/" target="_blank" rel="noopener">baytobreakers.com</a></td>
+  <td>Organiser copy check; no data change needed.</td>
+</tr>
+  </tbody>
+</table>
+</div>
+
+<h2>3. What happens next</h2>
+<ul class="clean">
+  <li><strong>Nothing is hidden.</strong> Unverified rows stay in the category tables with blank values and an amber badge.</li>
+  <li><strong>Corrections are cheap.</strong> Each row carries a stable ID (for example <code>w-002</code> or <code>a-010</code>) that can be cited in a review request.</li>
+  <li><strong>Re-verification date:</strong> all rows were checked on 2026-10-18. Seasonal and permit-based programmes should be re-checked before the next season.</li>
+</ul>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>SF Events Index</strong> · City and County of San Francisco only · Data verified 2026-10-18.
+      <br>Every row links to the government, organiser or venue page that confirms it.
+    </div>
+    <div>
+      <a href="analysis.html">Method &amp; analysis</a> ·
+      <a href="sources.html">Source registry</a> ·
+      <a href="flagged.html">Flagged for Review</a> ·
+      <a href="https://github.com/buffedlizard55-lab/MaltaProj6" target="_blank" rel="noopener">Repository</a>
+      <br><a class="back-top" href="#main">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
