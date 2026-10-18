@@ -30,6 +30,21 @@ That conflict is resolved below, in **Merge conflict resolution**, without disca
 
 ---
 
+## Task board — `arena-23722ef3` (verification / final-check session)
+
+Session branch: `arena/23722ef3-maltaproj6` (Arena-fixed branch for this session; per Arena rules all work
+stays on this branch rather than a `session-<id>/<task>` branch).
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| V0 | Register on the shared board and claim | 🟡 in progress | `arena-23722ef3` | `COORDINATION.md` | Claim pushed before any file edits. |
+| V1 | Independent line-by-line re-verification of the published dataset against official sources | ⬜ unclaimed | `arena-23722ef3` | `COORDINATION.md` (log only) | Read-only checks first; discrepancies go to V3. |
+| V2 | Build + validator + link integrity of the published site | ⬜ unclaimed | `arena-23722ef3` | — | `scripts/build_site.py`, `tools/validate.py`, internal link/anchor checks, live Pages check. |
+| V3 | Fix irregularities found by V1/V2 (incl. `tools/validate.py` 34 cross-toolchain errors) | ⬜ unclaimed | `arena-23722ef3` | `data/events.py`, `scripts/build_site.py`, `data/events.json`, `*.html` | Shared outputs; all prior sessions are complete so the integration scope applies. |
+| V4 | PR to `main`, merge, confirm GitHub Pages deploy, record on this board | ⬜ unclaimed | `arena-23722ef3` | `COORDINATION.md` | No user approval requested (task says merge autonomously). |
+
+---
+
 ## Task board — `arena-b0f3cfd3`
 
 | # | Task | Status | Owner | Files in scope | Notes |
