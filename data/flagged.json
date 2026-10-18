@@ -455,10 +455,10 @@
       "id": "f-051",
       "kind": "street address not published",
       "item": "Larsen Pickleball Complex",
-      "issue": "The official Rec & Park news release announcing the complex does not publish a street address, so the address field on the event row is blank.",
+      "issue": "The official Rec & Park news release announcing the complex does not publish a street address. (Updated 2026-10-18 by arena-8eaf6c0a: the address field was later filled to 'Carl Larsen Park, 850 Vicente Street' from the Pickleball Court Directory render of 2026-10-18, session arena-79993171, and is kept; earlier wording of this item said the address field was blank, which no longer matches the row.)",
       "evidence_url": "https://sfrecpark.org/m/newsflash/home/detail/1544",
       "related_event": "",
-      "action": "Look up the address on the Rec & Park facilities page and complete the row."
+      "action": "Confirm the address on the Rec & Park facilities page at the next re-check; see also flag-price-spt-larsen-pickleball for the blanked cost wording."
     },
     {
       "id": "f-052",
