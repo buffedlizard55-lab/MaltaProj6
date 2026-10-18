@@ -1,23 +1,25 @@
 {
-  "site": "SF Events Index",
+  "site": "San Francisco Events",
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 249,
-    "recurring": 124,
+    "total": 281,
+    "recurring": 126,
     "annual": 57,
-    "special": 68,
-    "flagged_rows": 198,
-    "unverified_rows": 91,
+    "special": 98,
+    "verified_rows": 169,
+    "unverified_rows": 112,
+    "free_access_rows": 156,
+    "explicitly_free_rows": 138,
     "concluded_rows": 46,
-    "sources": 105,
-    "free_access_rows": 143
+    "flagged_rows": 214,
+    "sources": 109
   },
   "focus": {
-    "gaming": 4,
-    "music": 32,
-    "ai": 7,
-    "other": 206
+    "gaming": 8,
+    "music": 52,
+    "ai": 9,
+    "other": 212
   },
   "pages": [
     "all-events.html",
@@ -32,12 +34,11 @@
     "markets.html",
     "methodology.html",
     "music.html",
+    "paid-events.html",
     "recurring.html",
-    "sources.html",
     "special.html",
     "sports.html",
-    "technology.html",
-    "weekly.html"
+    "technology.html"
   ],
   "review_sheet": "data/review.csv",
   "spreadsheet_export": "data/events.csv"
