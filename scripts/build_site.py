@@ -37,7 +37,7 @@ EVENTS = assign_views(list(BASE_EVENTS) + PARALLEL_EVENTS)
 FLAGGED = list(BASE_FLAGGED) + parallel_flagged()
 
 SITE_NAME = "San Francisco Events"
-SITE_TAGLINE = "Every event in the City of San Francisco — recurring, annual and special"
+SITE_TAGLINE = "A curated, source-linked snapshot of public events in San Francisco"
 
 # (filename, label, blurb, kind) where kind is "group" (recurrence type),
 # "category" (subject area), "static" or "home".
@@ -104,7 +104,7 @@ def page_shell(filename: str, title: str, subtitle: str, body: str) -> str:
       <span class="brand-mark">SF</span>
       <span class="brand-text">
         <strong>{esc(SITE_NAME)}</strong>
-        <small>City-limits only &middot; every row sourced to an official site</small>
+        <small>City-limits only &middot; entries link to official sources</small>
       </span>
     </a>
     <nav class="site-nav" aria-label="Primary">
@@ -120,10 +120,10 @@ def page_shell(filename: str, title: str, subtitle: str, body: str) -> str:
 <footer class="site-footer">
   <div class="wrap">
     <p><strong>{esc(SITE_NAME)}</strong> &mdash; {esc(SITE_TAGLINE)}.</p>
-    <p>Every row on this site carries a link to the official organiser, city agency or state source that was
-       checked on <strong>{esc(VERIFIED_ON)}</strong>. Values that could not be confirmed from an official source
-       are left blank and listed on the
-       <a href="flagged.html">Flagged for review</a> page. Nothing on this site is inferred.</p>
+    <p>Each listed entry links to the organiser, city agency or state source recorded as checked on
+       <strong>{esc(VERIFIED_ON)}</strong>. Values that could not be confirmed are left blank and marked for
+       review. This is a curated snapshot, not an exhaustive or live events calendar; confirm details with the
+       official organiser before attending. No values are inferred.</p>
     <p class="muted">Scope is the City and County of San Francisco only. Events physically located in other Bay
        Area cities are excluded and the exclusions are listed on the Flagged for review page.</p>
   </div>
@@ -146,11 +146,11 @@ def event_table(events, table_id: str) -> str:
             if status == "verified"
             else '<span class="badge warn" title="Some values could not be confirmed from the official source">unverified</span>'
         )
-        title_cell = (
-            f'<span class="ev-title">{esc(ev["title"])}</span>'
-            f'<span class="ev-source">{badge}'
+        title_cell = f'<td><span class="ev-title">{esc(ev["title"])}</span></td>'
+        source_cell = (
+            f'<td class="source-cell"><span class="ev-source">{badge}'
             f'<a href="{esc(ev["source_url"])}" target="_blank" rel="noopener">'
-            f'{esc(ev["source_name"])} &nearr;</a></span>'
+            f'{esc(ev["source_name"])} &nearr;</a></span></td>'
         )
         cells = [title_cell]
         for key in ("type", "schedule", "dates", "location", "area", "cost", "organiser"):
@@ -159,6 +159,7 @@ def event_table(events, table_id: str) -> str:
                 cells.append('<td class="unverified-cell"><span class="na">not confirmed</span></td>')
             else:
                 cells.append(f"<td>{esc(value)}</td>")
+        cells.append(source_cell)
         note = ev.get("notes", "")
         note_html = f'<p class="row-note">{esc(note)}</p>' if note else ""
         rows.append(
@@ -167,7 +168,7 @@ def event_table(events, table_id: str) -> str:
             + f"</tr>"
         )
         if note_html:
-            rows.append(f'<tr class="note-row"><td colspan="{len(COLUMNS)}">{note_html}</td></tr>')
+            rows.append(f'<tr class="note-row"><td colspan="{len(COLUMNS) + 1}">{note_html}</td></tr>')
     return f"""
 <div class="table-scroll">
 <table class="data-table" id="{table_id}">
@@ -243,11 +244,15 @@ def build_index() -> str:
 
     body = f"""
 <section class="hero">
-  <h1>Every event happening inside the City of San Francisco</h1>
-  <p class="lede">A verified, source-linked directory of what is on in San Francisco &mdash; split into events that
-     happen <strong>every week or every year</strong> and events that are <strong>special and dated</strong>,
-     plus civic meetings, arts, sports and markets. Every row links to the official organiser or government
-     source that was checked; nothing is filled in from memory.</p>
+  <h1>San Francisco events, sourced and organized</h1>
+  <p class="lede">A curated snapshot of public events inside the City of San Francisco, organized by schedule
+     and category. Browse events that happen <strong>every week or every year</strong>, plus
+     <strong>special and dated</strong> listings, civic meetings, arts, sports and markets. Entries link to
+     official organizer or government sources; unconfirmed values are left blank.</p>
+  <p class="coverage-note"><strong>Coverage note:</strong> This is not an exhaustive or live events calendar.
+     San Francisco has many venue-level, private and short-notice events that are not captured here. Check the
+     <a href="https://www.sf.gov/events/upcoming" target="_blank" rel="noopener">City&#x27;s official events calendar</a>
+     and each organizer for current listings and details.</p>
   <div class="hero-actions">
     <a class="btn" href="recurring.html">Browse recurring events</a>
     <a class="btn ghost" href="annual.html">Browse annual events</a>
@@ -257,9 +262,9 @@ def build_index() -> str:
 
 <section class="stat-row">
   <div class="stat"><span class="stat-n">{len(EVENTS)}</span><span class="stat-l">events listed</span></div>
-  <div class="stat"><span class="stat-n">{verified}</span><span class="stat-l">fully verified rows</span></div>
-  <div class="stat"><span class="stat-n">{unverified}</span><span class="stat-l">rows with a flagged gap</span></div>
-  <div class="stat"><span class="stat-n">{len(FLAGGED)}</span><span class="stat-l">discrepancies published</span></div>
+  <div class="stat"><span class="stat-n">{verified}</span><span class="stat-l">rows marked verified</span></div>
+  <div class="stat"><span class="stat-n">{unverified}</span><span class="stat-l">rows needing review</span></div>
+  <div class="stat"><span class="stat-n">{len(FLAGGED)}</span><span class="stat-l">review items published</span></div>
   <div class="stat"><span class="stat-n">{len({e['source_url'].split('/')[2] for e in EVENTS})}</span><span class="stat-l">distinct official domains</span></div>
 </section>
 
@@ -388,7 +393,7 @@ def unverified_rows() -> str:
             if not e.get(key)
         ]
         out.append(
-            f"<tr><td>{esc(e['title'])}</td>"
+            f"<tr id=\"review-{esc(e['id'])}\"><td>{esc(e['title'])}</td>"
             f"<td>{esc(e.get('group', ''))} / {esc(e.get('category', ''))}</td>"
             f"<td>{esc(', '.join(blanks) if blanks else 'see note')}</td>"
             f"<td><a href='{esc(e['source_url'])}' target='_blank' rel='noopener'>{esc(e['source_name'])} &nearr;</a></td></tr>"
@@ -408,9 +413,15 @@ def build_methodology() -> str:
 <section>
   <h2>Scope</h2>
   <ul class="plain-list">
-    <li><strong>City of San Francisco only.</strong> Events physically inside the San Francisco city limits are
-        included. Events in other Bay Area cities are excluded, even when they are called "San Francisco" events
-        (for example the San Francisco 49ers, who play every home game at Levi's Stadium in Santa Clara).</li>
+    <li><strong>City of San Francisco only.</strong> Listed events are intended to be physically inside the
+        San Francisco city limits. Events in other Bay Area cities are excluded, even when they are called
+        "San Francisco" events (for example the San Francisco 49ers, who play every home game at Levi's Stadium
+        in Santa Clara).</li>
+    <li><strong>Not exhaustive.</strong> This is a curated research snapshot, not a complete calendar of every
+        concert, gallery opening, private event or short-notice listing. The inventory is limited to public
+        programmes and event pages located during the research pass. Use the
+        <a href="https://www.sf.gov/events/upcoming" target="_blank" rel="noopener">City&#x27;s official events calendar</a>
+        and organiser sites to find additional or newer listings.</li>
     <li><strong>Two organising groups, as requested:</strong> events that occur on a <em>regular schedule</em>
         (every week / every month) are on the <a href="recurring.html">Regularly recurring</a> page; events that
         recur <em>year after year</em> are on the <a href="annual.html">Annual</a> page; genuinely one-off dated
@@ -424,9 +435,11 @@ def build_methodology() -> str:
 <section>
   <h2>Sourcing rules</h2>
   <ul class="plain-list">
-    <li><strong>Official sources only.</strong> Every row links to the organiser's own site, a City and County of
-        San Francisco agency page, a state agency page, or a federally operated national-park page. Each link was
-        opened and read on <strong>{esc(VERIFIED_ON)}</strong>.</li>
+    <li><strong>Official sources only.</strong> Each listed row links to the organiser's own site, a City and
+        County of San Francisco agency page, a state agency page, or a federally operated national-park page.
+        The research log records these pages as checked on <strong>{esc(VERIFIED_ON)}</strong>; the build-time
+        validator checks links and table consistency but does not re-fetch or independently authenticate page
+        contents.</li>
     <li><strong>No inference.</strong> If the official page did not state a value, the cell is left blank and marked
         <span class="na">not confirmed</span>. Nothing has been filled in from prior knowledge, from a news
         article, or from an aggregator site.</li>
@@ -477,6 +490,11 @@ def build_methodology() -> str:
 <section>
   <h2>Known limitations</h2>
   <ul class="plain-list">
+    <li><strong>Coverage is not exhaustive.</strong> The site is a snapshot of the public programmes found in
+        this research pass. Small venue shows, private events, new listings and short-notice changes may be
+        absent; use the linked official City calendar and organiser pages to search beyond this inventory.</li>
+    <li>Source pages can change after the recorded verification date. Re-check the linked official page before
+        relying on a schedule, date, venue or admission detail.</li>
     <li>Individual performance dates for large seasons (opera, ballet, theatre) change and are sometimes
         revised late; the rows record the date ranges published on the official site at the time of checking.</li>
     <li>Neighbourhood street fairs publish their next edition a few months ahead; the dates shown are the most
@@ -567,6 +585,8 @@ p { margin: 0 0 12px; }
 /* Hero */
 .hero { background: var(--panel); border: 1px solid var(--line); border-left: 5px solid var(--brand); border-radius: var(--radius); padding: 26px 28px; }
 .hero h1 { max-width: 22ch; }
+.coverage-note { margin: 16px 0 0; padding: 12px 14px; border: 1px solid #ead9a5; border-radius: 8px; background: #fff9e8; color: #53420f; font-size: .92rem; }
+.coverage-note a { font-weight: 650; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .btn { display: inline-block; background: var(--brand); color: #fff; text-decoration: none; padding: 9px 16px; border-radius: 8px; font-weight: 600; font-size: .93rem; }
 .btn:hover { background: var(--brand-dark); color: #fff; }
