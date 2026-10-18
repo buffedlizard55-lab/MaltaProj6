@@ -1329,3 +1329,60 @@ is noted here.
 | A2 | Live official-source spot re-verification (soonest-dated rows + free gaming/music/AI rows) | ⬜ unclaimed | `arena-291a13ff` | `audit/AUDIT-2026-10-18-291a13ff.md` (new) | Page-fetch tool against official pages only; JS-shell/app pages recorded as content-not-re-verified, never guessed. |
 | A3 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ⬜ unclaimed | `arena-291a13ff` | `data/gap-candidates-291a13ff.json` (new) | Official sources only; every field from a fetched official page; unconfirmed fields left blank in the candidate record. |
 | A4 | Integration requests + handoff: log findings for `arena-fe7c710c`; integrate directly only if that claim is released/merged or goes stale (>60 min, no commits) — handoff noted here | 🟡 in progress | `arena-291a13ff` | `COORDINATION.md` | **Claim released** (PRs #42–#44 merged 17:09–17:12Z, claim no longer live). This session now integrates its verified findings per the released-claim path. |
+
+### Session log + closing record — `arena-291a13ff` (2026-10-18)
+
+**Timeline.** Claim commit pushed 16:59Z while `arena-fe7c710c`'s final-integration claim was live
+(new-files-only scope). Claim released by PRs #42–#44 (17:09–17:12Z). Integration work began after
+release. `arena-8eaf6c0a` merged PRs #45/#47 concurrently (17:33–17:37Z); this session rebased twice
+onto `main`, resolving `COORDINATION.md` conflicts by keeping **both** sessions' rows each time, and
+regenerated the site from the 292-row union (281 base + 6 from #45 + 5 from this session). No session's
+work was discarded.
+
+**Work performed.**
+- Structural audit (`audit/check_291a13ff.py`, `audit/row-audit-291a13ff.csv`): 0 duplicate ids,
+  all 262→292 source URLs https, 0 broken internal links/fragments across 19 pages, `events.json`
+  mirror exactly in sync with a canonical rebuild, all unverified rows surfaced on `flagged.html`,
+  concluded-badge discipline checked.
+- 25 live official-source checks (log in `audit/AUDIT-2026-10-18-291a13ff.md`): every soonest-dated
+  row and the free gaming/music/AI rows re-fetched; all displayed values matched; two JS-shell pages
+  (ArtSpan visit page, filtered SFPL events index) recorded as not re-rendered, never guessed. Zero
+  hallucinations found.
+- Added 5 rows verified from official pages (Free Trick-or-Treat at the Ferry Building Oct 29;
+  World of Dumplings Oct 25 — cost blank, page states no price, unverified; Fall SF International Tea
+  Festival Nov 14–15 — ticketed via Eventbrite, price not stated, unverified; free SFMOMA Steinkamp
+  and In Between installations) with categories (arts/community) in `data/events.py`; candidates
+  trail in `data/gap-candidates-291a13ff.json`.
+- Honest end dates: `DATE_OVERRIDES` for `x-s-005` and `spc-sfmoma-in-between` (museums publish no
+  closing day; end left blank instead of a wrong parsed date echoing the opening day). Displayed date
+  text unchanged.
+- README resynced to the built union (292/172/120/157/140/47/217/113 and per-page counts computed
+  from the generated HTML).
+
+**Gates (union state, all green):** `scripts/build_site.py` reproducible (no diff on rebuild) ·
+`tools/validate.py` OK (292/172/120/217/113, 19 pages) · `audit/check_291a13ff.py` **0 hard problems** ·
+`audit/check_dataset.py` `hard_problems=[]`, 0 broken links, 0 missing events · `audit/check_8eaf6c0a.py`
+WARN-only (published blank-stays-blank rule).
+
+**Merge.**
+- **PR #46**: https://github.com/buffedlizard55-lab/MaltaProj6/pull/46 — MERGED 2026-10-18T17:40Z,
+  merge commit `952e74a`. Summary + 25-source log in the PR body.
+- **GitHub Pages:** build for `952e74a` → `status: built`, `error: null` (updated 17:40:53Z).
+- **Live verification** (cache-busted `?v=291a13ff-final`, 2026-10-18): dashboard "Free San Francisco
+  events, soonest first"; stats 292 / 172 / 120 / 157 / 47 / 217 / 113; executive summary free-only,
+  earliest first (25 free entries in window), grouped today / next 7 days / next 8–30 days, with
+  countdowns, cost labels and official source links; Steinkamp and Trick-or-Treat rows present;
+  unpriced rows (Sunday Streets, World of Dumplings) absent from the summary and listed on
+  `paid-events.html`.
+
+**Irregularities flagged for review (non-blocking, published on the Flagged for Review page):**
+Cloudflare Connect official page self-inconsistency ("October 19–21" heading vs "over four days" body);
+Castro Merchants events-index teaser still carries stale "December 15" menorah body text (the cited
+event page says December 7); Illuminate venue pages give the Bandshell address as 75 Hagiwara Tea
+Garden Dr vs Rec & Park's bandshell page 99 Hagiwara (both official); two new unverified rows
+(no published price); `civ-hrc` next-meeting date in the past while the rolling calendar is live;
+two JS-shell official pages not re-renderable in the fetcher.
+
+**Handoff note for concurrent session `arena-9fca0b37`:** its staged corrections apply against a
+pre-292 tree; candidates were re-checked against the union — no overlap with the five rows above.
+Integration of its staged findings remains its own task per the board rules.
