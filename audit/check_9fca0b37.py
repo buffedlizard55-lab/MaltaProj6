@@ -2,7 +2,9 @@
 """Independent structural audit of the San Francisco events dataset.
 
 Written by session ``arena-9fca0b37`` (2026-10-18). Read-only: it never
-edits the dataset or the generated site.
+edits the dataset or the generated site. Reconciled with PRs #42-#44
+(session ``arena-fe7c710c``), whose overlapping corrections it treats as
+baseline state.
 
 Checks:
   1. Every row: stable unique id, https official source link present, no
@@ -94,10 +96,6 @@ SESSION_EXPECTATIONS = {
     "spc-castro-menorah": [("cost", ""), ("status", "unverified")],
     "spc-castro-holiday-tree": [("cost", ""), ("status", "unverified")],
     "spc-castro-art-walk": [("cost", ""), ("status", "unverified")],
-    "spc-castro-tree-fundraiser": [
-        ("cost", ""), ("status", "unverified"),
-        ("source_url",
-         "https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023-5edw6")],
     # Imported Sunset Mercantile rows with no published admission price.
     "x-s-015": [("cost", ""), ("status", "unverified")],
     "x-s-016": [("cost", ""), ("status", "unverified")],
@@ -126,9 +124,8 @@ SESSION_FLAGS = [
     "flag-soulful-sundays-admission-not-published",
     "flag-otsego-shared-space-admission-not-published",
     "flag-larkin-shared-space-admission-not-published",
-    "flag-sunset-mercantile-admission-not-published",
-    "flag-castro-merchants-admission-not-published",
     "flag-ocofi-calendar-d3-link-broken",
+    "flag-unverified-rows-register-coverage",
 ]
 
 
@@ -232,13 +229,10 @@ def main() -> int:
         "recurring": sum(1 for e in events if e.get("group") == "recurring"),
         "annual": sum(1 for e in events if e.get("group") == "annual"),
         "special": sum(1 for e in events if e.get("group") == "special"),
-        "flagged_rows": sum(1 for e in events if e.get("status") != "verified"),
         "unverified_rows": sum(1 for e in events if e.get("status") != "verified"),
-        "flagged_items": len(flagged),
     }
+    actual_counts["flagged_rows"] = len(flagged)  # review items, as meta.json counts them
     for key, value in actual_counts.items():
-        if key == "flagged_items":
-            continue
         if meta["counts"].get(key) != value:
             msg = f"meta.json {key}={meta['counts'].get(key)} but dataset has {value}"
             if applied:

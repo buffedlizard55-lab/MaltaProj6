@@ -12,8 +12,14 @@
       "source_name": "SF.gov — District 10 Bayview Family Summit",
       "source_url": "https://www.sf.gov/event-20261205-district-10-family-summit-bayview/",
       "supporting_sources": [
-        {"name": "SF.gov — Our Children Our Families Initiative, upcoming events", "url": "https://www.sf.gov/department-ocofi/events/upcoming"},
-        {"name": "SF.gov — This is Your City: 2026 Family Listening Series", "url": "https://www.sf.gov/news-san-francisco-launches-this-is-your-city-2026-family-listening-series"}
+        {
+          "name": "SF.gov — Our Children Our Families Initiative, upcoming events",
+          "url": "https://www.sf.gov/department-ocofi/events/upcoming"
+        },
+        {
+          "name": "SF.gov — This is Your City: 2026 Family Listening Series",
+          "url": "https://www.sf.gov/news-san-francisco-launches-this-is-your-city-2026-family-listening-series"
+        }
       ],
       "values_read_from_source": {
         "dates": "Saturday, December 5, 2026",
@@ -144,7 +150,13 @@
     {
       "decision": "not added (sources upgraded instead)",
       "title": "Sunset Mercantile event pages (Diwali, Dia de los Muertos, Holiday Mercantile, Holidays on Taraval, Cole Valley Nights)",
-      "existing_rows": ["x-s-015", "x-s-016", "x-s-017", "x-s-018", "x-s-019"],
+      "existing_rows": [
+        "x-s-015",
+        "x-s-016",
+        "x-s-017",
+        "x-s-018",
+        "x-s-019"
+      ],
       "source_name": "Sunset Mercantile — event pages",
       "source_url": "https://sunsetmercantilesf.com/",
       "why_not": "All five events are already in the catalogue. This pass fetched each organiser page individually and: upgraded three source links from the home page to the event page; confirmed 'Admission is free!' only on the Sunset Holiday Mercantile page (x-s-017 keeps Free); blanked the four admission cells whose pages publish no price; and corrected the Cole Valley Nights location from 'Carl Street at Parnassus Avenue' to 'Cole Street between Carl and Parnassus Avenue' as the page states.",
@@ -166,5 +178,6 @@
       "why_not": "A staff-only occupational-health clinic, not a public event; outside the catalogue's public-events scope.",
       "fetched_on": "2026-10-18"
     }
-  ]
+  ],
+  "integration": "Applied to the shared dataset by audit/apply_9fca0b37.py v2 during phase 2, after arena-fe7c710c released the shared-file claim via PRs #42-#44. Overlapping corrections already made by that pass were removed from the script; see audit/AUDIT-2026-10-18-9fca0b37.md section 8."
 }

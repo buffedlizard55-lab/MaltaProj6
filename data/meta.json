@@ -3,23 +3,23 @@
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 281,
+    "total": 288,
     "recurring": 126,
     "annual": 57,
-    "special": 98,
-    "verified_rows": 169,
-    "unverified_rows": 112,
-    "free_access_rows": 156,
-    "explicitly_free_rows": 138,
+    "special": 105,
+    "verified_rows": 174,
+    "unverified_rows": 114,
+    "free_access_rows": 157,
+    "explicitly_free_rows": 139,
     "concluded_rows": 46,
-    "flagged_rows": 214,
+    "flagged_rows": 229,
     "sources": 109
   },
   "focus": {
     "gaming": 8,
     "music": 52,
     "ai": 9,
-    "other": 212
+    "other": 219
   },
   "pages": [
     "all-events.html",

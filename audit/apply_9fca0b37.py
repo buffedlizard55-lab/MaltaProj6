@@ -1,31 +1,36 @@
 #!/usr/bin/env python3
 """Apply the arena-9fca0b37 corrections to the published dataset and site.
 
-Session: ``arena-9fca0b37`` (2026-10-18), eleventh verification pass.
+Session: ``arena-9fca0b37`` (2026-10-18), eleventh verification pass —
+**version 2, reconciled with PRs #42-#44** (session ``arena-fe7c710c``).
 
-Every change below was checked against the organiser's or agency's own page
-on 2026-10-18. The page that was fetched is named in the note that the
-change writes into the row, so a reviewer can re-open the same source.
+Version 1 of this script was prepared while ``arena-fe7c710c`` held the live
+claim on the shared files. That session then merged an overlapping integration
+(Castro and Sunset Mercantile price blanking, the Menorah date correction,
+``data/meta.json`` written by the build, README refresh). Every change it
+already made was removed from this script; what remains is only what its pass
+did not cover:
 
-The script is **idempotent**: running it twice leaves the tree unchanged.
-Replacements are exact-string edits, so a file that has already been
-patched is detected and skipped.
+* 7 new rows read from their own official pages (District 10 Bayview Family
+  Summit — free; six Exploratorium After Dark editions — ticketed);
+* 7 row corrections (4 SF Opera prices/times, 3 SF Symphony start times);
+* 13 register items (12 new + 1 coverage group) and updates to the 3 review
+  items whose facts changed (District 10 page found; Menorah prose corrected
+  by the organiser).
+
+Every value below was checked against the page named in the row's own
+``source_url`` on 2026-10-18. The script is idempotent: running it twice
+leaves the tree unchanged (replacements are exact-string edits, already-patched
+content is skipped, and a missing anchor aborts loudly instead of guessing).
 
 Run with:  python3 audit/apply_9fca0b37.py
 """
 from __future__ import annotations
 
 import os
-import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EVENTS_PY = os.path.join(ROOT, "data", "events.py")
-MERGE_PY = os.path.join(ROOT, "scripts", "merge_parallel.py")
-BUILD_PY = os.path.join(ROOT, "scripts", "build_site.py")
-
-# --------------------------------------------------------------------------
-# 1. New rows, each verified on its own official page.
-# --------------------------------------------------------------------------
 
 NEW_ROWS = '''    dict(
         id="spc-family-summit-d10-2026-12-05", title="District 10 Bayview Family Summit",
@@ -99,13 +104,7 @@ NEW_ROWS = '''    dict(
         notes="Added by arena-9fca0b37 on 2026-10-18. The Exploratorium's own After Dark calendar lists 'After Dark: Solstice — Thu, Dec 17 2026 • 6 - 10pm' and the event's own page carries the programme. No numeric ticket price is published, so the cost cell is left for the price review."),
 '''
 
-# --------------------------------------------------------------------------
-# 2. Corrections to existing rows in data/events.py.
-#    (old, new) exact-string pairs.
-# --------------------------------------------------------------------------
-
 EVENTS_EDITS = [
-    # --- SF Opera: the organiser's own pages publish price and start time ---
     (
         '''        schedule="", dates="November 6, 2026",
         location="War Memorial Opera House", area="Civic Center",
@@ -193,7 +192,6 @@ EVENTS_EDITS = [
               "The earlier 'Multiple Venues' location, the blank schedule and the generic 'Ticketed' wording are "
               "replaced by those published values."),''',
     ),
-    # --- SF Symphony: start times are published on the concert pages ---
     (
         '''        schedule="", dates="October 20, 2026",
         location="Davies Symphony Hall, 201 Van Ness Avenue", area="Civic Center",
@@ -257,78 +255,7 @@ EVENTS_EDITS = [
               "5–12, with kids' tickets half off. The start time is filled from that page. The page publishes no "
               "ticket amount, so the cost cell keeps the generic wording and the row stays unverified for price."),''',
     ),
-    # --- Castro Merchants rows: the organiser publishes no admission price ---
-    (
-        '''        cost="Free", organiser="Castro Merchants Association",
-        source_name="Castro Merchants Association — Castro Menorah Lighting",
-        source_url="https://castromerchants.com/events/castro-menorah-lighting", status="verified",''',
-        '''        cost="", organiser="Castro Merchants Association",
-        source_name="Castro Merchants Association — Castro Menorah Lighting",
-        source_url="https://castromerchants.com/events/castro-menorah-lighting", status="unverified",''',
-    ),
-    (
-        '''        schedule="6:00-6:30 p.m.", dates="Monday, November 30, 2026",
-        location="Bank of America Plaza, 501 Castro Street", area="Castro",
-        cost="Free",''',
-        '''        schedule="6:00-6:30 p.m.", dates="Monday, November 30, 2026",
-        location="Bank of America Plaza, 501 Castro Street", area="Castro",
-        cost="",''',
-    ),
-    (
-        '''        source_name="Castro Merchants Association — Castro Holiday Tree Lighting Ceremony 2026",
-        source_url="https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023", status="verified",
-        notes=""),''',
-        '''        source_name="Castro Merchants Association — Castro Holiday Tree Lighting Ceremony 2026",
-        source_url="https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023", status="unverified",
-        notes="Cost blanked 2026-10-18 by arena-9fca0b37: the organiser's own page publishes the date, time and location but no admission price, so 'Free' was an inference and has been removed."),''',
-    ),
-    (
-        '''        schedule="5:00-8:00 p.m., first Friday of the month",
-        dates="Friday, November 6 and Friday, December 4, 2026 (next listed)",
-        location="Castro district businesses, San Francisco", area="Castro",
-        cost="Free",''',
-        '''        schedule="5:00-8:00 p.m., first Friday of the month",
-        dates="Friday, November 6 and Friday, December 4, 2026 (next listed)",
-        location="Castro district businesses, San Francisco", area="Castro",
-        cost="",''',
-    ),
-    (
-        '''        source_name="Castro Merchants Association — Castro Art Walk",
-        source_url="https://castromerchants.com/events", status="verified",''',
-        '''        source_name="Castro Merchants Association — Castro Art Walk",
-        source_url="https://castromerchants.com/events", status="unverified",''',
-    ),
-    (
-        '''        cost="", organiser="Castro Merchants Association with Midnight Sun",
-        source_name="Castro Merchants Association — Events in the Hood",
-        source_url="https://castromerchants.com/events", status="verified",''',
-        '''        cost="", organiser="Castro Merchants Association with Midnight Sun",
-        source_name="Castro Merchants Association — Castro Holiday Tree Fundraiser at Midnight Sun",
-        source_url="https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023-5edw6", status="unverified",''',
-    ),
-    (
-        '''              "holiday-tree fundraiser hosted by Midnight Sun, Saturday, October 24, 2026, 4:00-7:00 p.m. The "
-              "listing states no admission price, so the cost cell is left blank rather than guessed."),''',
-        '''              "holiday-tree fundraiser hosted by Midnight Sun, Saturday, October 24, 2026, 4:00-7:00 p.m. The "
-              "listing states no admission price, so the cost cell is left blank rather than guessed. "
-              "Re-checked 2026-10-18 by arena-9fca0b37: the source link is upgraded from the organiser's "
-              "listing index to this event's own page, and because no admission price is published anywhere on "
-              "it the row is marked unverified for price."),''',
-    ),
 ]
-
-# The Castro Menorah note records a date conflict that the organiser has now
-# fixed on its own page; the structured December 7 date was already correct.
-MENORAH_NOTE_OLD = '''        notes="The organiser's own description gives the date as Monday, December 15 while the calendar listing gives December 7, 2026 — see Flagged for Review."),'''
-MENORAH_NOTE_NEW = '''        notes="Re-checked 2026-10-18 by arena-9fca0b37 on the organiser's own event page. The page previously "
-              "listed a structured date of Monday, December 7, 2026 while its prose said 'on Monday, December 15, "
-              "at 6 PM'; the prose has since been corrected and now reads 'on Monday, December 7, at 6 PM', so the "
-              "conflict is resolved and the row keeps the December 7, 2026 date. The page publishes no admission "
-              "price, so the cost cell is left blank and the row is unverified for price."),'''
-
-# --------------------------------------------------------------------------
-# 3. Review-register items.
-# --------------------------------------------------------------------------
 
 NEW_FLAGS = '''    dict(
         id="flag-sunday-streets-admission-not-published",
@@ -408,29 +335,21 @@ NEW_FLAGS = '''    dict(
         source_url="https://www.sfmta.com/projects/shared-spaces",
         action="Ask the organiser, the Tenderloin Lower Polk Merchant & Property Owners Association, or find an official page that states the admission, then fill the cell from it."),
     dict(
-        id="flag-sunset-mercantile-admission-not-published",
-        title="Sunset Mercantile Diwali, Día de los Muertos, Holidays on Taraval and Cole Valley Nights — admission price not published",
-        detail="Checked 2026-10-18 by arena-9fca0b37 on each organiser page. The Diwali page (sunsetmercantilesf.com/diwali2026/) publishes the date, hours, address and a free-chai mention but no admission price, so the row x-s-015 leaves the cost cell blank. The Día de los Muertos page (sunsetmercantilesf.com/ddlm/) publishes the date, hours and address but no admission price, so the row x-s-016 leaves the cost cell blank. The Holidays on Taraval page (sunsetmercantilesf.com/holidaysontaraval/) publishes the date, hours and address but no admission price, so the row x-s-018 leaves the cost cell blank. The Cole Valley Nights page (sunsetmercantilesf.com/colevalleynights2026/) publishes the date, hours and address but no admission price, so the row x-s-019 leaves the cost cell blank. By contrast the organiser's Sunset Holiday Mercantile page (sunsetmercantilesf.com/sunsetholidaymercantile/) does state 'Admission is free!', so the row x-s-017 keeps its free cost.",
-        source_name="Sunset Mercantile — event pages",
-        source_url="https://sunsetmercantilesf.com/",
-        action="Ask Sunset Mercantile to state the admission on each event page, or find an official statement. Fill in 'Free' only when a page says it."),
-    dict(
-        id="flag-castro-merchants-admission-not-published",
-        title="Castro Art Walk, Castro Holiday Tree Lighting and Castro Menorah Lighting — admission price not published",
-        detail="Checked 2026-10-18 by arena-9fca0b37 on the Castro Merchants Association's own event pages. The Castro Art Walk listing (castromerchants.com/events) describes a self-guided tour of local businesses with no admission price, so the row spc-castro-art-walk has a blank cost cell and is marked unverified for price. The Castro Holiday Tree Lighting Ceremony listing (castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023) publishes the date, the 6:00-6:30 p.m. time and Bank of America Plaza at 501 Castro Street but no admission price, so the row spc-castro-holiday-tree has a blank cost cell and is marked unverified for price (its earlier 'Free' value was an inference from no published price). The Castro Menorah Lighting listing (castromerchants.com/events/castro-menorah-lighting) publishes the date, the 6:00-7:00 p.m. time and Jane Warner Plaza but no admission price, so the row spc-castro-menorah has a blank cost cell and is marked unverified for price (its earlier 'Free' value was an inference from no published price). The same association's own 'Castro Holiday Tree Fundraiser' and 'Halloween in The Castro' listings also publish no price, so the row spc-castro-tree-fundraiser is now marked unverified for price as well.",
-        source_name="Castro Merchants Association — Events in the Hood",
-        source_url="https://castromerchants.com/events",
-        action="Ask the Castro Merchants Association to state the admission on each listing, or find an official statement. Fill in 'Free' only when a page says it."),
-    dict(
         id="flag-ocofi-calendar-d3-link-broken",
         title="SF.gov OCOFI calendar — its own District 3 Chinatown Family Summit link returns 404",
         detail="The city's OCOFI upcoming-events calendar (https://www.sf.gov/department-ocofi/events/upcoming, fetched 2026-10-18) links the District 3 Chinatown Family Summit to https://www.sf.gov/event-20261212-district-3-chinatown-family-summit/ , which returns 'We can't find that page'. The same event is published at https://www.sf.gov/event-20261212-district-3-family-summit/ , which loads and states Saturday, December 12, 2026, 11:00 a.m. to 1:30 p.m., Cost: Free, Betty Ann Ong Recreation Center, 1199 Mason Street. The row spc-family-summit-d3-2026-12-12 uses the working URL; the broken calendar link is recorded here so the city can fix it.",
         source_name="SF.gov — Our Children Our Families Initiative, upcoming events",
         source_url="https://www.sf.gov/department-ocofi/events/upcoming",
         action="No catalogue change needed. If you want it confirmed with the city, report the broken calendar link."),
+    dict(
+        id="flag-unverified-rows-register-coverage",
+        title="Unverified rows whose narrative record lives in another review item (or in the row's own note)",
+        detail="A group entry so that every unverified row is also addressable in this register by its row id. Each row below is published with its official source in the flagged rows table of this page and is marked unverified because its official page publishes no admission price: rec-ferry-building-marketplace (ferrybuildingmarketplace.com; also narrated by flag-four-more-free-claims-unpublished), spc-castro-art-walk (castromerchants.com; also narrated by flag-castro-merchants-cost-not-published), mkt-sf-chinatown-food (moonfestival.org; also narrated by flag-four-more-free-claims-unpublished), spc-dogpatch-love-potion-2026-10-22 (dogpatch.games; also narrated by flag-dogpatch-love-potion-cost), spc-osai-debates-2026-10-19 and spc-osai-awards-2026-10-23 (opensourceaiweek.com; also narrated by flag-opensource-ai-week-bay-area-scope), x-w-010 (sunsetmercantilesf.com/innersunsetflea/), and x-s-015 (sunsetmercantilesf.com/diwali2026/; also narrated by flag-sunset-mercantile-cost-not-published). No value has been changed here; this item only makes the coverage explicit.",
+        source_name="San Francisco Events — flagged for review page",
+        source_url="https://buffedlizard55-lab.github.io/MaltaProj6/flagged.html",
+        action="If a row's situation changes, update its own row first; then split this group entry into a per-row item or close it."),
 '''
 
-# Flags whose content changed on 2026-10-18.
 FLAG_EDITS = [
     (
         '''        id="flag-d10-family-summit-page-missing",
@@ -472,131 +391,9 @@ FLAG_EDITS = [
         source_url="https://castromerchants.com/events",
         action="Closed on 2026-10-18: the organiser's page now shows the same date in both places."),''',
     ),
-]
-
-# --------------------------------------------------------------------------
-# 4. Corrections applied to the parallel session's imported rows.
-#    scripts/merge_parallel.py AUDIT_CORRECTIONS
-# --------------------------------------------------------------------------
-
-MERGE_EDITS = [
     (
-        '''    "s-020": {
-        "dates": "October 15 - November 1, 2026",''',
-        '''    "s-015": {
-        "cost": "",
-        "status": "unverified",
-        "_correction_note": (
-            "AUDIT CORRECTION (arena-9fca0b37, 2026-10-18): the organiser's own page "
-            "https://sunsetmercantilesf.com/diwali2026/ was fetched on 2026-10-18. It states "
-            "November 8th, 2026, 9am-2pm, 37th Avenue between Ortega & Quintara, San Francisco, "
-            "CA 94116, and mentions free chai, but it publishes no admission price. The "
-            "imported 'Free' admission is therefore blanked rather than carried over, and the "
-            "row is marked unverified. The parallel session's raw data/special.json is unchanged."
-        ),
-    },
-    "s-016": {
-        "cost": "",
-        "status": "unverified",
-        "source_name": "Sunset Mercantile — Dia de los Muertos Outer Sunset",
-        "source_url": "https://sunsetmercantilesf.com/ddlm/",
-        "_correction_note": (
-            "AUDIT CORRECTION (arena-9fca0b37, 2026-10-18): the organiser's own page "
-            "https://sunsetmercantilesf.com/ddlm/ was fetched on 2026-10-18. It states "
-            "Sunday, November 1, 2026, 9am-2pm, and gives the location two ways: the page head "
-            "says '37th Avenue at Ortega to Pacheco' while its address block says '37th Avenue "
-            "between Ortega & Quintara'. It publishes no admission price, so the imported 'Free' "
-            "admission is blanked and the row is marked unverified. The parallel session's raw "
-            "data/special.json is unchanged."
-        ),
-    },
-    "s-018": {
-        "cost": "",
-        "status": "unverified",
-        "source_name": "Sunset Mercantile — Holidays On Taraval",
-        "source_url": "https://sunsetmercantilesf.com/holidaysontaraval/",
-        "_correction_note": (
-            "AUDIT CORRECTION (arena-9fca0b37, 2026-10-18): the organiser's own page "
-            "https://sunsetmercantilesf.com/holidaysontaraval/ was fetched on 2026-10-18. It "
-            "states Friday, December 11, 5pm-10pm, and gives the address as 'Taraval Street, "
-            "20th-24th Avenue' with the event held at McCoppin Park and Taraval at 22nd. It "
-            "publishes no admission price, so the imported 'Free' admission is blanked and the "
-            "row is marked unverified. The parallel session's raw data/special.json is unchanged."
-        ),
-    },
-    "s-019": {
-        "cost": "",
-        "status": "unverified",
-        "venue": "Cole Street between Carl and Parnassus Avenue, San Francisco",
-        "source_name": "Sunset Mercantile — Cole Valley Nights",
-        "source_url": "https://sunsetmercantilesf.com/colevalleynights2026/",
-        "_correction_note": (
-            "AUDIT CORRECTION (arena-9fca0b37, 2026-10-18): the organiser's own page "
-            "https://sunsetmercantilesf.com/colevalleynights2026/ was fetched on 2026-10-18. It "
-            "states 'December 10th — Holiday Nights, 4pm - 9pm' and the location 'Cole Street "
-            "between Carl and Parnassus, San Francisco, CA' (the imported value said 'Carl "
-            "Street at Parnassus Avenue', which is the corner rather than the block), and it "
-            "lists the season's market hours as 4/16, 5/21, 8/20, 12/10. It publishes no "
-            "admission price, so the imported 'Free' admission is blanked and the row is marked "
-            "unverified. The parallel session's raw data/special.json is unchanged."
-        ),
-    },
-    "s-017": {
-        "source_name": "Sunset Mercantile — Sunset Holiday Mercantile",
-        "source_url": "https://sunsetmercantilesf.com/sunsetholidaymercantile/",
-        "_correction_note": (
-            "AUDIT CORRECTION (arena-9fca0b37, 2026-10-18): the organiser's own event page "
-            "https://sunsetmercantilesf.com/sunsetholidaymercantile/ was fetched on 2026-10-18. "
-            "It states 'Saturday, December 5 + Sunday, December 6, 11 am-5 pm' at the San "
-            "Francisco County Fair Building in Golden Gate Park and states 'Admission is free!' "
-            "and 'Free admission', so the imported 'Free' admission is confirmed and the source "
-            "link is upgraded from the organiser's home page to the event page. The parallel "
-            "session's raw data/special.json is unchanged."
-        ),
-    },
-    "s-020": {
-        "dates": "October 15 - November 1, 2026",''',
-    ),
-]
-
-# --------------------------------------------------------------------------
-# 5. The build writes data/meta.json so its counts cannot drift again.
-# --------------------------------------------------------------------------
-
-BUILD_EDITS = [
-    (
-        '''    print(f"Wrote {len(written)} pages, {len(EVENTS)} events, {len(FLAGGED)} flagged items.")''',
-        '''    # Machine-readable site metadata, written from the same data as the pages
-    # so the counts can never drift from what is published. (Written here
-    # since 2026-10-18 by session arena-9fca0b37; before that the file was
-    # hand-maintained and went stale.)
-    meta = {
-        "site": SITE_NAME,
-        "verified_on": VERIFIED_ON,
-        "generated_on": str(date.today()),
-        "counts": {
-            "total": len(EVENTS),
-            "recurring": sum(1 for e in EVENTS if e.get("group") == "recurring"),
-            "annual": sum(1 for e in EVENTS if e.get("group") == "annual"),
-            "special": sum(1 for e in EVENTS if e.get("group") == "special"),
-            "flagged_rows": sum(1 for e in EVENTS if e.get("status") != "verified"),
-            "unverified_rows": sum(1 for e in EVENTS if e.get("status") != "verified"),
-            "concluded_rows": sum(1 for e in EVENTS if e.get("timing") == "concluded"),
-            "sources": len({(e.get("source_url") or "").split("/")[2] for e in EVENTS
-                            if (e.get("source_url") or "").startswith("https://")}),
-            "free_access_rows": sum(1 for e in EVENTS if _has_free_access(e)),
-        },
-        "focus": {key: sum(1 for e in EVENTS if e.get("focus", "other") == key)
-                  for key, _label in FOCUS_LABELS},
-        "pages": sorted(written),
-        "review_sheet": "data/review.csv",
-        "spreadsheet_export": "data/events.csv",
-    }
-    with open(os.path.join(ROOT, "data", "meta.json"), "w", encoding="utf-8") as fh:
-        json.dump(meta, fh, indent=2, ensure_ascii=False)
-        fh.write("\\n")
-
-    print(f"Wrote {len(written)} pages, {len(EVENTS)} events, {len(FLAGGED)} flagged items.")''',
+        '''        detail="The catalogue has two separate signals and they do not always agree: a blank cell means the official source does not state that value, while the verified / unverified badge means the row's published values were confirmed against the source. A recurring programme can be fully verified while legitimately having no single confirmed date. As of the 2026-10-18 build, 156 rows are marked verified and 28 of them still have at least one blank among schedule, location and cost. Separately, 111 rows publish no day-level date at all, which is expected for weekly and open-ended programmes. This is recorded rather than silently changed because re-badging those verified rows as unverified would misrepresent them.",''',
+        '''        detail="The catalogue has two separate signals and they do not always agree: a blank cell means the official source does not state that value, while the verified / unverified badge means the row's published values were confirmed against the source. A recurring programme can be fully verified while legitimately having no single confirmed date. As of the 2026-10-18 build by session arena-9fca0b37, 174 rows are marked verified and 23 of them still have at least one blank among schedule, location and cost. Separately, 113 rows publish no day-level date at all, which is expected for weekly and open-ended programmes. This is recorded rather than silently changed because re-badging those verified rows as unverified would misrepresent them.",''',
     ),
 ]
 
@@ -607,7 +404,6 @@ def apply_edits(path: str, edits) -> int:
     applied = 0
     for old, new in edits:
         if new in text:
-            print(f"  = {os.path.basename(path)}: already applied")
             continue
         if old not in text:
             raise SystemExit(
@@ -628,7 +424,6 @@ def insert_after(path: str, marker: str, block: str) -> int:
     with open(path, encoding="utf-8") as fh:
         text = fh.read()
     if block.strip() in text:
-        print(f"  = {os.path.basename(path)}: block already present")
         return 0
     if text.count(marker) != 1:
         raise SystemExit(f"marker is not unique in {path}: {marker[:120]!r}")
@@ -639,14 +434,14 @@ def insert_after(path: str, marker: str, block: str) -> int:
 
 
 def main() -> int:
-    print("arena-9fca0b37 corrections")
+    print("arena-9fca0b37 corrections (v2, reconciled with PRs #42-#44)")
     n = insert_after(
         EVENTS_PY,
         "that fee is not recorded.\"),\n",
         NEW_ROWS,
     )
     print(f"  + data/events.py: {n} new event rows")
-    n = apply_edits(EVENTS_PY, EVENTS_EDITS + [(MENORAH_NOTE_OLD, MENORAH_NOTE_NEW)])
+    n = apply_edits(EVENTS_PY, EVENTS_EDITS)
     print(f"  ~ data/events.py: {n} row corrections")
     n = insert_after(
         EVENTS_PY,
@@ -656,10 +451,6 @@ def main() -> int:
     print(f"  + data/events.py: {n} new review items")
     n = apply_edits(EVENTS_PY, FLAG_EDITS)
     print(f"  ~ data/events.py: {n} review-item updates")
-    n = apply_edits(MERGE_PY, MERGE_EDITS)
-    print(f"  ~ scripts/merge_parallel.py: {n} imported-row corrections")
-    n = apply_edits(BUILD_PY, BUILD_EDITS)
-    print(f"  ~ scripts/build_site.py: {n} build changes")
     print("done")
     return 0
 
