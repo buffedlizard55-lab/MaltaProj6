@@ -1,16 +1,53 @@
 {
-  "site": "SF Events Index",
+  "site": "San Francisco Events",
   "verified_on": "2026-10-18",
   "generated_on": "2026-10-18",
   "counts": {
-    "total": 225,
-    "recurring": 119,
-    "annual": 55,
-    "special": 51,
-    "flagged_rows": 106,
-    "unverified_rows": 76,
-    "concluded_rows": 43,
-    "sources": 101
+    "total": 235,
+    "recurring": 123,
+    "annual": 56,
+    "special": 56,
+    "verified": 156,
+    "review_gap": 79,
+    "concluded": 44,
+    "free": 141,
+    "free_cost_wording": 125,
+    "flagged_rows": 181,
+    "sources": 104
+  },
+  "focus": {
+    "gaming": 4,
+    "music": 25,
+    "ai": 5,
+    "other": 201
+  },
+  "focus_free": {
+    "gaming": 3,
+    "music": 11,
+    "ai": 2,
+    "other": 125
+  },
+  "categories": {
+    "arts": 74,
+    "civic": 37,
+    "community": 78,
+    "markets": 29,
+    "sports": 10,
+    "technology": 7
+  },
+  "page_counts": {
+    "all-events.html": 0,
+    "annual.html": 56,
+    "arts.html": 74,
+    "civic.html": 37,
+    "community.html": 78,
+    "free-events.html": 141,
+    "markets.html": 29,
+    "music.html": 25,
+    "recurring.html": 123,
+    "special.html": 56,
+    "sports.html": 10,
+    "technology.html": 15
   },
   "pages": [
     "all-events.html",
@@ -20,13 +57,16 @@
     "civic.html",
     "community.html",
     "flagged.html",
+    "free-events.html",
     "index.html",
     "markets.html",
     "methodology.html",
+    "music.html",
     "recurring.html",
     "sources.html",
     "special.html",
     "sports.html",
+    "technology.html",
     "weekly.html"
   ],
   "review_sheet": "data/review.csv",
