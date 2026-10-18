@@ -890,3 +890,31 @@ This session kept the blank cell *and* the `unverified` badge — no price is in
 *as published: "Ticketed"*, visually separated from the price. Nothing that was blanked has been put
 back into the price position. If the project would rather hide that wording entirely, deleting the
 `.cost-wording` span in `cost_cell()` and `_summary_row()` restores PR #36's exact behaviour.
+
+---
+
+## MERGED — `arena-61a46409` → `main`, PR #37
+
+| | |
+|---|---|
+| **PR** | https://github.com/buffedlizard55-lab/MaltaProj6/pull/37 |
+| **Merged** | 2026-10-18T10:29:17Z (merge commit `7a938f3`) |
+| **Pages** | `buffedlizard55-lab.github.io/MaltaProj6/` — build status **built** at 2026-10-18T10:29:38Z, no error |
+| **Final counts** | 235 entries (123 recurring · 56 annual · 56 special) · 156 verified / 79 review gap · 181 review items · 44 concluded · 141 free · 104 source domains · 18 pages |
+| **Focus split** | gaming 4 (3 free) · music 25 (11 free) · AI 5 (2 free) · everything else 201 |
+| **Checks** | `build_site.py` reproducible (two builds, no diff) · `validate.py` OK · `audit/check_61a46409.py` hard problems: none · 0 local link/anchor issues across all 18 HTML files |
+
+Verified locally before merging — nothing broken was merged.
+
+### Still open for a human
+
+1. **Cost-wording policy** (described above): PR #36 blanks any cost with no numeric amount; this session keeps that blank price and badge but renders the source's own wording underneath. Needs a yes/no on whether that wording stays visible.
+2. **`spc-ai-week-sf-2026`** rests only on `week-of-ai.com`, an aggregator that says it is "100% free to use" while several listed events are "guests only"/"invite only". It is published as `verified` with that caveat in `flag-ai-week-sf-2026-entry-terms`. Drop it if aggregators are not acceptable sources.
+3. **Three Moscone rows publish no price** (Current SF, Ignite, Cloudflare Connect) — their cost cells are blank and each has its own review item.
+4. **AI Engineer Code Summit 2026** publishes no venue beyond "San Francisco" — flagged.
+5. **28 rows are `verified` with a blank schedule, location or cost** — see `flag-verified-rows-with-blank-core-cell` for what `verified` means here.
+6. **111 rows carry no day-level date**, which is expected for weekly and open-ended programmes, but it does mean the site cannot sort them by date.
+7. **SFPL rolling calendar** — library sessions are published strand-by-strand with no fixed dates; do not back-fill dates from the catalogue.
+8. **AI-adjacent conventions** (Dreamforce, RSA, Cloudflare) are deliberately not tagged `ai`.
+
+Full audit, source log and rejected candidates: `audit/AUDIT-2026-10-18-61a46409.md`.
