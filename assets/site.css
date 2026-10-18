@@ -56,6 +56,8 @@ p { margin: 0 0 12px; }
 /* Hero */
 .hero { background: var(--panel); border: 1px solid var(--line); border-left: 5px solid var(--brand); border-radius: var(--radius); padding: 26px 28px; }
 .hero h1 { max-width: 22ch; }
+.coverage-note { margin: 16px 0 0; padding: 12px 14px; border: 1px solid #ead9a5; border-radius: 8px; background: #fff9e8; color: #53420f; font-size: .92rem; }
+.coverage-note a { font-weight: 650; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .btn { display: inline-block; background: var(--brand); color: #fff; text-decoration: none; padding: 9px 16px; border-radius: 8px; font-weight: 600; font-size: .93rem; }
 .btn:hover { background: var(--brand-dark); color: #fff; }

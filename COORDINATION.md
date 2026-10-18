@@ -16,7 +16,7 @@ Shared task board for all agent sessions working on this repository.
 
 | Session ID | Branch | Scope | State |
 |---|---|---|---|
-| `arena-f54a124f` | `arena/f54a124f-maltaproj6` | Final integration audit: truthful scope/completeness copy, README counts, canonical validation, semantic table markup; `COORDINATION.md`, `README.md`, `scripts/build_site.py`, `tools/validate.py`, generated HTML | 🟡 in progress |
+| `arena-f54a124f` | `arena/f54a124f-maltaproj6` | Final integration audit: truthful scope/completeness copy, README counts, canonical validation, semantic table markup; `COORDINATION.md`, `README.md`, `scripts/build_site.py`, `tools/validate.py`, generated HTML | ✅ complete |
 | `arena-b0f3cfd3` | `arena/b0f3cfd3-maltaproj6` | Research, canonical dataset (`data/events.py`), site build (`scripts/`, `assets/site.css`, generated pages), integration, PR/merge | ✅ complete |
 | `arena-8fb52462` | `arena/8fb52462-maltaproj6` | Scaffolding, schema, per-task JSON data files (`data/weekly.json`, `data/annual.json`, `data/special.json`, `data/flagged.json`, `data/sources.json`), tooling (`tools/`), own site views (`weekly.html`, `analysis.html`, `sources.html`, `assets/style.css`, `assets/app.js`) | ✅ complete — merged into `main` at `286ae68`, and folded into the union dataset by `arena-b0f3cfd3` |
 
@@ -44,6 +44,12 @@ That conflict is resolved below, in **Merge conflict resolution**, without disca
 | 9 | "Flagged for Review" page | ✅ done | `arena-b0f3cfd3` | `data/events.py` (FLAGGED), `flagged.html` | **72** published items: conflicts between official sources, blank-cell rows, ended events, out-of-scope exclusions. 19 from this session + 53 merged from the parallel session. |
 | 10 | Integration: merge branches, re-verify, link check, publish | ✅ done | `arena-b0f3cfd3` | `data/*`, `scripts/*`, `tools/*`, `*.html`, `assets/*` | Merged `origin/main` (the parallel session's work), unioned both datasets, re-ran the link/anchor/tag checker over all 14 pages → 0 problems. Row counts on all 8 listing pages match the dataset. |
 | 11 | PR → main, merge, confirm Pages deploy | ✅ done | `arena-b0f3cfd3` | — | PR **#7** https://github.com/buffedlizard55-lab/MaltaProj6/pull/7 — merged to `main` 2026-10-18T01:10:21Z as `5c0c788` (main dataset + site). PR **#9** https://github.com/buffedlizard55-lab/MaltaProj6/pull/9 — merged 2026-10-18T01:13:27Z as `3f16ffb` (final re-sync + register). GitHub Pages build for `3f16ffb` completed with status `built`, `error: null`. Live site confirmed at https://buffedlizard55-lab.github.io/MaltaProj6/ . PR #2 was auto-closed by GitHub when the head branch absorbed the base branch's tip commit; PRs #7 and #9 replaced it from the same branch. |
+
+## Task board — `arena-f54a124f`
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| 12 | Final integration audit: scope claims, documentation counts, HTML semantics and canonical validation | ✅ done | `arena-f54a124f` | `COORDINATION.md`, `README.md`, `scripts/build_site.py`, `tools/validate.py`, generated HTML, `assets/site.css`, `data/events.json` | Replaced unsupported exhaustiveness claims with an explicit curated-snapshot limitation; fixed stale review counts; rendered a dedicated source column and valid 9-cell event rows; rebuilt all pages; validator passes. Validator is structural and does not fetch/authenticate source content. |
 
 ## Task board — `arena-8fb52462` (parallel session, as recorded by that session)
 
@@ -89,8 +95,7 @@ That conflict is resolved below, in **Merge conflict resolution**, without disca
 `data/annual.json` and `data/special.json` into this project's schema and merges them into `data/events.py`.
 59 rows were added; 25 rows that describe an event already present were **not** duplicated (curated list in
 `SKIP_DUPLICATES` in `scripts/merge_parallel.py`). The parallel session's 34 flagged items are merged into the
-same "Flagged for review" page (53 items in total). Every imported row keeps its own official source link and
-carries a note recording which session found it.
+same "Flagged for review" page (72 items in the final union: 19 from the first pass plus 53 from the parallel pass). Every imported row keeps its own official source link and carries a note recording which session found it.
 
 ---
 
@@ -107,13 +112,13 @@ carries a note recording which session found it.
 | Sports | `sports.html` | 9 rows — teams, races, active recreation |
 | Markets & food | `markets.html` | 29 rows — farmers markets, food halls, street markets |
 | Community & parks | `community.html` | 67 rows — neighbourhood programmes, festivals, free recreation |
-| Flagged for review | `flagged.html` | 72 published discrepancies / gaps / exclusions + every row carrying a blank cell |
+| Flagged for review | `flagged.html` | 72 published review items + 39 rows marked unverified for a gap or conflict |
 | Method | `methodology.html` | Scope, sourcing rules, build process, official domains used, known limitations, supplementary views |
 | Weekly & monthly (parallel session) | `weekly.html` | The parallel session's recurring-event view |
 | Analysis (parallel session) | `analysis.html` | The parallel session's category / neighbourhood analysis |
 | Source registry (parallel session) | `sources.html` | The parallel session's list of the 58 official sources it checked |
 
-Every event appears on exactly **one** type page (recurring / annual / special) **and** exactly **one** category page,
+Each listed event appears on exactly **one** type page (recurring / annual / special) **and** exactly **one** category page,
 so the two views can never disagree. The build script re-checks this on every run.
 
 ---
@@ -203,3 +208,12 @@ so the two views can never disagree. The build script re-checks this on every ru
 ### From `arena-8fb52462` (34, merged verbatim)
 
 `f-001` Carnaval SF domain hijack · `f-002` Fillmore Jazz legacy domain hijack · `f-003` Dragonspunk Farmers Market source unavailable · `f-004` SOMA West Farmers Market source unavailable · `f-005` St. Patrick's Day Parade source unavailable · `f-006` North Beach Festival source unavailable · `f-007` Fringe Festival domain hijack · `f-008` Union Square ice rink / tree lighting domain parked · `f-009` San Francisco Auto Show source unavailable · `f-010` Presidio Picnic source unavailable · `f-011` Yerba Buena Gardens Festival source unavailable · `f-012` Asian Art Museum exhibitions page broken · `f-013` FAMSF free-admission page broken · `f-014` Alemany Farmers Market hours conflict · `f-015` North Beach Farmers Market address/season conflict · `f-016` SF Environment farmers-market directory stale · `f-017` Folsom Street Fair 2027 date check · `f-018` Castro Street Fair 2027 date check · `f-019` Italian Heritage Parade 2027 date check · `f-020` SFMTA shared-space permit expiry · `f-021` 2027 dates for major annual events not yet announced · `f-022` Day of the Dead Festival of Altars stale page · `f-023` Oakland and Santa Clara scope exclusion · `f-024` Daly City Street Festival scope exclusion · `f-025` TreasureFest dated schedule unverified · `f-026` Litquake 2026 run dates unverified · `f-027` RSA Conference 2027 dates unverified · `f-028` annual event end dates unverified · `f-029` SF Marathon page copy date inconsistency · `f-030` Bay to Breakers page copy date inconsistency · `f-031` Muni Heritage Weekend source unavailable · `f-032` Pokemon World Championship source unavailable · `f-033` Potrero Hill Festival time conflict · `f-034` Haight-Ashbury Street Fair date check.
+
+## Final audit log — `arena-f54a124f` (2026-10-18)
+
+- Reviewed the repo and the existing board before claiming task 12. The prior sessions' research, 205-row dataset, 72 review items and published pages were already present on `main`.
+- Replaced front-page and README wording that implied a literally exhaustive citywide event list. The catalogue is now described accurately as a curated snapshot, with an explicit coverage warning and the official SF.gov citywide calendar linked as another discovery source. Checked that SF.gov calendar page directly on 2026-10-18: [Citywide meetings and events](https://www.sf.gov/events/upcoming). This supports the discovery link only; it is not evidence that the catalogue is exhaustive.
+- Corrected stale README and coordination summary counts (review items 72, not 53) and distinguished the 39 rows marked for review from the review-item count.
+- Fixed invalid event-table markup (title content previously sat outside a `<td>`, and rows had fewer data cells than the header). The rebuilt listing rows now have nine cells, including a dedicated official-source column; unverified rows on `flagged.html` have stable anchors.
+- Replaced the old validator's checks against the parallel session's raw files with checks against the published union dataset: unique IDs, HTTPS source links, event membership on type/category pages, row-level source links, unverified flags, review-row links, table cell counts, and local links/fragments. **Validation result:** `events=205 verified=166 review_gap=39 review_items=72 domains=88 pages=14`; `python3 tools/validate.py` passes. `python3 -m py_compile scripts/build_site.py tools/validate.py` and `python3 scripts/build_site.py` also pass.
+- Limitation: the audit validator is structural; it does not fetch or authenticate the 205 source-page contents or prove inventory completeness. Source verification recorded by prior sessions remains as logged above and should be refreshed against official pages as schedules change.

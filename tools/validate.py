@@ -1,196 +1,200 @@
 #!/usr/bin/env python3
-"""Validate data/*.json and the generated HTML.  Exit code 1 on any error."""
-import datetime as dt
+"""Validate the published San Francisco events dataset and static pages.
+
+This checks structural integrity, source-link presence, HTML table consistency,
+category/type membership, and local links. It does not fetch URLs or authenticate
+source-page contents; source review and completeness remain human research tasks.
+"""
+from __future__ import annotations
+
 import json
 import os
 import sys
-from urllib.parse import urlparse
+from collections import Counter
+from html.parser import HTMLParser
+from urllib.parse import unquote, urlsplit
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VERIFIED_ON = dt.date(2026, 10, 18)
-
-BAD_HOST_PARTS = (
-    "wikipedia", "funcheap", "dylanstours", "sftravel", "timeout", "yelp",
-    "tripadvisor", "eventbrite", "facebook.com", "instagram.com", "twitter.com",
-    "x.com", "tiktok", "reddit", "google.com/search", "bing.com",
-)
-
-COMMON_REQUIRED = ["id", "name", "category", "venue", "neighborhood", "organizer",
-                   "source_url", "source_title", "source_type", "verified_on", "unverified_fields"]
-RECURRING_REQUIRED = ["cadence", "schedule"]
-ANNUAL_REQUIRED = ["edition", "dates", "next_edition_status"]
-SPECIAL_REQUIRED = ["start_date", "end_date", "date_status", "type"]
-
-OPTIONAL_FIELDS = {"address", "admission", "notes", "season", "edition", "dates",
-                   "display_dates", "next_edition_status", "typical_month",
-                   "start_date", "end_date", "date_status", "type",
-                   "schedule", "cadence"}
-# schedule may legitimately be unknown (a festival with no published timetable).
-ALLOWED_BLANK = {"address", "admission", "notes", "season", "edition", "dates",
-                 "display_dates", "next_edition_status", "typical_month",
-                 "start_date", "end_date"}
-
-CATEGORY_FILES = {
-    "weekly": ("weekly.json", {"weekly", "monthly"}),
-    "annual": ("annual.json", {"annual"}),
-    "special": ("special.json", {"special"}),
+DATA = os.path.join(ROOT, "data", "events.json")
+GROUP_PAGE = {"recurring": "recurring.html", "annual": "annual.html", "special": "special.html"}
+CATEGORY_PAGE = {
+    "civic": "civic.html",
+    "arts": "arts.html",
+    "sports": "sports.html",
+    "markets": "markets.html",
+    "community": "community.html",
 }
+EXPECTED_CELLS = 9  # Event, type, schedule, dates, location, area, cost, organiser, source
 
 
-def load(name):
-    with open(os.path.join(ROOT, "data", name), encoding="utf-8") as fh:
-        return json.load(fh)
+class PageAudit(HTMLParser):
+    """Collect row IDs, table cell counts, anchor links, and element IDs."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.links: list[str] = []
+        self.element_ids: set[str] = set()
+        self.rows: dict[str, dict] = {}
+        self.all_rows: list[dict] = []
+        self.current_row: dict | None = None
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        element_id = attrs.get("id")
+        if element_id:
+            self.element_ids.add(element_id)
+        if tag == "a" and attrs.get("href"):
+            self.links.append(attrs["href"])
+        if tag == "tr":
+            self.current_row = {"id": element_id, "cells": 0, "links": [], "text": []}
+        elif self.current_row is not None:
+            if tag == "td":
+                self.current_row["cells"] += 1
+            elif tag == "a" and attrs.get("href"):
+                self.current_row["links"].append(attrs["href"])
+
+    def handle_data(self, data):
+        if self.current_row is not None:
+            self.current_row["text"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "tr" and self.current_row is not None:
+            row = self.current_row
+            self.all_rows.append(row)
+            if row["id"]:
+                self.rows[row["id"]] = row
+            self.current_row = None
 
 
-def main():
-    errors, warnings = [], []
-    events, ids = [], set()
-    sources = {s["url"]: s for s in load("sources.json")["sources"]}
+def audit_page(filename: str) -> PageAudit:
+    path = os.path.join(ROOT, filename)
+    parser = PageAudit()
+    with open(path, encoding="utf-8") as fh:
+        parser.feed(fh.read())
+    return parser
 
-    for cat, (filename, allowed_cats) in CATEGORY_FILES.items():
-        payload = load(filename)
-        if payload.get("verified_on") != VERIFIED_ON.isoformat():
-            errors.append(f"{filename}: verified_on is {payload.get('verified_on')!r}")
-        rows = payload.get("events", [])
-        if not rows:
-            errors.append(f"{filename}: no events")
-        for ev in rows:
-            where = f"{filename}:{ev.get('id', '?')}"
-            events.append(ev)
-            if ev["id"] in ids:
-                errors.append(f"{where}: duplicate id")
-            ids.add(ev["id"])
-            if ev["category"] not in allowed_cats:
-                errors.append(f"{where}: category {ev['category']!r} not allowed in this file")
-            required = list(COMMON_REQUIRED)
-            if cat == "weekly":
-                required += RECURRING_REQUIRED
-            elif cat == "annual":
-                required += ANNUAL_REQUIRED
-            else:
-                required += SPECIAL_REQUIRED
-            for field in required:
-                if field not in ev:
-                    errors.append(f"{where}: missing field {field!r}")
-                    continue
-                value = ev[field]
-                if field == "unverified_fields":
-                    continue
-                if value in ("", None, []) and field not in ALLOWED_BLANK \
-                        and field not in ev.get("unverified_fields", []):
-                    errors.append(f"{where}: empty required field {field!r}")
-            if not isinstance(ev.get("unverified_fields"), list):
-                errors.append(f"{where}: unverified_fields must be a list")
+
+def main() -> int:
+    errors: list[str] = []
+    with open(DATA, encoding="utf-8") as fh:
+        payload = json.load(fh)
+    events = payload.get("events", [])
+    flagged = payload.get("flagged", [])
+
+    if payload.get("event_count") != len(events):
+        errors.append(f"data/events.json: event_count={payload.get('event_count')} but rows={len(events)}")
+    if payload.get("flagged_count") != len(flagged):
+        errors.append(f"data/events.json: flagged_count={payload.get('flagged_count')} but rows={len(flagged)}")
+
+    event_ids = [event.get("id", "") for event in events]
+    duplicate_ids = [event_id for event_id, count in Counter(event_ids).items() if not event_id or count != 1]
+    if duplicate_ids:
+        errors.append(f"data/events.json: empty or duplicate event IDs: {duplicate_ids}")
+
+    events_by_id = {event["id"]: event for event in events if event.get("id")}
+    pages = sorted(name for name in os.listdir(ROOT) if name.endswith(".html"))
+    audits: dict[str, PageAudit] = {}
+    for filename in pages:
+        audits[filename] = audit_page(filename)
+
+    # All event listings must use valid HTTPS source links and appear exactly once
+    # on both their recurrence page and their subject page, with the link in-row.
+    for event in events:
+        event_id = event.get("id", "?")
+        source_url = event.get("source_url", "")
+        if urlsplit(source_url).scheme != "https" or not urlsplit(source_url).netloc:
+            errors.append(f"{event_id}: source_url is not an absolute HTTPS URL: {source_url!r}")
+        if event.get("group") not in GROUP_PAGE:
+            errors.append(f"{event_id}: unknown group {event.get('group')!r}")
+        if event.get("category") not in CATEGORY_PAGE:
+            errors.append(f"{event_id}: unknown category {event.get('category')!r}")
+
+        expected_pages = []
+        if event.get("group") in GROUP_PAGE:
+            expected_pages.append(GROUP_PAGE[event["group"]])
+        if event.get("category") in CATEGORY_PAGE:
+            expected_pages.append(CATEGORY_PAGE[event["category"]])
+        for filename in expected_pages:
+            row = audits[filename].rows.get(event_id)
+            if row is None:
+                errors.append(f"{filename}: missing event row {event_id}")
                 continue
-            for field in ev["unverified_fields"]:
-                root = field.split(".", 1)[0]
-                if root not in OPTIONAL_FIELDS:
-                    errors.append(f"{where}: unverified field {field!r} is not an optional schema field")
-                if "." not in field and ev.get(field):
-                    errors.append(f"{where}: field {field!r} is listed unverified but is populated")
+            if row["cells"] != EXPECTED_CELLS:
+                errors.append(f"{filename}:{event_id}: expected {EXPECTED_CELLS} table cells, found {row['cells']}")
+            if source_url not in row["links"]:
+                errors.append(f"{filename}:{event_id}: official source link missing from its row")
+            if event.get("status") == "unverified" and "unverified" not in " ".join(row["text"]).lower():
+                errors.append(f"{filename}:{event_id}: unverified status badge missing")
 
-            url = ev.get("source_url", "")
-            if not url.startswith("https://"):
-                errors.append(f"{where}: source_url must be https")
-            if any(bad in url for bad in BAD_HOST_PARTS):
-                errors.append(f"{where}: source_url points at a non-official host ({url})")
-            if url not in sources:
-                errors.append(f"{where}: source_url not registered in sources.json ({url})")
-            if ev.get("verified_on") != VERIFIED_ON.isoformat():
-                errors.append(f"{where}: verified_on mismatch")
+    # Confirm each group/category page contains exactly the records assigned to it.
+    for group, filename in GROUP_PAGE.items():
+        expected = {event["id"] for event in events if event.get("group") == group}
+        actual = {event_id for event_id in audits[filename].rows if event_id in events_by_id}
+        if actual != expected:
+            errors.append(f"{filename}: row membership differs (expected {len(expected)}, found {len(actual)})")
+    for category, filename in CATEGORY_PAGE.items():
+        expected = {event["id"] for event in events if event.get("category") == category}
+        actual = {event_id for event_id in audits[filename].rows if event_id in events_by_id}
+        if actual != expected:
+            errors.append(f"{filename}: row membership differs (expected {len(expected)}, found {len(actual)})")
 
-            # Date sanity.
-            for field in ("start_date", "end_date"):
-                value = ev.get(field)
-                if not value:
-                    continue
-                try:
-                    d = dt.date.fromisoformat(value)
-                except ValueError:
-                    errors.append(f"{where}: {field} is not ISO ({value})")
-                    continue
-                if field == "end_date" and not ev.get("start_date"):
-                    warnings.append(f"{where}: end_date without start_date")
-                if field == "end_date" and ev.get("start_date"):
-                    try:
-                        if d < dt.date.fromisoformat(ev["start_date"]):
-                            errors.append(f"{where}: end_date before start_date")
-                    except ValueError:
-                        pass
-            if ev.get("dates"):
-                for part in ev["dates"].split(";"):
-                    try:
-                        dt.date.fromisoformat(part.strip())
-                    except ValueError:
-                        errors.append(f"{where}: dates entry not ISO ({part})")
+    # Review entries have dedicated rows with their official evidence link.
+    if "flagged.html" not in audits:
+        errors.append("flagged.html: page missing")
+    else:
+        flagged_audit = audits["flagged.html"]
+        flagged_ids = [item.get("id", "") for item in flagged]
+        for item in flagged:
+            item_id = item.get("id", "?")
+            url = item.get("source_url", "")
+            if urlsplit(url).scheme != "https" or not urlsplit(url).netloc:
+                errors.append(f"{item_id}: review source_url is not an absolute HTTPS URL")
+            row = flagged_audit.rows.get(item_id)
+            if row is None:
+                errors.append(f"flagged.html: missing review item {item_id}")
+            elif url not in row["links"]:
+                errors.append(f"flagged.html:{item_id}: evidence source link missing from row")
+        if len(flagged_ids) != len(set(flagged_ids)):
+            errors.append("data/events.json: duplicate review item IDs")
 
-            if ev["category"] == "special":
-                status = ev.get("date_status")
-                if status not in ("confirmed", "partial", "not announced"):
-                    errors.append(f"{where}: bad date_status {status!r}")
-                if status == "confirmed" and not ev.get("start_date"):
-                    errors.append(f"{where}: confirmed status without a start_date")
-                if status == "not announced" and (ev.get("start_date") or ev.get("end_date")):
-                    errors.append(f"{where}: not announced but dates present")
-            if ev["category"] == "annual":
-                if ev.get("edition") == "2026" and not ev.get("dates"):
-                    warnings.append(f"{where}: 2026 edition without recorded dates")
-                if ev.get("dates") and not ev.get("edition"):
-                    errors.append(f"{where}: dates without edition")
+        unverified_rows = [event for event in events if event.get("status") == "unverified"]
+        review_table_ids = {row["id"] for row in flagged_audit.all_rows if row["id"]}
+        # The unverified table has one review-<event-id> row per record, with a source link.
+        missing_unverified = [event["id"] for event in unverified_rows if f"review-{event['id']}" not in review_table_ids]
+        if missing_unverified:
+            errors.append(f"flagged.html: unverified rows absent from the review table: {missing_unverified}")
+        for event in unverified_rows:
+            row = flagged_audit.rows.get(f"review-{event['id']}")
+            if row and event.get("source_url") not in row["links"]:
+                errors.append(f"flagged.html:review-{event['id']}: official source link missing from review row")
 
-    flagged = load("flagged.json")
-    fids = set()
-    for item in flagged["items"]:
-        for field in ("id", "kind", "item", "issue", "evidence_url", "action"):
-            if not item.get(field):
-                errors.append(f"flagged:{item.get('id', '?')}: missing {field}")
-        if item["id"] in fids:
-            errors.append(f"flagged: duplicate id {item['id']}")
-        fids.add(item["id"])
-        if not item["evidence_url"].startswith("https://"):
-            errors.append(f"flagged:{item['id']}: evidence_url must be https")
-        for related in [r.strip() for r in (item.get("related_event") or "").split(";") if r.strip()]:
-            if related not in ids:
-                errors.append(f"flagged:{item['id']}: related_event {related!r} does not exist")
-
-    # Every unverified row must be reachable from flagged.html.
-    flagged_html = ""
-    path = os.path.join(ROOT, "flagged.html")
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as fh:
-            flagged_html = fh.read()
-        for ev in events:
-            if ev.get("unverified_fields") and f"#{ev['id']}" not in flagged_html:
-                errors.append(f"flagged.html: unverified row {ev['id']} not listed")
-
-    # Internal links resolve.
-    pages = sorted(f for f in os.listdir(ROOT) if f.endswith(".html"))
-    for name_ in pages:
-        with open(os.path.join(ROOT, name_), encoding="utf-8") as fh:
-            text = fh.read()
-        for target in {p.split("#")[0] for p in __import__("re").findall(r'href="([^"]+)"', text)}:
-            if not target or target.startswith(("http", "#", "mailto:")):
+    # Check all local links and in-page fragments across the published HTML files.
+    for filename, audit in audits.items():
+        for href in audit.links:
+            parts = urlsplit(href)
+            if parts.scheme or parts.netloc or href.startswith(("mailto:", "tel:", "javascript:")):
                 continue
-            if not os.path.exists(os.path.join(ROOT, target)):
-                errors.append(f"{name_}: broken internal link {target!r}")
+            target_name = unquote(parts.path)
+            target_path = os.path.join(ROOT, target_name) if target_name else os.path.join(ROOT, filename)
+            if not os.path.isfile(target_path):
+                errors.append(f"{filename}: broken local link {href!r}")
+                continue
+            if parts.fragment:
+                target_page = filename if not target_name else target_name
+                target_audit = audits.get(target_page)
+                if target_audit and unquote(parts.fragment) not in target_audit.element_ids:
+                    errors.append(f"{filename}: missing fragment target {href!r}")
 
-    # Every row's source domain must appear on the sources page.
-    sources_html = ""
-    if os.path.exists(os.path.join(ROOT, "sources.html")):
-        sources_html = open(os.path.join(ROOT, "sources.html"), encoding="utf-8").read()
-    for ev in events:
-        if ev["source_url"] not in sources_html:
-            errors.append(f"sources.html: missing {ev['source_url']}")
-
-    print(f"rows={len(events)} flagged={len(flagged['items'])} sources={len(sources)} pages={len(pages)}")
-    for w in warnings:
-        print("WARN ", w)
+    domains = {urlsplit(event.get("source_url", "")).netloc for event in events if event.get("source_url")}
+    verified = sum(event.get("status") == "verified" for event in events)
+    unverified = sum(event.get("status") == "unverified" for event in events)
+    print(f"events={len(events)} verified={verified} review_gap={unverified} review_items={len(flagged)} domains={len(domains)} pages={len(pages)}")
     if errors:
-        for e in errors:
-            print("ERROR", e)
-        print(f"\n{len(errors)} error(s), {len(warnings)} warning(s)")
+        for error in errors:
+            print("ERROR", error)
+        print(f"\n{len(errors)} error(s)")
         return 1
-    print(f"\nOK — no errors, {len(warnings)} warning(s)")
+    print("\nOK — published data and page structure are consistent. Source contents were not fetched.")
     return 0
 
 
