@@ -146,7 +146,7 @@
       "admission": "Free",
       "edition": "2027",
       "dates": "",
-      "display_dates": "2027 season (90th) - dates not announced",
+      "display_dates": "",
       "next_edition_status": "2027 season announced; dates not published as of 2026-10-18",
       "typical_month": "June-August",
       "source_url": "https://www.sterngrove.org/",
@@ -156,7 +156,7 @@
       "unverified_fields": [
         "dates"
       ],
-      "notes": "Official site: 'See you next summer for our 90th season.' The 2026 season has ended."
+      "notes": "The official site says 'See you next summer for our 90th season'; no 2027 performance dates are published. Dates are left blank. The 2026 season has ended."
     },
     {
       "id": "a-008",
@@ -391,8 +391,8 @@
       "organizer": "Noise Pop",
       "admission": "Ticketed",
       "edition": "2027",
-      "dates": "2027-02-18",
-      "display_dates": "Opens February 18, 2027 (end date not published)",
+      "dates": "February 18, 2027",
+      "display_dates": "February 18, 2027",
       "next_edition_status": "2027 start date published; end date not published",
       "typical_month": "February",
       "source_url": "https://www.noisepop.com/",
@@ -402,7 +402,7 @@
       "unverified_fields": [
         "display_dates.end"
       ],
-      "notes": "Noise Pop Festival 2027 listed with a February 18, 2027 start."
+      "notes": "The official homepage lists Noise Pop Festival 2027 on February 18, 2027; a complete festival run is not stated on that page, so only the confirmed start date is shown."
     },
     {
       "id": "a-019",
@@ -529,7 +529,7 @@
       "admission": "Ticketed",
       "edition": "2026",
       "dates": "",
-      "display_dates": "2026 festival (50th) - run dates not shown on homepage",
+      "display_dates": "",
       "next_edition_status": "2027 dates not published as of 2026-10-18",
       "typical_month": "June",
       "source_url": "https://www.frameline.org/",
@@ -539,7 +539,7 @@
       "unverified_fields": [
         "dates"
       ],
-      "notes": "Frameline50 has concluded; the organisation is currently promoting its Fall Showcase."
+      "notes": "The official homepage currently promotes the Frameline50 Fall Showcase, whose October–November dates are not the main festival run. No confirmed dates for the 2026 main festival are published on the checked page; dates are left blank."
     },
     {
       "id": "a-025",

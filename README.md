@@ -1,17 +1,18 @@
 # San Francisco Events
 
-A curated, source-linked snapshot of public events in San Francisco, organized by recurrence and category. The inventory contains **215 listed entries** (115 recurring, 53 annual, 47 special/dated) and is intended to cover events physically within the City and County of San Francisco.
+A curated, source-linked snapshot of public events in San Francisco, organized by recurrence and category. The inventory contains **216 listed entries** (116 recurring, 53 annual, 47 special/dated) and is intended to cover events physically within the City and County of San Francisco.
 
 > **Coverage limitation:** this is not an exhaustive or live calendar of every concert, gallery opening, private event, pop-up or short-notice listing. The dataset reflects public programmes and event pages found during the recorded research pass. Check the [City's official events calendar](https://www.sf.gov/events/upcoming) and each organizer for additional or current listings.
 
 ## Verification and review status
 
 - Every published event row has a link to an organizer, government agency, state agency or federal park source. The research log records the pages as checked on **2026-10-18**.
-- **174** rows are marked `verified`; **41** rows have a review gap, conflict or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
-- **88** discrepancy, source, scope and other review items are published on `flagged.html`.
+- **176** rows are marked `verified`; **40** rows have a review gap, conflict or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
+- **89** discrepancy, source, scope and other review items are published on `flagged.html`.
 - An independent line-by-line audit on **2026-10-18** (`audit/`, session `arena-bdaa17b4`; merged with session `arena-7d8015f4`'s integrity pass, which upgraded the One City One Book source and set the blank-cost Alcatraz closure row to `unverified`) re-fetched a stratified sample of the official source pages plus every irregular row, removed one out-of-scope row and two duplicate rows, corrected five rows, and added nine verified missing events. See `audit/AUDIT-2026-10-18-bdaa17b4.md` for the full findings and `data/gap-candidates-bdaa17b4.json` for the gap-research trail.
 - Session `arena-23722ef3` performed a live line-by-line re-verification pass on **2026-10-18**, fetching the official pages behind 22+ high-risk rows (dated annuals, sports schedules, museum exhibitions, civic meetings) and correcting six rows whose values the sources did not support (SF Marathon, Fleet Week Parade of Ships time, Manon run start, SuperNatural times/prices, Rules/LUT committee times, Litquake title). The full row-by-row check log is in `COORDINATION.md`.
 - Session `arena-3239c070` performed a full gap-research and re-verification pass on **2026-10-18**, fetching 25+ official pages (SFMTA cable cars, ArtSpan SF Open Studios, Maritime USS Pampanito, Musée Mécanique, SailGP 2026 calendar, Yerba Buena Gardens Festival, SF Design Week, Moscone Center calendar, plus spot-checks of SFMOMA, Asian Art Museum, SF Symphony, FAMSF and Exploratorium). Added four verified rows (SF Cable Cars, SF Open Studios, USS Pampanito, Musée Mécanique) and three new flagged exclusions (SailGP no SF stop in 2026, Union Square ice rink and Kaiser SF Half unverified). See `COORDINATION.md` for the full log and `data/events.py` for every source link.
+- Session `arena-79993171` completed the post-merge audit on **2026-10-18**: corrected the special-event date-status/schedule mapping, removed placeholder dates, refreshed Lightscape dates, corrected pickleball sourcing and unknown access terms, separated the Board of Appeals from the Assessment Appeals Boards, and left the Escape From Alcatraz race fee blank. See `audit/POST-MERGE-2026-10-18-79993171.md` and the review page for remaining conflicts/gaps.
 - The build-time validator checks dataset integrity, source-link presence, table markup and local links. It does **not** fetch pages; the source-fetch verification above is recorded in `COORDINATION.md` and source freshness must be re-checked against the linked official pages.
 
 ## Site
@@ -21,15 +22,15 @@ The site is plain static HTML and is published with GitHub Pages.
 | Page | Contents |
 |---|---|
 | `index.html` | Dashboard, counts, categories, analysis and coverage notice |
-| `recurring.html` | 115 entries on a regular weekly, monthly or other recurring schedule |
+| `recurring.html` | 116 entries on a regular weekly, monthly or other recurring schedule |
 | `annual.html` | 53 entries that recur year after year |
 | `special.html` | 47 dated or time-limited entries for 2026–2027 |
-| `civic.html` | 36 civic entries, boards, commissions and public meetings |
+| `civic.html` | 37 civic entries, boards, commissions and public meetings |
 | `arts.html` | 71 arts, culture, museums, performance and screen entries |
 | `sports.html` | 10 sports, races and active recreation entries |
 | `markets.html` | 29 farmers markets, food halls and street markets |
 | `community.html` | 69 neighbourhood programmes, festivals and free recreation entries |
-| `flagged.html` | 88 review items plus the rows carrying unconfirmed values |
+| `flagged.html` | 89 review items plus the rows carrying unconfirmed values |
 | `methodology.html` | Scope, sourcing rules, build process and limitations |
 | `weekly.html` | Supplementary view from the parallel research session |
 | `analysis.html` | Supplementary analysis view from the parallel research session |

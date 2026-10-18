@@ -35,7 +35,8 @@ civ-bos-lut,Board of Supervisors — Land Use and Transportation Committee,Civic
 civ-bos-budget-finance,Board of Supervisors — Budget and Finance Committee,Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
 civ-bos-psns,Board of Supervisors — Public Safety and Neighborhood Services Committee,Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
 civ-bos-rules,Board of Supervisors — Rules Committee,Civic meeting,verified,sfgov.legistar.com,https://sfgov.legistar.com/Calendar.aspx,dates,,VERIFIED_BUT_BLANK:dates
-civ-board-of-appeals,Board of Appeals / Assessment Appeals Boards,Civic meeting,unverified,sf.gov,https://www.sf.gov/events/upcoming,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
+civ-board-of-appeals,Board of Appeals,Civic meeting,verified,sf.gov,https://www.sf.gov/departments--board-appeals,dates;cost,,"VERIFIED_BUT_BLANK:dates,cost"
+civ-assessment-appeals,Assessment Appeals Boards 1–3,Civic meeting,unverified,sf.gov,https://www.sf.gov/departments--assessment-appeals-board,dates;cost,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 civ-planning,Planning Commission,Civic meeting,verified,sfplanning.org,https://sfplanning.org/public-hearings,dates,,VERIFIED_BUT_BLANK:dates
 civ-hpc,Historic Preservation Commission,Civic meeting,verified,sfplanning.org,https://sfplanning.org/public-hearings,dates,,VERIFIED_BUT_BLANK:dates
 civ-sfmta-board,SFMTA Board of Directors,Civic meeting,verified,sfmta.com,https://www.sfmta.com/about-us/sfmta-board-directors/sfmta-board-meetings,dates,,VERIFIED_BUT_BLANK:dates
@@ -99,7 +100,7 @@ spc-presidio-summer,Presidio 2026 summer event season,Special - Dated,verified,p
 spc-presidio-diwali,Dia de los Muertos and Diwali Festival (Presidio),Special - Dated,verified,presidio.gov,https://presidio.gov/explore/events/dia-de-los-muertos-and-diwali-festival/,,2026-11-07,
 spc-presidio-i-am-american,'I Am An American: The Nisei Soldier Experience' (opening stop of national tour),Special - Dated,unverified,presidio.gov,https://presidio.gov/about/press/whats-new-at-the-presidio-of-san-francisco-in-2026,schedule;cost,2026-07-31,UNVERIFIED_NOT_IN_FLAGGED_REGISTER;LATEST_DATE_BEFORE_AUDIT_DATE
 spc-flower-piano,Flower Piano at the San Francisco Botanical Garden (11th year),Special - Dated,verified,sfbg.org,https://www.sfbg.org/visit,schedule,,VERIFIED_BUT_BLANK:schedule
-spc-lightscape,Lightscape — winter illumination at the San Francisco Botanical Garden,Special - Dated,unverified,sfbg.org,https://www.sfbg.org/visit,schedule,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
+spc-lightscape,Lightscape — winter illumination at the San Francisco Botanical Garden,Special - Dated,verified,gggp.org,https://gggp.org/lightscape/,schedule,2027-01-03,VERIFIED_BUT_BLANK:schedule
 spc-gala-gardens,Gala for the Gardens,Special - Dated,verified,gggp.org,https://gggp.org/event/gala-for-the-gardens-2026/,,2026-05-09,LATEST_DATE_BEFORE_AUDIT_DATE
 spc-famssf-exhibitions,FAMSF current and upcoming exhibitions (de Young & Legion of Honor),Special - Dated,verified,famsf.org,https://www.famsf.org/exhibitions/,,2028-08-31,
 spc-bouquets-to-art,Bouquets to Art 2027,Special - Dated,verified,famsf.org,https://www.famsf.org/exhibitions/bouquets-to-art-2027,schedule,,VERIFIED_BUT_BLANK:schedule
@@ -134,8 +135,8 @@ art-ybca,Yerba Buena Center for the Arts (YBCA),Attraction - Open regularly,veri
 spt-giants,San Francisco Giants home games,Attraction - Open regularly,verified,mlb.com,https://www.mlb.com/giants/schedule,,2026-03-25,
 spt-warriors,Golden State Warriors home games,Attraction - Open regularly,verified,warriors.com,https://warriors.com/news/warriors-announce-2026-27-regular-season-schedule-20260813,,2026-10-23,
 spt-valkyries,Golden State Valkyries home games,Attraction - Open regularly,unverified,wnba.com,https://www.wnba.com/valkyries/schedule,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
-spt-pickleball-palace,"Free reservable pickleball courts, Palace of Fine Arts",Recurring - Weekly,verified,sfrecpark.org,https://sfrecpark.org/1591/Reservable-Pickleball-Courts,dates,,VERIFIED_BUT_BLANK:dates
-spt-larsen-pickleball,Larsen Pickleball Complex,Attraction - Open regularly,unverified,sfrecpark.org,https://sfrecpark.org/m/newsflash/home/detail/1544,dates,,
+spt-pickleball-palace,Pickleball courts at the Palace of Fine Arts,Recurring - Weekly,unverified,sfrecpark.org,https://sfrecpark.org/m/newsflash/home/detail/1544,schedule;dates;cost,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
+spt-larsen-pickleball,Larsen Pickleball Complex,Attraction - Open regularly,unverified,sfrecpark.org,https://sfrecpark.org/1772/Pickleball-Court-Directory,schedule;dates;cost,,
 mkt-alemany,Alemany Farmers Market ('The People's Market'),Recurring - Weekly,verified,sf.gov,https://www.sf.gov/location--alemany-farmers-market,dates,,VERIFIED_BUT_BLANK:dates
 mkt-mission-community,Mission Community Market,Recurring - Weekly,verified,foodwise.org,https://foodwise.org/markets/,dates,,VERIFIED_BUT_BLANK:dates
 mkt-castro-farmers,Castro Farmers' Market,Recurring - Weekly,verified,cdfa.ca.gov,https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf,dates,,VERIFIED_BUT_BLANK:dates
@@ -147,7 +148,7 @@ art-walt-disney-family-museum,The Walt Disney Family Museum,Attraction - Open re
 ann-outside-lands,Outside Lands Music Festival,Annual,unverified,sfmta.com,https://www.sfmta.com/travel-updates/outside-lands-august-7-9-2026,cost;organiser,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 ann-juneteenth-fillmore,JuneteenthSF Freedom Celebration (Fillmore),Annual,unverified,sf.gov,https://www.sf.gov/san-francisco-celebrates-juneteenth-2026,organiser,2026-06-13,UNVERIFIED_NOT_IN_FLAGGED_REGISTER;LATEST_DATE_BEFORE_AUDIT_DATE
 ann-caamfest,CAAMFest (Center for Asian American Media),Annual,verified,caamedia.org,https://caamedia.org/caamfest/,,,
-ann-escape-from-alcatraz-triathlon,Escape From Alcatraz Triathlon,Annual,verified,escapealcatraztri.com,https://www.escapealcatraztri.com/event-information/overview,,,
+ann-escape-from-alcatraz-triathlon,Escape From Alcatraz Triathlon,Annual,unverified,escapealcatraztri.com,https://www.escapealcatraztri.com/,cost,,
 ann-lets-glow-sf,Let's Glow SF (holiday projection arts festival),Annual,verified,downtownsf.org,https://downtownsf.org/things-to-do/lets-glow-sf,,,
 spc-portola-2026,Portola Music Festival 2026,Special - Dated,unverified,sfmta.com,https://www.sfmta.com/travel-updates/portola-music-festival-september-26-27-2026,cost;organiser,2026-09-27,LATEST_DATE_BEFORE_AUDIT_DATE
 spc-fog-design-art-2027,FOG Design+Art 2027,Special - Dated,unverified,sfmoma.org,https://www.sfmoma.org/event/series/fog-design-and-art-fair/,schedule;cost,2027-01-24,
@@ -175,7 +176,7 @@ x-w-023,Golden Gate Park Band concerts,Recurring - Weekly,unverified,goldengatep
 x-w-024,SF State Associated Students Farmers Market,Recurring - Weekly,unverified,asi.sfsu.edu,https://asi.sfsu.edu/farmers-market,cost,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 x-w-025,North Beach Farmers Market,Recurring - Weekly,unverified,northbeachfarmersmarket.com,https://www.northbeachfarmersmarket.com/,dates,,
 x-a-005,Fillmore Jazz Festival,Annual,verified,fillmorejazzfest.com,https://www.fillmorejazzfest.com/,,2027-07-04,
-x-a-007,Stern Grove Festival,Annual,unverified,sterngrove.org,https://www.sterngrove.org/,,,UNVERIFIED_WITHOUT_BLANK_FIELD
+x-a-007,Stern Grove Festival,Annual,unverified,sterngrove.org,https://www.sterngrove.org/,dates,,
 x-a-008,Pistahan Parade & Festival,Annual,verified,pistahan.net,https://www.pistahan.net/,,2026-08-09,LATEST_DATE_BEFORE_AUDIT_DATE
 x-a-013,Hardly Strictly Bluegrass,Annual,verified,hardlystrictlybluegrass.com,https://hardlystrictlybluegrass.com/,,2026-10-04,LATEST_DATE_BEFORE_AUDIT_DATE
 x-a-017,SF Sketchfest,Annual,verified,sfsketchfest.com,https://sfsketchfest.com/,,2027-01-31,
@@ -183,34 +184,34 @@ x-a-018,Noise Pop Festival,Annual,unverified,noisepop.com,https://www.noisepop.c
 x-a-019,SF Beer Week,Annual,verified,sfbeerweek.org,https://sfbeerweek.org/,,2026-03-01,LATEST_DATE_BEFORE_AUDIT_DATE
 x-a-020,San Francisco Restaurant Week,Annual,verified,sfrestaurantweek.com,https://www.sfrestaurantweek.com/,,2026-10-25,
 x-a-023,San Francisco Greek Food Festival,Annual,unverified,annunciation.org,https://annunciation.org/festival,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
-x-a-024,Frameline San Francisco International LGBTQ+ Film Festival,Annual,unverified,frameline.org,https://www.frameline.org/,,,UNVERIFIED_WITHOUT_BLANK_FIELD;UNVERIFIED_NOT_IN_FLAGGED_REGISTER
+x-a-024,Frameline San Francisco International LGBTQ+ Film Festival,Annual,unverified,frameline.org,https://www.frameline.org/,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 x-a-025,Potrero Hill Festival,Annual,verified,sfmta.com,https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026,,2026-10-17,LATEST_DATE_BEFORE_AUDIT_DATE
 x-a-027,Bearrison Street Fair,Annual,verified,sfmta.com,https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026,,2026-10-17,LATEST_DATE_BEFORE_AUDIT_DATE
 x-a-028,Day of the Dead Festival of Altars,Annual,unverified,dayofthedeadsf.org,https://www.dayofthedeadsf.org/,dates,,
-x-s-001,Graciela Iturbide: Between Two Worlds,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,,2026-11-29,
-x-s-002,Feel the Beat: Dance in Photographs,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,,2027-02-28,
-x-s-003,Klee Behind the Mask,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,,2027-04-18,
-x-s-004,O. Smith: Artivist,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,,2027-07-04,
-x-s-005,RM x SFMOMA: Between You and Me,Special - Dated,unverified,sfmoma.org,https://www.sfmoma.org/exhibitions/,,2026-10-03,UNVERIFIED_WITHOUT_BLANK_FIELD;UNVERIFIED_NOT_IN_FLAGGED_REGISTER;LATEST_DATE_BEFORE_AUDIT_DATE
-x-s-006,New Work: Raven Chacon,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,,2027-11-07,
-x-s-007,Sarah Sze: Forever is Composed of Nows,Special - Dated,unverified,sfmoma.org,https://www.sfmoma.org/exhibitions/,,2026-11-21,UNVERIFIED_WITHOUT_BLANK_FIELD;UNVERIFIED_NOT_IN_FLAGGED_REGISTER
-x-s-013,Glow: opening night,Special - Dated,unverified,exploratorium.edu,https://www.exploratorium.edu/visit/calendar/after-dark,,2026-11-19,UNVERIFIED_WITHOUT_BLANK_FIELD;UNVERIFIED_NOT_IN_FLAGGED_REGISTER
-x-s-015,Diwali at the Outer Sunset Farmers Market,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,2026-11-08,
-x-s-016,Dia de los Muertos Outer Sunset,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,2026-11-01,
-x-s-017,Sunset Holiday Mercantile,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,,
-x-s-018,Holidays on Taraval,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,2026-12-11,
-x-s-019,Cole Valley Nights,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,2026-12-10,
-x-s-020,Manon (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/,,2026-11-01,
-x-s-021,The Marriage of Figaro (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,,2026-11-29,
-x-s-022,Das Rheingold (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,,2027-06-22,
-x-s-023,Tosca (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,,2027-07-02,
-x-s-024,Dvořák Symphony No. 8 (SF Symphony),Special - Dated,verified,sfsymphony.org,https://www.sfsymphony.org/,,,
-x-s-025,Hisaishi Conducts Hisaishi (SF Symphony),Special - Dated,verified,sfsymphony.org,https://www.sfsymphony.org/,,,
-x-s-026,GDC Festival of Gaming 2027,Special - Dated,verified,gdconf.com,https://gdconf.com/,,,
-x-s-027,Frameline50 Fall Showcase,Special - Dated,verified,frameline.org,https://www.frameline.org/,,2026-11-05,
-x-s-028,Dreamforce 2026,Special - Dated,verified,sfmta.com,https://www.sfmta.com/travel-updates/salesforce-dreamforce-traffic-changes-september-15-17-2026,,,
-x-s-030,SFFILM Doc Stories 2026,Special - Dated,unverified,sffilm.org,https://sffilm.org/,,2026-11-05,UNVERIFIED_WITHOUT_BLANK_FIELD
-x-s-031,RSA Conference 2027,Special - Dated,unverified,rsaconference.com,https://www.rsaconference.com/,,,UNVERIFIED_WITHOUT_BLANK_FIELD
-x-s-032,Brava Block Party,Special - Dated,verified,sfmta.com,https://www.sfmta.com/weekend-events-october-16-18-2026,,2026-10-17,LATEST_DATE_BEFORE_AUDIT_DATE
-x-s-033,No Kings Rally,Special - Dated,verified,sfmta.com,https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026,,2026-10-17,LATEST_DATE_BEFORE_AUDIT_DATE
-x-s-034,WNBA Finals: Valkyries vs Atlanta Dream (Games 1-2),Special - Dated,verified,sfmta.com,https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026,,2026-10-19,
+x-s-001,Graciela Iturbide: Between Two Worlds,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,schedule,2026-11-29,VERIFIED_BUT_BLANK:schedule
+x-s-002,Feel the Beat: Dance in Photographs,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,schedule,2027-02-28,VERIFIED_BUT_BLANK:schedule
+x-s-003,Klee Behind the Mask,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,schedule,2027-04-18,VERIFIED_BUT_BLANK:schedule
+x-s-004,O. Smith: Artivist,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,schedule,2027-07-04,VERIFIED_BUT_BLANK:schedule
+x-s-005,RM x SFMOMA: Between You and Me,Special - Dated,unverified,sfmoma.org,https://www.sfmoma.org/exhibitions/,schedule,2026-10-03,UNVERIFIED_NOT_IN_FLAGGED_REGISTER;LATEST_DATE_BEFORE_AUDIT_DATE
+x-s-006,New Work: Raven Chacon,Special - Dated,verified,sfmoma.org,https://www.sfmoma.org/exhibitions/,schedule,2027-11-07,VERIFIED_BUT_BLANK:schedule
+x-s-007,Sarah Sze: Forever is Composed of Nows,Special - Dated,unverified,sfmoma.org,https://www.sfmoma.org/exhibitions/,schedule,2026-11-21,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
+x-s-013,After Dark: Glow Opening,Special - Dated,verified,exploratorium.edu,https://www.exploratorium.edu/visit/calendar/after-dark,,2026-11-19,
+x-s-015,Diwali at the Outer Sunset Farmers Market,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,schedule,2026-11-08,VERIFIED_BUT_BLANK:schedule
+x-s-016,Dia de los Muertos Outer Sunset,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,schedule,2026-11-01,VERIFIED_BUT_BLANK:schedule
+x-s-017,Sunset Holiday Mercantile,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,schedule,,VERIFIED_BUT_BLANK:schedule
+x-s-018,Holidays on Taraval,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,schedule,2026-12-11,VERIFIED_BUT_BLANK:schedule
+x-s-019,Cole Valley Nights,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,schedule,2026-12-10,VERIFIED_BUT_BLANK:schedule
+x-s-020,Manon (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/,schedule,2026-11-01,VERIFIED_BUT_BLANK:schedule
+x-s-021,The Marriage of Figaro (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,schedule,2026-11-29,VERIFIED_BUT_BLANK:schedule
+x-s-022,Das Rheingold (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,schedule,2027-06-22,VERIFIED_BUT_BLANK:schedule
+x-s-023,Tosca (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,schedule,2027-07-02,VERIFIED_BUT_BLANK:schedule
+x-s-024,Dvořák Symphony No. 8 (SF Symphony),Special - Dated,verified,sfsymphony.org,https://www.sfsymphony.org/,schedule,,VERIFIED_BUT_BLANK:schedule
+x-s-025,Hisaishi Conducts Hisaishi (SF Symphony),Special - Dated,verified,sfsymphony.org,https://www.sfsymphony.org/,schedule,,VERIFIED_BUT_BLANK:schedule
+x-s-026,GDC Festival of Gaming 2027,Special - Dated,verified,gdconf.com,https://gdconf.com/,schedule,,VERIFIED_BUT_BLANK:schedule
+x-s-027,Frameline50 Fall Showcase,Special - Dated,verified,frameline.org,https://www.frameline.org/,schedule,2026-11-05,VERIFIED_BUT_BLANK:schedule
+x-s-028,Dreamforce 2026,Special - Dated,verified,sfmta.com,https://www.sfmta.com/travel-updates/salesforce-dreamforce-traffic-changes-september-15-17-2026,schedule,,VERIFIED_BUT_BLANK:schedule
+x-s-030,SFFILM Doc Stories 2026,Special - Dated,verified,sffilm.org,https://sffilm.org/2026-sffilm-doc-stories/,schedule,,VERIFIED_BUT_BLANK:schedule
+x-s-031,RSA Conference 2027,Special - Dated,unverified,rsaconference.com,https://www.rsaconference.com/,schedule;dates,,
+x-s-032,Brava Block Party,Special - Dated,verified,sfmta.com,https://www.sfmta.com/weekend-events-october-16-18-2026,schedule,2026-10-17,VERIFIED_BUT_BLANK:schedule;LATEST_DATE_BEFORE_AUDIT_DATE
+x-s-033,No Kings Rally,Special - Dated,verified,sfmta.com,https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026,schedule,2026-10-17,VERIFIED_BUT_BLANK:schedule;LATEST_DATE_BEFORE_AUDIT_DATE
+x-s-034,WNBA Finals: Valkyries vs Atlanta Dream (Games 1-2),Special - Dated,verified,sfmta.com,https://www.sfmta.com/press-releases/sfmta-transit-and-traffic-advisory-week-thursday-october-15-through-wednesday-october-21-2026,schedule,2026-10-19,VERIFIED_BUT_BLANK:schedule
