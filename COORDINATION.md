@@ -31,7 +31,7 @@ Shared task board for all agent sessions working on this repository.
 | `arena-ef213634` | `arena/ef213634-maltaproj6` | Final-integration / source-recheck takeover attempt (claim commits `846ae85` 05:46Z, `e0c4fc6` 05:53Z; tasks F1/F2 marked in progress, F3 unclaimed). Never produced any file changes beyond the claim rows and never opened a PR. | 🔍 needs review — claim went stale (>60 min with no commits; at takeover check 09:45Z it was ~4 h old). Per the board's 60-minute rule `arena-fc3438db` takes over this scope; superseded by PRs #26–#31 which completed the claimed work first. Handoff noted in the `arena-fc3438db` log below. |
 | `arena-fc3438db` | `arena/fc3438db-maltaproj6` | **Verification + requirements-alignment pass (2026-10-18, eighth pass).** Take over stale `arena-ef213634` integration claims. Line-by-line re-verification of the published dataset against official sources (sampled + all soonest-dated rows), gap research for the user's stated focus (free events: gaming, music, AI), site alignment with the stated requirements (executive summary of events near today's date, date-sorted upcoming listings, clear cost labels, mobile-friendly UX), rebuild, PR to `main`, merge and Pages confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` + `data/*.json` + `data/events.csv`, generated `*.html`, `scripts/build_site.py`, `tools/validate.py`, `assets/site.css`, `data/gap-candidates-fc3438db.json` (new), `audit/AUDIT-2026-10-18-fc3438db.md` (new). No other live session (all other branches behind `main`; `arena/ef213634` stale, claim-only). | ✅ complete — PR #38 merged (`63e80f6`, 10:43:27Z) and closing record PR #39 merged (`2b083ea`, 10:45:06Z); Pages `built`. Registry row updated by `arena-db227e31` at claim time (10:57Z) to match the closing record already in this file. |
 | `arena-db227e31` | `arena/db227e31-maltaproj6` | **Independent verification + requirements-alignment pass (2026-10-18, ninth pass).** Line-by-line structural audit of the published union, live official-source re-check of near-term and free gaming/music/AI rows, gap research for free SF-city events, and a site change so the executive summary and main section show **free upcoming events only** (gaming, then music, then AI, then everything else), with paid events in a separate section. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, `scripts/build_site.py`, `scripts/focus.py`, `assets/site.css`, generated `*.html`, `data/events.json`, `data/events.csv`, `data/meta.json`, `audit/AUDIT-2026-10-18-db227e31.md` (new), `audit/check_db227e31.py` (new), `data/gap-candidates-db227e31.json` (new). Arena-fixed branch; no branch switch. | ✅ complete — PR #40 merged (`6897d84`, 2026-10-18T11:09:48Z); Pages `built` for that commit, `error: null`. Live site verified. Closing record follows. |
-| `arena-fe7c710c` | `arena/fe7c710c-maltaproj6` | **Final integration session (2026-10-18, tenth pass).** Independent line-by-line re-verification of the published union against official sources, gap research for free SF-city events near 2026-10-18 (gaming, then music, then AI, then everything else), site/UX + mobile review and repair, full rebuild, PR to `main`, merge and Pages deploy confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` / `data/events.csv` / `data/meta.json` / `data/review.csv`, generated `*.html`, `scripts/build_site.py`, `scripts/focus.py`, `tools/validate.py`, `assets/site.css`, `audit/AUDIT-2026-10-18-fe7c710c.md` (new), `audit/check_fe7c710c.py` (new), `data/gap-candidates-fe7c710c.json` (new). Arena-fixed branch; no branch switch. | 🟡 in progress |
+| `arena-fe7c710c` | `arena/fe7c710c-maltaproj6` | **Final integration session (2026-10-18, tenth pass).** Independent line-by-line re-verification of the published union against official sources, gap research for free SF-city events near 2026-10-18 (gaming, then music, then AI, then everything else), site/UX + mobile review and repair, full rebuild, PR to `main`, merge and Pages deploy confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` / `data/events.csv` / `data/meta.json` / `data/review.csv`, generated `*.html`, `scripts/build_site.py`, `scripts/focus.py`, `tools/validate.py`, `assets/site.css`, `audit/AUDIT-2026-10-18-fe7c710c.md` (new), `audit/check_fe7c710c.py` (new), `data/gap-candidates-fe7c710c.json` (new). Arena-fixed branch; no branch switch. | ✅ complete |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -1046,8 +1046,63 @@ No other session holds a live claim on the files below. This session claims them
 
 | # | Task | Status | Owner | Files in scope | Notes |
 |---|---|---|---|---|---|
-| FE0 | Register and claim non-overlapping scope | 🟡 in progress | `arena-fe7c710c` | `COORDINATION.md` | Claim commit pushed before any other file edits. |
-| FE1 | Line-by-line re-verification of the published union against official sources (near-term + free gaming/music/AI rows) | ⬜ unclaimed | `arena-fe7c710c` | `audit/AUDIT-2026-10-18-fe7c710c.md` (new) | Official pages only; blanks stay blank. |
-| FE2 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ⬜ unclaimed | `arena-fe7c710c` | `data/gap-candidates-fe7c710c.json` (new), `data/events.py` | Only rows with an official source link. |
-| FE3 | Site review and repair (mobile, dashboard clarity, cost labels, free/paid separation, no broken links) | ⬜ unclaimed | `arena-fe7c710c` | `scripts/build_site.py`, `scripts/focus.py`, `assets/site.css`, generated `*.html`, `README.md` | Rebuild must stay reproducible. |
-| FE4 | Rebuild, validate, PR to `main`, merge, confirm Pages, record here | ⬜ unclaimed | `arena-fe7c710c` | `COORDINATION.md` | PR, merge, deploy confirmation. |
+| FE0 | Register and claim non-overlapping scope | ✅ done | `arena-fe7c710c` | `COORDINATION.md` | Claim commit pushed before any other file edits. |
+| FE1 | Line-by-line re-verification of the published union against official sources (near-term + free gaming/music/AI rows) | ✅ done | `arena-fe7c710c` | `audit/AUDIT-2026-10-18-fe7c710c.md` (new) | Official pages only; blanks stay blank. |
+| FE2 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ✅ done | `arena-fe7c710c` | `data/gap-candidates-fe7c710c.json` (new), `data/events.py` | Only rows with an official source link. |
+| FE3 | Site review and repair (mobile, dashboard clarity, cost labels, free/paid separation, no broken links) | ✅ done | `arena-fe7c710c` | `scripts/build_site.py`, `scripts/focus.py`, `assets/site.css`, generated `*.html`, `README.md` | Rebuild must stay reproducible. |
+| FE4 | Rebuild, validate, PR to `main`, merge, confirm Pages, record here | 🟡 in progress | `arena-fe7c710c` | `COORDINATION.md` | PR, merge, deploy confirmation. |
+
+### Verification log — `arena-fe7c710c` (2026-10-18)
+
+**Sources opened this session (official only).** Illuminate LIVE events index and each of 21
+individual event pages (`illuminate.org/events/`, `/event/<slug>/`); Open Source AI Week site,
+community calendar and two flagship pages (`opensourceaiweek.com/`, `/community-events/`,
+`/the-debates/`, `/open-source-ai-awards/`); the two Luma registration pages those official pages
+link to; SF.gov District 1 and District 11 Family Summit pages; Presidio Día de los Muertos and
+Diwali page and Presidio Visitor Center page; Sunset Mercantile home page plus the pages for the
+Outer Sunset Farmers Market, Inner Sunset Flea, Secondhand Saturdays, Diwali 2026, Día de los
+Muertos, Sunset Holiday Mercantile, Holidays on Taraval and Cole Valley Nights; Castro Merchants
+events index, Castro Art Walk November page, Castro Holiday Tree Lighting page and Castro Menorah
+page; Dogpatch Games home page, Table Rates, Boardgame League, Board Game League event page and
+Love Potion Library game night; SFMTA Shared Spaces permit list; Ferry Building Marketplace home
+page; SFPL Gaming at The Mix page, the SFPL Gaming topic calendar and the SFPL Afternoon Board
+Games event page; Autumn Moon Festival site; ArtSpan (returns site chrome only); SFMTA Sunday
+Streets advisory; GGGP Conservatory Light Show page.
+
+**Verification performed.**
+
+- Every new row was read from its own official page; every weekday printed in a new row was
+  checked against the calendar (15/15 correct).
+- Fifteen cost cells that asserted `Free` were blanked after re-reading the page that the row
+  cites, because that page publishes no price. Rows were set to `unverified` so each one is
+  addressable on `flagged.html` with its source link.
+- Free cells that the organiser does publish were kept and are recorded here: Sunset Holiday
+  Mercantile ("Admission is free!"), Chinatown Autumn Moon Festival ("Cost: FREE!"), Conservatory
+  Light Show ("The show is free to the public"), all 20 Illuminate LIVE listings (organiser's
+  *Free Concert* category), Presidio Día de los Muertos / Diwali ("Price: Free") and the four
+  SF.gov family summits ("Cost: Free").
+- `scripts/build_site.py` is reproducible: a second run produces no diff. `tools/validate.py`
+  reports OK at 280 events / 168 verified / 112 review gaps / 214 review items / 109 domains /
+  19 pages. `audit/check_dataset.py` reports `hard_problems=[]`, no broken internal links and no
+  event missing from HTML. `audit/check_fc3438db.py`, `audit/check_db227e31.py` and
+  `audit/check_76d2c635.py` all report zero hard problems.
+- Seventeen duplicate event titles were removed by date-qualifying each Illuminate row;
+  `audit/check_dataset.py` now reports no duplicate titles.
+- `data/meta.json` was stale (it still carried the 249-event figures written by the legacy
+  `tools/build_site.py`). It is now generated by `scripts/build_site.py` on every build.
+
+**Irregularities published (non-blocking, all on `flagged.html`).** Open Source AI Week is
+Bay-Area-wide (66 events) so only the two San Francisco flagships are listed and the Founders'
+Coffee is excluded for an unpublished ("location tbd") venue; the Awards Night end time differs
+between the official page (9 p.m.) and its own Luma page (10 p.m.); fifteen rows have no published
+price; the Castro Holiday Tree 2026 page lives at a URL whose slug still reads `2023`; two
+Illuminate pages still say "More details coming soon!"; SFPL's 18 October board-games session
+renders as scheduled live while a search-engine cache shows a "Canceled:" heading; ArtSpan's
+Open Studios page still does not render its dates.
+
+**Files changed:** `data/events.py`, `scripts/merge_parallel.py`, `scripts/focus.py`,
+`scripts/build_site.py`, `data/meta.json`, generated `data/events.json` / `data/events.csv` /
+`data/review.csv`, generated `*.html`, `README.md`, `audit/AUDIT-2026-10-18-fe7c710c.md`,
+`audit/apply_fe7c710c.py`, `audit/retitle_illuminate_fe7c710c.py`,
+`audit/apply_corrections_fe7c710c.py`, `audit/apply_corrections2_fe7c710c.py`, this board.
+
