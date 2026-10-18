@@ -680,3 +680,13 @@ rows, 103 review items, 42 concluded editions, 97 official domains, 15 pages. Ch
 build reproducible, `tools/validate.py` OK, `audit/check_8e8e24dc.py` `hard_problems=0`.
 
 **Follow-up (record-only).** This final record-only PR follows, as earlier sessions did.
+
+---
+
+## Current session claim — `arena-3ab2abd4` (final dashboard/date-order review, 2026-10-18)
+
+**Claimed scope:** final review of the existing published implementation; correct the homepage executive summary so dated events are ordered chronologically from the current day and near-term free listings are explicit, with regenerated homepage and this coordination log only. The existing dataset and all unrelated generated pages remain out of scope. No other session is active in the task board; the stale final-integration branch noted above is already merged/released.
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| I3 | Review existing site against the request; order the near-term executive summary by confirmed date, expose cost and free-event highlights, run build/validation and local-link checks | 🟡 in progress | `arena-3ab2abd4` | `scripts/build_site.py`, generated `index.html`, `COORDINATION.md` | Claim recorded before editing shared site files. Arena-fixed branch `arena/3ab2abd4-maltaproj6` used. |
