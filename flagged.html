@@ -43,7 +43,7 @@
      the official source involved.</p>
 </section>
 
-<p class="count-note">72 items flagged. Checked 2026-10-18.</p>
+<p class="count-note">83 items flagged. Checked 2026-10-18.</p>
 
 <div class="table-scroll">
 <table class="data-table flag-table">
@@ -167,6 +167,72 @@
   <td>The Valkyries play at Chase Center in San Francisco, but the 2026-27 home fixture list was not confirmed against an official schedule page during this pass, so the dates field is blank.</td>
   <td>Verify the 2026-27 home schedule against the WNBA site and complete the row.</td>
   <td><a href="https://www.wnba.com/valkyries/schedule" target="_blank" rel="noopener">WNBA — Golden State Valkyries &nearr;</a></td>
+</tr>
+<tr id="flag-angel-island-scope">
+  <td class="flag-title">Angel Island State Park — removed as outside the SF city-limits scope (audit by arena-bdaa17b4)</td>
+  <td>The former row&#x27;s note claimed &#x27;the island and its ferry landing are part of the City of San Francisco&#x27;. The official California State Parks boating-facilities listing for Angel Island State Park (Ayala Cove Marina) gives the facility address as &#x27;Angel Island, Tiburon, CA 94920&#x27; and &#x27;County: Marin&#x27;. On that official evidence the park is a Tiburon / Marin County destination reached by ferry, not an event inside the City of San Francisco, so the row was removed from the event list on 2026-10-18 and published here instead (the same treatment earlier sessions gave Levi&#x27;s Stadium and other out-of-scope items).</td>
+  <td>Decide whether ferry-served out-of-city attractions should ever be listed; until then the row stays off the SF-only list. Park page used by the former row: https://www.parks.ca.gov/?page_id=468</td>
+  <td><a href="https://dbw.parks.ca.gov/BoatingFacilities/f/420" target="_blank" rel="noopener">California State Parks, Division of Boating and Waterways — Angel Island State Park (Ayala Cove Marina) &nearr;</a></td>
+</tr>
+<tr id="flag-illuminate-duplicate">
+  <td class="flag-title">Illuminate LIVE Bandshell concerts — duplicate rows merged (audit by arena-bdaa17b4)</td>
+  <td>The 2026 Illuminate LIVE season (125+ free performances, most Wednesdays/Fridays/Sundays, March 1 to mid-November, Golden Gate Park Bandshell) was listed twice: once as a weekly recurring row sourced to SF Rec &amp; Park and once as an annual row sourced to the Mayor&#x27;s Office season announcement, double-counting one event in the 205 total. The weekly row was kept and now cites the Mayor&#x27;s announcement in its notes.</td>
+  <td>Closed by the 2026-10-18 audit; no action unless the season should be split into season + weekly-series rows deliberately.</td>
+  <td><a href="https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park" target="_blank" rel="noopener">SF.gov — Mayor Lurie Announces New Season of Free Live Music in Golden Gate Park &nearr;</a></td>
+</tr>
+<tr id="flag-trans-march-duplicate">
+  <td class="flag-title">Trans March — duplicate 2026-edition row merged (audit by arena-bdaa17b4)</td>
+  <td>The Friday June 26, 2026 Trans March appeared twice: as the annual row (official organiser site, PRIDE-weekend Friday, Dolores Park 3-6 p.m., march 6 p.m.) and as a special dated row sourced to SFMTA&#x27;s reroute notice for the same march (6:00-7:30 p.m., Market Street to Turk/Taylor). The annual row already carried the 2026 date, so the special row was removed and the SFMTA page is cited in the annual row&#x27;s notes.</td>
+  <td>Closed by the 2026-10-18 audit.</td>
+  <td><a href="https://transmarch.org/" target="_blank" rel="noopener">Trans March — official site (SFMTA notice cited in the event row) &nearr;</a></td>
+</tr>
+<tr id="flag-opera-park-venue">
+  <td class="flag-title">Opera in the Park — venue was in the cited source all along (audit by arena-bdaa17b4)</td>
+  <td>The row said the park venue &#x27;was not stated&#x27; in SF Opera&#x27;s season announcement. Re-fetching that release on 2026-10-18 shows it names &#x27;Robin Williams Meadow in San Francisco&#x27;s Golden Gate Park&#x27; for the &#x27;free, annual OPERA IN THE PARK concert (Sunday, September 13)&#x27;. The row is now Annual with the venue filled; the earlier 1:30 p.m. time and Chronicle presenter credit could not be confirmed in the fetched release text and were removed.</td>
+  <td>Closed by the 2026-10-18 audit; confirm the concert start time from the Opera&#x27;s event page if a time is to be published.</td>
+  <td><a href="https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/" target="_blank" rel="noopener">San Francisco Opera — 2026-27 season announcement &nearr;</a></td>
+</tr>
+<tr id="flag-parol-dates-cell">
+  <td class="flag-title">Parol Lantern Festival — stale 2025 prose removed from the confirmed-dates cell (audit by arena-bdaa17b4)</td>
+  <td>The row&#x27;s confirmed-dates cell read &#x27;Saturday, December 13, 2025 (23rd annual - 2026 date not yet published, left blank)&#x27; while its own note said the date was left blank, contradicting this project&#x27;s blank-means-unconfirmed rule. Re-checking the organiser homepage on 2026-10-18 confirmed it still shows only the December 13, 2025 edition. The cell is now blank.</td>
+  <td>Add the 2026 date when the organiser publishes it.</td>
+  <td><a href="https://www.parollanternfestival.com/" target="_blank" rel="noopener">Parol Lantern Festival — official site &nearr;</a></td>
+</tr>
+<tr id="flag-Manon-date">
+  <td class="flag-title">Manon (SF Opera) — imported start date conflicts with the Opera&#x27;s season announcement (audit by arena-bdaa17b4)</td>
+  <td>The parallel session&#x27;s imported Manon row (x-s-020, sourced only to the sfopera.com homepage) gave October 18 - November 1, 2026, while SF Opera&#x27;s official 2026-27 season announcement and this dataset&#x27;s own season row both give Manon as October 15 - November 1, 2026 (the other three imported opera rows match the announcement exactly). The published union row now follows the season announcement via a documented correction in scripts/merge_parallel.py; the parallel session&#x27;s raw JSON is unchanged.</td>
+  <td>If the Opera&#x27;s production page shows a first performance on a different date, publish that page as the source instead.</td>
+  <td><a href="https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/" target="_blank" rel="noopener">San Francisco Opera — 2026-27 season announcement &nearr;</a></td>
+</tr>
+<tr id="flag-recpark-ops-source">
+  <td class="flag-title">Rec &amp; Park Operations Committee — schedule contradicted its own note; source now behind login (audit by arena-bdaa17b4)</td>
+  <td>The row published &#x27;Monthly, 2:00 p.m.&#x27; while its note said the cadence was not stated and was left blank; its &#x27;next listed&#x27; date (October 1, 2026) is also now in the past. On 2026-10-18 the cited calendar entry redirected this session&#x27;s fetcher to a CivicPlus sign-in page, so the entry could not be re-verified. The schedule cell is now blank, matching the note.</td>
+  <td>Confirm the committee&#x27;s recurring rule and next meeting on the department&#x27;s Meeting Info &amp; Calendar page and complete the row.</td>
+  <td><a href="https://sfrecpark.org/Calendar.aspx?EID=9056" target="_blank" rel="noopener">SF Recreation and Parks — Operations Committee calendar entry (EID=9056) &nearr;</a></td>
+</tr>
+<tr id="flag-outside-lands-source">
+  <td class="flag-title">Outside Lands — added from SFMTA; organiser site unreachable (audit by arena-bdaa17b4)</td>
+  <td>The city&#x27;s largest annual music festival had no row, because the organiser&#x27;s official site (sfoutsidelands.com) returned HTTP 500 both to session arena-8fb52462 and to this session on 2026-10-18. A row was added from SFMTA&#x27;s official event page (annual; August 7-9, 2026; Golden Gate Park) with organiser and ticket cost left blank and the row marked unverified.</td>
+  <td>Complete organiser and cost from sfoutsidelands.com when it is reachable again.</td>
+  <td><a href="https://www.sfmta.com/travel-updates/outside-lands-august-7-9-2026" target="_blank" rel="noopener">SFMTA — Outside Lands: August 7-9, 2026 &nearr;</a></td>
+</tr>
+<tr id="flag-juneteenth-organiser">
+  <td class="flag-title">JuneteenthSF Freedom Celebration — organiser site down (audit by arena-bdaa17b4)</td>
+  <td>Added from the SF.gov Human Rights Commission Juneteenth 2026 page (annual eight-block Fillmore celebration; Saturday, June 13, 2026; listed among no-cost events). The organiser site it links (juneteenth-sf.org) showed a hosting error page on 2026-10-18, so the organiser&#x27;s formal name and event hours are blank and the row is unverified.</td>
+  <td>Complete organiser and hours from juneteenth-sf.org when it is back; separately verify the Market Street Juneteenth Parade and Bayview festival named on the same SF.gov page.</td>
+  <td><a href="https://www.sf.gov/san-francisco-celebrates-juneteenth-2026" target="_blank" rel="noopener">SF.gov (Human Rights Commission) — San Francisco Celebrates Juneteenth 2026 &nearr;</a></td>
+</tr>
+<tr id="flag-portola-organiser">
+  <td class="flag-title">Portola Music Festival 2026 — organiser and cost unconfirmed (audit by arena-bdaa17b4)</td>
+  <td>Added from SFMTA (Pier 80; September 26-27, 2026; concerts 2-11 p.m.). The official festival site showed only a post-event thank-you page on 2026-10-18 and names Goldenvoice solely in newsletter consent text, which does not establish the organiser field to this project&#x27;s standard; organiser and cost are blank and the row is unverified and classified as a dated edition.</td>
+  <td>Confirm presenter, ticket prices and annual cadence from portolamusicfestival.com for the next edition.</td>
+  <td><a href="https://www.sfmta.com/travel-updates/portola-music-festival-september-26-27-2026" target="_blank" rel="noopener">SFMTA — Portola Music Festival: September 26 &amp; 27, 2026 &nearr;</a></td>
+</tr>
+<tr id="flag-fog-cost">
+  <td class="flag-title">FOG Design+Art 2027 — fair hours and prices not on the fetched official page (audit by arena-bdaa17b4)</td>
+  <td>Added from SFMOMA&#x27;s series page (Preview Gala January 20, 2027; Fair January 21-24, 2027; Fort Mason Center for Arts &amp; Culture). That page states no fair hours or admission prices; the older SFMOMA event URL returned 404 and fogfair.com&#x27;s homepage carried no dates, hours or prices on 2026-10-18. Schedule and cost are blank and the row is unverified.</td>
+  <td>Complete hours and prices from fogfair.com or SFMOMA ticketing when published.</td>
+  <td><a href="https://www.sfmoma.org/event/series/fog-design-and-art-fair/" target="_blank" rel="noopener">SFMOMA — FOG Design+Art 2027 &nearr;</a></td>
 </tr>
 <tr id="xflag-f-001">
   <td class="flag-title">Carnaval San Francisco — source unavailable</td>
@@ -506,15 +572,18 @@
 <tr id="review-civ-bos-rules"><td>Board of Supervisors — Rules Committee</td><td>recurring / civic</td><td>Dates</td><td><a href='https://sfgov.legistar.com/Calendar.aspx' target='_blank' rel='noopener'>SF.gov Legistar Meeting Calendar — Rules Committee &nearr;</a></td></tr>
 <tr id="review-civ-board-of-appeals"><td>Board of Appeals / Assessment Appeals Boards</td><td>recurring / civic</td><td>Dates</td><td><a href='https://www.sf.gov/events/upcoming' target='_blank' rel='noopener'>SF.gov — Citywide meetings and events calendar (Assessment Appeals Boards 1-3) &nearr;</a></td></tr>
 <tr id="review-civ-hrc"><td>Human Rights Commission</td><td>recurring / civic</td><td>Schedule</td><td><a href='https://www.sf.gov/departments--human-rights-commission' target='_blank' rel='noopener'>SF.gov — Human Rights Commission calendar &nearr;</a></td></tr>
-<tr id="review-civ-recpark-operations"><td>Recreation and Park Commission — Operations Committee</td><td>recurring / civic</td><td>see note</td><td><a href='https://sfrecpark.org/Calendar.aspx?EID=9056' target='_blank' rel='noopener'>SF Recreation and Parks — Operations Committee calendar entry &nearr;</a></td></tr>
-<tr id="review-ann-parol-lantern"><td>Parol Lantern Festival &amp; Parade (SOMA Pilipinas)</td><td>annual / community</td><td>see note</td><td><a href='https://www.parollanternfestival.com/' target='_blank' rel='noopener'>Parol Lantern Festival — official site &nearr;</a></td></tr>
+<tr id="review-civ-recpark-operations"><td>Recreation and Park Commission — Operations Committee</td><td>recurring / civic</td><td>Schedule</td><td><a href='https://sfrecpark.org/Calendar.aspx?EID=9056' target='_blank' rel='noopener'>SF Recreation and Parks — Operations Committee calendar entry &nearr;</a></td></tr>
+<tr id="review-ann-parol-lantern"><td>Parol Lantern Festival &amp; Parade (SOMA Pilipinas)</td><td>annual / community</td><td>Dates</td><td><a href='https://www.parollanternfestival.com/' target='_blank' rel='noopener'>Parol Lantern Festival — official site &nearr;</a></td></tr>
 <tr id="review-ann-sfmusic-week"><td>SF Music Week</td><td>annual / arts</td><td>Dates, Cost</td><td><a href='https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park' target='_blank' rel='noopener'>SF.gov — Mayor Lurie Announces New Season of Free Live Music in Golden Gate Park &nearr;</a></td></tr>
 <tr id="review-spc-presidio-i-am-american"><td>&#x27;I Am An American: The Nisei Soldier Experience&#x27; (opening stop of national tour)</td><td>special / arts</td><td>Schedule, Cost</td><td><a href='https://presidio.gov/about/press/whats-new-at-the-presidio-of-san-francisco-in-2026' target='_blank' rel='noopener'>Presidio — What&#x27;s New at the Presidio of San Francisco in 2026 &nearr;</a></td></tr>
 <tr id="review-spc-lightscape"><td>Lightscape — winter illumination at the San Francisco Botanical Garden</td><td>special / community</td><td>Schedule</td><td><a href='https://www.sfbg.org/visit' target='_blank' rel='noopener'>San Francisco Botanical Garden — Plan Your Visit &nearr;</a></td></tr>
-<tr id="review-spc-opera-in-the-park"><td>Opera in the Park (free concert by San Francisco Opera)</td><td>special / arts</td><td>see note</td><td><a href='https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/' target='_blank' rel='noopener'>San Francisco Opera — 2026-27 season announcement &nearr;</a></td></tr>
 <tr id="review-spt-valkyries"><td>Golden State Valkyries home games</td><td>recurring / sports</td><td>Dates</td><td><a href='https://www.wnba.com/valkyries/schedule' target='_blank' rel='noopener'>WNBA — Golden State Valkyries official site &nearr;</a></td></tr>
 <tr id="review-spt-larsen-pickleball"><td>Larsen Pickleball Complex</td><td>recurring / sports</td><td>Dates</td><td><a href='https://sfrecpark.org/m/newsflash/home/detail/1544' target='_blank' rel='noopener'>SF Recreation and Parks — News Flash: Free Pickleball Access Expanded to Palace of Fine Arts &nearr;</a></td></tr>
 <tr id="review-mkt-treasurefest"><td>TreasureFest (Treasure Island flea and craft festival)</td><td>annual / markets</td><td>Schedule, Dates, Cost</td><td><a href='https://www.treasurefest.com/' target='_blank' rel='noopener'>TreasureFest — official site &nearr;</a></td></tr>
+<tr id="review-ann-outside-lands"><td>Outside Lands Music Festival</td><td>annual / community</td><td>Cost</td><td><a href='https://www.sfmta.com/travel-updates/outside-lands-august-7-9-2026' target='_blank' rel='noopener'>SFMTA — Outside Lands: August 7-9, 2026 &nearr;</a></td></tr>
+<tr id="review-ann-juneteenth-fillmore"><td>JuneteenthSF Freedom Celebration (Fillmore)</td><td>annual / community</td><td>see note</td><td><a href='https://www.sf.gov/san-francisco-celebrates-juneteenth-2026' target='_blank' rel='noopener'>SF.gov (Human Rights Commission) — San Francisco Celebrates Juneteenth 2026 &nearr;</a></td></tr>
+<tr id="review-spc-portola-2026"><td>Portola Music Festival 2026</td><td>special / arts</td><td>Cost</td><td><a href='https://www.sfmta.com/travel-updates/portola-music-festival-september-26-27-2026' target='_blank' rel='noopener'>SFMTA — Portola Music Festival: September 26 &amp; 27, 2026 &nearr;</a></td></tr>
+<tr id="review-spc-fog-design-art-2027"><td>FOG Design+Art 2027</td><td>special / arts</td><td>Schedule, Cost</td><td><a href='https://www.sfmoma.org/event/series/fog-design-and-art-fair/' target='_blank' rel='noopener'>SFMOMA — FOG Design+Art 2027 &nearr;</a></td></tr>
 <tr id="review-x-w-003"><td>Heart of the City Farmers Market</td><td>recurring / markets</td><td>Dates</td><td><a href='https://hotcfarmersmarket.org/' target='_blank' rel='noopener'>Heart of the City Farmers Market &nearr;</a></td></tr>
 <tr id="review-x-w-007"><td>Clement Street Farmers Market</td><td>recurring / markets</td><td>Dates</td><td><a href='https://www.agriculturalinstitute.org/clement-st' target='_blank' rel='noopener'>Clement St SF | Agricultural Institute of Marin &nearr;</a></td></tr>
 <tr id="review-x-w-008"><td>Fort Mason Center Farmers&#x27; Market</td><td>recurring / markets</td><td>Dates</td><td><a href='https://www.cafarmersmkts.com/fort-mason-center-farmers-market/' target='_blank' rel='noopener'>Fort Mason Center Farmers&#x27; Market | California Farmers&#x27; Markets Association &nearr;</a></td></tr>

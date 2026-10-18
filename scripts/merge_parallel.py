@@ -122,6 +122,30 @@ CATEGORY_BY_ORIG_ID = {
 }
 
 
+# Corrections applied to imported rows by the 2026-10-18 audit session
+# (arena-bdaa17b4). The parallel session's raw JSON files are NOT edited;
+# each correction states the official source that overrules the imported
+# value, and is also published on the Flagged for Review page.
+AUDIT_CORRECTIONS = {
+    # Manon: imported as "October 18 - November 1, 2026" from the sfopera.com
+    # homepage. SF Opera's official 2026-27 season announcement (fetched
+    # 2026-10-18) lists Manon as October 15 - November 1, 2026, matching this
+    # dataset's own art-sfopera season row; the other imported opera rows
+    # already match that announcement exactly.
+    "s-020": {
+        "dates": "October 15 - November 1, 2026",
+        "source_name": "San Francisco Opera - 2026-27 season announcement",
+        "source_url": "https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/",
+        "_correction_note": (
+            "AUDIT CORRECTION (arena-bdaa17b4, 2026-10-18): start date corrected from "
+            "October 18 to October 15, 2026 per SF Opera's official season announcement; "
+            "source upgraded from the sfopera.com homepage to that announcement. "
+            "The parallel session's raw data/special.json is unchanged."
+        ),
+    },
+}
+
+
 def _slug(text: str) -> str:
     text = re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")
     return text or "row"
@@ -284,6 +308,12 @@ def parallel_events(existing) -> list:
             rec["id"] = f"x-{_slug(orig or rec['title'])}"
             if rec["id"] in existing_ids:
                 continue
+            if orig in AUDIT_CORRECTIONS:
+                fix = AUDIT_CORRECTIONS[orig]
+                for key, value in fix.items():
+                    if not key.startswith("_"):
+                        rec[key] = value
+                rec["notes"] = (fix.get("_correction_note", "") + " " + rec["notes"]).strip()
             rec["category"] = CATEGORY_BY_ORIG_ID.get(orig, "community")
             if rec["_unverified"]:
                 rec["notes"] = (

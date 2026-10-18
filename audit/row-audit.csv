@@ -61,7 +61,7 @@ civ-tida,Treasure Island Development Authority (TIDA) Board,Civic meeting,verifi
 civ-hrc,Human Rights Commission,Civic meeting,unverified,sf.gov,https://www.sf.gov/departments--human-rights-commission,schedule,2026-10-08,
 civ-library-commission,Library Commission,Civic meeting,verified,sfpl.org,https://sfpl.org/about-us/library-commission/policies/library-commission-bylaws,dates,,VERIFIED_BUT_BLANK:dates
 civ-recpark-commission,Recreation and Park Commission,Civic meeting,verified,sfrecpark.org,https://sfrecpark.org/1744/Meeting-Info-Calendar,dates,,VERIFIED_BUT_BLANK:dates
-civ-recpark-operations,Recreation and Park Commission — Operations Committee,Civic meeting,unverified,sfrecpark.org,https://sfrecpark.org/Calendar.aspx?EID=9056,,2026-10-01,UNVERIFIED_WITHOUT_BLANK_FIELD;UNVERIFIED_NOT_IN_FLAGGED_REGISTER
+civ-recpark-operations,Recreation and Park Commission — Operations Committee,Civic meeting,unverified,sfrecpark.org,https://sfrecpark.org/Calendar.aspx?EID=9056,schedule,2026-10-01,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 civ-citywide-calendar,SF.gov — Citywide meetings and events calendar,Civic meeting,verified,sf.gov,https://www.sf.gov/events/upcoming,dates,,VERIFIED_BUT_BLANK:dates
 civ-supervisor-district-events,District Supervisor community clean-ups and family summits,Civic meeting,verified,sf.gov,https://www.sf.gov/events/upcoming,dates,,VERIFIED_BUT_BLANK:dates
 civ-cityhall-weddings,City Hall wedding ceremonies (City Hall Events Office),Civic meeting,verified,sfcityhallevents.org,https://sfcityhallevents.org/event-calendar/,dates,,VERIFIED_BUT_BLANK:dates
@@ -88,9 +88,8 @@ ann-litquake,Litquake — San Francisco's literary festival (27th edition),Annua
 ann-silent-film,San Francisco Silent Film Festival (29th),Annual,verified,silentfilm.org,https://silentfilm.org/festival-2026/,,,
 ann-dragon-boat,San Francisco Dragon Boat Festival,Annual,verified,dragonboatsf.com,https://www.dragonboatsf.com/,,,
 ann-fourth-of-july,Fourth of July fireworks on the Golden Gate Bridge,Annual,verified,sf.gov,https://www.sf.gov/event-20260704-fourth-of-july-fireworks-on-golden-gate-bridge,,2026-07-04,LATEST_DATE_BEFORE_AUDIT_DATE
-ann-illuminate-live,"Illuminate LIVE — free concert season, Golden Gate Park Bandshell",Annual,verified,sf.gov,https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park,,2026-03-01,LATEST_DATE_BEFORE_AUDIT_DATE
 ann-human-rights-awards,Human Rights Awards,Annual,verified,sf.gov,https://www.sf.gov/departments--human-rights-commission,,2026-12-09,
-ann-parol-lantern,Parol Lantern Festival & Parade (SOMA Pilipinas),Annual,unverified,parollanternfestival.com,https://www.parollanternfestival.com/,,2025-12-13,UNVERIFIED_WITHOUT_BLANK_FIELD;UNVERIFIED_NOT_IN_FLAGGED_REGISTER;LATEST_DATE_BEFORE_AUDIT_DATE
+ann-parol-lantern,Parol Lantern Festival & Parade (SOMA Pilipinas),Annual,unverified,parollanternfestival.com,https://www.parollanternfestival.com/,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 ann-sf-marathon,The San Francisco Marathon (49th),Annual,verified,thesfmarathon.com,https://www.thesfmarathon.com/,,2026-07-26,LATEST_DATE_BEFORE_AUDIT_DATE
 ann-sfmusic-week,SF Music Week,Annual,unverified,sf.gov,https://www.sf.gov/news-mayor-lurie-announces-new-season-of-free-live-music-in-golden-gate-park,dates;cost,,
 spc-boo-at-zoo,Boo at the Zoo,Special - Dated,verified,sfrecpark.org,https://sfrecpark.org/Calendar.aspx,,2026-10-31,
@@ -104,9 +103,8 @@ spc-lightscape,Lightscape — winter illumination at the San Francisco Botanical
 spc-gala-gardens,Gala for the Gardens,Special - Dated,verified,gggp.org,https://gggp.org/event/gala-for-the-gardens-2026/,,2026-05-09,LATEST_DATE_BEFORE_AUDIT_DATE
 spc-famssf-exhibitions,FAMSF current and upcoming exhibitions (de Young & Legion of Honor),Special - Dated,verified,famsf.org,https://www.famsf.org/exhibitions/,,2028-08-31,
 spc-bouquets-to-art,Bouquets to Art 2027,Special - Dated,verified,famsf.org,https://www.famsf.org/exhibitions/bouquets-to-art-2027,schedule,,VERIFIED_BUT_BLANK:schedule
-spc-opera-in-the-park,Opera in the Park (free concert by San Francisco Opera),Special - Dated,unverified,sfopera.com,https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/,,2026-09-13,UNVERIFIED_WITHOUT_BLANK_FIELD;UNVERIFIED_NOT_IN_FLAGGED_REGISTER;LATEST_DATE_BEFORE_AUDIT_DATE
+spc-opera-in-the-park,Opera in the Park (free concert by San Francisco Opera),Annual,verified,sfopera.com,https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/,schedule,2026-09-13,VERIFIED_BUT_BLANK:schedule;LATEST_DATE_BEFORE_AUDIT_DATE
 spc-fort-point-living-history,Fort Point Living History Weekend,Special - Dated,verified,home.nps.gov,https://home.nps.gov/fopo/living-history-weekend.htm,,2026-08-01,LATEST_DATE_BEFORE_AUDIT_DATE
-spc-sf-pride-trans-march-2026,Trans March 2026 (Pride weekend opener),Special - Dated,verified,sfmta.com,https://www.sfmta.com/travel-updates/sf-pride-trans-march-friday-june-26-2026,,2026-06-26,LATEST_DATE_BEFORE_AUDIT_DATE
 spc-nye-fireworks,New Year's Eve fireworks on the Embarcadero,Special - Dated,verified,sfport.com,https://www.sfport.com/meetings/new-years-eve-fireworks-celebration-1,,2026-01-01,LATEST_DATE_BEFORE_AUDIT_DATE
 spc-castro-halloween,Halloween in The Castro,Special - Dated,verified,castromerchants.com,https://castromerchants.com/events,,2026-10-31,
 spc-castro-holiday-tree,Castro Holiday Tree Lighting Ceremony,Special - Dated,verified,castromerchants.com,https://castromerchants.com/events/castro-holiday-tree-lighting-ceremony-2023,,2026-11-30,
@@ -128,7 +126,6 @@ art-presidio-museum,Presidio Museum and Visitor Center,Attraction - Open regular
 art-fort-point,Fort Point National Historic Site,Attraction - Open regularly,verified,nps.gov,https://www.nps.gov/fopo/planyourvisit/things2do.htm,dates,,VERIFIED_BUT_BLANK:dates
 art-alcatraz,Alcatraz Island (Golden Gate National Recreation Area),Attraction - Open regularly,verified,nps.gov,https://www.nps.gov/alca/index.htm,dates,2026-11-18,VERIFIED_BUT_BLANK:dates
 art-maritime,San Francisco Maritime National Historical Park,Attraction - Open regularly,verified,nps.gov,https://nps.gov/safr/planyourvisit/fees.htm,dates,,VERIFIED_BUT_BLANK:dates
-art-angel-island,Angel Island State Park,Attraction - Open regularly,verified,parks.ca.gov,https://www.parks.ca.gov/?page_id=468,dates,,VERIFIED_BUT_BLANK:dates;BORDERLINE_GEO:angel island
 art-golden-gate-bridge,"Golden Gate Bridge (Vista Point, Battery Spencer and walking path)",Attraction - Open regularly,verified,goldengate.org,https://www.goldengate.org/,dates,,VERIFIED_BUT_BLANK:dates
 art-sfopera,San Francisco Opera (104th Season),Attraction - Open regularly,verified,sfopera.com,https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/,,2027-07-02,
 art-sfballet,San Francisco Ballet (2026-27 Season),Attraction - Open regularly,verified,sfballet.org,https://www.sfballet.org/2026-2027-season/,,2027-05-02,
@@ -145,6 +142,15 @@ mkt-castro-farmers,Castro Farmers' Market,Recurring - Weekly,verified,cdfa.ca.go
 mkt-inner-sunset,Inner Sunset Farmers' Market,Recurring - Weekly,verified,cdfa.ca.gov,https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf,dates,,VERIFIED_BUT_BLANK:dates
 mkt-sf-chinatown-food,"Chinatown food and shopping streets (Grant Avenue, Washington Street)",Attraction - Open regularly,verified,moonfestival.org,https://www.moonfestival.org/,dates,,VERIFIED_BUT_BLANK:dates
 mkt-treasurefest,TreasureFest (Treasure Island flea and craft festival),Annual,unverified,treasurefest.com,https://www.treasurefest.com/,schedule;dates;cost,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER;BORDERLINE_GEO:treasure island
+rec-sf-city-guides,San Francisco City Guides — free walking tours,Recurring - Regular schedule,verified,sfcityguides.org,https://sfcityguides.org/,dates,,VERIFIED_BUT_BLANK:dates
+art-walt-disney-family-museum,The Walt Disney Family Museum,Attraction - Open regularly,verified,waltdisney.org,https://www.waltdisney.org/visit/admission,dates,,VERIFIED_BUT_BLANK:dates
+ann-outside-lands,Outside Lands Music Festival,Annual,unverified,sfmta.com,https://www.sfmta.com/travel-updates/outside-lands-august-7-9-2026,cost;organiser,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
+ann-juneteenth-fillmore,JuneteenthSF Freedom Celebration (Fillmore),Annual,unverified,sf.gov,https://www.sf.gov/san-francisco-celebrates-juneteenth-2026,organiser,2026-06-13,UNVERIFIED_NOT_IN_FLAGGED_REGISTER;LATEST_DATE_BEFORE_AUDIT_DATE
+ann-caamfest,CAAMFest (Center for Asian American Media),Annual,verified,caamedia.org,https://caamedia.org/caamfest/,,,
+ann-escape-from-alcatraz-triathlon,Escape From Alcatraz Triathlon,Annual,verified,escapealcatraztri.com,https://www.escapealcatraztri.com/event-information/overview,,,
+ann-lets-glow-sf,Let's Glow SF (holiday projection arts festival),Annual,verified,downtownsf.org,https://downtownsf.org/things-to-do/lets-glow-sf,,,
+spc-portola-2026,Portola Music Festival 2026,Special - Dated,unverified,sfmta.com,https://www.sfmta.com/travel-updates/portola-music-festival-september-26-27-2026,cost;organiser,2026-09-27,LATEST_DATE_BEFORE_AUDIT_DATE
+spc-fog-design-art-2027,FOG Design+Art 2027,Special - Dated,unverified,sfmoma.org,https://www.sfmoma.org/event/series/fog-design-and-art-fair/,schedule;cost,2027-01-24,
 x-w-003,Heart of the City Farmers Market,Recurring - Weekly,unverified,hotcfarmersmarket.org,https://hotcfarmersmarket.org/,dates,,UNVERIFIED_NOT_IN_FLAGGED_REGISTER
 x-w-005,Fillmore Farmers' Market,Recurring - Weekly,verified,pcfma.org,https://www.pcfma.org/market/fillmore-farmers-market,dates,,VERIFIED_BUT_BLANK:dates
 x-w-006,Noe Valley Farmers Market,Recurring - Weekly,verified,noevalleyfarmersmarket.com,https://www.noevalleyfarmersmarket.com/,dates,,VERIFIED_BUT_BLANK:dates
@@ -190,7 +196,7 @@ x-s-016,Dia de los Muertos Outer Sunset,Special - Dated,verified,sunsetmercantil
 x-s-017,Sunset Holiday Mercantile,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,,
 x-s-018,Holidays on Taraval,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,2026-12-11,
 x-s-019,Cole Valley Nights,Special - Dated,verified,sunsetmercantilesf.com,https://sunsetmercantilesf.com/,,2026-12-10,
-x-s-020,Manon (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,,2026-11-01,
+x-s-020,Manon (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/press/press-releases/San-Francisco-Opera-2026-27-season/,,2026-11-01,
 x-s-021,The Marriage of Figaro (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,,2026-11-29,
 x-s-022,Das Rheingold (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,,2027-06-22,
 x-s-023,Tosca (San Francisco Opera),Special - Dated,verified,sfopera.com,https://www.sfopera.com/,,2027-07-02,
