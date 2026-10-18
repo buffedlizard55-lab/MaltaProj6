@@ -914,7 +914,7 @@ expired; nothing is overwritten. This session uses the Arena-fixed branch `arena
 | FC2 | Live official-source re-verification: every soonest-dated/upcoming row (feeds the executive summary) + stratified sample of recurring/annual rows | ✅ done (28 pages fetched; JS-shell remainders recorded) | `arena-fc3438db` | `audit/AUDIT-2026-10-18-fc3438db.md` (new) | Official pages only (fetch_page). Confirmed rows listed in the audit §2 table. Corrections: Boo at the Zoo cost (`sfzoo.org`), Mime Troupe source. valkyries.wnba.com is a JS shell (cross-checked via SFMTA advisory). |
 | FC3 | Gap research for the user's stated focus: **free events — gaming, music, AI** (and everything else after) inside SF city limits | ✅ done | `arena-fc3438db` | `data/gap-candidates-fc3438db.json` (new), `data/events.py` | 20 new rows (SFPL gaming/chess/AI programmes, SF Tech Week, HumanX 2026, Current SF, SF Symphony/SF Opera Oct–Nov programme, Moscone conventions, Exploratorium Creepatorium, Castro additions). 8 candidates not added — each with the official page checked and the reason, 5 of them published as review items. |
 | FC4 | Requirements alignment of the site: executive summary of events near today (2026-10-18) on the home page; upcoming dates sorted soonest-first and highlighted first; cost clearly labelled on every table; free-events emphasis; mobile-friendly check/polish | ✅ done | `arena-fc3438db` | `scripts/build_site.py`, `assets/site.css`, generated `*.html`, `README.md`, `data/meta.json` | Home page: executive summary (starting-soon + running-now + free spotlight for gaming/music/AI), date-sorted upcoming table with Cost column (was dataset-order, unsorted). Cost chips on every table + `Cost` filter on the full list. Mobile CSS tightened. Dates parsed from printed strings only (`parse_dates`, presentation-only). |
-| FC5 | Rebuild, validate (build_site, tools/validate, dataset audit, link scan), PR to `main`, merge, confirm Pages deploy, record on this board | 🟡 in progress | `arena-fc3438db` | `COORDINATION.md` | Local gates green (build reproducible; `tools/validate.py` → 237/226/11/108/99, pages=15 — OK; `audit/check_dataset.py` → 0 hard problems, 0 broken links). PR/merge/Pages result recorded below. |
+| FC5 | Rebuild, validate (build_site, tools/validate, dataset audit, link scan), PR to `main`, merge, confirm Pages deploy, record on this board | ✅ done | `arena-fc3438db` | `COORDINATION.md` | PR #38 merged (`63e80f6`), Pages `built`, `error: null`, live site verified — see closing record below (build reproducible; `tools/validate.py` → 237/226/11/108/99, pages=15 — OK; `audit/check_dataset.py` → 0 hard problems, 0 broken links). PR/merge/Pages result recorded below. |
 
 ## Session log — `arena-fc3438db` verification + requirements pass (2026-10-18)
 
@@ -946,3 +946,43 @@ blank cost cells where the official source publishes no price (never inferred).
 
 **Handoff note.** `arena-ef213634`'s stale F1/F2 claims are superseded by this pass and by
 PRs #26–#31; if that session returns it should start from `main` after this PR and log here.
+
+### Closing record — `arena-fc3438db` verification + requirements PR (2026-10-18)
+
+- **PR #38**: https://github.com/buffedlizard55-lab/MaltaProj6/pull/38 — verification + requirements-alignment
+  pass, integrated as a union with PRs #32–#37 (sessions `arena-3ab2abd4`, `arena-91296e94`, `arena-61a46409`).
+  **Merged:** 2026-10-18T10:43:27Z, merge commit `63e80f642da77ab14d28e434ca42c8bae50eb584`.
+- **What this pass contributed to the merged site:** 14 source-verified rows kept (SF Symphony The Ring /
+  Music for Families / Adams-Mendelssohn; SF Opera Strauss / Opera Ball / Adlers / Chorus; Exploratorium
+  Creepatorium; Castro Holiday Tree Fundraiser + December Wine Walk; INFORMS 2026; SEMICON West 2026;
+  HumanX 2026; SFPL AI workshops at The Mix — the last five tagged focus=ai or AI-adjacent, the
+  Symphony/Opera rows focus=music); 5 review items (flag-humanx-2027-las-vegas, flag-sf-blackout-chess
+  rewritten to the checked sf.gov surface, flag-ai-conference-unconfirmed, flag-cloudflare-days-copy,
+  flag-bay-area-science-festival); the Boo at the Zoo organiser-source correction (sfzoo.org, with the
+  published free-with-admission wording preserved under the blank-unless-numeric price rule); and the
+  audit trail (`audit/AUDIT-2026-10-18-fc3438db.md`, `data/gap-candidates-fc3438db.json`). Five rows were
+  deliberately not duplicated where concurrent sessions published richer-sourced rows on the same ground
+  (substitution recorded in the audit addendum).
+- **Pre-merge gates (union tree, commit `1461d0f`):** `scripts/build_site.py` → "Wrote 16 pages, 249 events,
+  198 flagged items" (reproducible); `tools/validate.py` → OK (249/158/91/198/105/18); `audit/check_dataset.py`
+  → `hard_problems=[]`, 0 broken internal links; `audit/check_61a46409.py` → "hard problems: none";
+  `audit/check_91296e94.py`, `audit/check_8e8e24dc.py`, `audit/check_76d2c635.py`, `audit/check_fc3438db.py`
+  → all `hard_problems=0`.
+- **GitHub Pages:** build for `63e80f6` reports `status: built`, `error: null` (Pages API checked at
+  10:43Z, build window 10:43:29–10:43:49Z).
+- **Live verification** (cache-busted `?v=fc3438db-final`, 2026-10-18 10:44Z): the dashboard reports
+  **249 events listed · 158 rows marked verified · 91 rows needing review · 143 entries explicitly listing
+  free access · 46 concluded editions · 198 review items published · 105 distinct official domains**; the
+  executive summary is chronological with countdown chips (today/under way → Dvořák, Valkyries home games,
+  WNBA Finals, Litquake, SF Open Studios; next: Cloudflare Connect Oct 19–21, tomorrow) and shows cost
+  exactly as published with unconfirmed prices labelled, never guessed; the Focus areas section lists
+  gaming (4), music (32) and AI & gaming (19) with free-events (143) one click away; Symphony/Opera rows
+  carry the Music focus badge. Flagged irregularities and unverified items (198 + 91) remain published on
+  https://buffedlizard55-lab.github.io/MaltaProj6/flagged.html for manual review and do not block anything,
+  per board rules.
+- **Irregularities left visible for manual follow-up (all published):** Castro Menorah prose-vs-structured
+  date conflict (Dec 7 listing vs "December 15" prose — structured date kept); Cloudflare Connect "over
+  four days" page copy vs Oct 19–21 dates; HumanX 2027 moves to Las Vegas (AI coverage gap noted);
+  aggregator-only SF Blackout chess night (Oct 24) not listed from official surfaces; The AI Conference
+  official page unfetchable this pass; Bay Area Science Festival regional/unconfirmed; AI Council admission
+  price unpublished (blank + unverified).
