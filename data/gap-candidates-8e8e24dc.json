@@ -1,0 +1,134 @@
+{
+  "session": "arena-8e8e24dc",
+  "checked_on": "2026-10-18",
+  "note": "Candidates reviewed during this pass. Every field below comes from a page fetched on 2026-10-18; nothing is inferred. 'rejected' does not mean the venue is uninteresting, only that it does not belong in a San Francisco city-limits events list or that its official page does not publish enough to publish a row.",
+  "candidates": [
+    {
+      "id": "gap-california-museum",
+      "candidate": "California Museum",
+      "status": "rejected_out_of_scope",
+      "reason": "The official site is The California Museum in Sacramento, not San Francisco. The existing row art-california-museum is therefore wrong on scope and address and should be removed, not expanded.",
+      "source_url": "https://californiamuseum.org/visit/visitor-information/location-directions-parking/",
+      "source_name": "California Museum - Location, Directions & Parking",
+      "verified_fields": {
+        "address": "1020 O Street, Sacramento, CA 95814",
+        "phone": "(916) 653-0650",
+        "hours": "Tue-Sat 10am-5pm; Sun 12pm-5pm; last admission 4pm",
+        "adult_admission": "$10"
+      }
+    },
+    {
+      "id": "gap-cjm",
+      "candidate": "Contemporary Jewish Museum",
+      "status": "rejected_closed",
+      "reason": "The museum has been temporarily closed since 15 December 2024 (announced 13 November 2024, 'at least one year'). It cannot be published as an open attraction. The existing row also gives the wrong address.",
+      "source_url": "https://www.thecjm.org/pages/621",
+      "source_name": "The CJM - A Message to Our Community (closure notice)",
+      "verified_fields": {
+        "status": "temporarily closed since 2024-12-15",
+        "address_from_contact_page": "736 Mission Street, San Francisco, CA 94103"
+      }
+    },
+    {
+      "id": "gap-battery-spencer",
+      "candidate": "Battery Spencer",
+      "status": "rejected_out_of_scope",
+      "reason": "Battery Spencer is in the Marin Headlands, north of the Golden Gate Bridge, in Golden Gate National Recreation Area. It is not within the City and County of San Francisco, so it should not be listed as an SF location.",
+      "source_url": "https://www.nps.gov/places/000/battery-spencer-overlook.htm",
+      "source_name": "NPS - Battery Spencer Overlook",
+      "verified_fields": {
+        "jurisdiction": "Golden Gate National Recreation Area, Marin Headlands",
+        "access": "Conzelman Road; parking limited and often full",
+        "elevation": "almost 500 feet above the bay"
+      }
+    },
+    {
+      "id": "gap-presidio-visitor-center",
+      "candidate": "Presidio Visitor Center",
+      "status": "accepted_as_correction",
+      "reason": "This is the correct identity/address for the existing art-presidio-museum row; it is a correction, not an additional row, because the row already exists under the wrong address.",
+      "source_url": "https://presidio.gov/explore/attractions/presidio-visitor-center",
+      "source_name": "Presidio Trust - Presidio Visitor Center",
+      "verified_fields": {
+        "address": "210 Lincoln Boulevard, San Francisco, CA 94129",
+        "hours": "daily 10am-5pm; closed Thanksgiving, Christmas and New Year's Day",
+        "admission": "free",
+        "phone": "(415) 561-4323"
+      }
+    },
+    {
+      "id": "gap-parol-lantern-2026",
+      "candidate": "Parol Lantern Festival 2026 date",
+      "status": "not_published",
+      "reason": "The official site still publishes the 23rd annual festival for 13 December 2025 (3-8pm, YBCA). No 2026 or 2027 date is published, so the existing row correctly leaves dates blank and stays unverified.",
+      "source_url": "https://www.parollanternfestival.com/",
+      "source_name": "Parol Lantern Festival - official site",
+      "verified_fields": {
+        "most_recent_edition": "2025-12-13, 3-8pm",
+        "venue": "Yerba Buena Center for the Arts, 701 Mission Street"
+      }
+    },
+    {
+      "id": "gap-greek-food-festival-2027",
+      "candidate": "San Francisco Greek Food Festival 2027 date",
+      "status": "not_published",
+      "reason": "The official page is a thank-you page for the 75th festival; no 2027 date is published. The existing row correctly leaves dates blank and stays unverified.",
+      "source_url": "https://annunciation.org/festival",
+      "source_name": "Annunciation Greek Orthodox Cathedral - Greek Food Festival",
+      "verified_fields": {
+        "venue": "245 Valencia Street, San Francisco, CA 94103",
+        "most_recent_edition": "75th festival (2026), date not stated on the fetched page"
+      }
+    },
+    {
+      "id": "gap-treasurefest-dates",
+      "candidate": "TreasureFest 2026/2027 dates",
+      "status": "not_published",
+      "reason": "The official homepage describes the festival and its location but does not publish a date in the fetched text. The existing row stays unverified with blank schedule and dates.",
+      "source_url": "https://www.treasurefest.com/",
+      "source_name": "TreasureFest - official site",
+      "verified_fields": {
+        "venue": "Treasure Island, San Francisco"
+      }
+    },
+    {
+      "id": "gap-flower-piano",
+      "candidate": "Flower Piano 2026",
+      "status": "already_present_verified",
+      "reason": "Already in the dataset as spc-flower-piano. Dates confirmed by the official event page; the row's blank schedule can be filled with 10am-6pm if desired.",
+      "source_url": "https://gggp.org/event/flower-piano-2026/",
+      "source_name": "GGGP - Flower Piano 2026",
+      "verified_fields": {
+        "dates": "September 10-20, 2026",
+        "hours": "10am-6pm",
+        "venue": "San Francisco Botanical Garden, 1199 9th Avenue",
+        "status": "This event has passed"
+      }
+    },
+    {
+      "id": "gap-lightscape",
+      "candidate": "Lightscape 2026-27",
+      "status": "already_present_verified",
+      "reason": "Already in the dataset as spc-lightscape. Dates and ticket prices confirmed by the official page.",
+      "source_url": "https://gggp.org/lightscape/",
+      "source_name": "GGGP - Lightscape",
+      "verified_fields": {
+        "dates": "November 20, 2026 - January 3, 2027",
+        "venue": "San Francisco Botanical Garden, 1199 9th Avenue",
+        "adult_ticket": "from $32 general / $27 member"
+      }
+    },
+    {
+      "id": "gap-fillmore-jazz-2027",
+      "candidate": "Fillmore Jazz Festival 2027",
+      "status": "already_present_verified",
+      "reason": "Already in the dataset as x-a-005. Official site confirms the 2027 dates; the row's date format should be rendered as a range.",
+      "source_url": "https://www.fillmorejazzfest.com/",
+      "source_name": "Fillmore Jazz Festival - official site",
+      "verified_fields": {
+        "dates": "Saturday & Sunday, July 3 & 4, 2027",
+        "venue": "Fillmore Street, San Francisco"
+      }
+    }
+  ]
+}
