@@ -32,9 +32,7 @@ The site is plain static HTML and is published with GitHub Pages.
 | Page | Contents |
 |---|---|
 | `index.html` | Dashboard: dated executive summary, focus areas, counts, categories and coverage notice |
-| `all-events.html` | 235 rows, chronological upcoming-first ordering, with search, schedule, category, focus, status, timing and cost filters (works without JavaScript) |
 | `free-events.html` | 141 entries whose published official cost wording explicitly includes free access |
-| `recurring.html` | 123 entries on a regular weekly, monthly or other recurring schedule |
 | `annual.html` | 56 entries that recur year after year |
 | `special.html` | 56 dated or time-limited entries for 2026–2027 |
 | `civic.html` | 37 civic entries, boards, commissions and public meetings |

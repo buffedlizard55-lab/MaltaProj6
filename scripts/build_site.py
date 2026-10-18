@@ -1165,6 +1165,9 @@ def build_page(filename: str, label: str, subtitle: str) -> str:
     page = filename.replace(".html", "")
     events = by_page(page)
     verified = sum(1 for e in events if e.get("status") == "verified")
+    # The focus pages already state their focus area in the heading, so the
+    # badge is suppressed there rather than repeated on every row.
+    show_focus = page not in ("technology", "music")
     body = f"""
 <section class="page-head">
   <h1>{esc(label)}</h1>
@@ -1174,7 +1177,7 @@ def build_page(filename: str, label: str, subtitle: str) -> str:
 <p class="count-note">{len(events)} entries &middot; {verified} fully verified &middot;
   {len(events) - verified} with a flagged gap &middot; checked {esc(VERIFIED_ON)}</p>
 
-{event_table(events, page + "-table")}
+{event_table(events, page + "-table", show_focus_badges=show_focus)}
 """
     return page_shell(filename, label, subtitle, body)
 
