@@ -1892,7 +1892,7 @@
       "page": "special",
       "type": "Special - Dated",
       "schedule": "Exhibitions run for fixed date ranges; ticketing and closing days apply per exhibition",
-      "dates": "Including: Treasures of the Pharaohs (through Jan 31, 2027); Rose B. Simpson: LEXICON (through Feb 7, 2027); Eternal Paris (through Apr 4, 2027); Rooted in Place: California Native Art (through Jun 4, 2027); Miró: Proof Against All (through Jul 25, 2027); Arts of Indigenous America (through Aug 31, 2028); Bouquets to Art 2027 (Mar 2-7, 2027)",
+      "dates": "Including: Treasures of the Pharaohs (through Jan 31, 2027); Rose B. Simpson: LEXICON (through Feb 7, 2027); Eternal Paris (through Apr 4, 2027); Rooted in Place: California Native Art (through Jun 4, 2027); Miró: Proof Against All (through Jul 25, 2027); Arts of Indigenous America (through Aug 31, 2028); Bouquets to Art 2027 (dates not yet published)",
       "location": "de Young Museum and Legion of Honor, Golden Gate Park",
       "area": "Richmond / Sunset",
       "cost": "Ticketed (free on designated days)",
@@ -4484,7 +4484,7 @@
     {
       "id": "flag-bouquets-2027-dates",
       "title": "Bouquets to Art 2027 — the March 2-7, 2027 dates published earlier could not be confirmed",
-      "detail": "The FAMSF page for Bouquets to Art 2027 describes the 43rd exhibition, its opening-night reception and the inclusion of the Legion of Honor, but publishes no dates. The row previously stated 'March 2-7, 2027' with a verified badge; that date is not published anywhere on the official page and has been removed rather than inferred.",
+      "detail": "The FAMSF page for Bouquets to Art 2027 describes the 43rd exhibition, its opening-night reception and the inclusion of the Legion of Honor, but publishes no dates. The row previously stated 'March 2-7, 2027' with a verified badge; that date is not published anywhere on the official page and has been removed rather than inferred. The same unsupported week was also repeated in the dates text of the 'FAMSF current and upcoming exhibitions' row and has been replaced there with 'dates not yet published'.",
       "source_name": "FAMSF — Bouquets to Art 2027",
       "source_url": "https://www.famsf.org/exhibitions/bouquets-to-art-2027",
       "action": "Watch the FAMSF page or press release for the 2027 dates, then fill them from the official announcement."
