@@ -1,0 +1,112 @@
+{
+  "session": "arena-bdaa17b4",
+  "checked_on": "2026-10-18",
+  "purpose": "Verification trail for the gap research task A4: San Francisco city-limits events absent from the published 205-row union dataset. 'added' rows were integrated into data/events.py in task A7; 'not_added' candidates record why they were not added. Aggregators and press reports were used only to locate official pages, never as evidence for a field value.",
+  "added": [
+    {
+      "id_in_events_py": "ann-outside-lands",
+      "title": "Outside Lands Music Festival",
+      "evidence_fetched": [
+        "https://www.sfmta.com/travel-updates/outside-lands-august-7-9-2026 (annual; August 7-9; Golden Gate Park)",
+        "https://www.sfoutsidelands.com/ returned HTTP 500 on 2026-10-18 (also logged as HTTP 500 by session arena-8fb52462)"
+      ],
+      "left_blank": ["organiser", "cost"],
+      "status": "unverified"
+    },
+    {
+      "id_in_events_py": "ann-juneteenth-fillmore",
+      "title": "JuneteenthSF Freedom Celebration (Fillmore)",
+      "evidence_fetched": [
+        "https://www.sf.gov/san-francisco-celebrates-juneteenth-2026 (annual eight-block celebration, Fillmore Street, Saturday June 13, listed among no-cost citywide Juneteenth events; links organiser site)",
+        "https://juneteenth-sf.org/ showed a hosting error page ('Something's wrong here') on 2026-10-18"
+      ],
+      "left_blank": ["organiser"],
+      "status": "unverified"
+    },
+    {
+      "id_in_events_py": "rec-sf-city-guides",
+      "title": "San Francisco City Guides free walking tours",
+      "evidence_fetched": ["https://sfcityguides.org/ (70+ free 1.5-2 hour tours; 501c3 founded 1978; program of the San Francisco Public Library; donations welcome)"],
+      "left_blank": [],
+      "status": "verified"
+    },
+    {
+      "id_in_events_py": "art-walt-disney-family-museum",
+      "title": "The Walt Disney Family Museum",
+      "evidence_fetched": [
+        "https://www.waltdisney.org/visit/admission (Thu-Sun 10am-5:30pm, last entry 4:30pm; closures; Adult $30 / Senior $20 / Student $20 / Youth 6-17 $15 / 5 & under free)",
+        "https://www.waltdisney.org/visit (museum at 104 Montgomery Street in the Presidio of San Francisco)"
+      ],
+      "left_blank": [],
+      "status": "verified"
+    },
+    {
+      "id_in_events_py": "ann-caamfest",
+      "title": "CAAMFest (Center for Asian American Media)",
+      "evidence_fetched": [
+        "https://caamedia.org/caamfest/ (44th year; San Francisco Japantown; May 7-10, 2026)",
+        "https://caamfest.com/2026/schedule/ (venues: AMC Kabuki, Asian Art Museum, KOHO Creative Hub, Koret Auditorium, New People Cinema)",
+        "https://caamfest.com/2026/box-office/ (Regular screenings General $15; Closing/Centerpieces $20; Opening Night Screening + Gala $90; Film Fan Pass $350)"
+      ],
+      "left_blank": [],
+      "status": "verified",
+      "note": "Organiser copy on caamedia.org says 'five days of films' while the stated 2026 range May 7-10 is four days; the row uses the dates only."
+    },
+    {
+      "id_in_events_py": "spc-portola-2026",
+      "title": "Portola Music Festival 2026",
+      "evidence_fetched": [
+        "https://www.sfmta.com/travel-updates/portola-music-festival-september-26-27-2026 (2-day festival at Pier 80; Sat Sep 26 & Sun Sep 27; concerts on four stages 2-11pm each day)",
+        "https://portolamusicfestival.com/ (post-event thank-you page on 2026-10-18; names Goldenvoice only in newsletter marketing consent, so organiser was not inferred from it)"
+      ],
+      "left_blank": ["organiser", "cost"],
+      "status": "unverified",
+      "note": "Classified Special - Dated (2026 edition): neither fetched official page states an annual cadence in words."
+    },
+    {
+      "id_in_events_py": "ann-escape-from-alcatraz-triathlon",
+      "title": "Escape From Alcatraz Triathlon",
+      "evidence_fetched": [
+        "https://www.escapealcatraztri.com/event-information/overview (entering its 47th year in 2027; 1.5-mile swim from waters near Alcatraz Island, 18-mile bike through the Presidio, 8-mile run incl. Sand Ladder, finish at Marina Green; two-day Fitness Festival at Marina Green free and open to the public; entry by Random Drawing, no fee stated on the page)",
+        "https://www.escapealcatraztri.com/ (2027 Sokin Escape: June 5 - June 6, 2027)"
+      ],
+      "left_blank": [],
+      "status": "verified"
+    },
+    {
+      "id_in_events_py": "ann-lets-glow-sf",
+      "title": "Let's Glow SF",
+      "evidence_fetched": ["https://downtownsf.org/things-to-do/lets-glow-sf (December 4-13, 2026, sixth year; ten winter nights; free; hosted by the Downtown SF Partnership; building locations with addresses)"],
+      "left_blank": [],
+      "status": "verified"
+    },
+    {
+      "id_in_events_py": "spc-fog-design-art-2027",
+      "title": "FOG Design+Art 2027",
+      "evidence_fetched": [
+        "https://www.sfmoma.org/event/series/fog-design-and-art-fair/ (Preview Gala Wed Jan 20, 2027; Fair Thu Jan 21 - Sun Jan 24, 2027; Fort Mason Center for Arts & Culture; gala supports SFMOMA education initiatives)",
+        "https://www.sfmoma.org/event/fog-design-and-art-fair/ returned 404 on 2026-10-18; https://fogfair.com/ homepage carried no dates, hours or prices when fetched"
+      ],
+      "left_blank": ["cost"],
+      "status": "unverified"
+    }
+  ],
+  "not_added": [
+    {
+      "title": "Yerba Buena Gardens Festival",
+      "reason": "Official site https://ybgfestival.org/ presented a reCAPTCHA wall to this session's fetcher on 2026-10-18, so no field could be verified from the official page. Already in the flagged register as f-011 (session arena-8fb52462)."
+    },
+    {
+      "title": "San Francisco Design Week",
+      "reason": "Official organiser page (sfdesignweek.org/call-for-proposals) states events happen 'throughout the Bay Area', which breaches this project's city-limits-only rule for a single programme row; 2026 end date also differs between sfdesignweek.org (June 1-12) and aigasf.org (June 1-13). Recorded here instead of publishing an out-of-scope or conflicted row."
+    },
+    {
+      "title": "Juneteenth Parade (Market Street) and Juneteenth Bayview Father's Day Festival",
+      "reason": "Named on the official SF.gov Juneteenth 2026 campaign page (Fourth Annual Juneteenth Parade, Saturday June 20, Market & Second 11:00am to Embarcadero Plaza; annual Bayview festival at Gilman Park), but organiser/landing pages were not separately fetched and verified this session, so no rows were published from the campaign summary alone."
+    },
+    {
+      "title": "Not checked this session (no claim made either way)",
+      "reason": "Union Square ice rink, Kaiser Permanente SF Half Marathon, SailGP San Francisco, SF Open Studios, additional Moscone Center conventions, USS Pampanito / SS Jeremiah Treasure Island, Musee Mecanique, SFMTA cable cars as an attraction row. Title-keyword scans confirm none has its own row in the 205; each still needs official-source verification before publication."
+    }
+  ]
+}
