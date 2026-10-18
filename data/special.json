@@ -93,7 +93,7 @@
       "type": "exhibition",
       "start_date": "2026-10-03",
       "end_date": "",
-      "display_dates": "Opened October 3, 2026 (closing date not published)",
+      "display_dates": "Opened October 3, 2026",
       "date_status": "partial",
       "venue": "SFMOMA, Floor 7",
       "neighborhood": "SoMa / Yerba Buena",
@@ -107,7 +107,7 @@
       "unverified_fields": [
         "end_date"
       ],
-      "notes": ""
+      "notes": "The official SFMOMA exhibitions index lists the opening date but no closing date; the end date remains blank."
     },
     {
       "id": "s-006",
@@ -137,7 +137,7 @@
       "type": "exhibition",
       "start_date": "2026-11-21",
       "end_date": "",
-      "display_dates": "Opens November 21, 2026 (closing date not published)",
+      "display_dates": "Opens November 21, 2026",
       "date_status": "partial",
       "venue": "SFMOMA, Floor 1",
       "neighborhood": "SoMa / Yerba Buena",
@@ -151,7 +151,7 @@
       "unverified_fields": [
         "end_date"
       ],
-      "notes": ""
+      "notes": "The official SFMOMA exhibitions index lists the opening date but no closing date; the end date remains blank."
     },
     {
       "id": "s-008",
@@ -266,13 +266,13 @@
     },
     {
       "id": "s-013",
-      "name": "Glow: opening night",
+      "name": "After Dark: Glow Opening",
       "category": "special",
-      "type": "exhibition",
+      "type": "event",
       "start_date": "2026-11-19",
       "end_date": "",
-      "display_dates": "Opens November 19, 2026 (run end not published)",
-      "date_status": "partial",
+      "display_dates": "Thursday, November 19, 2026",
+      "date_status": "confirmed",
       "venue": "Exploratorium, Pier 15",
       "neighborhood": "Embarcadero",
       "address": "",
@@ -282,10 +282,9 @@
       "source_title": "After Dark Thursday Nights | Exploratorium",
       "source_type": "official venue",
       "verified_on": "2026-10-18",
-      "unverified_fields": [
-        "end_date"
-      ],
-      "notes": "Winter light exhibition opening, listed on the After Dark calendar."
+      "unverified_fields": [],
+      "notes": "One-night After Dark opening event, distinct from the separate Glow exhibition, which runs November 19, 2026–January 24, 2027.",
+      "schedule": "6:00 p.m.–10:00 p.m."
     },
     {
       "id": "s-014",
@@ -608,22 +607,20 @@
       "category": "special",
       "type": "festival",
       "start_date": "2026-11-05",
-      "end_date": "",
-      "display_dates": "Opens November 5, 2026 (closing date not published)",
-      "date_status": "partial",
+      "end_date": "2026-11-08",
+      "display_dates": "November 5–8, 2026",
+      "date_status": "confirmed",
       "venue": "Vogue Theatre and SFFILM Filmhouse",
       "neighborhood": "Presidio / Marina",
       "address": "",
       "organizer": "SFFILM",
       "admission": "Ticketed",
-      "source_url": "https://sffilm.org/",
-      "source_title": "SFFILM | The Hub of the Bay Area's film culture",
+      "source_url": "https://sffilm.org/2026-sffilm-doc-stories/",
+      "source_title": "SFFILM Doc Stories 2026",
       "source_type": "official organizer",
       "verified_on": "2026-10-18",
-      "unverified_fields": [
-        "end_date"
-      ],
-      "notes": "Opening night and shorts blocks listed November 5-7, 2026."
+      "unverified_fields": [],
+      "notes": "The official event page describes Doc Stories as a four-day festival and lists the full November 5–8, 2026 run."
     },
     {
       "id": "s-031",
@@ -632,7 +629,7 @@
       "type": "convention",
       "start_date": "",
       "end_date": "",
-      "display_dates": "2027 dates not published on homepage",
+      "display_dates": "",
       "date_status": "not announced",
       "venue": "Moscone Center",
       "neighborhood": "SoMa",
@@ -647,7 +644,7 @@
         "start_date",
         "end_date"
       ],
-      "notes": "Homepage promotes 2027 registration but does not state the dates."
+      "notes": "The official homepage promotes 2027 registration but does not state the conference dates; the dates field is left blank."
     },
     {
       "id": "s-032",

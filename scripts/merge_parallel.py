@@ -260,7 +260,9 @@ def _convert_special(row: dict) -> dict:
         "page": "",
         "type": "Special - Dated",
         "group": "special",
-        "schedule": row.get("date_status", ""),
+        # date_status is metadata, not a human-readable schedule. A special
+        # event's Schedule cell is populated only from an explicit schedule.
+        "schedule": row.get("schedule", ""),
         "dates": dates,
         "location": location,
         "area": _neighbourhood_to_area(row.get("neighborhood", "")),
@@ -360,6 +362,11 @@ def parallel_flagged() -> list:
         return []
     out = []
     for item in payload.get("items", []):
+        # f-038 duplicates the canonical Assessment Appeals Board timing flag;
+        # the canonical item now records the conflicting current department and
+        # citywide calendars. Keep the preserved source JSON unchanged.
+        if item.get("id") == "f-038":
+            continue
         out.append(
             {
                 "id": f"xflag-{_slug(item.get('id', ''))}",

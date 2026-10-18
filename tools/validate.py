@@ -26,6 +26,7 @@ CATEGORY_PAGE = {
     "community": "community.html",
 }
 EXPECTED_CELLS = 9  # Event, type, schedule, dates, location, area, cost, organiser, source
+DATE_STATUS_METADATA = {"confirmed", "partial", "not announced"}
 NON_PRIMARY_HOST_PARTS = (
     "eventbrite.", "facebook.com", "instagram.com", "twitter.com", "tiktok.com",
     "wikipedia.org", "funcheap.com", "yelp.com", "tripadvisor.", "timeout.com",
@@ -131,6 +132,12 @@ def main() -> int:
             errors.append(f"{event_id}: source_url uses a blocked non-primary host: {source_url}")
         if event.get("status") not in ("verified", "unverified"):
             errors.append(f"{event_id}: invalid status {event.get('status')!r}")
+        for field in ("schedule", "dates"):
+            field_value = event.get(field, "")
+            if isinstance(field_value, str) and field_value.strip().casefold() in DATE_STATUS_METADATA:
+                errors.append(
+                    f"{event_id}: {field} contains date-status metadata {field_value!r}, not an event value"
+                )
         if event.get("group") not in GROUP_PAGE:
             errors.append(f"{event_id}: unknown group {event.get('group')!r}")
         if event.get("category") not in CATEGORY_PAGE:

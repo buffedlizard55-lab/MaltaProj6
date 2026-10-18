@@ -458,7 +458,7 @@
       "name": "Golden Gate Park Band concerts",
       "category": "weekly",
       "cadence": "Weekly (Sunday), April-September",
-      "schedule": "Sundays during the season, plus July 4 and Labor Day (start time not published on homepage)",
+      "schedule": "Sundays during the season, plus July 4 and Labor Day",
       "venue": "Spreckels Temple of Music, Music Concourse",
       "neighborhood": "Golden Gate Park",
       "address": "Music Concourse Drive",
@@ -472,7 +472,7 @@
       "unverified_fields": [
         "schedule.start_time"
       ],
-      "notes": "San Francisco's official park band, founded 1882; 25 concerts in the 2026 season."
+      "notes": "The official page confirms the April–September Sunday season plus July 4 and Labor Day concerts, but does not publish a start time; no time is inferred."
     },
     {
       "id": "w-024",
