@@ -96,6 +96,7 @@ FOCUS_BY_ID = {
     "rec-dogpatch-games-venue": "gaming",
     "rec-dogpatch-boardgame-league": "gaming",
     "spc-dogpatch-love-potion-2026-10-22": "gaming",
+    "spc-sfpl-family-game-night-2026-11-10": "gaming",
 
     # --- arena-fe7c710c additions (2026-10-18) ---------------------------
     "spc-illuminate-ccs-2026-10-22": "music",
@@ -116,6 +117,7 @@ FOCUS_BY_ID = {
     "rec-dogpatch-games-venue": "gaming",
     "rec-dogpatch-boardgame-league": "gaming",
     "spc-dogpatch-love-potion-2026-10-22": "gaming",
+    "spc-sfpl-family-game-night-2026-11-10": "gaming",
 
     # --- arena-fe7c710c additions (2026-10-18) ---------------------------
     "spc-illuminate-ccs-2026-10-22": "music",
@@ -136,6 +138,7 @@ FOCUS_BY_ID = {
     "rec-dogpatch-games-venue": "gaming",
     "rec-dogpatch-boardgame-league": "gaming",
     "spc-dogpatch-love-potion-2026-10-22": "gaming",
+    "spc-sfpl-family-game-night-2026-11-10": "gaming",
 
     # --- AI -------------------------------------------------------------
     "ann-sfpl-tech-week": "ai",

@@ -1,15 +1,15 @@
 # San Francisco Events
 
-A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **280 listed entries** (126 recurring, 57 annual, 97 special/dated) and is intended to cover events physically within the City and County of San Francisco.
+A curated, source-linked snapshot of public events in San Francisco, organized by recurrence, category and focus area. The inventory contains **281 listed entries** (126 recurring, 57 annual, 98 special/dated) and is intended to cover events physically within the City and County of San Francisco.
 
-Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (7), music (52), AI (9), then everything else (212)** — with free admission called out explicitly: **155** entries publish free-access wording, of which **137** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
+Every entry also carries a focus tag, so the same catalogue can be read the way the brief asks for — **gaming (8), music (52), AI (9), then everything else (212)** — with free admission called out explicitly: **156** entries publish free-access wording, of which **138** are free-only (not mixed with a paid tier). The homepage executive summary and main list use the free-only set.
 
 > **Coverage limitation:** this is not an exhaustive or live calendar of every concert, gallery opening, private event, pop-up or short-notice listing. The dataset reflects public programmes and event pages found during the recorded research pass. Check the [City's official events calendar](https://www.sf.gov/events/upcoming) and each organizer for additional or current listings.
 
 ## Verification and review status
 
 - Every published event row has a link to an organizer, government agency, state agency or federal park source. The research log records the pages as checked on **2026-10-18**.
-- **168** rows are marked `verified`; **112** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
+- **169** rows are marked `verified`; **112** rows have a review gap or an unconfirmed value. Unconfirmed price cells are left blank rather than showing a generic "Ticketed" as an amount, and affected rows appear on the **Flagged for review** page.
 - **214** discrepancy, source, scope and other review items are published on `flagged.html`.
 - **46** rows record editions that have already finished (the 2026 state fair, Dreamforce, the Mime Troupe summer season and similar); they stay in the catalogue as records, carry a **concluded** badge, and are kept out of the "upcoming dated events" strip on the home page.
 - **How cost is shown.** Each cost cell quotes the official source exactly and is rendered as a colour-coded label — free, partly free, paid, or *cost not published*. A price is never inferred: when the official page does not state an amount the cell is left blank, the row is marked `unverified`, and the official source's own wording (for example "Ticketed") is still shown underneath as *as published*, clearly separated from the price.
@@ -35,8 +35,8 @@ The site is plain static HTML and is published with GitHub Pages.
 | Page | Contents |
 |---|---|
 | `index.html` | Dashboard: free-only executive summary near today, free upcoming main list (gaming, music, AI, then everything else), paid section separate |
-| `all-events.html` | 280 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
-| `free-events.html` | 155 entries whose published official cost wording explicitly includes free access |
+| `all-events.html` | 281 rows, chronological upcoming-first ordering, with search, schedule, category, status, timing and cost filters (works without JavaScript) |
+| `free-events.html` | 156 entries whose published official cost wording explicitly includes free access |
 | `paid-events.html` | 126 paid, mixed, or price-not-published entries, kept out of the free main list |
 | `recurring.html` | 124 entries on a regular weekly, monthly or other recurring schedule |
 | `annual.html` | 57 entries that recur year after year |
@@ -70,7 +70,7 @@ countdown and the gaming / music / AI badge on each row. Paid and unpriced rows 
 ```
 COORDINATION.md             shared task board, research log, verification notes and irregularities
 data/events.py              canonical authored dataset
-data/events.json             generated machine-readable mirror (280 events, 214 review items)
+data/events.json             generated machine-readable mirror (281 events, 214 review items)
 data/gap-candidates-bdaa17b4.json  independent-audit gap-research trail (added / not-added candidates)
 audit/                        independent audit: report, structural row checker, integration script
 data/weekly.json              supplementary raw recurring rows
