@@ -1,0 +1,435 @@
+{
+  "checked_at_utc": "2026-10-18",
+  "session": "arena-76d2c635",
+  "base_commit": "98d8528 (211 events, main after PR #19)",
+  "purpose": "R3 gap re-check: remaining unchecked official-source candidates from data/gap-candidates-bdaa17b4.json (Kaiser SF Half Marathon, USS Pampanito, SS Jeremiah Treasure Island, Union Square Ice Rink f-008, Yerba Buena Gardens Festival f-011, SailGP, SF Open Studios, SF cable cars) plus gaps found during this session's R2 live audit (Musée Mécanique, SF Juneteenth Parade, Juneteenth Bayview Father's Day Festival). Search results were used only to locate official URLs; every value below comes from a page fetched from the organiser's, venue's, league's or City's own domain on 2026-10-18. Unconfirmable values are blank with the reason recorded; nothing is inferred.",
+  "method_note": "A candidate is 'propose_verified' only when schedule/dates, location, cost and organiser are all stated on fetched official pages. Otherwise 'propose_unverified' with the blank fields itemised so the integration session can add matching register entries. Proposed ids/categories/groups follow existing dataset conventions; final classification is the integration session's call (CATEGORY_BY_ID / EXPLICIT_GROUP in data/events.py). This file is a proposal only - no row has been added to data/events.py by this session (that file is owned by the final-integration claim).",
+  "candidates": [
+    {
+      "candidate_id": "g76-001",
+      "decision": "propose_verified",
+      "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json (maritime.org).",
+      "row": {
+        "id": "art-uss-pampanito",
+        "title": "USS Pampanito",
+        "group": "Recurring - Weekly/Regular",
+        "category": "Arts & Culture",
+        "type": "Attraction",
+        "status": "verified",
+        "schedule": "Open daily 10:00 am - 6:00 pm (last boarding 5:30 pm)",
+        "dates": "",
+        "location": "Historic Pier 45, Fisherman's Wharf, San Francisco",
+        "area": "Fisherman's Wharf",
+        "cost": "Adults (14-61) $25; Seniors (62+) / Students with ID $20; Juniors (5-13) $15; Family (up to 2 adults + 4 juniors) $65; Active Military $10; ages 4 and under free; members free",
+        "organiser": "San Francisco Maritime National Park Association",
+        "source_name": "San Francisco Maritime National Park Association - USS Pampanito",
+        "source_url": "https://maritime.org/uss-pampanito",
+        "notes": "WWII Balao-class submarine museum and National Historic Landmark, operated by the San Francisco Maritime National Park Association at Historic Pier 45 in Fisherman's Wharf. Distinct from the National Park Service Hyde Street Pier fleet covered by existing row art-maritime (whose ships closed 4 Nov 2024 and are relocating to Mare Island, per the same homepage). Admission prices and hours are printed on the Association homepage ticket block and the Pampanito page."
+      },
+      "evidence": [
+        {
+          "url": "https://maritime.org/uss-pampanito",
+          "supports": "Hours (daily 10-6, last boarding 5:30 pm), Pier 45 / Fisherman's Wharf location, operated by SF Maritime National Park Association."
+        },
+        {
+          "url": "https://maritime.org/",
+          "supports": "Admission price table (adult/senior-student/junior/family/military/under-5/member); Hyde Street Pier closure and Mare Island relocation note cross-checking art-maritime."
+        }
+      ],
+      "blanks": {},
+      "integration_notes": "maritime.org/uss-pampanito/pampanito-tickets/ and /visit-us/ return 404 (checked 2026-10-18); cite /uss-pampanito instead."
+    },
+    {
+      "candidate_id": "g76-002",
+      "decision": "propose_verified",
+      "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json (ssjeremiahobrien.org).",
+      "row": {
+        "id": "art-ss-jeremiah-obrien",
+        "title": "SS Jeremiah Treasure Island",
+        "group": "Recurring - Weekly/Regular",
+        "category": "Arts & Culture",
+        "type": "Attraction",
+        "status": "verified",
+        "schedule": "Open daily 10:00 am - 4:00 pm, year-round, including most holidays",
+        "dates": "",
+        "location": "Pier 35, The Embarcadero, San Francisco, CA 94133",
+        "area": "Fisherman's Wharf / Northern Waterfront",
+        "cost": "General Admission $20; Senior / Student $15; Junior $10; Active Military $10; Family $45; children under 5 free",
+        "organiser": "National Liberty Ship Memorial",
+        "source_name": "SS Jeremiah Treasure Island - National Liberty Ship Memorial",
+        "source_url": "https://ssjeremiahobrien.org/",
+        "notes": "WWII Liberty ship museum berthed at Pier 35 on the Embarcadero. The National Liberty Ship Memorial's stated mission is to restore, promote and operate the vessel. Daily hours and admission prices are printed on the homepage; berthing address on the About page."
+      },
+      "evidence": [
+        {
+          "url": "https://ssjeremiahobrien.org/",
+          "supports": "Daily 10-4 year-round hours and admission price table."
+        },
+        {
+          "url": "https://ssjeremiahobrien.org/about-us/",
+          "supports": "Pier 35, The Embarcadero, San Francisco, CA 94133 berthing; National Liberty Ship Memorial mission/operator identity."
+        }
+      ],
+      "blanks": {},
+      "integration_notes": "Use the apex domain: www.ssjeremiahobrien.org/pages/visit returns a host 'Website Unavailable' page (checked 2026-10-18)."
+    },
+    {
+      "candidate_id": "g76-003",
+      "decision": "propose_verified",
+      "prior_trail": "Resolves bdaa17b4 flagged gap f-008 (unionsquaresf.com parked/403). The rink operator's own domain unionsquareicerink.com was located and fetched instead.",
+      "row": {
+        "id": "ann-union-square-ice-rink",
+        "title": "Safeway Holiday Ice Rink in Union Square",
+        "group": "Annual",
+        "category": "Sports & Outdoors",
+        "type": "Attraction",
+        "status": "verified",
+        "schedule": "Daily 10:00 am - 11:00 pm (closes 9:30 pm on December 31); 60-minute skating sessions start every 1.5 hours",
+        "dates": "November 4, 2026 - January 18, 2027",
+        "location": "Union Square, 333 Post Street (at Geary & Powell), San Francisco",
+        "area": "Union Square / Downtown",
+        "cost": "$22 general admission; $17 children 8 and under (skate rental included); locker rental $5; skate helper $6",
+        "organiser": "Willy Bietak Productions",
+        "source_name": "Union Square Ice Rink (Willy Bietak Productions)",
+        "source_url": "https://unionsquareicerink.com/",
+        "notes": "Seasonal outdoor rink in its 19th year per the operator's 2026 press material, supporting Annual classification. Safeway and Kaiser Permanente appear as sponsors, not operators; the producing company is Willy Bietak Productions."
+      },
+      "evidence": [
+        {
+          "url": "https://unionsquareicerink.com/",
+          "supports": "2026-27 season dates Nov 4, 2026 - Jan 18, 2027; daily 10 am-11 pm hours (9:30 pm close Dec 31); session pattern; admission prices including skate rental."
+        },
+        {
+          "url": "https://unionsquareicerink.com/union-square-ice-skating/",
+          "supports": "333 Post Street at Geary/Powell address; session and rental details."
+        },
+        {
+          "url": "https://unionsquareicerink.com/press-releases/",
+          "supports": "'19TH YEAR' annual cadence; Willy Bietak Productions as producer (Safeway/Kaiser Permanente are sponsors)."
+        }
+      ],
+      "blanks": {},
+      "integration_notes": "Supersedes flagged item f-008: values no longer depend on the parked unionsquaresf.com domain."
+    },
+    {
+      "candidate_id": "g76-004",
+      "decision": "propose_unverified",
+      "prior_trail": "New gap found in this session's R3 keyword-absence scan (no row mentions the museum).",
+      "row": {
+        "id": "art-musee-mecanique",
+        "title": "Musée Mécanique",
+        "group": "Recurring - Weekly/Regular",
+        "category": "Arts & Culture",
+        "type": "Attraction",
+        "status": "unverified",
+        "schedule": "",
+        "dates": "",
+        "location": "Pier 45, Shed A (end of Taylor Street), Fisherman's Wharf, San Francisco, CA 94133",
+        "area": "Fisherman's Wharf",
+        "cost": "",
+        "organiser": "Musée Mécanique",
+        "source_name": "Musée Mécanique - Contact",
+        "source_url": "https://www.museemechanique.org/contact.html",
+        "notes": "Antique coin-operated arcade and mechanical music museum at Pier 45 (300+ machines from the Edward Galland Zelinsky collection, per the museum's About page; contact page names owner Dan, 415-346-2000). Hours and admission are left blank: two official-branded domains disagree and neither fetched page states an admission policy - see blanks."
+      },
+      "evidence": [
+        {
+          "url": "https://www.museemechanique.org/contact.html",
+          "supports": "Pier 45 Shed A address, phone, owner name; printed hours Mon-Fri 10-7, Sat-Sun 10-8, holidays 10-8 (NOT published - see conflict)."
+        },
+        {
+          "url": "https://www.museemechanique.org/about.html",
+          "supports": "Collection description and Pier 45 display location; machines are coin-operated (historical narrative only - no current admission statement)."
+        }
+      ],
+      "blanks": {
+        "schedule": "museemechanique.org/contact.html prints Mon-Fri 10-7 / Sat-Sun 10-8 / holidays 10-8, while the other official-branded domain museemecanique.com is indexed with 'Open Everyday 10AM-8PM'. The .com page itself could not be fetched (returns a script shell; alias museemecaniquesf.com returns HTTP 500), so the conflict cannot be resolved from fetched pages. Blank per the official-conflict rule.",
+        "cost": "No admission price or free-entry statement appears on the fetched .org pages; the About page describes coin operation historically. Blank - do not infer 'free entry, pay per machine' from third-party coverage."
+      },
+      "integration_notes": "If a future fetch of museemecanique.com succeeds and confirms one hours set, promote to verified and close the register item. Register action: 'Keep schedule and cost blank until one official domain's hours/admission can be fetched and reconciled.'"
+    },
+    {
+      "candidate_id": "g76-005",
+      "decision": "propose_unverified",
+      "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json.",
+      "row": {
+        "id": "art-sf-cable-cars",
+        "title": "San Francisco Cable Cars",
+        "group": "Recurring - Weekly/Regular",
+        "category": "Arts & Culture",
+        "type": "Attraction",
+        "status": "unverified",
+        "schedule": "Three lines: Powell-Hyde and Powell-Mason (Powell & Market to Fisherman's Wharf) and California Street (California & Market to Van Ness Avenue); see SFMTA for current service hours",
+        "dates": "",
+        "location": "Terminals at Powell & Market and California & Market; Powell lines to Fisherman's Wharf, California line to Van Ness Avenue, San Francisco",
+        "area": "Citywide",
+        "cost": "",
+        "organiser": "San Francisco Municipal Transportation Agency (SFMTA)",
+        "source_name": "SFMTA - Cable Cars",
+        "source_url": "https://www.sfmta.com/getting-around/muni/cable-cars",
+        "notes": "National Historic Landmark (designated 1964, per SFMTA) and working transit service. Advance ticket purchase is required at the Powell/Market and Hyde/Beach terminals during part of the day; the two fetched SFMTA pages give different windows for this (8 am-8 pm on the cable-cars page vs 8 am-5 pm daily on the fares page), recorded here as a minor official-site inconsistency. Fare is blank - see blanks."
+      },
+      "evidence": [
+        {
+          "url": "https://www.sfmta.com/getting-around/muni/cable-cars",
+          "supports": "Three-line network and termini; National Historic Landmark status; terminal advance-purchase practice."
+        },
+        {
+          "url": "https://www.sfmta.com/fares/cable-car-single-ride",
+          "supports": "Current printed fare table as fetched 2026-10-18: single ride $9.00; Senior/Disabled/Medicare $4.00 before 7 am and after 9 pm; youth 4 and under $0 (NOT published - see conflict)."
+        },
+        {
+          "url": "https://www.sfmta.com/press-releases/press-release-facing-fiscal-cliff-sfmta-board-approves-balanced-two-year-budget-preserve-muni-service-and-keep-san-francisco-moving",
+          "supports": "Apr 21, 2026 Board-approved budget: 'increases the price of a single-ride cable car fare from $9 to $12 in the FY26-27 (before phasing it out in FY27-28)' plus a new $18 Cable Car Plus pass; FY26-27 began July 1, 2026."
+        }
+      ],
+      "blanks": {
+        "cost": "SFMTA's own fares page still lists $9.00 while the Board-approved FY26-27 budget raises the single ride to $12 (fiscal year already under way; no effective calendar date stated on the fetched release chunk). The operative fare cannot be determined from fetched official pages. Blank per the official-conflict rule.",
+        "schedule_detail": "First/last car times are route-specific timetable material not printed on the fetched overview/fares pages; schedule cell therefore describes the network only."
+      },
+      "integration_notes": "Attraction-vs-transit framing is an integration judgement (cf. art-golden-gate-bridge landmark precedent). Re-check the fares page at merge time: if it then prints $12, publish the fare and close the flag."
+    },
+    {
+      "candidate_id": "g76-006",
+      "decision": "propose_unverified",
+      "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json under its former title sponsorship 'Kaiser Permanente SF Half Marathon'. The race's current official title is used here.",
+      "row": {
+        "id": "ann-sf-half-marathon",
+        "title": "San Francisco Half Marathon & 5K",
+        "group": "Annual",
+        "category": "Sports & Outdoors",
+        "type": "Sport",
+        "status": "unverified",
+        "schedule": "Half Marathon start 7:45 am; 5K start 8:20 am",
+        "dates": "February 7, 2027",
+        "location": "Golden Gate Park, San Francisco (start: JFK Promenade east of Blue Heron Lake Drive; finish: Bernice Rodgers Way near Martin Luther King Jr. Drive; courses through the Panhandle, Golden Gate Park and Sunset Dunes along the Pacific Ocean)",
+        "area": "Golden Gate Park",
+        "cost": "",
+        "organiser": "",
+        "source_name": "San Francisco Half Marathon & 5K - Race Information",
+        "source_url": "https://sanfranciscohalfmarathon.org/race-information/",
+        "notes": "Presented by Sutter Health (sponsor, per the homepage masthead). The race site describes it as a fixture on the Bay Area racing calendar with proceeds supporting Bay Area charities; both courses are USATF-certified. Listed by prior sessions under former title sponsor Kaiser Permanente; recorded here under the race's current official title."
+      },
+      "evidence": [
+        {
+          "url": "https://sanfranciscohalfmarathon.org/",
+          "supports": "February 7, 2027 - Golden Gate Park; 'Presented by Sutter Health'; annual/fixture framing; charity proceeds. Footer names only the event itself (no producing organisation)."
+        },
+        {
+          "url": "https://sanfranciscohalfmarathon.org/race-information/",
+          "supports": "Start line JFK Promenade east of Blue Heron Lake Drive, Half 7:45 am / 5K 8:20 am; finish Bernice Rodgers Way near MLK Drive; course descriptions and USATF certification numbers."
+        },
+        {
+          "url": "https://sanfranciscohalfmarathon.org/registration/",
+          "supports": "Confirms Sunday, February 7, 2027 and that entry is by paid registration via a linked platform; no entry fees are printed on the organiser's own pages."
+        }
+      ],
+      "blanks": {
+        "organiser": "No producing organisation is named on the fetched homepage, race-information or registration pages (contact shown as raceinfo@sanfranciscohalfmarathon.org; Sutter Health is presenting sponsor and SF Rec & Park appears among partner logos - neither is identified as organiser). Blank per rule.",
+        "cost": "Entry fees appear only inside the linked third-party registration flow, not on the organiser's fetched pages. Blank - do not copy fees from registration-platform or aggregator listings."
+      },
+      "integration_notes": "Weekday check: Feb 7, 2027 is a Sunday, matching the registration page. Compare ann-bay-to-breakers / ann-sf-marathon house style for race rows at merge."
+    },
+    {
+      "candidate_id": "g76-007",
+      "decision": "propose_verified",
+      "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json (ArtSpan).",
+      "row": {
+        "id": "ann-sf-open-studios",
+        "title": "SF Open Studios",
+        "group": "Annual",
+        "category": "Arts & Culture",
+        "type": "Festival",
+        "status": "verified",
+        "schedule": "Artist-hosted studio visits on weekends, 11:00 am - 5:00 pm (each weekend features different neighborhoods)",
+        "dates": "September 26 - October 25, 2026",
+        "location": "Artist studios across San Francisco neighborhoods (see ArtSpan Online Guide); Preview Exhibition at SOMArts, 934 Brannan Street",
+        "area": "Citywide",
+        "cost": "Free",
+        "organiser": "ArtSpan",
+        "source_name": "ArtSpan - Visit SF Open Studios",
+        "source_url": "https://www.artspan.org/visitsfopenstudios",
+        "notes": "52nd annual production (a San Francisco tradition since 1975, per ArtSpan). ArtSpan describes studio visiting as a free opportunity; the ticketed ArtLaunch kick-off party at SOMArts is a separate ancillary event and is not the subject of this row. ArtSpan's artist-participation invite addresses 'SF Bay Area' artists, but the visiting program itself is presented as studios across San Francisco's neighborhoods."
+      },
+      "evidence": [
+        {
+          "url": "https://www.artspan.org/visitsfopenstudios",
+          "supports": "'Artist-Hosted SF Open Studios - September 26 - October 25 | Weekends | 11AM-5PM'; tradition since 1975; 'annual city tradition'; 'produced by ArtSpan'; 'Enjoy this free opportunity'."
+        },
+        {
+          "url": "https://somarts.org/exhibition/sfopenstudios2026/",
+          "supports": "Corroborates the 2026 season year: '52nd annual production', Preview Exhibition September 19-27, 2026, open studio events 'through October 25, 2026' (venue-partner official page)."
+        }
+      ],
+      "blanks": {},
+      "integration_notes": "ArtSpan's /programs/visitsfopenstudios path 404s; the live path is /visitsfopenstudios. Season is in progress at audit date (final weekend Oct 24-25, 2026)."
+    },
+    {
+      "candidate_id": "g76-008",
+      "decision": "propose_unverified",
+      "prior_trail": "Listed as unchecked candidate in data/gap-candidates-bdaa17b4.json. No San Francisco stop was held in 2026; the official 2027 event page is now live.",
+      "row": {
+        "id": "spc-sailgp-2027",
+        "title": "San Francisco Sail Grand Prix (SailGP)",
+        "group": "Special - Dated",
+        "category": "Sports & Outdoors",
+        "type": "Sport",
+        "status": "unverified",
+        "schedule": "Race Day 1: Saturday, April 3, 2027; Race Day 2: Sunday, April 4, 2027 (Race Stadium opening and race times TBC)",
+        "dates": "April 3-4, 2027",
+        "location": "Race Stadium entrance on the Yacht Club Peninsula next to St. Francis Yacht Club, 99 Yacht Road, San Francisco, CA 94123 (off Marina Green); racecourse on San Francisco Bay between Alcatraz Island and the Golden Gate Bridge",
+        "area": "Marina District",
+        "cost": "Waterfront Grandstand $86 single day / $150 weekend (standard); Premium Waterfront Grandstand $149 single day / $240 weekend (standard)",
+        "organiser": "SailGP",
+        "source_name": "SailGP - San Francisco Sail Grand Prix 2027",
+        "source_url": "https://sailgp.com/races/2027/san-francisco-sail-grand-prix/overview/",
+        "notes": "SailGP's return to San Francisco after no 2026 SF stop, hence Special - Dated rather than Annual (cf. spc-portola-2026 precedent). Spectator stadium is on the San Francisco shoreline in the Marina District; racing takes place on Bay waters between Alcatraz and the Golden Gate Bridge - the same shoreline-scope treatment as existing Fleet Week / bay-swim rows is assumed and flagged for integration."
+      },
+      "evidence": [
+        {
+          "url": "https://sailgp.com/races/2027/san-francisco-sail-grand-prix/overview/",
+          "supports": "'SailGP returns to San Francisco on April 3-4, 2027'; racecourse between Golden Gate Bridge and Alcatraz Island; two race days Sat Apr 3 / Sun Apr 4."
+        },
+        {
+          "url": "https://tickets.sailgp.com/san-francisco/",
+          "supports": "Official ticketing subdomain: Marina District location and 99 Yacht Road stadium entrance; standard and presale grandstand prices; event schedule shows stadium-open and race times as 'TBC'."
+        }
+      ],
+      "blanks": {
+        "schedule_times": "Race Stadium opening and race start times are printed as TBC on the official tickets page (fetched 2026-10-18). Row stays unverified until times publish; the schedule cell discloses TBC rather than inventing times."
+      },
+      "integration_notes": "Presale prices ($85/$136 and $145/$235, Oct 23-25 window) are time-limited and deliberately not published; standard prices used. Re-check times before merge - a TBC may have resolved."
+    },
+    {
+      "candidate_id": "g76-009",
+      "decision": "propose_verified",
+      "prior_trail": "Resolves bdaa17b4 flagged gap f-011 (ybgfestival.org reCAPTCHA). The homepage is still bot-walled, but the Festival's official 2026 season press release PDF on the same domain fetches cleanly and carries full season facts.",
+      "row": {
+        "id": "ann-ybg-festival",
+        "title": "Yerba Buena Gardens Festival",
+        "group": "Annual",
+        "category": "Arts & Culture",
+        "type": "Festival",
+        "status": "verified",
+        "schedule": "Annual season of 100+ free outdoor performances, May-November; 2026 weekly series include Thursday Lunchtime Concerts 12:30-1:30 pm, Children's Garden Series on Fridays (Jun 5-Aug 14, 11:00 am & noon) and Dance Outdoors on Wednesdays at noon, plus dated headline programs",
+        "dates": "May 9, 2026 - October 31, 2026 (dated 2026 highlights; November 2026 programs to be announced)",
+        "location": "Yerba Buena Gardens, between 3rd and 4th Streets and Mission and Howard Streets, Downtown San Francisco",
+        "area": "Yerba Buena / SoMa",
+        "cost": "Free (admission-free)",
+        "organiser": "Yerba Buena Gardens Festival",
+        "source_name": "Yerba Buena Gardens Festival - 2026 Season Press Release (April 1, 2026)",
+        "source_url": "https://ybgfestival.org/wp-content/uploads/2026/04/YBGF-2026-PR.pdf",
+        "notes": "26th season (2026), supporting Annual classification for the festival season; the row summarises the season rather than its 100+ individual programs, several of which (Pistahan, Native Contemporary Arts Festival) already relate to existing rows as venue/location mentions. Season opener was Saturday, May 9, 2026 at 2:00 pm. Funders named in the release (City and County of San Francisco, SF Arts Commission, Yerba Buena Gardens Conservancy et al.) are supporters, not the presenting organisation."
+      },
+      "evidence": [
+        {
+          "url": "https://ybgfestival.org/wp-content/uploads/2026/04/YBGF-2026-PR.pdf",
+          "supports": "'Over 100+ Free Performances from May to November in Downtown San Francisco'; 26th season; opener Sat May 9, 2026 2:00 pm; Gardens location between 3rd/4th and Mission/Howard; weekly series times (Thu 12:30-1:30 pm lunchtime concerts, Fri Children's Garden Jun 5-Aug 14 11 am/noon, Wed noon Dance Outdoors); dated highlights through Oct 31 with 'NOVEMBER programs to be announced'; 'admission-free performing arts'."
+        }
+      ],
+      "blanks": {},
+      "integration_notes": "If integration prefers the Bandshell precedent (rec-ggp-bandshell) for season-long weekly series, this could sit in Recurring with the season window in dates; Annual proposed because the source frames a numbered annual season (26th). Existing rows ann-parol-lantern and x-a-008 already locate other events at Yerba Buena Gardens - no duplication: this row is the Gardens' own festival season."
+    },
+    {
+      "candidate_id": "g76-010",
+      "decision": "propose_unverified",
+      "prior_trail": "New gap found during this session's R2/R3 work: dataset has ann-juneteenth-fillmore only; the separate downtown Market Street parade is absent.",
+      "row": {
+        "id": "ann-juneteenth-parade",
+        "title": "San Francisco Juneteenth Parade (Market Street)",
+        "group": "Annual",
+        "category": "Community & Civic Life",
+        "type": "Parade",
+        "status": "unverified",
+        "schedule": "Parade 11:00 am - 12:00 pm; Celebration 12:00 - 4:00 pm",
+        "dates": "June 20, 2026",
+        "location": "Market Street at 2nd Street to Embarcadero Plaza, San Francisco",
+        "area": "Downtown / Market Street",
+        "cost": "Free (RSVP)",
+        "organiser": "",
+        "source_name": "SF Juneteenth Parade (official event site)",
+        "source_url": "https://juneteenthsfc.org/",
+        "notes": "Fourth Annual Juneteenth Parade & Celebration (SF.gov Human Rights Commission campaign page), distinct from the Fillmore celebration in ann-juneteenth-fillmore (June 13, 2026) and from the Bayview festival (candidate g76-011); all three appear as separate listings on the City's Juneteenth 2026 page. Evidence-quality note: the event site's below-fold sections contain leftover template filler text, but its event facts block (date, times, route) is specific and is corroborated by SF.gov."
+      },
+      "evidence": [
+        {
+          "url": "https://juneteenthsfc.org/",
+          "supports": "'Official SF Juneteenth Parade'; Date June 20, 2026; Parade 11am-12pm, Celebration 12pm-4pm; Route Market St. & 2nd St. to Embarcadero Plaza; 'RSVP FOR FREE'."
+        },
+        {
+          "url": "https://www.sf.gov/san-francisco-celebrates-juneteenth-2026",
+          "supports": "'Fourth Annual Juneteenth Parade & Celebration - Saturday, June 20', start Market and Second Streets 11:00am, endpoint Embarcadero Plaza; page frames the calendar as no-cost events. Also corroborates ann-juneteenth-fillmore ('JuneteenthSF Freedom Celebration in the Fillmore - Saturday, June 13 ... annual eight-block celebration down historic Fillmore Street')."
+        }
+      ],
+      "blanks": {
+        "organiser": "The event site presents only the event brand (Juneteenth Parade SF) with no producing organisation named in fetched content; SF.gov says the Human Rights Commission supports citywide Juneteenth celebrations 'through grant funding of nonprofit partners' without naming this parade's producer. Blank, mirroring the ann-juneteenth-fillmore precedent - do not lift producer names from media/aggregator coverage."
+      },
+      "integration_notes": "June 20, 2026 was a Saturday (checked). SFMTA publishes a Juneteenth Parade travel update with matching route/time, available as an additional official citation if integration wants a transit-notice source."
+    },
+    {
+      "candidate_id": "g76-011",
+      "decision": "propose_unverified",
+      "prior_trail": "New gap found via the SF.gov Juneteenth 2026 campaign page fetched for g76-010.",
+      "row": {
+        "id": "ann-juneteenth-bayview",
+        "title": "Juneteenth Bayview Father's Day Festival",
+        "group": "Annual",
+        "category": "Community & Civic Life",
+        "type": "Festival",
+        "status": "unverified",
+        "schedule": "",
+        "dates": "June 21, 2026",
+        "location": "Gilman Park, Bayview, San Francisco",
+        "area": "Bayview",
+        "cost": "Free",
+        "organiser": "",
+        "source_name": "SF.gov - San Francisco Celebrates Juneteenth 2026 (Human Rights Commission)",
+        "source_url": "https://www.sf.gov/san-francisco-celebrates-juneteenth-2026",
+        "notes": "Described by SF.gov as the 'annual Juneteenth Bayview Father's Day Festival at Gilman Park' (carnival rides, shopping, food, live music), with the 2026 flyer dated June 21 (Father's Day 2026, a Sunday). The organiser's own site (sf-juneteenth.com, linked from SF.gov) is fetchable but mixes editions - its program schedule names a former mayor and its vendor text references 'June 16th' (a prior year's Father's Day) - so no 2026 times are taken from it."
+      },
+      "evidence": [
+        {
+          "url": "https://www.sf.gov/san-francisco-celebrates-juneteenth-2026",
+          "supports": "Annual framing, Gilman Park location, June 21 flyer date, inclusion in the page's 'full calendar of no-cost, family-friendly events'."
+        },
+        {
+          "url": "https://www.sf-juneteenth.com/",
+          "supports": "Organiser-site identity for the Bayview Juneteenth Father's Day Festival and 2026 vendor applications; dated program content on the page is stale/mixed-edition and is not relied on for any published value."
+        }
+      ],
+      "blanks": {
+        "schedule": "No 2026 start/end times are stated on the fetched SF.gov listing, and the organiser homepage's timetable belongs to an earlier edition. Blank.",
+        "organiser": "Neither fetched page names a legal producing organisation (the organiser site brands itself 'Bay View SF'). Blank per rule."
+      },
+      "integration_notes": "Thin-but-real candidate: include only with the unverified flag and the staleness note above, or hold until the organiser publishes a clean current-edition page. Do not copy the sf-juneteenth.com timetable."
+    }
+  ],
+  "not_added": [
+    {
+      "candidate": "SF Design Week",
+      "status": "not_added (unchanged from bdaa17b4)",
+      "reason": "Not re-attempted this session. Prior finding stands: official root returned 403 and programming is Bay Area-framed; no SF-only dated evidence secured. Revisit only via a fetchable official page."
+    },
+    {
+      "candidate": "BATS Improv (Bay Area Theatresports)",
+      "status": "not_added (unchanged)",
+      "reason": "Already tracked as a pending imported row from another session per the coordination board; not duplicated here."
+    },
+    {
+      "candidate": "Treasure Island Ferry",
+      "status": "excluded (unchanged)",
+      "reason": "Out of scope: Treasure Island events/services are excluded from the SF city-limits dataset by prior decision; unchanged."
+    },
+    {
+      "candidate": "SailGP San Francisco 2026 edition",
+      "status": "not_added (no such edition)",
+      "reason": "The official SailGP 2027 San Francisco page announces a 'return' on April 3-4, 2027 and no 2026 San Francisco event page exists on sailgp.com material located 2026-10-18; recorded as candidate g76-008 for 2027 only."
+    }
+  ],
+  "summary_counts": {
+    "candidates_total": 11,
+    "propose_verified": 5,
+    "propose_unverified": 6,
+    "prior_flagged_gaps_resolved": ["f-008 (Union Square Ice Rink) -> g76-003", "f-011 (Yerba Buena Gardens Festival) -> g76-009"]
+  }
+}
