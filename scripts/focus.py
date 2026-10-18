@@ -235,6 +235,15 @@ DATE_OVERRIDES: dict[str, tuple[str, str]] = {
     "rec-sf-shakes-free-shakespeare": ("2026-07-25", "2026-09-27"),
     "spc-lightscape": ("2026-11-20", "2027-01-03"),
     "spc-alcatraz-closure": ("2026-10-26", "2026-11-18"),
+    # arena-291a13ff (2026-10-18): the museum gives the end as "May 2027" with no
+    # calendar day, so the end is left empty rather than approximated or echoed
+    # back as the opening date (which the mechanical parser otherwise returns).
+    "spc-sfmoma-in-between": ("2026-09-03", ""),
+    # Same class: SFMOMA lists this exhibition only as "Opened Oct 3" with the
+    # closing date not listed, so a running exhibition was deriving as ended on
+    # its opening day. End left empty; displayed dates text is unchanged and
+    # still faithful to the museum page.
+    "x-s-005": ("2026-10-03", ""),
 }
 
 
