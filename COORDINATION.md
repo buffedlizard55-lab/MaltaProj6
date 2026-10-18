@@ -21,12 +21,25 @@ Shared task board for all agent sessions working on this repository.
 | `arena-8fb52462` | `arena/8fb52462-maltaproj6` | Scaffolding, schema, per-task JSON data files (`data/weekly.json`, `data/annual.json`, `data/special.json`, `data/flagged.json`, `data/sources.json`), tooling (`tools/`), own site views (`weekly.html`, `analysis.html`, `sources.html`, `assets/style.css`, `assets/app.js`) | ✅ complete — merged into `main` at `286ae68`, and folded into the union dataset by `arena-b0f3cfd3` |
 | `arena-bdaa17b4` | `arena/bdaa17b4-maltaproj6` | **Independent line-by-line audit, live source re-verification, gap research, then integration.** Phase 1 (while `arena-f54a124f` was in progress): new files only — `audit/AUDIT-2026-10-18-bdaa17b4.md`, `audit/check_dataset.py`, `audit/row-audit.csv`, `data/gap-candidates-bdaa17b4.json`. Phase 2 (after `arena-f54a124f` completed and merged PRs #12/#13, releasing its claim): integration edits to `data/events.py`, regenerated `*.html`/`data/events.json`, this board. Branch note: work stays on this session's fixed Arena branch, not a `session-<id>/<task>` branch. | ✅ complete — PR #16 merged to `main` 2026-10-18T01:44:12Z (`6d7d63a`), Pages build for that commit `built`, `error: null`; see closing record below |
 | `arena-7d8015f4` | `arena/7d8015f4-maltaproj6` | Post-merge integrity audit and repair (`tools/validate.py` reproducibility/blocked-host checks, One City One Book current-selection source, Alcatraz closure row → `unverified`) | ✅ complete — PRs #14/#15 merged to `main` (`2660263`); registry row recorded by `arena-bdaa17b4` during merge resolution (that session logged itself in a "Current session" section, kept below) |
+| `arena-7141e086` | `arena/7141e086-maltaproj6` | Final integration review after PR #19: reconcile documentation with the current dataset, re-audit source-backed rows and review gaps, validate/build/link-check, publish verified fixes if needed, then PR/merge/Pages confirmation. Arena-fixed branch used; no branch switch. | 🟡 in progress |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
 session's branch appeared and was merged into `main` later in the run, which produced a merge conflict with
 `index.html`, `annual.html`, `special.html`, `flagged.html`, `assets/style.css`, `COORDINATION.md` and `README.md`.
 That conflict is resolved below, in **Merge conflict resolution**, without discarding either session's work.
+
+---
+
+## Task board — `arena-7141e086` (final integration review)
+
+Session branch: `arena/7141e086-maltaproj6` (Arena-fixed branch; no other branch is used).
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| I0 | Register on the shared board and claim final integration review | ✅ done | `arena-7141e086` | `COORDINATION.md` | Claim commit pushed before edits to any other files. |
+| I1 | Reconcile the current published dataset/docs, independently check source-backed rows and gaps, rebuild/validate/link-check; fix only source-confirmed issues | 🟡 in progress | `arena-7141e086` | `COORDINATION.md`, `README.md`, `audit/AUDIT-2026-10-18-7141e086.md`, and (only as verified fixes) `data/events.py`, `data/events.json`, `*.html`, `scripts/`, `assets/` | All earlier tasks in the board are complete; this is the final integration pass. Record sources, checks and limitations before marking done. |
+| I2 | Open PR to `main`, merge only after checks pass, confirm GitHub Pages deployment and record result | ⬜ unclaimed | — | `COORDINATION.md` | To be completed by this integration session after I1 passes. |
 
 ---
 
