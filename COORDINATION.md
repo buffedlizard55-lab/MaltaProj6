@@ -669,4 +669,14 @@ no diff); `tools/validate.py` → OK; `audit/check_8e8e24dc.py` → `hard_proble
 findings, 42 of them `verified` rows whose remaining blank field the official page does not publish). Full
 evidence, per-page source log and the IR disposition table are in `audit/AUDIT-2026-10-18-8e8e24dc.md`.
 
-**Follow-up (record-only).** A closing record PR follows, as earlier sessions did.
+**Follow-up.** PR #30 (https://github.com/buffedlizard55-lab/MaltaProj6/pull/30) removed the last copy of the
+unsupported Bouquets week from the FAMSF exhibitions row and merged at **06:03:45Z** as
+`79ac018916c2be40304eb803ddc3c9d463b4ad03`; the Pages deployment for that commit reports `status: built`,
+`error: null`. Live `special.html` now shows "Bouquets to Art 2027 — not confirmed / not confirmed,
+unverified" and "Bouquets to Art 2027 (dates not yet published)" inside the FAMSF row.
+
+**Final state on `main`:** 217 events (115 recurring · 55 annual · 47 special), 206 verified, 11 review-gap
+rows, 103 review items, 42 concluded editions, 97 official domains, 15 pages. Checks re-run after the merge:
+build reproducible, `tools/validate.py` OK, `audit/check_8e8e24dc.py` `hard_problems=0`.
+
+**Follow-up (record-only).** This final record-only PR follows, as earlier sessions did.
