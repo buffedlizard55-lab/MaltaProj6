@@ -20,6 +20,7 @@
     </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html">Home</a>
+      <a href="all-events.html">Full list</a>
       <a href="recurring.html">Regularly recurring</a>
       <a href="annual.html">Annual</a>
       <a href="special.html">Special</a>
@@ -28,6 +29,7 @@
       <a href="sports.html">Sports</a>
       <a href="markets.html">Markets &amp; food</a>
       <a href="community.html">Community &amp; parks</a>
+      <a href="analysis.html">Analysis</a>
       <a href="flagged.html">Flagged for review</a>
       <a href="methodology.html" class="active">Method</a>
     </nav>
@@ -89,16 +91,19 @@
   <ul class="plain-list">
     <li><code>data/events.py</code> holds the canonical dataset; <code>data/events.json</code> is the
         machine-readable copy emitted by the build.</li>
-    <li><code>scripts/build_site.py</code> renders the static HTML pages. There is no client-side JavaScript: every
-        page is plain HTML that GitHub Pages can serve directly.</li>
+    <li><code>scripts/build_site.py</code> renders the static HTML pages, the machine-readable
+        <code>data/events.json</code> and the spreadsheet-friendly <code>data/events.csv</code>.</li>
+    <li>The <a href="all-events.html">Full list</a> page adds a small amount of vanilla JavaScript so the table can be
+        searched and filtered in the browser. With JavaScript disabled, the page still shows every row; only the
+        filter controls stop working. No external scripts, fonts or trackers are loaded.</li>
     <li>Re-running <code>python3 scripts/build_site.py</code> regenerates the site deterministically from the
         dataset, so the tables and the counts can never drift apart.</li>
   </ul>
 </section>
 
 <section>
-  <h2>Official domains used as sources (95)</h2>
-  <ul class="domain-list"><li>annunciation.org</li><li>asi.sfsu.edu</li><li>asianart.org</li><li>broadwaysf.com</li><li>caamedia.org</li><li>californiamuseum.org</li><li>carnavalsanfrancisco.org</li><li>castromerchants.com</li><li>castrostreetfair.org</li><li>chineseparade.com</li><li>downtownsf.org</li><li>fleetweeksf.org</li><li>foodwise.org</li><li>gdconf.com</li><li>gggp.org</li><li>goldengateparkband.org</li><li>hardlystrictlybluegrass.com</li><li>home.nps.gov</li><li>hotcfarmersmarket.org</li><li>maritime.org</li><li>museemecanique.com</li><li>nps.gov</li><li>offthegrid.com</li><li>presidio.gov</li><li>sf-fire.org</li><li>sfbeerweek.org</li><li>sfcherryblossom.org</li><li>sfcityguides.org</li><li>sfcityhallevents.org</li><li>sffilm.org</li><li>sfgov.legistar.com</li><li>sfitalianheritage.org</li><li>sfpl.org</li><li>sfplanning.org</li><li>sfpride.org</li><li>sfrecpark.org</li><li>sfshakes.org</li><li>sfsketchfest.com</li><li>silentfilm.org</li><li>sunsetmercantilesf.com</li><li>thecjm.org</li><li>transmarch.org</li><li>uissf.org</li><li>unionstreetsf.com</li><li>warriors.com</li><li>www.agriculturalinstitute.org</li><li>www.artspan.org</li><li>www.baytobreakers.com</li><li>www.cafarmersmkts.com</li><li>www.calacademy.org</li><li>www.cdfa.ca.gov</li><li>www.dayofthedeadsf.org</li><li>www.dftsf.com</li><li>www.dragonboatsf.com</li><li>www.escapealcatraztri.com</li><li>www.exploratorium.edu</li><li>www.famsf.org</li><li>www.ferrybuildingmarketplace.com</li><li>www.fillmorejazzfest.com</li><li>www.folsomstreet.org</li><li>www.frameline.org</li><li>www.goldengate.org</li><li>www.haightashburystreetfair.org</li><li>www.litquake.org</li><li>www.mlb.com</li><li>www.moonfestival.org</li><li>www.nihonmachistreetfair.org</li><li>www.noevalleyfarmersmarket.com</li><li>www.noisepop.com</li><li>www.northbeachfarmersmarket.com</li><li>www.northbeachfestival.org</li><li>www.nps.gov</li><li>www.parollanternfestival.com</li><li>www.pcfma.org</li><li>www.pistahan.net</li><li>www.randallmuseum.org</li><li>www.rsaconference.com</li><li>www.sf.gov</li><li>www.sfballet.org</li><li>www.sfbg.org</li><li>www.sfjazz.org</li><li>www.sfmoma.org</li><li>www.sfmta.com</li><li>www.sfopera.com</li><li>www.sfport.com</li><li>www.sfrestaurantweek.com</li><li>www.sfsymphony.org</li><li>www.sfzoo.org</li><li>www.sterngrove.org</li><li>www.thesfmarathon.com</li><li>www.tisf.com</li><li>www.treasurefest.com</li><li>www.waltdisney.org</li><li>www.wnba.com</li><li>www.ybca.org</li></ul>
+  <h2>Official domains used as sources (98)</h2>
+  <ul class="domain-list"><li>annunciation.org</li><li>asi.sfsu.edu</li><li>asianart.org</li><li>broadwaysf.com</li><li>caamedia.org</li><li>calendar.google.com</li><li>carnavalsanfrancisco.org</li><li>castromerchants.com</li><li>castrostreetfair.org</li><li>chineseparade.com</li><li>downtownsf.org</li><li>fleetweeksf.org</li><li>foodwise.org</li><li>gdconf.com</li><li>gggp.org</li><li>goldengateparkband.org</li><li>goldenvoice.com</li><li>hardlystrictlybluegrass.com</li><li>home.nps.gov</li><li>hotcfarmersmarket.org</li><li>juneteenth-sf.org</li><li>maritime.org</li><li>museemecanique.com</li><li>nps.gov</li><li>offthegrid.com</li><li>presidio.gov</li><li>sf-fire.org</li><li>sfbeerweek.org</li><li>sfcherryblossom.org</li><li>sfcityguides.org</li><li>sfcityhallevents.org</li><li>sffilm.org</li><li>sfgov.legistar.com</li><li>sfitalianheritage.org</li><li>sfpl.org</li><li>sfplanning.org</li><li>sfpride.org</li><li>sfrecpark.org</li><li>sfshakes.org</li><li>sfsketchfest.com</li><li>silentfilm.org</li><li>sunsetmercantilesf.com</li><li>thecjm.org</li><li>transmarch.org</li><li>uissf.org</li><li>unionstreetsf.com</li><li>valkyries.wnba.com</li><li>warriors.com</li><li>www.agriculturalinstitute.org</li><li>www.artspan.org</li><li>www.baytobreakers.com</li><li>www.cafarmersmkts.com</li><li>www.calacademy.org</li><li>www.cdfa.ca.gov</li><li>www.dayofthedeadsf.org</li><li>www.dftsf.com</li><li>www.dragonboatsf.com</li><li>www.escapealcatraztri.com</li><li>www.exploratorium.edu</li><li>www.famsf.org</li><li>www.ferrybuildingmarketplace.com</li><li>www.fillmorejazzfest.com</li><li>www.folsomstreet.org</li><li>www.frameline.org</li><li>www.goldengate.org</li><li>www.haightashburystreetfair.org</li><li>www.litquake.org</li><li>www.mlb.com</li><li>www.moonfestival.org</li><li>www.nihonmachistreetfair.org</li><li>www.noevalleyfarmersmarket.com</li><li>www.noisepop.com</li><li>www.northbeachfarmersmarket.com</li><li>www.northbeachfestival.org</li><li>www.nps.gov</li><li>www.pcfma.org</li><li>www.pistahan.net</li><li>www.randallmuseum.org</li><li>www.rsaconference.com</li><li>www.sf.gov</li><li>www.sfballet.org</li><li>www.sfbg.org</li><li>www.sfjazz.org</li><li>www.sfmoma.org</li><li>www.sfmta.com</li><li>www.sfopera.com</li><li>www.sfport.com</li><li>www.sfrestaurantweek.com</li><li>www.sfsymphony.org</li><li>www.sfzoo.org</li><li>www.somapilipinas.org</li><li>www.sterngrove.org</li><li>www.thesfmarathon.com</li><li>www.tisf.com</li><li>www.treasurefest.com</li><li>www.waltdisney.org</li><li>www.ybca.org</li><li>ybgfestival.org</li></ul>
 </section>
 
 <section>
@@ -111,7 +116,7 @@
   <ul class="plain-list">
     <li><a href="weekly.html">Weekly &amp; monthly view</a> &mdash; the parallel session's recurring-event table, with
         its own source registry.</li>
-    <li><a href="analysis.html">Analysis</a> &mdash; the parallel session's category and neighbourhood analysis.</li>
+    <li><a href="analysis.html">Analysis</a> &mdash; counts, field coverage and the findings of the latest pass.</li>
     <li><a href="sources.html">Source registry</a> &mdash; the parallel session's list of the 58 official sources it checked.</li>
     <li><a href="data/review.csv">Review sheet</a> &mdash; the parallel session's line-by-line review CSV.</li>
     <li><a href="data/schema.md">Data schema</a> &mdash; the parallel session's documented JSON schema.</li>

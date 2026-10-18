@@ -43,6 +43,7 @@ SITE_TAGLINE = "A curated, source-linked snapshot of public events in San Franci
 # "category" (subject area), "static" or "home".
 PAGES = [
     ("index.html", "Home", "Dashboard", "home"),
+    ("all-events.html", "Full list", "Every entry in one searchable table", "full"),
     ("recurring.html", "Regularly recurring", "Events that happen on a fixed weekly or monthly schedule", "group"),
     ("annual.html", "Annual", "Events that repeat year after year", "group"),
     ("special.html", "Special", "Dated events for 2026–2027", "special"),
@@ -51,6 +52,7 @@ PAGES = [
     ("sports.html", "Sports", "Teams, races and active recreation", "category"),
     ("markets.html", "Markets & food", "Farmers markets, food halls and street markets", "category"),
     ("community.html", "Community & parks", "Neighbourhood programmes, festivals and free recreation", "category"),
+    ("analysis.html", "Analysis", "Counts, coverage and findings", "static"),
     ("flagged.html", "Flagged for review", "Discrepancies, gaps and out-of-scope items", "static"),
     ("methodology.html", "Method", "Scope, sourcing rules and verification process", "static"),
 ]
@@ -133,6 +135,19 @@ def page_shell(filename: str, title: str, subtitle: str, body: str) -> str:
 """
 
 
+def _row_data(ev) -> str:
+    text = " ".join(
+        str(ev.get(k, "")) for k in ("title", "location", "area", "organiser", "source_name", "type")
+    ).lower()
+    return (
+        f' data-group="{esc(ev.get("group", ""))}"'
+        f' data-cat="{esc(ev.get("category", ""))}"'
+        f' data-status="{esc(ev.get("status", "verified"))}"'
+        f' data-timing="{esc(ev.get("timing", "current"))}"'
+        f' data-text="{esc(text)}"'
+    )
+
+
 def event_table(events, table_id: str) -> str:
     if not events:
         return '<p class="empty">No entries on this page yet.</p>'
@@ -146,6 +161,8 @@ def event_table(events, table_id: str) -> str:
             if status == "verified"
             else '<span class="badge warn" title="Some values could not be confirmed from the official source">unverified</span>'
         )
+        if ev.get("timing") == "concluded":
+            badge += '<span class="badge past" title="This edition had already finished when the snapshot was built">concluded</span>'
         title_cell = f'<td><span class="ev-title">{esc(ev["title"])}</span></td>'
         source_cell = (
             f'<td class="source-cell"><span class="ev-source">{badge}'
@@ -163,12 +180,15 @@ def event_table(events, table_id: str) -> str:
         note = ev.get("notes", "")
         note_html = f'<p class="row-note">{esc(note)}</p>' if note else ""
         rows.append(
-            f'<tr id="{esc(ev["id"])}">'
+            f'<tr id="{esc(ev["id"])}"{_row_data(ev)}>'
             + "".join(cells)
             + f"</tr>"
         )
         if note_html:
-            rows.append(f'<tr class="note-row"><td colspan="{len(COLUMNS) + 1}">{note_html}</td></tr>')
+            rows.append(
+                f'<tr class="note-row" data-for="{esc(ev["id"])}">'
+                f'<td colspan="{len(COLUMNS) + 1}">{note_html}</td></tr>'
+            )
     return f"""
 <div class="table-scroll">
 <table class="data-table" id="{table_id}">
@@ -233,8 +253,9 @@ def build_index() -> str:
     )
 
     latest = [
-        e for e in EVENTS if e.get("group") == "special" and e.get("dates")
-    ][:6]
+        e for e in EVENTS
+        if e.get("group") == "special" and e.get("dates") and e.get("timing") != "concluded"
+    ][:8]
     latest_rows = "".join(
         f"<tr><td>{esc(e['title'])}</td><td>{esc(e['dates'])}</td>"
         f"<td>{esc(e['location'])}</td>"
@@ -254,8 +275,10 @@ def build_index() -> str:
      <a href="https://www.sf.gov/events/upcoming" target="_blank" rel="noopener">City&#x27;s official events calendar</a>
      and each organizer for current listings and details.</p>
   <div class="hero-actions">
-    <a class="btn" href="recurring.html">Browse recurring events</a>
-    <a class="btn ghost" href="annual.html">Browse annual events</a>
+    <a class="btn" href="all-events.html">Open the full list ({len(EVENTS)})</a>
+    <a class="btn ghost" href="recurring.html">Recurring</a>
+    <a class="btn ghost" href="annual.html">Annual</a>
+    <a class="btn ghost" href="special.html">Special</a>
     <a class="btn ghost" href="flagged.html">{len(FLAGGED)} items flagged for review</a>
   </div>
 </section>
@@ -264,6 +287,7 @@ def build_index() -> str:
   <div class="stat"><span class="stat-n">{len(EVENTS)}</span><span class="stat-l">events listed</span></div>
   <div class="stat"><span class="stat-n">{verified}</span><span class="stat-l">rows marked verified</span></div>
   <div class="stat"><span class="stat-n">{unverified}</span><span class="stat-l">rows needing review</span></div>
+  <div class="stat"><span class="stat-n">{sum(1 for e in EVENTS if e.get("timing") == "concluded")}</span><span class="stat-l">concluded editions</span></div>
   <div class="stat"><span class="stat-n">{len(FLAGGED)}</span><span class="stat-l">review items published</span></div>
   <div class="stat"><span class="stat-n">{len({e['source_url'].split('/')[2] for e in EVENTS})}</span><span class="stat-l">distinct official domains</span></div>
 </section>
@@ -293,7 +317,7 @@ def build_index() -> str:
 </section>
 
 <section>
-  <h2>Recently confirmed dated events</h2>
+  <h2>Upcoming dated events</h2>
   <div class="table-scroll">
   <table class="data-table">
     <thead><tr><th scope="col">Event</th><th scope="col">Confirmed dates</th><th scope="col">Where</th><th scope="col">Official source</th></tr></thead>
@@ -312,7 +336,8 @@ def build_index() -> str:
     <li><strong>Source</strong> &mdash; a direct link to the organiser's, city agency's or state agency's page
         that was opened and checked on {esc(VERIFIED_ON)}.</li>
     <li><strong>verified</strong> / <strong>unverified</strong> &mdash; the badge shows whether every value on the
-        row could be confirmed from the official source.</li>
+        row could be confirmed from the official source. A <span class="badge past">concluded</span> badge means the
+        listed edition had already finished when the snapshot was built; it stays in the list as a record.</li>
     <li>Rows in italics beneath a table entry are analyst notes recording a discrepancy, a seasonal caveat or a
         scope decision. They are evidence, not filler.</li>
   </ul>
@@ -421,6 +446,254 @@ def unverified_rows() -> str:
     return "\n".join(out)
 
 
+
+FILTER_JS = """
+(function () {
+  var q = document.getElementById('q');
+  var fType = document.getElementById('f-type');
+  var fCat = document.getElementById('f-cat');
+  var fStatus = document.getElementById('f-status');
+  var fTime = document.getElementById('f-time');
+  var count = document.getElementById('visible-count');
+  var table = document.getElementById('all-table');
+  if (!table) { return; }
+  var rows = Array.prototype.slice.call(table.querySelectorAll('tbody tr'));
+  var notes = {};
+  rows.forEach(function (r) {
+    if (r.classList.contains('note-row')) { notes[r.getAttribute('data-for')] = r; }
+  });
+  function apply() {
+    var term = (q.value || '').trim().toLowerCase();
+    var t = fType.value, c = fCat.value, st = fStatus.value, ti = fTime.value;
+    var shown = 0;
+    rows.forEach(function (r) {
+      if (r.classList.contains('note-row')) { return; }
+      var ok = true;
+      if (t && r.getAttribute('data-group') !== t) { ok = false; }
+      if (c && r.getAttribute('data-cat') !== c) { ok = false; }
+      if (st && r.getAttribute('data-status') !== st) { ok = false; }
+      if (ti && r.getAttribute('data-timing') !== ti) { ok = false; }
+      if (ok && term && (r.getAttribute('data-text') || '').indexOf(term) === -1) { ok = false; }
+      r.hidden = !ok;
+      var n = notes[r.id];
+      if (n) { n.hidden = !ok; }
+      if (ok) { shown += 1; }
+    });
+    if (count) { count.textContent = shown; }
+  }
+  [q, fType, fCat, fStatus, fTime].forEach(function (el) {
+    if (el) { el.addEventListener('input', apply); el.addEventListener('change', apply); }
+  });
+  var reset = document.getElementById('reset');
+  if (reset) {
+    reset.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      q.value = ''; fType.value = ''; fCat.value = ''; fStatus.value = ''; fTime.value = '';
+      apply();
+      q.focus();
+    });
+  }
+  apply();
+})();
+"""
+
+
+def build_full_list() -> str:
+    groups = [("", "All schedules"), ("recurring", "Regularly recurring"), ("annual", "Annual"), ("special", "Special / dated")]
+    cats = [("", "All categories"), ("civic", "Civic"), ("arts", "Arts & culture"), ("sports", "Sports"),
+            ("markets", "Markets & food"), ("community", "Community & parks")]
+    stat = [("", "All rows"), ("verified", "Verified"), ("unverified", "Needs review")]
+    tim = [("", "Any timing"), ("current", "Current / upcoming"), ("concluded", "Concluded edition")]
+
+    def opts(items):
+        return "".join(f'<option value="{esc(v)}">{esc(l)}</option>' for v, l in items)
+
+    body = f"""
+<section class="page-head">
+  <h1>Full list</h1>
+  <p class="lede">Every entry in the catalogue in one table: recurring programmes, annual events and dated
+     specials. Filter by schedule, category, verification status or timing, or search by name, venue,
+     neighbourhood or organiser. Each row links to its official source.</p>
+</section>
+
+<div class="controls" role="search">
+  <label class="field grow"><span>Search</span>
+    <input id="q" type="search" placeholder="Try &quot;farmers&quot;, &quot;Mission&quot;, &quot;SFMOMA&quot; or &quot;free&quot;" autocomplete="off">
+  </label>
+  <label class="field"><span>Schedule</span><select id="f-type">{opts(groups)}</select></label>
+  <label class="field"><span>Category</span><select id="f-cat">{opts(cats)}</select></label>
+  <label class="field"><span>Status</span><select id="f-status">{opts(stat)}</select></label>
+  <label class="field"><span>Timing</span><select id="f-time">{opts(tim)}</select></label>
+  <button id="reset" class="btn ghost" type="button">Reset</button>
+</div>
+
+<p class="count-note"><strong id="visible-count">{len(EVENTS)}</strong> of {len(EVENTS)} entries shown &middot;
+   checked {esc(VERIFIED_ON)} &middot; <a href="data/events.csv">download CSV</a> &middot;
+   <a href="data/events.json">machine-readable JSON</a></p>
+
+{event_table(sorted(EVENTS, key=lambda e: (e.get("group", ""), e.get("title", ""))), "all-table")}
+
+<script>{FILTER_JS}</script>
+"""
+    return page_shell("all-events.html", "Full list", "Every entry in one searchable table", body)
+
+
+def _bar(n: int, total: int, width: int = 140) -> str:
+    pct = 0 if not total else round(100 * n / total)
+    return (
+        f'<span class="bar"><span class="bar-fill" style="width:{pct}%"></span></span> '
+        f'<span class="bar-num">{n} ({pct}%)</span>'
+    )
+
+
+def build_analysis() -> str:
+    total = len(EVENTS)
+    verified = sum(1 for e in EVENTS if e.get("status") == "verified")
+    unverified = total - verified
+    concluded = sum(1 for e in EVENTS if e.get("timing") == "concluded")
+    domains = Counter(e["source_url"].split("/")[2] for e in EVENTS)
+    blank_counts = Counter()
+    for e in EVENTS:
+        for label, key in (("schedule", "schedule"), ("dates", "dates"), ("location", "location"),
+                           ("cost", "cost"), ("organiser", "organiser")):
+            if not e.get(key):
+                blank_counts[label] += 1
+    all_core = sum(1 for e in EVENTS if all(e.get(k) for k in ("schedule", "location", "organiser", "source_url")))
+    group_counts = Counter(e.get("group", "") for e in EVENTS)
+    cat_counts = Counter(e.get("category", "") for e in EVENTS)
+    area_counts = Counter(e.get("area", "") for e in EVENTS)
+    type_counts = Counter(e.get("type", "") for e in EVENTS)
+
+    def rows_for(counter, labels=None, limit=None):
+        items = counter.most_common(limit)
+        out = []
+        for key, n in items:
+            label = labels.get(key, key) if labels else key
+            out.append(f"<tr><td>{esc(label)}</td><td>{_bar(n, total)}</td></tr>")
+        return "".join(out)
+
+    group_labels = {"recurring": "Regularly recurring (weekly / monthly)", "annual": "Annual (year after year)", "special": "Special / dated one-off"}
+    cat_labels = {"civic": "Civic meetings", "arts": "Arts & culture", "sports": "Sports", "markets": "Markets & food", "community": "Community & parks"}
+
+    domain_rows = "".join(
+        f"<tr><td><a href='https://{esc(d)}' target='_blank' rel='noopener'>{esc(d)} &nearr;</a></td><td class='num'>{n}</td></tr>"
+        for d, n in domains.most_common()
+    )
+    blank_rows = "".join(
+        f"<tr><td>{esc(k.capitalize())}</td><td class='num'>{v}</td><td class='num'>{round(100 * v / total)}%</td></tr>"
+        for k, v in blank_counts.most_common()
+    )
+
+    body = f"""
+<section class="page-head">
+  <h1>Analysis and findings</h1>
+  <p class="lede">What the catalogue contains, how complete each field is, and what this pass changed. Every
+     figure on this page is computed from <code>data/events.py</code> at build time, so it cannot drift from
+     the published tables.</p>
+</section>
+
+<section class="stat-row">
+  <div class="stat"><span class="stat-n">{total}</span><span class="stat-l">entries</span></div>
+  <div class="stat"><span class="stat-n">{verified}</span><span class="stat-l">values verified</span></div>
+  <div class="stat"><span class="stat-n">{unverified}</span><span class="stat-l">needing review</span></div>
+  <div class="stat"><span class="stat-n">{concluded}</span><span class="stat-l">concluded editions</span></div>
+  <div class="stat"><span class="stat-n">{len(FLAGGED)}</span><span class="stat-l">review items</span></div>
+  <div class="stat"><span class="stat-n">{len(domains)}</span><span class="stat-l">official domains</span></div>
+</section>
+
+<section class="two-col">
+  <div>
+    <h2>By schedule</h2>
+    <table class="data-table compact"><thead><tr><th scope="col">Type</th><th scope="col">Entries</th></tr></thead>
+      <tbody>{rows_for(group_counts, group_labels)}</tbody></table>
+  </div>
+  <div>
+    <h2>By category</h2>
+    <table class="data-table compact"><thead><tr><th scope="col">Category</th><th scope="col">Entries</th></tr></thead>
+      <tbody>{rows_for(cat_counts, cat_labels)}</tbody></table>
+  </div>
+</section>
+
+<section>
+  <h2>Every record type used</h2>
+  <table class="data-table compact"><thead><tr><th scope="col">Record type</th><th scope="col">Entries</th></tr></thead>
+    <tbody>{rows_for(type_counts)}</tbody></table>
+</section>
+
+<section>
+  <h2>Value coverage</h2>
+  <p class="lede">A blank cell means the official source did not state the value. It is never filled in from
+     another source or from inference.</p>
+  <table class="data-table compact"><thead><tr><th scope="col">Field</th><th scope="col">Rows left blank</th><th scope="col">Share</th></tr></thead>
+    <tbody>{blank_rows}</tbody></table>
+  <p class="note">{all_core} of {total} rows have a schedule, a location, an organiser and an official source link.
+     All {total} rows carry an https source link.</p>
+</section>
+
+<section>
+  <h2>Neighbourhood / area</h2>
+  <table class="data-table compact"><thead><tr><th scope="col">Area</th><th scope="col">Entries</th></tr></thead>
+    <tbody>{rows_for(area_counts, None, 25)}</tbody></table>
+</section>
+
+<section>
+  <h2>Official domains used as sources ({len(domains)})</h2>
+  <p class="lede">Organiser, city, state and federal sites. Aggregators and tourism listings are never used as
+     the evidence for a value.</p>
+  <div class="table-scroll"><table class="data-table compact"><thead><tr><th scope="col">Domain</th><th scope="col">Rows</th></tr></thead>
+    <tbody>{domain_rows}</tbody></table></div>
+</section>
+
+<section>
+  <h2>What the 2026-10-18 final pass changed</h2>
+  <ul class="plain-list">
+    <li><strong>Removed an out-of-scope row.</strong> The California Museum was listed as a San Francisco
+        attraction at "1045 Moscone Center". The museum's own pages place it at 1020 O Street, Sacramento, with
+        $10 adult admission. The row was deleted; the evidence is on the <a href="flagged.html">Flagged for review</a>
+        page.</li>
+    <li><strong>Corrected the Conservatory of Flowers.</strong> It is closed Wednesdays, opens 10:00 a.m.-4:30 p.m.
+        with last entry at 4:00 p.m., and the first Tuesday of the month is free. The row previously said
+        "open daily".</li>
+    <li><strong>Removed Battery Spencer.</strong> The National Park Service lists it in the Marin Headlands,
+        outside the City and County of San Francisco.</li>
+    <li><strong>Filled verified gaps.</strong> SF Music Week (Feb 23-Mar 1, 2026), the Parol Lantern Festival
+        (Dec 12, 2026, 24th annual), RSAC 2027 (Apr 5-8, 2027) and Noise Pop 2027 (from Feb 18, 2027) now carry
+        dates taken from their organisers' pages.</li>
+    <li><strong>Reclassified TreasureFest.</strong> The organiser describes a monthly festival and publishes no
+        2026 dates, so it is no longer labelled "Annual" and its dates stay blank.</li>
+    <li><strong>Closed four long-standing gaps.</strong> FOG Design+Art (gala Jan 20, fair Jan 21-24, 2027, Fort
+        Mason, with the advance and at-door prices), Portola Music Festival (Sep 26-27, 2026, Pier 80, Goldenvoice),
+        the Juneteenth Fillmore celebration (Jun 13, 2026, 11 a.m.-6 p.m., free) and the Golden State Valkyries
+        (2026 home opener May 10; Finals games Oct 17 and 19) are now sourced to the organiser's own page.</li>
+    <li><strong>Added three verified rows.</strong> The San Francisco Mime Troupe's free summer season (dated from
+        the company's official calendar feed), the Yerba Buena Gardens Festival (2026 season opener May 9, 100+
+        free performances May-November) and the Conservatory of Flowers light show (nightly, 30 minutes after
+        sunset, Oct 1, 2026-Jan 30, 2027, free).</li>
+    <li><strong>Marked concluded editions.</strong> {concluded} rows describe an edition that had already
+        finished on 2026-10-18. They stay in the catalogue as records and carry a "concluded" badge, so the
+        list is not mistaken for an upcoming-events feed.</li>
+    <li><strong>Reduced the review gap.</strong> Re-checking official pages against the published values took
+        the unverified count from 40 to {unverified}. The remaining gaps are listed row by row on the review
+        page.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How to read this</h2>
+  <ul class="plain-list">
+    <li><strong>"Verified"</strong> means every populated cell on the row matches the official page linked in
+        its Source column on the date recorded. A blank cell means the source did not state that value.</li>
+    <li><strong>"Needing review"</strong> means at least one populated value could not be confirmed, official
+        pages conflict, or the event's current status is uncertain.</li>
+    <li><strong>Counts are a snapshot.</strong> San Francisco publishes hundreds of events a week; this
+        catalogue is a curated, source-linked inventory, not a live calendar. See
+        <a href="methodology.html">Method</a>.</li>
+  </ul>
+</section>
+"""
+    return page_shell("analysis.html", "Analysis", "Counts, coverage and findings", body)
+
+
 def build_methodology() -> str:
     domains = sorted({e["source_url"].split("/")[2] for e in EVENTS})
     domain_rows = "".join(f"<li>{esc(d)}</li>" for d in domains)
@@ -478,8 +751,11 @@ def build_methodology() -> str:
   <ul class="plain-list">
     <li><code>data/events.py</code> holds the canonical dataset; <code>data/events.json</code> is the
         machine-readable copy emitted by the build.</li>
-    <li><code>scripts/build_site.py</code> renders the static HTML pages. There is no client-side JavaScript: every
-        page is plain HTML that GitHub Pages can serve directly.</li>
+    <li><code>scripts/build_site.py</code> renders the static HTML pages, the machine-readable
+        <code>data/events.json</code> and the spreadsheet-friendly <code>data/events.csv</code>.</li>
+    <li>The <a href="all-events.html">Full list</a> page adds a small amount of vanilla JavaScript so the table can be
+        searched and filtered in the browser. With JavaScript disabled, the page still shows every row; only the
+        filter controls stop working. No external scripts, fonts or trackers are loaded.</li>
     <li>Re-running <code>python3 scripts/build_site.py</code> regenerates the site deterministically from the
         dataset, so the tables and the counts can never drift apart.</li>
   </ul>
@@ -500,7 +776,7 @@ def build_methodology() -> str:
   <ul class="plain-list">
     <li><a href="weekly.html">Weekly &amp; monthly view</a> &mdash; the parallel session's recurring-event table, with
         its own source registry.</li>
-    <li><a href="analysis.html">Analysis</a> &mdash; the parallel session's category and neighbourhood analysis.</li>
+    <li><a href="analysis.html">Analysis</a> &mdash; counts, field coverage and the findings of the latest pass.</li>
     <li><a href="sources.html">Source registry</a> &mdash; the parallel session's list of the 58 official sources it checked.</li>
     <li><a href="data/review.csv">Review sheet</a> &mdash; the parallel session's line-by-line review CSV.</li>
     <li><a href="data/schema.md">Data schema</a> &mdash; the parallel session's documented JSON schema.</li>
@@ -647,6 +923,25 @@ p { margin: 0 0 12px; }
 .note-row td { background: #fbfcfd; padding-top: 0; border-bottom: 1px solid var(--line); }
 .row-note { font-size: .82rem; color: var(--ink-soft); margin: 0 0 10px; }
 .flag-table td { font-size: .88rem; }
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: end; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: .78rem; color: var(--ink-soft); }
+.field.grow { flex: 1 1 260px; }
+.field span { font-weight: 650; text-transform: uppercase; letter-spacing: .03em; }
+.field input, .field select { font: inherit; font-size: .92rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 150px; }
+.field input:focus, .field select:focus { outline: 2px solid #9fd3e4; outline-offset: 1px; border-color: var(--brand); }
+.field.grow input { min-width: 100%; }
+.controls .btn { padding: 9px 14px; }
+.badge.past { background: #eceff3; color: #4d5866; }
+tr[hidden] { display: none; }
+/* Bars */
+.bar { display: inline-block; width: 140px; height: 9px; background: #eef2f5; border-radius: 999px; overflow: hidden; vertical-align: middle; margin-right: 8px; }
+.bar-fill { display: block; height: 100%; background: var(--brand); }
+.bar-num { font-size: .82rem; color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .controls { padding: 12px; }
+  .field, .field input, .field select { width: 100%; min-width: 0; }
+}
 .flag-title { font-weight: 620; }
 
 /* Lists */
@@ -697,7 +992,17 @@ def main() -> int:
     with open(os.path.join(ROOT, "assets", "site.css"), "w", encoding="utf-8") as fh:
         fh.write(CSS)
 
-    written = ["index.html", "flagged.html", "methodology.html"]
+    # CSV mirror for spreadsheet users
+    import csv
+    csv_fields = ["id", "title", "group", "category", "type", "schedule", "dates", "location",
+                  "area", "cost", "organiser", "status", "timing", "source_name", "source_url", "notes"]
+    with open(os.path.join(ROOT, "data", "events.csv"), "w", encoding="utf-8", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=csv_fields, extrasaction="ignore")
+        writer.writeheader()
+        for ev in sorted(EVENTS, key=lambda e: (e.get("group", ""), e.get("title", ""))):
+            writer.writerow({k: ev.get(k, "") for k in csv_fields})
+
+    written = ["index.html", "flagged.html", "methodology.html", "analysis.html", "all-events.html"]
     for filename, label, subtitle, _kind in PAGES:
         if filename in written:
             continue
@@ -712,6 +1017,10 @@ def main() -> int:
         fh.write(build_flagged())
     with open(os.path.join(ROOT, "methodology.html"), "w", encoding="utf-8") as fh:
         fh.write(build_methodology())
+    with open(os.path.join(ROOT, "analysis.html"), "w", encoding="utf-8") as fh:
+        fh.write(build_analysis())
+    with open(os.path.join(ROOT, "all-events.html"), "w", encoding="utf-8") as fh:
+        fh.write(build_full_list())
 
     print(f"Wrote {len(written)} pages, {len(EVENTS)} events, {len(FLAGGED)} flagged items.")
     return 0

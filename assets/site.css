@@ -98,6 +98,25 @@ p { margin: 0 0 12px; }
 .note-row td { background: #fbfcfd; padding-top: 0; border-bottom: 1px solid var(--line); }
 .row-note { font-size: .82rem; color: var(--ink-soft); margin: 0 0 10px; }
 .flag-table td { font-size: .88rem; }
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: end; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin: 0 0 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: .78rem; color: var(--ink-soft); }
+.field.grow { flex: 1 1 260px; }
+.field span { font-weight: 650; text-transform: uppercase; letter-spacing: .03em; }
+.field input, .field select { font: inherit; font-size: .92rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 150px; }
+.field input:focus, .field select:focus { outline: 2px solid #9fd3e4; outline-offset: 1px; border-color: var(--brand); }
+.field.grow input { min-width: 100%; }
+.controls .btn { padding: 9px 14px; }
+.badge.past { background: #eceff3; color: #4d5866; }
+tr[hidden] { display: none; }
+/* Bars */
+.bar { display: inline-block; width: 140px; height: 9px; background: #eef2f5; border-radius: 999px; overflow: hidden; vertical-align: middle; margin-right: 8px; }
+.bar-fill { display: block; height: 100%; background: var(--brand); }
+.bar-num { font-size: .82rem; color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .controls { padding: 12px; }
+  .field, .field input, .field select { width: 100%; min-width: 0; }
+}
 .flag-title { font-weight: 620; }
 
 /* Lists */
