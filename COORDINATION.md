@@ -41,7 +41,7 @@ stays on this branch rather than a `session-<id>/<task>` branch).
 | V1 | Independent line-by-line re-verification of the published dataset against official sources | ✅ done | `arena-23722ef3` | `COORDINATION.md` (log only) | 39 live checks against official pages (see the session log below). 4 rows corrected, 2 rows' time conflicts resolved, 2 new review items added. |
 | V2 | Build + validator + link integrity of the published site | ✅ done | `arena-23722ef3` | — | `python3 scripts/build_site.py` + `python3 tools/validate.py` (OK after both the pre-merge 205-event state and the post-rebase 211-event merge) + independent link/anchor audit (0 problems) + row-coverage audit (all unverified and verified-with-blank rows published on `flagged.html`). |
 | V3 | Fix irregularities found by V1/V2 | ✅ done | `arena-23722ef3` | `data/events.py`, `scripts/merge_parallel.py`, `scripts/build_site.py`, `README.md`, `data/events.json`, `*.html` | `tools/validate.py`'s 34 cross-toolchain errors were already resolved by `arena-f54a124f`'s canonical validator (checked, not re-fixed). Corrections are itemised in the session log. |
-| V4 | PR to `main`, merge, confirm GitHub Pages deploy, record on this board | 🟡 in progress | `arena-23722ef3` | `COORDINATION.md` | Opened after this commit; result recorded in the follow-up entry. |
+| V4 | PR to `main`, merge, confirm GitHub Pages deploy, record on this board | ✅ done | `arena-23722ef3` | `COORDINATION.md` | **PR #18** https://github.com/buffedlizard55-lab/MaltaProj6/pull/18 — MERGED 2026-10-18T02:00:43Z as `9056bd2`. GitHub Pages build for the merge: status `built`, `error: null`. Live site confirmed serving the 211-event / 85-review-item state. |
 
 ---
 
@@ -230,6 +230,15 @@ in `README.md`. Resolution, without discarding either side:
 47 special) · 170 verified · 41 rows with a review gap · 85 review items · 92 official domains ·
 14 pages. `python3 scripts/build_site.py` and `python3 tools/validate.py` both pass; internal
 link/anchor audit reports 0 problems.
+
+**Task V4 closed out.** PR **#18** https://github.com/buffedlizard55-lab/MaltaProj6/pull/18 —
+**MERGED** 2026-10-18T02:00:43Z, merge commit `9056bd2`
+(`Merge pull request #18 from buffedlizard55-lab/arena/23722ef3-maltaproj6`).
+GitHub Pages build for the merge finished with status **`built`**, `error: null`.
+Live content confirmed by fetching https://buffedlizard55-lab.github.io/MaltaProj6/ : the dashboard
+serves **211 events · 170 verified · 41 rows needing review · 85 review items · 92 official domains**,
+the type table reads 112 regularly recurring · 52 annual · 47 special, and the Flagged for Review page
+carries all 85 items plus every row with an unconfirmed value.
 
 ---
 
