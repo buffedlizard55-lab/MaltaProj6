@@ -227,6 +227,11 @@ rec-sfzinefest-zinething,ZINETHING! — monthly LGBTQIA zine-making meetup,recur
 spc-osms-st-francis-relics-2026,Sacred Relics of St. Francis & St. Clare — veneration,special,arts,other,unverified,unknown,2026-10-16,2026-11-28,https://www.osmsf.org/,ok,
 ann-sf-zine-fest,"San Francisco Zine Fest (25th Annual, 2026 edition)",annual,arts,other,unverified,unknown,2026-09-06,2026-09-06,https://www.sfzinefest.org/,ok,
 spc-somarts-in-the-shadows-2027,In the Shadows of the West (SOMArts),special,arts,other,unverified,unknown,2027-01-23,2027-03-26,https://somarts.org/whats-on/,ok,
+spc-ferry-trick-or-treat-2026,Trick-or-Treat at the Ferry Building (kids & family Halloween),special,community,other,verified,free,2026-10-29,2026-10-29,https://www.ferrybuildingmarketplace.com/events/trick-or-treat-2026/,ok,
+spc-ferry-world-of-dumplings-2026,"World of Dumplings (third annual, Ferry Building)",special,community,other,unverified,unknown,2026-10-25,2026-10-25,https://www.ferrybuildingmarketplace.com/events/world-of-dumplings/,ok,
+ann-sf-tea-festival,Fall SF International Tea Festival,annual,community,other,unverified,unknown,2026-11-14,2026-11-15,https://www.ferrybuildingmarketplace.com/events/sf-international-tea-festival-2026/,ok,
+spc-sfmoma-steinkamp,"Jennifer Steinkamp: It's a nice day for a white wedding. (SFMOMA installation, free to see)",special,arts,other,verified,free,2026-08-22,2027-01-15,https://www.sfmoma.org/exhibitions/,ok,
+spc-sfmoma-in-between,"In Between (SFMOMA, Koret Education Center, free to see)",special,arts,other,verified,free,2026-09-03,,https://www.sfmoma.org/exhibitions/,ok,
 x-w-003,Heart of the City Farmers Market,recurring,markets,other,verified,free,,,https://hotcfarmersmarket.org/,ok,
 x-w-005,Fillmore Farmers' Market,recurring,markets,other,verified,free,,,https://www.pcfma.org/market/fillmore-farmers-market,ok,
 x-w-006,Noe Valley Farmers Market,recurring,markets,other,verified,free,,,https://www.noevalleyfarmersmarket.com/,ok,
@@ -263,7 +268,7 @@ x-s-001,Graciela Iturbide: Between Two Worlds,special,arts,other,unverified,unkn
 x-s-002,Feel the Beat: Dance in Photographs,special,arts,other,unverified,unknown,2026-05-16,2027-02-28,https://www.sfmoma.org/exhibitions/,ok,
 x-s-003,Klee Behind the Mask,special,arts,other,unverified,unknown,2026-08-08,2027-04-18,https://www.sfmoma.org/exhibitions/,ok,
 x-s-004,O. Smith: Artivist,special,arts,other,unverified,unknown,2026-07-25,2027-07-04,https://www.sfmoma.org/exhibitions/,ok,
-x-s-005,RM x SFMOMA: Between You and Me,special,arts,other,verified,unknown,2026-10-03,2026-10-03,https://www.sfmoma.org/exhibitions/,irregularity,verified row with blank schedule (published rule: blank stays blank); verified row with blank cost (published rule: blank stays blank)
+x-s-005,RM x SFMOMA: Between You and Me,special,arts,other,verified,unknown,2026-10-03,,https://www.sfmoma.org/exhibitions/,irregularity,verified row with blank schedule (published rule: blank stays blank); verified row with blank cost (published rule: blank stays blank)
 x-s-006,New Work: Raven Chacon,special,arts,other,unverified,unknown,2026-10-24,2027-11-07,https://www.sfmoma.org/exhibitions/,ok,
 x-s-007,Sarah Sze: Forever is Composed of Nows,special,arts,other,verified,free,2026-11-21,2026-11-21,https://www.sfmoma.org/exhibitions/,irregularity,verified row with blank schedule (published rule: blank stays blank)
 x-s-013,After Dark: Glow Opening,special,arts,other,unverified,unknown,2026-11-19,2026-11-19,https://www.exploratorium.edu/visit/calendar/after-dark,ok,
