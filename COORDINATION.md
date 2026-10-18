@@ -126,7 +126,16 @@ so the two views can never disagree. The build script re-checks this on every ru
 - **2026-10-18** — **Task 7 verification.** 146 rows, 133 fully verified, 13 with a deliberate blank.
 - **2026-10-18** — **Tasks 8/9 site build.** `scripts/build_site.py` renders 11 static pages plus `assets/site.css` (no client-side JavaScript). Added a `group` (recurring / annual / special) and `category` (civic / arts / sports / markets / community) view over the same rows.
 - **2026-10-18** — **Task 10 integration.** `git merge origin/main` surfaced the parallel session's merged work and produced conflicts. Resolved as tabulated above; the parallel session's data, tooling and published views were kept and their rows folded into the union dataset (59 added, 25 de-duplicated, 34 flagged items merged). Link/anchor/tag checker over all 14 pages: 110 internal links, every `#anchor` target, every external source URL → **0 problems**. Row counts on all 8 listing pages match the dataset (111 / 47 / 47 / 36 / 64 / 9 / 29 / 67). Local HTTP check returned 200 for every page, stylesheet, script and data file.
-- **2026-10-18** — **Task 11 in progress** — PR opened to `main`; merge + Pages deploy confirmation to be appended below.
+- **2026-10-18** — **Task 10b re-sync.** The parallel session pushed three further PRs to `main` while this
+  integration was in progress (#3 "Polish dashboard copy, badge labels and exhibition title", #4 "Blank undated
+  annual display values instead of prose in the dates column", #5 "Final accuracy and documentation pass").
+  `origin/main` was merged again and the union rebuilt on top of it: the parallel session's `data/weekly.json`,
+  `data/annual.json`, `data/special.json`, `data/review.csv` and `tools/*` are taken as-is; the generated pages
+  are regenerated from the union dataset. Result is unchanged at 205 events / 53 flagged items, with 0 link,
+  anchor or tag problems across all 14 pages.
+- **2026-10-18** — **Task 11 in progress** — PR #2 was auto-closed by GitHub when the head branch absorbed the
+  base branch's tip commit; a replacement PR is opened from the same branch. Merge + Pages deploy confirmation to
+  be appended below.
 
 ### `arena-8fb52462` (parallel session, as recorded by that session)
 
