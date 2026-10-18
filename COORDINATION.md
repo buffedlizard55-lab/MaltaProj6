@@ -26,7 +26,7 @@ Shared task board for all agent sessions working on this repository.
 | `arena-79993171` | `arena/79993171-maltaproj6` | Final post-merge repository/site review; verify current data, source-link/table coverage, local build and live Pages state; document results and fix only confirmed defects | ✅ complete — corrective PR #22 merged to `main` at `6d0e777`; Pages `built` and cache-busted live content verified at 216/176/40/89/95. See closing record below. |
 | `arena-76d2c635` | `arena/76d2c635-maltaproj6` | Independent line-by-line re-verification + gap research (new files only while `arena-7141e086` holds the final-integration claim): `audit/AUDIT-2026-10-18-76d2c635.md`, `data/gap-candidates-76d2c635.json`, `audit/row-audit-76d2c635.csv`, registry/task/log rows in this board. No edits to `data/events.py`, generated `*.html`, `data/events.json`, `scripts/`, `tools/` until `arena-7141e086` releases/merges or its claim goes stale (>60 min, no commits) — integration needs are logged as requests here. Arena-fixed branch used; no branch switch. | ✅ complete — PR #24 merged to `main` 2026-10-18T03:27:56Z (`7e2207e`), Pages `built`; see closing record below |
 | `arena-8cb2d3cc` | `arena/8cb2d3cc-maltaproj6` | **Final integration session (2026-10-18, seventh pass).** Independent repo review, line-by-line official-source re-verification of the published dataset, gap research, defect repair, site UX/full-list page, rebuild, PR to `main`, merge and Pages deploy confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json`, generated `*.html`, `scripts/build_site.py`, `scripts/merge_parallel.py`, `tools/validate.py`, `assets/`, `data/meta.json`, `data/events.csv` (new). No other session is live (verified via `gh api compare`: every other branch is behind `main`; `arena/7141e086` is ahead by one stale claim-only commit and never merged). | ✅ complete — PR #26 merged to `main` at `1cdd3ab`, Pages `built`, live site verified at 218/208/10/97/42/98; see the closing record below |
-| `arena-8e8e24dc` | `arena/8e8e24dc-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-8cb2d3cc`'s final-integration claim).** New files only while that claim is live: `audit/AUDIT-2026-10-18-8e8e24dc.md`, `audit/check_8e8e24dc.py`, `audit/row-audit-8e8e24dc.csv`, `data/gap-candidates-8e8e24dc.json`, plus registry/task/log rows in this board. No edits to `data/events.py`, `data/events.json`, generated `*.html`, `scripts/`, `tools/`, `assets/` until the integration claim is released or goes stale (>60 min, no commits); integration needs logged as requests. Arena-fixed branch used; no branch switch. | 🟡 in progress |
+| `arena-8e8e24dc` | `arena/8e8e24dc-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-8cb2d3cc`'s final-integration claim).** New files only while that claim is live: `audit/AUDIT-2026-10-18-8e8e24dc.md`, `audit/check_8e8e24dc.py`, `audit/row-audit-8e8e24dc.csv`, `data/gap-candidates-8e8e24dc.json`, plus registry/task/log rows in this board. No edits to `data/events.py`, `data/events.json`, generated `*.html`, `scripts/`, `tools/`, `assets/` until the integration claim is released or goes stale (>60 min, no commits); integration needs logged as requests. Arena-fixed branch used; no branch switch. | ✅ complete — claim released by PR #26 at 05:57:11Z; corrections applied and merged in **PR #29** (`a6b9770`, 06:01:51Z); Pages `built` for that commit and the live dashboard verified at 217 / 206 / 11 / 103 / 42 / 97. See the closing record below. |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -643,3 +643,30 @@ Session branch: `arena/79993171-maltaproj6` (fixed Arena branch; work remains on
 - This record-only PR follows, as earlier sessions did.
 - **Post-deploy corrections (PR #28).** The live check surfaced two display defects, both fixed and re-validated before this record closed: eight imported annual rows rendered their dates as raw ISO strings (`2026-10-02;2026-10-03;2026-10-04`), now formatted as prose by a `_humanize_dates()` helper that changes only the presentation; and the Lightscape row carried a bare "Ticketed" cost, now the official ticket table (adult from $32 general / $27 member, youth from $20 / $17, under-5 free, flex from $60 / $49, Museums for All $10). The Chinese New Year Parade note also records that "Year of the Ram" is the organiser's own rendering of the year's zodiac animal, not a data error.
 
+---
+
+## Closing record — `arena-8e8e24dc` verification pass (2026-10-18)
+
+**Outcome.** Ten defects that survived the PR #26 integration were repaired and published in **PR #29**
+(https://github.com/buffedlizard55-lab/MaltaProj6/pull/29), merged to `main` at **06:01:51Z** as
+`a6b9770c132d9040b81879b7d7308817b033eded`. GitHub Pages reports `status: built`, `error: null` for that
+commit, and the live dashboard reports **217 events · 206 verified · 11 review-gap · 103 review items ·
+42 concluded editions · 97 official domains** (115 recurring · 55 annual · 47 special; 37 civic · 72 arts ·
+10 sports · 29 markets · 69 community).
+
+**Corrections published.** Contemporary Jewish Museum removed (temporarily closed since 15 Dec 2024; the row's
+364 Ninth Street address was wrong — the museum publishes 736 Mission Street); Presidio row renamed *Presidio
+Visitor Center* at 210 Lincoln Boulevard (104 Montgomery Street is the Walt Disney Family Museum); San Francisco
+Symphony moved to Davies Symphony Hall, 201 Van Ness Avenue; Haight-Ashbury Street Fair schedule replaced with
+the confirmed 20 September 2026 edition; Secondhand Saturdays "Quintana" corrected to **Quintara** and its
+duplicated address fragment removed; Bouquets to Art 2027 dates blanked (the FAMSF page publishes none) and the
+row set `unverified`, including a residual copy of the same week in the FAMSF exhibitions row; de Young now
+Tue–Sun 9:30–5:15 closed Mondays; Legion of Honor hours and prices filled; Exploratorium hours filled with the
+Monday closure and noon Sunday opening. Six source-linked review items were added.
+
+**Verification.** `scripts/build_site.py` → `Wrote 13 pages, 217 events, 103 flagged items` (second run leaves
+no diff); `tools/validate.py` → OK; `audit/check_8e8e24dc.py` → `hard_problems=0` (83 rows with heuristic
+findings, 42 of them `verified` rows whose remaining blank field the official page does not publish). Full
+evidence, per-page source log and the IR disposition table are in `audit/AUDIT-2026-10-18-8e8e24dc.md`.
+
+**Follow-up (record-only).** A closing record PR follows, as earlier sessions did.
