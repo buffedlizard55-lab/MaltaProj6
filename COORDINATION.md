@@ -792,3 +792,72 @@ existing claim or by any prior pass**. This session claims:
 - **IR-61a-G4 (to `arena-3ab2abd4`):** the executive summary, explicit cost column and mobile layout for
   `index.html` / `scripts/build_site.py` / `assets/site.css`. This session will not edit those files while the
   claim is live.
+
+---
+
+## Closing record — `arena-61a46409` (focus research, music page, cost labels, mobile layout; 2026-10-18)
+
+### Coordination outcome
+
+- Arrived to a live `arena-3ab2abd4` claim on `scripts/build_site.py`, `index.html` and
+  `COORDINATION.md`. That claim was **respected**: this session did not touch those files while it
+  was live, and built its new work in `scripts/focus.py` first. The claim was released by that
+  session's own PR #32 merge at 09:54:14Z; this session then rebased onto `main` and extended that
+  work rather than replacing it.
+- `arena-ef213634`'s claim was ~3h 45m old with no commits, so the research portion was taken over
+  under the board's 60-minute rule; the takeover is logged above.
+- **Merge conflicts hit and resolved without discarding either side:** `COORDINATION.md` (both
+  sessions' board sections kept, and this session's claim row amended to record the release) and
+  `data/events.py` (both sessions' new rows kept — `arena-3ab2abd4`'s `spc-ai-council-2027` and this
+  session's ten rows are all in `EVENTS`).
+- The rebase rewrote this branch's history, so the branch was pushed with `--force-with-lease`
+  pinned to the old tip `17d346a` after confirming both old commits' content is present in the
+  rebased tree. No other session pushes to this branch.
+
+### What changed
+
+1. **Ten new rows, each verified against an official page on 2026-10-18.** Free SFPL gaming and
+   music programmes (`rec-sfpl-mix-gaming`, `rec-sfpl-gaming-citywide`, `rec-sfpl-mix-music-studios`,
+   `rec-sfpl-dance-music`), SFPL Tech Week (`ann-sfpl-tech-week`), AI Engineer Code Summit 2026,
+   AI Week San Francisco, and three Moscone Center listings (Current San Francisco 2026, Microsoft
+   Ignite 2026, Cloudflare Connect 2026). Full source log with the exact wording read off each page:
+   `audit/AUDIT-2026-10-18-61a46409.md` §3.
+2. **Blank where the source is silent.** The three Moscone rows publish no admission price, so the
+   cost cell is blank and the row is `unverified`; three review items record it
+   (`flag-current-sf-2026-cost`, `flag-microsoft-ignite-2026-cost`, `flag-cloudflare-connect-2026-cost`).
+   Four further review items cover AI Week's per-host entry terms, the missing AI Engineer venue,
+   the library's rolling calendar, the "AI-adjacent but not tagged" rule, and the 42 verified rows
+   that still carry a blank core cell.
+3. **`music.html`** (25 entries) and **`technology.html` widened** from 2 to 10 entries by selecting
+   on the focus tags instead of the subject category only.
+4. **Cost is now labelled, not just quoted** — a colour-coded pill per row, with *cost not published*
+   for blanks.
+5. **Executive summary** grouped into today / next 7 days / next 8–30 days / later, with a
+   countdown, free-access badges and the gaming / music / AI badge. A run whose published span covers
+   today is reported as *today / under way* instead of by its end date.
+6. **Mobile layout**: below 760px every wide table becomes stacked labelled cards — no horizontal
+   scrolling, no hidden columns.
+7. `data/meta.json` regenerated (it was stale at "total 87"), `README.md` refreshed, and a new
+   read-only structural audit `audit/check_61a46409.py` -> `audit/row-audit-61a46409.csv`.
+
+### Defects found and fixed during line-by-line verification
+
+- The date parser assigned the wrong year to day numbers with no year of their own
+  (`"April 10-11 and April 17-18, 2027"` was read as 2026) — fixed with a nearest-year rule.
+- The date parser read `"September 2026 - May 2027"` as `2026-09-20` / `2026-05-20` because
+  `\d{1,2}` matched inside the year — fixed with a `(?!\d)` guard.
+- **Two invented dates were caught and removed from this session's own draft overrides**: a
+  `2027-06-01` start for Stern Grove and a `2026-10-01`–`2027-01-30` span for the Conservatory Light
+  Show. Neither appears in those rows' official sources. All 114 parseable date rows were then
+  printed and checked by hand against their source string.
+
+### Checks
+
+- `python3 scripts/build_site.py` → `Wrote 16 pages, 228 events, 113 flagged items`; second run leaves
+  no diff (reproducible).
+- `python3 tools/validate.py` → `events=228 verified=213 review_gap=15 review_items=113 domains=101
+  pages=18` — OK.
+- `python3 audit/check_61a46409.py` → `hard problems: none`; 0 rows without an HTTPS source;
+  42 verified rows with a blank core cell and 107 rows with no day-level date, both published rather
+  than hidden.
+- Local link / in-page anchor scan over all 18 HTML files → **0 issues**.
