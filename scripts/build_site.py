@@ -427,8 +427,8 @@ def build_methodology() -> str:
         recur <em>year after year</em> are on the <a href="annual.html">Annual</a> page; genuinely one-off dated
         events are on the <a href="special.html">Special</a> page.</li>
     <li><strong>Category pages</strong> for civic meetings, arts and culture, sports, and markets and food are
-        provided for usability. Every event appears on its category page and on the page matching its type, so the
-        same row is never duplicated or contradicted.</li>
+        provided for usability. Each listed event appears on its category page and on the page matching its type,
+        so the same row is never duplicated or contradicted.</li>
   </ul>
 </section>
 
@@ -693,7 +693,7 @@ def main() -> int:
     with open(os.path.join(ROOT, "methodology.html"), "w", encoding="utf-8") as fh:
         fh.write(build_methodology())
 
-    print(f"Wrote {len(written) + 1} pages, {len(EVENTS)} events, {len(FLAGGED)} flagged items.")
+    print(f"Wrote {len(written)} pages, {len(EVENTS)} events, {len(FLAGGED)} flagged items.")
     return 0
 
 

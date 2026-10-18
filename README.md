@@ -7,7 +7,7 @@ A curated, source-linked snapshot of public events in San Francisco, organized b
 ## Verification and review status
 
 - Every published event row has a link to an organizer, government agency, state agency or federal park source. The research log records the pages as checked on **2026-10-18**.
-- **166** rows are marked `verified`; **39** rows have a review gap, conflict or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
+- **165** rows are marked `verified`; **40** rows have a review gap, conflict or unconfirmed value. Unconfirmed cells are left blank and the rows appear on the **Flagged for review** page.
 - **72** discrepancy, source, scope and other review items are published on `flagged.html`.
 - The build-time validator checks dataset integrity, source-link presence, table markup and local links. It does **not** fetch pages or independently authenticate their current contents; source freshness must be checked against the linked official pages.
 

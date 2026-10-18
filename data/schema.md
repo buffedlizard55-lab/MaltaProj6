@@ -40,12 +40,15 @@ All data files are UTF-8 JSON with a top-level `category`, `verified_on` and `ev
 | `date_status` | `confirmed` or `not announced` (verified negative) |
 | `type` | `exhibition`, `performance`, `convention`, `festival`, `civic`, `sports` |
 
-## Validation rules enforced by `tools/validate.py`
+## Legacy per-session schema and merged-site validation
 
-1. Required fields present and non-empty (except fields listed in `unverified_fields`).
-2. `source_url` uses `https://` and belongs to the official-source allowlist in `data/sources.json`.
-3. `source_url` is not a search, social, aggregator, ticketing or Wikipedia URL.
-4. `unverified_fields` only names optional fields from the schema (`field` or `field.subfield`).
-5. IDs unique; categories match the file.
-6. Every event with `unverified_fields` appears on `flagged.html` (build checks this).
-7. Internal links in generated HTML resolve to a generated file.
+The JSON files above preserve the earlier research tranche. The published union is `data/events.json`, built from `data/events.py` and converted rows from the preserved per-session files. `tools/validate.py` validates the merged published rows, their source links, table alignment, and local site links. It does not fetch official pages or re-confirm mutable event facts.
+
+### Validation rules enforced by `tools/validate.py`
+
+1. The `data/events.json` union matches the source files and merge transform.
+2. Canonical source URLs are HTTPS, avoid the explicit social/search/aggregator blocklist, and are present on rendered event rows.
+3. Canonical event IDs are unique; groups, categories, and statuses use the expected values.
+4. Each unverified canonical row is directly addressable on `flagged.html`.
+5. Every review-register source link appears on the review page; internal links and local HTML anchors resolve.
+6. Every listing row has the expected nine table cells.
