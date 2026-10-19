@@ -7703,7 +7703,7 @@
     {
       "id": "flag-opensource-ai-awards-end-time",
       "title": "Open Source AI Awards Night — official site and its own registration page give different end times",
-      "detail": "The official Open Source AI Week page for the Awards Night states 'Time: 5:00 PM – 9:00 PM'. The Luma registration page linked from that same official page lists '5:00 PM - 10:00 PM PDT'. The row records the official site's 5:00 p.m.–9:00 p.m. Because the two official pages disagree, the end time is worth confirming with the organiser.",
+      "detail": "Three readings of the time are on record, all fetched 2026-10-18: (1) the official Open Source AI Week page earlier the same day stated 'Time: 5:00 PM – 9:00 PM'; (2) the Luma registration page linked from that official page lists '5:00 PM - 10:00 PM PDT'; (3) a later re-fetch of the official page renders 'Time: 6:00 PM – 9:30 PM'. The row now follows the current official page (6:00 p.m.–9:30 p.m.); the change is logged as flag-osai-awards-time-changed. Because the official pages disagree, the time is worth confirming with the organiser.",
       "source_name": "Open Source AI Week — Open Source AI Awards",
       "source_url": "https://opensourceaiweek.com/open-source-ai-awards/",
       "action": "Ask the organiser which end time is correct before publishing a programme."
