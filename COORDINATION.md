@@ -1682,6 +1682,15 @@ pages=19); `python3 audit/check_dataset.py` → `hard_problems=[]`,
   integrated (all remote branches behind `main` except stale claim-only
   branches older than 60 minutes). A later session should start from
   `main` at or after `8871746`.
+- **Follow-up PR #54** (merged 2026-10-19T00:49:59Z, commit `ba9dbcd`,
+  Pages `built`): the pre-existing review item "Open Source AI Awards
+  Night — official site and its own registration page give different
+  end times" still described the old row value (5:00–9:00 p.m.); its
+  detail now records all three same-day readings (official page
+  5:00–9:00 PM, the Luma registration page 5:00–10:00 PM PDT, the
+  official page re-fetch 6:00–9:30 PM) and states that the row follows
+  the current official page, cross-referenced to
+  `flag-osai-awards-time-changed`. No event data changed.
 - **What this pass contributed to the merged site:** 17 dated free rows
   (10 gaming, 2 music, 1 music-heavy community open house, 4 community, 1
   re-verified Ferry Building row); the OSAI Awards time correction; the
