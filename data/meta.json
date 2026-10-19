@@ -1,25 +1,25 @@
 {
   "site": "San Francisco Events",
   "verified_on": "2026-10-18",
-  "generated_on": "2026-10-18",
+  "generated_on": "2026-10-19",
   "counts": {
-    "total": 299,
+    "total": 316,
     "recurring": 127,
     "annual": 59,
-    "special": 113,
-    "verified_rows": 177,
+    "special": 130,
+    "verified_rows": 194,
     "unverified_rows": 122,
-    "free_access_rows": 158,
-    "explicitly_free_rows": 141,
+    "free_access_rows": 175,
+    "explicitly_free_rows": 158,
     "concluded_rows": 47,
-    "flagged_rows": 232,
+    "flagged_rows": 233,
     "sources": 113
   },
   "focus": {
-    "gaming": 8,
-    "music": 52,
+    "gaming": 18,
+    "music": 54,
     "ai": 9,
-    "other": 230
+    "other": 235
   },
   "pages": [
     "all-events.html",

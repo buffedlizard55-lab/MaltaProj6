@@ -34,8 +34,9 @@ Shared task board for all agent sessions working on this repository.
 | `arena-fe7c710c` | `arena/fe7c710c-maltaproj6` | **Final integration session (2026-10-18, tenth pass).** Independent line-by-line re-verification of the published union against official sources, gap research for free SF-city events near 2026-10-18 (gaming, then music, then AI, then everything else), site/UX + mobile review and repair, full rebuild, PR to `main`, merge and Pages deploy confirmation. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` / `data/events.csv` / `data/meta.json` / `data/review.csv`, generated `*.html`, `scripts/build_site.py`, `scripts/focus.py`, `tools/validate.py`, `assets/site.css`, `audit/AUDIT-2026-10-18-fe7c710c.md` (new), `audit/check_fe7c710c.py` (new), `data/gap-candidates-fe7c710c.json` (new). Arena-fixed branch; no branch switch. | ✅ complete |
 | `arena-8eaf6c0a` | `arena/8eaf6c0a-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim), then post-release integration of its findings.** Phase 1 (claim live): new files only — `audit/AUDIT-2026-10-18-8eaf6c0a.md`, `audit/check_8eaf6c0a.py`, `audit/row-audit-8eaf6c0a.csv`, `data/gap-candidates-8eaf6c0a.json`, plus registry/task/log rows in this board. Phase 2 (after PRs #42–#44 released the claim): corrections IR-1–IR-4, six verified gap rows, `flag-fan-expo-no-sf-2026`, README/COORDINATION, regenerated site. Arena-fixed branch; no branch switch. | ✅ complete — see closing record below |
 | `arena-291a13ff` | `arena/291a13ff-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim; claim released by PRs #42–#44 at 17:09–17:12Z, after which this session integrated).** While the claim was live: new files only — `audit/AUDIT-2026-10-18-291a13ff.md`, `audit/check_291a13ff.py`, `audit/row-audit-291a13ff.csv`, `data/gap-candidates-291a13ff.json`, plus registry/task/log rows in this board. After release: integration of the verified gap candidates into `data/events.py`, rebuild, PR, merge, Pages confirmation. Arena-fixed branch; no branch switch. | ✅ complete — PRs #46 (data/site, `952e74a`) and #49 (closing record, `cde8c11`) merged 2026-10-18; Pages `built` for both, `error: null`. Closing record above. |
-| `arena-291a13ff` | `arena/291a13ff-maltaproj6` | **Independent line-by-line verification + gap research (2026-10-18, concurrent with `arena-fe7c710c`'s final-integration claim; claim released by PRs #42–#44 at 17:09–17:12Z, after which this session integrated).** While the claim was live: new files only — `audit/AUDIT-2026-10-18-291a13ff.md`, `audit/check_291a13ff.py`, `audit/row-audit-291a13ff.csv`, `data/gap-candidates-291a13ff.json`, plus registry/task/log rows in this board. After release: integration of the verified gap candidates into `data/events.py`, rebuild, PR, merge, Pages confirmation. Arena-fixed branch; no branch switch. | 🟡 in progress |
 | `arena-9fca0b37` | `arena/9fca0b37-maltaproj6` | **Independent line-by-line verification + gap research pass (2026-10-18, eleventh pass).** Re-verifies the published 262-row union against official sources row by row, researches gaps for free San Francisco events (gaming, then music, then AI, then everything else), and prepares corrections as a self-contained apply script. Scope, phase 1 (new files only, no shared-output edits): `COORDINATION.md` (board rows only), `audit/AUDIT-2026-10-18-9fca0b37.md` (new), `audit/check_9fca0b37.py` (new), `audit/row-audit-9fca0b37.csv` (new), `audit/apply_9fca0b37.py` (new), `data/gap-candidates-9fca0b37.json` (new). Shared outputs (`data/events.py`, generated `*.html`, `scripts/`, `assets/`, `data/events.json`, `README.md`) are **not** edited in phase 1 because `arena-fe7c710c` holds a live final-integration claim on them; integration requests are logged on this board instead. Phase 2 (final integration, PR/merge/Pages) only after `arena-fe7c710c` releases its claim via merge, or its claim goes stale (>60 min with no commits), in which case this session takes over and logs the handoff. | 🟡 in progress — **phase 1 (verification) complete**: 56 official pages re-fetched, 7 rows added and 15 row corrections + 4 imported-row corrections staged in `audit/apply_9fca0b37.py` (proven on a throwaway copy), 14 new review items, every gate green; **phase 2 running**: `arena-fe7c710c` released the shared-file claim by merging PRs #42–#44 (`5b77c43`, 17:12Z); **✅ complete** — PR #48 merged to `main` at `b76bc7a` (17:53Z), GitHub Pages `built` for that commit (`error: null`) and the live dashboard verified at **299 / 177 / 122 / 158 / 47 / 232 / 113**. Two further main-side merges (PRs #49/#50) were folded in pre-merge; see the closing record below. |
+
+| `arena-b95ade5f` | `arena/b95ade5f-maltaproj6` | **Independent verification + gap-research + final integration (2026-10-18, eleventh pass).** Phase 1 (new files only, while `arena-291a13ff` and `arena-8eaf6c0a` hold live integration edits): line-by-line structural re-audit of the published union, live official-source re-verification of near-term and free gaming/music/AI rows, gap research for free SF-city events near 2026-10-18, mobile/UX + requirements conformance review. Phase 2 (integration, only after those sessions merge or go stale): apply verified rows and corrections to `data/events.py`, rebuild, validate, PR to `main`, merge, confirm Pages. Scope: `COORDINATION.md`, `README.md`, `data/events.py`, generated `data/events.json` / `data/events.csv` / `data/meta.json`, generated `*.html`, `audit/AUDIT-2026-10-18-b95ade5f.md` (new), `audit/check_b95ade5f.py` (new), `audit/row-audit-b95ade5f.csv` (new), `data/gap-candidates-b95ade5f.json` (new). Arena-fixed branch; no branch switch. | 🟡 in progress |
 
 **Concurrency note.** `arena-b0f3cfd3` checked the remote at the start of its run (`git ls-remote --heads origin`
 returned only `refs/heads/main`) and therefore correctly found no other session to coordinate with. The second
@@ -1554,3 +1555,132 @@ handoff recorded here.
   so earlier merges can be reviewed); cosmetic duplicate set/dict entries in `data/events.py` /
   `scripts/merge_parallel.py` (IR-9F-3, harmless — sets and dicts de-duplicate).
 - **Site:** https://buffedlizard55-lab.github.io/MaltaProj6/
+
+
+---
+
+## Task board — `arena-b95ade5f` (verification + gap research + integration pass)
+
+Session branch: `arena/b95ade5f-maltaproj6` (Arena-fixed branch; no branch switch).
+
+**Concurrency observed on arrival (2026-10-18 ~17:35Z).** `main` is at `5b77c43`
+(PR #44 merge, `arena-fe7c710c` complete: 281 events / 169 verified / 112 review
+gaps / 156 free-access entries / 214 review items / 109 domains / 19 pages).
+Remote branch activity (committer timestamps via GitHub API):
+
+| Branch | Latest commit | Age at 17:35Z | Treatment |
+|---|---|---|---|
+| `arena/291a13ff-maltaproj6` | 17:29Z — "integrate(291a13ff): add 5 source-verified rows…" touching `data/events.py` + generated HTML | ~6 min | **Live integration session.** Not touched. |
+| `arena/8eaf6c0a-maltaproj6` | 17:32Z — "integrate(8eaf6c0a): apply verified corrections…" touching `COORDINATION.md`, `data/events.py`, generated HTML | ~3 min | **Live integration session.** Not touched. |
+| `arena/9fca0b37-maltaproj6` | 17:23Z — phase-1 new files only (`audit/`, `data/gap-candidates-9fca0b37.json`) | ~12 min | Concurrent phase-1 session; scopes are different files, no overlap. |
+| `arena/611a71be`, `arena/8e13859c` | 11:04Z / 10:56Z | ~6 h | Stale under the 60-minute rule. Not overwritten. |
+| `arena/7141e086`, `arena/ef213634` | 02:57Z / 05:53Z | many hours | Stale (claim-only). Not overwritten. |
+
+No other session holds a claim on the new files in this session's scope. Phase 1
+claims new files only. Phase 2 (integration edits to `data/events.py`, generated
+`*.html`, `README.md`) is attempted only after the live integration sessions have
+merged or their claims go stale (>60 min, no commits); needed changes are logged
+below as integration requests until then.
+
+| # | Task | Status | Owner | Files in scope | Notes |
+|---|---|---|---|---|---|
+| BA0 | Register and claim non-overlapping scope | ✅ done | `arena-b95ade5f` | `COORDINATION.md` | This claim commit pushed before any other file edits. |
+| BA1 | Structural line-by-line audit of the published union (299 rows + 232 review items at integration time): source links https/primary-host, blanks vs status, duplicates, cost coverage, HTML membership | ✅ done | `arena-b95ade5f` | `audit/check_b95ade5f.py` (new), `audit/row-audit-b95ade5f.csv` (new) | 0 hard problems: 0 non-https sources, 0 aggregator-host evidence rows, 0 duplicate title+dates pairs, 0 events missing from HTML, focus taxonomy clean. |
+| BA2 | Live official-source re-verification: every dated row in the next 14 days + all free gaming/music/AI rows | ✅ done | `arena-b95ade5f` | `audit/AUDIT-2026-10-18-b95ade5f.md` (new) | 30+ official pages re-fetched; every near-term free row confirmed; one live-page change found (OSAI Awards time) and corrected with a flag. |
+| BA3 | Gap research: free SF-city events near 2026-10-18 (gaming → music → AI → everything else) | ✅ done | `arena-b95ade5f` | `data/gap-candidates-b95ade5f.json` (new), `data/events.py` | 17 dated free rows added (10 gaming, 2 music-tagged + 1 music-heavy community open house, 4 community, Ferry Building Trick-or-Treat re-verified). 5 not-added candidates recorded with reasons. |
+| BA4 | Requirements conformance review: mobile, date-ordered upcoming-first, free-only executive summary near today, cost labels, free/paid separation, recurring vs special organisation | ✅ done | `arena-b95ade5f` | `audit/AUDIT-2026-10-18-b95ade5f.md` (new) | All 8 brief requirements verified on the published site; defects found were the OSAI time change and the missing dated gaming/music entries, both fixed in BA5. |
+| BA5 | Integration: apply verified rows + corrections, rebuild, validate | ✅ done | `arena-b95ade5f` | `data/events.py`, `scripts/focus.py`, generated `data/events.json`+`data/events.csv`+`data/meta.json`, generated `*.html`, `README.md` | Rebased onto `main`@`217b37a` (one COORDINATION.md conflict resolved as a union); 17 rows added, OSAI Awards corrected, ArtSpan flag closed, new OSAI-time-change flag; build reproducible; all gates green. |
+| BA6 | PR to `main`, merge, confirm Pages deploy, record here | 🟡 in progress | `arena-b95ade5f` | `COORDINATION.md` | PR + merge + Pages verification recorded in the closing record below. |
+
+### Verification log — `arena-b95ade5f` (2026-10-18)
+
+**Phase 1 (new files only, claim commit `84f58b5` pushed before any other
+edit).** Concurrency on arrival: `main`@`5b77c43`; three sessions live
+(`arena-291a13ff`, `arena-8eaf6c0a` integrating; `arena-9fca0b37` phase-1).
+By 21:06Z all three had merged (PRs #45–#51, `main`@`217b37a`, 299 events /
+177 verified / 122 gaps / 232 items / 112 domains), so phase 2 proceeded on a
+rebase. The rebase hit one conflict in `COORDINATION.md` (both sides had
+appended board sections); resolved as a union keeping every row from both
+sides, dropping only a stale duplicate `arena-291a13ff` registry row marked
+"🟡 in progress" that its own later "✅ complete" row superseded.
+
+**Live official pages re-fetched (all 2026-10-18):** illuminate.org/events/
+(2 chunks — every listing Oct 18–Nov 15) and the individual pages for Civic
+Center Soundtrack Oct 20, Bay Beats Oct 24, Halloween at the Bandshell Oct 31,
+Market to Bandshell Nov 4, Crucial Reggae Sundays Oct 25; sundaystreetssf.com
+(Excelsior finale, no price published); sf.gov/events/upcoming plus the
+Rules Committee and Land Use & Transportation meeting detail pages (Oct 19;
+LUT cancelled, Rules 10:00 a.m. per the meeting page — the citywide index
+rendered shifting times across two fetches, confirming its timezone rendering
+is unreliable; both conflicts stay flagged); both Family Summit pages (D1
+Oct 22 and D11 Oct 29, 5:30–8:00 p.m., Cost: Free); moscone.com Cloudflare
+Connect (Oct 19–21, no price); artspan.org/visitsfopenstudios (now renders
+"September 26 - October 25 | Weekends | 11AM-5PM" — flag closed);
+sfzoo.org Boo at the Zoo; calacademy.org/supernatural ($60/$55/$45/$40 as
+published); dogpatch.games Love Potion Library game night (no price);
+sfpl.org/quickview/138715 + 16 further quickviews with their official ICS
+feeds (times cross-checked UTC→PDT); opensourceaiweek.com community
+calendar, The Debates and The Awards pages; castromerchants.com/events;
+sfrecpark.org/Calendar.aspx (Scaregrove, Boo at the Zoo, Mobile Rec, Polo
+Field track); litquake.org/2026-schedule; ferrybuildingmarketplace.com/events
+plus the Trick-or-Treat, World of Dumplings and Tea Festival pages;
+sfpl.org/teens/the-mix/gaming; valkyries.wnba.com/schedule (JS-driven, no
+static schedule — row stays verified-by-prior-pass).
+
+**Structural audit** (`audit/check_b95ade5f.py`, read-only over the union):
+316 rows — 0 non-https sources, 0 aggregator-host evidence rows, 0 duplicate
+title+dates pairs, 0 events missing from HTML, focus counts
+other=235/music=54/gaming=18/ai=9, cost classes free=158/paid=74/mixed=30/
+blank=54, 175 rows with a blank core cell all explained by `unverified`
+status or the standing blank-cell register entry.
+
+**Corrections applied:** Open Source AI Awards Night schedule corrected to
+the live page's "6:00 PM – 9:30 PM" (earlier same-day reading had recorded
+5:00–9:00 p.m. with a detailed agenda) and venue string completed to
+"Founders Inc., 2 Marina Blvd, Building C, Floor 3 (B300)"; change logged as
+`flag-osai-awards-time-changed`. `flag-artspan-page-not-rerendered` closed
+with an update note (page now renders dates/hours matching the row).
+
+**Not added (recorded in `data/gap-candidates-b95ade5f.json`):** OSAI-week
+Luma community events on Oct 18 (no street address, no price, Bay-Area-wide);
+Ferry Building recurring editions already covered by published recurring rows;
+Presidio events calendar (404 to this pass).
+
+**Pre-merge gates (union tree, rebased onto `217b37a`):**
+`python3 scripts/build_site.py` → "Wrote 17 pages, 316 events, 233 flagged
+items", byte-reproducible on a second run; `python3 tools/validate.py` → OK
+(events=316 verified=194 review_gap=122 review_items=233 domains=113
+pages=19); `python3 audit/check_dataset.py` → `hard_problems=[]`,
+`broken_internal_links=[]`, `events_missing_from_html=[]`;
+`python3 audit/check_b95ade5f.py` → hard problems: 0.
+
+### Closing record — `arena-b95ade5f` (2026-10-18)
+
+- **PR**: see the merge record appended below (PR number and merge commit
+  filled in after the merge).
+- **What this pass contributed to the merged site:** 17 dated free rows
+  (10 gaming, 2 music, 1 music-heavy community open house, 4 community, 1
+  re-verified Ferry Building row); the OSAI Awards time correction; the
+  ArtSpan flag closure; the OSAI time-change review item; README count
+  refresh (several stale page counts predating this pass were also
+  corrected: arts 89→114, technology 19→36, music 39→54, community 86→112,
+  special 113→130, verified-with-blank 22→93); the audit trail
+  (`audit/AUDIT-2026-10-18-b95ade5f.md`, `audit/check_b95ade5f.py`,
+  `audit/row-audit-b95ade5f.csv`, `data/gap-candidates-b95ade5f.json`).
+- **Counts after rebuild:** 316 events, 194 verified, 122 review gaps,
+  233 review items, 113 source domains, 17 generated pages; focus areas
+  gaming 18 / music 54 / AI 9 / other 235; free-only cost wording 158,
+  free-access wording 175; homepage executive summary window now lists
+  42 free entries, earliest first, opening with today's chess club,
+  Excelsior open house, Crucial Reggae Sundays, board games, family game
+  time, costume swap, recording-studio orientation and the plastic-waste
+  workshop.
+- **Irregularities left visible for manual follow-up (non-blocking):**
+  OSAI Awards time changed between two same-day readings (row follows the
+  current page; flag published); cached "Canceled:" heading vs live
+  scheduled SFPL board-games session (pre-existing flag, now noted on the
+  new dated row); Rules Committee 10:00 a.m. meeting page vs the citywide
+  index's shifting renderings; Cloudflare Connect "over four days" copy;
+  Castro Menorah prose-vs-listing date conflict; HumanX 2027 moves to Las
+  Vegas; 54 rows with blank cost cells where official pages publish no
+  price (never inferred).

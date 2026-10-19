@@ -1,0 +1,248 @@
+{
+  "session": "arena-b95ade5f",
+  "date": "2026-10-18",
+  "purpose": "Gap-research trail for the b95ade5f verification pass. Every candidate was checked against its official page on 2026-10-18. 'added' rows are in data/events.py; 'not_added' rows carry the reason they were not published.",
+  "added": [
+    {
+      "id": "spc-sfpl-afternoon-board-games-2026-10-18",
+      "title": "Social: Afternoon Board Games (SFPL Sunset)",
+      "official_page": "https://sfpl.org/quickview/112317",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/112317",
+      "when": "Sunday, October 18, 2026, 1:00-4:00 p.m.",
+      "where": "Sunset Children's Area, Sunset Branch, 1305 18th Avenue",
+      "cost": "Free",
+      "cost_basis": "SFPL events index: 'All programs and events are free and open to the public.'",
+      "focus": "gaming",
+      "caveat": "flag-sfpl-afternoon-board-games-status records a search-engine cache carrying a 'Canceled:' heading; the live official page renders the session as scheduled and is treated as authoritative."
+    },
+    {
+      "id": "spc-sfpl-family-game-time-2026-10-18",
+      "title": "Social: Family Game Time (SFPL West Portal)",
+      "official_page": "https://sfpl.org/quickview/156808",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/156808",
+      "when": "Sunday, October 18, 2026, 2:00-3:30 p.m.",
+      "where": "West Portal Children's Area, West Portal Branch, 190 Lenox Way",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming"
+    },
+    {
+      "id": "spc-sfpl-chess-club-ingleside-2026-10-18",
+      "title": "Activity: Chess Club (SFPL Ingleside)",
+      "official_page": "https://sfpl.org/quickview/146591",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/146591",
+      "when": "Sunday, October 18, 2026, 2:30-4:00 p.m.",
+      "where": "Ingleside Meeting Room, Ingleside Branch, 1298 Ocean Avenue",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "audience": "children ages 5 and older; beginners and aspiring tournament players"
+    },
+    {
+      "id": "spc-sfpl-excelsior-open-house-2026-10-18",
+      "title": "Celebration: Open House (SFPL Excelsior, during Sunday Streets)",
+      "official_page": "https://sfpl.org/quickview/163273",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/163273",
+      "when": "Sunday, October 18, 2026, 11:00 a.m.-4:00 p.m.",
+      "where": "Excelsior General Floor Area, Excelsior Branch, 4400 Mission Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "other",
+      "note": "Entertainment schedule includes Tricycle Music Fest with Aguacate Music Kids (1-2 p.m.) and Susana y su Orquesta Adelante (2:30-3:30 p.m.) outside, plus a Bright Knights Chess Club tournament (1-4 p.m.) inside."
+    },
+    {
+      "id": "spc-sfpl-recording-studio-orientation-2026-10-18",
+      "title": "Workshop: Recording Studio Orientation (The Mix at SFPL Main)",
+      "official_page": "https://sfpl.org/quickview/157504",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/157504",
+      "when": "Sunday, October 18, 2026, 2:00-3:00 p.m.",
+      "where": "The Mix: Audio, 2nd Floor, Main Library, 100 Larkin Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "music",
+      "audience": "teens 12-18; orientation to The Mix music recording studio"
+    },
+    {
+      "id": "spc-sfpl-halloween-costume-swap-2026-10-18",
+      "title": "Social: Halloween Costume Swap (SFPL Glen Park)",
+      "official_page": "https://sfpl.org/quickview/161101",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/161101",
+      "when": "Sunday, October 18, 2026, 2:00-3:30 p.m.",
+      "where": "Glen Park Meeting Room, Glen Park Branch, 2825 Diamond Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "other"
+    },
+    {
+      "id": "spc-sfpl-plastic-waste-workshop-2026-10-18",
+      "title": "Workshop: Reduce Plastic Waste Through Creative Reuse (SFPL Main)",
+      "official_page": "https://sfpl.org/quickview/163368",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/163368",
+      "when": "Sunday, October 18, 2026, 2:00-3:00 p.m.",
+      "where": "Steve Silver Music Center, 4th Floor, Main Library, 100 Larkin Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "other"
+    },
+    {
+      "id": "spc-sfpl-monday-fun-day-dance-2026-10-19",
+      "title": "Social: Monday Fun Day Family Dance Party (SFPL Glen Park)",
+      "official_page": "https://sfpl.org/quickview/168053",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/168053",
+      "when": "Monday, October 19, 2026, 1:00-2:00 p.m.",
+      "where": "Glen Park Meeting Room, Glen Park Branch, 2825 Diamond Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "music",
+      "audience": "children ages 5 and younger"
+    },
+    {
+      "id": "spc-sfpl-monday-morning-play-2026-10-19",
+      "title": "Activity: Monday Morning Play (SFPL North Beach)",
+      "official_page": "https://sfpl.org/quickview/162616",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/162616",
+      "when": "Monday, October 19, 2026, 1:00-3:00 p.m.",
+      "where": "North Beach Library Community Room, North Beach Branch, 850 Columbus Avenue",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "other",
+      "audience": "children ages 0-6 and caregivers"
+    },
+    {
+      "id": "spc-sfpl-owls-older-writers-2026-10-19",
+      "title": "Activity: OWLS Older Writers Laboratory (SFPL Bernal Heights)",
+      "official_page": "https://sfpl.org/quickview/159117",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/159117",
+      "when": "Monday, October 19, 2026, 1:00-3:30 p.m.",
+      "where": "Bernal Heights Meeting Room, Bernal Heights Branch, 500 Cortland Avenue",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "other",
+      "audience": "older adults"
+    },
+    {
+      "id": "spc-sfpl-bocce-ball-2026-10-20",
+      "title": "Activity: Bocce Ball (SFPL North Beach)",
+      "official_page": "https://sfpl.org/quickview/160474",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/160474",
+      "when": "Tuesday, October 20, 2026, 1:30-3:30 p.m.",
+      "where": "Joe DiMaggio's Bocce Court, adjacent to North Beach Branch, 850 Columbus Avenue",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "audience": "adults and older adults; bocce balls provided"
+    },
+    {
+      "id": "spc-sfpl-gaming-hour-2026-10-21",
+      "title": "Social: Gaming Hour (SFPL Bayview)",
+      "official_page": "https://sfpl.org/quickview/165466",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/165466",
+      "when": "Wednesday, October 21, 2026, 3:30-4:30 p.m.",
+      "where": "Bayview Meeting Room, Bayview/Linda Brooks-Burton Branch, 5075 3rd Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "audience": "ages 10-18; multiplayer video games on Nintendo Switch"
+    },
+    {
+      "id": "spc-sfpl-mahjong-club-2026-10-24",
+      "title": "Social: Mahjong Club (SFPL Sunset)",
+      "official_page": "https://sfpl.org/quickview/157238",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/157238",
+      "when": "Saturday, October 24, 2026, 1:30-3:00 p.m.",
+      "where": "Sunset Program Room, Sunset Branch, 1305 18th Avenue",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "caveat": "Reservations required: (415) 355-2808, from October 10; arrive on time (10 minutes late is a no-show)."
+    },
+    {
+      "id": "spc-sfpl-horrified-dnd-2026-10-25",
+      "title": "Activity: Horrified: Dungeons & Dragons (SFPL Presidio)",
+      "official_page": "https://sfpl.org/quickview/163675",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/163675",
+      "when": "Sunday, October 25, 2026, 3:00-5:00 p.m.",
+      "where": "Presidio Meeting Room, Presidio Branch, 3150 Sacramento Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "audience": "adults; learn the cooperative board game Horrified: Dungeons & Dragons"
+    },
+    {
+      "id": "spc-sfpl-jojo-battle-2026-10-25",
+      "title": "Social: JoJo's Bizarre Adventure All-Star Battle R (SFPL Main, The Mix)",
+      "official_page": "https://sfpl.org/quickview/163583",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/163583",
+      "when": "Sunday, October 25, 2026, 4:00-5:00 p.m.",
+      "where": "The Mix: Read/Write/Study, 2nd Floor, Main Library, 100 Larkin Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "audience": "ages 12-18; PlayStation 5 fighting game"
+    },
+    {
+      "id": "spc-sfpl-puzzle-swap-2026-10-25",
+      "title": "Social: Puzzle Swap (SFPL Noe Valley)",
+      "official_page": "https://sfpl.org/quickview/161739",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/161739",
+      "when": "Sunday, October 25, 2026, 2:00-3:00 p.m.",
+      "where": "Noe Valley Meeting Room, Noe Valley/Sally Brunn Branch, 451 Jersey Street",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "audience": "all ages; bring a jigsaw puzzle in good condition to swap"
+    },
+    {
+      "id": "spc-sfpl-lego-robotics-2026-11-07",
+      "title": "Activity: LEGO Robotics (SFPL Richmond)",
+      "official_page": "https://sfpl.org/quickview/165161",
+      "ics": "https://sfpl.org/sfpl-events/add-to-calendar/165161",
+      "when": "Saturday, November 7, 2026, 11:00 a.m.-1:00 p.m.",
+      "where": "Richmond Meeting Room, Richmond Branch, 351 9th Avenue",
+      "cost": "Free",
+      "cost_basis": "SFPL events index free-access statement",
+      "focus": "gaming",
+      "audience": "children ages 8 and older; LEGO Mindstorms with Lowell High School CardinalBotics teen volunteers"
+    },
+    {
+      "id": "spc-ferry-trick-or-treat-2026-10-29",
+      "title": "Trick-or-Treat at the Ferry Building",
+      "official_page": "https://www.ferrybuildingmarketplace.com/events/trick-or-treat-2026/",
+      "when": "Thursday, October 29, 2026, 4:00-6:00 p.m.",
+      "where": "Ferry Building Marketplace, 1 Ferry Building",
+      "cost": "Free",
+      "cost_basis": "Official page: 'All activities are free and open to the public.'",
+      "focus": "other",
+      "note": "Already present in the dataset (added by arena-9fca0b37); re-verified this pass against the official event page."
+    }
+  ],
+  "not_added": [
+    {
+      "title": "InclusionAI Tech Night: Your AI Reality Check",
+      "source_seen_on": "https://opensourceaiweek.com/community-events/",
+      "when": "Sunday, October 18, 2026, 4:00 PM",
+      "reason_not_added": "Listed on the official Open Source AI Week calendar only as a Luma-hosted community event; the calendar entry gives no street address (only 'San Francisco') and no admission price. City-limits scope and the blank-unless-published price rule both fail; recorded here for a human to check the Luma page."
+    },
+    {
+      "title": "Builder Odyssey: Founder Demos & AI Film Showcase",
+      "source_seen_on": "https://opensourceaiweek.com/community-events/",
+      "when": "Sunday, October 18, 2026, 1:00 PM",
+      "reason_not_added": "Official week calendar lists the venue only as 'The Midway, San Francisco' with no street address and no admission price; Luma-hosted community event. Not enough confirmed detail to publish a row."
+    },
+    {
+      "title": "Ferry Building Monday Yoga / Mahjong Meetup / Music on the Plaza / Board Game Night dated editions (Oct 19-30)",
+      "source_seen_on": "https://www.ferrybuildingmarketplace.com/events",
+      "reason_not_added": "Already covered by the four published recurring rows (rec-ferry-*); the editions confirmed today (Yoga Oct 19 & 26, Mahjong Oct 21 & 28, Music on the Plaza Oct 22 & 29, Board Game Night Oct 23 & 30) match the published cadence."
+    },
+    {
+      "title": "Presidio events calendar",
+      "source_attempted": "https://presidio.gov/things-to-do/events",
+      "reason_not_added": "Returned a 404 page to this pass; no Presidio rows added from it. The Presidio Visitor Center and Presidio season rows already in the dataset remain sourced to their own official pages."
+    },
+    {
+      "title": "Open Source AI Week — non-flagship community events",
+      "source_seen_on": "https://opensourceaiweek.com/community-events/",
+      "reason_not_added": "The week is Bay-Area-wide (66 events) and most entries are Luma-hosted community events without a confirmed SF street address or price; only the two SF flagships (Debates, Awards) are published as rows, as earlier sessions recorded."
+    }
+  ]
+}
