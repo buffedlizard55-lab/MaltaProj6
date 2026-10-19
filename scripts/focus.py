@@ -33,6 +33,23 @@ FOCUS_BY_ID = {
     "rec-sfpl-gaming-citywide": "gaming",
     "x-s-026": "gaming",            # GDC Festival of Gaming 2027
     "art-musee-mecanique": "gaming",  # 300+ coin-operated mechanical games
+    # Dated free SFPL gaming sessions, verified 2026-10-18 by
+    # arena-b95ade5f against the library's own event records (the
+    # library's events index states all programs are free).
+    "spc-sfpl-afternoon-board-games-2026-10-18": "gaming",
+    "spc-sfpl-family-game-time-2026-10-18": "gaming",
+    "spc-sfpl-chess-club-ingleside-2026-10-18": "gaming",
+    "spc-sfpl-bocce-ball-2026-10-20": "gaming",
+    "spc-sfpl-gaming-hour-2026-10-21": "gaming",
+    "spc-sfpl-mahjong-club-2026-10-24": "gaming",
+    "spc-sfpl-horrified-dnd-2026-10-25": "gaming",
+    "spc-sfpl-jojo-battle-2026-10-25": "gaming",
+    "spc-sfpl-puzzle-swap-2026-10-25": "gaming",
+    "spc-sfpl-lego-robotics-2026-11-07": "gaming",
+    # Dated free SFPL music sessions (Dance & Music topic / The Mix
+    # recording studio), same verification pass.
+    "spc-sfpl-recording-studio-orientation-2026-10-18": "music",
+    "spc-sfpl-monday-fun-day-dance-2026-10-19": "music",
 
     # --- music ----------------------------------------------------------
     "rec-bandshell-illuminate-live": "music",
